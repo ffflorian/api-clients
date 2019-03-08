@@ -24,7 +24,7 @@
   "scripts": {
     "boot": "lerna bootstrap --reject-cycles",
     "clean": "lerna run clean",
-    "dist": "yarn clean && lerna run dist",
+    "dist": "yarn clean && lerna run build",
     "fix": "yarn fix:other && yarn fix:ts",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",
