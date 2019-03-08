@@ -22,7 +22,7 @@ action "Lint" {
   args = "lint"
 }
 
-action "Build" {
+action "Dist" {
   uses = "docker://node:10"
   needs = ["Boot"]
   runs = "yarn"
