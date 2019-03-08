@@ -2,115 +2,48 @@ import axios, {AxiosRequestConfig} from 'axios';
 import {HTTP_STATUS} from 'http-status-codes';
 
 import {ExceptionMapper, InvalidResponseError} from './APIException';
-import {HttpMethod, RequestOptions} from './interfaces/';
+import {HttpMethod} from './interfaces/';
 
 export class RequestService {
   constructor(private apiUrl: string) {}
 
-  public delete<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public delete<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public delete<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.DELETE, optionsOrParameters, additionalOptions);
+  public delete<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.DELETE, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public get<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public get<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public get<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.GET, optionsOrParameters, additionalOptions);
+  public get<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.GET, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public head<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public head<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public head<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.HEAD, optionsOrParameters, additionalOptions);
+  public head<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.HEAD, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public options<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public options<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public options<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.OPTIONS, optionsOrParameters, additionalOptions);
+  public options<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.OPTIONS, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public patch<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public patch<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public patch<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.PATCH, optionsOrParameters, additionalOptions);
+  public patch<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.PATCH, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public post<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public post<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public post<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.POST, optionsOrParameters, additionalOptions);
+  public post<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.POST, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
-  public put<T>(url: string, parameters?: RequestOptions, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public put<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T>;
-  public put<T>(
-    url: string,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): Promise<T> {
-    const config = this.buildConfiguration(url, HttpMethod.PUT, optionsOrParameters, additionalOptions);
+  public put<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
+    const config = {method: HttpMethod.PUT, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
     return this.request<T>(config);
   }
 
   public setApiUrl(apiUrl: string): void {
     this.apiUrl = apiUrl;
-  }
-
-  private buildConfiguration(
-    url: string,
-    method: HttpMethod,
-    parameters?: RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): AxiosRequestConfig;
-  private buildConfiguration(
-    url: string,
-    method: HttpMethod,
-    additionalOptions?: AxiosRequestConfig
-  ): AxiosRequestConfig;
-  private buildConfiguration(
-    url: string,
-    method: HttpMethod,
-    optionsOrParameters?: AxiosRequestConfig | RequestOptions,
-    additionalOptions?: AxiosRequestConfig
-  ): AxiosRequestConfig {
-    return {
-      method,
-      url: this.apiUrl + url,
-      ...(additionalOptions && optionsOrParameters ? {parameters: optionsOrParameters} : optionsOrParameters),
-      ...(!!additionalOptions && additionalOptions),
-    };
   }
 
   private async request<T>(config: AxiosRequestConfig): Promise<T> {

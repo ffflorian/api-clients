@@ -7,5 +7,3 @@ export enum HttpMethod {
   POST = 'post',
   PUT = 'put',
 }
-
-export interface RequestOptions {}
