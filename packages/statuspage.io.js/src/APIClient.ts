@@ -1,7 +1,7 @@
-import {RequestService} from './RequestService';
-import {API, ClientOptionsUrl, Result, ClientOptionsId} from './Interfaces';
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api/';
 import {Endpoint} from './Endpoints';
+import {API, ClientOptionsId, ClientOptionsUrl, Result} from './Interfaces';
+import {RequestService} from './RequestService';
 
 export class StatusPage {
   private readonly requestService: RequestService;
@@ -12,18 +12,15 @@ export class StatusPage {
   constructor(options: ClientOptionsUrl);
   constructor(options: ClientOptionsId | ClientOptionsUrl | string) {
     if (typeof options === 'string') {
-      if (options.startsWith('http')) {
-        options = {pageUrl: options} as ClientOptionsUrl;
-      } else {
-        options = {pageId: options} as ClientOptionsId;
-      }
+      options = options.startsWith('http') ? {pageUrl: options} : {pageId: options};
     }
 
     if (!(options as ClientOptionsUrl).pageUrl && !(options as ClientOptionsId).pageId) {
       throw new Error('A StatusPage URL or page ID needs to be set in order to use the client.');
     }
 
-    const apiUrl = (options as ClientOptionsUrl).pageUrl || `https://${(options as ClientOptionsId).pageId}.statuspage.io`;
+    const apiUrl =
+      (options as ClientOptionsUrl).pageUrl || `https://${(options as ClientOptionsId).pageId}.statuspage.io`;
 
     this.requestService = new RequestService(apiUrl);
 

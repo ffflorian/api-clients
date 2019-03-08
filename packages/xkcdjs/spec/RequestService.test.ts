@@ -10,10 +10,10 @@ describe('RequestService', () => {
   it('requests image data', async () => {
     spyOn<any>(requestService, 'request').and.returnValue(
       Promise.resolve({
+        data: Buffer.from([]),
         headers: {
           'content-type': 'ArrayBuffer',
         },
-        data: Buffer.from([]),
       })
     );
 
@@ -28,22 +28,22 @@ describe('RequestService', () => {
   it('fails with invalid URLs', async () => {
     try {
       await requestService.getImage('');
-      fail('No error thrown')
-    } catch(error) {
+      fail('No error thrown');
+    } catch (error) {
       expect(error.message).toContain('Invalid URL');
     }
 
     try {
       await requestService.getImage('wwwwwwwww');
-      fail('No error thrown')
-    } catch(error) {
+      fail('No error thrown');
+    } catch (error) {
       expect(error.message).toContain('Invalid URL');
     }
 
     try {
       await requestService.getImage('/example.com');
-      fail('No error thrown')
-    } catch(error) {
+      fail('No error thrown');
+    } catch (error) {
       expect(error.message).toContain('Invalid URL');
     }
   });

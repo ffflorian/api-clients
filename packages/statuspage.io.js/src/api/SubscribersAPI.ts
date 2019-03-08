@@ -12,10 +12,18 @@ export class SubscribersAPI {
   /**
    * @param options Subscriber options.
    */
-  public createComponentSubscription(emailSubscriber: Request.EmailSubscriberData & Request.ComponentSubscriberData): Promise<Result.EmailSubscriber>;
-  public createComponentSubscription(smsSubscriber: Request.PhoneSubscriberData & Request.ComponentSubscriberData): Promise<Result.PhoneSubscriber>;
-  public createComponentSubscription(webhookSubscriber: Request.WebhookSubscriberData & Request.ComponentSubscriberData): Promise<Result.WebhookSubscriber>;
-  public createComponentSubscription(data: Request.CombinedSubscriberData & Request.ComponentSubscriberData): Promise<Result.CombinedSubscriber> {
+  public createComponentSubscription(
+    emailSubscriber: Request.EmailSubscriberData & Request.ComponentSubscriberData
+  ): Promise<Result.EmailSubscriber>;
+  public createComponentSubscription(
+    smsSubscriber: Request.PhoneSubscriberData & Request.ComponentSubscriberData
+  ): Promise<Result.PhoneSubscriber>;
+  public createComponentSubscription(
+    webhookSubscriber: Request.WebhookSubscriberData & Request.ComponentSubscriberData
+  ): Promise<Result.WebhookSubscriber>;
+  public createComponentSubscription(
+    data: Request.CombinedSubscriberData & Request.ComponentSubscriberData
+  ): Promise<Result.CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
     return this.requestService.get(endpoint, {subscriber: data});
   }
@@ -35,10 +43,18 @@ export class SubscribersAPI {
    * state to subscribe to it.
    * @param options Subscriber options.
    */
-  public createIncidentSubscription(emailSubscriber: Request.EmailSubscriberData & Request.IncidentSubscriberData): Promise<Result.EmailSubscriber>;
-  public createIncidentSubscription(smsSubscriber: Request.PhoneSubscriberData & Request.IncidentSubscriberData): Promise<Result.PhoneSubscriber>;
-  public createIncidentSubscription(webhookSubscriber: Request.WebhookSubscriberData & Request.IncidentSubscriberData): Promise<Result.WebhookSubscriber>;
-  public createIncidentSubscription(data: Request.CombinedSubscriberData & Request.IncidentSubscriberData): Promise<Result.CombinedSubscriber> {
+  public createIncidentSubscription(
+    emailSubscriber: Request.EmailSubscriberData & Request.IncidentSubscriberData
+  ): Promise<Result.EmailSubscriber>;
+  public createIncidentSubscription(
+    smsSubscriber: Request.PhoneSubscriberData & Request.IncidentSubscriberData
+  ): Promise<Result.PhoneSubscriber>;
+  public createIncidentSubscription(
+    webhookSubscriber: Request.WebhookSubscriberData & Request.IncidentSubscriberData
+  ): Promise<Result.WebhookSubscriber>;
+  public createIncidentSubscription(
+    data: Request.CombinedSubscriberData & Request.IncidentSubscriberData
+  ): Promise<Result.CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
     return this.requestService.get(endpoint, {subscriber: data});
   }

@@ -1,6 +1,6 @@
-import * as XKCDJS from '../src';
 import * as nock from 'nock';
 import {URL} from 'url';
+import * as XKCDJS from '../src';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
   alt: "Don't we all.",

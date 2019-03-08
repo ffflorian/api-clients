@@ -31,11 +31,7 @@ export class RequestService {
     this.apiUrl = new URL(apiUrl);
   }
 
-  private async request<T>(
-    method: HTTP.Method,
-    endpoint: string,
-    parameters?: Request.Options
-  ): Promise<T> {
+  private async request<T>(method: HTTP.Method, endpoint: string, parameters?: Request.Options): Promise<T> {
     const config: AxiosRequestConfig = {
       method,
       params: parameters,

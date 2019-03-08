@@ -13,12 +13,10 @@ import {AbsenceIO} from 'absence.io';
 
 const absenceIO = new AbsenceIO({
   apiKey: '<your API key here>',
-  apiKeyId: '<your API key ID here>'
+  apiKeyId: '<your API key ID here>',
 });
 
-absenceIO.api.absence.retrieveAbsences()
-  .then(absences => console.log(absences));
-
+absenceIO.api.absence.retrieveAbsences().then(absences => console.log(absences));
 ```
 
 ## Build and test

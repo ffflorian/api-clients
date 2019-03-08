@@ -17,35 +17,32 @@ import {LibrariesIO} from 'libraries.io';
 
 const librariesIO = new LibrariesIO('my-api-key');
 
-librariesIO.api.project.getProject('npm', 'grunt')
-  .then(response => {
-    //
-  })
+librariesIO.api.project.getProject('npm', 'grunt').then(response => {
+  //
+});
 
-librariesIO.api.project.search('grunt', {
+librariesIO.api.project
+  .search('grunt', {
     filter: {
       platforms: ['npm'],
-      licenses: ['MIT']
-    }
+      licenses: ['MIT'],
+    },
   })
   .then(projects => {
     // ...
-  })
+  });
 
-librariesIO.api.github.user.getUser('ffflorian')
-  .then(user => {
-    // ...
-  })
+librariesIO.api.github.user.getUser('ffflorian').then(user => {
+  // ...
+});
 
-librariesIO.api.platform.getPlatforms({page: 2, perPage: 5})
-  .then(platforms => {
-    // ...
-  })
+librariesIO.api.platform.getPlatforms({page: 2, perPage: 5}).then(platforms => {
+  // ...
+});
 
-librariesIO.api.user.subscribe('npm', 'grunt')
-  .then(subscription => {
-    // ...
-  })
+librariesIO.api.user.subscribe('npm', 'grunt').then(subscription => {
+  // ...
+});
 ```
 
 ## Build and test

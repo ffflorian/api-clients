@@ -26,7 +26,6 @@
     "prefer-const": true,
     "prefer-object-spread": true,
     "prefer-readonly": true,
-    "prefer-template": true,
     "prettier": true,
     "space-within-parens": [true, 0]
   },

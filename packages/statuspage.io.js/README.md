@@ -17,10 +17,9 @@ import {StatusPage} from 'statuspage.io';
 
 const statusPage = new StatusPage('https://example.com');
 
-statusPage.api.incidents.getAll()
-  .then(response => {
-    //
-  })
+statusPage.api.incidents.getAll().then(response => {
+  //
+});
 ```
 
 ## Build and test
