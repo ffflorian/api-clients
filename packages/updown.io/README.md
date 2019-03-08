@@ -17,15 +17,13 @@ import {UpdownIO} from 'updown.io';
 
 const updownIO = new UpdownIO('my-api-key'); // API key is only required for checks
 
-UpdownIO.api.checks.getChecks()
-  .then(checks => {
-    //
-  })
+UpdownIO.api.checks.getChecks().then(checks => {
+  //
+});
 
-updownIO.api.nodes.getNodes()
-  .then(nodes => {
-    // ...
-  })
+updownIO.api.nodes.getNodes().then(nodes => {
+  // ...
+});
 ```
 
 ## Build and test

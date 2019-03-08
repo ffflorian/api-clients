@@ -1,5 +1,5 @@
-import {UpdownIO} from '../src';
 import * as nock from 'nock';
+import {UpdownIO} from '../src';
 
 describe('RequestService', () => {
   let updownIO: UpdownIO;

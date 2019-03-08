@@ -19,7 +19,7 @@ action "Lint" {
   uses = "docker://node:10"
   needs = ["Boot"]
   runs = "yarn"
-  args = "lint"
+  args = "lint:ts"
 }
 
 action "Dist" {
