@@ -11,8 +11,15 @@ Run `yarn add @ffflorian/api-client` or `npm install @ffflorian/api-client`.
 ```ts
 import {APIClient} from '@ffflorian/api-client';
 
-const apiClient = new APIClient();
-...
+const apiClient = new APIClient('https://my-api.io/api/v1');
+
+apiClient.requestService.get('/endpoint', {
+  headers: {
+    'Authorization': 'my-api-key',
+  },
+}).then(data => {
+  ...
+})
 ```
 
 ## Build
