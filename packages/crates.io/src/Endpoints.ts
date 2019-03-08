@@ -27,10 +27,6 @@ export namespace Endpoint {
       return `/${CRATES}`;
     }
 
-    export function dependants(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${REVERSE_DEPENDENCIES}`;
-    }
-
     export function dependencies(packageName: string): string {
       return `/${CRATES}/${encode(packageName)}/${DEPENDENCIES}`;
     }
@@ -57,6 +53,10 @@ export namespace Endpoint {
 
     export function ownerUser(packageName: string): string {
       return `/${CRATES}/${encode(packageName)}/${OWNER_USER}`;
+    }
+
+    export function reverseDependencies(packageName: string): string {
+      return `/${CRATES}/${encode(packageName)}/${REVERSE_DEPENDENCIES}`;
     }
 
     export function version(packageName: string, version: string): string {

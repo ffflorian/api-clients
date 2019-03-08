@@ -100,7 +100,7 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
-    const endpoint = Endpoint.Crates.dependants(packageName);
+    const endpoint = Endpoint.Crates.reverseDependencies(packageName);
     return this.requestService.get(endpoint);
   }
 
