@@ -1,13 +1,13 @@
 import {RequestService} from './RequestService';
 
-interface Options {
+export interface ClientOptions {
   apiUrl: string;
 }
 
 export class APIClient {
   public readonly requestService: RequestService;
 
-  constructor(options: Options) {
+  constructor(options: ClientOptions) {
     this.requestService = new RequestService(options.apiUrl);
   }
 

@@ -1,44 +1,81 @@
 import axios, {AxiosRequestConfig} from 'axios';
-import {HTTP_STATUS} from 'http-status-codes';
+import * as HTTP_STATUS from 'http-status-codes';
 
 import {ExceptionMapper, InvalidResponseError} from './APIException';
-import {HttpMethod} from './interfaces/';
+
+enum HttpMethod {
+  DELETE = 'delete',
+  GET = 'get',
+  HEAD = 'head',
+  OPTIONS = 'options',
+  PATCH = 'patch',
+  POST = 'post',
+  PUT = 'put',
+}
 
 export class RequestService {
   constructor(private apiUrl: string) {}
 
   public delete<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.DELETE, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.DELETE,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public get<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.GET, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.GET,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public head<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.HEAD, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.HEAD,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public options<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.OPTIONS, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.OPTIONS,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public patch<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.PATCH, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.PATCH,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public post<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.POST, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.POST,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
   public put<T>(url: string, additionalOptions?: AxiosRequestConfig): Promise<T> {
-    const config = {method: HttpMethod.PUT, url: this.apiUrl + url, ...(!!additionalOptions && additionalOptions)};
+    const config = {
+      method: HttpMethod.PUT,
+      url: this.apiUrl + url,
+      ...(!!additionalOptions && additionalOptions),
+    };
     return this.request<T>(config);
   }
 
