@@ -37,5 +37,5 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.ts\"",
     "test": "yarn dist"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

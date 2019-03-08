@@ -47,5 +47,5 @@
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.ts\"",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "0.0.1"
+  "version": "0.1.0"
 }
