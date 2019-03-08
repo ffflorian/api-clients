@@ -1,11 +1,11 @@
-import {CratesAPI} from './api/';
+import {APIClient} from '@ffflorian/api-client';
+import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
-import {API, ClientOptions, Summary} from './interfaces/';
-import {RequestService} from './RequestService';
+import {API, ClientOptions, Summary} from './interfaces';
 
 export class CratesIO {
-  private readonly requestService: RequestService;
   public readonly api: API;
+  private readonly apiClient: APIClient;
 
   constructor(apiKey?: string);
   constructor(options?: ClientOptions);
@@ -14,10 +14,12 @@ export class CratesIO {
       options = {apiKey: options};
     }
 
-    this.requestService = new RequestService(options);
+    this.apiClient = new APIClient({
+      apiUrl: 'https://crates.io/api/v1',
+    });
 
     this.api = {
-      crates: new CratesAPI(this.requestService),
+      crates: new CratesAPI(this.apiClient),
     };
   }
 
@@ -26,7 +28,7 @@ export class CratesIO {
    */
   public summary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -34,6 +36,6 @@ export class CratesIO {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.setApiUrl(newUrl);
   }
 }
