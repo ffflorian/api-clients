@@ -7,7 +7,13 @@ export interface ClientOptions {
 export class APIClient {
   public readonly requestService: RequestService;
 
-  constructor(options: ClientOptions) {
+  constructor(apiUrl: string);
+  constructor(options: ClientOptions);
+  constructor(options: ClientOptions | string) {
+    if (typeof options === 'string') {
+      options = {apiUrl: options};
+    }
+
     this.requestService = new RequestService(options.apiUrl);
   }
 
