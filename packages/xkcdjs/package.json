@@ -14,14 +14,8 @@
     "@types/nock": "9.3.1",
     "jasmine": "3.3.1",
     "nock": "10.0.6",
-    "prettier": "1.16.4",
     "rimraf": "2.6.3",
-    "touch": "3.1.0",
     "ts-node": "8.0.3",
-    "tslint": "5.13.1",
-    "tslint-config-prettier": "1.18.0",
-    "tslint-plugin-prettier": "2.0.1",
-    "typedoc": "0.14.2",
     "typescript": "3.3.3333"
   },
   "files": [
@@ -39,15 +33,8 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs",
   "scripts": {
     "build": "tsc",
-    "build:docs": "typedoc",
-    "clear": "rimraf dist",
-    "clear:docs": "rimraf docs",
-    "dist": "yarn clear && yarn build",
-    "dist:docs": "yarn clear:docs && yarn build:docs && nodetouch docs/.nojekyll",
-    "lint": "yarn lint:ts && yarn lint:other",
-    "lint:other": "yarn prettier --list-different",
-    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.ts\"",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
   "version": "1.4.0"
