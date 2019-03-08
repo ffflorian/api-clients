@@ -16,7 +16,13 @@ import {
 } from '../interfaces/';
 
 export class CratesAPI {
-  constructor(private readonly apiClient: APIClient) {}
+  private readonly apiClient: APIClient;
+  private apiKey?: string;
+
+  constructor(apiClient: APIClient, apiKey?: string) {
+    this.apiClient = apiClient;
+    this.apiKey = apiKey;
+  }
 
   /**
    * Retrieve the owners of a crate.
@@ -24,7 +30,17 @@ export class CratesAPI {
    */
   public following(packageName: string): Promise<FollowingResult> {
     const endpoint = Endpoint.Crates.following(packageName);
-    return this.apiClient.requestService.get(endpoint);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    return this.apiClient.requestService.get(endpoint, additionalConfig);
   }
 
   /**
@@ -52,7 +68,15 @@ export class CratesAPI {
    */
   public getCrates(query: string, options?: SearchOptions): Promise<SearchResult> {
     const endpoint = Endpoint.Crates.crates();
-    return this.apiClient.requestService.get(endpoint, {...options, query});
+
+    const additionalConfig = {
+      params: {
+        ...options,
+        query,
+      }
+    };
+
+    return this.apiClient.requestService.get(endpoint, additionalConfig);
   }
 
   /**
@@ -134,5 +158,13 @@ export class CratesAPI {
   public getVersions(packageName: string): Promise<{versions: Version[]}> {
     const endpoint = Endpoint.Crates.versions(packageName);
     return this.apiClient.requestService.get(endpoint);
+  }
+
+  /**
+   * Set a new API key.
+   * @param apiKey The API key
+   */
+  public setApiKey(apiKey: string): void {
+    this.apiKey = apiKey;
   }
 }

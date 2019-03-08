@@ -6,12 +6,15 @@ import {API, ClientOptions, Summary} from './interfaces';
 export class CratesIO {
   public readonly api: API;
   private readonly apiClient: APIClient;
+  private options: ClientOptions;
 
   constructor(apiKey?: string);
   constructor(options?: ClientOptions);
   constructor(options?: ClientOptions | string) {
     if (typeof options === 'string') {
-      options = {apiKey: options};
+      this.options = {apiKey: options};
+    } else {
+      this.options = options || {};
     }
 
     this.apiClient = new APIClient({
@@ -37,5 +40,14 @@ export class CratesIO {
    */
   public setApiUrl(newUrl: string): void {
     this.apiClient.setApiUrl(newUrl);
+  }
+
+  /**
+   * Set a new API key.
+   * @param apiKey The API key
+   */
+  public setApiKey(apiKey: string): void {
+    this.options.apiKey = apiKey;
+    this.api.crates.setApiKey(apiKey);
   }
 }
