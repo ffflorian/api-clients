@@ -1,0 +1,42 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "description": "API clients for various services.",
+  "devDependencies": {
+    "husky": "1.3.1",
+    "lerna": "3.13.1",
+    "lint-staged": "8.1.5",
+    "prettier": "1.16.4",
+    "tslint": "5.13.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "tslint --config tslint.json --project tsconfig.json --fix",
+      "git add"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "boot": "lerna bootstrap --reject-cycles",
+    "clean": "lerna run clean",
+    "dist": "yarn clean && lerna run dist",
+    "fix": "yarn fix:other && yarn fix:ts",
+    "fix:other": "yarn prettier --write",
+    "fix:ts": "yarn lint:ts --fix",
+    "lint": "yarn lint:other && yarn lint:ts",
+    "lint:other": "yarn prettier --list-different",
+    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
+    "prettier": "prettier \"**/*.{json,md,yml}\"",
+    "release": "lerna publish",
+    "test": "yarn && yarn lint:js && yarn lint:ts && yarn lint:other",
+    "test:all": "yarn && yarn dist && yarn lint && lerna run test"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
