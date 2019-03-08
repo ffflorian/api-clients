@@ -1,0 +1,37 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "axios": "0.18.0"
+  },
+  "description": "An updown.io API client",
+  "devDependencies": {
+    "@types/jasmine": "3.3.9",
+    "@types/nock": "9.3.1",
+    "@types/node": "11.10.5",
+    "jasmine": "3.3.1",
+    "nock": "10.0.6",
+    "rimraf": "2.6.3",
+    "ts-node": "8.0.3",
+    "typescript": "3.3.3333"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "updown.io",
+    "updown",
+    "updownio"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "updown.io",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/updown.io",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "version": "1.1.2"
+}
