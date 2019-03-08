@@ -33,8 +33,8 @@
     "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
     "prettier": "prettier \"**/*.{json,md,yml}\"",
     "release": "lerna publish",
-    "test": "yarn && yarn lint:js && yarn lint:ts && yarn lint:other",
-    "test:all": "yarn && yarn dist && yarn lint && lerna run test"
+    "test": "yarn lint:js && yarn lint:ts && yarn lint:other",
+    "test:all": "yarn lint && lerna run test"
   },
   "workspaces": [
     "packages/*"
