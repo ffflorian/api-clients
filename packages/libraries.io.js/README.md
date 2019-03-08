@@ -1,4 +1,4 @@
-# libraries.io.js [![npm version](https://img.shields.io/npm/v/libraries.io.svg?style=flat)](https://www.npmjs.com/package/libraries.io) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/libraries.io.js)](https://dependabot.com)
+# libraries.io.js [![npm version](https://img.shields.io/npm/v/libraries.io.svg?style=flat)](https://www.npmjs.com/package/libraries.io)
 
 A [libraries.io](https://libraries.io) API client. For a documentation on the API see https://libraries.io/api.
 

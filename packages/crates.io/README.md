@@ -1,4 +1,4 @@
-# crates.io.js [![npm version](https://img.shields.io/npm/v/crates.io.svg?style=flat)](https://www.npmjs.com/package/crates.io) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/crates.io.js)](https://dependabot.com)
+# crates.io.js [![npm version](https://img.shields.io/npm/v/crates.io.svg?style=flat)](https://www.npmjs.com/package/crates.io)
 
 A [crates.io](https://crates.io) API client.
 

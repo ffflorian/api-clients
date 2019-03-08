@@ -1,4 +1,4 @@
-# xkcdjs [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/xkcdjs) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/xkcdjs)](https://dependabot.com)
+# xkcdjs [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg?style=flat)](https://www.npmjs.com/package/@ffflorian/xkcdjs)
 
 An [xkcd](https://xkcd.com) API client with a CLI.
 
