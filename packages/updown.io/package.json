@@ -10,7 +10,6 @@
     "@types/node": "11.10.5",
     "jasmine": "3.3.1",
     "nock": "10.0.6",
-    "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "ts-node": "8.0.3",
     "typescript": "3.3.3333"
@@ -31,7 +30,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "dist": "yarn clear && yarn build",
+    "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
   "version": "1.1.2"
