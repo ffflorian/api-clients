@@ -1,4 +1,4 @@
-# xkcdjs [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg.svg)](https://www.npmjs.com/package/@ffflorian/xkcdjs)
+# xkcdjs [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg)](https://www.npmjs.com/package/@ffflorian/xkcdjs)
 
 An [xkcd](https://xkcd.com) API client with a CLI.
 
