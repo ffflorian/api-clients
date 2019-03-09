@@ -1,4 +1,4 @@
-# libraries.io.js [![npm version](https://img.shields.io/npm/v/libraries.io.svg.svg)](https://www.npmjs.com/package/libraries.io)
+# libraries.io.js [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 
 A [libraries.io](https://libraries.io) API client. For a documentation on the API see https://libraries.io/api.
 
