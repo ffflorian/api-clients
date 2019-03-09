@@ -1,2 +1,2 @@
 export * from './API';
-export * from './Options';
+export * from './ClientOptions';

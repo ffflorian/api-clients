@@ -1,17 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
+import {ClientOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class AbsenceAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
+export class AbsenceAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
@@ -19,42 +14,42 @@ export class AbsenceAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 
   /**
    * Create absences
    */
   public createAbsence(): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 
   /**
    * Retrieve an absence
    */
   public retrieveAbsence(id: string): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 
   /**
    * Retrieve absences
    */
   public retrieveAbsences(): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 
   /**
    * Update an existing absence
    */
   public updateAbsence(id: string): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.requestService.put(endpoint);
+    return this.apiClient.requestService.put(endpoint);
   }
 }

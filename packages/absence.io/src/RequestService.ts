@@ -1,9 +1,6 @@
 import axios, {AxiosRequestConfig} from 'axios';
 const hawk = require('hawk');
 
-import {ExceptionMapper, InvalidResponseError} from './APIException';
-import {ClientOptions, HttpMethod, RequestOptions} from './interfaces/';
-
 export class RequestService {
   private apiUrl = 'https://app.absence.io/api/v2';
   private readonly apiKey: string;
