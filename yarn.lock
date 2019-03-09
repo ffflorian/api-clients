@@ -703,7 +703,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/node@*", "@types/node@11.10.5":
+"@types/node@*":
+  version "11.11.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-11.11.0.tgz#070e9ce7c90e727aca0e0c14e470f9a93ffe9390"
+  integrity sha512-D5Rt+HXgEywr3RQJcGlZUCTCx1qVbCZpVk3/tOOA6spLNZdGm8BU+zRgdRYDoF1pO3RuXLxADzMrF903JlQXqg==
+
+"@types/node@11.10.5":
   version "11.10.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-11.10.5.tgz#fbaca34086bdc118011e1f05c47688d432f2d571"
   integrity sha512-DuIRlQbX4K+d5I+GMnv+UfnGh+ist0RdlvOp+JZ7ePJ6KQONCFQv/gKYSU1ZzbVdFSUCKZOltjmpFAGGv5MdYA==
@@ -721,7 +726,7 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-agent-base@4, agent-base@^4.1.0, agent-base@~4.2.0:
+agent-base@4, agent-base@^4.1.0, agent-base@~4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.2.1.tgz#d89e5999f797875674c07d87f260fc41e83e8ca9"
   integrity sha512-JVwXMr9nHYTUXsBFKUqhJwvlcYU/blreOEUkhNR2eXZIvwd+c+o5V4MgDPKWnMS/56awN3TRzIP+KoPn+roQtg==
@@ -4507,17 +4512,17 @@ sntp@3.x.x:
     teamwork "3.x.x"
 
 socks-proxy-agent@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-4.0.1.tgz#5936bf8b707a993079c6f37db2091821bffa6473"
-  integrity sha512-Kezx6/VBguXOsEe5oU3lXYyKMi4+gva72TwJ7pQY5JfqUx2nMk7NXA6z/mpNqIlfQjWYVfeuNvQjexiTaTn6Nw==
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/socks-proxy-agent/-/socks-proxy-agent-4.0.2.tgz#3c8991f3145b2799e70e11bd5fbc8b1963116386"
+  integrity sha512-NT6syHhI9LmuEMSK6Kd2V7gNv5KFZoLE7V5udWmn0de+3Mkj3UMA/AJPLyeNUVmElCurSHtUdM3ETpR3z770Wg==
   dependencies:
-    agent-base "~4.2.0"
-    socks "~2.2.0"
+    agent-base "~4.2.1"
+    socks "~2.3.2"
 
-socks@~2.2.0:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/socks/-/socks-2.2.3.tgz#7399ce11e19b2a997153c983a9ccb6306721f2dc"
-  integrity sha512-+2r83WaRT3PXYoO/1z+RDEBE7Z2f9YcdQnJ0K/ncXXbV5gJ6wYfNAebYFYiiUjM6E4JyXnPY8cimwyvFYHVUUA==
+socks@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/socks/-/socks-2.3.2.tgz#ade388e9e6d87fdb11649c15746c578922a5883e"
+  integrity sha512-pCpjxQgOByDHLlNqlnh/mNSAxIUkyBBuwwhTcV+enZGbDaClPvHdvm6uvOwZfFJkam7cGhBNbb4JxiP8UZkRvQ==
   dependencies:
     ip "^1.1.5"
     smart-buffer "4.0.2"
