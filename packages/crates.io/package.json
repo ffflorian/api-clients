@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.0.1"
+    "@ffflorian/api-client": "0.1.0"
   },
   "description": "A crates.io API client",
   "devDependencies": {
@@ -28,5 +28,5 @@
     "dist": "yarn clean && yarn build",
     "test": "exit 0"
   },
-  "version": "0.2.1"
+  "version": "0.3.0"
 }
