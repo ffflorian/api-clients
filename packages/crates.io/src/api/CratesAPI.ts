@@ -73,7 +73,7 @@ export class CratesAPI {
       params: {
         ...options,
         query,
-      }
+      },
     };
 
     return this.apiClient.requestService.get(endpoint, additionalConfig);
