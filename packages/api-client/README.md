@@ -1,4 +1,4 @@
-# api-client [![npm version](https://img.shields.io/npm/v/@ffflorian/api-client?style=flat)](https://www.npmjs.com/package/@ffflorian/api-client)
+# api-client [![npm version](https://img.shields.io/npm/v/@ffflorian/api-client.svg)](https://www.npmjs.com/package/@ffflorian/api-client)
 
 A generic API client.
 
