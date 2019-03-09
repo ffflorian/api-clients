@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "axios": "0.18.0"
+    "@ffflorian/api-client": "0.0.1"
   },
   "description": "A crates.io API client",
   "devDependencies": {
