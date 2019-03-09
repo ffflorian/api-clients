@@ -30,6 +30,6 @@
     "space-within-parens": [true, 0]
   },
   "linterOptions": {
-    "exclude": ["dist/**", "node_modules/**"]
+    "exclude": ["**/dist/**", "**/node_modules/**"]
   }
 }
