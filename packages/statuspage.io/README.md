@@ -1,4 +1,4 @@
-# statuspage.io.js [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
+# statuspage.io [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 
 A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see https://doers.statuspage.io/.
 
