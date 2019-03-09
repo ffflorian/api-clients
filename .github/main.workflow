@@ -1,37 +1,50 @@
 workflow "Build, lint and test" {
   on = "push"
-  resolves = ["Dist", "Lint", "Test"]
+  resolves = ["Build", "Lint", "Test", "Publish"]
 }
 
 action "Install" {
-  uses = "docker://node:10"
+  uses = "docker://node:10-slim"
   runs = "yarn"
 }
 
 action "Boot" {
-  uses = "docker://node:10"
-  needs = ["Install"]
+  uses = "docker://node:10-slim"
+  needs = "Install"
   runs = "yarn"
   args = "boot"
 }
 
 action "Lint" {
-  uses = "docker://node:10"
-  needs = ["Boot"]
+  uses = "docker://node:10-slim"
+  needs = "Boot"
   runs = "yarn"
   args = "lint"
 }
 
-action "Dist" {
-  uses = "docker://node:10"
-  needs = ["Boot"]
+action "Build" {
+  uses = "docker://node:10-slim"
+  needs = "Boot"
   runs = "yarn"
   args = "dist"
 }
 
 action "Test" {
-  uses = "docker://node:10"
-  needs = ["Boot"]
+  uses = "docker://node:10-slim"
+  needs = "Boot"
   runs = "yarn"
   args = "test"
+}
+
+action "Master" {
+  uses = "actions/bin/filter@master"
+  needs = ["Build", "Lint", "Test"]
+  args = "branch master"
+}
+
+action "Publish" {
+  uses = "./.github/actions/lerna"
+  needs = "Master"
+  args = ["publish"]
+  secrets = ["NPM_AUTH_TOKEN", "GH_TOKEN"]
 }
