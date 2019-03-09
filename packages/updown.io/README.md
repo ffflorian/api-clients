@@ -1,4 +1,4 @@
-# updown.io.js [![npm version](https://img.shields.io/npm/v/updown.io.svg.svg)](https://www.npmjs.com/package/updown.io)
+# updown.io.js [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
 
 An [updown.io](https://updown.io) API client. For a documentation on the API see https://updown.io/api.
 
