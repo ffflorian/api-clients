@@ -1,3 +1,2 @@
-export * from './APIClient';
-export * from './APIException';
+export * from './CratesIO';
 export * from './interfaces/';

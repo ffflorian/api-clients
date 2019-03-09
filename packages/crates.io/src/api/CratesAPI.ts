@@ -1,3 +1,4 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
 import {
   AuthorsResult,
@@ -13,13 +14,14 @@ import {
   UsersResult,
   Version,
 } from '../interfaces/';
-import {RequestService} from '../RequestService';
 
 export class CratesAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient;
+  private apiKey?: string;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient, apiKey?: string) {
+    this.apiClient = apiClient;
+    this.apiKey = apiKey;
   }
 
   /**
@@ -28,7 +30,17 @@ export class CratesAPI {
    */
   public following(packageName: string): Promise<FollowingResult> {
     const endpoint = Endpoint.Crates.following(packageName);
-    return this.requestService.get(endpoint);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    return this.apiClient.requestService.get(endpoint, additionalConfig);
   }
 
   /**
@@ -37,7 +49,7 @@ export class CratesAPI {
    */
   public getAuthors(packageName: string, version: string): Promise<AuthorsResult> {
     const endpoint = Endpoint.Crates.authors(packageName, version);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -46,7 +58,7 @@ export class CratesAPI {
    */
   public getCrate(packageName: string): Promise<CrateResult> {
     const endpoint = Endpoint.Crates.crate(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -56,7 +68,15 @@ export class CratesAPI {
    */
   public getCrates(query: string, options?: SearchOptions): Promise<SearchResult> {
     const endpoint = Endpoint.Crates.crates();
-    return this.requestService.get(endpoint, {...options, query});
+
+    const additionalConfig = {
+      params: {
+        ...options,
+        query,
+      },
+    };
+
+    return this.apiClient.requestService.get(endpoint, additionalConfig);
   }
 
   /**
@@ -65,7 +85,7 @@ export class CratesAPI {
    */
   public getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
     const endpoint = Endpoint.Crates.download(packageName, version);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -74,7 +94,7 @@ export class CratesAPI {
    */
   public getDependencies(packageName: string): Promise<DependenciesResult> {
     const endpoint = Endpoint.Crates.dependencies(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -83,7 +103,7 @@ export class CratesAPI {
    */
   public getDownloads(packageName: string): Promise<DownloadsResult> {
     const endpoint = Endpoint.Crates.downloads(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -92,7 +112,7 @@ export class CratesAPI {
    */
   public getOwners(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.owners(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -101,7 +121,7 @@ export class CratesAPI {
    */
   public getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
     const endpoint = Endpoint.Crates.reverseDependencies(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -110,7 +130,7 @@ export class CratesAPI {
    */
   public getTeamOwner(packageName: string): Promise<TeamsResult> {
     const endpoint = Endpoint.Crates.ownerTeam(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -119,7 +139,7 @@ export class CratesAPI {
    */
   public getUserOwner(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.ownerUser(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -128,7 +148,7 @@ export class CratesAPI {
    */
   public getVersion(packageName: string, version: string): Promise<Version> {
     const endpoint = Endpoint.Crates.version(packageName, version);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -137,6 +157,14 @@ export class CratesAPI {
    */
   public getVersions(packageName: string): Promise<{versions: Version[]}> {
     const endpoint = Endpoint.Crates.versions(packageName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  /**
+   * Set a new API key.
+   * @param apiKey The API key
+   */
+  public setApiKey(apiKey: string): void {
+    this.apiKey = apiKey;
   }
 }
