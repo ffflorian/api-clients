@@ -1,56 +1,65 @@
 workflow "Build, lint and test" {
   on = "push"
-  resolves = ["Build", "Lint", "Test", "Publish"]
+  resolves = [
+    "Build all projects",
+    "Lint all projects",
+    "Test all projects",
+    "Publish all projects"
+  ]
 }
 
-action "Install" {
+action "Don't skip CI" {
+  uses = "ffflorian/actions/last_commit@master"
+  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
+}
+
+action "Install dependencies" {
   uses = "docker://node:10-slim"
+  needs = "Don't skip CI"
   runs = "yarn"
 }
 
-action "Boot" {
+action "Bootstrap projects" {
   uses = "docker://node:10-slim"
-  needs = "Install"
+  needs = "Install dependencies"
   runs = "yarn"
   args = "boot"
 }
 
-action "Lint" {
+action "Lint all projects" {
   uses = "docker://node:10-slim"
-  needs = "Boot"
+  needs = "Bootstrap projects"
   runs = "yarn"
   args = "lint"
 }
 
-action "Build" {
+action "Build all projects" {
   uses = "docker://node:10-slim"
-  needs = "Boot"
+  needs = "Bootstrap projects"
   runs = "yarn"
   args = "dist"
 }
 
-action "Test" {
+action "Test all projects" {
   uses = "docker://node:10-slim"
-  needs = "Boot"
+  needs = "Bootstrap projects"
   runs = "yarn"
   args = "test"
 }
 
-action "Master" {
+action "Check for master branch" {
   uses = "actions/bin/filter@master"
-  needs = ["Build", "Lint", "Test"]
+  needs = [
+    "Build all projects",
+    "Lint all projects",
+    "Test all projects"
+  ]
   args = "branch master"
 }
 
-action "Last Commit" {
-  uses = "ffflorian/actions/last_commit@master"
-  needs = "Master"
-  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
-}
-
-action "Publish" {
+action "Publish all projects" {
   uses = "ffflorian/actions/lerna@master"
-  needs = "Last Commit"
+  needs = "Check for master branch"
   env = {
     GH_USER = "ffflobot"
   }
