@@ -57,9 +57,15 @@ action "Check for master branch" {
   args = "branch master"
 }
 
+action "Don't publish dependency updates" {
+  uses = "ffflorian/actions/last_commit@master"
+  needs = "Check for master branch"
+  args = "^(?!chore\\(deps)"
+}
+
 action "Publish all projects" {
   uses = "ffflorian/actions/lerna@master"
-  needs = "Check for master branch"
+  needs = "Don't publish dependency updates"
   env = {
     GH_USER = "ffflobot"
   }
