@@ -42,9 +42,18 @@ action "Master" {
   args = "branch master"
 }
 
-action "Publish" {
-  uses = "./.github/actions/lerna"
+action "Last Commit" {
+  uses = "ffflorian/actions/last_commit@master"
   needs = "Master"
-  args = ["publish"]
+  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
+}
+
+action "Publish" {
+  uses = "ffflorian/actions/lerna@master"
+  needs = "Last Commit"
+  env = {
+    GH_USER = "ffflobot"
+  }
+  args = "publish"
   secrets = ["NPM_AUTH_TOKEN", "GH_TOKEN"]
 }
