@@ -1,0 +1,49 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "@types/node": "11.11.0",
+    "axios": "0.18.0"
+  },
+  "description": "A c3nav API client",
+  "devDependencies": {
+    "@types/jasmine": "3.3.9",
+    "jasmine": "3.3.1",
+    "nock": "10.0.6",
+    "prettier": "1.16.4",
+    "rimraf": "2.6.3",
+    "touch": "3.1.0",
+    "ts-node": "8.0.3",
+    "tslint": "5.13.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "typedoc": "0.14.2",
+    "typescript": "3.3.3333"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "c3nav",
+    "ccc"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "c3nav",
+  "repository": "https://github.com/ffflorian/c3nav.js.git",
+  "scripts": {
+    "build": "tsc",
+    "build:docs": "typedoc --out docs/ --mode modules --excludePrivate --excludeExternals --exclude \"**/*(index|Endpoints|RequestService).ts\"",
+    "clear": "rimraf dist",
+    "clear:docs": "rimraf docs",
+    "dist": "yarn clear && yarn build",
+    "dist:docs": "yarn clear:docs && yarn build:docs && nodetouch docs/.nojekyll",
+    "lint": "yarn lint:ts && yarn lint:other",
+    "lint:other": "yarn prettier --list-different",
+    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.ts\"",
+    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+  },
+  "types": "dist/index.d.ts",
+  "version": "1.2.1"
+}
