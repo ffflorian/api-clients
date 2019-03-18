@@ -2,7 +2,7 @@
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
     "axios": "0.18.0",
-    "http-status-codes": "1.3.1"
+    "http-status-codes": "1.3.2"
   },
   "description": "A crates.io API client",
   "devDependencies": {
