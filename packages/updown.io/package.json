@@ -5,7 +5,7 @@
   },
   "description": "An updown.io API client",
   "devDependencies": {
-    "@types/jasmine": "3.3.9",
+    "@types/jasmine": "3.3.10",
     "@types/nock": "9.3.1",
     "@types/node": "11.11.3",
     "jasmine": "3.3.1",
