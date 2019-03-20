@@ -5,14 +5,14 @@
   },
   "description": "An updown.io API client",
   "devDependencies": {
-    "@types/jasmine": "3.3.9",
+    "@types/jasmine": "3.3.12",
     "@types/nock": "9.3.1",
-    "@types/node": "11.10.5",
+    "@types/node": "11.11.4",
     "jasmine": "3.3.1",
     "nock": "10.0.6",
     "rimraf": "2.6.3",
     "ts-node": "8.0.3",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.4000"
   },
   "files": [
     "dist"
@@ -33,5 +33,5 @@
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "1.2.1"
+  "version": "1.2.3"
 }
