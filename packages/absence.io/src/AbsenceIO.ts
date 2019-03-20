@@ -1,4 +1,7 @@
+const hawk = require('hawk');
 import {APIClient} from '@ffflorian/api-client';
+import {AxiosRequestConfig} from 'axios';
+
 import {
   AbsenceAPI,
   AllowanceTypeAPI,
@@ -18,8 +21,27 @@ export class AbsenceIO {
 
   constructor(options: ClientOptions) {
     this.options = options;
+
+    const credentials = {
+      algorithm: 'sha256',
+      id: this.options.apiKeyId,
+      key: this.options.apiKey,
+    };
+
+    const requestInjector = (config: AxiosRequestConfig) => {
+      const hawkHeader = hawk.client.header(config.url, config.method, {credentials});
+
+      return {
+        ...config,
+        headers: {
+          Authorization: hawkHeader.header,
+        },
+      };
+    };
+
     this.apiClient = new APIClient({
       apiUrl: 'https://app.absence.io/api/v2',
+      requestInjector,
     });
 
     this.api = {
