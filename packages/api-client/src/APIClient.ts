@@ -1,7 +1,10 @@
-import {RequestService} from './RequestService';
+import {InjectorFn, RequestService} from './RequestService';
 
 export interface ClientOptions {
+  /** The API URL (e.g. "https://example.com/api/v1"). */
   apiUrl: string;
+  /** An optional injector which alters every Axios request configuration before the request is sent. */
+  requestInjector?: InjectorFn;
 }
 
 export class APIClient {
@@ -14,7 +17,7 @@ export class APIClient {
       options = {apiUrl: options};
     }
 
-    this.requestService = new RequestService(options.apiUrl);
+    this.requestService = new RequestService(options);
   }
 
   /**
