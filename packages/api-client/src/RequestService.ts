@@ -1,6 +1,7 @@
 import axios, {AxiosRequestConfig} from 'axios';
 import * as HTTP_STATUS from 'http-status-codes';
 
+import {ClientOptions} from './APIClient';
 import {ExceptionMapper, InvalidResponseError} from './APIException';
 
 export type InjectorFn = (baseConfig: AxiosRequestConfig) => AxiosRequestConfig;
@@ -16,13 +17,13 @@ enum HttpMethod {
 }
 
 export class RequestService {
-  constructor(private apiUrl: string) {}
+  constructor(private readonly config: ClientOptions) {}
 
   public delete<T>(url: string, optionsOrInjector?: AxiosRequestConfig | InjectorFn): Promise<T> {
     const config = this.injectConfig(
       {
         method: HttpMethod.DELETE,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -34,7 +35,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.GET,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -46,7 +47,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.HEAD,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -58,7 +59,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.OPTIONS,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -70,7 +71,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.PATCH,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -82,7 +83,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.POST,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -94,7 +95,7 @@ export class RequestService {
     const config = this.injectConfig(
       {
         method: HttpMethod.PUT,
-        url: this.apiUrl + url,
+        url: this.config.apiUrl + url,
       },
       optionsOrInjector
     );
@@ -103,7 +104,7 @@ export class RequestService {
   }
 
   public setApiUrl(apiUrl: string): void {
-    this.apiUrl = apiUrl;
+    this.config.apiUrl = apiUrl;
   }
 
   private injectConfig(
@@ -114,10 +115,18 @@ export class RequestService {
       return optionsOrInjector(baseConfig);
     }
 
-    return {
-      ...baseConfig,
-      ...(!!optionsOrInjector && optionsOrInjector),
-    };
+    if (typeof this.config.requestInjector === 'function') {
+      baseConfig = this.config.requestInjector(baseConfig);
+    }
+
+    if (typeof optionsOrInjector !== 'undefined') {
+      return {
+        ...baseConfig,
+        ...(!!optionsOrInjector && optionsOrInjector),
+      };
+    }
+
+    return baseConfig;
   }
 
   private async request<T>(config: AxiosRequestConfig): Promise<T> {

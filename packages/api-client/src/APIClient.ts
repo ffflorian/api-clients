@@ -1,7 +1,8 @@
-import {RequestService} from './RequestService';
+import {InjectorFn, RequestService} from './RequestService';
 
 export interface ClientOptions {
   apiUrl: string;
+  requestInjector?: InjectorFn;
 }
 
 export class APIClient {
@@ -14,7 +15,7 @@ export class APIClient {
       options = {apiUrl: options};
     }
 
-    this.requestService = new RequestService(options.apiUrl);
+    this.requestService = new RequestService(options);
   }
 
   /**
