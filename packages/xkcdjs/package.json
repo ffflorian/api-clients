@@ -4,7 +4,7 @@
     "xkcdjs": "dist/cli.js"
   },
   "dependencies": {
-    "@types/node": "11.11.3",
+    "@types/node": "11.11.4",
     "axios": "0.18.0",
     "commander": "2.19.0"
   },
