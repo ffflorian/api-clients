@@ -13,13 +13,15 @@ import {APIClient} from '@ffflorian/api-client';
 
 const apiClient = new APIClient('https://example.com/api/v1');
 
-apiClient.requestService.get('/endpoint', {
-  headers: {
-    'Authorization': 'my-api-key',
-  },
-}).then(data => {
-  ...
-})
+apiClient.requestService
+  .get('/endpoint', {
+    headers: {
+      Authorization: 'my-api-key',
+    },
+  })
+  .then(data => {
+    // ...
+  });
 ```
 
 ```ts
@@ -34,17 +36,13 @@ const apiClient = new APIClient({
       headers: {
         Authorization: hawkHeader.header,
       },
-    }
-  }
+    };
+  },
 });
 
-apiClient.requestService.get('/endpoint', {
-  headers: {
-    'Authorization': 'my-api-key',
-  },
-}).then(data => {
-  ...
-})
+apiClient.requestService.get('/endpoint').then(data => {
+  // ...
+});
 ```
 
 ## Build
