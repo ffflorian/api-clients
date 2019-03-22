@@ -5,7 +5,7 @@
   },
   "description": "A crates.io API client",
   "devDependencies": {
-    "@types/node": "11.11.4",
+    "@types/node": "11.11.5",
     "rimraf": "2.6.3",
     "typescript": "3.3.4000"
   },
