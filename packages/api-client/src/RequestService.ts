@@ -16,10 +16,10 @@ enum HttpMethod {
   PUT = 'put',
 }
 
-export class RequestService {
+export class RequestService<T> {
   constructor(private readonly config: ClientOptions) {}
 
-  public delete<T>(url: string, optionsOrInjector?: AxiosRequestConfig | InjectorFn): Promise<T> {
+  public delete<U>(url: string, optionsOrInjector?: AxiosRequestConfig | InjectorFn): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.DELETE,
@@ -28,10 +28,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public get<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public get<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.GET,
@@ -40,10 +40,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public head<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public head<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.HEAD,
@@ -52,10 +52,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public options<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public options<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.OPTIONS,
@@ -64,10 +64,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public patch<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public patch<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.PATCH,
@@ -76,10 +76,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public post<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public post<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.POST,
@@ -88,10 +88,10 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
-  public put<T>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<T> {
+  public put<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
     const config = this.injectConfig(
       {
         method: HttpMethod.PUT,
@@ -100,7 +100,7 @@ export class RequestService {
       optionsOrInjector
     );
 
-    return this.request<T>(config);
+    return this.request<U>(config);
   }
 
   public setApiUrl(apiUrl: string): void {
@@ -129,9 +129,9 @@ export class RequestService {
     return baseConfig;
   }
 
-  private async request<T>(config: AxiosRequestConfig): Promise<T> {
+  private async request<U>(config: AxiosRequestConfig): Promise<U> {
     try {
-      const {data, headers, status} = await axios.request<T>(config);
+      const {data, headers, status} = await axios.request<U>(config);
       const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;
 
       if (contentType) {

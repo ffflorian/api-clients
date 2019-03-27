@@ -34,7 +34,7 @@ export class UserAPI extends APIBase {
   public retrieveUser(id: string): Promise<any> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 
   /**
@@ -43,6 +43,6 @@ export class UserAPI extends APIBase {
   public retrieveUsers(): Promise<any> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }

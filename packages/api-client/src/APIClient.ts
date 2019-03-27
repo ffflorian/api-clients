@@ -7,8 +7,8 @@ export interface ClientOptions {
   requestInjector?: InjectorFn;
 }
 
-export class APIClient {
-  public readonly requestService: RequestService;
+export class APIClient<T = any> {
+  public readonly requestService: RequestService<T>;
 
   constructor(apiUrl: string);
   constructor(options: ClientOptions);
@@ -17,7 +17,7 @@ export class APIClient {
       options = {apiUrl: options};
     }
 
-    this.requestService = new RequestService(options);
+    this.requestService = new RequestService<T>(options);
   }
 
   /**

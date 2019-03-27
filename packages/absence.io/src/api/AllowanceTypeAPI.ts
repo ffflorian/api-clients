@@ -24,6 +24,6 @@ export class AllowanceTypeAPI extends APIBase {
   public retrieveAllowanceTypes(): Promise<any> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }
