@@ -1,17 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
+import {ClientOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class ReasonAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
+export class ReasonAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
@@ -19,24 +14,24 @@ export class ReasonAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 
   /**
    * Retrieve a single reason
    */
   public retrieveReason(id: string): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Retrieve reasons
    */
   public retrieveLocations(): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 }

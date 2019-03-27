@@ -1,17 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
+import {ClientOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class TeamAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
+export class TeamAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
@@ -19,24 +14,24 @@ export class TeamAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 
   /**
    * Retrieve a single team
    */
   public retrieveTeam(id: string): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Retrieve teams
    */
   public retrieveTeams(): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 }

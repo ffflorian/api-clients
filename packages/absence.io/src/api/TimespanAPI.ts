@@ -1,17 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
+import {ClientOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class TimespanAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
+export class TimespanAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
@@ -19,24 +14,25 @@ export class TimespanAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 
   /**
    * Retrieve a single time entry
+   * @param id The time entry id
    */
   public retrieveTimespan(id: string): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Query a list of time entries
    */
   public retrieveTimespans(): Promise<any> {
-    this.checkApiKey();
+    this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint);
   }
 }
