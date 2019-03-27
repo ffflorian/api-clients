@@ -33,6 +33,6 @@ export class TimespanAPI extends APIBase {
   public retrieveTimespans(): Promise<any> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }

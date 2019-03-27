@@ -23,7 +23,7 @@ export class AbsenceAPI extends APIBase {
   public createAbsence(): Promise<any> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 
   /**
@@ -32,7 +32,7 @@ export class AbsenceAPI extends APIBase {
   public retrieveAbsence(id: string): Promise<any> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 
   /**
@@ -41,7 +41,7 @@ export class AbsenceAPI extends APIBase {
   public retrieveAbsences(): Promise<any> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 
   /**
@@ -50,6 +50,6 @@ export class AbsenceAPI extends APIBase {
   public updateAbsence(id: string): Promise<any> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.put(endpoint);
+    return this.apiClient.requestService.put(endpoint, {});
   }
 }

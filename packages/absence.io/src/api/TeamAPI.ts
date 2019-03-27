@@ -32,6 +32,6 @@ export class TeamAPI extends APIBase {
   public retrieveTeams(): Promise<any> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }

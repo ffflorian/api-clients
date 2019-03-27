@@ -24,6 +24,6 @@ export class DepartmentAPI extends APIBase {
   public retrieveDepartments(): Promise<any> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }

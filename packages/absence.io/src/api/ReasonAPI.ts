@@ -32,6 +32,6 @@ export class ReasonAPI extends APIBase {
   public retrieveLocations(): Promise<any> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }

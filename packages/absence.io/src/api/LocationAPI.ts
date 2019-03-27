@@ -24,6 +24,6 @@ export class LocationAPI extends APIBase {
   public retrieveLocations(): Promise<any> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {});
   }
 }
