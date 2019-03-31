@@ -32,6 +32,5 @@
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "types": "dist/index.d.ts",
   "version": "1.2.8"
 }
