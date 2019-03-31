@@ -44,7 +44,7 @@ action "Test all projects" {
   uses = "docker://node:10-slim"
   needs = "Bootstrap projects"
   runs = "yarn"
-  args = "test"
+  args = "test:all"
 }
 
 action "Check for master branch" {
