@@ -12,11 +12,11 @@
   },
   "lint-staged": {
     "*.ts": [
-      "tslint --config tslint.json --project tsconfig.json --fix",
+      "tslint --project tsconfig.json --fix",
       "git add"
     ],
-    "*.{json,md,yml}": [
-      "prettier --write",
+    "*.{json,md}": [
+      "yarn prettier --write",
       "git add"
     ]
   },
@@ -31,8 +31,8 @@
     "fix:ts": "yarn lint:ts --fix",
     "lint": "yarn lint:other && yarn lint:ts",
     "lint:other": "yarn prettier --list-different",
-    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "prettier": "prettier \"**/*.{json,md,yml}\"",
+    "lint:ts": "tslint --project tsconfig.json",
+    "prettier": "prettier \"**/*.{json,md,ts}\"",
     "release": "lerna publish",
     "test": "yarn lint:ts && yarn lint:other",
     "test:all": "yarn lint && lerna run test"
