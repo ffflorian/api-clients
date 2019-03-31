@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.3.0",
+    "@ffflorian/api-client": "0.3.1",
     "axios": "0.18.0",
     "hawk": "7.0.10"
   },
@@ -35,5 +35,5 @@
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "0.2.0"
+  "version": "0.2.1"
 }

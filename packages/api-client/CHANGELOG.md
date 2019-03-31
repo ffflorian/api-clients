@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.3.0...@ffflorian/api-client@0.3.1) (2019-03-31)
+
+**Note:** Version bump only for package @ffflorian/api-client
+
+
+
+
+
 # [0.3.0](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.2.0...@ffflorian/api-client@0.3.0) (2019-03-27)
 
 

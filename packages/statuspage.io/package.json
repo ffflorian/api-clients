@@ -29,5 +29,5 @@
     "dist": "yarn clean && yarn build",
     "test": "yarn dist"
   },
-  "version": "1.0.8"
+  "version": "1.0.9"
 }

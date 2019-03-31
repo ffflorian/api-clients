@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.2.0...absence.io@0.2.1) (2019-03-31)
+
+**Note:** Version bump only for package absence.io
+
+
+
+
+
 # [0.2.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.1.5...absence.io@0.2.0) (2019-03-27)
 
 
