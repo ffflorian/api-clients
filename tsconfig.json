@@ -11,8 +11,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "outDir": "dist",
-    "rootDir": "src",
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": true,
