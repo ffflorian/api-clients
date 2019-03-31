@@ -16,7 +16,7 @@
       "git add"
     ],
     "*.{json,md}": [
-      "yarn prettier --write",
+      "prettier --write",
       "git add"
     ]
   },
