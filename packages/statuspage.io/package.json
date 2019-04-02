@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@types/node": "11.12.2",
+    "@types/node": "11.13.0",
     "axios": "0.18.0"
   },
   "description": "A statuspage.io API client",
