@@ -1,12 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../../Endpoints';
-import {LibrariesIOResult, PaginationOptions, Project, RepositoryWithDependencies} from '../../interfaces/';
-import {RequestService} from '../../RequestService';
+import {PaginationOptions, Project, RepositoryWithDependencies, RequestOptions} from '../../interfaces/';
 
 export class GitHubRepositoryAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient) {
+    this.apiClient = apiClient;
   }
 
   /**
@@ -15,12 +15,9 @@ export class GitHubRepositoryAPI {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public getRepository(
-    repositoryOwner: string,
-    repositoryName: string
-  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
+  public getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
     const endpoint = Endpoint.GitHub.Repository.repository(repositoryOwner, repositoryName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -32,9 +29,9 @@ export class GitHubRepositoryAPI {
   public getRepositoryWithDependencies(
     repositoryOwner: string,
     repositoryName: string
-  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
+  ): Promise<RepositoryWithDependencies> {
     const endpoint = Endpoint.GitHub.Repository.dependencies(repositoryOwner, repositoryName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -44,12 +41,8 @@ export class GitHubRepositoryAPI {
    * @param repositoryName The repository name
    * @param options Pagination Options
    */
-  public getProjects(
-    repositoryOwner: string,
-    repositoryName: string,
-    options?: PaginationOptions
-  ): Promise<LibrariesIOResult<Project[]>> {
+  public getProjects(repositoryOwner: string, repositoryName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.Repository.projects(repositoryOwner, repositoryName);
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 }
