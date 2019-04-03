@@ -1,10 +1,8 @@
-import axios, {AxiosRequestConfig} from 'axios';
+import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 import * as HTTP_STATUS from 'http-status-codes';
 
 import {ClientOptions} from './APIClient';
 import {ExceptionMapper, InvalidResponseError} from './APIException';
-
-export type InjectorFn = (baseConfig: AxiosRequestConfig) => AxiosRequestConfig;
 
 enum HttpMethod {
   DELETE = 'delete',
@@ -16,120 +14,128 @@ enum HttpMethod {
   PUT = 'put',
 }
 
-export class RequestService<T> {
-  constructor(private readonly config: ClientOptions) {}
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type AxiosResponseWithoutData<T> = Omit<AxiosResponse<unknown>, 'data'> & T;
+export interface AxiosConfigWithData<T> extends AxiosRequestConfig {
+  data?: T;
+}
+export type RequestInjectorFn<T> = (
+  baseConfig: AxiosConfigWithData<T>
+) => AxiosConfigWithData<T> | Promise<AxiosConfigWithData<T>>;
+export type ResponseInjectorFn<T> = (
+  response: AxiosResponseWithoutData<T>
+) => AxiosResponseWithoutData<T> | Promise<AxiosResponseWithoutData<T>>;
 
-  public delete<U>(url: string, optionsOrInjector?: AxiosRequestConfig | InjectorFn): Promise<U> {
-    const config = this.injectConfig(
+export class RequestService<T> {
+  constructor(private readonly config: ClientOptions<T>) {}
+
+  public async delete<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.DELETE,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public get<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async get<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.GET,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public head<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async head<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.HEAD,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public options<U>(url: string, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async options<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.OPTIONS,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public patch<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async patch<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.PATCH,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public post<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async post<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.POST,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
-  public put<U>(url: string, data: T, optionsOrInjector?: AxiosRequestConfig): Promise<U> {
-    const config = this.injectConfig(
+  public async put<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    const config = await this.injectConfig(
       {
         method: HttpMethod.PUT,
-        url: this.config.apiUrl + url,
+        url: `${this.config.apiUrl}${url}`,
       },
-      optionsOrInjector
+      options
     );
 
-    return this.request<U>(config);
+    return this.request(config);
   }
 
   public setApiUrl(apiUrl: string): void {
     this.config.apiUrl = apiUrl;
   }
 
-  private injectConfig(
+  private async injectConfig(
     baseConfig: AxiosRequestConfig,
-    optionsOrInjector?: AxiosRequestConfig | InjectorFn
-  ): AxiosRequestConfig {
-    if (typeof optionsOrInjector === 'function') {
-      return optionsOrInjector(baseConfig);
-    }
-
+    options?: AxiosRequestConfig
+  ): Promise<AxiosConfigWithData<T>> {
     if (typeof this.config.requestInjector === 'function') {
-      baseConfig = this.config.requestInjector(baseConfig);
+      baseConfig = await this.config.requestInjector(baseConfig);
     }
 
-    if (typeof optionsOrInjector !== 'undefined') {
+    if (typeof options !== 'undefined') {
       return {
         ...baseConfig,
-        ...(!!optionsOrInjector && optionsOrInjector),
+        ...(!!options && options),
       };
     }
 
     return baseConfig;
   }
 
-  private async request<U>(config: AxiosRequestConfig): Promise<U> {
+  private async request<U>(config: AxiosConfigWithData<T>): Promise<U> {
     try {
       const {data, headers, status} = await axios.request<U>(config);
       const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;

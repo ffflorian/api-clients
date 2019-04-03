@@ -1,12 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {LibrariesIOResult, PaginationOptions, Platform} from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {PaginationOptions, Platform, RequestOptions} from '../interfaces/';
 
 export class PlatformAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient) {
+    this.apiClient = apiClient;
   }
 
   /**
@@ -14,8 +14,8 @@ export class PlatformAPI {
    * @see https://libraries.io/api#platforms
    * @param options Pagination options
    */
-  public getPlatforms(options?: PaginationOptions): Promise<LibrariesIOResult<Platform[]>> {
+  public getPlatforms(options?: PaginationOptions): Promise<Platform[]> {
     const endpoint = Endpoint.platforms();
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 }

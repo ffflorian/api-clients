@@ -1,6 +1,5 @@
 const hawk = require('hawk');
-import {APIClient} from '@ffflorian/api-client';
-import {AxiosRequestConfig} from 'axios';
+import {APIClient, AxiosRequestConfig} from '@ffflorian/api-client';
 
 import {
   AbsenceAPI,
@@ -15,7 +14,7 @@ import {
 import {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
-  public api: API;
+  public readonly api: API;
   private readonly apiClient: APIClient;
   private readonly options: ClientOptions;
 
