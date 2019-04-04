@@ -38,10 +38,7 @@ describe('XKCD', () => {
 
     nock('https://xkcd.com')
       .get(/\/[0-9]+\/info\.0\.json/)
-      .reply(200, () => {
-        console.log('oy');
-        return responseDataFirst;
-      })
+      .reply(200, () => responseDataFirst)
       .persist();
 
     nock('https://xkcd.com')
@@ -62,9 +59,8 @@ describe('XKCD', () => {
       .persist();
   });
 
-  fit('gets the latest comic', async () => {
+  it('gets the latest comic', async () => {
     const latest = await xkcdJS.api.getLatest();
-    console.log('yay');
 
     expect(latest.alt).toBe(responseDataLatest.alt);
   });
@@ -98,7 +94,7 @@ describe('XKCD', () => {
       await xkcdJS.api.getByIndex(1);
       fail('Did not throw error');
     } catch (error) {
-      expect(error.message).toBe('Request failed with status code 404');
+      expect(error.message.includes('Request failed with status code 404')).toBe(true);
     }
   });
 });

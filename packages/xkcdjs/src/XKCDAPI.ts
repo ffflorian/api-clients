@@ -45,8 +45,7 @@ export class XKCDAPI {
   public async getLatest(options: {withData: true}): Promise<XKCDResultWithData>;
   public async getLatest(options?: RequestOptions): Promise<XKCDResultWithData>;
   public async getLatest(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
-    const url = `${this.options.apiUrl}/${this.JSON_INFO_FILE}`;
-    const metaData = await this.apiClient.requestService.get<XKCDResult>(url);
+    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${this.JSON_INFO_FILE}`);
 
     if (options.withData) {
       const imageData = await this.getImage(metaData.img);
@@ -71,9 +70,7 @@ export class XKCDAPI {
       throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
     }
 
-    const url = `${this.options.apiUrl}/${index}/${this.JSON_INFO_FILE}`;
-
-    const metaData = await this.apiClient.requestService.get<XKCDResult>(url);
+    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
 
     if (options.withData === true) {
       const imageData = await this.getImage(metaData.img);

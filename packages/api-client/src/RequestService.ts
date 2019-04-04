@@ -148,7 +148,7 @@ export class RequestService<T> {
       const contentType = response.headers['content-type'] ? String(response.headers['content-type']) : undefined;
 
       if (contentType) {
-        if (contentType.includes('application/json')) {
+        if (contentType.includes('application/json') || config.responseType) {
           return response;
         } else {
           throw new InvalidResponseError('The server responded with invalid data: No JSON sent.');
