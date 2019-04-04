@@ -38,7 +38,7 @@ describe('XKCD', () => {
 
     nock('https://xkcd.com')
       .get(/\/[0-9]+\/info\.0\.json/)
-      .reply(200, () => responseDataFirst)
+      .reply(200, responseDataFirst)
       .persist();
 
     nock('https://xkcd.com')
