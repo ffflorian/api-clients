@@ -1,5 +1,3 @@
-import {URL} from 'url';
-
 import {Endpoint} from '../Endpoints';
 import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 import {RequestService} from '../RequestService';
@@ -99,7 +97,7 @@ export class ChecksAPI {
    * Set a new API URL.
    * @param newUrl The new API url
    */
-  public setApiUrl(newUrl: URL): void {
+  public setApiUrl(newUrl: string): void {
     this.requestService.setApiUrl(newUrl);
   }
 }

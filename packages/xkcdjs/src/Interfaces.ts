@@ -7,6 +7,10 @@ export interface RequestOptions {
   withData?: boolean;
 }
 
+export interface ClientOptions {
+  apiUrl?: string;
+}
+
 export interface XKCDResult {
   alt: string;
   day: string;

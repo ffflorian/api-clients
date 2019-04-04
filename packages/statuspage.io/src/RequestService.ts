@@ -1,14 +1,13 @@
 import axios, {AxiosRequestConfig} from 'axios';
-import {URL} from 'url';
 
 import {ExceptionMapper, InvalidResponseError} from './APIException';
 import {HTTP, Request} from './Interfaces';
 
 export class RequestService {
-  private apiUrl: URL;
+  private apiUrl: string;
 
   constructor(apiUrl: string) {
-    this.apiUrl = new URL(apiUrl);
+    this.apiUrl = apiUrl;
   }
 
   public async delete<T>(endpoint: string, parameters?: Request.Options): Promise<T> {
@@ -28,14 +27,14 @@ export class RequestService {
   }
 
   public setApiUrl(apiUrl: string): void {
-    this.apiUrl = new URL(apiUrl);
+    this.apiUrl = apiUrl;
   }
 
   private async request<T>(method: HTTP.Method, endpoint: string, parameters?: Request.Options): Promise<T> {
     const config: AxiosRequestConfig = {
       method,
       params: parameters,
-      url: new URL(endpoint, this.apiUrl).href,
+      url: `${this.apiUrl}/${endpoint}`,
     };
 
     try {

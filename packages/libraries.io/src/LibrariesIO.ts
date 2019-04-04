@@ -5,7 +5,7 @@ import {API, ClientOptions, RequestOptions} from './interfaces/';
 export class LibrariesIO {
   public readonly api: API;
   private readonly apiClient: APIClient<RequestOptions>;
-  private readonly options: ClientOptions;
+  private readonly options: Required<ClientOptions>;
 
   constructor(apiKey: string);
   constructor(options: ClientOptions);
@@ -14,7 +14,10 @@ export class LibrariesIO {
       options = {apiKey: options};
     }
 
-    this.options = options;
+    this.options = {
+      apiUrl: 'https://libraries.io/api',
+      ...options,
+    };
 
     const requestInjector = (config: AxiosConfigWithData<RequestOptions>) => {
       config.data = {
@@ -34,7 +37,7 @@ export class LibrariesIO {
     // }
 
     this.apiClient = new APIClient({
-      apiUrl: 'https://libraries.io/api',
+      apiUrl: this.options.apiUrl,
       requestInjector,
     });
 
