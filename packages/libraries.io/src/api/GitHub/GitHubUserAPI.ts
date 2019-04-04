@@ -1,12 +1,19 @@
 import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../../Endpoints';
-import {Contributor, PaginationOptions, PlatformType, Project, Repository, RequestOptions} from '../../interfaces/';
+import {
+  ClientOptions,
+  Contributor,
+  PaginationOptions,
+  PlatformType,
+  Project,
+  Repository,
+  RequestOptions,
+} from '../../interfaces/';
+import {APIBase} from '../APIBase';
 
-export class GitHubUserAPI {
-  private readonly apiClient: APIClient<RequestOptions>;
-
-  constructor(apiClient: APIClient) {
-    this.apiClient = apiClient;
+export class GitHubUserAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**

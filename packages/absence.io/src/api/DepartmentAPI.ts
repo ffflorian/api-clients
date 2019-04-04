@@ -1,7 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Department, DepartmentExtended, Paginated} from '../interfaces/';
+import {ClientOptions, Department, DepartmentExtended, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class DepartmentAPI extends APIBase {
@@ -21,9 +21,9 @@ export class DepartmentAPI extends APIBase {
   /**
    * Retrieve departments
    */
-  public retrieveDepartments(): Promise<Paginated<Department[]>> {
+  public retrieveDepartments(options?: PaginationOptions): Promise<Paginated<Department[]>> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    return this.apiClient.requestService.post(endpoint, {});
+    return this.apiClient.requestService.post(endpoint, {data: options});
   }
 }

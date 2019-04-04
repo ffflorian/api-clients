@@ -1,12 +1,11 @@
 import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {PaginationOptions, Platform, RequestOptions} from '../interfaces/';
+import {ClientOptions, PaginationOptions, Platform} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class PlatformAPI {
-  private readonly apiClient: APIClient<RequestOptions>;
-
-  constructor(apiClient: APIClient) {
-    this.apiClient = apiClient;
+export class PlatformAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**

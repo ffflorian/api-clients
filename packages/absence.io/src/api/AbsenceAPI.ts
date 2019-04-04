@@ -1,7 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {Absence, ClientOptions, Paginated} from '../interfaces/';
+import {Absence, ClientOptions, NewAbsence, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AbsenceAPI extends APIBase {
@@ -20,7 +20,7 @@ export class AbsenceAPI extends APIBase {
   /**
    * Create absences
    */
-  public createAbsence(absenceData: any): Promise<any> {
+  public createAbsence(absenceData: NewAbsence): Promise<void> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
     return this.apiClient.requestService.post(endpoint, {data: absenceData});
@@ -32,17 +32,16 @@ export class AbsenceAPI extends APIBase {
   public retrieveAbsence(id: string): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.post(endpoint, {});
+    return this.apiClient.requestService.post(endpoint);
   }
 
   /**
    * Retrieve absences
    */
-  public retrieveAbsences(data?: any): Promise<Paginated<Absence>> {
+  public retrieveAbsences(options?: PaginationOptions): Promise<Paginated<Absence[]>> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    console.log('data', data);
-    return this.apiClient.requestService.post(endpoint, {data});
+    return this.apiClient.requestService.post(endpoint, {data: options});
   }
 
   /**
