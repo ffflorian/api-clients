@@ -2,13 +2,13 @@
 
 A [crates.io](https://crates.io) API client.
 
-## Usage
-
-A complete documentation is available at https://ffflorian.github.io/crates.io.js/.
-
 ### Installation
 
 Run `yarn add crates.io` or `npm install crates.io`.
+
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/crates.io/.
 
 ### Example
 

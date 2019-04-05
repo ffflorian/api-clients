@@ -2,13 +2,13 @@
 
 An [updown.io](https://updown.io) API client. For a documentation on the API see https://updown.io/api.
 
-## Usage
-
-A complete documentation is available at https://ffflorian.github.io/updown.io.js/.
-
 ### Installation
 
 Run `yarn add updown.io` or `npm install updown.io`.
+
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/updown.io/.
 
 ### Example
 

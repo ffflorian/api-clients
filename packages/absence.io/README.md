@@ -6,6 +6,10 @@ An [absence.io](https://absence.io) API client. For a documentation on the API s
 
 Run `yarn add absence.io` or `npm install absence.io`.
 
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/absence.io/.
+
 ### Example
 
 ```ts

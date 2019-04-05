@@ -4,6 +4,8 @@ An [xkcd](https://xkcd.com) API client with a CLI.
 
 ## Usage
 
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/xkcdjs/.
+
 ### CLI
 
 To use `xkcdjs` globally, run `yarn global add @ffflorian/xkcdjs` or `npm i -g @ffflorian/xkcdjs`.
@@ -11,22 +13,18 @@ To use `xkcdjs` globally, run `yarn global add @ffflorian/xkcdjs` or `npm i -g @
 ```
 Usage: xkcdjs [options] [command]
 
-  Options:
+An xkcd API client with a CLI.
 
-    -v, --version       output the version number
-    -o, --output <dir>  Specify the output directory (default: current directory)
-    -h, --help          output usage information
+Options:
+  -v, --version       output the version number
+  -o, --output <dir>  Specify the output directory (default: current directory)
+  -h, --help          output usage information
 
-  Commands:
-
-    latest              Save the latest comic
-    random              Save a random comic
-    number <index>      Save comic by index number
+Commands:
+  latest              Save the latest comic
+  random              Save a random comic
+  number <index>      Save comic by index number
 ```
-
-### TypeScript
-
-A complete documentation is available at https://ffflorian.github.io/xkcdjs/.
 
 #### Installation
 

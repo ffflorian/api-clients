@@ -1,14 +1,14 @@
-# c3nav [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://www.npmjs.com/package/c3nav)
+# c3nav [![npm version](https://img.shields.io/npm/v/c3nav.svg)](https://www.npmjs.com/package/c3nav)
 
 A [c3nav](https://c3nav.de) API client. For a documentation on the API see https://c3nav.de/api.
-
-## Usage
-
-A complete documentation is available at https://ffflorian.github.io/c3nav.js/.
 
 ### Installation
 
 Run `yarn add c3nav` or `npm install c3nav`.
+
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/c3nav/.
 
 ### Example
 

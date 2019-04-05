@@ -1,7 +1,6 @@
 {
-  "exclude": "**/*(index|Endpoints|RequestService).ts",
+  "exclude": "**/*(index|Endpoints).ts",
   "excludeExternals": true,
   "excludePrivate": true,
-  "mode": "modules",
-  "out": "docs"
+  "mode": "modules"
 }
