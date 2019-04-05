@@ -57,7 +57,7 @@ export class AbsenceIO {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newUrl The new API URL
    */
   public setApiUrl(newUrl: string): void {
     this.apiClient.setApiUrl(newUrl);

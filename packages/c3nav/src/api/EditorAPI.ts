@@ -1,21 +1,23 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {Editor} from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {ClientOptions, Editor} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class EditorAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+export class EditorAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   public getList(): Promise<Editor[]> {
     const endpoint = Endpoint.editor();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
+  /**
+   * @param id The id to get
+   */
   public getById(id: number): Promise<Editor> {
     const endpoint = Endpoint.editor(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

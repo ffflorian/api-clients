@@ -1,4 +1,4 @@
-# c3nav.js [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/c3nav.js&identifier=164086297)](https://dependabot.com)
+# c3nav [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/c3nav.js&identifier=164086297)](https://dependabot.com)
 
 A [c3nav](https://c3nav.de) API client. For a documentation on the API see https://c3nav.de/api.
 

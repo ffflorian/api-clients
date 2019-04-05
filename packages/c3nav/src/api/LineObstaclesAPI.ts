@@ -1,21 +1,23 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {LineObstacles} from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {ClientOptions, LineObstacles} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class LineObstaclesAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+export class LineObstaclesAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   public getList(): Promise<LineObstacles[]> {
     const endpoint = Endpoint.lineObstacles();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
+  /**
+   * @param id The id to get
+   */
   public getById(id: number): Promise<LineObstacles> {
     const endpoint = Endpoint.lineObstacles(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

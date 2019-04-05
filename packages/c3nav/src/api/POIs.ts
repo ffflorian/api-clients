@@ -1,23 +1,23 @@
 import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Updates} from '../interfaces/';
+import {ClientOptions, POIs} from '../interfaces';
 import {APIBase} from './APIBase';
 
-export class UpdatesAPI extends APIBase {
+export class PoisAPI extends APIBase {
   constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Updates[]> {
-    const endpoint = Endpoint.updates();
+  public getList(): Promise<POIs[]> {
+    const endpoint = Endpoint.pois();
     return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<Updates> {
-    const endpoint = Endpoint.updates(id);
+  public getById(id: number): Promise<POIs> {
+    const endpoint = Endpoint.pois(id);
     return this.apiClient.requestService.get(endpoint);
   }
 }

@@ -18,7 +18,7 @@ export * from './Location';
 export * from './Bounds';
 export * from './Obstacles';
 export * from './Options';
-export * from './Pois';
+export * from './POIs';
 export * from './Ramps';
 export * from './Root';
 export * from './Routing';

@@ -1,21 +1,23 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {Buildings} from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {Buildings, ClientOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class BuildingsAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+export class BuildingsAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   public getList(): Promise<Buildings[]> {
     const endpoint = Endpoint.buildings();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
+  /**
+   * @param id The id to get
+   */
   public getById(id: number): Promise<Buildings> {
     const endpoint = Endpoint.buildings(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

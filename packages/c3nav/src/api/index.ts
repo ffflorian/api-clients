@@ -16,7 +16,7 @@ export * from './LocationGroupsAPI';
 export * from './LocationsAPI';
 export * from './MapAPI';
 export * from './ObstaclesAPI';
-export * from './PoisAPI';
+export * from './POIs';
 export * from './RampsAPI';
 export * from './RoutingAPI';
 export * from './SessionAPI';

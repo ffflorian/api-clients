@@ -1,21 +1,23 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {LocationGroups} from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {ClientOptions, LocationGroups} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class LocationGroupsAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+export class LocationGroupsAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   public getList(): Promise<LocationGroups[]> {
     const endpoint = Endpoint.locationGroups();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
+  /**
+   * @param id The id to get
+   */
   public getById(id: number): Promise<LocationGroups> {
     const endpoint = Endpoint.locationGroups(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }
