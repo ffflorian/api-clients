@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/compare/c3nav@1.3.0...c3nav@1.3.1) (2019-04-05)
+
+**Note:** Version bump only for package c3nav
+
+
+
+
+
 # 1.3.0 (2019-04-05)
 
 

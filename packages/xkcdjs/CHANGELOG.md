@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.10](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@1.4.9...@ffflorian/xkcdjs@1.4.10) (2019-04-05)
+
+**Note:** Version bump only for package @ffflorian/xkcdjs
+
+
+
+
+
 ## [1.4.9](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@1.4.8...@ffflorian/xkcdjs@1.4.9) (2019-04-05)
 
 **Note:** Version bump only for package @ffflorian/xkcdjs
