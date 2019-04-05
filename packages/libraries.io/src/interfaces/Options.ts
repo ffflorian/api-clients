@@ -1,5 +1,3 @@
-import {URL} from 'url';
-
 export type SortType =
   | 'contributions_count'
   | 'created_at'
@@ -18,7 +16,7 @@ export interface FilterOptions {
 
 export interface ClientOptions {
   apiKey: string;
-  apiUrl?: URL;
+  apiUrl?: string;
 }
 
 export interface PreReleaseOptions {

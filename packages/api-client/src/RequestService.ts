@@ -38,7 +38,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async get<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -50,7 +51,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async head<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -62,7 +64,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async options<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -74,7 +77,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async patch<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -86,7 +90,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async post<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -98,7 +103,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public async put<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
@@ -110,7 +116,8 @@ export class RequestService<T> {
       options
     );
 
-    return this.request(config);
+    const response = await this.request<U>(config);
+    return response.data;
   }
 
   public setApiUrl(apiUrl: string): void {
@@ -135,19 +142,19 @@ export class RequestService<T> {
     return baseConfig;
   }
 
-  private async request<U>(config: AxiosConfigWithData<T>): Promise<U> {
+  async request<U>(config: AxiosConfigWithData<T>): Promise<AxiosResponse<U>> {
     try {
-      const {data, headers, status} = await axios.request<U>(config);
-      const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;
+      const response = await axios.request<U>(config);
+      const contentType = response.headers['content-type'] ? String(response.headers['content-type']) : undefined;
 
       if (contentType) {
-        if (contentType.includes('application/json')) {
-          return data;
+        if (contentType.includes('application/json') || config.responseType) {
+          return response;
         } else {
           throw new InvalidResponseError('The server responded with invalid data: No JSON sent.');
         }
-      } else if (status === HTTP_STATUS.NO_CONTENT) {
-        return data;
+      } else if (response.status === HTTP_STATUS.NO_CONTENT) {
+        return response;
       } else {
         throw new InvalidResponseError('The server responded with invalid data: No Content-Type set.');
       }

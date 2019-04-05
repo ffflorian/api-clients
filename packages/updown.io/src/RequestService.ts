@@ -1,11 +1,10 @@
 import axios, {AxiosRequestConfig} from 'axios';
-import {URL} from 'url';
 
 import {ExceptionMapper, InvalidResponseError} from './APIException';
 import {ClientOptions, CustomHeaders, HttpMethod, RequestOptions} from './interfaces/';
 
 export class RequestService {
-  private apiUrl = new URL('/api', 'https://updown.io');
+  private apiUrl = 'https://updown.io/api';
   private readonly apiKey?: string;
 
   constructor(options?: ClientOptions) {
@@ -37,7 +36,7 @@ export class RequestService {
     return this.request<T>('put', endpoint, parameters);
   }
 
-  public setApiUrl(apiUrl: URL): void {
+  public setApiUrl(apiUrl: string): void {
     this.apiUrl = apiUrl;
   }
 
@@ -81,7 +80,7 @@ export class RequestService {
     const config: AxiosRequestConfig = {
       method,
       params,
-      url: new URL(this.apiUrl.pathname + endpoint, this.apiUrl).href,
+      url: `${this.apiUrl}${endpoint}`,
     };
 
     try {

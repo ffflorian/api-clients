@@ -17,13 +17,7 @@ describe('RequestService', () => {
         expect(queryObject['api-key']).toBe(myApiKey);
         return true;
       })
-      .reply(
-        200,
-        {},
-        {
-          'Content-Type': 'application/json',
-        }
-      );
+      .reply(200, {}, {'Content-Type': 'application/json'});
 
     await updownIO.api.checks.getChecks();
   });

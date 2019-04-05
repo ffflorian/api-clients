@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 import * as program from 'commander';
-import * as fs from 'fs';
+import * as fs from 'fs-extra';
 import * as path from 'path';
-import {promisify} from 'util';
 
 import {XKCD, XKCDResultWithData} from './';
 
@@ -11,7 +10,7 @@ async function init(dir: string = '.'): Promise<[string, XKCD]> {
   const resolvedPath = path.resolve(dir);
 
   try {
-    await promisify(fs.access)(resolvedPath, fs.constants.F_OK | fs.constants.R_OK);
+    await fs.access(resolvedPath, fs.constants.F_OK | fs.constants.R_OK);
     const xkcd = new XKCD();
     return [resolvedPath, xkcd];
   } catch (error) {
@@ -25,7 +24,7 @@ async function save(filePath: string, imageResult: XKCDResultWithData) {
   const extension = data.mimeType ? data.mimeType.replace('image/', '') : 'png';
 
   const resolvedFilePath = path.resolve(filePath, `xkcd #${num} - ${safe_title}.${extension}`);
-  await promisify(fs.writeFile)(resolvedFilePath, data.data);
+  await fs.writeFile(resolvedFilePath, data.data);
   console.error(`Saved image to "${resolvedFilePath}".`);
 }
 
@@ -45,7 +44,7 @@ program
   .action(async command => {
     try {
       const [resolvedPath, xkcd] = await init(command.parent.output);
-      const imageData = await xkcd.getLatest({withData: true});
+      const imageData = await xkcd.api.getLatest({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
       console.error(`Error: ${error.message}`);
@@ -60,7 +59,7 @@ program
   .action(async command => {
     try {
       const [resolvedPath, xkcd] = await init(command.parent.output);
-      const imageData = await xkcd.getRandom({withData: true});
+      const imageData = await xkcd.api.getRandom({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
       console.error(`Error: ${error.message}`);
@@ -81,7 +80,7 @@ program
     }
     try {
       const [resolvedPath, xkcd] = await init(command.parent.output);
-      const imageData = await xkcd.getByIndex(parsedIndex, {withData: true});
+      const imageData = await xkcd.api.getByIndex(parsedIndex, {withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
       console.error(`Error: ${error.message}`);
