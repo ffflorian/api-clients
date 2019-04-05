@@ -8,10 +8,10 @@ API clients for various services.
 
 ### API clients
 
-- [`absence.io`](./packages/absence.io)
-- [`c3nav`](./packages/c3nav)
-- [`crates.io`](./crates.io)
-- [`libraries.io`](./libraries.io)
-- [`statuspage.io`](./statuspage.io)
-- [`updown.io`](./updown.io)
-- [`xkcdjs`](./xkcdjs)
+- [`absence.io`](./packages/absence.io/)
+- [`c3nav`](./packages/c3nav/)
+- [`crates.io`](./packages/crates.io/)
+- [`libraries.io`](./packages/libraries.io/)
+- [`statuspage.io`](./packages/statuspage.io/)
+- [`updown.io`](./packages/updown.io/)
+- [`xkcdjs`](./packages/xkcdjs/)
