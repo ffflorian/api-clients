@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.3.1...absence.io@0.4.0) (2019-04-05)
+
+
+### Features
+
+* **c3nav:** Add c3nav ([#11](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/issues/11)) ([e11f66c](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/e11f66c))
+
+
+
+
+
 ## [0.3.1](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.3.0...absence.io@0.3.1) (2019-04-05)
 
 **Note:** Version bump only for package absence.io
