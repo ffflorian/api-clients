@@ -1,6 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
 import {
+  ClientOptions,
   Contributor,
   PaginationOptions,
   PlatformType,
@@ -8,15 +9,13 @@ import {
   ProjectUsage,
   ProjectWithDependencies,
   Repository,
-  RequestOptions,
   SearchOptions,
 } from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class ProjectAPI {
-  private readonly apiClient: APIClient<RequestOptions>;
-
-  constructor(apiClient: APIClient) {
-    this.apiClient = apiClient;
+export class ProjectAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**

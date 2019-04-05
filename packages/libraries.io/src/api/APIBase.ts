@@ -1,5 +1,5 @@
 import {APIClient} from '@ffflorian/api-client';
-import {Authorization, ClientOptions, RequestOptions} from '../interfaces';
+import {ClientOptions, RequestOptions} from '../interfaces';
 
 export class APIBase {
   protected readonly apiClient: APIClient<RequestOptions>;
@@ -12,7 +12,7 @@ export class APIBase {
 
   protected checkApiKey(apiName?: string) {
     apiName = `the "${apiName}"` || 'this';
-    if (!this.options.apiKey || !this.options.apiKeyId) {
+    if (!this.options.apiKey) {
       throw new Error(`An API key needs to be set in order to use ${apiName} API`);
     }
   }
@@ -27,10 +27,9 @@ export class APIBase {
 
   /**
    * Set a new API key.
-   * @param authorization The API authorization data
+   * @param apiKey The new API key
    */
-  public setApiAuthorization(authorization: Authorization): void {
-    this.options.apiKey = authorization.apiKey;
-    this.options.apiKeyId = authorization.apiKeyId;
+  public setApiKey(apiKey: string): void {
+    this.options.apiKey = apiKey;
   }
 }
