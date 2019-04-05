@@ -1,14 +1,14 @@
-# libraries.io.js [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
+# libraries.io [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 
 A [libraries.io](https://libraries.io) API client. For a documentation on the API see https://libraries.io/api.
-
-## Usage
-
-A complete documentation is available at https://ffflorian.github.io/libraries.io.js/.
 
 ### Installation
 
 Run `yarn add libraries.io` or `npm install libraries.io`.
+
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/libraries.io/.
 
 ### Example
 

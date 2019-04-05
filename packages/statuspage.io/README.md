@@ -2,13 +2,13 @@
 
 A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see https://doers.statuspage.io/.
 
-## Usage
-
-A complete documentation is available at https://ffflorian.github.io/statuspage.io.js/.
-
 ### Installation
 
 Run `yarn add statuspage.io` or `npm install statuspage.io`.
+
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/statuspage.io/.
 
 ### Example
 

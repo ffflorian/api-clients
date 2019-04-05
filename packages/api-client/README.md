@@ -6,6 +6,10 @@ A generic API client.
 
 Run `yarn add @ffflorian/api-client` or `npm install @ffflorian/api-client`.
 
+## Usage
+
+A complete documentation is available at https://ffflorian.github.io/api-clients/packages/api-client/.
+
 ### Examples
 
 ```ts

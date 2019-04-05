@@ -10,6 +10,7 @@
     "jasmine": "3.4.0",
     "rimraf": "2.6.3",
     "ts-node": "8.0.3",
+    "typedoc": "0.14.2",
     "typescript": "3.4.1"
   },
   "files": [
@@ -25,7 +26,9 @@
   "name": "c3nav",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/c3nav",
   "scripts": {
-    "build": "tsc",
+    "build": "yarn build:ts && yarn build:docs",
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/c3nav",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
