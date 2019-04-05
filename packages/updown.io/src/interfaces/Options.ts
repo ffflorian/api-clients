@@ -1,8 +1,6 @@
-import {URL} from 'url';
-
 export interface ClientOptions {
   apiKey: string;
-  apiUrl?: URL;
+  apiUrl?: string;
 }
 
 export interface CustomHeaders {

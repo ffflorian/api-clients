@@ -1,19 +1,19 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "axios": "0.18.0",
+    "@ffflorian/api-client": "0.3.2",
     "hawk": "7.0.10"
   },
   "description": "An absence.io API client",
   "devDependencies": {
-    "@types/jasmine": "3.3.9",
+    "@types/jasmine": "3.3.12",
     "@types/nock": "9.3.1",
-    "@types/node": "11.10.5",
-    "jasmine": "3.3.1",
+    "@types/node": "11.13.0",
+    "jasmine": "3.4.0",
     "nock": "10.0.6",
     "rimraf": "2.6.3",
     "ts-node": "8.0.3",
-    "typescript": "3.3.3333"
+    "typescript": "3.4.1"
   },
   "files": [
     "dist"
@@ -34,5 +34,5 @@
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "0.1.2"
+  "version": "0.3.0"
 }

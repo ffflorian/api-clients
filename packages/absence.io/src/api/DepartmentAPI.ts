@@ -1,42 +1,31 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {RequestService} from '../RequestService';
+import {ClientOptions, Department, Paginated, PaginationOptions} from '../interfaces/';
+import {APIBase} from './APIBase';
 
-export class DepartmentAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
-  }
-
-  /**
-   * Set a new API URL.
-   * @param newUrl The new API url
-   */
-  public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+export class DepartmentAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
    * Retrieve a single department
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#a9c45164-59e5-3daf-93f2-4c64f6cc52f0
    */
-  public retrieveDepartment(id: string): Promise<any> {
-    this.checkApiKey();
+  public retrieveDepartment(id: string): Promise<Department> {
+    this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments(id);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Retrieve departments
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#d596a243-9bc4-cb5f-dbc5-456c46437d09
    */
-  public retrieveDepartments(): Promise<any> {
-    this.checkApiKey();
+  public retrieveDepartments(options?: PaginationOptions): Promise<Paginated<Department[]>> {
+    this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    return this.requestService.post(endpoint);
+    return this.apiClient.requestService.post(endpoint, {data: options});
   }
 }

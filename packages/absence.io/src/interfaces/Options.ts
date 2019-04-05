@@ -1,15 +1,20 @@
-export enum HttpStatus {
-  'FORBIDDEN' = 403,
-  'NOT_FOUND' = 404,
-  'UNAUTHORIZED' = 401,
+import {NewAbsence} from './Absence';
+import {NewAllowance} from './Allowance';
+import {NewDepartment} from './Department';
+import {NewLocation} from './Location';
+import {NewReason} from './Reason';
+import {NewTimespan} from './Timespan';
+import {NewUser} from './User';
+
+export type Filter = {[key: string]: {[key: string]: string} | string};
+
+export interface PaginationOptions {
+  limit: number;
+  skip: number;
+  filter?: Filter;
+  relations?: string[];
 }
 
-export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
-
-export interface ClientOptions {
-  apiKey: string;
-  apiKeyId: string;
-  apiUrl?: string;
-}
-
-export interface RequestOptions {}
+export type RequestOptions =
+  | PaginationOptions
+  | Partial<NewAbsence | NewAllowance | NewDepartment | NewLocation | NewReason | NewTimespan | NewUser>;

@@ -1,5 +1,3 @@
-import {URL} from 'url';
-
 export type SortType =
   | 'contributions_count'
   | 'created_at'
@@ -18,7 +16,7 @@ export interface FilterOptions {
 
 export interface ClientOptions {
   apiKey: string;
-  apiUrl?: URL;
+  apiUrl?: string;
 }
 
 export interface PreReleaseOptions {
@@ -27,18 +25,20 @@ export interface PreReleaseOptions {
 
 export interface PaginationOptions {
   page?: number;
-  perPage?: number;
+  per_page?: number;
 }
 
 export interface SearchOptions extends PaginationOptions {
-  sortBy?: SortType;
+  /** sort by */
+  sort?: SortType;
   filter?: FilterOptions;
 }
 
 export interface RequestOptions extends SearchOptions, PreReleaseOptions {
-  apiKey?: string;
+  api_key?: string;
   platform?: PlatformType;
-  query?: string;
+  /** query */
+  q?: string;
 }
 
 export type HttpMethod = 'delete' | 'get' | 'post' | 'put';

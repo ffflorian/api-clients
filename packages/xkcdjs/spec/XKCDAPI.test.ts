@@ -1,5 +1,4 @@
 import * as nock from 'nock';
-import {URL} from 'url';
 import * as XKCDJS from '../src';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
@@ -61,25 +60,25 @@ describe('XKCD', () => {
   });
 
   it('gets the latest comic', async () => {
-    const latest = await xkcdJS.getLatest();
+    const latest = await xkcdJS.api.getLatest();
 
     expect(latest.alt).toBe(responseDataLatest.alt);
   });
 
   it('gets a random comic', async () => {
-    const random = await xkcdJS.getRandom();
+    const random = await xkcdJS.api.getRandom();
 
     expect(random.alt).toBe(responseDataFirst.alt);
   });
 
   it('gets a comic by id', async () => {
-    const byIndex = await xkcdJS.getByIndex(1);
+    const byIndex = await xkcdJS.api.getByIndex(1);
 
     expect(byIndex.alt).toBe(responseDataFirst.alt);
   });
 
   it('gets the image data', async () => {
-    const latestWithData = await xkcdJS.getLatest({withData: true});
+    const latestWithData = await xkcdJS.api.getLatest({withData: true});
 
     expect(latestWithData.data).toEqual(
       jasmine.objectContaining<any>({
@@ -89,13 +88,13 @@ describe('XKCD', () => {
   });
 
   it('sets the base URL', async () => {
-    xkcdJS.setApiUrl(new URL('https://example.com'));
+    xkcdJS.setApiUrl('https://example.com');
 
     try {
-      await xkcdJS.getByIndex(1);
+      await xkcdJS.api.getByIndex(1);
       fail('Did not throw error');
     } catch (error) {
-      expect(error.message).toBe('Request failed with status code 404');
+      expect(error.message.includes('Request failed with status code 404')).toBe(true);
     }
   });
 });

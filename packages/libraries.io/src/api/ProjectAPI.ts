@@ -1,7 +1,8 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
 import {
+  ClientOptions,
   Contributor,
-  LibrariesIOResult,
   PaginationOptions,
   PlatformType,
   Project,
@@ -10,13 +11,11 @@ import {
   Repository,
   SearchOptions,
 } from '../interfaces/';
-import {RequestService} from '../RequestService';
+import {APIBase} from './APIBase';
 
-export class ProjectAPI {
-  private readonly requestService: RequestService;
-
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+export class ProjectAPI extends APIBase {
+  constructor(apiClient: APIClient, options: ClientOptions) {
+    super(apiClient, options);
   }
 
   /**
@@ -25,9 +24,9 @@ export class ProjectAPI {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public getProject(platform: PlatformType, projectName: string): Promise<LibrariesIOResult<Project>> {
+  public getProject(platform: PlatformType, projectName: string): Promise<Project> {
     const endpoint = Endpoint.Project.project(platform, projectName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -41,9 +40,9 @@ export class ProjectAPI {
     platform: PlatformType,
     projectName: string,
     projectVersion: string
-  ): Promise<LibrariesIOResult<ProjectWithDependencies>> {
+  ): Promise<ProjectWithDependencies> {
     const endpoint = Endpoint.Project.dependencies(platform, projectName, projectVersion);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -57,9 +56,9 @@ export class ProjectAPI {
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
-  ): Promise<LibrariesIOResult<Project[]>> {
+  ): Promise<Project[]> {
     const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 
   /**
@@ -72,9 +71,9 @@ export class ProjectAPI {
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
-  ): Promise<LibrariesIOResult<Repository[]>> {
+  ): Promise<Repository[]> {
     const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 
   /**
@@ -88,9 +87,9 @@ export class ProjectAPI {
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
-  ): Promise<LibrariesIOResult<Contributor[]>> {
+  ): Promise<Contributor[]> {
     const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 
   /**
@@ -99,9 +98,9 @@ export class ProjectAPI {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public getSourceRank(platform: PlatformType, projectName: string): Promise<LibrariesIOResult<number>> {
+  public getSourceRank(platform: PlatformType, projectName: string): Promise<number> {
     const endpoint = Endpoint.Project.sourceRank(platform, projectName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -109,9 +108,9 @@ export class ProjectAPI {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public getUsage(platform: PlatformType, projectName: string): Promise<LibrariesIOResult<ProjectUsage>> {
+  public getUsage(platform: PlatformType, projectName: string): Promise<ProjectUsage> {
     const endpoint = Endpoint.Project.sourceRank(platform, projectName);
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -120,8 +119,8 @@ export class ProjectAPI {
    * @param query The search query
    * @param options Sorting, filter and pagination options
    */
-  public search(query: string, options?: SearchOptions): Promise<LibrariesIOResult<Project[]>> {
+  public search(query: string, options?: SearchOptions): Promise<Project[]> {
     const endpoint = Endpoint.Project.search();
-    return this.requestService.get(endpoint, {...options, query});
+    return this.apiClient.requestService.get(endpoint, {data: {...options, q: query}});
   }
 }

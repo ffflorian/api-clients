@@ -6,16 +6,16 @@
     "lerna": "3.13.1",
     "lint-staged": "8.1.5",
     "prettier": "1.16.4",
-    "tslint": "5.13.1",
+    "tslint": "5.15.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1"
   },
   "lint-staged": {
     "*.ts": [
-      "tslint --config tslint.json --project tsconfig.json --fix",
+      "tslint --project tsconfig.json --fix",
       "git add"
     ],
-    "*.{json,md,yml}": [
+    "*.{json,md}": [
       "prettier --write",
       "git add"
     ]
@@ -31,11 +31,11 @@
     "fix:ts": "yarn lint:ts --fix",
     "lint": "yarn lint:other && yarn lint:ts",
     "lint:other": "yarn prettier --list-different",
-    "lint:ts": "tslint --config tslint.json --project tsconfig.json \"**/*.ts\"",
-    "prettier": "prettier \"**/*.{json,md,yml}\"",
+    "lint:ts": "tslint --project tsconfig.json",
+    "prettier": "prettier \"**/*.{json,md}\"",
     "release": "lerna publish",
-    "test": "yarn lint:ts && yarn lint:other",
-    "test:all": "yarn lint && lerna run test"
+    "test": "yarn lint && yarn test:all",
+    "test:all": "lerna run test"
   },
   "workspaces": [
     "packages/*"

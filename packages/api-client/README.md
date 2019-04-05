@@ -6,20 +6,43 @@ A generic API client.
 
 Run `yarn add @ffflorian/api-client` or `npm install @ffflorian/api-client`.
 
-### Example
+### Examples
 
 ```ts
 import {APIClient} from '@ffflorian/api-client';
 
-const apiClient = new APIClient('https://my-api.io/api/v1');
+const apiClient = new APIClient('https://example.com/api/v1');
 
-apiClient.requestService.get('/endpoint', {
-  headers: {
-    'Authorization': 'my-api-key',
+apiClient.requestService
+  .get('/endpoint', {
+    headers: {
+      Authorization: 'my-api-key',
+    },
+  })
+  .then(data => {
+    // ...
+  });
+```
+
+```ts
+import {APIClient} from '@ffflorian/api-client';
+
+const apiClient = new APIClient({
+  apiUrl: 'https://example.com/api/v1',
+  requestInjector: config => {
+    const hawkHeader = hawk.client.header(config.url, config.method, {credentials});
+    return {
+      ...config,
+      headers: {
+        Authorization: hawkHeader.header,
+      },
+    };
   },
-}).then(data => {
-  ...
-})
+});
+
+apiClient.requestService.get('/endpoint').then(data => {
+  // ...
+});
 ```
 
 ## Build

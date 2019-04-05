@@ -4,19 +4,21 @@
     "xkcdjs": "dist/cli.js"
   },
   "dependencies": {
-    "@types/node": "11.10.5",
-    "axios": "0.18.0",
-    "commander": "2.19.0"
+    "@ffflorian/api-client": "0.3.2",
+    "commander": "2.20.0",
+    "fs-extra": "7.0.1"
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
-    "@types/jasmine": "3.3.9",
+    "@types/fs-extra": "5.0.5",
+    "@types/jasmine": "3.3.12",
     "@types/nock": "9.3.1",
-    "jasmine": "3.3.1",
+    "@types/node": "11.13.0",
+    "jasmine": "3.4.0",
     "nock": "10.0.6",
     "rimraf": "2.6.3",
     "ts-node": "8.0.3",
-    "typescript": "3.3.3333"
+    "typescript": "3.4.1"
   },
   "files": [
     "dist"
@@ -37,5 +39,5 @@
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "1.4.2"
+  "version": "1.4.8"
 }
