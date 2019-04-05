@@ -11,11 +11,11 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
-import {API, Authorization, ClientOptions} from './interfaces';
+import {API, Authorization, ClientOptions, RequestOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;
-  private readonly apiClient: APIClient;
+  private readonly apiClient: APIClient<RequestOptions>;
   private readonly options: ClientOptions;
 
   constructor(options: ClientOptions) {

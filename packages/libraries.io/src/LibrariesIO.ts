@@ -43,12 +43,12 @@ export class LibrariesIO {
 
     this.api = {
       github: {
-        repository: new GitHubRepositoryAPI(this.apiClient),
-        user: new GitHubUserAPI(this.apiClient),
+        repository: new GitHubRepositoryAPI(this.apiClient, this.options),
+        user: new GitHubUserAPI(this.apiClient, this.options),
       },
-      platform: new PlatformAPI(this.apiClient),
-      project: new ProjectAPI(this.apiClient),
-      user: new UserAPI(this.apiClient),
+      platform: new PlatformAPI(this.apiClient, this.options),
+      project: new ProjectAPI(this.apiClient, this.options),
+      user: new UserAPI(this.apiClient, this.options),
     };
   }
 
