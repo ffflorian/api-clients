@@ -80,7 +80,7 @@ export class RequestService {
     const config: AxiosRequestConfig = {
       method,
       params,
-      url: `${this.apiUrl}/${endpoint}`,
+      url: `${this.apiUrl}${endpoint}`,
     };
 
     try {
