@@ -10,33 +10,28 @@ export class AbsenceAPI extends APIBase {
   }
 
   /**
-   * Set a new API URL.
-   * @param newUrl The new API url
-   */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.requestService.setApiUrl(newUrl);
-  }
-
-  /**
    * Create absences
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#f7548ccc-b114-46f8-493c-dc86b659dbbc
    */
-  public createAbsence(absenceData: NewAbsence): Promise<void> {
+  public createAbsence(absenceData: NewAbsence): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    return this.apiClient.requestService.post(endpoint, {data: absenceData});
+    return this.apiClient.requestService.post<Absence>(endpoint, {data: absenceData});
   }
 
   /**
    * Retrieve an absence
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#191890ad-7f0d-3c2d-11d8-ed91e6193944
    */
   public retrieveAbsence(id: string): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.post(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Retrieve absences
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#72b55ac7-c4bc-30dc-8cd8-6ac1e15f2639
    */
   public retrieveAbsences(options?: PaginationOptions): Promise<Paginated<Absence[]>> {
     this.checkApiKey('Absence');
@@ -46,8 +41,9 @@ export class AbsenceAPI extends APIBase {
 
   /**
    * Update an existing absence
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#f6f7f6a0-4520-f550-6132-610076d58a91
    */
-  public updateAbsence(id: string, absenceData: any): Promise<any> {
+  public updateAbsence(id: string, absenceData: Partial<Absence>): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
     return this.apiClient.requestService.put(endpoint, {data: absenceData});

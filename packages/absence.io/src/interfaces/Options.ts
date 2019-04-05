@@ -1,10 +1,20 @@
 import {NewAbsence} from './Absence';
+import {NewAllowance} from './Allowance';
+import {NewDepartment} from './Department';
+import {NewLocation} from './Location';
+import {NewReason} from './Reason';
+import {NewTimespan} from './Timespan';
+import {NewUser} from './User';
+
+export type Filter = {[key: string]: {[key: string]: string} | string};
 
 export interface PaginationOptions {
-  filter: {[key: string]: string};
   limit: number;
-  relations?: string[];
   skip: number;
+  filter?: Filter;
+  relations?: string[];
 }
 
-export interface RequestOptions extends PaginationOptions, NewAbsence {}
+export type RequestOptions =
+  | PaginationOptions
+  | Partial<NewAbsence | NewAllowance | NewDepartment | NewLocation | NewReason | NewTimespan | NewUser>;
