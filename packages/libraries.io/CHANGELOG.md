@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.3.1...libraries.io@1.4.0) (2019-04-05)
+
+
+### Features
+
+* **c3nav:** Add c3nav ([#11](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/issues/11)) ([e11f66c](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/commit/e11f66c))
+
+
+
+
+
 ## [1.3.1](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.3.0...libraries.io@1.3.1) (2019-04-05)
 
 **Note:** Version bump only for package libraries.io
