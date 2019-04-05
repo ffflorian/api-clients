@@ -39,27 +39,27 @@ import {XKCD} from '@ffflorian/xkcdjs';
 
 const xkcd = new XKCD();
 
-xkcd.getLatest().then(result => {
+xkcd.api.getLatest().then(result => {
   // XKCDResult { ... }
 });
 
-xkcd.getRandom().then(result => {
+xkcd.api.getRandom().then(result => {
   // XKCDResult
 });
 
-xkcd.getById(2036).then(result => {
+xkcd.api.getById(2036).then(result => {
   // XKCDResult
 });
 
-xkcd.getLatest({withData: true}).then(result => {
+xkcd.api.getLatest({withData: true}).then(result => {
   // XKCDResultWithData
 });
 
-xkcd.getRandom({withData: true}).then(result => {
+xkcd.api.getRandom({withData: true}).then(result => {
   // XKCDResultWithData
 });
 
-xkcd.getById(2036, {withData: true}).then(result => {
+xkcd.api.getById(2036, {withData: true}).then(result => {
   // XKCDResultWithData
 });
 ```
