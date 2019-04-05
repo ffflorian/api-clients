@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.2.10...libraries.io@1.3.0) (2019-04-05)
+
+
+### Features
+
+* **absence.io:** Add interfaces and more functions ([#39](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/issues/39)) ([d923d6b](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/commit/d923d6b))
+
+
+
+
+
 ## [1.2.10](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.2.9...libraries.io@1.2.10) (2019-04-03)
 
 **Note:** Version bump only for package libraries.io
