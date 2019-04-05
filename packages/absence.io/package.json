@@ -33,7 +33,7 @@
     "build": "yarn build:ts && yarn build:docs",
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/absence.io",
-    "clean": "rimraf dist ../../docs/packages/absence.io",
+    "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
