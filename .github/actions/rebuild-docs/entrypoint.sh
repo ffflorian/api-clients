@@ -38,8 +38,7 @@ fi
 rm -rf docs/packages/*
 
 for PACKAGE in $PACKAGES; do
-  echo "Running \"${COMMAND}\" for package \"${PACKAGE}\"..."
-  npx lerna run --scope "${PACKAGE}" "${COMMAND}"
+  npx lerna run --scope "${PACKAGE}" "build:docs"
 done
 
 git add docs
