@@ -10,7 +10,7 @@ workflow "Build, lint and test" {
 
 action "Don't skip CI" {
   uses = "ffflorian/actions/last_commit@master"
-  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
+  args = "^(?:(?!\\[(ci skip|skip ci)\\]|docs: [rR]ebuild docs).)*$"
 }
 
 action "Install dependencies" {
@@ -69,7 +69,6 @@ action "Rebuild docs" {
   env = {
     GH_USER = "ffflobot"
   }
-  args = "publish"
   secrets = ["GH_TOKEN"]
 }
 
