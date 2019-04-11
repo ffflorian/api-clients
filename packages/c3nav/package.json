@@ -26,11 +26,10 @@
   "name": "c3nav",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/c3nav",
   "scripts": {
-    "build": "yarn build:ts",
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/c3nav",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build:ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
   "types": "dist/index.d.ts",

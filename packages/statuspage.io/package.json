@@ -25,11 +25,10 @@
   "name": "statuspage.io",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io",
   "scripts": {
-    "build": "yarn build:ts",
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/statuspage.io",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
   "version": "1.0.12"
