@@ -24,10 +24,11 @@ REPO="$(git config remote.origin.url)"
 REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\/}"
 git remote set-url origin "${REPO}"
 
+rm -rf docs/packages/*
 yarn build:docs
-git add "docs"
+git add docs
 git commit -m "docs: Rebuild docs"
-git push
+git push origin master
 
 rm "${HOME}/.gitconfig"
 
