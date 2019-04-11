@@ -70,7 +70,7 @@ action "Rebuild docs" {
     GH_USER = "ffflobot"
   }
   args = "publish"
-  secrets = ["NPM_AUTH_TOKEN", "GH_TOKEN"]
+  secrets = ["GH_TOKEN"]
 }
 
 action "Publish all projects" {
