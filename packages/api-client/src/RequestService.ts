@@ -124,25 +124,7 @@ export class RequestService<T> {
     this.config.apiUrl = apiUrl;
   }
 
-  private async injectConfig(
-    baseConfig: AxiosRequestConfig,
-    options?: AxiosRequestConfig
-  ): Promise<AxiosConfigWithData<T>> {
-    if (typeof this.config.requestInjector === 'function') {
-      baseConfig = await this.config.requestInjector(baseConfig);
-    }
-
-    if (typeof options !== 'undefined') {
-      return {
-        ...baseConfig,
-        ...(!!options && options),
-      };
-    }
-
-    return baseConfig;
-  }
-
-  async request<U>(config: AxiosConfigWithData<T>): Promise<AxiosResponse<U>> {
+  public async request<U>(config: AxiosConfigWithData<T>): Promise<AxiosResponse<U>> {
     try {
       const response = await axios.request<U>(config);
       const contentType = response.headers['content-type'] ? String(response.headers['content-type']) : undefined;
@@ -161,5 +143,31 @@ export class RequestService<T> {
     } catch (error) {
       throw ExceptionMapper(error);
     }
+  }
+
+  public setRequestInjector(requestInjector: RequestInjectorFn<T>) {
+    this.config.requestInjector = requestInjector;
+  }
+
+  public removeRequestInjector() {
+    delete this.config.requestInjector;
+  }
+
+  private async injectConfig(
+    baseConfig: AxiosRequestConfig,
+    options?: AxiosRequestConfig
+  ): Promise<AxiosConfigWithData<T>> {
+    if (typeof this.config.requestInjector === 'function') {
+      baseConfig = await this.config.requestInjector(baseConfig);
+    }
+
+    if (typeof options !== 'undefined') {
+      return {
+        ...baseConfig,
+        ...(!!options && options),
+      };
+    }
+
+    return baseConfig;
   }
 }
