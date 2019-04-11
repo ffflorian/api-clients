@@ -13,7 +13,7 @@
     "@types/fs-extra": "5.0.5",
     "@types/jasmine": "3.3.12",
     "@types/nock": "9.3.1",
-    "@types/node": "11.13.2",
+    "@types/node": "11.13.4",
     "jasmine": "3.4.0",
     "nock": "10.0.6",
     "rimraf": "2.6.3",
