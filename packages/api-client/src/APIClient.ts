@@ -11,6 +11,7 @@ export interface ClientOptions<T> {
 
 export class APIClient<T = any> {
   public readonly requestService: RequestService<T>;
+  private readonly options: ClientOptions<T>;
 
   constructor(apiUrl: string);
   constructor(options: ClientOptions<T>);
@@ -19,6 +20,7 @@ export class APIClient<T = any> {
       options = {apiUrl: options};
     }
 
+    this.options = options;
     this.requestService = new RequestService<T>(options);
   }
 
@@ -28,5 +30,20 @@ export class APIClient<T = any> {
    */
   public setApiUrl(newUrl: string): void {
     this.requestService.setApiUrl(newUrl);
+  }
+
+  /**
+   * Set a (new) request injector.
+   * @param requestInjector The new request injector.
+   */
+  public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
+    this.options.requestInjector = requestInjector;
+    this.requestService.setRequestInjector(requestInjector);
+  }
+
+  /** Remove the request injector. */
+  public removeRequestInjector(): void {
+    delete this.options.requestInjector;
+    this.requestService.removeRequestInjector();
   }
 }
