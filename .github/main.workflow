@@ -63,9 +63,19 @@ action "Don't publish dependency updates" {
   args = "^(?!chore\\(deps)"
 }
 
+action "Rebuild docs" {
+  uses = "./.github/actions/rebuild-docs"
+  needs = "Don't publish dependency updates"
+  env = {
+    GH_USER = "ffflobot"
+  }
+  args = "publish"
+  secrets = ["GH_TOKEN"]
+}
+
 action "Publish all projects" {
   uses = "ffflorian/actions/lerna@master"
-  needs = "Don't publish dependency updates"
+  needs = "Rebuild docs"
   env = {
     GH_USER = "ffflobot"
   }
