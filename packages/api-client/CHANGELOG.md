@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.3.4...@ffflorian/api-client@0.4.0) (2019-04-11)
+
+
+### Features
+
+* **api-client:** Add/remove a requestInjector ([#46](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/issues/46)) ([79b53e0](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/commit/79b53e0))
+
+
+
+
+
 ## [0.3.4](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.3.3...@ffflorian/api-client@0.3.4) (2019-04-05)
 
 **Note:** Version bump only for package @ffflorian/api-client
