@@ -64,7 +64,7 @@ action "Don't publish dependency updates" {
 }
 
 action "Rebuild docs" {
-  uses = ".github/actions/rebuild-docs"
+  uses = "./.github/actions/rebuild-docs"
   needs = "Don't publish dependency updates"
   env = {
     GH_USER = "ffflobot"
