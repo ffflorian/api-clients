@@ -25,7 +25,7 @@ REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\
 git remote set-url origin "${REPO}"
 
 yarn build:docs
-git add .
+git add "docs"
 git commit -m "docs: Rebuild docs"
 git push
 
