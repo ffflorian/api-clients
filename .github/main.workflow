@@ -10,7 +10,7 @@ workflow "Build, lint and test" {
 
 action "Don't skip CI" {
   uses = "ffflorian/actions/last_commit@master"
-  args = "^(?:(?!\\[(ci skip|skip ci)\\]|docs: [rR]ebuild docs).)*$"
+  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
 }
 
 action "Install dependencies" {
@@ -43,7 +43,7 @@ action "Build all projects" {
 action "Test all projects" {
   uses = "docker://node:10-slim"
   needs = "Bootstrap projects"
-  runs = "yarn"
+  runs = "./bin/updated.sh"
   args = "test"
 }
 
