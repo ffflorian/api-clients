@@ -4,13 +4,13 @@ workflow "Build, lint and test" {
     "Build all projects",
     "Lint all projects",
     "Test all projects",
-    "Publish all projects"
+    "Publish updated projects"
   ]
 }
 
 action "Don't skip CI" {
   uses = "ffflorian/actions/last_commit@master"
-  args = "^(?:(?!\\[(ci skip|skip ci)\\]|docs: [rR]ebuild docs).)*$"
+  args = "^(?:(?!\\[(ci skip|skip ci)\\]).)*$"
 }
 
 action "Install dependencies" {
@@ -72,7 +72,7 @@ action "Rebuild docs" {
   secrets = ["GH_TOKEN"]
 }
 
-action "Publish all projects" {
+action "Publish updated projects" {
   uses = "ffflorian/actions/lerna@master"
   needs = "Rebuild docs"
   env = {
