@@ -102,7 +102,9 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_apiclient_.apiclient.html#removerequestinjector" class="tsd-kind-icon">remove<wbr>Request<wbr>Injector</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_apiclient_.apiclient.html#setapiurl" class="tsd-kind-icon">set<wbr>Api<wbr>Url</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_apiclient_.apiclient.html#setrequestinjector" class="tsd-kind-icon">set<wbr>Request<wbr>Injector</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a10b28a/packages/api-client/src/APIClient.ts#L13">APIClient.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L14">APIClient.ts:14</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -135,7 +137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a10b28a/packages/api-client/src/APIClient.ts#L15">APIClient.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L16">APIClient.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -157,13 +159,35 @@
 					<div class="tsd-signature tsd-kind-icon">request<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_requestservice_.requestservice.html" class="tsd-signature-type">RequestService</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a10b28a/packages/api-client/src/APIClient.ts#L13">APIClient.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L13">APIClient.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removerequestinjector" class="tsd-anchor"></a>
+					<h3>remove<wbr>Request<wbr>Injector</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Request<wbr>Injector<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L45">APIClient.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove the request injector.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setapiurl" class="tsd-anchor"></a>
 					<h3>set<wbr>Api<wbr>Url</h3>
@@ -174,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a10b28a/packages/api-client/src/APIClient.ts#L29">APIClient.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L31">APIClient.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -188,6 +212,37 @@
 									<h5>newUrl: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The new API url</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setrequestinjector" class="tsd-anchor"></a>
+					<h3>set<wbr>Request<wbr>Injector</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Request<wbr>Injector<span class="tsd-signature-symbol">(</span>requestInjector<span class="tsd-signature-symbol">: </span><a href="../modules/_requestservice_.html#requestinjectorfn" class="tsd-signature-type">RequestInjectorFn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/62f7f88/packages/api-client/src/APIClient.ts#L39">APIClient.ts:39</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set a (new) request injector.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>requestInjector: <a href="../modules/_requestservice_.html#requestinjectorfn" class="tsd-signature-type">RequestInjectorFn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The new request injector.</p>
 									</div>
 								</li>
 							</ul>
@@ -228,7 +283,13 @@
 								<a href="_apiclient_.apiclient.html#requestservice" class="tsd-kind-icon">request<wbr>Service</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_apiclient_.apiclient.html#removerequestinjector" class="tsd-kind-icon">remove<wbr>Request<wbr>Injector</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_apiclient_.apiclient.html#setapiurl" class="tsd-kind-icon">set<wbr>Api<wbr>Url</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_apiclient_.apiclient.html#setrequestinjector" class="tsd-kind-icon">set<wbr>Request<wbr>Injector</a>
 							</li>
 						</ul>
 					</li>
