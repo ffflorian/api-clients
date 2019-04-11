@@ -4,7 +4,7 @@
     "axios": "0.18.0",
     "http-status-codes": "1.3.2"
   },
-  "description": "A crates.io API client",
+  "description": "A generic API client",
   "devDependencies": {
     "rimraf": "2.6.3",
     "typedoc": "0.14.2",
