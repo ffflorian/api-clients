@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, NewTimespan, Paginated, PaginationOptions, Timespan} from '../interfaces/';
+import {Authorization, NewTimespan, Paginated, PaginationOptions, RequestOptions, Timespan} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class TimespanAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class TimespanAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -17,7 +17,7 @@ export class TimespanAPI extends APIBase {
   public retrieveTimespan(id: string): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -27,7 +27,7 @@ export class TimespanAPI extends APIBase {
   public retrieveTimespans(options?: PaginationOptions): Promise<Paginated<Timespan[]>> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 
   /**
@@ -38,7 +38,7 @@ export class TimespanAPI extends APIBase {
   public createTimespan(data: NewTimespan): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.create();
-    return this.apiClient.requestService.post(endpoint, {data});
+    return this.post(endpoint, {data});
   }
 
   /**
@@ -50,7 +50,7 @@ export class TimespanAPI extends APIBase {
   public updateTimespan(id: string, data: Partial<NewTimespan>): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    return this.apiClient.requestService.put(endpoint, {data});
+    return this.put(endpoint, {data});
   }
 
   /**
@@ -61,6 +61,6 @@ export class TimespanAPI extends APIBase {
   public deleteTimespan(id: string): Promise<void> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    return this.apiClient.requestService.delete(endpoint);
+    return this.delete(endpoint);
   }
 }

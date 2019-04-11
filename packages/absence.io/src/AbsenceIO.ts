@@ -1,5 +1,5 @@
+import {AxiosRequestConfig, ClientOptions} from '@ffflorian/api-client';
 const hawk = require('hawk');
-import {APIClient, AxiosRequestConfig} from '@ffflorian/api-client';
 
 import {
   AbsenceAPI,
@@ -11,14 +11,13 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
-import {API, Authorization, ClientOptions, RequestOptions} from './interfaces';
+import {API, Authorization, RequestOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
-  private readonly options: ClientOptions;
+  private readonly options: Authorization;
 
-  constructor(options: ClientOptions) {
+  constructor(options: Authorization) {
     this.options = options;
 
     const credentials = {
@@ -38,20 +37,20 @@ export class AbsenceIO {
       };
     };
 
-    this.apiClient = new APIClient({
+    const config: ClientOptions<RequestOptions> = {
       apiUrl: 'https://app.absence.io/api/v2',
       requestInjector,
-    });
+    };
 
     this.api = {
-      absence: new AbsenceAPI(this.apiClient, options),
-      allowanceType: new AllowanceTypeAPI(this.apiClient, options),
-      department: new DepartmentAPI(this.apiClient, options),
-      location: new LocationAPI(this.apiClient, options),
-      reason: new ReasonAPI(this.apiClient, options),
-      team: new TeamAPI(this.apiClient, options),
-      timespan: new TimespanAPI(this.apiClient, options),
-      user: new UserAPI(this.apiClient, options),
+      absence: new AbsenceAPI(config, this.options),
+      allowanceType: new AllowanceTypeAPI(config, options),
+      department: new DepartmentAPI(config, options),
+      location: new LocationAPI(config, options),
+      reason: new ReasonAPI(config, options),
+      team: new TeamAPI(config, options),
+      timespan: new TimespanAPI(config, options),
+      user: new UserAPI(config, options),
     };
   }
 
@@ -60,7 +59,7 @@ export class AbsenceIO {
    * @param newUrl The new API URL
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.api.absence.setApiUrl(newUrl);
   }
 
   /**
@@ -68,7 +67,6 @@ export class AbsenceIO {
    * @param authorization The API authorization data
    */
   public setApiAuthorization(authorization: Authorization): void {
-    this.options.apiKey = authorization.apiKey;
-    this.options.apiKeyId = authorization.apiKeyId;
+    this.api.absence.setApiAuthorization(authorization);
   }
 }

@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Location, Paginated, PaginationOptions} from '../interfaces/';
+import {Authorization, Location, Paginated, PaginationOptions, RequestOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class LocationAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class LocationAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -16,7 +16,7 @@ export class LocationAPI extends APIBase {
   public retrieveLocation(id: string): Promise<Location> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -26,6 +26,6 @@ export class LocationAPI extends APIBase {
   public retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 }

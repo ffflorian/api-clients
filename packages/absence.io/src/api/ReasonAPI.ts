@@ -1,13 +1,13 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Paginated} from '../interfaces/';
+import {Authorization, Paginated, RequestOptions} from '../interfaces/';
 import {Reason} from '../interfaces/Reason';
 import {APIBase} from './APIBase';
 
-export class ReasonAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class ReasonAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -17,7 +17,7 @@ export class ReasonAPI extends APIBase {
   public retrieveReason(id: string): Promise<Reason> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -27,6 +27,6 @@ export class ReasonAPI extends APIBase {
   public retrieveReasons(): Promise<Paginated<Reason[]>> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    return this.apiClient.requestService.post(endpoint, {});
+    return this.post(endpoint, {});
   }
 }

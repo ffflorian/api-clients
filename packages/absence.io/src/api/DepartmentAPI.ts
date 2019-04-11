@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Department, Paginated, PaginationOptions} from '../interfaces/';
+import {Authorization, Department, Paginated, PaginationOptions, RequestOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class DepartmentAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class DepartmentAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -16,7 +16,7 @@ export class DepartmentAPI extends APIBase {
   public retrieveDepartment(id: string): Promise<Department> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -26,6 +26,6 @@ export class DepartmentAPI extends APIBase {
   public retrieveDepartments(options?: PaginationOptions): Promise<Paginated<Department[]>> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 }

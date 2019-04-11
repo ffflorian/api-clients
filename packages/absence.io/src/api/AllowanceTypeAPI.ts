@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {Allowance, ClientOptions, Paginated, PaginationOptions} from '../interfaces/';
+import {Allowance, Authorization, Paginated, PaginationOptions, RequestOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class AllowanceTypeAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class AllowanceTypeAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -16,7 +16,7 @@ export class AllowanceTypeAPI extends APIBase {
   public retrieveAllowanceType(id: string): Promise<Allowance> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -26,6 +26,6 @@ export class AllowanceTypeAPI extends APIBase {
   public retrieveAllowanceTypes(options?: PaginationOptions): Promise<Paginated<Allowance[]>> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 }

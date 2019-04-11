@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, NewUser, Paginated, PaginationOptions, User} from '../interfaces/';
+import {Authorization, NewUser, Paginated, PaginationOptions, RequestOptions, User} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class UserAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class UserAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -18,7 +18,7 @@ export class UserAPI extends APIBase {
   public invite(userData: NewUser): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.invite();
-    return this.apiClient.requestService.post(endpoint, {data: userData});
+    return this.post(endpoint, {data: userData});
   }
 
   /**
@@ -29,7 +29,7 @@ export class UserAPI extends APIBase {
   public retrieveUser(id: string): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    return this.apiClient.requestService.post(endpoint, {});
+    return this.post(endpoint, {});
   }
 
   /**
@@ -40,7 +40,7 @@ export class UserAPI extends APIBase {
   public retrieveUsers(options?: PaginationOptions): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 
   /**
@@ -52,6 +52,6 @@ export class UserAPI extends APIBase {
   public updateUser(id: string, userData?: Partial<NewUser>): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    return this.apiClient.requestService.post(endpoint, {data: userData});
+    return this.post(endpoint, {data: userData});
   }
 }

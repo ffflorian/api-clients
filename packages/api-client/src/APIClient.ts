@@ -1,4 +1,4 @@
-import {RequestInjectorFn, RequestService} from './RequestService';
+import {AxiosConfigWithData, RequestInjectorFn, RequestService} from './RequestService';
 
 export interface ClientOptions<T> {
   /** The API URL (e.g. "https://example.com/api/v1"). */
@@ -9,19 +9,13 @@ export interface ClientOptions<T> {
   // responseInjector?: ResponseInjectorFn<U>;
 }
 
-export class APIClient<T = any> {
-  public readonly requestService: RequestService<T>;
-  private readonly options: ClientOptions<T>;
+export abstract class APIClient<T = any> {
+  private readonly requestService: RequestService<T>;
+  protected readonly config: ClientOptions<T>;
 
-  constructor(apiUrl: string);
-  constructor(options: ClientOptions<T>);
-  constructor(options: ClientOptions<T> | string) {
-    if (typeof options === 'string') {
-      options = {apiUrl: options};
-    }
-
-    this.options = options;
-    this.requestService = new RequestService<T>(options);
+  constructor(config: ClientOptions<T>) {
+    this.config = config;
+    this.requestService = new RequestService<T>(config);
   }
 
   /**
@@ -37,13 +31,41 @@ export class APIClient<T = any> {
    * @param requestInjector The new request injector.
    */
   public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
-    this.options.requestInjector = requestInjector;
+    this.config.requestInjector = requestInjector;
     this.requestService.setRequestInjector(requestInjector);
   }
 
   /** Remove the request injector. */
   public removeRequestInjector(): void {
-    delete this.options.requestInjector;
+    delete this.config.requestInjector;
     this.requestService.removeRequestInjector();
+  }
+
+  public async delete<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.delete(url, options);
+  }
+
+  public async get<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.get(url, options);
+  }
+
+  public async head<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.head(url, options);
+  }
+
+  public async options<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.options(url, options);
+  }
+
+  public async patch<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.patch(url, options);
+  }
+
+  public async post<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.post(url, options);
+  }
+
+  public async put<U>(url: string, options?: AxiosConfigWithData<T>): Promise<U> {
+    return this.requestService.put(url, options);
   }
 }

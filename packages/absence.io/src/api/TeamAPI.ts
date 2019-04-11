@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Paginated, PaginationOptions, Team} from '../interfaces/';
+import {Authorization, Paginated, PaginationOptions, RequestOptions, Team} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class TeamAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class TeamAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -16,7 +16,7 @@ export class TeamAPI extends APIBase {
   public retrieveTeam(id: string): Promise<Team> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -26,6 +26,6 @@ export class TeamAPI extends APIBase {
   public retrieveTeams(options?: PaginationOptions): Promise<Paginated<Team[]>> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 }

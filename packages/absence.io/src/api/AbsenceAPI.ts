@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {ClientOptions} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {Absence, ClientOptions, NewAbsence, Paginated, PaginationOptions} from '../interfaces/';
+import {Absence, Authorization, NewAbsence, Paginated, PaginationOptions, RequestOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
-export class AbsenceAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
-    super(apiClient, options);
+export class AbsenceAPI extends APIBase<RequestOptions> {
+  constructor(config: ClientOptions<RequestOptions>, auth: Authorization) {
+    super(config, auth);
   }
 
   /**
@@ -16,7 +16,7 @@ export class AbsenceAPI extends APIBase {
   public createAbsence(absenceData: NewAbsence): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    return this.apiClient.requestService.post<Absence>(endpoint, {data: absenceData});
+    return this.post<Absence>(endpoint, {data: absenceData});
   }
 
   /**
@@ -26,7 +26,7 @@ export class AbsenceAPI extends APIBase {
   public retrieveAbsence(id: string): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.get(endpoint);
+    return this.get(endpoint);
   }
 
   /**
@@ -36,7 +36,7 @@ export class AbsenceAPI extends APIBase {
   public retrieveAbsences(options?: PaginationOptions): Promise<Paginated<Absence[]>> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    return this.post(endpoint, {data: options});
   }
 
   /**
@@ -46,6 +46,6 @@ export class AbsenceAPI extends APIBase {
   public updateAbsence(id: string, absenceData: Partial<Absence>): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    return this.apiClient.requestService.put(endpoint, {data: absenceData});
+    return this.put(endpoint, {data: absenceData});
   }
 }

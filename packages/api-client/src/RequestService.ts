@@ -4,7 +4,7 @@ import * as HTTP_STATUS from 'http-status-codes';
 import {ClientOptions} from './APIClient';
 import {ExceptionMapper, InvalidResponseError} from './APIException';
 
-enum HttpMethod {
+export enum HttpMethod {
   DELETE = 'delete',
   GET = 'get',
   HEAD = 'head',
@@ -153,7 +153,7 @@ export class RequestService<T> {
     delete this.config.requestInjector;
   }
 
-  private async injectConfig(
+  public async injectConfig(
     baseConfig: AxiosRequestConfig,
     options?: AxiosRequestConfig
   ): Promise<AxiosConfigWithData<T>> {
