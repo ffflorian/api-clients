@@ -3,7 +3,7 @@ workflow "Build, lint and test" {
   resolves = [
     "Build all projects",
     "Lint all projects",
-    "Test updated projects",
+    "Test all projects",
     "Publish updated projects"
   ]
 }
@@ -40,7 +40,7 @@ action "Build all projects" {
   args = "dist"
 }
 
-action "Test updated projects" {
+action "Test all projects" {
   uses = "docker://node:10-slim"
   needs = "Bootstrap projects"
   runs = "yarn"
@@ -52,7 +52,7 @@ action "Check for master branch" {
   needs = [
     "Build all projects",
     "Lint all projects",
-    "Test updated projects"
+    "Test all projects"
   ]
   args = "branch master"
 }
