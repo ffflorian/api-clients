@@ -23,9 +23,10 @@
   "private": true,
   "scripts": {
     "boot": "lerna bootstrap --reject-cycles",
-    "build": "lerna run build:ts",
+    "build:ts": "lerna run build:ts",
+    "build:docs": "lerna run build:docs",
     "clean": "lerna run clean",
-    "dist": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:other && yarn fix:ts",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",

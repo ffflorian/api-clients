@@ -35,11 +35,10 @@
   "name": "@ffflorian/xkcdjs",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs",
   "scripts": {
-    "build": "yarn build:ts && yarn build:docs",
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/xkcdjs",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build",
+    "dist": "yarn clean && yarn build:ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
   "version": "1.4.11"
