@@ -25,9 +25,13 @@ REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\
 git remote set-url origin "${REPO}"
 
 rm -rf docs/packages/*
-yarn build:docs
+
+if ! ./bin/updated.sh "build:docs"; then
+  exit $?
+fi
+
 git add docs
-git commit -m "docs: Rebuild docs"
+git commit -m "docs: Rebuild docs [ci skip]"
 git push origin master
 
 rm "${HOME}/.gitconfig"
