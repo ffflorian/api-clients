@@ -25,9 +25,8 @@ REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\
 git remote set-url origin "${REPO}"
 
 rm -rf docs/packages/*
-./bin/updated.sh "build:docs"
 
-if [ "$?" != "0" ]; then
+if ! ./bin/updated.sh "build:docs"; then
   exit $?
 fi
 

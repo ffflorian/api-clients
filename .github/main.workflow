@@ -3,8 +3,8 @@ workflow "Build, lint and test" {
   resolves = [
     "Build all projects",
     "Lint all projects",
-    "Test all projects",
-    "Publish all projects"
+    "Test updated projects",
+    "Publish updated projects"
   ]
 }
 
@@ -40,10 +40,10 @@ action "Build all projects" {
   args = "dist"
 }
 
-action "Test all projects" {
+action "Test updated projects" {
   uses = "docker://node:10-slim"
   needs = "Bootstrap projects"
-  runs = "./bin/updated.sh"
+  runs = "yarn"
   args = "test"
 }
 
@@ -52,7 +52,7 @@ action "Check for master branch" {
   needs = [
     "Build all projects",
     "Lint all projects",
-    "Test all projects"
+    "Test updated projects"
   ]
   args = "branch master"
 }
@@ -72,7 +72,7 @@ action "Rebuild docs" {
   secrets = ["GH_TOKEN"]
 }
 
-action "Publish all projects" {
+action "Publish updated projects" {
   uses = "ffflorian/actions/lerna@master"
   needs = "Rebuild docs"
   env = {
