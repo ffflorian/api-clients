@@ -35,8 +35,6 @@ if [ -z "${PACKAGES}" ]; then
   exit
 fi
 
-rm -rf docs/packages/*
-
 for PACKAGE in $PACKAGES; do
   npx lerna run --scope "${PACKAGE}" "build:docs"
 done
