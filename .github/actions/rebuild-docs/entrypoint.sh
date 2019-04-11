@@ -24,11 +24,23 @@ REPO="$(git config remote.origin.url)"
 REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\/}"
 git remote set-url origin "${REPO}"
 
+echo "Checking for changed packages..."
+
+set +e
+PACKAGES="$(npx lerna changed --loglevel warn)"
+set -e
+
+if [ -z "${PACKAGES}" ]; then
+  echo "No local packages have changed since the last tagged release."
+  exit
+fi
+
 rm -rf docs/packages/*
 
-if ! ./bin/updated.sh "build:docs"; then
-  exit $?
-fi
+for PACKAGE in $PACKAGES; do
+  echo "Running \"${COMMAND}\" for package \"${PACKAGE}\"..."
+  npx lerna run --scope "${PACKAGE}" "${COMMAND}"
+done
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]"
