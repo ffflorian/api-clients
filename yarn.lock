@@ -38,6 +38,11 @@
   resolved "https://registry.yarnpkg.com/@ffflorian/prettier-config/-/prettier-config-0.0.3.tgz#87be879c8d1d47ca698e9ce7d2be9af6b85ec917"
   integrity sha512-EhlT3il2bb3GfTEDKxbmOjUpqzAJTc8ncRR4zJ2D2WtXyQiKqw/mINTVZFLh0MfAfFcc3TbLhfY2aHPnnxnvDw==
 
+"@ffflorian/tslint-config@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ffflorian/tslint-config/-/tslint-config-0.1.0.tgz#e6ccff8d7e928a6f55236c224af25f97dd70c9a7"
+  integrity sha512-7FgMxxQeMpG2BynLzMuqMjh7W2a3fP/cIg42kkCA63X6VhQTYbdDjFFBkjfOeivx7xus/1Qb7+fevvoXo9DDlw==
+
 "@lerna/add@3.13.3":
   version "3.13.3"
   resolved "https://registry.yarnpkg.com/@lerna/add/-/add-3.13.3.tgz#f4c1674839780e458f0426d4f7b6d0a77b9a2ae9"
