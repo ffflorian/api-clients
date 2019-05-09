@@ -11,6 +11,11 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.0.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.ts": [
       "tslint --project tsconfig.json --fix",
