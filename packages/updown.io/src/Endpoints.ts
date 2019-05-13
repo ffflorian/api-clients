@@ -32,7 +32,7 @@ export namespace Endpoint {
   }
 
   export function checks(token?: string): string {
-    return `/${CHECKS}/` + (token ? encode(token) + '/' : '');
+    return `/${CHECKS}/${token ? `${encode(token)}/` : ''}`;
   }
 
   export function nodes(): string {
