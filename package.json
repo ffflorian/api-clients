@@ -3,7 +3,7 @@
   "description": "API clients for various services.",
   "devDependencies": {
     "@ffflorian/prettier-config": "0.0.3",
-    "@ffflorian/tslint-config": "0.1.0",
+    "@ffflorian/tslint-config": "0.2.1",
     "husky": "2.2.0",
     "lerna": "3.13.4",
     "lint-staged": "8.1.7",
