@@ -5,7 +5,7 @@
     "@ffflorian/prettier-config": "0.0.3",
     "@ffflorian/tslint-config": "0.2.1",
     "husky": "2.3.0",
-    "lerna": "3.14.0",
+    "lerna": "3.14.1",
     "lint-staged": "8.1.7",
     "prettier": "1.17.1",
     "tslint": "5.16.0",
