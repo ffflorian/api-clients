@@ -9,7 +9,7 @@ workflow "Build, lint and test" {
 }
 
 action "Don't skip CI" {
-  uses = "ffflorian/actions/skip-ci-check@master"
+  uses = "ffflorian/actions/skip-ci-check@v1.0.0"
 }
 
 action "Install dependencies" {
@@ -57,7 +57,7 @@ action "Check for master branch" {
 }
 
 action "Don't publish dependency updates" {
-  uses = "ffflorian/actions/last_commit@master"
+  uses = "ffflorian/actions/last_commit@v1.0.0"
   needs = "Check for master branch"
   args = "^(?!chore\\(deps)"
 }
@@ -72,7 +72,7 @@ action "Rebuild docs" {
 }
 
 action "Publish updated projects" {
-  uses = "ffflorian/actions/lerna@master"
+  uses = "ffflorian/actions/lerna@v1.0.0"
   needs = "Rebuild docs"
   env = {
     GH_USER = "ffflobot"
