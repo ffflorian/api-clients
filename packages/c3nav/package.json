@@ -5,7 +5,7 @@
   },
   "description": "A c3nav API client",
   "devDependencies": {
-    "@types/jasmine": "3.3.12",
+    "@types/jasmine": "3.3.13",
     "@types/node": "~12",
     "jasmine": "3.4.0",
     "rimraf": "2.6.3",

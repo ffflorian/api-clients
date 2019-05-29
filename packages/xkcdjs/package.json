@@ -11,7 +11,7 @@
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
     "@types/fs-extra": "7.0.0",
-    "@types/jasmine": "3.3.12",
+    "@types/jasmine": "3.3.13",
     "@types/nock": "10.0.3",
     "@types/node": "~12",
     "jasmine": "3.4.0",
