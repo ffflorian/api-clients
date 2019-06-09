@@ -1,4 +1,4 @@
-import {APIClient, AxiosConfigWithData} from '@ffflorian/api-client';
+import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
 import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
 import {API, ClientOptions, RequestOptions} from './interfaces/';
 
@@ -19,7 +19,7 @@ export class LibrariesIO {
       ...options,
     };
 
-    const requestInjector = (config: AxiosConfigWithData<RequestOptions>) => {
+    const requestInjector: RequestInjectorFn<RequestOptions> = config => {
       config.data = {
         ...config.data,
         api_key: this.options.apiKey,
