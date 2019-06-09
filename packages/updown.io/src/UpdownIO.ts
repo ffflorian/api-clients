@@ -15,9 +15,9 @@ export class UpdownIO {
 
     const requestInjector: RequestInjectorFn<RequestOptions> = config => {
       if (options && (options as ClientOptions).apiKey) {
-        config.data = {
-          ...config.data,
-          'api-key': (options as ClientOptions).apiKey,
+        config.headers = {
+          ...config.headers,
+          'X-API-KEY': (options as ClientOptions).apiKey,
         };
       }
       return config;
