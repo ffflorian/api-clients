@@ -20,18 +20,18 @@ type MetricsGroup = 'time' | 'host';
 export interface RequestOptions {
   alias?: string;
   apdex_t?: number;
-  apiKey?: string;
-  customHeaders?: CustomHeaders;
-  disabledLocations?: string[];
+  'api-key'?: string;
+  custom_headers?: CustomHeaders;
+  disabled_locations?: string[];
   enabled?: boolean;
   from?: string;
   group?: MetricsGroup;
   metrics?: boolean;
-  muteUntil?: string;
+  mute_until?: string;
   page?: number;
   period?: number;
   published?: boolean;
-  stringMatch?: string;
+  string_match?: string;
   to?: string;
   url?: string;
 }

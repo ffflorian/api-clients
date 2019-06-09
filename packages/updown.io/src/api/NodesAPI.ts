@@ -1,30 +1,30 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {Nodes} from '../interfaces';
-import {RequestService} from '../RequestService';
+import {Nodes, RequestOptions} from '../interfaces';
 
 export class NodesAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient) {
+    this.apiClient = apiClient;
   }
 
   /** List all updown.io monitoring nodes. */
   public getNodes(): Promise<Nodes> {
     const endpoint = Endpoint.nodes();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /** List all updown.io monitoring nodes IPv4 addresses. */
   public getIpv4Nodes(): Promise<string[]> {
     const endpoint = Endpoint.Nodes.ipv4();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /** List all updown.io monitoring nodes IPv6 addresses. */
   public getIpv6Nodes(): Promise<string[]> {
     const endpoint = Endpoint.Nodes.ipv6();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -32,6 +32,6 @@ export class NodesAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.setApiUrl(newUrl);
   }
 }

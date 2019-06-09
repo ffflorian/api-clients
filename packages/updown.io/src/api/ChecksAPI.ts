@@ -1,18 +1,12 @@
+import {APIClient} from '@ffflorian/api-client';
 import {Endpoint} from '../Endpoints';
-import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
-import {RequestService} from '../RequestService';
+import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions, RequestOptions} from '../interfaces';
 
 export class ChecksAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
-  }
-
-  private checkApiKey() {
-    if (!this.requestService.isApiKeySet()) {
-      throw new Error('An API key needs to be set in order to use the checks API.');
-    }
+  constructor(apiClient: APIClient) {
+    this.apiClient = apiClient;
   }
 
   /**
@@ -21,40 +15,41 @@ export class ChecksAPI {
    * @param metrics Include performance metrics (last hour only)
    */
   public getCheck(token: string, metrics?: boolean): Promise<Check> {
-    this.checkApiKey();
     const endpoint = Endpoint.Checks.check(token);
-    return this.requestService.get(endpoint, {metrics});
+    return this.apiClient.requestService.get(endpoint, {data: {metrics}});
   }
 
   /** List all your checks. */
   public getChecks(): Promise<Check[]> {
-    this.checkApiKey();
     const endpoint = Endpoint.checks();
-    return this.requestService.get(endpoint);
-  }
-
-  /**
-   * Get all the downtimes of a check.
-   * @param token The check unique token
-   * @param page The page to fetch (100 per page)
-   */
-  public getDowntimes(token: string, page?: number): Promise<Downtime[]> {
-    this.checkApiKey();
-    const endpoint = Endpoint.Checks.downtimes(token);
-    return this.requestService.get(endpoint, {page});
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Get all the downtimes of a check.
    *
-   * Statistic are aggregated per hour which means you can't get more precise results than this. For example all requests performed between 5:00 and 5:59 will be reported at 5:00 in this API. The time range needs to be at least one hour to get data.
+   * @param token The check unique token
+   * @param page The page to fetch (100 per page)
+   */
+  public getDowntimes(token: string, page?: number): Promise<Downtime[]> {
+    const endpoint = Endpoint.Checks.downtimes(token);
+    return this.apiClient.requestService.get(endpoint, {params: {page}});
+  }
+
+  /**
+   * Get detailed metrics about the check.
+   *
+   * Statistic are aggregated per hour which means you can't get more
+   * precise results than this. For example all requests performed
+   * between 5:00 and 5:59 will be reported at 5:00 in this API.
+   * The time range needs to be at least one hour to get data.
+   *
    * @param token The check unique token
    * @param page The page to fetch (100 per page)
    */
   public getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
-    this.checkApiKey();
     const endpoint = Endpoint.Checks.downtimes(token);
-    return this.requestService.get(endpoint, options);
+    return this.apiClient.requestService.get(endpoint, {params: options});
   }
 
   /**
@@ -63,13 +58,12 @@ export class ChecksAPI {
    * @param options Further check adding options
    */
   public addCheck(url: string, options?: CheckOptions): Promise<Check> {
-    this.checkApiKey();
     const endpoint = Endpoint.checks();
     const params = {
       url,
       ...options,
     };
-    return this.requestService.post(endpoint, params);
+    return this.apiClient.requestService.post(endpoint, params);
   }
 
   /**
@@ -78,9 +72,8 @@ export class ChecksAPI {
    * @param options Further check updating options
    */
   public updateCheck(token: string, options?: CheckOptions): Promise<Check> {
-    this.checkApiKey();
     const endpoint = Endpoint.checks(token);
-    return this.requestService.put(endpoint, options);
+    return this.apiClient.requestService.put(endpoint, {data: options});
   }
 
   /**
@@ -88,9 +81,8 @@ export class ChecksAPI {
    * @param token The check unique token
    */
   public deleteCheck(token: string): Promise<Deleted> {
-    this.checkApiKey();
     const endpoint = Endpoint.checks(token);
-    return this.requestService.delete(endpoint);
+    return this.apiClient.requestService.delete(endpoint);
   }
 
   /**
@@ -98,6 +90,6 @@ export class ChecksAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 }
