@@ -1,5 +1,5 @@
 const hawk = require('hawk');
-import {APIClient, AxiosRequestConfig} from '@ffflorian/api-client';
+import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
 
 import {
   AbsenceAPI,
@@ -27,7 +27,7 @@ export class AbsenceIO {
       key: this.options.apiKey,
     };
 
-    const requestInjector = (config: AxiosRequestConfig) => {
+    const requestInjector: RequestInjectorFn<RequestOptions> = config => {
       const hawkHeader = hawk.client.header(config.url, config.method, {credentials});
 
       return {
