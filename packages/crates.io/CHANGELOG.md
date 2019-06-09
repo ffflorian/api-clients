@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@0.3.14...crates.io@0.4.0) (2019-06-09)
+
+
+### Features
+
+* **statuspage.io:** Use @ffflorian/api-client ([#99](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/issues/99)) ([cdf3519](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/commit/cdf3519))
+
+
+
+
+
 ## [0.3.14](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@0.3.13...crates.io@0.3.14) (2019-06-09)
 
 **Note:** Version bump only for package crates.io

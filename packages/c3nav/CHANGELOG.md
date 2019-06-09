@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/compare/c3nav@1.4.0...c3nav@1.5.0) (2019-06-09)
+
+
+### Bug Fixes
+
+* Remove empty tests ([2526ab8](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/commit/2526ab8))
+* Streamline internal APIClient versions ([51689eb](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/commit/51689eb))
+
+
+### Features
+
+* **statuspage.io:** Use @ffflorian/api-client ([#99](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/issues/99)) ([cdf3519](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/commit/cdf3519))
+
+
+
+
+
 # [1.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/compare/c3nav@1.3.7...c3nav@1.4.0) (2019-06-09)
 
 

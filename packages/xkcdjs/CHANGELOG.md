@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@1.4.19...@ffflorian/xkcdjs@1.5.0) (2019-06-09)
+
+
+### Bug Fixes
+
+* Streamline internal APIClient versions ([51689eb](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/commit/51689eb))
+
+
+### Features
+
+* **statuspage.io:** Use @ffflorian/api-client ([#99](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/issues/99)) ([cdf3519](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/commit/cdf3519))
+
+
+
+
+
 ## [1.4.19](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@1.4.18...@ffflorian/xkcdjs@1.4.19) (2019-06-09)
 
 **Note:** Version bump only for package @ffflorian/xkcdjs
