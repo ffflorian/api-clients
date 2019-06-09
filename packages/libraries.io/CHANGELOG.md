@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.5.0...libraries.io@1.6.0) (2019-06-09)
+
+
+### Bug Fixes
+
+* Streamline internal APIClient versions ([51689eb](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/commit/51689eb))
+
+
+### Features
+
+* **statuspage.io:** Use @ffflorian/api-client ([#99](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/issues/99)) ([cdf3519](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/commit/cdf3519))
+
+
+
+
+
 # [1.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.4.7...libraries.io@1.5.0) (2019-06-09)
 
 

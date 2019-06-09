@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.5.0...absence.io@0.5.1) (2019-06-09)
+
+
+### Bug Fixes
+
+* Streamline internal APIClient versions ([51689eb](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/51689eb))
+
+
+
+
+
 # [0.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.4.9...absence.io@0.5.0) (2019-06-09)
 
 

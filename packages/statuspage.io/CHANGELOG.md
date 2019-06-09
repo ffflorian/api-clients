@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.18...statuspage.io@1.1.0) (2019-06-09)
+
+
+### Bug Fixes
+
+* Streamline internal APIClient versions ([51689eb](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/commit/51689eb))
+
+
+### Features
+
+* **statuspage.io:** Use @ffflorian/api-client ([#99](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/issues/99)) ([cdf3519](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/commit/cdf3519))
+
+
+
+
+
 ## [1.0.18](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.17...statuspage.io@1.0.18) (2019-05-30)
 
 
