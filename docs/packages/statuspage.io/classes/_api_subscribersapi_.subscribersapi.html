@@ -104,19 +104,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>SubscribersAPI<span class="tsd-signature-symbol">(</span>requestService<span class="tsd-signature-symbol">: </span><a href="_requestservice_.requestservice.html" class="tsd-signature-type">RequestService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_subscribersapi_.subscribersapi.html" class="tsd-signature-type">SubscribersAPI</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>SubscribersAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">APIClient</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_request_.requestoptions.html" class="tsd-signature-type">RequestOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_subscribersapi_.subscribersapi.html" class="tsd-signature-type">SubscribersAPI</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L6">api/SubscribersAPI.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L16">api/SubscribersAPI.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>requestService: <a href="_requestservice_.requestservice.html" class="tsd-signature-type">RequestService</a></h5>
+									<h5>apiClient: <span class="tsd-signature-type">APIClient</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_request_.requestoptions.html" class="tsd-signature-type">RequestOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_api_subscribersapi_.subscribersapi.html" class="tsd-signature-type">SubscribersAPI</a></h4>
@@ -130,15 +130,15 @@
 					<a name="createcomponentsubscription" class="tsd-anchor"></a>
 					<h3>create<wbr>Component<wbr>Subscription</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Component<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L15">api/SubscribersAPI.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L25">api/SubscribersAPI.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -146,38 +146,38 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>emailSubscriber: <a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
+									<h5>emailSubscriber: <a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L18">api/SubscribersAPI.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L28">api/SubscribersAPI.ts:28</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>smsSubscriber: <a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
+									<h5>smsSubscriber: <a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L21">api/SubscribersAPI.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L31">api/SubscribersAPI.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
+									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.componentsubscriberdata.html" class="tsd-signature-type">ComponentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -185,15 +185,15 @@
 					<a name="createincidentsubscription" class="tsd-anchor"></a>
 					<h3>create<wbr>Incident<wbr>Subscription</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Incident<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L46">api/SubscribersAPI.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L56">api/SubscribersAPI.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -207,38 +207,38 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>emailSubscriber: <a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
+									<h5>emailSubscriber: <a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L49">api/SubscribersAPI.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L59">api/SubscribersAPI.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>smsSubscriber: <a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
+									<h5>smsSubscriber: <a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L52">api/SubscribersAPI.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L62">api/SubscribersAPI.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_.request.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
+									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_request_.incidentsubscriberdata.html" class="tsd-signature-type">IncidentSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -246,15 +246,15 @@
 					<a name="createpagesubscription" class="tsd-anchor"></a>
 					<h3>create<wbr>Page<wbr>Subscription</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>emailSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>smsSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Page<wbr>Subscription<span class="tsd-signature-symbol">(</span>webhookSubscriber<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L66">api/SubscribersAPI.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L76">api/SubscribersAPI.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -265,38 +265,38 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>emailSubscriber: <a href="../interfaces/_interfaces_.request.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a></h5>
+									<h5>emailSubscriber: <a href="../interfaces/_interfaces_request_.emailsubscriberdata.html" class="tsd-signature-type">EmailSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L67">api/SubscribersAPI.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L77">api/SubscribersAPI.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>smsSubscriber: <a href="../interfaces/_interfaces_.request.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a></h5>
+									<h5>smsSubscriber: <a href="../interfaces/_interfaces_request_.phonesubscriberdata.html" class="tsd-signature-type">PhoneSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L68">api/SubscribersAPI.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L78">api/SubscribersAPI.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_.request.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a></h5>
+									<h5>webhookSubscriber: <a href="../interfaces/_interfaces_request_.webhooksubscriberdata.html" class="tsd-signature-type">WebhookSubscriberData</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_.result.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -304,13 +304,13 @@
 					<a name="getsubscription" class="tsd-anchor"></a>
 					<h3>get<wbr>Subscription</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriberId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_interfaces_.result.html#combinedsubscriber" class="tsd-signature-type">CombinedSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Subscription<span class="tsd-signature-symbol">(</span>subscriberId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_interfaces_result_.html#combinedsubscriber" class="tsd-signature-type">CombinedSubscriber</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L34">api/SubscribersAPI.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L44">api/SubscribersAPI.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,7 +321,7 @@
 									<h5>subscriberId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_interfaces_.result.html#combinedsubscriber" class="tsd-signature-type">CombinedSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_interfaces_result_.html#combinedsubscriber" class="tsd-signature-type">CombinedSubscriber</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -335,7 +335,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/statuspage.io/src/api/SubscribersAPI.ts#L77">api/SubscribersAPI.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/cdf3519/packages/statuspage.io/src/api/SubscribersAPI.ts#L87">api/SubscribersAPI.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,16 +362,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_apiclient_.html">"APIClient"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_apiexception_.html">"APIException"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_interfaces_.html">"<wbr>Interfaces"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_requestservice_.html">"<wbr>Request<wbr>Service"</a>
+						<a href="../modules/_statuspage_.html">"<wbr>Statuspage"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_api_incidentsapi_.html">"api/<wbr>IncidentsAPI"</a>
@@ -381,6 +372,18 @@
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_api_subscribersapi_.html">"api/<wbr>SubscribersAPI"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_api_.html">"interfaces/API"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_clientoptions_.html">"interfaces/<wbr>Client<wbr>Options"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_request_.html">"interfaces/<wbr>Request"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_interfaces_result_.html">"interfaces/<wbr>Result"</a>
 					</li>
 				</ul>
 			</nav>
