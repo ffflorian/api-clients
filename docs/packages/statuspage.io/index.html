@@ -69,11 +69,11 @@
 				<h2 id="usage">Usage</h2>
 				<p>A complete documentation is available at <a href="https://ffflorian.github.io/api-clients/packages/statuspage.io/">https://ffflorian.github.io/api-clients/packages/statuspage.io/</a>.</p>
 				<h3 id="example">Example</h3>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {StatusPage} <span class="hljs-keyword">from</span> <span class="hljs-string">'statuspage.io'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {Statuspage} <span class="hljs-keyword">from</span> <span class="hljs-string">'statuspage.io'</span>;
 
-<span class="hljs-keyword">const</span> statusPage = <span class="hljs-keyword">new</span> StatusPage(<span class="hljs-string">'https://example.com'</span>);
+<span class="hljs-keyword">const</span> statuspage = <span class="hljs-keyword">new</span> Statuspage(<span class="hljs-string">'https://example.com'</span>);
 
-statusPage.api.incidents.getAll().then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+statuspage.api.incidents.getAll().then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
   <span class="hljs-comment">//</span>
 });</code></pre>
 				<h2 id="build-and-test">Build and test</h2>
@@ -88,16 +88,7 @@ yarn <span class="hljs-built_in">test</span></code></pre>
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_apiclient_.html">"APIClient"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_apiexception_.html">"APIException"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_.html">"<wbr>Interfaces"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_requestservice_.html">"<wbr>Request<wbr>Service"</a>
+						<a href="modules/_statuspage_.html">"<wbr>Statuspage"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_api_incidentsapi_.html">"api/<wbr>IncidentsAPI"</a>
@@ -107,6 +98,18 @@ yarn <span class="hljs-built_in">test</span></code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_api_subscribersapi_.html">"api/<wbr>SubscribersAPI"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_interfaces_api_.html">"interfaces/API"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_interfaces_clientoptions_.html">"interfaces/<wbr>Client<wbr>Options"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_interfaces_request_.html">"interfaces/<wbr>Request"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_interfaces_result_.html">"interfaces/<wbr>Result"</a>
 					</li>
 				</ul>
 			</nav>
