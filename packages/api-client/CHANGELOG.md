@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.4.4...@ffflorian/api-client@0.5.0) (2019-06-09)
+
+
+### Features
+
+* **updown.io:** Use @ffflorian/api-client ([#98](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/issues/98)) ([a6be424](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/commit/a6be424))
+
+
+
+
+
 ## [0.4.4](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.4.3...@ffflorian/api-client@0.4.4) (2019-05-30)
 
 

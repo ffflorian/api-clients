@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.16...updown.io@1.3.0) (2019-06-09)
+
+
+### Features
+
+* **updown.io:** Use @ffflorian/api-client ([#98](https://github.com/ffflorian/api-clients/tree/master/updown.io/issues/98)) ([a6be424](https://github.com/ffflorian/api-clients/tree/master/updown.io/commit/a6be424))
+
+
+
+
+
 ## [1.2.16](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.15...updown.io@1.2.16) (2019-05-30)
 
 

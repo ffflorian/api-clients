@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.4.7...libraries.io@1.5.0) (2019-06-09)
+
+
+### Features
+
+* **updown.io:** Use @ffflorian/api-client ([#98](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/issues/98)) ([a6be424](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/commit/a6be424))
+
+
+
+
+
 ## [1.4.7](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.4.6...libraries.io@1.4.7) (2019-05-30)
 
 **Note:** Version bump only for package libraries.io
