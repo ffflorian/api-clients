@@ -1,4 +1,5 @@
 import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
 import {Changesets, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';

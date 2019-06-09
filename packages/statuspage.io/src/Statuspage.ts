@@ -1,10 +1,14 @@
-import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api/';
-import {Endpoint} from './Endpoints';
-import {API, ClientOptionsId, ClientOptionsUrl, Result} from './Interfaces';
-import {RequestService} from './RequestService';
+import {APIClient} from '@ffflorian/api-client';
 
-export class StatusPage {
-  private readonly requestService: RequestService;
+import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
+import {Endpoint} from './Endpoints';
+import {API} from './interfaces/API';
+import {ClientOptionsId, ClientOptionsUrl} from './interfaces/ClientOptions';
+import {RequestOptions} from './interfaces/Request';
+import {Components, Status, Summary} from './interfaces/Result';
+
+export class Statuspage {
+  private readonly apiClient: APIClient<RequestOptions>;
   public readonly api: API;
 
   constructor(apiUrlOrPageId: string);
@@ -22,15 +26,17 @@ export class StatusPage {
     const apiUrl =
       (options as ClientOptionsUrl).pageUrl || `https://${(options as ClientOptionsId).pageId}.statuspage.io`;
 
-    this.requestService = new RequestService(apiUrl);
+    this.apiClient = new APIClient({
+      apiUrl,
+    });
 
     this.api = {
       getComponents: this.getComponents.bind(this),
       getStatus: this.getStatus.bind(this),
       getSummary: this.getSummary.bind(this),
-      incidents: new IncidentsAPI(this.requestService),
-      scheduledMaintenances: new ScheduledMaintenancesAPI(this.requestService),
-      subscribers: new SubscribersAPI(this.requestService),
+      incidents: new IncidentsAPI(this.apiClient),
+      scheduledMaintenances: new ScheduledMaintenancesAPI(this.apiClient),
+      subscribers: new SubscribersAPI(this.apiClient),
     };
   }
 
@@ -39,16 +45,16 @@ export class StatusPage {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.requestService.setApiUrl(newUrl);
+    this.apiClient.setApiUrl(newUrl);
   }
 
   /**
    * Get the components for the page. Each component is listed along with its status -
    * one of `operational`, `degraded_performance`, `partial_outage`, or `major_outage`.
    */
-  private getComponents(): Promise<Result.Components> {
+  private getComponents(): Promise<Components> {
     const endpoint = Endpoint.components();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -57,17 +63,17 @@ export class StatusPage {
    * blended component status. Examples of the blended status include "All Systems
    * Operational", "Partial System Outage", and "Major Service Outage".
    */
-  private getStatus(): Promise<Result.Status> {
+  private getStatus(): Promise<Status> {
     const endpoint = Endpoint.status();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Get a summary of the status page, including a status indicator, component statuses,
    * unresolved incidents, and any upcoming or in-progress scheduled maintenances.
    */
-  private getSummary(): Promise<Result.Summary> {
+  private getSummary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }
