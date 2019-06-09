@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/compare/c3nav@1.3.7...c3nav@1.4.0) (2019-06-09)
+
+
+### Features
+
+* **updown.io:** Use @ffflorian/api-client ([#98](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/issues/98)) ([a6be424](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/commit/a6be424))
+
+
+
+
+
 ## [1.3.7](https://github.com/ffflorian/api-clients/tree/master/packages/c3nav/compare/c3nav@1.3.6...c3nav@1.3.7) (2019-05-30)
 
 **Note:** Version bump only for package c3nav

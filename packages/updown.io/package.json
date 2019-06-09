@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.4.4"
+    "@ffflorian/api-client": "0.5.0"
   },
   "description": "An updown.io API client",
   "devDependencies": {
@@ -32,5 +32,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "1.2.16"
+  "version": "1.3.0"
 }
