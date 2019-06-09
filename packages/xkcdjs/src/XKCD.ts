@@ -1,4 +1,5 @@
 import {APIClient} from '@ffflorian/api-client';
+
 import {ClientOptions} from './Interfaces';
 import {XKCDAPI} from './XKCDAPI';
 

@@ -1,39 +1,49 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {Request, Result} from '../Interfaces';
-import {RequestService} from '../RequestService';
+import {
+  CombinedSubscriberData,
+  ComponentSubscriberData,
+  EmailSubscriberData,
+  IncidentSubscriberData,
+  PhoneSubscriberData,
+  RequestOptions,
+  WebhookSubscriberData,
+} from '../interfaces/Request';
+import {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
 
 export class SubscribersAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient<RequestOptions>) {
+    this.apiClient = apiClient;
   }
 
   /**
    * @param options Subscriber options.
    */
   public createComponentSubscription(
-    emailSubscriber: Request.EmailSubscriberData & Request.ComponentSubscriberData
-  ): Promise<Result.EmailSubscriber>;
+    emailSubscriber: EmailSubscriberData & ComponentSubscriberData
+  ): Promise<EmailSubscriber>;
   public createComponentSubscription(
-    smsSubscriber: Request.PhoneSubscriberData & Request.ComponentSubscriberData
-  ): Promise<Result.PhoneSubscriber>;
+    smsSubscriber: PhoneSubscriberData & ComponentSubscriberData
+  ): Promise<PhoneSubscriber>;
   public createComponentSubscription(
-    webhookSubscriber: Request.WebhookSubscriberData & Request.ComponentSubscriberData
-  ): Promise<Result.WebhookSubscriber>;
+    webhookSubscriber: WebhookSubscriberData & ComponentSubscriberData
+  ): Promise<WebhookSubscriber>;
   public createComponentSubscription(
-    data: Request.CombinedSubscriberData & Request.ComponentSubscriberData
-  ): Promise<Result.CombinedSubscriber> {
+    data: CombinedSubscriberData & ComponentSubscriberData
+  ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    return this.requestService.get(endpoint, {subscriber: data});
+    return this.apiClient.requestService.get(endpoint, {params: {subscriber: data}});
   }
 
   /**
    * @param options Subscriber options.
    */
-  public getSubscription(subscriberId: string): Promise<Result.CombinedSubscriber> {
+  public getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    return this.requestService.get(endpoint, {subscriber: {id: subscriberId}});
+    return this.apiClient.requestService.get(endpoint, {params: {subscriber: {id: subscriberId}}});
   }
 
   /**
@@ -44,31 +54,31 @@ export class SubscribersAPI {
    * @param options Subscriber options.
    */
   public createIncidentSubscription(
-    emailSubscriber: Request.EmailSubscriberData & Request.IncidentSubscriberData
-  ): Promise<Result.EmailSubscriber>;
+    emailSubscriber: EmailSubscriberData & IncidentSubscriberData
+  ): Promise<EmailSubscriber>;
   public createIncidentSubscription(
-    smsSubscriber: Request.PhoneSubscriberData & Request.IncidentSubscriberData
-  ): Promise<Result.PhoneSubscriber>;
+    smsSubscriber: PhoneSubscriberData & IncidentSubscriberData
+  ): Promise<PhoneSubscriber>;
   public createIncidentSubscription(
-    webhookSubscriber: Request.WebhookSubscriberData & Request.IncidentSubscriberData
-  ): Promise<Result.WebhookSubscriber>;
+    webhookSubscriber: WebhookSubscriberData & IncidentSubscriberData
+  ): Promise<WebhookSubscriber>;
   public createIncidentSubscription(
-    data: Request.CombinedSubscriberData & Request.IncidentSubscriberData
-  ): Promise<Result.CombinedSubscriber> {
+    data: CombinedSubscriberData & IncidentSubscriberData
+  ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    return this.requestService.get(endpoint, {subscriber: data});
+    return this.apiClient.requestService.get(endpoint, {params: {subscriber: data}});
   }
 
   /**
    * A page subscriber is by default subscribed to all incidents associated with a page.
    * @param options Subscriber options.
    */
-  public createPageSubscription(emailSubscriber: Request.EmailSubscriberData): Promise<Result.EmailSubscriber>;
-  public createPageSubscription(smsSubscriber: Request.PhoneSubscriberData): Promise<Result.PhoneSubscriber>;
-  public createPageSubscription(webhookSubscriber: Request.WebhookSubscriberData): Promise<Result.WebhookSubscriber>;
-  public createPageSubscription(data: Request.CombinedSubscriberData): Promise<Result.CombinedSubscriber> {
+  public createPageSubscription(emailSubscriber: EmailSubscriberData): Promise<EmailSubscriber>;
+  public createPageSubscription(smsSubscriber: PhoneSubscriberData): Promise<PhoneSubscriber>;
+  public createPageSubscription(webhookSubscriber: WebhookSubscriberData): Promise<WebhookSubscriber>;
+  public createPageSubscription(data: CombinedSubscriberData): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    return this.requestService.get(endpoint, {subscriber: data});
+    return this.apiClient.requestService.get(endpoint, {params: {subscriber: data}});
   }
 
   /**
@@ -76,6 +86,6 @@ export class SubscribersAPI {
    */
   public removeSubscription(subscriberId: string): Promise<boolean> {
     const endpoint = Endpoint.Incidents.all();
-    return this.requestService.delete(endpoint, {subscriber: {id: subscriberId}});
+    return this.apiClient.requestService.delete(endpoint, {params: {subscriber: {id: subscriberId}}});
   }
 }

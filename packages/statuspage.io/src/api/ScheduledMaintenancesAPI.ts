@@ -1,21 +1,23 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {Result} from '../Interfaces';
-import {RequestService} from '../RequestService';
+import {RequestOptions} from '../interfaces/Request';
+import {ScheduledMaintenances} from '../interfaces/Result';
 
 export class ScheduledMaintenancesAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(requestService: APIClient<RequestOptions>) {
+    this.apiClient = requestService;
   }
 
   /**
    * Get a list of any active maintenances. This endpoint will only return
    * scheduled maintenances in the *In Progress* or *Verifying* state.
    */
-  public getActive(): Promise<Result.ScheduledMaintenances> {
+  public getActive(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
@@ -23,17 +25,17 @@ export class ScheduledMaintenancesAPI {
    * scheduled maintenances as described in the above two endpoints, as well
    * as those in the *Completed* state.
    */
-  public getAll(): Promise<Result.ScheduledMaintenances> {
+  public getAll(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Get a list of any upcoming maintenances. This endpoint will only return
    * scheduled maintenances still in the *Scheduled* state.
    */
-  public getUpcoming(): Promise<Result.ScheduledMaintenances> {
+  public getUpcoming(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

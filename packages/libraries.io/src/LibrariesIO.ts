@@ -1,4 +1,5 @@
 import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
+
 import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
 import {API, ClientOptions, RequestOptions} from './interfaces/';
 

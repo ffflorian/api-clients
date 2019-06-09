@@ -13,11 +13,11 @@ A complete documentation is available at https://ffflorian.github.io/api-clients
 ### Example
 
 ```ts
-import {StatusPage} from 'statuspage.io';
+import {Statuspage} from 'statuspage.io';
 
-const statusPage = new StatusPage('https://example.com');
+const statuspage = new Statuspage('https://example.com');
 
-statusPage.api.incidents.getAll().then(response => {
+statuspage.api.incidents.getAll().then(response => {
   //
 });
 ```
