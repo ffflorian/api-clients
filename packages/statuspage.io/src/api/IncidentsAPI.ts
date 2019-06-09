@@ -1,29 +1,31 @@
+import {APIClient} from '@ffflorian/api-client';
+
 import {Endpoint} from '../Endpoints';
-import {Result} from '../Interfaces';
-import {RequestService} from '../RequestService';
+import {RequestOptions} from '../interfaces/Request';
+import {Incidents} from '../interfaces/Result';
 
 export class IncidentsAPI {
-  private readonly requestService: RequestService;
+  private readonly apiClient: APIClient<RequestOptions>;
 
-  constructor(requestService: RequestService) {
-    this.requestService = requestService;
+  constructor(apiClient: APIClient<RequestOptions>) {
+    this.apiClient = apiClient;
   }
 
   /**
    * Get a list of the 50 most recent incidents. This includes all unresolved
    * incidents as described above, as well as those in the *Resolved* and *Postmortem* state.
    */
-  public getAll(): Promise<Result.Incidents> {
+  public getAll(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.all();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 
   /**
    * Get a list of any unresolved incidents. This endpoint will only return
    * incidents in the *Investigating*, *Identified*, or *Monitoring* state.
    */
-  public getUnresolved(): Promise<Result.Incidents> {
+  public getUnresolved(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.unresolved();
-    return this.requestService.get(endpoint);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

@@ -1,4 +1,5 @@
 import {APIClient} from '@ffflorian/api-client';
+
 import {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {

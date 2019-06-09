@@ -1,4 +1,5 @@
 import {APIClient} from '@ffflorian/api-client';
+
 import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
 import {API, ClientOptions, Summary} from './interfaces';
