@@ -5,13 +5,10 @@
   },
   "description": "An updown.io API client",
   "devDependencies": {
-    "@types/jasmine": "3.3.13",
     "@types/nock": "10.0.3",
     "@types/node": "~12",
-    "jasmine": "3.4.0",
     "nock": "10.0.6",
     "rimraf": "2.6.3",
-    "ts-node": "8.2.0",
     "typedoc": "0.14.2",
     "typescript": "3.5.1"
   },
@@ -33,7 +30,7 @@
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/updown.io",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "exit 0"
   },
   "version": "1.2.16"
 }
