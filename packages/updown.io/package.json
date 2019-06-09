@@ -5,9 +5,7 @@
   },
   "description": "An updown.io API client",
   "devDependencies": {
-    "@types/nock": "10.0.3",
     "@types/node": "~12",
-    "nock": "10.0.6",
     "rimraf": "2.6.3",
     "typedoc": "0.14.2",
     "typescript": "3.5.1"

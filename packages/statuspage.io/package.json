@@ -1,12 +1,11 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.4.4"
+    "@ffflorian/api-client": "0.5.0"
   },
   "description": "A statuspage.io API client",
   "devDependencies": {
     "@types/node": "~12",
-    "nock": "10.0.6",
     "typedoc": "0.14.2",
     "typescript": "3.5.1"
   },
