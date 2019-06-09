@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.18](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.17...statuspage.io@1.0.18) (2019-05-30)
+
+
+### Bug Fixes
+
+* **security:** Upgrade axios to 0.19.0 ([b745299](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/commit/b745299))
+
+
+
+
+
+## [1.0.17](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.16...statuspage.io@1.0.17) (2019-05-28)
+
+**Note:** Version bump only for package statuspage.io
+
+
+
+
+
+## [1.0.16](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.15...statuspage.io@1.0.16) (2019-05-14)
+
+**Note:** Version bump only for package statuspage.io
+
+
+
+
+
+## [1.0.15](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.14...statuspage.io@1.0.15) (2019-04-15)
+
+**Note:** Version bump only for package statuspage.io
+
+
+
+
+
 ## [1.0.14](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.0.13...statuspage.io@1.0.14) (2019-04-11)
 
 **Note:** Version bump only for package statuspage.io

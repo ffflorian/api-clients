@@ -3,6 +3,49 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.16](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.15...updown.io@1.2.16) (2019-05-30)
+
+
+### Bug Fixes
+
+* **security:** Upgrade axios to 0.19.0 ([b745299](https://github.com/ffflorian/api-clients/tree/master/updown.io/commit/b745299))
+
+
+
+
+
+## [1.2.15](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.14...updown.io@1.2.15) (2019-05-28)
+
+**Note:** Version bump only for package updown.io
+
+
+
+
+
+## [1.2.14](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.13...updown.io@1.2.14) (2019-05-23)
+
+**Note:** Version bump only for package updown.io
+
+
+
+
+
+## [1.2.13](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.12...updown.io@1.2.13) (2019-05-14)
+
+**Note:** Version bump only for package updown.io
+
+
+
+
+
+## [1.2.12](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.11...updown.io@1.2.12) (2019-04-15)
+
+**Note:** Version bump only for package updown.io
+
+
+
+
+
 ## [1.2.11](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.2.10...updown.io@1.2.11) (2019-04-11)
 
 **Note:** Version bump only for package updown.io
