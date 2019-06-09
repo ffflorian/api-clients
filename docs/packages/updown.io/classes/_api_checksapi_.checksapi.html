@@ -107,19 +107,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>ChecksAPI<span class="tsd-signature-symbol">(</span>requestService<span class="tsd-signature-symbol">: </span><a href="_requestservice_.requestservice.html" class="tsd-signature-type">RequestService</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_checksapi_.checksapi.html" class="tsd-signature-type">ChecksAPI</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>ChecksAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">APIClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_checksapi_.checksapi.html" class="tsd-signature-type">ChecksAPI</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L6">api/ChecksAPI.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L6">api/ChecksAPI.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>requestService: <a href="_requestservice_.requestservice.html" class="tsd-signature-type">RequestService</a></h5>
+									<h5>apiClient: <span class="tsd-signature-type">APIClient</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_api_checksapi_.checksapi.html" class="tsd-signature-type">ChecksAPI</a></h4>
@@ -139,7 +139,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L65">api/ChecksAPI.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L60">api/ChecksAPI.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -176,7 +176,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L90">api/ChecksAPI.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L83">api/ChecksAPI.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -207,7 +207,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L23">api/ChecksAPI.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L17">api/ChecksAPI.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,7 +244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L30">api/ChecksAPI.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L23">api/ChecksAPI.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,7 +266,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L41">api/ChecksAPI.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L34">api/ChecksAPI.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -303,14 +303,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L54">api/ChecksAPI.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L50">api/ChecksAPI.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get all the downtimes of a check.</p>
+									<p>Get detailed metrics about the check.</p>
 								</div>
-								<p>Statistic are aggregated per hour which means you can&#39;t get more precise results than this. For example all requests performed between 5:00 and 5:59 will be reported at 5:00 in this API. The time range needs to be at least one hour to get data.</p>
+								<p>Statistic are aggregated per hour which means you can&#39;t get more
+									precise results than this. For example all requests performed
+									between 5:00 and 5:59 will be reported at 5:00 in this API.
+								The time range needs to be at least one hour to get data.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -338,7 +341,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L100">api/ChecksAPI.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L92">api/ChecksAPI.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,7 +372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/b745299/packages/updown.io/src/api/ChecksAPI.ts#L80">api/ChecksAPI.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a6be424/packages/updown.io/src/api/ChecksAPI.ts#L74">api/ChecksAPI.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,13 +408,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_apiclient_.html">"APIClient"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_apiexception_.html">"APIException"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_requestservice_.html">"<wbr>Request<wbr>Service"</a>
+						<a href="../modules/_updownio_.html">"<wbr>UpdownIO"</a>
 					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_api_checksapi_.html">"api/<wbr>ChecksAPI"</a>
