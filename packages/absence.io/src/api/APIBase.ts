@@ -10,13 +10,6 @@ export class APIBase {
     this.options = options;
   }
 
-  protected checkApiKey(apiName?: string) {
-    apiName = `the "${apiName}"` || 'this';
-    if (!this.options.apiKey || !this.options.apiKeyId) {
-      throw new Error(`An API key needs to be set in order to use ${apiName} API`);
-    }
-  }
-
   /**
    * Set a new API URL.
    * @param newUrl The new API url
@@ -32,5 +25,12 @@ export class APIBase {
   public setApiAuthorization(authorization: Authorization): void {
     this.options.apiKey = authorization.apiKey;
     this.options.apiKeyId = authorization.apiKeyId;
+  }
+
+  protected checkApiKey(apiName?: string): void {
+    apiName = `the "${apiName}"` || 'this';
+    if (!this.options.apiKey || !this.options.apiKeyId) {
+      throw new Error(`An API key needs to be set in order to use ${apiName} API`);
+    }
   }
 }

@@ -18,14 +18,14 @@ async function init(dir: string = '.'): Promise<[string, XKCD]> {
   }
 }
 
-async function save(filePath: string, imageResult: XKCDResultWithData) {
+async function save(filePath: string, imageResult: XKCDResultWithData): Promise<void> {
   const {data, num, safe_title} = imageResult;
 
   const extension = data.mimeType ? data.mimeType.replace('image/', '') : 'png';
 
   const resolvedFilePath = path.resolve(filePath, `xkcd #${num} - ${safe_title}.${extension}`);
   await fs.writeFile(resolvedFilePath, data.data);
-  console.error(`Saved image to "${resolvedFilePath}".`);
+  console.info(`Saved image to "${resolvedFilePath}".`);
 }
 
 const {description, name, version}: {description: string; name: string; version: string} = require('../package.json');
