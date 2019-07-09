@@ -145,11 +145,11 @@ export class RequestService<T> {
     }
   }
 
-  public setRequestInjector(requestInjector: RequestInjectorFn<T>) {
+  public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
     this.config.requestInjector = requestInjector;
   }
 
-  public removeRequestInjector() {
+  public removeRequestInjector(): void {
     delete this.config.requestInjector;
   }
 

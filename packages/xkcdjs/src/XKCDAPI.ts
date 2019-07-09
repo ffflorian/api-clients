@@ -2,10 +2,10 @@ import {APIClient} from '@ffflorian/api-client';
 import {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
-  private readonly lowestIndex: number;
-  private readonly JSON_INFO_FILE: string;
   protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
+  private readonly lowestIndex: number;
+  private readonly JSON_INFO_FILE: string;
 
   constructor(apiClient: APIClient, options: ClientOptions) {
     this.apiClient = apiClient;
