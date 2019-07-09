@@ -8,8 +8,8 @@ import {RequestOptions} from './interfaces/Request';
 import {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
-  private readonly apiClient: APIClient<RequestOptions>;
   public readonly api: API;
+  private readonly apiClient: APIClient<RequestOptions>;
 
   constructor(apiUrlOrPageId: string);
   constructor(options: ClientOptionsId);
