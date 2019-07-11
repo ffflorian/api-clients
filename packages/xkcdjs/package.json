@@ -4,7 +4,7 @@
     "xkcdjs": "dist/cli.js"
   },
   "dependencies": {
-    "@ffflorian/api-client": "0.5.0",
+    "@ffflorian/api-client": "0.5.1",
     "commander": "2.20.0",
     "fs-extra": "8.1.0"
   },
@@ -41,5 +41,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "1.5.0"
+  "version": "1.5.1"
 }

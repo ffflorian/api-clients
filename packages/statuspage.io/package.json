@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.5.0"
+    "@ffflorian/api-client": "0.5.1"
   },
   "description": "A statuspage.io API client",
   "devDependencies": {
@@ -29,5 +29,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "1.1.0"
+  "version": "1.1.1"
 }
