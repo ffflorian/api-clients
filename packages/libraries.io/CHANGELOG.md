@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.6.1](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.6.0...libraries.io@1.6.1) (2019-07-11)
+
+**Note:** Version bump only for package libraries.io
+
+
+
+
+
 # [1.6.0](https://github.com/ffflorian/api-clients/tree/master/packages/libraries.io/compare/libraries.io@1.5.0...libraries.io@1.6.0) (2019-06-09)
 
 
