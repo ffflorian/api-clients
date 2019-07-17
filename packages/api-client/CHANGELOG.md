@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.5.1...@ffflorian/api-client@1.0.0) (2019-07-17)
+
+
+### Features
+
+* Set ES6 as target and require Node >= 10.9 ([#130](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/issues/130)) ([42109dc](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/commit/42109dc))
+
+
+### BREAKING CHANGES
+
+* Node.js >= 10.9 is required.
+
+
+
+
+
 ## [0.5.1](https://github.com/ffflorian/api-clients/tree/master/packages/api-client/compare/@ffflorian/api-client@0.5.0...@ffflorian/api-client@0.5.1) (2019-07-11)
 
 **Note:** Version bump only for package @ffflorian/api-client

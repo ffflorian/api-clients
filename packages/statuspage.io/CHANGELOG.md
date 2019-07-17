@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.1.1...statuspage.io@2.0.0) (2019-07-17)
+
+
+### Features
+
+* Set ES6 as target and require Node >= 10.9 ([#130](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/issues/130)) ([42109dc](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/commit/42109dc))
+
+
+### BREAKING CHANGES
+
+* Node.js >= 10.9 is required.
+
+
+
+
+
 ## [1.1.1](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.1.0...statuspage.io@1.1.1) (2019-07-11)
 
 **Note:** Version bump only for package statuspage.io

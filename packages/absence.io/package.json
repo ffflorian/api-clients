@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.5.1",
+    "@ffflorian/api-client": "1.0.0",
     "hawk": "7.0.10"
   },
   "description": "An absence.io API client",
@@ -34,5 +34,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "0.5.2"
+  "version": "1.0.0"
 }

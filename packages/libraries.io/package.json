@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "@ffflorian/api-client": "0.5.1"
+    "@ffflorian/api-client": "1.0.0"
   },
   "description": "A libraries.io API client",
   "devDependencies": {
@@ -36,5 +36,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "1.6.1"
+  "version": "2.0.0"
 }

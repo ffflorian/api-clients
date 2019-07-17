@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.4.1...updown.io@2.0.0) (2019-07-17)
+
+
+### Features
+
+* Set ES6 as target and require Node >= 10.9 ([#130](https://github.com/ffflorian/api-clients/tree/master/updown.io/issues/130)) ([42109dc](https://github.com/ffflorian/api-clients/tree/master/updown.io/commit/42109dc))
+
+
+### BREAKING CHANGES
+
+* Node.js >= 10.9 is required.
+
+
+
+
+
 ## [1.4.1](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@1.4.0...updown.io@1.4.1) (2019-07-11)
 
 **Note:** Version bump only for package updown.io
