@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.5.2...absence.io@1.0.0) (2019-07-17)
+
+
+### Features
+
+* Set ES6 as target and require Node >= 10.9 ([#130](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/issues/130)) ([42109dc](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/42109dc))
+
+
+### BREAKING CHANGES
+
+* Node.js >= 10.9 is required.
+
+
+
+
+
 ## [0.5.2](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.5.1...absence.io@0.5.2) (2019-07-11)
 
 **Note:** Version bump only for package absence.io

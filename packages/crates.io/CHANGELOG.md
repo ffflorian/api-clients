@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@0.4.1...crates.io@1.0.0) (2019-07-17)
+
+
+### Features
+
+* Set ES6 as target and require Node >= 10.9 ([#130](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/issues/130)) ([42109dc](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/commit/42109dc))
+
+
+### BREAKING CHANGES
+
+* Node.js >= 10.9 is required.
+
+
+
+
+
 ## [0.4.1](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@0.4.0...crates.io@0.4.1) (2019-07-11)
 
 **Note:** Version bump only for package crates.io
