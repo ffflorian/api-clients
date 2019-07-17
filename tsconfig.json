@@ -3,7 +3,7 @@
     "alwaysStrict": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es2018"],
+    "lib": ["dom", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
@@ -14,6 +14,6 @@
     "sourceMap": true,
     "strict": true,
     "strictFunctionTypes": true,
-    "target": "es5"
+    "target": "es6"
   }
 }
