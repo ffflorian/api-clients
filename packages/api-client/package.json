@@ -6,13 +6,13 @@
   },
   "description": "A generic API client",
   "devDependencies": {
+    "@types/node": "~12",
     "rimraf": "2.6.3",
     "typedoc": "0.14.2",
     "typescript": "3.5.3"
   },
   "engines": {
-    "node": ">= 10.9",
-    "yarn": ">= 1"
+    "node": ">= 10.9"
   },
   "files": [
     "dist"
