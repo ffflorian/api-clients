@@ -46,8 +46,8 @@ export interface WebhookSubscriber extends Subscriber {
 }
 
 export interface EmailSubscriber extends Subscriber {
-  mode: 'email_sms';
   email: string;
+  mode: 'email_sms';
 }
 
 export interface PhoneSubscriber extends Subscriber {
@@ -81,8 +81,8 @@ export interface IncidentUpdate {
 
 export interface Status extends Page {
   status: {
-    indicator: string;
     description: string;
+    indicator: string;
   };
 }
 

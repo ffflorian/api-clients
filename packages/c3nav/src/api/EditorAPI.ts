@@ -9,16 +9,16 @@ export class EditorAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Editor[]> {
-    const endpoint = Endpoint.editor();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Editor> {
     const endpoint = Endpoint.editor(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Editor[]> {
+    const endpoint = Endpoint.editor();
     return this.apiClient.requestService.get(endpoint);
   }
 }

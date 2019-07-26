@@ -29,9 +29,9 @@ export interface PaginationOptions {
 }
 
 export interface SearchOptions extends PaginationOptions {
+  filter?: FilterOptions;
   /** sort by */
   sort?: SortType;
-  filter?: FilterOptions;
 }
 
 export interface RequestOptions extends SearchOptions, PreReleaseOptions {

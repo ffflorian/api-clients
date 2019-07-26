@@ -56,19 +56,19 @@ export class AbsenceIO {
   }
 
   /**
-   * Set a new API URL.
-   * @param newUrl The new API URL
-   */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
-  }
-
-  /**
    * Set a new API key.
    * @param authorization The API authorization data
    */
   public setApiAuthorization(authorization: Authorization): void {
     this.options.apiKey = authorization.apiKey;
     this.options.apiKeyId = authorization.apiKeyId;
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newUrl The new API URL
+   */
+  public setApiUrl(newUrl: string): void {
+    this.apiClient.setApiUrl(newUrl);
   }
 }

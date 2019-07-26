@@ -9,16 +9,16 @@ export class StairsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Stairs[]> {
-    const endpoint = Endpoint.stairs();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Stairs> {
     const endpoint = Endpoint.stairs(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Stairs[]> {
+    const endpoint = Endpoint.stairs();
     return this.apiClient.requestService.get(endpoint);
   }
 }

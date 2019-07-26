@@ -18,38 +18,6 @@ export class GitHubUserAPI extends APIBase {
   }
 
   /**
-   * Get information for a given user or organization.
-   * @see https://libraries.io/api#user
-   * @param userName The username
-   */
-  public getUser(userName: string): Promise<Contributor> {
-    const endpoint = Endpoint.GitHub.User.user(userName);
-    return this.apiClient.requestService.get(endpoint);
-  }
-
-  /**
-   * Get repositories owned by a user.
-   * @see https://libraries.io/api#user-repositories
-   * @param userName The username
-   * @param options Pagination options
-   */
-  public getRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
-    const endpoint = Endpoint.GitHub.User.repositories(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
-  }
-
-  /**
-   * Get a list of packages referencing the given user's repositories.
-   * @see https://libraries.io/api#user-projects
-   * @param userName The username
-   * @param options Pagination options
-   */
-  public getProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
-    const endpoint = Endpoint.GitHub.User.repositories(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
-  }
-
-  /**
    * Get a list of packages that the given user has contributed to.
    * @see https://libraries.io/api#user-project-contributions
    * @param userName The username
@@ -100,5 +68,37 @@ export class GitHubUserAPI extends APIBase {
     }
 
     return this.apiClient.requestService.get(endpoint, {data: parameters});
+  }
+
+  /**
+   * Get a list of packages referencing the given user's repositories.
+   * @see https://libraries.io/api#user-projects
+   * @param userName The username
+   * @param options Pagination options
+   */
+  public getProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
+    const endpoint = Endpoint.GitHub.User.repositories(userName);
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
+   * Get repositories owned by a user.
+   * @see https://libraries.io/api#user-repositories
+   * @param userName The username
+   * @param options Pagination options
+   */
+  public getRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
+    const endpoint = Endpoint.GitHub.User.repositories(userName);
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
+   * Get information for a given user or organization.
+   * @see https://libraries.io/api#user
+   * @param userName The username
+   */
+  public getUser(userName: string): Promise<Contributor> {
+    const endpoint = Endpoint.GitHub.User.user(userName);
+    return this.apiClient.requestService.get(endpoint);
   }
 }

@@ -24,8 +24,8 @@ export interface Project {
 }
 
 export interface ProjectWithDependencies extends Project {
-  dependencies_for_version: string;
   dependencies: ProjectDependency[];
+  dependencies_for_version: string;
   dependent_repos_count: number;
   dependents_count: number;
 }
@@ -34,8 +34,8 @@ export interface ProjectDependency {
   deprecated: boolean;
   filepath: string | null;
   kind: 'Development' | 'runtime' | 'Optional';
-  latest_stable: string;
   latest: string;
+  latest_stable: string;
   name: string;
   outdated: boolean;
   platform: PlatformType;
@@ -58,6 +58,6 @@ export interface ProjectUsage {
 }
 
 export interface ProjectVersion {
-  published_at: string;
   number: string;
+  published_at: string;
 }

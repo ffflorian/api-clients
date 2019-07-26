@@ -120,8 +120,8 @@ export class RequestService<T> {
     return response.data;
   }
 
-  public setApiUrl(apiUrl: string): void {
-    this.config.apiUrl = apiUrl;
+  public removeRequestInjector(): void {
+    delete this.config.requestInjector;
   }
 
   public async request<U>(config: AxiosConfigWithData<T>): Promise<AxiosResponse<U>> {
@@ -145,12 +145,12 @@ export class RequestService<T> {
     }
   }
 
-  public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
-    this.config.requestInjector = requestInjector;
+  public setApiUrl(apiUrl: string): void {
+    this.config.apiUrl = apiUrl;
   }
 
-  public removeRequestInjector(): void {
-    delete this.config.requestInjector;
+  public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
+    this.config.requestInjector = requestInjector;
   }
 
   private async injectConfig(

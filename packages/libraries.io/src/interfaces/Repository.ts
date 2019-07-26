@@ -5,8 +5,8 @@ export interface Repository {
   created_at: string;
   default_branch: string;
   description: string;
-  fork_policy: string | null;
   fork: false;
+  fork_policy: string | null;
   forks_count: number;
   full_name: string;
   github_contributions_count: number;

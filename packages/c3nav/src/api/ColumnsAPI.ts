@@ -9,16 +9,16 @@ export class ColumnsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Columns[]> {
-    const endpoint = Endpoint.columns();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Columns> {
     const endpoint = Endpoint.columns(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Columns[]> {
+    const endpoint = Endpoint.columns();
     return this.apiClient.requestService.get(endpoint);
   }
 }

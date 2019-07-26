@@ -9,16 +9,16 @@ export class SessionAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Session[]> {
-    const endpoint = Endpoint.session();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Session> {
     const endpoint = Endpoint.session(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Session[]> {
+    const endpoint = Endpoint.session();
     return this.apiClient.requestService.get(endpoint);
   }
 }

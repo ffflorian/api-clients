@@ -9,16 +9,16 @@ export class HolesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Holes[]> {
-    const endpoint = Endpoint.holes();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Holes> {
     const endpoint = Endpoint.holes(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Holes[]> {
+    const endpoint = Endpoint.holes();
     return this.apiClient.requestService.get(endpoint);
   }
 }

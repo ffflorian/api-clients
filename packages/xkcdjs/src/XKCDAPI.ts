@@ -4,8 +4,8 @@ import {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData
 export class XKCDAPI {
   protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
-  private readonly lowestIndex: number;
   private readonly JSON_INFO_FILE: string;
+  private readonly lowestIndex: number;
 
   constructor(apiClient: APIClient, options: ClientOptions) {
     this.apiClient = apiClient;
@@ -16,16 +16,18 @@ export class XKCDAPI {
   }
 
   /**
-   * Get a random comic.
+   * Get a comic by index.
+   * @param index Index number
    * @param options Request options
    */
-  public async getRandom(options: {withData: true}): Promise<XKCDResultWithData>;
-  public async getRandom(options?: RequestOptions): Promise<XKCDResultWithData>;
-  public async getRandom(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
-    const latest = await this.getLatest();
-    const randomIndex = Math.floor(Math.random() * (latest.num - this.lowestIndex + 1)) + this.lowestIndex;
+  public async getByIndex(index: number, options: {withData: true}): Promise<XKCDResultWithData>;
+  public async getByIndex(index: number, options?: RequestOptions): Promise<XKCDResultWithData>;
+  public async getByIndex(index: number, options: RequestOptions = {}): Promise<XKCDResultWithData | XKCDResult> {
+    if (index < this.lowestIndex) {
+      throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
+    }
 
-    const metaData = await this.getByIndex(randomIndex);
+    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
 
     if (options.withData === true) {
       const imageData = await this.getImage(metaData.img);
@@ -59,18 +61,16 @@ export class XKCDAPI {
   }
 
   /**
-   * Get a comic by index.
-   * @param index Index number
+   * Get a random comic.
    * @param options Request options
    */
-  public async getByIndex(index: number, options: {withData: true}): Promise<XKCDResultWithData>;
-  public async getByIndex(index: number, options?: RequestOptions): Promise<XKCDResultWithData>;
-  public async getByIndex(index: number, options: RequestOptions = {}): Promise<XKCDResultWithData | XKCDResult> {
-    if (index < this.lowestIndex) {
-      throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
-    }
+  public async getRandom(options: {withData: true}): Promise<XKCDResultWithData>;
+  public async getRandom(options?: RequestOptions): Promise<XKCDResultWithData>;
+  public async getRandom(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
+    const latest = await this.getLatest();
+    const randomIndex = Math.floor(Math.random() * (latest.num - this.lowestIndex + 1)) + this.lowestIndex;
 
-    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
+    const metaData = await this.getByIndex(randomIndex);
 
     if (options.withData === true) {
       const imageData = await this.getImage(metaData.img);

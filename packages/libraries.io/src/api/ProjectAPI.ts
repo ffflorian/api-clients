@@ -20,6 +20,53 @@ export class ProjectAPI extends APIBase {
   }
 
   /**
+   * Get users that have contributed to a given project.
+   * @see https://libraries.io/api#project-contributors
+   * @param platform The project platform (e.g. "npm", "cargo", ...)
+   * @param projectName The project name
+   * @param options Pagination options
+   */
+  public getContributors(
+    platform: PlatformType,
+    projectName: string,
+    options?: PaginationOptions
+  ): Promise<Contributor[]> {
+    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
+   * Get repositories that depend on a given project.
+   * @param platform The project platform (e.g. "npm", "cargo", ...)
+   * @param projectName The project name
+   * @param options Pagination options
+   */
+  public getDependendentRepositories(
+    platform: PlatformType,
+    projectName: string,
+    options?: PaginationOptions
+  ): Promise<Repository[]> {
+    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
+   * Get packages that have at least one version that depends on a given project.
+   * @see https://libraries.io/api#project-dependents
+   * @param platform The project platform (e.g. "npm", "cargo", ...)
+   * @param projectName The project name
+   * @param options Pagination options
+   */
+  public getDependendents(
+    platform: PlatformType,
+    projectName: string,
+    options?: PaginationOptions
+  ): Promise<Project[]> {
+    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
    * Get information about a package and it's versions.
    * @see https://libraries.io/api#project
    * @param platform The project platform (e.g. "npm", "cargo", ...)
@@ -44,53 +91,6 @@ export class ProjectAPI extends APIBase {
   ): Promise<ProjectWithDependencies> {
     const endpoint = Endpoint.Project.dependencies(platform, projectName, projectVersion);
     return this.apiClient.requestService.get(endpoint);
-  }
-
-  /**
-   * Get packages that have at least one version that depends on a given project.
-   * @see https://libraries.io/api#project-dependents
-   * @param platform The project platform (e.g. "npm", "cargo", ...)
-   * @param projectName The project name
-   * @param options Pagination options
-   */
-  public getDependendents(
-    platform: PlatformType,
-    projectName: string,
-    options?: PaginationOptions
-  ): Promise<Project[]> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
-  }
-
-  /**
-   * Get repositories that depend on a given project.
-   * @param platform The project platform (e.g. "npm", "cargo", ...)
-   * @param projectName The project name
-   * @param options Pagination options
-   */
-  public getDependendentRepositories(
-    platform: PlatformType,
-    projectName: string,
-    options?: PaginationOptions
-  ): Promise<Repository[]> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
-  }
-
-  /**
-   * Get users that have contributed to a given project.
-   * @see https://libraries.io/api#project-contributors
-   * @param platform The project platform (e.g. "npm", "cargo", ...)
-   * @param projectName The project name
-   * @param options Pagination options
-   */
-  public getContributors(
-    platform: PlatformType,
-    projectName: string,
-    options?: PaginationOptions
-  ): Promise<Contributor[]> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 
   /**

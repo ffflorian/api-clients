@@ -9,16 +9,16 @@ export class LocationGroupCategoriesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<LocationGroupCategories[]> {
-    const endpoint = Endpoint.locationGroupCategories();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<LocationGroupCategories> {
     const endpoint = Endpoint.locationGroupCategories(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<LocationGroupCategories[]> {
+    const endpoint = Endpoint.locationGroupCategories();
     return this.apiClient.requestService.get(endpoint);
   }
 }

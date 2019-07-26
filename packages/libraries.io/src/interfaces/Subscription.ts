@@ -1,8 +1,8 @@
 import {Project} from './Project';
 
 export interface Subscription {
-  include_prerelease: boolean;
   created_at: string;
-  updated_at: string;
+  include_prerelease: boolean;
   project: Project;
+  updated_at: string;
 }

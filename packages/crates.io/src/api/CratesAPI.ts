@@ -81,15 +81,6 @@ export class CratesAPI {
   }
 
   /**
-   * Retrieve a download link for a certain version of a crate.
-   * @param packageName The package name
-   */
-  public getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
-    const endpoint = Endpoint.Crates.download(packageName, version);
-    return this.apiClient.requestService.get(endpoint);
-  }
-
-  /**
    * Retrieve the dependencies of a crate version.
    * @param packageName The package name
    */
@@ -104,6 +95,15 @@ export class CratesAPI {
    */
   public getDownloads(packageName: string): Promise<DownloadsResult> {
     const endpoint = Endpoint.Crates.downloads(packageName);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  /**
+   * Retrieve a download link for a certain version of a crate.
+   * @param packageName The package name
+   */
+  public getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
+    const endpoint = Endpoint.Crates.download(packageName, version);
     return this.apiClient.requestService.get(endpoint);
   }
 
