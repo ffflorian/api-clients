@@ -9,16 +9,16 @@ export class SourcesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Sources[]> {
-    const endpoint = Endpoint.sources();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Sources> {
     const endpoint = Endpoint.sources(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Sources[]> {
+    const endpoint = Endpoint.sources();
     return this.apiClient.requestService.get(endpoint);
   }
 }

@@ -45,9 +45,9 @@ export interface NewAbsence {
   canApproveAbsence?: boolean;
   canBeDeleted?: boolean;
   canBeEdited?: boolean;
-  company?: string;
   /** optional comment */
   commentary?: string;
+  company?: string;
   /** an optional comment for a denied absence request */
   denyReason?: string;
   /** object with boolean value to determine if a note is required for an absence and if it was submitted */

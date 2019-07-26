@@ -9,16 +9,16 @@ export class DoorsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Doors[]> {
-    const endpoint = Endpoint.doors();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Doors> {
     const endpoint = Endpoint.doors(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Doors[]> {
+    const endpoint = Endpoint.doors();
     return this.apiClient.requestService.get(endpoint);
   }
 }

@@ -9,16 +9,16 @@ export class RoutingAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Routing[]> {
-    const endpoint = Endpoint.routing();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Routing> {
     const endpoint = Endpoint.routing(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Routing[]> {
+    const endpoint = Endpoint.routing();
     return this.apiClient.requestService.get(endpoint);
   }
 }

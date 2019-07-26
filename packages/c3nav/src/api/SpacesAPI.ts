@@ -9,16 +9,16 @@ export class SpacesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Spaces[]> {
-    const endpoint = Endpoint.spaces();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Spaces> {
     const endpoint = Endpoint.spaces(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Spaces[]> {
+    const endpoint = Endpoint.spaces();
     return this.apiClient.requestService.get(endpoint);
   }
 }

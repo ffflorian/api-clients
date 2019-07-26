@@ -9,16 +9,16 @@ export class LeaveDescriptionsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<LeaveDescriptions[]> {
-    const endpoint = Endpoint.leaveDescriptions();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<LeaveDescriptions> {
     const endpoint = Endpoint.leaveDescriptions(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<LeaveDescriptions[]> {
+    const endpoint = Endpoint.leaveDescriptions();
     return this.apiClient.requestService.get(endpoint);
   }
 }

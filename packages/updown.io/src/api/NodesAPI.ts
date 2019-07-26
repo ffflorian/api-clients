@@ -10,12 +10,6 @@ export class NodesAPI {
     this.apiClient = apiClient;
   }
 
-  /** List all updown.io monitoring nodes. */
-  public getNodes(): Promise<Nodes> {
-    const endpoint = Endpoint.nodes();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /** List all updown.io monitoring nodes IPv4 addresses. */
   public getIpv4Nodes(): Promise<string[]> {
     const endpoint = Endpoint.Nodes.ipv4();
@@ -25,6 +19,12 @@ export class NodesAPI {
   /** List all updown.io monitoring nodes IPv6 addresses. */
   public getIpv6Nodes(): Promise<string[]> {
     const endpoint = Endpoint.Nodes.ipv6();
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  /** List all updown.io monitoring nodes. */
+  public getNodes(): Promise<Nodes> {
+    const endpoint = Endpoint.nodes();
     return this.apiClient.requestService.get(endpoint);
   }
 

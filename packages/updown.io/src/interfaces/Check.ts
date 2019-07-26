@@ -5,8 +5,8 @@ export interface Check {
   apdex_t: number;
   custom_headers: CustomHeaders;
   disabled_locations: string[];
-  down_since: string | null;
   down: boolean;
+  down_since: string | null;
   enabled: boolean;
   error: string | null;
   favicon_url: string | null;

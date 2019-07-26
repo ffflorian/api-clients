@@ -17,6 +17,16 @@ export class UserAPI extends APIBase {
   }
 
   /**
+   * List packages that a user is subscribed to recieved notifications about new releases.
+   * @see https://libraries.io/api#subscriptions-index
+   * @param options Pagination options
+   */
+  public getAllSubscriptions(options?: PaginationOptions): Promise<Subscription[]> {
+    const endpoint = Endpoint.subscriptions();
+    return this.apiClient.requestService.get(endpoint, {data: options});
+  }
+
+  /**
    * Check if a users is subscribed to receive notifications about new releases of a project.
    * @see https://libraries.io/api#subscriptions-show
    * @param platform The project platform (e.g. "npm", "cargo", ...)
@@ -25,16 +35,6 @@ export class UserAPI extends APIBase {
   public getSubscription(platform: PlatformType, projectName: string): Promise<Subscription | null> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
     return this.apiClient.requestService.get(endpoint);
-  }
-
-  /**
-   * List packages that a user is subscribed to recieved notifications about new releases.
-   * @see https://libraries.io/api#subscriptions-index
-   * @param options Pagination options
-   */
-  public getAllSubscriptions(options?: PaginationOptions): Promise<Subscription[]> {
-    const endpoint = Endpoint.subscriptions();
-    return this.apiClient.requestService.get(endpoint, {data: options});
   }
 
   /**

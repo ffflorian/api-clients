@@ -9,10 +9,10 @@ import {NewUser} from './User';
 export type Filter = {[key: string]: {[key: string]: string} | string};
 
 export interface PaginationOptions {
-  limit: number;
-  skip: number;
   filter?: Filter;
+  limit: number;
   relations?: string[];
+  skip: number;
 }
 
 export type RequestOptions =

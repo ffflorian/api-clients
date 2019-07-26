@@ -24,8 +24,8 @@ export interface LocationGeometry {
 }
 
 export interface LocationType {
-  name_plural: string;
   name: string;
-  title_plural: string;
+  name_plural: string;
   title: string;
+  title_plural: string;
 }

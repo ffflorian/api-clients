@@ -9,16 +9,16 @@ export class AreasAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Areas[]> {
-    const endpoint = Endpoint.areas();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Areas> {
     const endpoint = Endpoint.areas(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Areas[]> {
+    const endpoint = Endpoint.areas();
     return this.apiClient.requestService.get(endpoint);
   }
 }
