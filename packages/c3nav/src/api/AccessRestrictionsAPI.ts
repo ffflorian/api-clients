@@ -9,16 +9,16 @@ export class AccessRestrictionsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<AccessRestrictions[]> {
-    const endpoint = Endpoint.accessRestrictions();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<AccessRestrictions> {
     const endpoint = Endpoint.accessRestrictions(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<AccessRestrictions[]> {
+    const endpoint = Endpoint.accessRestrictions();
     return this.apiClient.requestService.get(endpoint);
   }
 }

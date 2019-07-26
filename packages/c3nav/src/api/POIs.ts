@@ -9,16 +9,16 @@ export class PoisAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<POIs[]> {
-    const endpoint = Endpoint.pois();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<POIs> {
     const endpoint = Endpoint.pois(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<POIs[]> {
+    const endpoint = Endpoint.pois();
     return this.apiClient.requestService.get(endpoint);
   }
 }

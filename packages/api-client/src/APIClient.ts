@@ -24,6 +24,12 @@ export class APIClient<T = any> {
     this.requestService = new RequestService<T>(options);
   }
 
+  /** Remove the request injector. */
+  public removeRequestInjector(): void {
+    delete this.options.requestInjector;
+    this.requestService.removeRequestInjector();
+  }
+
   /**
    * Set a new API URL.
    * @param newUrl The new API url
@@ -39,11 +45,5 @@ export class APIClient<T = any> {
   public setRequestInjector(requestInjector: RequestInjectorFn<T>): void {
     this.options.requestInjector = requestInjector;
     this.requestService.setRequestInjector(requestInjector);
-  }
-
-  /** Remove the request injector. */
-  public removeRequestInjector(): void {
-    delete this.options.requestInjector;
-    this.requestService.removeRequestInjector();
   }
 }

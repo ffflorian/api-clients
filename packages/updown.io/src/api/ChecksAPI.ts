@@ -11,6 +11,29 @@ export class ChecksAPI {
   }
 
   /**
+   * Add a new check.
+   * @param url The URL you want to monitor.
+   * @param options Further check adding options
+   */
+  public addCheck(url: string, options?: CheckOptions): Promise<Check> {
+    const endpoint = Endpoint.checks();
+    const params = {
+      url,
+      ...options,
+    };
+    return this.apiClient.requestService.post(endpoint, params);
+  }
+
+  /**
+   * Delete a check.
+   * @param token The check unique token
+   */
+  public deleteCheck(token: string): Promise<Deleted> {
+    const endpoint = Endpoint.checks(token);
+    return this.apiClient.requestService.delete(endpoint);
+  }
+
+  /**
    * Show a single check.
    * @param token The check unique token
    * @param metrics Include performance metrics (last hour only)
@@ -54,17 +77,11 @@ export class ChecksAPI {
   }
 
   /**
-   * Add a new check.
-   * @param url The URL you want to monitor.
-   * @param options Further check adding options
+   * Set a new API URL.
+   * @param newUrl The new API url
    */
-  public addCheck(url: string, options?: CheckOptions): Promise<Check> {
-    const endpoint = Endpoint.checks();
-    const params = {
-      url,
-      ...options,
-    };
-    return this.apiClient.requestService.post(endpoint, params);
+  public setApiUrl(newUrl: string): void {
+    this.apiClient.requestService.setApiUrl(newUrl);
   }
 
   /**
@@ -75,22 +92,5 @@ export class ChecksAPI {
   public updateCheck(token: string, options?: CheckOptions): Promise<Check> {
     const endpoint = Endpoint.checks(token);
     return this.apiClient.requestService.put(endpoint, {data: options});
-  }
-
-  /**
-   * Delete a check.
-   * @param token The check unique token
-   */
-  public deleteCheck(token: string): Promise<Deleted> {
-    const endpoint = Endpoint.checks(token);
-    return this.apiClient.requestService.delete(endpoint);
-  }
-
-  /**
-   * Set a new API URL.
-   * @param newUrl The new API url
-   */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.requestService.setApiUrl(newUrl);
   }
 }

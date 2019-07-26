@@ -20,9 +20,9 @@ export interface RequestOptions {
 }
 
 export interface PhoneSubscriberData {
-  phone_number: string;
   /** Defaults to `us` if not supplied. */
   phone_country?: string;
+  phone_number: string;
 }
 
 export interface SubscriberOptions {

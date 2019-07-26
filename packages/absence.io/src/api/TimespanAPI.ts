@@ -10,6 +10,28 @@ export class TimespanAPI extends APIBase {
   }
 
   /**
+   * Creates a new time entry
+   * @param data The time entry data
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#eb82f188-4af9-462a-80f6-0536c40a77d9
+   */
+  public createTimespan(data: NewTimespan): Promise<Timespan> {
+    this.checkApiKey('Timespan');
+    const endpoint = Endpoint.Timespan.create();
+    return this.apiClient.requestService.post(endpoint, {data});
+  }
+
+  /**
+   * Deletes one time entry
+   * @param id The time entry id
+   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#030e6fd3-051f-4c14-ae14-b5290a9335d8
+   */
+  public deleteTimespan(id: string): Promise<void> {
+    this.checkApiKey('Timespan');
+    const endpoint = Endpoint.Timespan.timespans(id);
+    return this.apiClient.requestService.delete(endpoint);
+  }
+
+  /**
    * Retrieve a single time entry
    * @param id The time entry id
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#c9e5f2fc-e478-419b-ac34-071c8e68765f
@@ -32,17 +54,6 @@ export class TimespanAPI extends APIBase {
 
   /**
    * Creates a new time entry
-   * @param data The time entry data
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#eb82f188-4af9-462a-80f6-0536c40a77d9
-   */
-  public createTimespan(data: NewTimespan): Promise<Timespan> {
-    this.checkApiKey('Timespan');
-    const endpoint = Endpoint.Timespan.create();
-    return this.apiClient.requestService.post(endpoint, {data});
-  }
-
-  /**
-   * Creates a new time entry
    * @param id The time entry id
    * @param data The time entry data
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#0b409cc6-37a7-4f24-b1a1-e7bacc5b2555
@@ -51,16 +62,5 @@ export class TimespanAPI extends APIBase {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
     return this.apiClient.requestService.put(endpoint, {data});
-  }
-
-  /**
-   * Deletes one time entry
-   * @param id The time entry id
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#030e6fd3-051f-4c14-ae14-b5290a9335d8
-   */
-  public deleteTimespan(id: string): Promise<void> {
-    this.checkApiKey('Timespan');
-    const endpoint = Endpoint.Timespan.timespans(id);
-    return this.apiClient.requestService.delete(endpoint);
   }
 }

@@ -39,14 +39,6 @@ export class SubscribersAPI {
   }
 
   /**
-   * @param options Subscriber options.
-   */
-  public getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
-    const endpoint = Endpoint.subscribers();
-    return this.apiClient.requestService.get(endpoint, {params: {subscriber: {id: subscriberId}}});
-  }
-
-  /**
    * When an incident is created, a subscriber can be associated
    * to that incident to receive notifications on updates until the
    * incident is resolved. The incident must be in an unresolved
@@ -79,6 +71,14 @@ export class SubscribersAPI {
   public createPageSubscription(data: CombinedSubscriberData): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
     return this.apiClient.requestService.get(endpoint, {params: {subscriber: data}});
+  }
+
+  /**
+   * @param options Subscriber options.
+   */
+  public getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
+    const endpoint = Endpoint.subscribers();
+    return this.apiClient.requestService.get(endpoint, {params: {subscriber: {id: subscriberId}}});
   }
 
   /**

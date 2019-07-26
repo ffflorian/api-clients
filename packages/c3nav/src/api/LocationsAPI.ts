@@ -18,6 +18,20 @@ export class LocationsAPI extends APIBase {
     super(apiClient, options);
   }
 
+  public getDetails(id: number): Promise<LocationDetails>;
+  public getDetails(slug: string): Promise<LocationDetails>;
+  public getDetails(id: string | number): Promise<LocationDetails> {
+    const endpoint = Endpoint.Location.details(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getGeometry(id: number): Promise<LocationGeometry>;
+  public getGeometry(slug: string): Promise<LocationGeometry>;
+  public getGeometry(id: string | number): Promise<LocationGeometry> {
+    const endpoint = Endpoint.Location.geometry(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
   public getList(): Promise<Location[]> {
     const endpoint = Endpoint.Location.locations();
     return this.apiClient.requestService.get(endpoint);
@@ -30,22 +44,8 @@ export class LocationsAPI extends APIBase {
     return this.apiClient.requestService.get(endpoint);
   }
 
-  public getDetails(id: number): Promise<LocationDetails>;
-  public getDetails(slug: string): Promise<LocationDetails>;
-  public getDetails(id: string | number): Promise<LocationDetails> {
-    const endpoint = Endpoint.Location.details(id);
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   public getTypes(): Promise<LocationType[]> {
     const endpoint = Endpoint.Location.types();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
-  public getGeometry(id: number): Promise<LocationGeometry>;
-  public getGeometry(slug: string): Promise<LocationGeometry>;
-  public getGeometry(id: string | number): Promise<LocationGeometry> {
-    const endpoint = Endpoint.Location.geometry(id);
     return this.apiClient.requestService.get(endpoint);
   }
 }

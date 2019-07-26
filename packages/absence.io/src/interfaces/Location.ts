@@ -14,12 +14,12 @@ export interface NewLocation {
 }
 
 export interface Location extends Required<NewLocation> {
+  /** unique identifier */
+  readonly _id: string;
+  /** ics link for viewing absences in external applications, prefix: https://app.absence.io/ */
+  readonly icsLink: string;
   /** bool to display if the location is the main one or not */
   readonly mainLocation: boolean;
   /** count of users who are members of the location */
   readonly memberCount: number;
-  /** ics link for viewing absences in external applications, prefix: https://app.absence.io/ */
-  readonly icsLink: string;
-  /** unique identifier */
-  readonly _id: string;
 }

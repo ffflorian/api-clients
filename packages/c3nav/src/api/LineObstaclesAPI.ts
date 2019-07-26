@@ -9,16 +9,16 @@ export class LineObstaclesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<LineObstacles[]> {
-    const endpoint = Endpoint.lineObstacles();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<LineObstacles> {
     const endpoint = Endpoint.lineObstacles(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<LineObstacles[]> {
+    const endpoint = Endpoint.lineObstacles();
     return this.apiClient.requestService.get(endpoint);
   }
 }

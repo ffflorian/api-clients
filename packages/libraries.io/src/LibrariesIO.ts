@@ -53,6 +53,14 @@ export class LibrariesIO {
     };
   }
 
+  /**
+   * Set a new API key.
+   * @param apiKey The new API key
+   */
+  public setApiKey(apiKey: string): void {
+    this.options.apiKey = apiKey;
+  }
+
   /*
 
       const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;
@@ -67,13 +75,5 @@ export class LibrariesIO {
    */
   public setApiUrl(newUrl: string): void {
     this.apiClient.setApiUrl(newUrl);
-  }
-
-  /**
-   * Set a new API key.
-   * @param apiKey The new API key
-   */
-  public setApiKey(apiKey: string): void {
-    this.options.apiKey = apiKey;
   }
 }

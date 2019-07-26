@@ -1,6 +1,6 @@
 export interface Version {
-  crate_size: number;
   crate: string;
+  crate_size: number;
   created_at: string;
   dl_path: string;
   downloads: number;
@@ -10,9 +10,9 @@ export interface Version {
   id: number;
   license: string;
   links: {
+    authors: string;
     dependencies: string;
     version_downloads: string;
-    authors: string;
   };
   num: string;
   published_by: null | string;

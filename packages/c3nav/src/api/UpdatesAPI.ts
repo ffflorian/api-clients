@@ -9,16 +9,16 @@ export class UpdatesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Updates[]> {
-    const endpoint = Endpoint.updates();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Updates> {
     const endpoint = Endpoint.updates(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Updates[]> {
+    const endpoint = Endpoint.updates();
     return this.apiClient.requestService.get(endpoint);
   }
 }

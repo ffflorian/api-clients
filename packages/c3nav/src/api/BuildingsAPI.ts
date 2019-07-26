@@ -9,16 +9,16 @@ export class BuildingsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Buildings[]> {
-    const endpoint = Endpoint.buildings();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Buildings> {
     const endpoint = Endpoint.buildings(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Buildings[]> {
+    const endpoint = Endpoint.buildings();
     return this.apiClient.requestService.get(endpoint);
   }
 }

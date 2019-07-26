@@ -9,16 +9,16 @@ export class RampsAPI extends APIBase {
     super(apiClient, options);
   }
 
-  public getList(): Promise<Ramps[]> {
-    const endpoint = Endpoint.ramps();
-    return this.apiClient.requestService.get(endpoint);
-  }
-
   /**
    * @param id The id to get
    */
   public getById(id: number): Promise<Ramps> {
     const endpoint = Endpoint.ramps(id);
+    return this.apiClient.requestService.get(endpoint);
+  }
+
+  public getList(): Promise<Ramps[]> {
+    const endpoint = Endpoint.ramps();
     return this.apiClient.requestService.get(endpoint);
   }
 }

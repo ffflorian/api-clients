@@ -11,20 +11,20 @@ export class APIBase {
   }
 
   /**
-   * Set a new API URL.
-   * @param newUrl The new API url
-   */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
-  }
-
-  /**
    * Set a new API key.
    * @param authorization The API authorization data
    */
   public setApiAuthorization(authorization: Authorization): void {
     this.options.apiKey = authorization.apiKey;
     this.options.apiKeyId = authorization.apiKeyId;
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newUrl The new API url
+   */
+  public setApiUrl(newUrl: string): void {
+    this.apiClient.setApiUrl(newUrl);
   }
 
   protected checkApiKey(apiName?: string): void {

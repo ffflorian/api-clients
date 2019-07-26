@@ -22,11 +22,12 @@ export class CratesIO {
   }
 
   /**
-   * Retrieve a summary containing crates.io wide information.
+   * Set a new API key.
+   * @param apiKey The API key
    */
-  public summary(): Promise<Summary> {
-    const endpoint = Endpoint.summary();
-    return this.apiClient.requestService.get(endpoint);
+  public setApiKey(apiKey: string): void {
+    this.options.apiKey = apiKey;
+    this.api.crates.setApiKey(apiKey);
   }
 
   /**
@@ -38,11 +39,10 @@ export class CratesIO {
   }
 
   /**
-   * Set a new API key.
-   * @param apiKey The API key
+   * Retrieve a summary containing crates.io wide information.
    */
-  public setApiKey(apiKey: string): void {
-    this.options.apiKey = apiKey;
-    this.api.crates.setApiKey(apiKey);
+  public summary(): Promise<Summary> {
+    const endpoint = Endpoint.summary();
+    return this.apiClient.requestService.get(endpoint);
   }
 }
