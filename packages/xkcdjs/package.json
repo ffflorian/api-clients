@@ -42,6 +42,7 @@
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/xkcdjs",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
+    "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
   "version": "2.0.1"
