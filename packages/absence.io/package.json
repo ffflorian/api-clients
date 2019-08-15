@@ -7,7 +7,7 @@
   "description": "An absence.io API client",
   "devDependencies": {
     "@types/node": "~12",
-    "rimraf": "2.7.0",
+    "rimraf": "3.0.0",
     "typedoc": "0.15.0",
     "typescript": "3.5.3"
   },
