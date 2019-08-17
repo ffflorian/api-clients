@@ -17,13 +17,6 @@ if [ -z "${GH_USER}" ]; then
   exit 1
 fi
 
-git config --global "user.email" "${GH_USER}@users.noreply.github.com"
-git config --global "user.name" "${GH_USER}"
-
-REPO="$(git config remote.origin.url)"
-REPO="${REPO/https:\/\/github.com\//https:\/\/${GH_USER}:${GH_TOKEN}@github.com\/}"
-git remote set-url origin "${REPO}"
-
 echo "Checking for changed packages..."
 
 set +e
@@ -41,8 +34,4 @@ done
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]"
-git push origin master
-
-rm "${HOME}/.gitconfig"
-
-unset REPO
+git push origin HEAD:master

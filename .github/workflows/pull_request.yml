@@ -1,0 +1,23 @@
+name: Pull request
+
+on: pull_request
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      - run: |
+          yarn
+          yarn boot
+          yarn lint
+          yarn dist
+          yarn test
+        env:
+          NODE_ENV: development
+        if: |
+          contains(github.event.commits[0].message, '[skip ci]') == false &&
+          contains(github.event.commits[0].message, '[skip ci]') == false
