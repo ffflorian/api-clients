@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {ClientOptions, Obstacles} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ObstaclesAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<Obstacles> {
+  public async getById(id: number): Promise<Obstacles> {
     const endpoint = Endpoint.obstacles(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<Obstacles[]> {
+  public async getList(): Promise<Obstacles[]> {
     const endpoint = Endpoint.obstacles();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

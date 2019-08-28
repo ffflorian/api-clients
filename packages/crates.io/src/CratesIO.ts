@@ -1,4 +1,4 @@
-import {APIClient} from '@ffflorian/api-client';
+import axios, {AxiosInstance} from 'axios';
 
 import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
@@ -6,7 +6,7 @@ import {API, ClientOptions, Summary} from './interfaces';
 
 export class CratesIO {
   public readonly api: API;
-  private readonly apiClient: APIClient;
+  private readonly apiClient: AxiosInstance;
   private readonly options: ClientOptions;
 
   constructor(apiKey?: string);
@@ -14,7 +14,7 @@ export class CratesIO {
   constructor(options?: ClientOptions | string) {
     this.options = typeof options === 'string' ? {apiKey: options} : options || {};
 
-    this.apiClient = new APIClient('https://crates.io/api/v1');
+    this.apiClient = axios.create({baseURL: 'https://crates.io/api/v1'});
 
     this.api = {
       crates: new CratesAPI(this.apiClient),
@@ -35,14 +35,15 @@ export class CratesIO {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 
   /**
    * Retrieve a summary containing crates.io wide information.
    */
-  public summary(): Promise<Summary> {
+  public async summary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

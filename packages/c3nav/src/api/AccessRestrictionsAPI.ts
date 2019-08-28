@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {AccessRestrictions, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AccessRestrictionsAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<AccessRestrictions> {
+  public async getById(id: number): Promise<AccessRestrictions> {
     const endpoint = Endpoint.accessRestrictions(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<AccessRestrictions[]> {
+  public async getList(): Promise<AccessRestrictions[]> {
     const endpoint = Endpoint.accessRestrictions();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

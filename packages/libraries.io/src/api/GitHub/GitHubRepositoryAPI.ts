@@ -1,11 +1,11 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../../Endpoints';
 import {ClientOptions, PaginationOptions, Project, RepositoryWithDependencies} from '../../interfaces/';
 import {APIBase} from '../APIBase';
 
 export class GitHubRepositoryAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -18,7 +18,8 @@ export class GitHubRepositoryAPI extends APIBase {
    */
   public getProjects(repositoryOwner: string, repositoryName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.Repository.projects(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -29,7 +30,8 @@ export class GitHubRepositoryAPI extends APIBase {
    */
   public getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
     const endpoint = Endpoint.GitHub.Repository.repository(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -43,6 +45,7 @@ export class GitHubRepositoryAPI extends APIBase {
     repositoryName: string
   ): Promise<RepositoryWithDependencies> {
     const endpoint = Endpoint.GitHub.Repository.dependencies(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

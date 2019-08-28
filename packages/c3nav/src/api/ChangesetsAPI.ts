@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {Changesets, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ChangesetsAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<Changesets> {
+  public async getById(id: number): Promise<Changesets> {
     const endpoint = Endpoint.changesets(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<Changesets[]> {
+  public async getList(): Promise<Changesets[]> {
     const endpoint = Endpoint.changesets();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

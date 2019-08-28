@@ -1,13 +1,13 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 import {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
-  protected readonly apiClient: APIClient;
+  protected readonly apiClient: AxiosInstance;
   protected readonly options: ClientOptions;
   private readonly JSON_INFO_FILE: string;
   private readonly lowestIndex: number;
 
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     this.apiClient = apiClient;
     this.options = options;
 
@@ -27,7 +27,7 @@ export class XKCDAPI {
       throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
     }
 
-    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
+    const {data: metaData} = await this.apiClient.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
 
     if (options.withData === true) {
       const imageData = await this.getImage(metaData.img);
@@ -47,7 +47,7 @@ export class XKCDAPI {
   public async getLatest(options: {withData: true}): Promise<XKCDResultWithData>;
   public async getLatest(options?: RequestOptions): Promise<XKCDResultWithData>;
   public async getLatest(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
-    const metaData = await this.apiClient.requestService.get<XKCDResult>(`/${this.JSON_INFO_FILE}`);
+    const {data: metaData} = await this.apiClient.get<XKCDResult>(`/${this.JSON_INFO_FILE}`);
 
     if (options.withData) {
       const imageData = await this.getImage(metaData.img);
@@ -84,7 +84,7 @@ export class XKCDAPI {
   }
 
   private async getImage(imageUrl: string): Promise<ImageData> {
-    const {data, headers} = await this.apiClient.requestService.request<Buffer>({
+    const {data, headers} = await this.apiClient.request<Buffer>({
       responseType: 'arraybuffer',
       url: imageUrl,
     });

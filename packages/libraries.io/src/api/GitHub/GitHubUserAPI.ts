@@ -1,4 +1,4 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../../Endpoints';
 import {
@@ -13,7 +13,7 @@ import {
 import {APIBase} from '../APIBase';
 
 export class GitHubUserAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -25,7 +25,8 @@ export class GitHubUserAPI extends APIBase {
    */
   public getContributedProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.User.contributedProjects(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -36,7 +37,8 @@ export class GitHubUserAPI extends APIBase {
    */
   public getContributedRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
     const endpoint = Endpoint.GitHub.User.contributedRepositories(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   public getDependencies(userName: string, options?: PaginationOptions): Promise<Project[]>;
@@ -67,7 +69,8 @@ export class GitHubUserAPI extends APIBase {
       }
     }
 
-    return this.apiClient.requestService.get(endpoint, {data: parameters});
+    const {data} = await this.apiClient.get(endpoint, {data: parameters});
+    return data;
   }
 
   /**
@@ -78,7 +81,8 @@ export class GitHubUserAPI extends APIBase {
    */
   public getProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.User.repositories(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -89,7 +93,8 @@ export class GitHubUserAPI extends APIBase {
    */
   public getRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
     const endpoint = Endpoint.GitHub.User.repositories(userName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -99,6 +104,7 @@ export class GitHubUserAPI extends APIBase {
    */
   public getUser(userName: string): Promise<Contributor> {
     const endpoint = Endpoint.GitHub.User.user(userName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

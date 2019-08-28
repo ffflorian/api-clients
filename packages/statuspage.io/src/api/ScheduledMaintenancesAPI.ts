@@ -1,11 +1,11 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {RequestOptions} from '../interfaces/Request';
 import {ScheduledMaintenances} from '../interfaces/Result';
 
 export class ScheduledMaintenancesAPI {
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
 
   constructor(requestService: APIClient<RequestOptions>) {
     this.apiClient = requestService;
@@ -17,7 +17,8 @@ export class ScheduledMaintenancesAPI {
    */
   public getActive(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -27,7 +28,8 @@ export class ScheduledMaintenancesAPI {
    */
   public getAll(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -36,6 +38,7 @@ export class ScheduledMaintenancesAPI {
    */
   public getUpcoming(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

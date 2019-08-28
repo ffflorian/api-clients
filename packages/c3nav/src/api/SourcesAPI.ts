@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {ClientOptions, Sources} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class SourcesAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<Sources> {
+  public async getById(id: number): Promise<Sources> {
     const endpoint = Endpoint.sources(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<Sources[]> {
+  public async getList(): Promise<Sources[]> {
     const endpoint = Endpoint.sources();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

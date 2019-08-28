@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {ClientOptions, Spaces} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class SpacesAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<Spaces> {
+  public async getById(id: number): Promise<Spaces> {
     const endpoint = Endpoint.spaces(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<Spaces[]> {
+  public async getList(): Promise<Spaces[]> {
     const endpoint = Endpoint.spaces();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

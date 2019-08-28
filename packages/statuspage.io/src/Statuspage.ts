@@ -1,4 +1,4 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
@@ -9,7 +9,7 @@ import {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
   public readonly api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
 
   constructor(apiUrlOrPageId: string);
   constructor(options: ClientOptionsId);
@@ -45,7 +45,7 @@ export class Statuspage {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 
   /**
@@ -54,7 +54,8 @@ export class Statuspage {
    */
   private getComponents(): Promise<Components> {
     const endpoint = Endpoint.components();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -65,7 +66,8 @@ export class Statuspage {
    */
   private getStatus(): Promise<Status> {
     const endpoint = Endpoint.status();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -74,6 +76,7 @@ export class Statuspage {
    */
   private getSummary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }
