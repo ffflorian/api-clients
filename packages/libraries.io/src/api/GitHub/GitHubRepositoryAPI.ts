@@ -1,7 +1,13 @@
 import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../../Endpoints';
-import {ClientOptions, PaginationOptions, Project, RepositoryWithDependencies} from '../../interfaces/';
+import {
+  ClientOptions,
+  LibrariesIOResult,
+  PaginationOptions,
+  Project,
+  RepositoryWithDependencies,
+} from '../../interfaces/';
 import {APIBase} from '../APIBase';
 
 export class GitHubRepositoryAPI extends APIBase {
@@ -20,7 +26,7 @@ export class GitHubRepositoryAPI extends APIBase {
     repositoryOwner: string,
     repositoryName: string,
     options?: PaginationOptions
-  ): Promise<Project[]> {
+  ): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.GitHub.Repository.projects(repositoryOwner, repositoryName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -32,7 +38,10 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public async getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
+  public async getRepository(
+    repositoryOwner: string,
+    repositoryName: string
+  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
     const endpoint = Endpoint.GitHub.Repository.repository(repositoryOwner, repositoryName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -47,7 +56,7 @@ export class GitHubRepositoryAPI extends APIBase {
   public async getRepositoryWithDependencies(
     repositoryOwner: string,
     repositoryName: string
-  ): Promise<RepositoryWithDependencies> {
+  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
     const endpoint = Endpoint.GitHub.Repository.dependencies(repositoryOwner, repositoryName);
     const {data} = await this.apiClient.get(endpoint);
     return data;

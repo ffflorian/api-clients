@@ -4,6 +4,7 @@ import {Endpoint} from '../Endpoints';
 import {
   ClientOptions,
   LibrariesIOHeaders,
+  LibrariesIOResult,
   PaginationOptions,
   PlatformType,
   PreReleaseOptions,
@@ -21,7 +22,7 @@ export class UserAPI extends APIBase {
    * @see https://libraries.io/api#subscriptions-index
    * @param options Pagination options
    */
-  public async getAllSubscriptions(options?: PaginationOptions): Promise<Subscription[]> {
+  public async getAllSubscriptions(options?: PaginationOptions): Promise<LibrariesIOResult<Subscription[]>> {
     const endpoint = Endpoint.subscriptions();
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -33,7 +34,10 @@ export class UserAPI extends APIBase {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public async getSubscription(platform: PlatformType, projectName: string): Promise<Subscription | null> {
+  public async getSubscription(
+    platform: PlatformType,
+    projectName: string
+  ): Promise<LibrariesIOResult<Subscription | null>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -50,7 +54,7 @@ export class UserAPI extends APIBase {
     platform: PlatformType,
     projectName: string,
     options?: PreReleaseOptions
-  ): Promise<Subscription> {
+  ): Promise<LibrariesIOResult<Subscription>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
     const {data} = await this.apiClient.post(endpoint, {data: options});
     return data;
@@ -79,7 +83,7 @@ export class UserAPI extends APIBase {
     platform: PlatformType,
     projectName: string,
     options?: PreReleaseOptions
-  ): Promise<Subscription> {
+  ): Promise<LibrariesIOResult<Subscription>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
     const {data} = await this.apiClient.put(endpoint, {data: options});
     return data;

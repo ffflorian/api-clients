@@ -1,7 +1,7 @@
 import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, PaginationOptions, Platform} from '../interfaces/';
+import {ClientOptions, LibrariesIOResult, PaginationOptions, Platform} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class PlatformAPI extends APIBase {
@@ -14,7 +14,7 @@ export class PlatformAPI extends APIBase {
    * @see https://libraries.io/api#platforms
    * @param options Pagination options
    */
-  public async getPlatforms(options?: PaginationOptions): Promise<Platform[]> {
+  public async getPlatforms(options?: PaginationOptions): Promise<LibrariesIOResult<Platform[]>> {
     const endpoint = Endpoint.platforms();
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;

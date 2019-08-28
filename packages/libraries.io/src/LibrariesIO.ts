@@ -32,14 +32,11 @@ export class LibrariesIO {
       return config;
     });
 
-    // this.apiClient.interceptors.response.use(response => {
-    //     const headers = response.headers;
-    //     const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;
-    //     const rateLimit = Number(headers['x-ratelimit-limit']);
-    //     const rateLimitRemaining = Number(headers['x-ratelimit-remaining']);
-    //     const totalResults = headers['total'] ? Number(headers['total']) : undefined;
-    //     return {...response, d: 2}
-    // })
+    this.apiClient.interceptors.response.use(response => {
+      const headers = response.headers;
+      const totalResults = headers['total'] ? Number(headers['total']) : undefined;
+      return {...response, totalResults};
+    });
 
     this.api = {
       github: {
