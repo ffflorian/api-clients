@@ -13,7 +13,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - run: |
+      - name: Install, test and build
+        run: |
           yarn
           yarn boot
           yarn lint
@@ -22,7 +23,8 @@ jobs:
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false
-      - run: |
+      - name: Release
+        run: |
           git config --global "user.email" "${GIT_EMAIL}"
           git config --global "user.name" "${GIT_NAME}"
           REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GH_TOKEN}@github.com\//p")"

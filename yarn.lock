@@ -90,6 +90,14 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@ffflorian/api-client@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@ffflorian/api-client/-/api-client-1.0.0.tgz#ea892139bbeffbd0f5f49533d27cbaf3a675f216"
+  integrity sha512-ALP6b7nEKrDqu3hFv+V43tbs6qZKmn1nAViXl50gM89QS/bWWXK3uvsWsTntRzNUjLMznGEJntHbWg4S+DRjag==
+  dependencies:
+    axios "0.19.0"
+    http-status-codes "1.3.2"
+
 "@ffflorian/prettier-config@0.0.5":
   version "0.0.5"
   resolved "https://registry.npmjs.org/@ffflorian/prettier-config/-/prettier-config-0.0.5.tgz#5a6872fa650ac3b1312d5c5bc4d8281c7ca7b0ab"

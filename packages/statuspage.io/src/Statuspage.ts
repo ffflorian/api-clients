@@ -1,10 +1,9 @@
-import {AxiosInstance} from 'axios';
+import axios, {AxiosInstance} from 'axios';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
 import {API} from './interfaces/API';
 import {ClientOptionsId, ClientOptionsUrl} from './interfaces/ClientOptions';
-import {RequestOptions} from './interfaces/Request';
 import {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
@@ -26,14 +25,14 @@ export class Statuspage {
     const apiUrl =
       (options as ClientOptionsUrl).pageUrl || `https://${(options as ClientOptionsId).pageId}.statuspage.io`;
 
-    this.apiClient = new APIClient({
-      apiUrl,
+    this.apiClient = axios.create({
+      baseURL: apiUrl,
     });
 
     this.api = {
-      getComponents: this.getComponents.bind(this),
-      getStatus: this.getStatus.bind(this),
-      getSummary: this.getSummary.bind(this),
+      getComponents: this.getComponents,
+      getStatus: this.getStatus,
+      getSummary: this.getSummary,
       incidents: new IncidentsAPI(this.apiClient),
       scheduledMaintenances: new ScheduledMaintenancesAPI(this.apiClient),
       subscribers: new SubscribersAPI(this.apiClient),
@@ -52,11 +51,11 @@ export class Statuspage {
    * Get the components for the page. Each component is listed along with its status -
    * one of `operational`, `degraded_performance`, `partial_outage`, or `major_outage`.
    */
-  private getComponents(): Promise<Components> {
+  private readonly getComponents = async (): Promise<Components> => {
     const endpoint = Endpoint.components();
     const {data} = await this.apiClient.get(endpoint);
     return data;
-  }
+  };
 
   /**
    * Get the status rollup for the whole page. This endpoint includes an indicator -
@@ -64,19 +63,19 @@ export class Statuspage {
    * blended component status. Examples of the blended status include "All Systems
    * Operational", "Partial System Outage", and "Major Service Outage".
    */
-  private getStatus(): Promise<Status> {
+  private readonly getStatus = async (): Promise<Status> => {
     const endpoint = Endpoint.status();
     const {data} = await this.apiClient.get(endpoint);
     return data;
-  }
+  };
 
   /**
    * Get a summary of the status page, including a status indicator, component statuses,
    * unresolved incidents, and any upcoming or in-progress scheduled maintenances.
    */
-  private getSummary(): Promise<Summary> {
+  private readonly getSummary = async (): Promise<Summary> => {
     const endpoint = Endpoint.summary();
     const {data} = await this.apiClient.get(endpoint);
     return data;
-  }
+  };
 }

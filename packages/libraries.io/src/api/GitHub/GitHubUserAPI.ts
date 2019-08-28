@@ -23,7 +23,7 @@ export class GitHubUserAPI extends APIBase {
    * @param userName The username
    * @param options Pagination options
    */
-  public getContributedProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
+  public async getContributedProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.User.contributedProjects(userName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -35,14 +35,18 @@ export class GitHubUserAPI extends APIBase {
    * @param userName The username
    * @param options Pagination options
    */
-  public getContributedRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
+  public async getContributedRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
     const endpoint = Endpoint.GitHub.User.contributedRepositories(userName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
 
-  public getDependencies(userName: string, options?: PaginationOptions): Promise<Project[]>;
-  public getDependencies(userName: string, platform?: PlatformType, options?: PaginationOptions): Promise<Project[]>;
+  public async getDependencies(userName: string, options?: PaginationOptions): Promise<Project[]>;
+  public async getDependencies(
+    userName: string,
+    platform?: PlatformType,
+    options?: PaginationOptions
+  ): Promise<Project[]>;
   /**
    * Get a list of unique packages that the given user's repositories list as a dependency. Ordered by frequency of use in those repositories.
    * @see https://libraries.io/api#user-dependencies
@@ -50,7 +54,7 @@ export class GitHubUserAPI extends APIBase {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param options Pagination options
    */
-  public getDependencies(
+  public async getDependencies(
     userName: string,
     platformOrOptions?: PlatformType | PaginationOptions,
     options?: PaginationOptions
@@ -79,7 +83,7 @@ export class GitHubUserAPI extends APIBase {
    * @param userName The username
    * @param options Pagination options
    */
-  public getProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
+  public async getProjects(userName: string, options?: PaginationOptions): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.User.repositories(userName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -91,7 +95,7 @@ export class GitHubUserAPI extends APIBase {
    * @param userName The username
    * @param options Pagination options
    */
-  public getRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
+  public async getRepositories(userName: string, options?: PaginationOptions): Promise<Repository[]> {
     const endpoint = Endpoint.GitHub.User.repositories(userName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -102,7 +106,7 @@ export class GitHubUserAPI extends APIBase {
    * @see https://libraries.io/api#user
    * @param userName The username
    */
-  public getUser(userName: string): Promise<Contributor> {
+  public async getUser(userName: string): Promise<Contributor> {
     const endpoint = Endpoint.GitHub.User.user(userName);
     const {data} = await this.apiClient.get(endpoint);
     return data;

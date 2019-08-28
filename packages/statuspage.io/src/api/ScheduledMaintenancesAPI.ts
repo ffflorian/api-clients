@@ -1,13 +1,12 @@
 import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {RequestOptions} from '../interfaces/Request';
 import {ScheduledMaintenances} from '../interfaces/Result';
 
 export class ScheduledMaintenancesAPI {
   private readonly apiClient: AxiosInstance;
 
-  constructor(requestService: APIClient<RequestOptions>) {
+  constructor(requestService: AxiosInstance) {
     this.apiClient = requestService;
   }
 
@@ -15,7 +14,7 @@ export class ScheduledMaintenancesAPI {
    * Get a list of any active maintenances. This endpoint will only return
    * scheduled maintenances in the *In Progress* or *Verifying* state.
    */
-  public getActive(): Promise<ScheduledMaintenances> {
+  public async getActive(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -26,7 +25,7 @@ export class ScheduledMaintenancesAPI {
    * scheduled maintenances as described in the above two endpoints, as well
    * as those in the *Completed* state.
    */
-  public getAll(): Promise<ScheduledMaintenances> {
+  public async getAll(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -36,7 +35,7 @@ export class ScheduledMaintenancesAPI {
    * Get a list of any upcoming maintenances. This endpoint will only return
    * scheduled maintenances still in the *Scheduled* state.
    */
-  public getUpcoming(): Promise<ScheduledMaintenances> {
+  public async getUpcoming(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const {data} = await this.apiClient.get(endpoint);
     return data;

@@ -10,7 +10,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - run: |
+      - name: Install, test and build
+        run: |
           yarn
           yarn boot
           yarn lint

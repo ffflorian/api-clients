@@ -1,12 +1,12 @@
 import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Nodes, RequestOptions} from '../interfaces';
+import {Nodes} from '../interfaces';
 
 export class NodesAPI {
   private readonly apiClient: AxiosInstance;
 
-  constructor(apiClient: APIClient) {
+  constructor(apiClient: AxiosInstance) {
     this.apiClient = apiClient;
   }
 

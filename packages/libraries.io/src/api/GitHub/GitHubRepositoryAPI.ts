@@ -16,7 +16,11 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryName The repository name
    * @param options Pagination Options
    */
-  public getProjects(repositoryOwner: string, repositoryName: string, options?: PaginationOptions): Promise<Project[]> {
+  public async getProjects(
+    repositoryOwner: string,
+    repositoryName: string,
+    options?: PaginationOptions
+  ): Promise<Project[]> {
     const endpoint = Endpoint.GitHub.Repository.projects(repositoryOwner, repositoryName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
@@ -28,7 +32,7 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
+  public async getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
     const endpoint = Endpoint.GitHub.Repository.repository(repositoryOwner, repositoryName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -40,7 +44,7 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public getRepositoryWithDependencies(
+  public async getRepositoryWithDependencies(
     repositoryOwner: string,
     repositoryName: string
   ): Promise<RepositoryWithDependencies> {
