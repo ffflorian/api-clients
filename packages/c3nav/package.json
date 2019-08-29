@@ -8,7 +8,7 @@
     "@types/node": "~12",
     "rimraf": "3.0.0",
     "typedoc": "0.15.0",
-    "typescript": "3.5.3"
+    "typescript": "3.6.2"
   },
   "engines": {
     "node": ">= 10.9"
