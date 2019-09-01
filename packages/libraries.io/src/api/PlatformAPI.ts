@@ -1,11 +1,11 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, PaginationOptions, Platform} from '../interfaces/';
+import {ClientOptions, LibrariesIOResult, PaginationOptions, Platform} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class PlatformAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -14,8 +14,9 @@ export class PlatformAPI extends APIBase {
    * @see https://libraries.io/api#platforms
    * @param options Pagination options
    */
-  public getPlatforms(options?: PaginationOptions): Promise<Platform[]> {
+  public async getPlatforms(options?: PaginationOptions): Promise<LibrariesIOResult<Platform[]>> {
     const endpoint = Endpoint.platforms();
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 }

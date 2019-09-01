@@ -1,12 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions, RequestOptions} from '../interfaces';
+import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 
 export class ChecksAPI {
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
 
-  constructor(apiClient: APIClient) {
+  constructor(apiClient: AxiosInstance) {
     this.apiClient = apiClient;
   }
 
@@ -15,22 +15,24 @@ export class ChecksAPI {
    * @param url The URL you want to monitor.
    * @param options Further check adding options
    */
-  public addCheck(url: string, options?: CheckOptions): Promise<Check> {
+  public async addCheck(url: string, options?: CheckOptions): Promise<Check> {
     const endpoint = Endpoint.checks();
     const params = {
       url,
       ...options,
     };
-    return this.apiClient.requestService.post(endpoint, params);
+    const {data} = await this.apiClient.post(endpoint, params);
+    return data;
   }
 
   /**
    * Delete a check.
    * @param token The check unique token
    */
-  public deleteCheck(token: string): Promise<Deleted> {
+  public async deleteCheck(token: string): Promise<Deleted> {
     const endpoint = Endpoint.checks(token);
-    return this.apiClient.requestService.delete(endpoint);
+    const {data} = await this.apiClient.delete(endpoint);
+    return data;
   }
 
   /**
@@ -38,15 +40,17 @@ export class ChecksAPI {
    * @param token The check unique token
    * @param metrics Include performance metrics (last hour only)
    */
-  public getCheck(token: string, metrics?: boolean): Promise<Check> {
+  public async getCheck(token: string, metrics?: boolean): Promise<Check> {
     const endpoint = Endpoint.Checks.check(token);
-    return this.apiClient.requestService.get(endpoint, {data: {metrics}});
+    const {data} = await this.apiClient.get(endpoint, {data: {metrics}});
+    return data;
   }
 
   /** List all your checks. */
-  public getChecks(): Promise<Check[]> {
+  public async getChecks(): Promise<Check[]> {
     const endpoint = Endpoint.checks();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -55,9 +59,10 @@ export class ChecksAPI {
    * @param token The check unique token
    * @param page The page to fetch (100 per page)
    */
-  public getDowntimes(token: string, page?: number): Promise<Downtime[]> {
+  public async getDowntimes(token: string, page?: number): Promise<Downtime[]> {
     const endpoint = Endpoint.Checks.downtimes(token);
-    return this.apiClient.requestService.get(endpoint, {params: {page}});
+    const {data} = await this.apiClient.get(endpoint, {params: {page}});
+    return data;
   }
 
   /**
@@ -71,9 +76,10 @@ export class ChecksAPI {
    * @param token The check unique token
    * @param page The page to fetch (100 per page)
    */
-  public getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
+  public async getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
     const endpoint = Endpoint.Checks.downtimes(token);
-    return this.apiClient.requestService.get(endpoint, {params: options});
+    const {data} = await this.apiClient.get(endpoint, {params: options});
+    return data;
   }
 
   /**
@@ -81,7 +87,7 @@ export class ChecksAPI {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.requestService.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 
   /**
@@ -89,8 +95,9 @@ export class ChecksAPI {
    * @param token The check unique token
    * @param options Further check updating options
    */
-  public updateCheck(token: string, options?: CheckOptions): Promise<Check> {
+  public async updateCheck(token: string, options?: CheckOptions): Promise<Check> {
     const endpoint = Endpoint.checks(token);
-    return this.apiClient.requestService.put(endpoint, {data: options});
+    const {data} = await this.apiClient.put(endpoint, {data: options});
+    return data;
   }
 }

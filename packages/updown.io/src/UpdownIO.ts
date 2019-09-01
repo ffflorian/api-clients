@@ -1,11 +1,11 @@
-import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
+import axios, {AxiosInstance} from 'axios';
 
 import {ChecksAPI, NodesAPI} from './api';
-import {API, ClientOptions, RequestOptions} from './interfaces';
+import {API, ClientOptions} from './interfaces';
 
 export class UpdownIO {
   public api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
 
   constructor(apiKey?: string);
   constructor(options?: ClientOptions);
@@ -14,7 +14,11 @@ export class UpdownIO {
       options = {apiKey: options};
     }
 
-    const requestInjector: RequestInjectorFn<RequestOptions> = config => {
+    this.apiClient = axios.create({
+      baseURL: 'https://updown.io/api/',
+    });
+
+    this.apiClient.interceptors.request.use(config => {
       if (options && (options as ClientOptions).apiKey) {
         config.headers = {
           ...config.headers,
@@ -22,11 +26,6 @@ export class UpdownIO {
         };
       }
       return config;
-    };
-
-    this.apiClient = new APIClient({
-      apiUrl: 'https://updown.io/api/',
-      requestInjector,
     });
 
     this.api = {

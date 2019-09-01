@@ -3,3 +3,7 @@ export interface LibrariesIOHeaders {
   rateLimitRemaining: number;
   totalResults?: number;
 }
+
+export interface LibrariesIOResult<T> extends LibrariesIOHeaders {
+  data: T;
+}
