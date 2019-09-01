@@ -11,7 +11,7 @@ API clients for various services.
 - [`absence.io`](./packages/absence.io/) [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://www.npmjs.com/package/absence.io)
 - [`c3nav`](./packages/c3nav/) [![npm version](https://img.shields.io/npm/v/c3nav.svg)](https://www.npmjs.com/package/c3nav)
 - [`crates.io`](./packages/crates.io/) [![npm version](https://img.shields.io/npm/v/crates.io.svg)](https://www.npmjs.com/package/crates.io)
-- [`crowdin.js`](./packages/crowdin.js/) [![npm version](https://img.shields.io/npm/v/crowdin.js.svg)](https://www.npmjs.com/package/crowdin.js)
+- [`crowdin.com`](./packages/crowdin.com/) [![npm version](https://img.shields.io/npm/v/crowdin.com.svg)](https://www.npmjs.com/package/crowdin.com)
 - [`libraries.io`](./packages/libraries.io/) [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 - [`statuspage.io`](./packages/statuspage.io/) [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 - [`updown.io`](./packages/updown.io/) [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
