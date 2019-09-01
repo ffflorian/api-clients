@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import * as program from 'commander';
-import * as fs from 'fs-extra';
+import {constants as fsConstants, promises as fsAsync} from 'fs';
 import * as path from 'path';
 
 import {XKCD, XKCDResultWithData} from './';
@@ -10,7 +10,7 @@ async function init(dir: string = '.'): Promise<[string, XKCD]> {
   const resolvedPath = path.resolve(dir);
 
   try {
-    await fs.access(resolvedPath, fs.constants.F_OK | fs.constants.R_OK);
+    await fsAsync.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
     const xkcd = new XKCD();
     return [resolvedPath, xkcd];
   } catch (error) {
@@ -24,7 +24,7 @@ async function save(filePath: string, imageResult: XKCDResultWithData): Promise<
   const extension = data.mimeType ? data.mimeType.replace('image/', '') : 'png';
 
   const resolvedFilePath = path.resolve(filePath, `xkcd #${num} - ${safe_title}.${extension}`);
-  await fs.writeFile(resolvedFilePath, data.data);
+  await fsAsync.writeFile(resolvedFilePath, data.data);
   console.info(`Saved image to "${resolvedFilePath}".`);
 }
 
