@@ -119,20 +119,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>TimespanAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">APIClient</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_clientoptions_.clientoptions.html" class="tsd-signature-type">ClientOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_timespanapi_.timespanapi.html" class="tsd-signature-type">TimespanAPI</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>TimespanAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_clientoptions_.clientoptions.html" class="tsd-signature-type">ClientOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_timespanapi_.timespanapi.html" class="tsd-signature-type">TimespanAPI</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L7">api/TimespanAPI.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L7">api/TimespanAPI.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>apiClient: <span class="tsd-signature-type">APIClient</span></h5>
+									<h5>apiClient: <span class="tsd-signature-type">AxiosInstance</span></h5>
 								</li>
 								<li>
 									<h5>options: <a href="../interfaces/_interfaces_clientoptions_.clientoptions.html" class="tsd-signature-type">ClientOptions</a></h5>
@@ -148,11 +148,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="apiclient" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> api<wbr>Client</h3>
-					<div class="tsd-signature tsd-kind-icon">api<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">APIClient</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_interfaces_options_.html#requestoptions" class="tsd-signature-type">RequestOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#apiclient">apiClient</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/APIBase.ts#L5">api/APIBase.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/APIBase.ts#L5">api/APIBase.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -163,7 +163,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#options">options</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/APIBase.ts#L6">api/APIBase.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/APIBase.ts#L6">api/APIBase.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -181,7 +181,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#checkapikey">checkApiKey</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/APIBase.ts#L30">api/APIBase.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/APIBase.ts#L30">api/APIBase.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -198,13 +198,13 @@
 					<a name="createtimespan" class="tsd-anchor"></a>
 					<h3>create<wbr>Timespan</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Timespan<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.timespan.html" class="tsd-signature-type">Timespan</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Timespan<span class="tsd-signature-symbol">(</span>timestampData<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.timespan.html" class="tsd-signature-type">Timespan</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L17">api/TimespanAPI.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L17">api/TimespanAPI.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -220,7 +220,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a></h5>
+									<h5>timestampData: <a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The time entry data</p>
 									</div>
@@ -240,7 +240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L28">api/TimespanAPI.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L29">api/TimespanAPI.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -276,7 +276,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L39">api/TimespanAPI.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L41">api/TimespanAPI.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -312,7 +312,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L49">api/TimespanAPI.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L52">api/TimespanAPI.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -346,7 +346,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#setapiauthorization">setApiAuthorization</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/APIBase.ts#L17">api/APIBase.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/APIBase.ts#L17">api/APIBase.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,7 +378,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#setapiurl">setApiUrl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/APIBase.ts#L26">api/APIBase.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/APIBase.ts#L26">api/APIBase.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -403,13 +403,13 @@
 					<a name="updatetimespan" class="tsd-anchor"></a>
 					<h3>update<wbr>Timespan</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">update<wbr>Timespan<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.timespan.html" class="tsd-signature-type">Timespan</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Timespan<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, newTimespanData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.timespan.html" class="tsd-signature-type">Timespan</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/absence.io/src/api/TimespanAPI.ts#L61">api/TimespanAPI.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/absence.io/src/api/TimespanAPI.ts#L65">api/TimespanAPI.ts:65</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -431,7 +431,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>data: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>newTimespanData: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_timespan_.newtimespan.html" class="tsd-signature-type">NewTimespan</a><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>The time entry data</p>
 									</div>
