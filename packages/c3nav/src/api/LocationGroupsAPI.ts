@@ -1,24 +1,26 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {ClientOptions, LocationGroups} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class LocationGroupsAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
   /**
    * @param id The id to get
    */
-  public getById(id: number): Promise<LocationGroups> {
+  public async getById(id: number): Promise<LocationGroups> {
     const endpoint = Endpoint.locationGroups(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<LocationGroups[]> {
+  public async getList(): Promise<LocationGroups[]> {
     const endpoint = Endpoint.locationGroups();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

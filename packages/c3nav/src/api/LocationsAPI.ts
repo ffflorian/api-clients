@@ -1,4 +1,4 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {ClientOptions, Location, LocationDetails, LocationGeometry, LocationType} from '../interfaces/';
@@ -14,38 +14,43 @@ import {APIBase} from './APIBase';
  * Additionally, you can access Custom Locations (Coordinates) by using `c:<level.short_label>:x:y` as an id or slug.
  */
 export class LocationsAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
-  public getDetails(id: number): Promise<LocationDetails>;
-  public getDetails(slug: string): Promise<LocationDetails>;
-  public getDetails(id: string | number): Promise<LocationDetails> {
+  public async getDetails(id: number): Promise<LocationDetails>;
+  public async getDetails(slug: string): Promise<LocationDetails>;
+  public async getDetails(id: string | number): Promise<LocationDetails> {
     const endpoint = Endpoint.Location.details(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getGeometry(id: number): Promise<LocationGeometry>;
-  public getGeometry(slug: string): Promise<LocationGeometry>;
-  public getGeometry(id: string | number): Promise<LocationGeometry> {
+  public async getGeometry(id: number): Promise<LocationGeometry>;
+  public async getGeometry(slug: string): Promise<LocationGeometry>;
+  public async getGeometry(id: string | number): Promise<LocationGeometry> {
     const endpoint = Endpoint.Location.geometry(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getList(): Promise<Location[]> {
+  public async getList(): Promise<Location[]> {
     const endpoint = Endpoint.Location.locations();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getLocation(id: number): Promise<Location>;
-  public getLocation(slug: string): Promise<Location>;
-  public getLocation(id: string | number): Promise<Location> {
+  public async getLocation(id: number): Promise<Location>;
+  public async getLocation(slug: string): Promise<Location>;
+  public async getLocation(id: string | number): Promise<Location> {
     const endpoint = Endpoint.Location.detail(id);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
-  public getTypes(): Promise<LocationType[]> {
+  public async getTypes(): Promise<LocationType[]> {
     const endpoint = Endpoint.Location.types();
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

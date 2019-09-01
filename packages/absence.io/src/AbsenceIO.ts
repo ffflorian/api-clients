@@ -1,5 +1,5 @@
 const hawk = require('hawk');
-import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
+import axios, {AxiosInstance} from 'axios';
 
 import {
   AbsenceAPI,
@@ -11,11 +11,11 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
-import {API, Authorization, ClientOptions, RequestOptions} from './interfaces';
+import {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
   private readonly options: ClientOptions;
 
   constructor(options: ClientOptions) {
@@ -27,7 +27,11 @@ export class AbsenceIO {
       key: this.options.apiKey,
     };
 
-    const requestInjector: RequestInjectorFn<RequestOptions> = config => {
+    this.apiClient = axios.create({
+      baseURL: 'https://app.absence.io/api/v2',
+    });
+
+    this.apiClient.interceptors.request.use(config => {
       const hawkHeader = hawk.client.header(config.url, config.method, {credentials});
 
       return {
@@ -36,11 +40,6 @@ export class AbsenceIO {
           Authorization: hawkHeader.header,
         },
       };
-    };
-
-    this.apiClient = new APIClient({
-      apiUrl: 'https://app.absence.io/api/v2',
-      requestInjector,
     });
 
     this.api = {
@@ -69,6 +68,6 @@ export class AbsenceIO {
    * @param newUrl The new API URL
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 }

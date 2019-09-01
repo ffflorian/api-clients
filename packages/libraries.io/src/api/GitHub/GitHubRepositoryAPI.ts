@@ -1,11 +1,17 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../../Endpoints';
-import {ClientOptions, PaginationOptions, Project, RepositoryWithDependencies} from '../../interfaces/';
+import {
+  ClientOptions,
+  LibrariesIOResult,
+  PaginationOptions,
+  Project,
+  RepositoryWithDependencies,
+} from '../../interfaces/';
 import {APIBase} from '../APIBase';
 
 export class GitHubRepositoryAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -16,9 +22,14 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryName The repository name
    * @param options Pagination Options
    */
-  public getProjects(repositoryOwner: string, repositoryName: string, options?: PaginationOptions): Promise<Project[]> {
+  public async getProjects(
+    repositoryOwner: string,
+    repositoryName: string,
+    options?: PaginationOptions
+  ): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.GitHub.Repository.projects(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -27,9 +38,13 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public getRepository(repositoryOwner: string, repositoryName: string): Promise<RepositoryWithDependencies> {
+  public async getRepository(
+    repositoryOwner: string,
+    repositoryName: string
+  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
     const endpoint = Endpoint.GitHub.Repository.repository(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -38,11 +53,12 @@ export class GitHubRepositoryAPI extends APIBase {
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
-  public getRepositoryWithDependencies(
+  public async getRepositoryWithDependencies(
     repositoryOwner: string,
     repositoryName: string
-  ): Promise<RepositoryWithDependencies> {
+  ): Promise<LibrariesIOResult<RepositoryWithDependencies>> {
     const endpoint = Endpoint.GitHub.Repository.dependencies(repositoryOwner, repositoryName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 }

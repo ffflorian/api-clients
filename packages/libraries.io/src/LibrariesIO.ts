@@ -1,11 +1,11 @@
-import {APIClient, RequestInjectorFn} from '@ffflorian/api-client';
+import axios, {AxiosInstance} from 'axios';
 
 import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
-import {API, ClientOptions, RequestOptions} from './interfaces/';
+import {API, ClientOptions} from './interfaces/';
 
 export class LibrariesIO {
   public readonly api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
   private readonly options: Required<ClientOptions>;
 
   constructor(apiKey: string);
@@ -20,26 +20,22 @@ export class LibrariesIO {
       ...options,
     };
 
-    const requestInjector: RequestInjectorFn<RequestOptions> = config => {
+    this.apiClient = axios.create({
+      baseURL: this.options.apiUrl,
+    });
+
+    this.apiClient.interceptors.request.use(config => {
       config.data = {
         ...config.data,
         api_key: this.options.apiKey,
       };
       return config;
-    };
+    });
 
-    // const responseInjector = (response: AxiosResponseWithoutData<LibrariesIOHeaders>) => {
-    //   const headers = response.headers;
-    //   const contentType = headers['content-type'] ? String(headers['content-type']) : undefined;
-    //   const rateLimit = Number(headers['x-ratelimit-limit']);
-    //   const rateLimitRemaining = Number(headers['x-ratelimit-remaining']);
-    //   const totalResults = headers['total'] ? Number(headers['total']) : undefined;
-    //   return {...response, d: 2}
-    // }
-
-    this.apiClient = new APIClient({
-      apiUrl: this.options.apiUrl,
-      requestInjector,
+    this.apiClient.interceptors.response.use(response => {
+      const headers = response.headers;
+      const totalResults = headers['total'] ? Number(headers['total']) : undefined;
+      return {...response, totalResults};
     });
 
     this.api = {
@@ -74,6 +70,6 @@ export class LibrariesIO {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 }

@@ -1,9 +1,10 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import {
   ClientOptions,
   LibrariesIOHeaders,
+  LibrariesIOResult,
   PaginationOptions,
   PlatformType,
   PreReleaseOptions,
@@ -12,7 +13,7 @@ import {
 import {APIBase} from './APIBase';
 
 export class UserAPI extends APIBase {
-  constructor(apiClient: APIClient, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -21,9 +22,10 @@ export class UserAPI extends APIBase {
    * @see https://libraries.io/api#subscriptions-index
    * @param options Pagination options
    */
-  public getAllSubscriptions(options?: PaginationOptions): Promise<Subscription[]> {
+  public async getAllSubscriptions(options?: PaginationOptions): Promise<LibrariesIOResult<Subscription[]>> {
     const endpoint = Endpoint.subscriptions();
-    return this.apiClient.requestService.get(endpoint, {data: options});
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -32,9 +34,13 @@ export class UserAPI extends APIBase {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public getSubscription(platform: PlatformType, projectName: string): Promise<Subscription | null> {
+  public async getSubscription(
+    platform: PlatformType,
+    projectName: string
+  ): Promise<LibrariesIOResult<Subscription | null>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
-    return this.apiClient.requestService.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /**
@@ -44,9 +50,14 @@ export class UserAPI extends APIBase {
    * @param projectName The project name
    * @param options Subscription options
    */
-  public subscribe(platform: PlatformType, projectName: string, options?: PreReleaseOptions): Promise<Subscription> {
+  public async subscribe(
+    platform: PlatformType,
+    projectName: string,
+    options?: PreReleaseOptions
+  ): Promise<LibrariesIOResult<Subscription>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
-    return this.apiClient.requestService.post(endpoint, {data: options});
+    const {data} = await this.apiClient.post(endpoint, {data: options});
+    return data;
   }
 
   /**
@@ -55,9 +66,10 @@ export class UserAPI extends APIBase {
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
-  public unsubscribe(platform: PlatformType, projectName: string): Promise<LibrariesIOHeaders> {
+  public async unsubscribe(platform: PlatformType, projectName: string): Promise<LibrariesIOHeaders> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
-    return this.apiClient.requestService.delete(endpoint);
+    const {data} = await this.apiClient.delete(endpoint);
+    return data;
   }
 
   /**
@@ -67,12 +79,13 @@ export class UserAPI extends APIBase {
    * @param projectName The project name
    * @param options Subscription options
    */
-  public updateSubscription(
+  public async updateSubscription(
     platform: PlatformType,
     projectName: string,
     options?: PreReleaseOptions
-  ): Promise<Subscription> {
+  ): Promise<LibrariesIOResult<Subscription>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
-    return this.apiClient.requestService.put(endpoint, {data: options});
+    const {data} = await this.apiClient.put(endpoint, {data: options});
+    return data;
   }
 }
