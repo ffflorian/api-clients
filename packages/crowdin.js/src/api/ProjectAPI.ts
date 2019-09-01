@@ -1,11 +1,12 @@
-import {APIClient} from '@ffflorian/api-client';
+import {AxiosInstance} from 'axios';
+
 import {Endpoint} from '../Endpoints';
 import {AddFileOptions} from '../interfaces';
 
 export class ProjectAPI {
-  private readonly apiClient: APIClient;
+  private readonly apiClient: AxiosInstance;
 
-  constructor(apiClient: APIClient) {
+  constructor(apiClient: AxiosInstance) {
     this.apiClient = apiClient;
   }
 
@@ -21,6 +22,6 @@ export class ProjectAPI {
    */
   public addFile(projectIdentifier: string, files: string[], options?: AddFileOptions): Promise<any> {
     const endpoint = Endpoint.Project.addFile(projectIdentifier);
-    return this.apiClient.requestService.get(endpoint);
+    return this.apiClient.get(endpoint);
   }
 }

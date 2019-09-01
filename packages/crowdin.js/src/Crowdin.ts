@@ -1,10 +1,10 @@
-import {APIClient, AxiosConfigWithData} from '@ffflorian/api-client';
+import axios, {AxiosInstance} from 'axios';
 import {ProjectAPI} from './api';
-import {API, ClientOptions, RequestOptions} from './interfaces';
+import {API, ClientOptions} from './interfaces';
 
 export class Crowdin {
   public readonly api: API;
-  private readonly apiClient: APIClient<RequestOptions>;
+  private readonly apiClient: AxiosInstance;
   private readonly options: ClientOptions;
 
   constructor(apiKey: string);
@@ -20,8 +20,8 @@ export class Crowdin {
       throw new Error('An API key needs to be set in order to use the client.');
     }
 
-    this.apiClient = new APIClient({
-      apiUrl: 'https://api.crowdin.com/api/',
+    this.apiClient = axios.create({
+      baseURL: 'https://api.crowdin.com/api/',
     });
 
     this.setRequestInjector();
@@ -45,16 +45,15 @@ export class Crowdin {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.setApiUrl(newUrl);
+    this.apiClient.defaults.baseURL = newUrl;
   }
 
   private setRequestInjector(): void {
-    const requestInjector = (request: AxiosConfigWithData<RequestOptions>) => {
+    this.apiClient.interceptors.request.use(request => {
       return {
         ...request.params,
         key: this.options.apiKey,
       };
-    };
-    this.apiClient.setRequestInjector(requestInjector);
+    });
   }
 }
