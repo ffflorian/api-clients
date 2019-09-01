@@ -1,0 +1,33 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "axios": "0.19.0"
+  },
+  "description": "A crowdin API client",
+  "devDependencies": {
+    "@types/node": "~12",
+    "rimraf": "3.0.0",
+    "typedoc": "0.15.0",
+    "typescript": "3.6.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "crowdin.com",
+    "crowdin"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "crowdin.js",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/crowdin.js",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/crowdin.js",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "0.0.1"
+}
