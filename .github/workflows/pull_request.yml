@@ -3,7 +3,7 @@ name: Pull request
 on: pull_request
 
 jobs:
-  build_test:
+  build_lint_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -12,7 +12,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Install, test and build
+      - name: Build, lint and test
         run: |
           yarn
           yarn boot

@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
-      - name: Install, test and build
+      - name: Build, lint and test
         run: |
           yarn
           yarn boot
@@ -44,4 +44,4 @@ jobs:
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
           contains(github.event.commits[0].message, '[ci skip]') == false &&
-          startsWith(github.event.commits[0].message, 'chore(') == false
+          startsWith(github.event.commits[0].message, 'chore') == false
