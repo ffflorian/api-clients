@@ -32,6 +32,7 @@ jobs:
           REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GH_TOKEN}@github.com\//p")"
           git remote set-url origin "${REPO_URL}"
           ./bin/rebuild-docs.sh
+          git checkout master
           yarn release
         env:
           GIT_AUTHOR_NAME: ffflobot
