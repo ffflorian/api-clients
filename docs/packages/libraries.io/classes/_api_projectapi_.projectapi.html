@@ -122,20 +122,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>ProjectAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">APIClient</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_options_.clientoptions.html" class="tsd-signature-type">ClientOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_projectapi_.projectapi.html" class="tsd-signature-type">ProjectAPI</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>ProjectAPI<span class="tsd-signature-symbol">(</span>apiClient<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AxiosInstance</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_interfaces_options_.clientoptions.html" class="tsd-signature-type">ClientOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_api_projectapi_.projectapi.html" class="tsd-signature-type">ProjectAPI</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L17">api/ProjectAPI.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L18">api/ProjectAPI.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>apiClient: <span class="tsd-signature-type">APIClient</span></h5>
+									<h5>apiClient: <span class="tsd-signature-type">AxiosInstance</span></h5>
 								</li>
 								<li>
 									<h5>options: <a href="../interfaces/_interfaces_options_.clientoptions.html" class="tsd-signature-type">ClientOptions</a></h5>
@@ -151,11 +151,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="apiclient" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> api<wbr>Client</h3>
-					<div class="tsd-signature tsd-kind-icon">api<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">APIClient</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_options_.requestoptions.html" class="tsd-signature-type">RequestOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">api<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#apiclient">apiClient</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/APIBase.ts#L6">api/APIBase.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/APIBase.ts#L6">api/APIBase.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -166,7 +166,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#options">options</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/APIBase.ts#L7">api/APIBase.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/APIBase.ts#L7">api/APIBase.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,7 +184,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#checkapikey">checkApiKey</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/APIBase.ts#L30">api/APIBase.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/APIBase.ts#L30">api/APIBase.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -201,13 +201,13 @@
 					<a name="getcontributors" class="tsd-anchor"></a>
 					<h3>get<wbr>Contributors</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Contributors<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_contributor_.contributor.html" class="tsd-signature-type">Contributor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Contributors<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_contributor_.contributor.html" class="tsd-signature-type">Contributor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L29">api/ProjectAPI.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L30">api/ProjectAPI.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,7 +241,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_contributor_.contributor.html" class="tsd-signature-type">Contributor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_contributor_.contributor.html" class="tsd-signature-type">Contributor</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -249,13 +249,13 @@
 					<a name="getdependendentrepositories" class="tsd-anchor"></a>
 					<h3>get<wbr>Dependendent<wbr>Repositories</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Dependendent<wbr>Repositories<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_repository_.repository.html" class="tsd-signature-type">Repository</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dependendent<wbr>Repositories<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_repository_.repository.html" class="tsd-signature-type">Repository</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L44">api/ProjectAPI.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L46">api/ProjectAPI.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -284,7 +284,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_repository_.repository.html" class="tsd-signature-type">Repository</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_repository_.repository.html" class="tsd-signature-type">Repository</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -292,13 +292,13 @@
 					<a name="getdependendents" class="tsd-anchor"></a>
 					<h3>get<wbr>Dependendents</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Dependendents<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Dependendents<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.paginationoptions.html" class="tsd-signature-type">PaginationOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L60">api/ProjectAPI.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L63">api/ProjectAPI.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -332,7 +332,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -340,13 +340,13 @@
 					<a name="getproject" class="tsd-anchor"></a>
 					<h3>get<wbr>Project</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Project<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Project<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L75">api/ProjectAPI.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L79">api/ProjectAPI.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -374,7 +374,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -382,13 +382,13 @@
 					<a name="getprojectwithdependencies" class="tsd-anchor"></a>
 					<h3>get<wbr>Project<wbr>With<wbr>Dependencies</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Project<wbr>With<wbr>Dependencies<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, projectVersion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectwithdependencies.html" class="tsd-signature-type">ProjectWithDependencies</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Project<wbr>With<wbr>Dependencies<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, projectVersion<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectwithdependencies.html" class="tsd-signature-type">ProjectWithDependencies</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L87">api/ProjectAPI.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L92">api/ProjectAPI.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -421,7 +421,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectwithdependencies.html" class="tsd-signature-type">ProjectWithDependencies</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectwithdependencies.html" class="tsd-signature-type">ProjectWithDependencies</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -429,13 +429,13 @@
 					<a name="getsourcerank" class="tsd-anchor"></a>
 					<h3>get<wbr>Source<wbr>Rank</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Source<wbr>Rank<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Source<wbr>Rank<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L102">api/ProjectAPI.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L108">api/ProjectAPI.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -463,7 +463,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -471,13 +471,13 @@
 					<a name="getusage" class="tsd-anchor"></a>
 					<h3>get<wbr>Usage</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Usage<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectusage.html" class="tsd-signature-type">ProjectUsage</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Usage<span class="tsd-signature-symbol">(</span>platform<span class="tsd-signature-symbol">: </span><a href="../modules/_interfaces_options_.html#platformtype" class="tsd-signature-type">PlatformType</a>, projectName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectusage.html" class="tsd-signature-type">ProjectUsage</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L112">api/ProjectAPI.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L119">api/ProjectAPI.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -500,7 +500,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectusage.html" class="tsd-signature-type">ProjectUsage</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.projectusage.html" class="tsd-signature-type">ProjectUsage</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -508,13 +508,13 @@
 					<a name="search" class="tsd-anchor"></a>
 					<h3>search</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.searchoptions.html" class="tsd-signature-type">SearchOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">(</span>query<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_interfaces_options_.searchoptions.html" class="tsd-signature-type">SearchOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/ProjectAPI.ts#L123">api/ProjectAPI.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/ProjectAPI.ts#L131">api/ProjectAPI.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -542,7 +542,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_librariesioheaders_.librariesioresult.html" class="tsd-signature-type">LibrariesIOResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_interfaces_project_.project.html" class="tsd-signature-type">Project</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -557,7 +557,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#setapikey">setApiKey</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/APIBase.ts#L18">api/APIBase.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/APIBase.ts#L18">api/APIBase.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -589,7 +589,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_api_apibase_.apibase.html">APIBase</a>.<a href="_api_apibase_.apibase.html#setapiurl">setApiUrl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/eb07af8/packages/libraries.io/src/api/APIBase.ts#L26">api/APIBase.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/53beba6/packages/libraries.io/src/api/APIBase.ts#L26">api/APIBase.ts:26</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -620,9 +620,6 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_librariesio_.html">"<wbr>LibrariesIO"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_responsecheck_.html">"<wbr>Response<wbr>Check"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_api_apibase_.html">"api/APIBase"</a>
