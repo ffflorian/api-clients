@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.0.1...@ffflorian/xkcdjs@2.1.0) (2019-09-01)
+
+
+### Features
+
+* Use axios instead of api-client ([#158](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/issues/158)) ([53beba6](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/commit/53beba6))
+
+
+
+
+
 ## [2.0.1](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.0.0...@ffflorian/xkcdjs@2.0.1) (2019-07-25)
 
 **Note:** Version bump only for package @ffflorian/xkcdjs

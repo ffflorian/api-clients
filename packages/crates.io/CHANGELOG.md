@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@1.0.0...crates.io@1.1.0) (2019-09-01)
+
+
+### Features
+
+* Use axios instead of api-client ([#158](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/issues/158)) ([53beba6](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/commit/53beba6))
+
+
+
+
+
 # [1.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@0.4.1...crates.io@1.0.0) (2019-07-17)
 
 

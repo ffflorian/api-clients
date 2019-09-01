@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.0.0...absence.io@1.1.0) (2019-09-01)
+
+
+### Features
+
+* Use axios instead of api-client ([#158](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/issues/158)) ([53beba6](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/53beba6))
+
+
+
+
+
 # [1.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@0.5.2...absence.io@1.0.0) (2019-07-17)
 
 
