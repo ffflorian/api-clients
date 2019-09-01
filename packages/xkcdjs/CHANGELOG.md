@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.1.0...@ffflorian/xkcdjs@2.2.0) (2019-09-01)
+
+
+### Features
+
+* **xkcdjs:** Remove fs-extra dependency ([#160](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/issues/160)) ([93cdded](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/commit/93cdded))
+
+
+
+
+
 # [2.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.0.1...@ffflorian/xkcdjs@2.1.0) (2019-09-01)
 
 
