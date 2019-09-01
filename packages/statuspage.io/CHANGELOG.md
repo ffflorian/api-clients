@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@2.0.0...statuspage.io@2.1.0) (2019-09-01)
+
+
+### Features
+
+* Use axios instead of api-client ([#158](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/issues/158)) ([53beba6](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/commit/53beba6))
+
+
+
+
+
 # [2.0.0](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@1.1.1...statuspage.io@2.0.0) (2019-07-17)
 
 
