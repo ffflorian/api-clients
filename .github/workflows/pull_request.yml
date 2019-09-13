@@ -4,6 +4,7 @@ on: pull_request
 
 jobs:
   build_lint_test:
+    name: Build, lint and test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
