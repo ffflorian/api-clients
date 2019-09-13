@@ -1,6 +1,6 @@
 # c3nav [![npm version](https://img.shields.io/npm/v/c3nav.svg)](https://www.npmjs.com/package/c3nav)
 
-A [c3nav](https://c3nav.de) API client. For a documentation on the API see https://c3nav.de/api.
+A [c3nav](https://c3nav.de) API client. For a documentation on the API see https://c3nav.de/api/.
 
 ### Installation
 

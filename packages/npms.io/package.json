@@ -1,0 +1,37 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "axios": "0.19.0"
+  },
+  "description": "A npms.io API client",
+  "devDependencies": {
+    "@types/node": "~12",
+    "rimraf": "3.0.0",
+    "typedoc": "0.15.0",
+    "typescript": "3.6.3"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "npms.io",
+    "npms",
+    "npmsio"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "npms.io",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/npms.io",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/npms.io",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "1.0.1"
+}
