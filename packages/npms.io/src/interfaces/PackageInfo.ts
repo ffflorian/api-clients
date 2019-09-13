@@ -11,10 +11,27 @@ export interface PackageInfo {
   score: Score;
 }
 
+interface Badge {
+  info: Info;
+  urls: Urls;
+}
+
 interface Collected {
+  github?: GitHub;
   metadata: Metadata;
   npm: Npm;
-  source: Source;
+  source?: Source;
+}
+
+interface Contributor {
+  commitsCount: number;
+  username: string;
+}
+
+interface Detail {
+  maintenance: number;
+  popularity: number;
+  quality: number;
 }
 
 interface Error {
@@ -22,40 +39,102 @@ interface Error {
   message: string;
 }
 
+interface Evaluation {
+  maintenance: Maintenance;
+  popularity: Popularity;
+  quality: Quality;
+}
+
+interface Files {
+  hasChangelog: boolean;
+  readmeSize: number;
+  testsSize: number;
+}
+
+interface GitHub {
+  commits: Release[];
+  contributors: Contributor[];
+  forksCount: number;
+  homepage?: string;
+  issues: Issues;
+  starsCount: number;
+  statuses: Status[];
+  subscribersCount: number;
+}
+
+interface Issues {
+  count: number;
+  distribution: Record<string, number>;
+  isDisabled: boolean;
+  openCount: number;
+}
+
+interface Info {
+  modifiers?: Modifiers;
+  service: string;
+  type: string;
+}
+
+interface Links {
+  bugs?: string;
+  homepage?: string;
+  npm: string;
+  repository?: string;
+}
+
+interface Maintenance {
+  commitsFrequency: number;
+  issuesDistribution: number;
+  openIssues: number;
+  releasesFrequency: number;
+}
+
 interface Metadata {
   date: string;
-  dependencies: Dependencies;
+  dependencies: Record<string, string>;
   description: string;
-  hasSelectiveFiles: boolean;
+  hasSelectiveFiles?: boolean;
+  hasTestScript?: boolean;
   keywords: string[];
   license: string;
   links: Links;
   maintainers: Publisher[];
   name: string;
   publisher: Publisher;
-  readme: string;
+  readme?: string;
   releases: Release[];
   repository: Repository;
   scope: string;
   version: string;
 }
 
-interface Dependencies {
-  'loose-envify': string;
-  'object-assign': string;
-  'prop-types': string;
+interface Modifiers {
+  type: string;
 }
 
-interface Links {
-  bugs: string;
-  homepage: string;
-  npm: string;
-  repository: string;
+interface Npm {
+  dependentsCount: number;
+  downloads: Release[];
+  starsCount: number;
+}
+
+interface Popularity {
+  communityInterest: number;
+  dependentsCount: number;
+  downloadsAcceleration: number;
+  downloadsCount: number;
 }
 
 interface Publisher {
-  email: string;
+  email?: string;
   username: string;
+}
+
+interface Quality {
+  branding: number;
+  carefulness: number;
+  health: number;
+  tests: number;
 }
 
 interface Release {
@@ -66,14 +145,13 @@ interface Release {
 
 interface Repository {
   directory: string;
-  type: string;
+  type?: string;
   url: string;
 }
 
-interface Npm {
-  dependentsCount: number;
-  downloads: Release[];
-  starsCount: number;
+interface Score {
+  detail: Detail;
+  final: number;
 }
 
 interface Source {
@@ -83,19 +161,9 @@ interface Source {
   linters: string[];
 }
 
-interface Badge {
-  info: Info;
-  urls: Urls;
-}
-
-interface Info {
-  modifiers?: Modifiers;
-  service: string;
-  type: string;
-}
-
-interface Modifiers {
-  type: string;
+interface Status {
+  context: string;
+  state: string;
 }
 
 interface Urls {
@@ -103,48 +171,4 @@ interface Urls {
   original: string;
   service?: string;
   shields: string;
-}
-
-interface Files {
-  hasChangelog: boolean;
-  readmeSize: number;
-  testsSize: number;
-}
-
-interface Evaluation {
-  maintenance: Maintenance;
-  popularity: Popularity;
-  quality: Quality;
-}
-
-interface Maintenance {
-  commitsFrequency: number;
-  issuesDistribution: number;
-  openIssues: number;
-  releasesFrequency: number;
-}
-
-interface Popularity {
-  communityInterest: number;
-  dependentsCount: number;
-  downloadsAcceleration: number;
-  downloadsCount: number;
-}
-
-interface Quality {
-  branding: number;
-  carefulness: number;
-  health: number;
-  tests: number;
-}
-
-interface Score {
-  detail: Detail;
-  final: number;
-}
-
-interface Detail {
-  maintenance: number;
-  popularity: number;
-  quality: number;
 }

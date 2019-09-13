@@ -3,7 +3,7 @@ export interface SearchResult {
   total: number;
 }
 
-export interface Result {
+interface Result {
   /** The package flags (deprecated, unstable, insecure) */
   flags?: Flags;
   /** The package data which contains the name, version and other useful information */
@@ -14,10 +14,30 @@ export interface Result {
   searchScore: number;
 }
 
+interface Author {
+  email?: string;
+  name: string;
+  url?: string;
+  username?: string;
+}
+
+interface Detail {
+  maintenance: number;
+  popularity: number;
+  quality: number;
+}
+
 interface Flags {
   deprecated?: boolean;
   insecure?: boolean;
   unstable?: boolean;
+}
+
+interface Links {
+  bugs?: string;
+  homepage?: string;
+  npm: string;
+  repository?: string;
 }
 
 interface Package {
@@ -33,20 +53,6 @@ interface Package {
   version: string;
 }
 
-interface Author {
-  email?: string;
-  name: string;
-  url?: string;
-  username?: string;
-}
-
-interface Links {
-  bugs?: string;
-  homepage?: string;
-  npm: string;
-  repository?: string;
-}
-
 interface Publisher {
   email: string;
   username: string;
@@ -55,10 +61,4 @@ interface Publisher {
 interface Score {
   detail: Detail;
   final: number;
-}
-
-interface Detail {
-  maintenance: number;
-  popularity: number;
-  quality: number;
 }
