@@ -1,6 +1,6 @@
 # npms.io [![npm version](https://img.shields.io/npm/v/npms.io.svg)](https://www.npmjs.com/package/npms.io)
 
-A [npms.io](https://npms.io) API client.
+A [npms.io](https://npms.io) API client. For a documentation on the API see https://api-docs.npms.io/.
 
 ### Installation
 

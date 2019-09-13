@@ -1,6 +1,6 @@
 # updown.io [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
 
-An [updown.io](https://updown.io) API client. For a documentation on the API see https://updown.io/api.
+An [updown.io](https://updown.io) API client. For a documentation on the API see https://updown.io/api/.
 
 ### Installation
 
