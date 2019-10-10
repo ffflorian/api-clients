@@ -21,7 +21,7 @@
     "c3nav",
     "ccc"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "c3nav",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/c3nav",
