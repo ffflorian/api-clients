@@ -22,7 +22,7 @@
     "crates",
     "cratesio"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "crates.io",
   "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/crates.io",
