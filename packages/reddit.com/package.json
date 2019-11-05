@@ -1,0 +1,36 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "axios": "0.19.0"
+  },
+  "description": "A reddit API client",
+  "devDependencies": {
+    "@types/node": "~12",
+    "rimraf": "3.0.0",
+    "typedoc": "0.15.0",
+    "typescript": "3.6.2"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "reddit",
+    "reddit.com"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "name": "reddit.com",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/reddit.com",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/reddit.com",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "2.1.0"
+}
