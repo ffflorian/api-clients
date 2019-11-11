@@ -43,8 +43,8 @@ export class RateLimitError extends Error {
 }
 
 export function ExceptionMapper(error: AxiosError): Error {
-  if (error.response && error.response.status) {
-    const serverMessage = error.response.data ? error.response.data.message : undefined;
+  if (error.response?.status) {
+    const serverMessage = error.response.data?.message || undefined;
 
     switch (error.response.status) {
       case HTTP_STATUS.FORBIDDEN:
