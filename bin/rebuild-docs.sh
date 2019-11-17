@@ -33,5 +33,5 @@ for PACKAGE in $PACKAGES; do
 done
 
 git add docs
-git commit -m "docs: Rebuild docs [ci skip]"
-git push origin HEAD:master
+git commit -m "docs: Rebuild docs [ci skip]" --no-verify
+git push origin master
