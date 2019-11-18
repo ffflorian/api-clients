@@ -4,7 +4,7 @@
   "devDependencies": {
     "@ffflorian/prettier-config": "0.0.5",
     "@ffflorian/tslint-config": "0.7.0",
-    "husky": "3.0.9",
+    "husky": "3.1.0",
     "lerna": "3.18.4",
     "lint-staged": "9.4.3",
     "prettier": "1.19.1",
