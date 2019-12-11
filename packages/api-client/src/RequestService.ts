@@ -161,13 +161,9 @@ export class RequestService<T> {
       baseConfig = await this.config.requestInjector(baseConfig);
     }
 
-    if (typeof options !== 'undefined') {
-      return {
-        ...baseConfig,
-        ...(!!options && options),
-      };
-    }
-
-    return baseConfig;
+    return {
+      ...baseConfig,
+      ...options,
+    };
   }
 }
