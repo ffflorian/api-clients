@@ -46,4 +46,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: |
           contains(github.event.commits[0].message, '[skip ci]') == false &&
-          contains(github.event.commits[0].message, '[ci skip]') == false
+          contains(github.event.commits[0].message, '[ci skip]') == false &&
+          startsWith(github.event.commits[0].message, 'chore') == false
