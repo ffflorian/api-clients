@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@2.1.1...updown.io@2.2.0) (2019-12-18)
+
+
+### Features
+
+* **npms.io:** Add package npms.io ([#172](https://github.com/ffflorian/api-clients/tree/master/updown.io/issues/172)) ([1fd7f7f](https://github.com/ffflorian/api-clients/tree/master/updown.io/commit/1fd7f7f))
+
+
+
+
+
 ## [2.1.1](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@2.1.0...updown.io@2.1.1) (2019-09-11)
 
 **Note:** Version bump only for package updown.io

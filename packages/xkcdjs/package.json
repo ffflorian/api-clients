@@ -42,5 +42,5 @@
     "start": "ts-node src/cli.ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
   },
-  "version": "2.2.5"
+  "version": "2.2.6"
 }
