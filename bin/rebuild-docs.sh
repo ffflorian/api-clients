@@ -7,6 +7,8 @@
 
 set -e
 
+SCOPE=""
+
 if [ -z "${GH_TOKEN}" ]; then
   echo "No GitHub token set."
   exit 1
@@ -29,8 +31,10 @@ if [ -z "${PACKAGES}" ]; then
 fi
 
 for PACKAGE in $PACKAGES; do
-  npx lerna run --scope "${PACKAGE}" "build:docs"
+  SCOPE="${SCOPE} --scope ${PACKAGE}"
 done
+
+npx lerna run build:docs --concurrency 4"${SCOPE}"
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]" --no-verify

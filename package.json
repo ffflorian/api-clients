@@ -35,8 +35,8 @@
   "private": true,
   "scripts": {
     "boot": "lerna bootstrap --reject-cycles",
-    "build:docs": "lerna run build:docs",
-    "build:ts": "lerna run build:ts",
+    "build:docs": "lerna run build:docs --concurrency 4",
+    "build:ts": "lerna run build:ts --concurrency 4",
     "clean": "lerna run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:other && yarn fix:ts",
@@ -48,7 +48,7 @@
     "prettier": "prettier \"**/*.{json,md}\"",
     "release": "lerna publish",
     "test": "yarn lint && yarn test:all",
-    "test:all": "lerna run test"
+    "test:all": "lerna run test --concurrency 4"
   },
   "workspaces": [
     "packages/*"
