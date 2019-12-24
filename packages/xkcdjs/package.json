@@ -10,7 +10,7 @@
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
     "@types/jasmine": "3.5.0",
-    "@types/node": "~12",
+    "@types/node": "~13",
     "jasmine": "3.5.0",
     "nock": "11.7.0",
     "rimraf": "3.0.0",
