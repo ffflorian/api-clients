@@ -37,5 +37,5 @@ done
 npx lerna run build:docs --concurrency 4"${SCOPE}"
 
 git add docs
-git commit -m "docs: Rebuild docs [ci skip]" --no-verify
+git commit -m "docs: Rebuild docs [ci skip]" -m "" -m "skip-checks: true" --no-verify
 git push origin master
