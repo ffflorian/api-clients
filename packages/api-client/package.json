@@ -1,7 +1,7 @@
 {
   "author": "Florian Keller <github@floriankeller.de>",
   "dependencies": {
-    "axios": "0.19.0",
+    "axios": "0.19.1",
     "http-status-codes": "1.4.0"
   },
   "description": "A generic API client",
