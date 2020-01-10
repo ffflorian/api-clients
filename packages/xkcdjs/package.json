@@ -14,7 +14,7 @@
     "jasmine": "3.5.0",
     "nock": "11.7.2",
     "rimraf": "3.0.0",
-    "ts-node": "8.5.4",
+    "ts-node": "8.6.0",
     "typedoc": "0.15.7",
     "typescript": "3.7.4"
   },
