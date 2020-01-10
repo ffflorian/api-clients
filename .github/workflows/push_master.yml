@@ -1,4 +1,4 @@
-name: Push to master
+name: Build
 
 on:
   push:
@@ -9,6 +9,9 @@ jobs:
   build_test_release:
     name: Build, test and release
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.head_commit.message, '[ci skip]') &&
+      !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
@@ -31,9 +34,6 @@ jobs:
           yarn lint
           yarn dist
           yarn test
-        if: |
-          contains(github.event.commits[0].message, '[skip ci]') == false &&
-          contains(github.event.commits[0].message, '[ci skip]') == false
       - name: Release
         run: |
           git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
@@ -52,7 +52,4 @@ jobs:
           GH_USER: ffflobot
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: |
-          contains(github.event.commits[0].message, '[skip ci]') == false &&
-          contains(github.event.commits[0].message, '[ci skip]') == false &&
-          startsWith(github.event.commits[0].message, 'chore') == false
+        if: "!startsWith(github.event.head_commit.message, 'chore')"

@@ -1,4 +1,4 @@
-## api-clients [![Build Status](https://action-badges.now.sh/ffflorian/api-clients)](https://github.com/ffflorian/api-clients/actions/) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/api-clients)](https://dependabot.com)
+## api-clients [![Build Status](https://github.com/ffflorian/api-clients/workflows/Build/badge.svg)](https://github.com/ffflorian/api-clients/actions/) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=ffflorian/api-clients)](https://dependabot.com)
 
 API clients for various services.
 
