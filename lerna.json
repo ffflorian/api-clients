@@ -3,7 +3,7 @@
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
-      "message": "chore: Publish [ci skip]\n\nskip-checks: true"
+      "message": "chore: Publish [ci skip]"
     }
   },
   "exact": true,
