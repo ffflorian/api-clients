@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@2.1.2...statuspage.io@2.1.3) (2020-01-15)
+
+**Note:** Version bump only for package statuspage.io
+
+
+
+
+
 ## [2.1.2](https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io/compare/statuspage.io@2.1.1...statuspage.io@2.1.2) (2019-12-18)
 
 **Note:** Version bump only for package statuspage.io
