@@ -16,8 +16,8 @@ export class TeamAPI extends APIBase {
   public async retrieveTeam(id: string): Promise<Team> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const {data: team} = await this.apiClient.get(endpoint);
+    return team;
   }
 
   /**
@@ -27,7 +27,7 @@ export class TeamAPI extends APIBase {
   public async retrieveTeams(options?: PaginationOptions): Promise<Paginated<Team[]>> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams();
-    const {data} = await this.apiClient.post(endpoint, {data: options});
-    return data;
+    const {data: teams} = await this.apiClient.post(endpoint, {data: options});
+    return teams;
   }
 }

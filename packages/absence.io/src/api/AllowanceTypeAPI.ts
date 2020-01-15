@@ -16,8 +16,8 @@ export class AllowanceTypeAPI extends APIBase {
   public async retrieveAllowanceType(id: string): Promise<Allowance> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes(id);
-    const {data} = await this.apiClient.get<Allowance>(endpoint);
-    return data;
+    const {data: allowance} = await this.apiClient.get<Allowance>(endpoint);
+    return allowance;
   }
 
   /**
@@ -27,7 +27,7 @@ export class AllowanceTypeAPI extends APIBase {
   public async retrieveAllowanceTypes(options?: PaginationOptions): Promise<Paginated<Allowance[]>> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes();
-    const {data} = await this.apiClient.post<Paginated<Allowance[]>>(endpoint, {data: options});
-    return data;
+    const {data: allowances} = await this.apiClient.post<Paginated<Allowance[]>>(endpoint, {data: options});
+    return allowances;
   }
 }

@@ -17,8 +17,8 @@ export class TimespanAPI extends APIBase {
   public async createTimespan(timestampData: NewTimespan): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.create();
-    const {data} = await this.apiClient.post(endpoint, {data: timestampData});
-    return data;
+    const {data: timespan} = await this.apiClient.post(endpoint, {data: timestampData});
+    return timespan;
   }
 
   /**
@@ -29,8 +29,7 @@ export class TimespanAPI extends APIBase {
   public async deleteTimespan(id: string): Promise<void> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data} = await this.apiClient.delete(endpoint);
-    return data;
+    await this.apiClient.delete(endpoint);
   }
 
   /**
@@ -41,8 +40,8 @@ export class TimespanAPI extends APIBase {
   public async retrieveTimespan(id: string): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const {data: timespan} = await this.apiClient.get(endpoint);
+    return timespan;
   }
 
   /**
@@ -65,7 +64,7 @@ export class TimespanAPI extends APIBase {
   public async updateTimespan(id: string, newTimespanData: Partial<NewTimespan>): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data} = await this.apiClient.put(endpoint, {data: newTimespanData});
-    return data;
+    const {data: timespan} = await this.apiClient.put(endpoint, {data: newTimespanData});
+    return timespan;
   }
 }
