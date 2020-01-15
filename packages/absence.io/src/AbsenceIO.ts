@@ -1,4 +1,4 @@
-const hawk = require('hawk');
+const hawk = require('@hapi/hawk');
 import axios, {AxiosInstance} from 'axios';
 
 import {
@@ -32,7 +32,7 @@ export class AbsenceIO {
     });
 
     this.apiClient.interceptors.request.use(config => {
-      const hawkHeader = hawk.client.header(config.url, config.method, {credentials});
+      const hawkHeader = hawk.client.header(`${config.baseURL}${config.url}`, config.method, {credentials});
 
       return {
         ...config,
