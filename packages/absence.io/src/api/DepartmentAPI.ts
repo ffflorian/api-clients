@@ -27,7 +27,7 @@ export class DepartmentAPI extends APIBase {
   public async retrieveDepartments(options?: PaginationOptions): Promise<Paginated<Department[]>> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    const {data: departments} = await this.apiClient.post(endpoint, {data: options});
+    const {data: departments} = await this.apiClient.post(endpoint, options);
     return departments;
   }
 }
