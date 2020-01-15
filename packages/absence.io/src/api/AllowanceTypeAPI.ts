@@ -27,7 +27,7 @@ export class AllowanceTypeAPI extends APIBase {
   public async retrieveAllowanceTypes(options?: PaginationOptions): Promise<Paginated<Allowance[]>> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes();
-    const {data: allowances} = await this.apiClient.post<Paginated<Allowance[]>>(endpoint, {data: options});
+    const {data: allowances} = await this.apiClient.post<Paginated<Allowance[]>>(endpoint, options);
     return allowances;
   }
 }

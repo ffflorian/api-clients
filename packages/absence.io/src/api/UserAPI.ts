@@ -18,7 +18,7 @@ export class UserAPI extends APIBase {
   public async invite(userData: NewUser): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.invite();
-    const {data: user} = await this.apiClient.post(endpoint, {data: userData});
+    const {data: user} = await this.apiClient.post(endpoint, userData);
     return user;
   }
 
@@ -42,7 +42,7 @@ export class UserAPI extends APIBase {
   public async retrieveUsers(options?: PaginationOptions): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    const {data: users} = await this.apiClient.post(endpoint, {data: options});
+    const {data: users} = await this.apiClient.post(endpoint, options);
     return users;
   }
 
@@ -55,7 +55,7 @@ export class UserAPI extends APIBase {
   public async updateUser(id: string, userData?: Partial<NewUser>): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: users} = await this.apiClient.post(endpoint, {data: userData});
+    const {data: users} = await this.apiClient.post(endpoint, userData);
     return users;
   }
 }

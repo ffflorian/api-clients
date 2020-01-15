@@ -27,7 +27,7 @@ export class LocationAPI extends APIBase {
   public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    const {data: locations} = await this.apiClient.post<Paginated<Location>>(endpoint, {data: options});
+    const {data: locations} = await this.apiClient.post<Paginated<Location>>(endpoint, options);
     return locations;
   }
 }

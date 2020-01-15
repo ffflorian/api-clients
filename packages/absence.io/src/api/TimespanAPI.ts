@@ -17,7 +17,7 @@ export class TimespanAPI extends APIBase {
   public async createTimespan(timestampData: NewTimespan): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.create();
-    const {data: timespan} = await this.apiClient.post(endpoint, {data: timestampData});
+    const {data: timespan} = await this.apiClient.post(endpoint, timestampData);
     return timespan;
   }
 
@@ -51,7 +51,7 @@ export class TimespanAPI extends APIBase {
   public async retrieveTimespans(options?: PaginationOptions): Promise<Paginated<Timespan[]>> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans();
-    const {data} = await this.apiClient.post(endpoint, {data: options});
+    const {data} = await this.apiClient.post(endpoint, options);
     return data;
   }
 
@@ -64,7 +64,7 @@ export class TimespanAPI extends APIBase {
   public async updateTimespan(id: string, newTimespanData: Partial<NewTimespan>): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data: timespan} = await this.apiClient.put(endpoint, {data: newTimespanData});
+    const {data: timespan} = await this.apiClient.put(endpoint, newTimespanData);
     return timespan;
   }
 }
