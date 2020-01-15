@@ -107,6 +107,66 @@
   resolved "https://registry.npmjs.org/@ffflorian/tslint-config/-/tslint-config-0.7.1.tgz#a7958b77485d602dd8ce0bd594bf9ed7651c0461"
   integrity sha512-3m3cfjjksFpVUsU0JDqvilqJALre02Nk3SCgNpq6dIjcOpYb63DgBJzBSdPDfpKzjuMLoBm58l/b4gctDxoDtw==
 
+"@hapi/b64@5.x.x":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@hapi/b64/-/b64-5.0.0.tgz#b8210cbd72f4774985e78569b77e97498d24277d"
+  integrity sha512-ngu0tSEmrezoiIaNGG6rRvKOUkUuDdf4XTPnONHGYfSGRmDqPZX5oJL6HAdKTo1UQHECbdB4OzhWrfgVppjHUw==
+  dependencies:
+    "@hapi/hoek" "9.x.x"
+
+"@hapi/boom@9.x.x":
+  version "9.0.0"
+  resolved "https://registry.npmjs.org/@hapi/boom/-/boom-9.0.0.tgz#28f9e77ecf2dea1fe3a8982b9d8827aa5137e33a"
+  integrity sha512-D+Or4yahLq3L7D1Jf0fR1+Lgr+HPK1lej8tc6hS/fBLmK66XdpvTyKv8YUR5ls1GeQy+KGtbpKAs+ZxyzNtUyA==
+  dependencies:
+    "@hapi/hoek" "9.x.x"
+
+"@hapi/bounce@2.x.x":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@hapi/bounce/-/bounce-2.0.0.tgz#e6ef56991c366b1e2738b2cd83b01354d938cf3d"
+  integrity sha512-JesW92uyzOOyuzJKjoLHM1ThiOvHPOLDHw01YV8yh5nCso7sDwJho1h0Ad2N+E62bZyz46TG3xhAi/78Gsct6A==
+  dependencies:
+    "@hapi/boom" "9.x.x"
+    "@hapi/hoek" "9.x.x"
+
+"@hapi/cryptiles@5.x.x":
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/@hapi/cryptiles/-/cryptiles-5.0.0.tgz#364ca3336594c7f261707a527c4d36da4a8eb86e"
+  integrity sha512-Yq43ti9N51Z7jbm0Q7YVCcofA+4Gh5wsBX/jZ++Z+FM8GYfBQ1WmI9ufZSL+BVX8vRxzDkdQ2fKoG6cxOQlnVQ==
+  dependencies:
+    "@hapi/boom" "9.x.x"
+
+"@hapi/hawk@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/@hapi/hawk/-/hawk-8.0.0.tgz#2e45c8f9992cd9d96b56346c1aac7186fac3a723"
+  integrity sha512-VEvZUMfZKjXadT9XUt5543ol2DJN7cbcz0j/03wzVcuFxyjuyUaM38aHjf4jxr4feU9B2RT9JOV+H9Q4Ax72qA==
+  dependencies:
+    "@hapi/b64" "5.x.x"
+    "@hapi/boom" "9.x.x"
+    "@hapi/cryptiles" "5.x.x"
+    "@hapi/hoek" "9.x.x"
+    "@hapi/sntp" "4.x.x"
+
+"@hapi/hoek@9.x.x":
+  version "9.0.2"
+  resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.0.2.tgz#57597083f763eafbfdc902d16ec868aa787b24d2"
+  integrity sha512-LyibKv2QnD9BPI5g2L+g85yiIPv3ajYpENGFgy4u0xCLPhXWG1Zdx29neSB8sgX0/wz6k5TMjHzTwJ6+DaBYOA==
+
+"@hapi/sntp@4.x.x":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@hapi/sntp/-/sntp-4.0.0.tgz#2095bfd7bbe0e6cf0eced55a7598035815b8e02e"
+  integrity sha512-yBXTlySZyPZKz0NPoxxFClKNMmVhsZq84Ir7+k93XNGLdSnY3iD0BosxflLpIbP7yr3p4T+QDPMNgOA3XccdFQ==
+  dependencies:
+    "@hapi/boom" "9.x.x"
+    "@hapi/bounce" "2.x.x"
+    "@hapi/hoek" "9.x.x"
+    "@hapi/teamwork" "4.x.x"
+
+"@hapi/teamwork@4.x.x":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@hapi/teamwork/-/teamwork-4.0.0.tgz#4aadbb88de13bce39ab8431565cd50c7ecc6327f"
+  integrity sha512-V6xYOrr5aFv/IJqNPneaYCu8vuGTKisamqHVRS3JJnbZr18TrpXdsJOYk9pjPhFti+M2YETPebQLUr820N5NoQ==
+
 "@lerna/add@3.20.0":
   version "3.20.0"
   resolved "https://registry.npmjs.org/@lerna/add/-/add-3.20.0.tgz#bea7edf36fc93fb72ec34cb9ba854c48d4abf309"
@@ -1171,13 +1231,6 @@ axios@0.19.1:
   dependencies:
     follow-redirects "1.5.10"
 
-b64@4.x.x:
-  version "4.1.2"
-  resolved "https://registry.npmjs.org/b64/-/b64-4.1.2.tgz#7015372ba8101f7fb18da070717a93c28c8580d8"
-  integrity sha512-+GUspBxlH3CJaxMUGUE1EBoWM6RKgWiYwUDal0qdf8m3ArnXNN1KzKVo5HOnE/FSq4HHyWf3TlHLsZI8PKQgrQ==
-  dependencies:
-    hoek "6.x.x"
-
 backbone@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmjs.org/backbone/-/backbone-1.4.0.tgz#54db4de9df7c3811c3f032f34749a4cd27f3bd12"
@@ -1219,21 +1272,6 @@ bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.npmjs.org/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
-
-boom@7.x.x:
-  version "7.3.0"
-  resolved "https://registry.npmjs.org/boom/-/boom-7.3.0.tgz#733a6d956d33b0b1999da3fe6c12996950d017b9"
-  integrity sha512-Swpoyi2t5+GhOEGw8rEsKvTxFLIDiiKoUc2gsoV6Lyr43LHBIzch3k2MvYUs8RTROrIkVJ3Al0TkaOGjnb+B6A==
-  dependencies:
-    hoek "6.x.x"
-
-bounce@1.x.x:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/bounce/-/bounce-1.2.3.tgz#2b286d36eb21d5f08fe672dd8cd37a109baad121"
-  integrity sha512-3G7B8CyBnip5EahCZJjnvQ1HLyArC6P5e+xcolo13BVI9ogFaDOsNMAE7FIWliHtIkYI8/nTRCvCY9tZa3Mu4g==
-  dependencies:
-    boom "7.x.x"
-    hoek "6.x.x"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -1743,13 +1781,6 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     semver "^5.5.0"
     shebang-command "^1.2.0"
     which "^1.2.9"
-
-cryptiles@4.x.x:
-  version "4.1.3"
-  resolved "https://registry.npmjs.org/cryptiles/-/cryptiles-4.1.3.tgz#2461d3390ea0b82c643a6ba79f0ed491b0934c25"
-  integrity sha512-gT9nyTMSUC1JnziQpPbxKGBbUg8VL7Zn2NB4E1cJYvuXdElHrwxrV9bmltZGDzet45zSDGyYceueke1TjynGzw==
-  dependencies:
-    boom "7.x.x"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -2657,28 +2688,12 @@ has@^1.0.1, has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-hawk@7.0.10:
-  version "7.0.10"
-  resolved "https://registry.npmjs.org/hawk/-/hawk-7.0.10.tgz#960f72edac9c6b9114c8387886d7278fba9119eb"
-  integrity sha512-3RWF4SXN9CdZ1VDAe6Pn3Rd0tC3Lw+GV+esX5oKCrXoScZK3Ri6dl5Wt986M/hlzU+GuapTGiB0rBhGeRIBQsw==
-  dependencies:
-    b64 "4.x.x"
-    boom "7.x.x"
-    cryptiles "4.x.x"
-    hoek "6.x.x"
-    sntp "3.x.x"
-
 highlight.js@^9.17.1:
   version "9.17.1"
   resolved "https://registry.npmjs.org/highlight.js/-/highlight.js-9.17.1.tgz#14a4eded23fd314b05886758bb906e39dd627f9a"
   integrity sha512-TA2/doAur5Ol8+iM3Ov7qy3jYcr/QiJ2eDTdRF4dfbjG7AaaB99J5G+zSl11ljbl6cIcahgPY6SKb3sC3EJ0fw==
   dependencies:
     handlebars "^4.5.3"
-
-hoek@6.x.x:
-  version "6.1.3"
-  resolved "https://registry.npmjs.org/hoek/-/hoek-6.1.3.tgz#73b7d33952e01fe27a38b0457294b79dd8da242c"
-  integrity sha512-YXXAAhmF9zpQbC7LEcREFtXfGq5K1fmd+4PHkBq8NUqmzW3G+Dq10bI/i0KucLRwss3YYFQ0fSfoxBZYiGUqtQ==
 
 hosted-git-info@^2.1.4, hosted-git-info@^2.6.0:
   version "2.7.1"
@@ -4930,16 +4945,6 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-sntp@3.x.x:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/sntp/-/sntp-3.0.2.tgz#3f0b5de6115681dce82a9478691f0e5c552de5a3"
-  integrity sha512-MCAPpBPFjNp1fwDVCLSRuWuH9gONtb2R+lS1esC6Mp8lP6jy60FVUtP/Qr0jBvcWAVbhzx06y1b6ptXiy32dug==
-  dependencies:
-    boom "7.x.x"
-    bounce "1.x.x"
-    hoek "6.x.x"
-    teamwork "3.x.x"
-
 socks-proxy-agent@^4.0.0:
   version "4.0.2"
   resolved "https://registry.npmjs.org/socks-proxy-agent/-/socks-proxy-agent-4.0.2.tgz#3c8991f3145b2799e70e11bd5fbc8b1963116386"
@@ -5246,11 +5251,6 @@ tar@^4.4.10, tar@^4.4.8:
     mkdirp "^0.5.0"
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
-
-teamwork@3.x.x:
-  version "3.2.0"
-  resolved "https://registry.npmjs.org/teamwork/-/teamwork-3.2.0.tgz#27916edab815459c1a4686252eb18fb5925f49fa"
-  integrity sha512-xAmJ8PIVjRZMXAHgUuOP8ITsv0SedyWAit2UWiNImXgg/F+BxrsG46ZegElNBM0Dwp+iMfbigg/Ll/M2oDRYww==
 
 temp-dir@^1.0.0:
   version "1.0.0"
