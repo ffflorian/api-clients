@@ -16,8 +16,8 @@ export class LocationAPI extends APIBase {
   public async retrieveLocation(id: string): Promise<Location> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations(id);
-    const {data} = await this.apiClient.get<Location>(endpoint);
-    return data;
+    const {data: location} = await this.apiClient.get<Location>(endpoint);
+    return location;
   }
 
   /**
@@ -27,7 +27,7 @@ export class LocationAPI extends APIBase {
   public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    const {data} = await this.apiClient.post<Paginated<Location>>(endpoint, {data: options});
-    return data;
+    const {data: locations} = await this.apiClient.post<Paginated<Location>>(endpoint, {data: options});
+    return locations;
   }
 }

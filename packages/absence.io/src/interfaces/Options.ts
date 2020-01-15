@@ -6,7 +6,7 @@ import {NewReason} from './Reason';
 import {NewTimespan} from './Timespan';
 import {NewUser} from './User';
 
-export type Filter = {[key: string]: {[key: string]: string} | string};
+export type Filter = Record<string, string | Record<string, string>>;
 
 export interface PaginationOptions {
   filter?: Filter;

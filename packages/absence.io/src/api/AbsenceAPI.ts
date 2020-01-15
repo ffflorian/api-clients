@@ -16,8 +16,8 @@ export class AbsenceAPI extends APIBase {
   public async createAbsence(absenceData: NewAbsence): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    const {data} = await this.apiClient.post<Absence>(endpoint, {data: absenceData});
-    return data;
+    const {data: absence} = await this.apiClient.post<Absence>(endpoint, {data: absenceData});
+    return absence;
   }
 
   /**
@@ -27,8 +27,8 @@ export class AbsenceAPI extends APIBase {
   public async retrieveAbsence(id: string): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    const {data} = await this.apiClient.get<Absence>(endpoint);
-    return data;
+    const {data: absence} = await this.apiClient.get<Absence>(endpoint);
+    return absence;
   }
 
   /**
@@ -38,8 +38,8 @@ export class AbsenceAPI extends APIBase {
   public async retrieveAbsences(options?: PaginationOptions): Promise<Paginated<Absence[]>> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    const {data} = await this.apiClient.post<Paginated<Absence[]>>(endpoint, {data: options});
-    return data;
+    const {data: absences} = await this.apiClient.post<Paginated<Absence[]>>(endpoint, {data: options});
+    return absences;
   }
 
   /**

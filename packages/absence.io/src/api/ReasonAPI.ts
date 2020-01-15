@@ -17,8 +17,8 @@ export class ReasonAPI extends APIBase {
   public async retrieveReason(id: string): Promise<Reason> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const {data: reason} = await this.apiClient.get(endpoint);
+    return reason;
   }
 
   /**
@@ -28,7 +28,7 @@ export class ReasonAPI extends APIBase {
   public async retrieveReasons(): Promise<Paginated<Reason[]>> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    const {data} = await this.apiClient.post(endpoint, {});
-    return data;
+    const {data: reasons} = await this.apiClient.post(endpoint, {});
+    return reasons;
   }
 }
