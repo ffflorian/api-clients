@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.5...absence.io@1.1.6) (2020-01-16)
+
+
+### Bug Fixes
+
+* **absence.io:** Add reason to Absence payload ([d3631ed](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/d3631ed))
+
+
+
+
+
 ## [1.1.5](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.4...absence.io@1.1.5) (2020-01-15)
 
 
