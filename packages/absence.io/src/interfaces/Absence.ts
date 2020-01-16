@@ -35,6 +35,7 @@ export interface Absence extends Required<NewAbsence> {
   readonly daysCount: number;
   /** date the absence was updated */
   readonly modified: string;
+  readonly reason?: string;
 }
 
 export interface NewAbsence {
