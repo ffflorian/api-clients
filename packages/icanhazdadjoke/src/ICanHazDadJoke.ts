@@ -19,7 +19,7 @@ export class ICanHazDadJoke {
       headers: {
         Accept: 'application/json',
         'User-Agent':
-          'icanhazdadjoke.com API Client (https://github.com/ffflorian/api-clients/tree/master/icanhazdadjoke.com',
+          'icanhazdadjoke.com API Client (https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke)',
       },
     });
     this.api = new ICanHazDadJokeAPI(this.apiClient, this.options);
