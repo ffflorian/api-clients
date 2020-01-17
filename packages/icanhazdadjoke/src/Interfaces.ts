@@ -6,7 +6,7 @@ export interface ClientOptions {
   apiUrl?: string;
 }
 
-export interface ICanHazDadJokeResult {
+export interface JokeResult {
   id: string;
   joke: string;
   status: number;
@@ -17,14 +17,14 @@ export interface JokeSearchResult {
   limit: number;
   next_page: number;
   previous_page: number;
-  results: ICanHazDadJokeResult[];
+  results: JokeResult[];
   search_tearm: string;
   status: number;
   total_jokes: number;
   total_pages: number;
 }
 
-export interface JokeResultWithImage extends ICanHazDadJokeResult {
+export interface JokeResultWithImage extends JokeResult {
   image: Buffer;
 }
 

@@ -47,7 +47,7 @@ program
       const result = await iCanHazDadJoke.api.getRandom({withImage: !!command.parent.image});
       console.log(result.joke);
       if (command.parent.image) {
-        await save(resolvedPath, result, !!command.parent.silent);
+        await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
     } catch (error) {
       console.error(`Error: ${error.message}`);
@@ -65,7 +65,7 @@ program
       const result = await iCanHazDadJoke.api.getById(id, {withImage: !!command.parent.image});
       console.log(result.joke);
       if (command.parent.image) {
-        await save(resolvedPath, result, !!command.parent.silent);
+        await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
     } catch (error) {
       console.error(`Error: ${error.message}`);
