@@ -1,7 +1,7 @@
 import {AxiosInstance} from 'axios';
 import {
   ClientOptions,
-  ICanHazDadJokeResult,
+  JokeResult,
   JokeResultWithImage,
   JokeSearchResult,
   RequestOptions,
@@ -22,8 +22,8 @@ export class ICanHazDadJokeAPI {
    * @see https://icanhazdadjoke.com/api#fetch-a-dad-joke
    */
   public getById(id: string, options: {withImage: true}): Promise<JokeResultWithImage>;
-  public getById(id: string, options?: RequestOptions): Promise<JokeResultWithImage>;
-  public getById(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | ICanHazDadJokeResult> {
+  public getById(id: string, options?: RequestOptions): Promise<JokeResult>;
+  public getById(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
     return this.getByID(id, options);
   }
 
@@ -32,9 +32,9 @@ export class ICanHazDadJokeAPI {
    * @see https://icanhazdadjoke.com/api#fetch-a-dad-joke
    */
   public async getByID(id: string, options: {withImage: true}): Promise<JokeResultWithImage>;
-  public async getByID(id: string, options?: RequestOptions): Promise<JokeResultWithImage>;
-  public async getByID(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | ICanHazDadJokeResult> {
-    const {data: metaData} = await this.apiClient.get<ICanHazDadJokeResult>(`/j/${id}`);
+  public async getByID(id: string, options?: RequestOptions): Promise<JokeResult>;
+  public async getByID(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
+    const {data: metaData} = await this.apiClient.get<JokeResult>(`/j/${id}`);
 
     if (options.withImage) {
       const imageData = await this.getImage(`/j/${id}.png`);
@@ -52,9 +52,9 @@ export class ICanHazDadJokeAPI {
    * @see https://icanhazdadjoke.com/api#fetch-a-random-dad-joke
    */
   public async getRandom(options: {withImage: true}): Promise<JokeResultWithImage>;
-  public async getRandom(options?: RequestOptions): Promise<JokeResultWithImage>;
-  public async getRandom(options: RequestOptions = {}): Promise<JokeResultWithImage | ICanHazDadJokeResult> {
-    const {data: metaData} = await this.apiClient.get<ICanHazDadJokeResult>('/');
+  public async getRandom(options?: RequestOptions): Promise<JokeResult>;
+  public async getRandom(options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
+    const {data: metaData} = await this.apiClient.get<JokeResult>('/');
 
     if (options.withImage) {
       const imageData = await this.getImage(`/j/${metaData.id}.png`);
