@@ -18,7 +18,7 @@ export interface JokeSearchResult {
   next_page: number;
   previous_page: number;
   results: JokeResult[];
-  search_tearm: string;
+  search_term: string;
   status: number;
   total_jokes: number;
   total_pages: number;
