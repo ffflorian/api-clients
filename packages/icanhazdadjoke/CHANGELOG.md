@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.2...@ffflorian/icanhazdadjoke@1.1.3) (2020-01-17)
+
+
+### Bug Fixes
+
+* **icanhazdadjoke:** Interface typo ([6c7e95a](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/commit/6c7e95a))
+
+
+
+
+
 ## [1.1.2](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.1...@ffflorian/icanhazdadjoke@1.1.2) (2020-01-17)
 
 
