@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.6...absence.io@1.1.7) (2020-01-17)
+
+
+### Bug Fixes
+
+* **absence.io:** Add possible absence keys added with relations ([d87f058](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/d87f058))
+
+
+
+
+
 ## [1.1.6](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.5...absence.io@1.1.6) (2020-01-16)
 
 
