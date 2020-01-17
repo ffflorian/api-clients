@@ -87,6 +87,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#_id" class="tsd-kind-icon">_id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#approver" class="tsd-kind-icon">approver</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#assignedto" class="tsd-kind-icon">assigned<wbr>To</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#created" class="tsd-kind-icon">created</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#days" class="tsd-kind-icon">days</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_interfaces_absence_.absence.html#dayscount" class="tsd-kind-icon">days<wbr>Count</a></li>
@@ -105,7 +107,7 @@
 					<div class="tsd-signature tsd-kind-icon">_id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L29">interfaces/Absence.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L31">interfaces/Absence.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -115,12 +117,42 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="approver" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> approver</h3>
+					<div class="tsd-signature tsd-kind-icon">approver<span class="tsd-signature-symbol">:</span> <a href="_interfaces_user_.user.html" class="tsd-signature-type">User</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L33">interfaces/Absence.ts:33</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>assigned approver (only available if requested via <code>relations</code>)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="assignedto" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> assigned<wbr>To</h3>
+					<div class="tsd-signature tsd-kind-icon">assigned<wbr>To<span class="tsd-signature-symbol">:</span> <a href="_interfaces_user_.user.html" class="tsd-signature-type">User</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L35">interfaces/Absence.ts:35</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>assigned user (only available if requested via <code>relations</code>)</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="created" class="tsd-anchor"></a>
 					<h3>created</h3>
 					<div class="tsd-signature tsd-kind-icon">created<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L31">interfaces/Absence.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L37">interfaces/Absence.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -135,7 +167,7 @@
 					<div class="tsd-signature tsd-kind-icon">days<span class="tsd-signature-symbol">:</span> <a href="_interfaces_absence_.absenceday.html" class="tsd-signature-type">AbsenceDay</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L33">interfaces/Absence.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L39">interfaces/Absence.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -150,7 +182,7 @@
 					<div class="tsd-signature tsd-kind-icon">days<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L35">interfaces/Absence.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L41">interfaces/Absence.ts:41</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -165,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">modified<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L37">interfaces/Absence.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L43">interfaces/Absence.ts:43</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -177,12 +209,17 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="reason" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> reason</h3>
-					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <a href="_interfaces_reason_.reason.html" class="tsd-signature-type">Reason</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d3631ed/packages/absence.io/src/interfaces/Absence.ts#L38">interfaces/Absence.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d87f058/packages/absence.io/src/interfaces/Absence.ts#L45">interfaces/Absence.ts:45</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>assigned reason (only available if requested via <code>relations</code>)</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -275,6 +312,12 @@
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_interfaces_absence_.absence.html#_id" class="tsd-kind-icon">_id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_interfaces_absence_.absence.html#approver" class="tsd-kind-icon">approver</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_interfaces_absence_.absence.html#assignedto" class="tsd-kind-icon">assigned<wbr>To</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_interfaces_absence_.absence.html#created" class="tsd-kind-icon">created</a>
