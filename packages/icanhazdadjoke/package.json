@@ -1,0 +1,43 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "bin": {
+    "icanhazdadjoke": "dist/cli.js"
+  },
+  "dependencies": {
+    "axios": "0.19.1",
+    "commander": "4.1.0"
+  },
+  "description": "An icanhazdadjoke.com API client with a CLI.",
+  "devDependencies": {
+    "@types/node": "~12",
+    "rimraf": "3.0.0",
+    "ts-node": "8.6.2",
+    "typedoc": "0.16.6",
+    "typescript": "3.7.5"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "cli",
+    "typescript",
+    "icanhazdadjoke"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "@ffflorian/icanhazdadjoke",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/icanhazdadjoke",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "start": "ts-node src/cli.ts",
+    "test": "exit 0"
+  },
+  "version": "1.0.0"
+}
