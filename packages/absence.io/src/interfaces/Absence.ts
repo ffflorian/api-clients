@@ -1,3 +1,5 @@
+import {Reason} from './Reason';
+import {User} from './User';
 import {WorkingDay} from './WorkingDay';
 
 export interface AbsenceDay {
@@ -27,6 +29,10 @@ export interface ForwardHistory {
 export interface Absence extends Required<NewAbsence> {
   /** unique identifier */
   readonly _id: string;
+  /** assigned approver (only available if requested via `relations`) */
+  readonly approver?: User;
+  /** assigned user (only available if requested via `relations`) */
+  readonly assignedTo?: User;
   /** date the absence was created */
   readonly created: string;
   /** array detailing each day inside the absence date range */
@@ -35,7 +41,8 @@ export interface Absence extends Required<NewAbsence> {
   readonly daysCount: number;
   /** date the absence was updated */
   readonly modified: string;
-  readonly reason?: string;
+  /** assigned reason (only available if requested via `relations`) */
+  readonly reason?: Reason;
 }
 
 export interface NewAbsence {
