@@ -11,6 +11,7 @@ API clients for various services.
 - [`absence.io`](./packages/absence.io/) [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://www.npmjs.com/package/absence.io)
 - [`c3nav`](./packages/c3nav/) [![npm version](https://img.shields.io/npm/v/c3nav.svg)](https://www.npmjs.com/package/c3nav)
 - [`crates.io`](./packages/crates.io/) [![npm version](https://img.shields.io/npm/v/crates.io.svg)](https://www.npmjs.com/package/crates.io)
+- [`icanhazdadjoke`](./packages/icanhazdadjoke/) [![npm version](https://img.shields.io/npm/v/@ffflorian/icanhazdadjoke.svg)](https://www.npmjs.com/package/@ffflorian/icanhazdadjoke)
 - [`libraries.io`](./packages/libraries.io/) [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 - [`npms.io`](./packages/npms.io/) [![npm version](https://img.shields.io/npm/v/npms.io.svg)](https://www.npmjs.com/package/npms.io)
 - [`statuspage.io`](./packages/statuspage.io/) [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
