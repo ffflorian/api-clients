@@ -114,7 +114,7 @@
   dependencies:
     "@hapi/hoek" "9.x.x"
 
-"@hapi/boom@9.x.x":
+"@hapi/boom@9.x.x", "@hapi/boom@^9.0.0":
   version "9.0.0"
   resolved "https://registry.npmjs.org/@hapi/boom/-/boom-9.0.0.tgz#28f9e77ecf2dea1fe3a8982b9d8827aa5137e33a"
   integrity sha512-D+Or4yahLq3L7D1Jf0fR1+Lgr+HPK1lej8tc6hS/fBLmK66XdpvTyKv8YUR5ls1GeQy+KGtbpKAs+ZxyzNtUyA==
@@ -128,6 +128,11 @@
   dependencies:
     "@hapi/boom" "9.x.x"
     "@hapi/hoek" "9.x.x"
+
+"@hapi/bourne@2.x.x":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@hapi/bourne/-/bourne-2.0.0.tgz#5bb2193eb685c0007540ca61d166d4e1edaf918d"
+  integrity sha512-WEezM1FWztfbzqIUbsDzFRVMxSoLy3HugVcux6KDDtTqzPsLE8NDRHfXvev66aH1i2oOKKar3/XDjbvh/OUBdg==
 
 "@hapi/cryptiles@5.x.x":
   version "5.0.0"
@@ -151,6 +156,17 @@
   version "9.0.2"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.0.2.tgz#57597083f763eafbfdc902d16ec868aa787b24d2"
   integrity sha512-LyibKv2QnD9BPI5g2L+g85yiIPv3ajYpENGFgy4u0xCLPhXWG1Zdx29neSB8sgX0/wz6k5TMjHzTwJ6+DaBYOA==
+
+"@hapi/iron@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/@hapi/iron/-/iron-6.0.0.tgz#ca3f9136cda655bdd6028de0045da0de3d14436f"
+  integrity sha512-zvGvWDufiTGpTJPG1Y/McN8UqWBu0k/xs/7l++HVU535NLHXsHhy54cfEMdW7EjwKfbBfM9Xy25FmTiobb7Hvw==
+  dependencies:
+    "@hapi/b64" "5.x.x"
+    "@hapi/boom" "9.x.x"
+    "@hapi/bourne" "2.x.x"
+    "@hapi/cryptiles" "5.x.x"
+    "@hapi/hoek" "9.x.x"
 
 "@hapi/sntp@4.x.x":
   version "4.0.0"
@@ -927,10 +943,20 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@types/caseless@*":
+  version "0.12.2"
+  resolved "https://registry.npmjs.org/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
+  integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
+
 "@types/color-name@^1.1.1":
   version "1.1.1"
   resolved "https://registry.npmjs.org/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/crypto-js@*":
+  version "3.1.43"
+  resolved "https://registry.npmjs.org/@types/crypto-js/-/crypto-js-3.1.43.tgz#b859347d6289ba13e347c335a4c9efa63337a748"
+  integrity sha512-EHe/YKctU3IYNBsDmSOPX/7jLHPRlx8WaiDKSY9JCTnJ8XJeM4c0ZJvx+9Gxmr2s2ihI92R+3U/gNL1sq5oRuQ==
 
 "@types/events@*":
   version "3.0.0"
@@ -946,10 +972,75 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/hapi__catbox@*":
+  version "10.2.2"
+  resolved "https://registry.npmjs.org/@types/hapi__catbox/-/hapi__catbox-10.2.2.tgz#b13fbdd6006c8793eb80919158593bc2bf8307c4"
+  integrity sha512-AWK70LgRsRWL1TNw+aT0IlS56E0pobvFdr/en0K8XazyK4Ey6T/jXhQqv/iQ6FJAAU+somMzgmt9fWq2TaaOkA==
+
+"@types/hapi__hapi@*":
+  version "19.0.0"
+  resolved "https://registry.npmjs.org/@types/hapi__hapi/-/hapi__hapi-19.0.0.tgz#99192d21dde97c6822c1a6ea3c779f1f47313e3b"
+  integrity sha512-F36qfgrB5743UwoODMzeTLcixTsEqetVL+pvCWh9M+fUPEOWQUMKVEnURec3+Ptw2DKj2Uaaa82SZHUSYgiIWQ==
+  dependencies:
+    "@hapi/boom" "^9.0.0"
+    "@hapi/iron" "^6.0.0"
+    "@types/hapi__catbox" "*"
+    "@types/hapi__joi" "*"
+    "@types/hapi__mimos" "*"
+    "@types/hapi__podium" "*"
+    "@types/hapi__shot" "*"
+    "@types/node" "*"
+
+"@types/hapi__hawk@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/@types/hapi__hawk/-/hapi__hawk-8.0.0.tgz#0a1713abc2d3bc5b47497a1b0fc44f58cdd9c547"
+  integrity sha512-kfDYW70HZWWa2B07JNFrUikZis3iIKI+pfH+aE5Es07mM6ny927mwnXs2udRr4wZ9W0RgowMUnyxlvDmWh9l5A==
+  dependencies:
+    "@hapi/boom" "^9.0.0"
+    "@types/crypto-js" "*"
+    "@types/hapi__hapi" "*"
+    "@types/hapi__sntp" "*"
+    "@types/node" "*"
+    "@types/request" "*"
+
+"@types/hapi__joi@*":
+  version "16.0.6"
+  resolved "https://registry.npmjs.org/@types/hapi__joi/-/hapi__joi-16.0.6.tgz#aa8f7dff93fdd3db6506ca2433a8302d8819fad1"
+  integrity sha512-rpU8FNMGxhYIF6bUlxZYO4drNjqUWCGrf4UINABAJzdcrPs4bP+Bz5VXzp8rOPZsNynnaDXbiU/MyjOGlfeczg==
+
+"@types/hapi__mimos@*":
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/@types/hapi__mimos/-/hapi__mimos-4.1.0.tgz#47dbf89ebfc05183c1de2797e9426793db9a0d85"
+  integrity sha512-hcdSoYa32wcP+sEfyf85ieGwElwokcZ/mma8eyqQ4OTHeCAGwfaoiGxjG4z1Dm+RGhIYLHlW54ji5FFwahH12A==
+  dependencies:
+    "@types/mime-db" "*"
+
+"@types/hapi__podium@*":
+  version "3.4.0"
+  resolved "https://registry.npmjs.org/@types/hapi__podium/-/hapi__podium-3.4.0.tgz#8efbe18c422e5306a7ee970d48448cf8ff4da37c"
+  integrity sha512-LE85jLgqR5HscGQ7SaSz6FMRsKlQ1wHVbYc9u0yq7NKDRvZiQFIrr3Pl1RPzK7QNUdZP8zmJibe8q0JcafTAJQ==
+
+"@types/hapi__shot@*":
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/@types/hapi__shot/-/hapi__shot-4.1.0.tgz#c2f096bf89906e25b530869becca44d40b168b75"
+  integrity sha512-vIySJYkwIGXMB5eFaZu3U8dS9CAZmteJfmkRn9bYH5uNcSvVgiwDROiwAkD7ej88qA+RZPkUK70KmeDs3LRHvw==
+  dependencies:
+    "@types/node" "*"
+
+"@types/hapi__sntp@*":
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/@types/hapi__sntp/-/hapi__sntp-3.1.0.tgz#8817bcc3b091ef486ddd4fe5be305d0fa33ed570"
+  integrity sha512-8tKFfiK7vIp9LbfabJ95YegLhLVaNUyT9nqYnWwkt77tQ7hw/QZByPBIENByuLUMa4d8g24L8rdn0EjPyb2cIw==
+
 "@types/jasmine@3.5.1":
   version "3.5.1"
   resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.5.1.tgz#e417aa74738aa9e9285016abbfcae68d5be0f827"
   integrity sha512-5ZxOWKc0AgTeMcYCnV4RxTZZAClWaHKPR6n14LvUj8ywKDhOfI+YgdtNLXiW4kQmtxS3i1HXVbfAot+pqpJE2A==
+
+"@types/mime-db@*":
+  version "1.27.0"
+  resolved "https://registry.npmjs.org/@types/mime-db/-/mime-db-1.27.0.tgz#9bc014a1fd1fdf47649c1a54c6dd7966b8284792"
+  integrity sha1-m8AUof0f30dknBpUxt15ZrgoR5I=
 
 "@types/minimatch@*", "@types/minimatch@3.0.3":
   version "3.0.3"
@@ -965,6 +1056,21 @@
   version "4.0.0"
   resolved "https://registry.npmjs.org/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
+
+"@types/request@*":
+  version "2.48.4"
+  resolved "https://registry.npmjs.org/@types/request/-/request-2.48.4.tgz#df3d43d7b9ed3550feaa1286c6eabf0738e6cf7e"
+  integrity sha512-W1t1MTKYR8PxICH+A4HgEIPuAC3sbljoEVfyZbeFJJDbr30guDspJri2XOaM2E+Un7ZjrihaDi7cf6fPa2tbgw==
+  dependencies:
+    "@types/caseless" "*"
+    "@types/node" "*"
+    "@types/tough-cookie" "*"
+    form-data "^2.5.0"
+
+"@types/tough-cookie@*":
+  version "2.3.6"
+  resolved "https://registry.npmjs.org/@types/tough-cookie/-/tough-cookie-2.3.6.tgz#c880579e087d7a0db13777ff8af689f4ffc7b0d5"
+  integrity sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
 
 "@zkochan/cmd-shim@^3.1.0":
   version "3.1.0"
@@ -2307,6 +2413,15 @@ forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.npmjs.org/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
   integrity sha1-+8cfDEGt6zf5bFd60e1C2P2sypE=
+
+form-data@^2.5.0:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
+  integrity sha512-m21N3WOmEEURgk6B9GLOE4RuWOFf28Lhh9qGYeNlGq4VDXUlJy2th2slBNU8Gp8EzloYZOibZJ7t5ecIrFSjVA==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.6"
+    mime-types "^2.1.12"
 
 form-data@~2.3.2:
   version "2.3.3"
