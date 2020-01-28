@@ -7,7 +7,7 @@
   "description": "A generic API client",
   "devDependencies": {
     "@types/node": "~12",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.1",
     "typedoc": "0.16.8",
     "typescript": "3.7.5"
   },
