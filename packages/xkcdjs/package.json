@@ -12,7 +12,7 @@
     "@types/jasmine": "3.5.3",
     "@types/node": "~12",
     "jasmine": "3.5.0",
-    "nock": "11.7.2",
+    "nock": "11.8.2",
     "rimraf": "3.0.2",
     "ts-node": "8.6.2",
     "typedoc": "0.16.9",
