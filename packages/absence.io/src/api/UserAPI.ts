@@ -30,7 +30,7 @@ export class UserAPI extends APIBase {
   public async retrieveUser(id: string): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: user} = await this.apiClient.post(endpoint, {});
+    const {data: user} = await this.apiClient.get(endpoint, {});
     return user;
   }
 
