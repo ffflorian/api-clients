@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.8...absence.io@1.1.9) (2020-02-13)
+
+
+### Bug Fixes
+
+* **absence.io:** When retrieving a single user use GET request instead of POST ([#307](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/issues/307)) ([84ffa94](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/commit/84ffa94))
+
+
+
+
+
 ## [1.1.8](https://github.com/ffflorian/api-clients/tree/master/packages/absence.io/compare/absence.io@1.1.7...absence.io@1.1.8) (2020-01-22)
 
 **Note:** Version bump only for package absence.io
