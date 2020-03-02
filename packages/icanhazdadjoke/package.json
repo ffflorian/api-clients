@@ -13,7 +13,7 @@
     "rimraf": "3.0.2",
     "ts-node": "8.6.2",
     "typedoc": "0.16.11",
-    "typescript": "3.7.5"
+    "typescript": "3.8.3"
   },
   "engines": {
     "node": ">= 10.9"
