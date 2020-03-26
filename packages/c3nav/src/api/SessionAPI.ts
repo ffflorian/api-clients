@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Session} from '../interfaces/';
+import type {ClientOptions, Session} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class SessionAPI extends APIBase {

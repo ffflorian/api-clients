@@ -1,5 +1,5 @@
-import {AxiosInstance} from 'axios';
-import {Authorization, ClientOptions} from '../interfaces';
+import type {AxiosInstance} from 'axios';
+import type {Authorization, ClientOptions} from '../interfaces';
 
 export class APIBase {
   protected readonly apiClient: AxiosInstance;

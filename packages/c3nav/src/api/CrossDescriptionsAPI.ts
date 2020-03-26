@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, CrossDescriptions} from '../interfaces/';
+import type {ClientOptions, CrossDescriptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class CrossDescriptionsAPI extends APIBase {

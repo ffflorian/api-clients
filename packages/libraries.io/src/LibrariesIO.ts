@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
 import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
-import {API, ClientOptions} from './interfaces/';
+import type {API, ClientOptions} from './interfaces/';
 
 export class LibrariesIO {
   public readonly api: API;

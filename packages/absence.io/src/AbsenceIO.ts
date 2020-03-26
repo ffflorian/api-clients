@@ -11,7 +11,7 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
-import {API, Authorization, ClientOptions} from './interfaces';
+import type {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;

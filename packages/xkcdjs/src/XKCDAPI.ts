@@ -1,5 +1,5 @@
-import {AxiosInstance} from 'axios';
-import {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
+import type {AxiosInstance} from 'axios';
+import type {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
   protected readonly apiClient: AxiosInstance;

@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {PackageInfo} from '../interfaces/';
+import type {PackageInfo} from '../interfaces/';
 
 export class PackageAPI {
   private readonly apiClient: AxiosInstance;

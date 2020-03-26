@@ -1,7 +1,7 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from 'axios';
 import * as HTTP_STATUS from 'http-status-codes';
 
-import {ClientOptions} from './APIClient';
+import type {ClientOptions} from './APIClient';
 import {ExceptionMapper, InvalidResponseError} from './APIException';
 
 enum HttpMethod {

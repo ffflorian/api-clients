@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
 import {PackageAPI, SearchAPI} from './api';
-import {API, ClientOptions} from './interfaces/';
+import type {API, ClientOptions} from './interfaces/';
 
 export class NpmsIO {
   public readonly api: API;

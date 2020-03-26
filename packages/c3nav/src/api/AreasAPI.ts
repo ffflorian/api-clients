@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Areas, ClientOptions} from '../interfaces/';
+import type {Areas, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AreasAPI extends APIBase {

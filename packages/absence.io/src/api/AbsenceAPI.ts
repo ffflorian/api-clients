@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Absence, ClientOptions, NewAbsence, Paginated, PaginationOptions} from '../interfaces/';
+import type {Absence, ClientOptions, NewAbsence, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AbsenceAPI extends APIBase {

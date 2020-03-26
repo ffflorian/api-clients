@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
 import {ChecksAPI, NodesAPI} from './api';
-import {API, ClientOptions} from './interfaces';
+import type {API, ClientOptions} from './interfaces';
 
 export class UpdownIO {
   public api: API;

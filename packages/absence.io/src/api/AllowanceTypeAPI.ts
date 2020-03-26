@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Allowance, ClientOptions, Paginated, PaginationOptions} from '../interfaces/';
+import type {Allowance, ClientOptions, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AllowanceTypeAPI extends APIBase {

@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
+import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 
 export class ChecksAPI {
   private readonly apiClient: AxiosInstance;

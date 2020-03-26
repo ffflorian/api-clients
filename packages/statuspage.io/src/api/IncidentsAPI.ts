@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Incidents} from '../interfaces/Result';
+import type {Incidents} from '../interfaces/Result';
 
 export class IncidentsAPI {
   private readonly apiClient: AxiosInstance;

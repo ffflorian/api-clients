@@ -1,4 +1,4 @@
-import {ProjectDependency} from '../interfaces/Project';
+import type {ProjectDependency} from '../interfaces/Project';
 
 export interface Repository {
   contributions_count: number | null;

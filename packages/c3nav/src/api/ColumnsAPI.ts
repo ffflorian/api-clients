@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Columns} from '../interfaces/';
+import type {ClientOptions, Columns} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ColumnsAPI extends APIBase {

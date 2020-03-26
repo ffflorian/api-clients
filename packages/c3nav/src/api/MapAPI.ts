@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Bounds, ClientOptions} from '../interfaces/';
+import type {Bounds, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class MapAPI extends APIBase {

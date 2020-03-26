@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {AccessRestrictions, ClientOptions} from '../interfaces/';
+import type {AccessRestrictions, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AccessRestrictionsAPI extends APIBase {

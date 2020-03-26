@@ -1,4 +1,4 @@
-import {Category, Crate, Dependency, Download, Keyword, Team, User, Version} from '.';
+import type {Category, Crate, Dependency, Download, Keyword, Team, User, Version} from '.';
 
 export interface AuthorsResult {
   meta: {

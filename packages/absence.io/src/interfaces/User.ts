@@ -1,4 +1,4 @@
-import {WorkingDays} from './WorkingDay';
+import type {WorkingDays} from './WorkingDay';
 
 export interface NewUser {
   /** the default approver for this user. If not set it will inherit the approver from the department */

@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {
+import type {
   ClientOptions,
   LibrariesIOHeaders,
   LibrariesIOResult,

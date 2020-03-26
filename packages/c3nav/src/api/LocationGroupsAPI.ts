@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, LocationGroups} from '../interfaces/';
+import type {ClientOptions, LocationGroups} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class LocationGroupsAPI extends APIBase {

@@ -1,5 +1,5 @@
-import {DoctorsNote} from './Absence';
-import {Allowance} from './Allowance';
+import type {DoctorsNote} from './Absence';
+import type {Allowance} from './Allowance';
 
 export interface NewReason {
   /** the allowance type of which this reason deducts. If no allowance is defined then the reason won't deduct from any allowance */

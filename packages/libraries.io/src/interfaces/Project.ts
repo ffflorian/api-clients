@@ -1,4 +1,4 @@
-import {PlatformType} from './Options';
+import type {PlatformType} from './Options';
 
 export interface Project {
   dependent_repos_count: number;

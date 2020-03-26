@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {Changesets, ClientOptions} from '../interfaces/';
+import type {Changesets, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ChangesetsAPI extends APIBase {

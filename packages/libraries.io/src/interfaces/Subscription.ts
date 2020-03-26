@@ -1,4 +1,4 @@
-import {Project} from './Project';
+import type {Project} from './Project';
 
 export interface Subscription {
   created_at: string;

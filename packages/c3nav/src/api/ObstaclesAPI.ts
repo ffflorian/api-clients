@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Obstacles} from '../interfaces/';
+import type {ClientOptions, Obstacles} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ObstaclesAPI extends APIBase {

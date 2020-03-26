@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, NewUser, Paginated, PaginationOptions, User} from '../interfaces/';
+import type {ClientOptions, NewUser, Paginated, PaginationOptions, User} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class UserAPI extends APIBase {
