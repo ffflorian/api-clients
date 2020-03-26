@@ -1,6 +1,6 @@
-import {Category} from './Category';
-import {Crate} from './Crate';
-import {Keyword} from './Keyword';
+import type {Category} from './Category';
+import type {Crate} from './Crate';
+import type {Keyword} from './Keyword';
 
 export interface Summary {
   just_updated: Crate[];

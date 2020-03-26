@@ -1,6 +1,6 @@
 import axios, {AxiosInstance} from 'axios';
 
-import {ClientOptions} from './Interfaces';
+import type {ClientOptions} from './Interfaces';
 import {XKCDAPI} from './XKCDAPI';
 
 export class XKCD {

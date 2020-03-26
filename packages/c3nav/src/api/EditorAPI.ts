@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Editor} from '../interfaces/';
+import type {ClientOptions, Editor} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class EditorAPI extends APIBase {

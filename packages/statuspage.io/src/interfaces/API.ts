@@ -1,5 +1,5 @@
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from '../api';
-import {Components, Status, Summary} from './Result';
+import type {Components, Status, Summary} from './Result';
 
 export interface API {
   /**

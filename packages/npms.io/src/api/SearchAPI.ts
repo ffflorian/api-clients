@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {SearchOptions, SearchResult, SuggestionsOptions} from '../interfaces';
+import type {SearchOptions, SearchResult, SuggestionsOptions} from '../interfaces';
 
 export class SearchAPI {
   private readonly apiClient: AxiosInstance;

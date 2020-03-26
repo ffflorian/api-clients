@@ -2,7 +2,7 @@ import axios, {AxiosInstance} from 'axios';
 
 import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
-import {API, ClientOptions, Summary} from './interfaces';
+import type {API, ClientOptions, Summary} from './interfaces';
 
 export class CratesIO {
   public readonly api: API;

@@ -1,4 +1,4 @@
-import {CustomHeaders} from './Options';
+import type {CustomHeaders} from './Options';
 
 export interface Check {
   alias: string;

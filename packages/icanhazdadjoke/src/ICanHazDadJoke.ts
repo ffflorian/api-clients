@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from 'axios';
 
 import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
-import {ClientOptions} from './Interfaces';
+import type {ClientOptions} from './Interfaces';
 
 export class ICanHazDadJoke {
   public readonly api: ICanHazDadJokeAPI;

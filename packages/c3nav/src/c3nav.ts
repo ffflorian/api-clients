@@ -28,7 +28,7 @@ import {
   StairsAPI,
   UpdatesAPI,
 } from './api';
-import {API, ClientOptions} from './interfaces';
+import type {API, ClientOptions} from './interfaces';
 
 export class LibrariesIO {
   public readonly api: API;

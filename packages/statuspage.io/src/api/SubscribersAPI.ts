@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {
+import type {
   CombinedSubscriberData,
   ComponentSubscriberData,
   EmailSubscriberData,
@@ -9,7 +9,7 @@ import {
   PhoneSubscriberData,
   WebhookSubscriberData,
 } from '../interfaces/Request';
-import {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
+import type {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
 
 export class SubscribersAPI {
   private readonly apiClient: AxiosInstance;

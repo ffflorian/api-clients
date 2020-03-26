@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Paginated, PaginationOptions, Team} from '../interfaces/';
+import type {ClientOptions, Paginated, PaginationOptions, Team} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class TeamAPI extends APIBase {

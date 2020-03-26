@@ -1,4 +1,4 @@
-import {EmailList} from './EmailList';
+import type {EmailList} from './EmailList';
 
 export interface NewDepartment {
   /**  list of users who are approvers for the department */

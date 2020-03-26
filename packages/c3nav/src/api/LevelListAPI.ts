@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Level, LevelListOptions} from '../interfaces';
+import type {ClientOptions, Level, LevelListOptions} from '../interfaces';
 import {APIBase} from './APIBase';
 
 /**

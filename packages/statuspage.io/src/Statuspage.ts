@@ -2,9 +2,9 @@ import axios, {AxiosInstance} from 'axios';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
-import {API} from './interfaces/API';
-import {ClientOptionsId, ClientOptionsUrl} from './interfaces/ClientOptions';
-import {Components, Status, Summary} from './interfaces/Result';
+import type {API} from './interfaces/API';
+import type {ClientOptionsId, ClientOptionsUrl} from './interfaces/ClientOptions';
+import type {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
   public readonly api: API;

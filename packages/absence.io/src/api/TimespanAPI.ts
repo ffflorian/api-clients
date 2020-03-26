@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, NewTimespan, Paginated, PaginationOptions, Timespan} from '../interfaces/';
+import type {ClientOptions, NewTimespan, Paginated, PaginationOptions, Timespan} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class TimespanAPI extends APIBase {

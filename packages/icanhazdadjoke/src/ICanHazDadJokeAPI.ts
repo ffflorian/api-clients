@@ -1,5 +1,5 @@
-import {AxiosInstance} from 'axios';
-import {
+import type {AxiosInstance} from 'axios';
+import type {
   ClientOptions,
   JokeResult,
   JokeResultWithImage,

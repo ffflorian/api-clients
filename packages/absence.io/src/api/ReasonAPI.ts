@@ -1,8 +1,8 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Paginated} from '../interfaces/';
-import {Reason} from '../interfaces/Reason';
+import type {ClientOptions, Paginated} from '../interfaces/';
+import type {Reason} from '../interfaces/Reason';
 import {APIBase} from './APIBase';
 
 export class ReasonAPI extends APIBase {

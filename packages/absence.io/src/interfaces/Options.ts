@@ -1,10 +1,10 @@
-import {NewAbsence} from './Absence';
-import {NewAllowance} from './Allowance';
-import {NewDepartment} from './Department';
-import {NewLocation} from './Location';
-import {NewReason} from './Reason';
-import {NewTimespan} from './Timespan';
-import {NewUser} from './User';
+import type {NewAbsence} from './Absence';
+import type {NewAllowance} from './Allowance';
+import type {NewDepartment} from './Department';
+import type {NewLocation} from './Location';
+import type {NewReason} from './Reason';
+import type {NewTimespan} from './Timespan';
+import type {NewUser} from './User';
 
 export type Filter = Record<string, string | Record<string, string>>;
 

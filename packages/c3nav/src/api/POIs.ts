@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, POIs} from '../interfaces';
+import type {ClientOptions, POIs} from '../interfaces';
 import {APIBase} from './APIBase';
 
 export class PoisAPI extends APIBase {

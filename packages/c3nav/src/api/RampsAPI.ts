@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Ramps} from '../interfaces/';
+import type {ClientOptions, Ramps} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class RampsAPI extends APIBase {

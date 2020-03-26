@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, LeaveDescriptions} from '../interfaces/';
+import type {ClientOptions, LeaveDescriptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class LeaveDescriptionsAPI extends APIBase {

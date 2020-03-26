@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Routing} from '../interfaces/';
+import type {ClientOptions, Routing} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class RoutingAPI extends APIBase {

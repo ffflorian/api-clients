@@ -1,7 +1,7 @@
-import {AxiosInstance} from 'axios';
+import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
-import {ClientOptions, Doors} from '../interfaces/';
+import type {ClientOptions, Doors} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class DoorsAPI extends APIBase {

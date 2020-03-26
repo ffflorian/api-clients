@@ -1,6 +1,6 @@
-import {Reason} from './Reason';
-import {User} from './User';
-import {WorkingDay} from './WorkingDay';
+import type {Reason} from './Reason';
+import type {User} from './User';
+import type {WorkingDay} from './WorkingDay';
 
 export interface AbsenceDay {
   date: string;
