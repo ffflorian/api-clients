@@ -41,10 +41,7 @@ describe('XKCD', () => {
       .reply(200, responseDataFirst)
       .persist();
 
-    nock('https://xkcd.com')
-      .get('/info.0.json')
-      .reply(200, responseDataLatest)
-      .persist();
+    nock('https://xkcd.com').get('/info.0.json').reply(200, responseDataLatest).persist();
 
     nock('https://imgs.xkcd.com/')
       .get(/.*/)
@@ -53,10 +50,7 @@ describe('XKCD', () => {
       })
       .persist();
 
-    nock('https://example.com')
-      .get(/.*/)
-      .reply(404)
-      .persist();
+    nock('https://example.com').get(/.*/).reply(404).persist();
   });
 
   it('gets the latest comic', async () => {
