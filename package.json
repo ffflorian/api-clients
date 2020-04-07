@@ -7,7 +7,7 @@
     "husky": "4.2.3",
     "lerna": "3.20.2",
     "lint-staged": "10.1.2",
-    "prettier": "2.0.3",
+    "prettier": "2.0.4",
     "tslint": "6.1.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-plugin-prettier": "2.3.0"
