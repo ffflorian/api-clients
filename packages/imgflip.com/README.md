@@ -17,9 +17,10 @@ import {Imgflip} from 'imgflip.com';
 
 const imgflip = new Imgflip();
 
-imgflip.api.getMemes().then(response => {
-  //
-});
+imgflip.api
+  .getMemes().then(response => {
+    //
+  });
 
 imgflip.api
   .captionImage({{
