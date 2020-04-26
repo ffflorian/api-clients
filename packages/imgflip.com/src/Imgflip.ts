@@ -1,16 +1,14 @@
 import axios, {AxiosInstance} from 'axios';
 
-import type {API, ClientOptions, Image, ImageCaptionOptions, Meme, Response} from './interfaces';
+import {Endpoint} from './Endpoints';
+import type {API, Image, ImageCaptionOptions, Meme, Response} from './interfaces';
 
 export class Imgflip {
   private static readonly BASE_URL = 'https://api.imgflip.com';
   public readonly api: API;
   private readonly apiClient: AxiosInstance;
-  private readonly options?: ClientOptions;
 
-  constructor(options?: ClientOptions) {
-    this.options = options;
-
+  constructor() {
     this.apiClient = axios.create({
       baseURL: Imgflip.BASE_URL,
     });
@@ -31,20 +29,8 @@ export class Imgflip {
    * gets very few views (direct image views and image page views both
    * count), it will be auto-deleted to save space.
    */
-  private readonly captionImage = async (
-    options: ImageCaptionOptions | (ImageCaptionOptions & ClientOptions)
-  ): Promise<Response<Image>> => {
-    const requestData: ImageCaptionOptions & Partial<ClientOptions> = options;
-
-    if (this.options?.password) {
-      requestData.password = this.options.password;
-    }
-
-    if (this.options?.username) {
-      requestData.username = this.options.username;
-    }
-
-    const endpoint = '/caption_image';
+  private readonly captionImage = async (options: ImageCaptionOptions): Promise<Response<Image>> => {
+    const endpoint = Endpoint.captionImage();
     const {data} = await this.apiClient.post(endpoint, options);
     return data;
   };
@@ -54,7 +40,7 @@ export class Imgflip {
    * The size of this array and the order of memes may change at any time.
    */
   private readonly getMemes = async (): Promise<Response<Meme[]>> => {
-    const endpoint = '/get_memes';
+    const endpoint = Endpoint.getMemes();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   };

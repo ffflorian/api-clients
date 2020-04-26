@@ -27,11 +27,6 @@ export interface Meme {
   width: number;
 }
 
-export interface ClientOptions {
-  password: string;
-  username: string;
-}
-
 /**
  * `x`, `y`, `width`, and `height` are for the bounding box of the text box. `x` and
  * `y` are the coordinates of the top left corner. If you specify bounding
@@ -56,6 +51,8 @@ interface ImageCaptionBase {
   font?: 'impact' | 'arial';
   /** Maximum font size in pixels. Defaults to `50px`. */
   max_font_size?: string;
+  /** password for the imgflip account */
+  password: string;
   /**
    * A template ID as returned by the `get_memes` response. Any ID that was
    * ever returned from the `get_memes` response should work for this parameter.
@@ -64,6 +61,8 @@ interface ImageCaptionBase {
    * https://imgflip.com/memegenerator/14859329/Charlie-Sheen-DERP.
    */
   template_id: string;
+  /** username of a valid imgflip account. This is used to track where API requests are coming from. */
+  username: string;
 }
 
 export interface ImageCaptionWithBoxes extends ImageCaptionBase {
