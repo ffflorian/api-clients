@@ -15,17 +15,16 @@ A complete documentation is available at https://ffflorian.github.io/api-clients
 ```ts
 import {Imgflip} from 'imgflip.com';
 
-const imgflip = new Imgflip({
-  username: 'myUser',
-  password: 'secret-password',
-});
+const imgflip = new Imgflip();
 
 imgflip.api.getMemes().then(response => {
   //
 });
 
 imgflip.api
-  .captionImage({
+  .captionImage({{
+    username: 'myUser',
+    password: 'secret-password',
     template_id: 438680,
     // ...
   })
