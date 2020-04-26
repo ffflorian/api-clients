@@ -1,5 +1,19 @@
 export interface API {
+  /**
+   * Add a caption to an Imgflip meme template.
+   * Images created with this API will be publicly accessible by anyone
+   * through the url in the response - there is no "private" option.
+   * This does not mean these memes will be posted publicly though,
+   * one still needs to know the exact URL to find the image.
+   * If the image hangs around on Imgflip servers for a while and
+   * gets very few views (direct image views and image page views both
+   * count), it will be auto-deleted to save space.
+   */
   captionImage(options: ImageCaptionOptions): Promise<Response<Image>>;
+  /**
+   * Gets an array of popular memes that may be captioned with this API.
+   * The size of this array and the order of memes may change at any time.
+   */
   getMemes(): Promise<Response<Memes>>;
 }
 
