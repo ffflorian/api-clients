@@ -1,6 +1,6 @@
 export interface API {
   captionImage(options: ImageCaptionOptions): Promise<Response<Image>>;
-  getMemes(): Promise<Response<Meme[]>>;
+  getMemes(): Promise<Response<Memes>>;
 }
 
 export type Response<T> =
@@ -16,6 +16,10 @@ export type Response<T> =
 export interface Image {
   page_url: string;
   url: string;
+}
+
+export interface Memes {
+  memes: Meme[];
 }
 
 export interface Meme {
