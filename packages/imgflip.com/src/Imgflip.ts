@@ -21,7 +21,7 @@ export class Imgflip {
 
   private readonly captionImage = async (options: ImageCaptionOptions): Promise<Response<Image>> => {
     const endpoint = Endpoint.captionImage();
-    const {data} = await this.apiClient.post(endpoint, options);
+    const {data} = await this.apiClient.request({params: options, url: endpoint});
     return data;
   };
 
