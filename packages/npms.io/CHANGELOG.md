@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.6...npms.io@1.1.7) (2020-04-27)
+
+**Note:** Version bump only for package npms.io
+
+
+
+
+
 ## [1.1.6](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.5...npms.io@1.1.6) (2020-04-26)
 
 **Note:** Version bump only for package npms.io
