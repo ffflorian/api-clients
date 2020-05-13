@@ -132,9 +132,8 @@ export class RequestService<T> {
       if (contentType) {
         if (contentType.includes('application/json') || config.responseType) {
           return response;
-        } else {
-          throw new InvalidResponseError('The server responded with invalid data: No JSON sent.');
         }
+        throw new InvalidResponseError('The server responded with invalid data: No JSON sent.');
       } else if (response.status === HTTP_STATUS.NO_CONTENT) {
         return response;
       } else {
