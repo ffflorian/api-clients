@@ -9,7 +9,7 @@
   },
   "description": "An icanhazdadjoke.com API client with a CLI.",
   "devDependencies": {
-    "@types/node": "~12",
+    "@types/node": "~14",
     "rimraf": "3.0.2",
     "ts-node": "8.10.1",
     "typedoc": "0.17.6",

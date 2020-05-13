@@ -6,7 +6,7 @@
   "description": "A libraries.io API client",
   "devDependencies": {
     "@types/jasmine": "3.5.10",
-    "@types/node": "~12",
+    "@types/node": "~14",
     "jasmine": "3.5.0",
     "rimraf": "3.0.2",
     "ts-node": "8.10.1",
