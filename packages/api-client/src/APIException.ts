@@ -1,4 +1,4 @@
-/* tslint:disable:prefer-template */
+/* eslint-disable prefer-template */
 
 import type {AxiosError} from 'axios';
 import * as HTTP_STATUS from 'http-status-codes';

@@ -14,7 +14,7 @@ async function init(dir: string = '.'): Promise<[string, ICanHazDadJoke]> {
     const iCanHazDadJoke = new ICanHazDadJoke();
     return [resolvedPath, iCanHazDadJoke];
   } catch (error) {
-    throw new Error(`The specified path does not exist or is not writable.`);
+    throw new Error('The specified path does not exist or is not writable.');
   }
 }
 
@@ -23,7 +23,9 @@ async function save(filePath: string, imageResult: JokeResultWithImage, silent =
 
   const resolvedFilePath = path.resolve(filePath, `dad_joke_${id}.png`);
   await fsAsync.writeFile(resolvedFilePath, image);
-  silent || console.info(`Saved image to "${resolvedFilePath}".`);
+  if (!silent) {
+    console.info(`Saved image to "${resolvedFilePath}".`);
+  }
 }
 
 const {description, name, version}: {description: string; name: string; version: string} = require('../package.json');
@@ -45,7 +47,7 @@ program
     try {
       const [resolvedPath, iCanHazDadJoke] = await init(command.parent.output);
       const result = await iCanHazDadJoke.api.getRandom({withImage: !!command.parent.image});
-      console.log(result.joke);
+      console.info(result.joke);
       if (command.parent.image) {
         await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
@@ -63,7 +65,7 @@ program
     try {
       const [resolvedPath, iCanHazDadJoke] = await init(command.parent.output);
       const result = await iCanHazDadJoke.api.getById(id, {withImage: !!command.parent.image});
-      console.log(result.joke);
+      console.info(result.joke);
       if (command.parent.image) {
         await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
