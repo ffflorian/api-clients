@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/node": "~12",
     "typedoc": "0.17.6",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "engines": {
     "node": ">= 10.9"
