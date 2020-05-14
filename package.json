@@ -2,7 +2,7 @@
   "author": "Florian Keller <github@floriankeller.de>",
   "description": "API clients for various services.",
   "devDependencies": {
-    "@ffflorian/eslint-config": "0.3.3",
+    "@ffflorian/eslint-config": "0.4.1",
     "@ffflorian/prettier-config": "0.0.6",
     "@typescript-eslint/eslint-plugin": "2.33.0",
     "@typescript-eslint/parser": "2.33.0",
