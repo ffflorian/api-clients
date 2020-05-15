@@ -9,12 +9,6 @@ export interface CustomHeaders {
 
 export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
 
-export enum HttpStatus {
-  'FORBIDDEN' = 403,
-  'NOT_FOUND' = 404,
-  'UNAUTHORIZED' = 401,
-}
-
 type MetricsGroup = 'time' | 'host';
 
 export interface RequestOptions {

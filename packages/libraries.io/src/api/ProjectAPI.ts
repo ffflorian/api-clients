@@ -130,6 +130,7 @@ export class ProjectAPI extends APIBase {
    */
   public async search(query: string, options?: SearchOptions): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.Project.search();
+    // eslint-disable-next-line id-length
     const {data} = await this.apiClient.get(endpoint, {data: {...options, q: query}});
     return data;
   }

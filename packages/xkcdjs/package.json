@@ -11,6 +11,7 @@
   "devDependencies": {
     "@types/jasmine": "3.5.10",
     "@types/node": "~12",
+    "http-status-codes": "1.4.0",
     "jasmine": "3.5.0",
     "nock": "12.0.3",
     "rimraf": "3.0.2",

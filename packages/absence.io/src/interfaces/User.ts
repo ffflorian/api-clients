@@ -56,13 +56,13 @@ export interface User extends Required<NewUser> {
 
 export enum UserStatus {
   /** Account is deleted and will be removed from the system 30 days after deletion. */
-  DELETED = 0,
+  DELETED,
   /** The account was created. The user cannot login yet */
-  CREATED = 1,
+  CREATED,
   /** Account is active. User can login */
-  ACTIVE = 2,
+  ACTIVE,
   /** Account is inactive. User cannot login */
-  INACTIVE = 3,
+  INACTIVE,
   /** The invitation email was sent. The user cannot login yet */
-  EMAIL_SENT = 4,
+  EMAIL_SENT,
 }

@@ -35,7 +35,7 @@
     "*.{json,md}": [
       "prettier --write"
     ],
-    "*.ts": [
+    "packages/**/*.ts": [
       "eslint --fix"
     ]
   },
@@ -48,11 +48,10 @@
     "clean": "lerna run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:other && yarn fix:ts",
-    "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts --fix",
-    "lint": "yarn lint:other && yarn lint:ts",
+    "lint": "yarn lint:ts && yarn lint:other",
     "lint:other": "yarn prettier --list-different",
-    "lint:ts": "eslint --ignore-path .gitignore --ext .ts \"packages/**/src/*\"",
+    "lint:ts": "eslint --ignore-path .gitignore --ext .ts packages",
     "prettier": "prettier \"*.{json,md,yml}\"",
     "release": "lerna publish",
     "test": "yarn lint && yarn test:all",
