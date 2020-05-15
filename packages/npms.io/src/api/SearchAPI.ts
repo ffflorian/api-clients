@@ -19,6 +19,7 @@ export class SearchAPI {
     const endpoint = Endpoint.Search.search();
 
     const params = {
+      // eslint-disable-next-line id-length
       q: encodeURIComponent(query),
       size: options.size,
     };
@@ -53,6 +54,7 @@ export class SearchAPI {
 
     const params = {
       from: options.from,
+      // eslint-disable-next-line id-length
       q: encodeURIComponent(query),
       size: options.size,
     };

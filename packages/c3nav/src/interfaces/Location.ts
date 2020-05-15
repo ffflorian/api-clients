@@ -9,7 +9,7 @@ export interface Location {
 }
 
 export interface LocationDetails {
-  display: Array<[string, string | null | number]>;
+  display: [string, string | null | number][];
   editor_url: string;
   id: number;
 }

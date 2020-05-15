@@ -1,9 +1,0 @@
-{
-  "env": {
-    "jasmine": true
-  },
-  "extends": ".eslintrc.json",
-  "parserOptions": {
-    "project": "tsconfig.jasmine.json"
-  }
-}

@@ -1,5 +1,6 @@
 import * as nock from 'nock';
 import * as XKCDJS from '../src';
+import * as HTTP_STATUS from 'http-status-codes';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
   alt: "Don't we all.",
@@ -38,19 +39,19 @@ describe('XKCD', () => {
 
     nock('https://xkcd.com')
       .get(/\/[0-9]+\/info\.0\.json/)
-      .reply(200, responseDataFirst)
+      .reply(HTTP_STATUS.OK, responseDataFirst)
       .persist();
 
-    nock('https://xkcd.com').get('/info.0.json').reply(200, responseDataLatest).persist();
+    nock('https://xkcd.com').get('/info.0.json').reply(HTTP_STATUS.OK, responseDataLatest).persist();
 
     nock('https://imgs.xkcd.com/')
       .get(/.*/)
-      .reply(200, Buffer.from([]), {
+      .reply(HTTP_STATUS.OK, Buffer.from([]), {
         'content-type': 'image/png',
       })
       .persist();
 
-    nock('https://example.com').get(/.*/).reply(404).persist();
+    nock('https://example.com').get(/.*/).reply(HTTP_STATUS.NOT_FOUND).persist();
   });
 
   it('gets the latest comic', async () => {
