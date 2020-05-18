@@ -1,3 +1,3 @@
 export interface Bounds {
-  bounds: [number, number][];
+  bounds: Array<[number, number]>;
 }
