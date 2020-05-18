@@ -12,7 +12,7 @@
     "@types/node": "~12",
     "rimraf": "3.0.2",
     "ts-node": "8.10.1",
-    "typedoc": "0.17.6",
+    "typedoc": "0.17.7",
     "typescript": "3.9.2"
   },
   "engines": {
