@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as program from 'commander';
+import * as commander from 'commander';
 import {constants as fsConstants, promises as fsAsync} from 'fs';
 import * as path from 'path';
 
@@ -30,9 +30,9 @@ async function save(filePath: string, imageResult: JokeResultWithImage, silent =
 
 const {description, name, version}: {description: string; name: string; version: string} = require('../package.json');
 
-program.on('command:*', () => program.help());
+commander.on('command:*', () => commander.help());
 
-program
+commander
   .name(name.replace(/^@[^/]+\//, ''))
   .version(version, '-v, --version')
   .description(description)
@@ -40,7 +40,7 @@ program
   .option('-i, --image', 'Save the joke as image')
   .option('-s, --silent', `Don't output save messages`);
 
-program
+commander
   .command('random')
   .description('Fetch a random joke')
   .action(async command => {
@@ -53,12 +53,12 @@ program
       }
     } catch (error) {
       console.error(`Error: ${error.message}`);
-      program.outputHelp();
+      commander.outputHelp();
       process.exit(1);
     }
   });
 
-program
+commander
   .command('id <id>')
   .description('Fetch joke by id')
   .action(async (id, command) => {
@@ -71,14 +71,14 @@ program
       }
     } catch (error) {
       console.error(`Error: ${error.message}`);
-      program.outputHelp();
+      commander.outputHelp();
       process.exit(1);
     }
   });
 
-program.parse(process.argv);
+commander.parse(process.argv);
 
 if (!process.argv.slice(2).length) {
-  program.outputHelp();
+  commander.outputHelp();
   process.exit(1);
 }
