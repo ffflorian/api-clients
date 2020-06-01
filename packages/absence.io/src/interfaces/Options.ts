@@ -8,13 +8,16 @@ import type {NewUser} from './User';
 
 export type Filter = Record<string, string | Record<string, string>>;
 
+export type Sorting = Record<string, number>;
+
 export interface PaginationOptions {
-  filter?: Filter;
-  limit: number;
-  relations?: string[];
-  skip: number;
+    filter?: Filter;
+    limit: number;
+    relations?: string[];
+    skip: number;
+    sortBy?: Sorting;
 }
 
 export type RequestOptions =
-  | PaginationOptions
-  | Partial<NewAbsence | NewAllowance | NewDepartment | NewLocation | NewReason | NewTimespan | NewUser>;
+    | PaginationOptions
+    | Partial<NewAbsence | NewAllowance | NewDepartment | NewLocation | NewReason | NewTimespan | NewUser>;
