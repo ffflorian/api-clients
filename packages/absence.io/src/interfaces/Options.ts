@@ -8,7 +8,7 @@ import type {NewUser} from './User';
 
 export type Filter = Record<string, string | Record<string, string>>;
 
-export type Sorting = Record<string, number>;
+export type Sorting = Record<string, 1|-1>;
 
 export interface PaginationOptions {
     filter?: Filter;
