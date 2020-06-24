@@ -1,0 +1,36 @@
+{
+  "author": "Florian Keller <github@floriankeller.de>",
+  "dependencies": {
+    "axios": "0.19.2"
+  },
+  "description": "A corona-warn-app API client",
+  "devDependencies": {
+    "@types/node": "~14",
+    "typedoc": "0.17.7",
+    "typescript": "3.9.5"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "corona-warn-app",
+    "corona",
+    "cwa"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "corona-warn-app",
+  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/corona-warn-app",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/corona-warn-app",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "2.2.4"
+}
