@@ -8,14 +8,22 @@ export class CoronaWarnApp {
   public readonly api: API;
   private readonly apiClient: AxiosInstance;
 
-  constructor(options: ClientOptions) {
+  constructor(options?: ClientOptions) {
     this.apiClient = axios.create({
-      baseURL: CoronaWarnApp.BASE_URL,
+      baseURL: options?.apiUrl || CoronaWarnApp.BASE_URL,
     });
 
     this.api = {
-      applicationConfiguration: new ApplicationConfigurationAPI(this.apiClient, options),
-      diagnosisKeys: new DiagnosisKeysAPI(this.apiClient, options),
+      applicationConfiguration: new ApplicationConfigurationAPI(this.apiClient),
+      diagnosisKeys: new DiagnosisKeysAPI(this.apiClient),
     };
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newUrl The new API URL
+   */
+  public setApiUrl(newUrl: string): void {
+    this.apiClient.defaults.baseURL = newUrl;
   }
 }

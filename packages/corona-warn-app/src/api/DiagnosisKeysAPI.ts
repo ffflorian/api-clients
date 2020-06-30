@@ -1,13 +1,10 @@
 import type {AxiosInstance} from 'axios';
-import type {ClientOptions} from '../interfaces';
 
 export class DiagnosisKeysAPI {
   protected readonly apiClient: AxiosInstance;
-  protected readonly options: ClientOptions;
 
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: AxiosInstance) {
     this.apiClient = apiClient;
-    this.options = options;
   }
 
   /**
