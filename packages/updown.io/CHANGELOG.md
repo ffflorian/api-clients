@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.11](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@2.2.10...updown.io@2.2.11) (2020-06-30)
+
+**Note:** Version bump only for package updown.io
+
+
+
+
+
 ## [2.2.10](https://github.com/ffflorian/api-clients/tree/master/updown.io/compare/updown.io@2.2.9...updown.io@2.2.10) (2020-06-24)
 
 **Note:** Version bump only for package updown.io
