@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.13](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@1.1.12...crates.io@1.1.13) (2020-06-30)
+
+**Note:** Version bump only for package crates.io
+
+
+
+
+
 ## [1.1.12](https://github.com/ffflorian/api-clients/tree/master/packages/crates.io/compare/crates.io@1.1.11...crates.io@1.1.12) (2020-06-24)
 
 **Note:** Version bump only for package crates.io
