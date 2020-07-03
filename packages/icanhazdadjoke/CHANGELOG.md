@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.12](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.11...@ffflorian/icanhazdadjoke@1.1.12) (2020-06-30)
+## [1.1.12](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.11...@ffflorian/icanhazdadjoke@1.1.12) (2020-06-30)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.11](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.10...@ffflorian/icanhazdadjoke@1.1.11) (2020-06-24)
+## [1.1.11](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.10...@ffflorian/icanhazdadjoke@1.1.11) (2020-06-24)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -19,7 +19,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.10](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.9...@ffflorian/icanhazdadjoke@1.1.10) (2020-06-02)
+## [1.1.10](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.9...@ffflorian/icanhazdadjoke@1.1.10) (2020-06-02)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -27,7 +27,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.9](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.8...@ffflorian/icanhazdadjoke@1.1.9) (2020-05-24)
+## [1.1.9](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.8...@ffflorian/icanhazdadjoke@1.1.9) (2020-05-24)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -35,7 +35,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.8](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.7...@ffflorian/icanhazdadjoke@1.1.8) (2020-05-13)
+## [1.1.8](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.7...@ffflorian/icanhazdadjoke@1.1.8) (2020-05-13)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -43,7 +43,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.7](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.6...@ffflorian/icanhazdadjoke@1.1.7) (2020-04-27)
+## [1.1.7](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.6...@ffflorian/icanhazdadjoke@1.1.7) (2020-04-27)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -51,7 +51,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.6](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.5...@ffflorian/icanhazdadjoke@1.1.6) (2020-04-26)
+## [1.1.6](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.5...@ffflorian/icanhazdadjoke@1.1.6) (2020-04-26)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -59,7 +59,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.5](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.4...@ffflorian/icanhazdadjoke@1.1.5) (2020-02-13)
+## [1.1.5](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.4...@ffflorian/icanhazdadjoke@1.1.5) (2020-02-13)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -67,7 +67,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.4](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.3...@ffflorian/icanhazdadjoke@1.1.4) (2020-01-22)
+## [1.1.4](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.3...@ffflorian/icanhazdadjoke@1.1.4) (2020-01-22)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
 
@@ -75,34 +75,34 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.3](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.2...@ffflorian/icanhazdadjoke@1.1.3) (2020-01-17)
+## [1.1.3](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.2...@ffflorian/icanhazdadjoke@1.1.3) (2020-01-17)
 
 
 ### Bug Fixes
 
-* **icanhazdadjoke:** Interface typo ([6c7e95a](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/commit/6c7e95a))
+* **icanhazdadjoke:** Interface typo ([6c7e95a](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/6c7e95a))
 
 
 
 
 
-## [1.1.2](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.1...@ffflorian/icanhazdadjoke@1.1.2) (2020-01-17)
-
-
-### Bug Fixes
-
-* **icanhazdadjoke:** Return values and interface name ([85de2b4](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/commit/85de2b4))
-
-
-
-
-
-## [1.1.1](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.0...@ffflorian/icanhazdadjoke@1.1.1) (2020-01-17)
+## [1.1.2](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.1...@ffflorian/icanhazdadjoke@1.1.2) (2020-01-17)
 
 
 ### Bug Fixes
 
-* **icanhazdadjoke:** Typo in user agent ([569efd1](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/commit/569efd1))
+* **icanhazdadjoke:** Return values and interface name ([85de2b4](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/85de2b4))
+
+
+
+
+
+## [1.1.1](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.0...@ffflorian/icanhazdadjoke@1.1.1) (2020-01-17)
+
+
+### Bug Fixes
+
+* **icanhazdadjoke:** Typo in user agent ([569efd1](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/569efd1))
 
 
 
@@ -113,4 +113,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **icanhazdadjoke:** Add package icanhazdadjoke ([#280](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/issues/280)) ([82dbf40](https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke/commit/82dbf40))
+* **icanhazdadjoke:** Add package icanhazdadjoke ([#280](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/issues/280)) ([82dbf40](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/82dbf40))

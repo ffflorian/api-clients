@@ -24,7 +24,7 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "statuspage.io",
-  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/statuspage.io",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io",
   "scripts": {
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/statuspage.io",

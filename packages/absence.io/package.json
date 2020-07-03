@@ -27,7 +27,7 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "absence.io",
-  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/absence.io",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/absence.io",
   "scripts": {
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/absence.io",

@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.11](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.10...npms.io@1.1.11) (2020-06-30)
+## [1.1.11](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.10...npms.io@1.1.11) (2020-06-30)
 
 **Note:** Version bump only for package npms.io
 
@@ -11,7 +11,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.10](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.9...npms.io@1.1.10) (2020-06-24)
+## [1.1.10](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.9...npms.io@1.1.10) (2020-06-24)
 
 **Note:** Version bump only for package npms.io
 
@@ -19,7 +19,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.9](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.8...npms.io@1.1.9) (2020-05-24)
+## [1.1.9](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.8...npms.io@1.1.9) (2020-05-24)
 
 **Note:** Version bump only for package npms.io
 
@@ -27,7 +27,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.8](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.7...npms.io@1.1.8) (2020-05-13)
+## [1.1.8](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.7...npms.io@1.1.8) (2020-05-13)
 
 **Note:** Version bump only for package npms.io
 
@@ -35,7 +35,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.7](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.6...npms.io@1.1.7) (2020-04-27)
+## [1.1.7](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.6...npms.io@1.1.7) (2020-04-27)
 
 **Note:** Version bump only for package npms.io
 
@@ -43,7 +43,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.6](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.5...npms.io@1.1.6) (2020-04-26)
+## [1.1.6](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.5...npms.io@1.1.6) (2020-04-26)
 
 **Note:** Version bump only for package npms.io
 
@@ -51,7 +51,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.5](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.4...npms.io@1.1.5) (2020-02-13)
+## [1.1.5](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.4...npms.io@1.1.5) (2020-02-13)
 
 **Note:** Version bump only for package npms.io
 
@@ -59,7 +59,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.4](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.3...npms.io@1.1.4) (2020-01-22)
+## [1.1.4](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.3...npms.io@1.1.4) (2020-01-22)
 
 **Note:** Version bump only for package npms.io
 
@@ -67,7 +67,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.3](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.2...npms.io@1.1.3) (2020-01-17)
+## [1.1.3](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.2...npms.io@1.1.3) (2020-01-17)
 
 **Note:** Version bump only for package npms.io
 
@@ -75,7 +75,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.2](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.1...npms.io@1.1.2) (2020-01-16)
+## [1.1.2](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.1...npms.io@1.1.2) (2020-01-16)
 
 **Note:** Version bump only for package npms.io
 
@@ -83,7 +83,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.1](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/compare/npms.io@1.1.0...npms.io@1.1.1) (2020-01-15)
+## [1.1.1](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.1.0...npms.io@1.1.1) (2020-01-15)
 
 **Note:** Version bump only for package npms.io
 
@@ -96,4 +96,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* **npms.io:** Add package npms.io ([#172](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/issues/172)) ([1fd7f7f](https://github.com/ffflorian/api-clients/tree/master/packages/npms.io/commit/1fd7f7f))
+* **npms.io:** Add package npms.io ([#172](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/issues/172)) ([1fd7f7f](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/commit/1fd7f7f))
