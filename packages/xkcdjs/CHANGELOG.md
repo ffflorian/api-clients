@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/ffflorian/api-clients/tree/main/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.2.18...@ffflorian/xkcdjs@2.3.0) (2020-07-03)
+
+
+### Features
+
+* Switch to new main branch ([4cb38b0](https://github.com/ffflorian/api-clients/tree/main/packages/xkcdjs/commit/4cb38b0))
+
+
+
+
+
 ## [2.2.18](https://github.com/ffflorian/api-clients/tree/main/packages/xkcdjs/compare/@ffflorian/xkcdjs@2.2.17...@ffflorian/xkcdjs@2.2.18) (2020-06-30)
 
 **Note:** Version bump only for package @ffflorian/xkcdjs

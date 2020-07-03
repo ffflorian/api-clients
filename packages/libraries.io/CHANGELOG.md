@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/ffflorian/api-clients/tree/main/packages/libraries.io/compare/libraries.io@2.2.12...libraries.io@2.3.0) (2020-07-03)
+
+
+### Features
+
+* Switch to new main branch ([4cb38b0](https://github.com/ffflorian/api-clients/tree/main/packages/libraries.io/commit/4cb38b0))
+
+
+
+
+
 ## [2.2.12](https://github.com/ffflorian/api-clients/tree/main/packages/libraries.io/compare/libraries.io@2.2.11...libraries.io@2.2.12) (2020-06-30)
 
 **Note:** Version bump only for package libraries.io

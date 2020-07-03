@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.12...@ffflorian/icanhazdadjoke@1.2.0) (2020-07-03)
+
+
+### Features
+
+* Switch to new main branch ([4cb38b0](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/4cb38b0))
+
+
+
+
+
 ## [1.1.12](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@1.1.11...@ffflorian/icanhazdadjoke@1.1.12) (2020-06-30)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
