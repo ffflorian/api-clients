@@ -30,7 +30,7 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "@ffflorian/icanhazdadjoke",
-  "repository": "https://github.com/ffflorian/api-clients/tree/master/packages/icanhazdadjoke",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke",
   "scripts": {
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/icanhazdadjoke",

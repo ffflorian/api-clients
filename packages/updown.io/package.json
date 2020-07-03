@@ -25,7 +25,7 @@
   "license": "GPL-3.0",
   "main": "dist/index.js",
   "name": "updown.io",
-  "repository": "https://github.com/ffflorian/api-clients/tree/master/updown.io",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/updown.io",
   "scripts": {
     "build:ts": "tsc",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/updown.io",
