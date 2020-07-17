@@ -10,7 +10,7 @@
     "@types/node": "~14",
     "rimraf": "3.0.2",
     "typedoc": "0.17.8",
-    "typescript": "3.9.6"
+    "typescript": "3.9.7"
   },
   "engines": {
     "node": ">= 10.9"
