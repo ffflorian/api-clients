@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
-    "commander": "5.1.0"
+    "commander": "6.0.0"
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
