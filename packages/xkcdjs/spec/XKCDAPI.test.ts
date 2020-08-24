@@ -1,6 +1,6 @@
 import * as nock from 'nock';
 import * as XKCDJS from '../src';
-import * as HTTP_STATUS from 'http-status-codes';
+import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
   alt: "Don't we all.",
