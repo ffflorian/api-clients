@@ -6,24 +6,27 @@ jobs:
   build_lint_test:
     name: Build, lint and test
     runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.head_commit.message, '[ci skip]') &&
-      !contains(github.event.head_commit.message, '[skip ci]')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+      - name: Get commit message
+        run: |
+          COMMIT_MESSAGE=$(git log --format=%B -n 1 ${{github.event.after}})
+          echo "::set-env name=COMMIT_MESSAGE::${COMMIT_MESSAGE}"
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v1
-        with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-yarn-
+        if: |
+          !contains(env.COMMIT_MESSAGE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE, '[skip ci]')
+      - name: Yarn cache
+        uses: c-hive/gha-yarn-cache@v1
+        if: |
+          !contains(env.COMMIT_MESSAGE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE, '[skip ci]')
       - name: Build, lint and test
         run: |
           yarn
@@ -31,3 +34,6 @@ jobs:
           yarn lint
           yarn dist
           yarn test
+        if: |
+          !contains(env.COMMIT_MESSAGE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE, '[skip ci]')
