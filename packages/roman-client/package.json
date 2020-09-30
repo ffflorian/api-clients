@@ -1,0 +1,37 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "dependencies": {
+    "axios": "0.20.0"
+  },
+  "description": "An API client for Wire's Lithium proxy Roman.",
+  "devDependencies": {
+    "@types/node": "~14",
+    "typedoc": "0.18.0",
+    "typescript": "4.0.2"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "roman",
+    "wire",
+    "lithium",
+    "bots"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "roman-client",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/roman-client",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/roman-client",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "1.0.0"
+}
