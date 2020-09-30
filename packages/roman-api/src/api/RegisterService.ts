@@ -1,5 +1,5 @@
 import {AxiosInstance, AxiosRequestConfig} from 'axios';
-import {NewService} from '../interfaces';
+import {NewUser} from '../interfaces';
 
 export class RegisterService {
   private readonly apiClient: AxiosInstance;
@@ -8,7 +8,7 @@ export class RegisterService {
     this.apiClient = apiClient;
   }
 
-  public async postRegister(data?: NewService): Promise<void> {
+  public async postRegister(data?: NewUser): Promise<void> {
     const config: AxiosRequestConfig = {
       data,
       method: 'post',
