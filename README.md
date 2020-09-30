@@ -11,6 +11,7 @@ API clients for various services.
 - [`icanhazdadjoke`](./packages/icanhazdadjoke/) [![npm version](https://img.shields.io/npm/v/@ffflorian/icanhazdadjoke.svg)](https://www.npmjs.com/package/@ffflorian/icanhazdadjoke)
 - [`libraries.io`](./packages/libraries.io/) [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 - [`npms.io`](./packages/npms.io/) [![npm version](https://img.shields.io/npm/v/npms.io.svg)](https://www.npmjs.com/package/npms.io)
+- [`roman-api`](./packages/roman-api/) [![npm version](https://img.shields.io/npm/v/roman-api.svg)](https://www.npmjs.com/package/roman-api)
 - [`statuspage.io`](./packages/statuspage.io/) [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 - [`updown.io`](./packages/updown.io/) [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
 - [`xkcdjs`](./packages/xkcdjs/) [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg)](https://www.npmjs.com/package/@ffflorian/xkcdjs)
