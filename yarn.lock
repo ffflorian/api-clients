@@ -1095,10 +1095,10 @@
     "@types/hapi__shot" "*"
     "@types/node" "*"
 
-"@types/hapi__hawk@8.0.0":
-  version "8.0.0"
-  resolved "https://registry.npmjs.org/@types/hapi__hawk/-/hapi__hawk-8.0.0.tgz#0a1713abc2d3bc5b47497a1b0fc44f58cdd9c547"
-  integrity sha512-kfDYW70HZWWa2B07JNFrUikZis3iIKI+pfH+aE5Es07mM6ny927mwnXs2udRr4wZ9W0RgowMUnyxlvDmWh9l5A==
+"@types/hapi__hawk@8.0.1":
+  version "8.0.1"
+  resolved "https://registry.npmjs.org/@types/hapi__hawk/-/hapi__hawk-8.0.1.tgz#b0ac6f67eb13277e8f26377ff4d8c6e51a4dfda1"
+  integrity sha512-YeZE/VxuTiaDhLhP+7PnEyrnaXEDT9KORyem65u3eB84q7ZLjkGx5qBsK5lwb1+Hk2OBf6e6wqTv2yVbRL0/gA==
   dependencies:
     "@hapi/boom" "^9.0.0"
     "@types/crypto-js" "*"
