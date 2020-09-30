@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.3.0 (2020-09-30)
+
+
+### Features
+
+* Add roman-client ([#517](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/issues/517)) ([ff97881](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/commit/ff97881a1fc0bcc5938fa6a2ed842cdbf30d2a7a))
+
+
+
+
+
 ## [1.2.1](https://github.com/ffflorian/api-clients/tree/main/packages/npms.io/compare/npms.io@1.2.0...npms.io@1.2.1) (2020-08-27)
 
 **Note:** Version bump only for package npms.io
