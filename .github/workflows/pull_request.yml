@@ -14,7 +14,7 @@ jobs:
       - name: Get commit message
         run: |
           COMMIT_MESSAGE=$(git log --format=%B -n 1 ${{github.event.after}})
-          echo "::set-env name=COMMIT_MESSAGE::${COMMIT_MESSAGE}"
+          echo "COMMIT_MESSAGE=${COMMIT_MESSAGE}" >> "${GITHUB_ENV}"
       - name: Set up Node.js
         uses: actions/setup-node@v1
         with:
