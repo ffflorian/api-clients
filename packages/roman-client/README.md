@@ -17,17 +17,25 @@ import {Roman} from 'roman-client';
 
 const roman = new Roman('https://example.com');
 
-roman.api.loginService
-  .login()
-  .then(response => {
-    return roman.api.serviceService.postService({
-      name: 'My Weather Bot',
-      summary: 'Display the weather in your region.',
-    });
-  })
-  .then(data => {
-    // ...
-  });
+await roman.register({
+  email: "email@example.com",
+  name: "My Name",
+  password: "My Password",
+});
+
+await roman.login({
+  email: "email@example.com",
+  password: "My Password",
+});
+
+await roman.registerService({
+  name: "My Weather Bot",
+  summary: "Display the weather in your region.",
+});
+
+const myService = await roman.getService();
+
+// ...
 ```
 
 ## Build and test

@@ -1,5 +1,4 @@
 export * from './Asset';
-export * from './API';
 export * from './Attachment';
 export * from './Conversation';
 export * from './ErrorMessage';
@@ -11,9 +10,10 @@ export * from './NewUser';
 export * from './OutgoingMessage';
 export * from './Poll';
 export * from './PostMessageResult';
+export * from './RegisterInfo';
 export * from './Result';
 export * from './Service';
-export * from './SignIn';
+export * from './SignInData';
 export * from './Text';
 export * from './UpdateService';
 export * from './User';
