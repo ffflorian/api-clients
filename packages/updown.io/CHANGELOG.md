@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.0.0 (2020-10-22)
+
+
+### Features
+
+* **roman-client:** Rewrite API and add Cookies ([6a175f4](https://github.com/ffflorian/api-clients/tree/main/updown.io/commit/6a175f4b447e766064ef4f83e87919b3a0302768))
+
+
+### BREAKING CHANGES
+
+* **roman-client:** The API got much smaller and is accessible directly now.
+
+
+
+
+
 # 2.4.0 (2020-09-30)
 
 
