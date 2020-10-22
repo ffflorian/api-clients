@@ -1,10 +1,12 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "axios": "0.20.0"
+    "axios": "0.20.0",
+    "tough-cookie": "4.0.0"
   },
   "description": "An API client for Wire's Lithium proxy Roman.",
   "devDependencies": {
+    "@types/cookiejar": "2.1.2",
     "@types/node": "~14",
     "typedoc": "0.18.0",
     "typescript": "4.0.2"

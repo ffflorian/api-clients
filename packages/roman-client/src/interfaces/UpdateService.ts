@@ -1,5 +1,3 @@
-export interface UpdateService {
-  avatar?: string;
-  name?: string;
-  url?: string;
-}
+import {NewService} from './NewService';
+
+export type UpdateService = Omit<Partial<NewService>, 'summary'>;
