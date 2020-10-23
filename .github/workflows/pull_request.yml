@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 2
       - name: Get commit message
         run: |
-          COMMIT_MESSAGE=$(git log --format=%B -n 1 ${{github.event.after}})
+          COMMIT_MESSAGE="$(git log --format=%B -n 1 ${{github.event.after}})"
           echo "COMMIT_MESSAGE=${COMMIT_MESSAGE}" >> "${GITHUB_ENV}"
       - name: Set up Node.js
         uses: actions/setup-node@v1
