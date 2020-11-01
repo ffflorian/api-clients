@@ -2,14 +2,14 @@
 
 # Environment variables:
 #
-# - GH_TOKEN: A GitHub token for pushing to GitHub (required)
+# - GITHUB_TOKEN: A GitHub token for pushing to GitHub (required)
 # - GH_USER: A GitHub user for pushing to GitHub (required)
 
 set -e
 
 SCOPE=""
 
-if [ -z "${GH_TOKEN}" ]; then
+if [ -z "${GITHUB_TOKEN}" ]; then
   echo "No GitHub token set."
   exit 1
 fi
