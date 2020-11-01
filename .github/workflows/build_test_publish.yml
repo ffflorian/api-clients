@@ -1,0 +1,83 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build_test_publish:
+    name: Build, test and publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Set environment variables
+        run: |
+          GH_COMMIT_MESSAGE="$(head -n 1 <<< "${{github.event.head_commit.message}}")"
+          GIT_COMMIT_MESSAGE="$(git log --format=%B -n 1 ${{github.event.after}} | head -n 1)"
+          echo "BRANCH_NAME=$(git branch --show-current)" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=\"$(test "${GH_COMMIT_MESSAGE}" && echo "${GH_COMMIT_MESSAGE}" || echo "${GIT_COMMIT_MESSAGE}")\"" >> $GITHUB_ENV
+          echo "PR_TITLE=\"${{github.event.pull_request.title}}\"" >> $GITHUB_ENV
+          cat "${GITHUB_ENV}"
+
+      - name: Set up Node.js
+        if: |
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Get yarn cache
+        if: |
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{steps.yarn-cache-dir-path.outputs.dir}}
+          key: ${{runner.os}}-yarn-${{hashFiles('**/yarn.lock')}}
+          restore-keys: |
+            ${{runner.os}}-yarn-
+
+      - name: Build, lint and test
+        if: |
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+        run: |
+          yarn
+          yarn boot
+          yarn lint
+          yarn dist
+          yarn test
+
+      - name: Release
+        if: |
+          env.BRANCH_NAME == 'main' &&
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
+          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]') &&
+          !startsWith(env.COMMIT_MESSAGE || env.PR_TITLE, 'chore')
+        env:
+          GIT_AUTHOR_NAME: ffflobot
+          GIT_AUTHOR_EMAIL: ffflobot@users.noreply.github.com
+          GIT_COMMITTER_NAME: ffflobot
+          GIT_COMMITTER_EMAIL: ffflobot@users.noreply.github.com
+          GH_USER: ffflobot
+          GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          git config --global "user.email" "${GIT_AUTHOR_EMAIL}"
+          git config --global "user.name" "${GIT_AUTHOR_NAME}"
+          REPO_URL="$(git remote get-url origin | sed -n "s/https:\/\/github.com\//https:\/\/${GIT_AUTHOR_NAME}:${GH_TOKEN}@github.com\//p")"
+          git remote set-url origin "${REPO_URL}"
+          git checkout main
+          ./bin/rebuild-docs.sh
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> "${HOME}/.npmrc"
+          yarn release
