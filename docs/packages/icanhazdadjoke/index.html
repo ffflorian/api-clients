@@ -82,7 +82,7 @@ Options:
   -v, <span class="hljs-comment">--version       output the version number</span>
   -o, <span class="hljs-comment">--output &lt;dir&gt;  Specify the output directory (default: current directory)</span>
   -i, <span class="hljs-comment">--image         Save the joke as image</span>
-  -s, <span class="hljs-comment">--silent        Don't output save messages</span>
+  -s, <span class="hljs-comment">--silent        Don&#x27;t output save messages</span>
   -h, <span class="hljs-comment">--help          output usage information</span>
 
 Commands:
@@ -95,7 +95,7 @@ Commands:
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h4>Example</h4>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {ICanHazDadJoke} <span class="hljs-keyword">from</span> <span class="hljs-string">'@ffflorian/icanhazdadjoke'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {ICanHazDadJoke} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ffflorian/icanhazdadjoke&#x27;</span>;
 
 <span class="hljs-keyword">const</span> iCanHazDadJoke = <span class="hljs-keyword">new</span> ICanHazDadJoke();
 
@@ -103,27 +103,27 @@ iCanHazDadJoke.api.getRandom().then(<span class="hljs-function"><span class="hlj
   <span class="hljs-comment">// JokeResult</span>
 });
 
-iCanHazDadJoke.api.getById(<span class="hljs-string">'R7UfaahVfFd'</span>).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.getById(<span class="hljs-string">&#x27;R7UfaahVfFd&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeResult</span>
 });
 
-iCanHazDadJoke.api.getRandom({withImage: <span class="hljs-literal">true</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.getRandom({<span class="hljs-attr">withImage</span>: <span class="hljs-literal">true</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeResultWithImage</span>
 });
 
-iCanHazDadJoke.api.getById(<span class="hljs-string">'R7UfaahVfFd'</span>, {withImage: <span class="hljs-literal">true</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.getById(<span class="hljs-string">&#x27;R7UfaahVfFd&#x27;</span>, {<span class="hljs-attr">withImage</span>: <span class="hljs-literal">true</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeResultWithImage</span>
 });
 
-iCanHazDadJoke.api.search(<span class="hljs-string">'dog'</span>).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.search(<span class="hljs-string">&#x27;dog&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeSearchResult</span>
 });
 
-iCanHazDadJoke.api.search({term: <span class="hljs-string">'dog'</span>, limit: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.search({<span class="hljs-attr">term</span>: <span class="hljs-string">&#x27;dog&#x27;</span>, <span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeSearchResult</span>
 });
 
-iCanHazDadJoke.api.search(<span class="hljs-string">'dog'</span>, {limit: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+iCanHazDadJoke.api.search(<span class="hljs-string">&#x27;dog&#x27;</span>, {<span class="hljs-attr">limit</span>: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
   <span class="hljs-comment">// JokeSearchResult</span>
 });</code></pre>
 			</div>
