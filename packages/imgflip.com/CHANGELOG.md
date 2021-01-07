@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/compare/imgflip.com@3.0.2...imgflip.com@3.0.3) (2021-01-07)
+
+
+### Bug Fixes
+
+* **imgflip.com:** Array params ([#575](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/issues/575)) ([ab4d168](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/commit/ab4d1684e73876f75d9cf0ce694dcb346ba85c91))
+
+
+
+
+
 ## 3.0.2 (2021-01-07)
 
 **Note:** Version bump only for package imgflip.com
