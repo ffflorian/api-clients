@@ -77,34 +77,34 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {LibrariesIO} <span class="hljs-keyword">from</span> <span class="hljs-string">'libraries.io'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {LibrariesIO} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;libraries.io&#x27;</span>;
 
-<span class="hljs-keyword">const</span> librariesIO = <span class="hljs-keyword">new</span> LibrariesIO(<span class="hljs-string">'my-api-key'</span>);
+<span class="hljs-keyword">const</span> librariesIO = <span class="hljs-keyword">new</span> LibrariesIO(<span class="hljs-string">&#x27;my-api-key&#x27;</span>);
 
-librariesIO.api.project.getProject(<span class="hljs-string">'npm'</span>, <span class="hljs-string">'grunt'</span>).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+librariesIO.api.project.getProject(<span class="hljs-string">&#x27;npm&#x27;</span>, <span class="hljs-string">&#x27;grunt&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
   <span class="hljs-comment">//</span>
 });
 
 librariesIO.api.project
-  .search(<span class="hljs-string">'grunt'</span>, {
-    filter: {
-      platforms: [<span class="hljs-string">'npm'</span>],
-      licenses: [<span class="hljs-string">'MIT'</span>],
+  .search(<span class="hljs-string">&#x27;grunt&#x27;</span>, {
+    <span class="hljs-attr">filter</span>: {
+      <span class="hljs-attr">platforms</span>: [<span class="hljs-string">&#x27;npm&#x27;</span>],
+      <span class="hljs-attr">licenses</span>: [<span class="hljs-string">&#x27;MIT&#x27;</span>],
     },
   })
   .then(<span class="hljs-function"><span class="hljs-params">projects</span> =&gt;</span> {
     <span class="hljs-comment">// ...</span>
   });
 
-librariesIO.api.github.user.getUser(<span class="hljs-string">'ffflorian'</span>).then(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> {
+librariesIO.api.github.user.getUser(<span class="hljs-string">&#x27;ffflorian&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> {
   <span class="hljs-comment">// ...</span>
 });
 
-librariesIO.api.platform.getPlatforms({page: <span class="hljs-number">2</span>, perPage: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">platforms</span> =&gt;</span> {
+librariesIO.api.platform.getPlatforms({<span class="hljs-attr">page</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">perPage</span>: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">platforms</span> =&gt;</span> {
   <span class="hljs-comment">// ...</span>
 });
 
-librariesIO.api.user.subscribe(<span class="hljs-string">'npm'</span>, <span class="hljs-string">'grunt'</span>).then(<span class="hljs-function"><span class="hljs-params">subscription</span> =&gt;</span> {
+librariesIO.api.user.subscribe(<span class="hljs-string">&#x27;npm&#x27;</span>, <span class="hljs-string">&#x27;grunt&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">subscription</span> =&gt;</span> {
   <span class="hljs-comment">// ...</span>
 });</code></pre>
 				<a href="#build-and-test" id="build-and-test" style="color: inherit; text-decoration: none;">

@@ -77,24 +77,24 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {Roman} <span class="hljs-keyword">from</span> <span class="hljs-string">'roman-client'</span>;
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {Roman} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;roman-client&#x27;</span>;
 
-<span class="hljs-keyword">const</span> roman = <span class="hljs-keyword">new</span> Roman(<span class="hljs-string">'https://example.com'</span>);
+<span class="hljs-keyword">const</span> roman = <span class="hljs-keyword">new</span> Roman(<span class="hljs-string">&#x27;https://example.com&#x27;</span>);
 
 <span class="hljs-keyword">await</span> roman.register({
-  email: <span class="hljs-string">"email@example.com"</span>,
-  name: <span class="hljs-string">"My Name"</span>,
-  password: <span class="hljs-string">"My Password"</span>,
+  <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;email@example.com&quot;</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;My Name&quot;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;My Password&quot;</span>,
 });
 
 <span class="hljs-keyword">await</span> roman.login({
-  email: <span class="hljs-string">"email@example.com"</span>,
-  password: <span class="hljs-string">"My Password"</span>,
+  <span class="hljs-attr">email</span>: <span class="hljs-string">&quot;email@example.com&quot;</span>,
+  <span class="hljs-attr">password</span>: <span class="hljs-string">&quot;My Password&quot;</span>,
 });
 
 <span class="hljs-keyword">await</span> roman.registerService({
-  name: <span class="hljs-string">"My Weather Bot"</span>,
-  summary: <span class="hljs-string">"Display the weather in your region."</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;My Weather Bot&quot;</span>,
+  <span class="hljs-attr">summary</span>: <span class="hljs-string">&quot;Display the weather in your region.&quot;</span>,
 });
 
 <span class="hljs-keyword">const</span> myService = <span class="hljs-keyword">await</span> roman.getService();
