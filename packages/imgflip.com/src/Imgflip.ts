@@ -1,4 +1,5 @@
 import axios, {AxiosInstance} from 'axios';
+import * as qs from 'qs';
 
 import {Endpoint} from './Endpoints';
 import type {API, Image, ImageCaptionOptions, Memes, Response} from './interfaces';
@@ -11,6 +12,7 @@ export class Imgflip {
   constructor() {
     this.apiClient = axios.create({
       baseURL: Imgflip.BASE_URL,
+      paramsSerializer: params => qs.stringify(params, {arrayFormat: 'brackets'}),
     });
 
     this.api = {
