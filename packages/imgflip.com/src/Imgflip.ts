@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
+import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
 import * as qs from 'qs';
 
 import {Endpoint} from './Endpoints';
@@ -9,10 +9,9 @@ export class Imgflip {
   public readonly api: API;
   private readonly apiClient: AxiosInstance;
 
-  constructor() {
+  constructor(apiUrl?: string) {
     this.apiClient = axios.create({
-      baseURL: Imgflip.BASE_URL,
-      paramsSerializer: params => qs.stringify(params, {arrayFormat: 'indices'}),
+      baseURL: apiUrl || Imgflip.BASE_URL,
     });
 
     this.api = {
@@ -21,9 +20,17 @@ export class Imgflip {
     };
   }
 
-  private readonly captionImage = async (options: ImageCaptionOptions): Promise<Response<Image>> => {
+  private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {
     const endpoint = Endpoint.captionImage();
-    const {data} = await this.apiClient.request({params: options, url: endpoint});
+    const config: AxiosRequestConfig = {
+      data: qs.stringify(params, {arrayFormat: 'indices'}),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      method: 'post',
+      url: endpoint,
+    };
+    const {data} = await this.apiClient.request(config);
     return data;
   };
 
@@ -32,4 +39,12 @@ export class Imgflip {
     const {data} = await this.apiClient.get(endpoint);
     return data;
   };
+
+  /**
+   * Set a new API URL.
+   * @param newUrl The new API url
+   */
+  public setApiUrl(newUrl: string): void {
+    this.apiClient.defaults.baseURL = newUrl;
+  }
 }
