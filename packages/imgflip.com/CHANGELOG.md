@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.4](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/compare/imgflip.com@3.0.3...imgflip.com@3.0.4) (2021-01-08)
+
+
+### Bug Fixes
+
+* **imgflip.com:** Use indexed arrays in query ([50dfff1](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/commit/50dfff1ee480d6d8f222f43b73decc5c25c932fb))
+
+
+
+
+
 ## [3.0.3](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/compare/imgflip.com@3.0.2...imgflip.com@3.0.3) (2021-01-07)
 
 
