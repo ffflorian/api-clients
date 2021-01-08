@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/compare/imgflip.com@3.0.4...imgflip.com@3.1.0) (2021-01-08)
+
+
+### Features
+
+* **imgflip.com:** Use body for post requests, add custom API URL ([d889216](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/commit/d889216c60c162ddb6072c2fa7a41755a1ebbee9))
+
+
+
+
+
 ## [3.0.4](https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com/compare/imgflip.com@3.0.3...imgflip.com@3.0.4) (2021-01-08)
 
 
