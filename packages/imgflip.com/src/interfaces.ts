@@ -78,7 +78,7 @@ interface ImageCaptionBase {
    * memegenerator URL, e.g.
    * https://imgflip.com/memegenerator/14859329/Charlie-Sheen-DERP.
    */
-  template_id: string;
+  template_id: number | string;
   /** username of a valid imgflip account. This is used to track where API requests are coming from. */
   username: string;
 }
