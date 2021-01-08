@@ -12,7 +12,7 @@ export class Imgflip {
   constructor() {
     this.apiClient = axios.create({
       baseURL: Imgflip.BASE_URL,
-      paramsSerializer: params => qs.stringify(params, {arrayFormat: 'brackets'}),
+      paramsSerializer: params => qs.stringify(params, {arrayFormat: 'indices'}),
     });
 
     this.api = {
