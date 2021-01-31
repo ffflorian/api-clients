@@ -69,6 +69,14 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_interfaces_result_.incidentimpact.html" class="tsd-kind-icon">Incident<wbr>Impact</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_interfaces_result_.incidentstatus.html" class="tsd-kind-icon">Incident<wbr>Status</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/_interfaces_result_.maintenancestatus.html" class="tsd-kind-icon">Maintenance<wbr>Status</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.component.html" class="tsd-kind-icon">Component</a></li>
@@ -79,7 +87,6 @@
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.incidents.html" class="tsd-kind-icon">Incidents</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.page.html" class="tsd-kind-icon">Page</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-kind-icon">Phone<wbr>Subscriber</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.scheduledmaintenance.html" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.scheduledmaintenances.html" class="tsd-kind-icon">Scheduled<wbr>Maintenances</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.status.html" class="tsd-kind-icon">Status</a></li>
 								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/_interfaces_result_.subscriber.html" class="tsd-kind-icon">Subscriber</a></li>
@@ -90,6 +97,7 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_interfaces_result_.html#combinedsubscriber" class="tsd-kind-icon">Combined<wbr>Subscriber</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_interfaces_result_.html#scheduledmaintenance" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_interfaces_result_.html#summary" class="tsd-kind-icon">Summary</a></li>
 							</ul>
 						</section>
@@ -104,17 +112,27 @@
 					<div class="tsd-signature tsd-kind-icon">Combined<wbr>Subscriber<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-signature-type">PhoneSubscriber</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_interfaces_result_.emailsubscriber.html" class="tsd-signature-type">EmailSubscriber</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_interfaces_result_.webhooksubscriber.html" class="tsd-signature-type">WebhookSubscriber</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d889216/packages/statuspage.io/src/interfaces/Result.ts#L89">interfaces/Result.ts:89</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/7f525ae/packages/statuspage.io/src/interfaces/Result.ts#L117">interfaces/Result.ts:117</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="scheduledmaintenance" class="tsd-anchor"></a>
+					<h3>Scheduled<wbr>Maintenance</h3>
+					<div class="tsd-signature tsd-kind-icon">Scheduled<wbr>Maintenance<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_interfaces_result_.incident.html" class="tsd-signature-type">Incident</a><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>scheduled_for<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>scheduled_until<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>status<span class="tsd-signature-symbol">: </span><a href="../enums/_interfaces_result_.maintenancestatus.html" class="tsd-signature-type">MaintenanceStatus</a><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/7f525ae/packages/statuspage.io/src/interfaces/Result.ts#L42">interfaces/Result.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="summary" class="tsd-anchor"></a>
 					<h3>Summary</h3>
-					<div class="tsd-signature tsd-kind-icon">Summary<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_interfaces_result_.status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_result_.scheduledmaintenance.html" class="tsd-signature-type">ScheduledMaintenance</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_result_.components.html" class="tsd-signature-type">Components</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_result_.incidents.html" class="tsd-signature-type">Incidents</a></div>
+					<div class="tsd-signature tsd-kind-icon">Summary<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_interfaces_result_.status.html" class="tsd-signature-type">Status</a><span class="tsd-signature-symbol"> &amp; </span><a href="_interfaces_result_.html#scheduledmaintenance" class="tsd-signature-type">ScheduledMaintenance</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_result_.components.html" class="tsd-signature-type">Components</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_interfaces_result_.incidents.html" class="tsd-signature-type">Incidents</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/d889216/packages/statuspage.io/src/interfaces/Result.ts#L91">interfaces/Result.ts:91</a></li>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/7f525ae/packages/statuspage.io/src/interfaces/Result.ts#L119">interfaces/Result.ts:119</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,9 +160,6 @@
 						<a href="_interfaces_api_.html">&quot;interfaces/API&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="_interfaces_clientoptions_.html">&quot;interfaces/<wbr>Client<wbr>Options&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="_interfaces_request_.html">&quot;interfaces/<wbr>Request&quot;</a>
 					</li>
 					<li class="current tsd-kind-module">
@@ -154,6 +169,15 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_interfaces_result_.incidentimpact.html" class="tsd-kind-icon">Incident<wbr>Impact</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_interfaces_result_.incidentstatus.html" class="tsd-kind-icon">Incident<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/_interfaces_result_.maintenancestatus.html" class="tsd-kind-icon">Maintenance<wbr>Status</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_interfaces_result_.component.html" class="tsd-kind-icon">Component</a>
 					</li>
@@ -179,9 +203,6 @@
 						<a href="../interfaces/_interfaces_result_.phonesubscriber.html" class="tsd-kind-icon">Phone<wbr>Subscriber</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_interfaces_result_.scheduledmaintenance.html" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_interfaces_result_.scheduledmaintenances.html" class="tsd-kind-icon">Scheduled<wbr>Maintenances</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
@@ -197,6 +218,9 @@
 						<a href="_interfaces_result_.html#combinedsubscriber" class="tsd-kind-icon">Combined<wbr>Subscriber</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_interfaces_result_.html#scheduledmaintenance" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_interfaces_result_.html#summary" class="tsd-kind-icon">Summary</a>
 					</li>
 				</ul>
@@ -210,6 +234,9 @@
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
