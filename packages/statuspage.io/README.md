@@ -1,6 +1,6 @@
 # statuspage.io [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 
-A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see https://doers.statuspage.io/.
+A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see https://developer.statuspage.io/.
 
 ### Installation
 
@@ -15,7 +15,7 @@ A complete documentation is available at https://ffflorian.github.io/api-clients
 ```ts
 import {Statuspage} from 'statuspage.io';
 
-const statuspage = new Statuspage('https://example.com');
+const statuspage = new Statuspage('kctbh9vrtdwd');
 
 statuspage.api.incidents.getAll().then(response => {
   //

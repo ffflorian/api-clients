@@ -1,32 +1,24 @@
 import axios, {AxiosInstance} from 'axios';
+import {URL} from 'url';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
 import type {API} from './interfaces/API';
-import type {ClientOptionsId, ClientOptionsUrl} from './interfaces/ClientOptions';
 import type {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
   public readonly api: API;
   private readonly apiClient: AxiosInstance;
 
-  constructor(apiUrlOrPageId: string);
-  constructor(options: ClientOptionsId);
-  constructor(options: ClientOptionsUrl);
-  constructor(options: ClientOptionsId | ClientOptionsUrl | string) {
-    if (typeof options === 'string') {
-      options = options.startsWith('http') ? {pageUrl: options} : {pageId: options};
+  constructor(pageId: string) {
+    if (pageId) {
+      throw new Error('A page ID needs to be set in order to use the client.');
     }
 
-    if (!(options as ClientOptionsUrl).pageUrl && !(options as ClientOptionsId).pageId) {
-      throw new Error('A StatusPage URL or page ID needs to be set in order to use the client.');
-    }
-
-    const apiUrl =
-      (options as ClientOptionsUrl).pageUrl || `https://${(options as ClientOptionsId).pageId}.statuspage.io`;
+    const apiUrl = new URL(`https://${pageId}.statuspage.io`);
 
     this.apiClient = axios.create({
-      baseURL: apiUrl,
+      baseURL: apiUrl.href,
     });
 
     this.api = {
