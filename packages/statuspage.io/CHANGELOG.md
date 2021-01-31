@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.0.3 (2021-01-31)
+
+
+### Bug Fixes
+
+* **statuspage.io:** New API version ([#589](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/issues/589)) ([7f525ae](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/commit/7f525ae7a0095dc2c0e2aadd477a46b09e5b9477))
+
+
+
+
+
 ## 3.0.2 (2021-01-07)
 
 **Note:** Version bump only for package statuspage.io
