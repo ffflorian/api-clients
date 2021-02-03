@@ -14,43 +14,42 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
+
+      - name: Skip CI check
+        uses: mstachniuk/ci-skip@v1
 
       - name: Set environment variables
+        if: env.CI_SKIP == 'false'
         run: |
           GH_COMMIT_MESSAGE="$(head -n 1 <<< "${{github.event.head_commit.message}}")"
           GIT_COMMIT_MESSAGE="$(git log --format=%B -n 1 ${{github.event.after}} | head -n 1)"
-          echo "BRANCH_NAME=$(git branch --show-current)" >> $GITHUB_ENV
           echo "COMMIT_MESSAGE=\"$(test "${GH_COMMIT_MESSAGE}" && echo "${GH_COMMIT_MESSAGE}" || echo "${GIT_COMMIT_MESSAGE}")\"" >> $GITHUB_ENV
           echo "PR_TITLE=\"${{github.event.pull_request.title}}\"" >> $GITHUB_ENV
           cat "${GITHUB_ENV}"
 
       - name: Set up Node.js
-        if: |
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+        if: env.CI_SKIP == 'false'
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
 
-      - name: Get yarn cache
-        if: |
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+      - name: Set yarn cache directory
+        if: env.CI_SKIP == 'false'
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
-      - uses: actions/cache@v2
+
+      - name: Get yarn cache
+        uses: actions/cache@v2
+        if: env.CI_SKIP == 'false'
         id: yarn-cache
         with:
           path: ${{steps.yarn-cache-dir-path.outputs.dir}}
           key: ${{runner.os}}-yarn-${{hashFiles('**/yarn.lock')}}
-          restore-keys: |
-            ${{runner.os}}-yarn-
+          restore-keys: ${{runner.os}}-yarn-
 
       - name: Build, lint and test
-        if: |
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]')
+        if: env.CI_SKIP == 'false'
         run: |
           yarn
           yarn boot
@@ -60,9 +59,8 @@ jobs:
 
       - name: Release
         if: |
-          env.BRANCH_NAME == 'main' &&
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[ci skip]') &&
-          !contains(env.COMMIT_MESSAGE || env.PR_TITLE, '[skip ci]') &&
+          env.CI_SKIP == 'false' &&
+          github.event_name != 'pull_request' &&
           !startsWith(env.COMMIT_MESSAGE || env.PR_TITLE, '"chore')
         env:
           GIT_AUTHOR_NAME: ffflobot
