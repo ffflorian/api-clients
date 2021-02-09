@@ -26,11 +26,6 @@
     "node": ">= 10.9",
     "yarn": ">= 1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{json,md}": [
       "prettier --write"
