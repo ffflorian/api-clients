@@ -48,6 +48,7 @@
     "lint": "yarn lint:ts && yarn lint:other",
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "eslint --ignore-path .gitignore --ext .ts packages",
+    "prepare": "husky install",
     "prettier": "prettier \"*.{json,md,yml}\"",
     "release": "lerna publish",
     "test": "yarn lint && yarn test:all",
