@@ -1,0 +1,39 @@
+{
+  "author": "Florian Imdahl <git@ffflorian.de>",
+  "dependencies": {
+    "@hapi/hawk": "8.0.0",
+    "axios": "0.21.1",
+    "qs": "6.9.6"
+  },
+  "description": "An bamboohr.com API client",
+  "devDependencies": {
+    "@types/hapi__hawk": "8.0.1",
+    "@types/node": "~14",
+    "rimraf": "3.0.2",
+    "typedoc": "0.20.28",
+    "typescript": "4.2.2"
+  },
+  "engines": {
+    "node": ">= 10.9"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "api",
+    "bamboohr.com",
+    "bamboohr"
+  ],
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "name": "bamboohr.com",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/bamboohr.com",
+  "scripts": {
+    "build:ts": "tsc",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/bamboohr.com",
+    "clean": "rimraf dist",
+    "dist": "yarn clean && yarn build:ts",
+    "test": "exit 0"
+  },
+  "version": "1.0.0"
+}

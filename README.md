@@ -5,6 +5,7 @@ API clients for various services.
 ### API clients
 
 - [`absence.io`](./packages/absence.io/) [![npm version](https://img.shields.io/npm/v/absence.io.svg)](https://www.npmjs.com/package/absence.io)
+- [`bamboohr.com`](./packages/bamboohr.com/) [![npm version](https://img.shields.io/npm/v/bamboohr.com.svg)](https://www.npmjs.com/package/bamboohr.com)
 - [`c3nav`](./packages/c3nav/) [![npm version](https://img.shields.io/npm/v/c3nav.svg)](https://www.npmjs.com/package/c3nav)
 - [`corona-warn-app`](./packages/corona-warn-app/) [![npm version](https://img.shields.io/npm/v/corona-warn-app.svg)](https://www.npmjs.com/package/corona-warn-app)
 - [`crates.io`](./packages/crates.io/) [![npm version](https://img.shields.io/npm/v/crates.io.svg)](https://www.npmjs.com/package/crates.io)
