@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/compare/@ffflorian/icanhazdadjoke@2.0.3...@ffflorian/icanhazdadjoke@2.0.4) (2021-04-01)
+
+
+### Bug Fixes
+
+* Build docs ([a570982](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/a570982a1df4b83b2a958c16bfecae7fb3af2ebe))
+
+
+
+
+
 ## 2.0.3 (2021-01-31)
 
 **Note:** Version bump only for package @ffflorian/icanhazdadjoke
