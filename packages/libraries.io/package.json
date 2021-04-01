@@ -31,7 +31,7 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/libraries.io",
   "scripts": {
     "build:ts": "tsc",
-    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/libraries.io",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/libraries.io src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"

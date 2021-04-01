@@ -1,6 +1,5 @@
 {
   "exclude": "**/*(index|Endpoints).ts",
   "excludeExternals": true,
-  "excludePrivate": true,
-  "mode": "modules"
+  "excludePrivate": true
 }
