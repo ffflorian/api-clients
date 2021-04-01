@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for c3nav">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -38,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,11 +48,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>c3nav</h1>
 		</div>
 	</div>
@@ -77,197 +71,136 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {c3nav} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;c3nav&#x27;</span>;
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span><span style="color: #001080">c3nav</span><span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;c3nav&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> c3navClient = <span class="hljs-keyword">new</span> c3nav();</code></pre>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">c3navClient</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">c3nav</span><span style="color: #000000">();</span>
+</code></pre>
 				<a href="#build-and-test" id="build-and-test" style="color: inherit; text-decoration: none;">
 					<h2>Build and test</h2>
 				</a>
-				<pre><code>yarn
-yarn <span class="hljs-built_in">test</span></code></pre>
+				<pre><code><span style="color: #001080">yarn</span>
+<span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">test</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_apibase_.html">&quot;api/APIBase&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_accessrestrictiongroupsapi_.html">&quot;api/<wbr>Access<wbr>Restriction<wbr>GroupsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_accessrestrictionsapi_.html">&quot;api/<wbr>Access<wbr>RestrictionsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_areasapi_.html">&quot;api/<wbr>AreasAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_buildingsapi_.html">&quot;api/<wbr>BuildingsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_changesetsapi_.html">&quot;api/<wbr>ChangesetsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_columnsapi_.html">&quot;api/<wbr>ColumnsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_crossdescriptionsapi_.html">&quot;api/<wbr>Cross<wbr>DescriptionsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_doorsapi_.html">&quot;api/<wbr>DoorsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_editorapi_.html">&quot;api/<wbr>EditorAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_holesapi_.html">&quot;api/<wbr>HolesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_leavedescriptionsapi_.html">&quot;api/<wbr>Leave<wbr>DescriptionsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_levellistapi_.html">&quot;api/<wbr>Level<wbr>ListAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_lineobstaclesapi_.html">&quot;api/<wbr>Line<wbr>ObstaclesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_locationgroupcategoriesapi_.html">&quot;api/<wbr>Location<wbr>Group<wbr>CategoriesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_locationgroupsapi_.html">&quot;api/<wbr>Location<wbr>GroupsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_locationsapi_.html">&quot;api/<wbr>LocationsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_mapapi_.html">&quot;api/<wbr>MapAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_obstaclesapi_.html">&quot;api/<wbr>ObstaclesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_pois_.html">&quot;api/POIs&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_rampsapi_.html">&quot;api/<wbr>RampsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_routingapi_.html">&quot;api/<wbr>RoutingAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_sessionapi_.html">&quot;api/<wbr>SessionAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_sourcesapi_.html">&quot;api/<wbr>SourcesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_spacesapi_.html">&quot;api/<wbr>SpacesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_stairsapi_.html">&quot;api/<wbr>StairsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_updatesapi_.html">&quot;api/<wbr>UpdatesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_c3nav_.html">&quot;c3nav&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_api_.html">&quot;interfaces/API&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_accessrestrictiongroups_.html">&quot;interfaces/<wbr>Access<wbr>Restriction<wbr>Groups&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_accessrestrictions_.html">&quot;interfaces/<wbr>Access<wbr>Restrictions&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_areas_.html">&quot;interfaces/<wbr>Areas&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_bounds_.html">&quot;interfaces/<wbr>Bounds&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_buildings_.html">&quot;interfaces/<wbr>Buildings&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_changesets_.html">&quot;interfaces/<wbr>Changesets&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_columns_.html">&quot;interfaces/<wbr>Columns&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_crossdescriptions_.html">&quot;interfaces/<wbr>Cross<wbr>Descriptions&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_doors_.html">&quot;interfaces/<wbr>Doors&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_editor_.html">&quot;interfaces/<wbr>Editor&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_holes_.html">&quot;interfaces/<wbr>Holes&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_leavedescriptions_.html">&quot;interfaces/<wbr>Leave<wbr>Descriptions&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_level_.html">&quot;interfaces/<wbr>Level&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_lineobstacles_.html">&quot;interfaces/<wbr>Line<wbr>Obstacles&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_location_.html">&quot;interfaces/<wbr>Location&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_locationgroupcategories_.html">&quot;interfaces/<wbr>Location<wbr>Group<wbr>Categories&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_locationgroups_.html">&quot;interfaces/<wbr>Location<wbr>Groups&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_obstacles_.html">&quot;interfaces/<wbr>Obstacles&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_options_.html">&quot;interfaces/<wbr>Options&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_pois_.html">&quot;interfaces/POIs&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_ramps_.html">&quot;interfaces/<wbr>Ramps&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_root_.html">&quot;interfaces/<wbr>Root&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_routing_.html">&quot;interfaces/<wbr>Routing&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_session_.html">&quot;interfaces/<wbr>Session&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_sources_.html">&quot;interfaces/<wbr>Sources&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_spaces_.html">&quot;interfaces/<wbr>Spaces&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_stairs_.html">&quot;interfaces/<wbr>Stairs&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_updates_.html">&quot;interfaces/<wbr>Updates&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/librariesio.html" class="tsd-kind-icon">LibrariesIO</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/api.html" class="tsd-kind-icon">API</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/accessrestrictiongroups.html" class="tsd-kind-icon">Access<wbr>Restriction<wbr>Groups</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/accessrestrictions.html" class="tsd-kind-icon">Access<wbr>Restrictions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/areas.html" class="tsd-kind-icon">Areas</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/bounds.html" class="tsd-kind-icon">Bounds</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/buildings.html" class="tsd-kind-icon">Buildings</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/changesets.html" class="tsd-kind-icon">Changesets</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/columns.html" class="tsd-kind-icon">Columns</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/crossdescriptions.html" class="tsd-kind-icon">Cross<wbr>Descriptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/doors.html" class="tsd-kind-icon">Doors</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/editor.html" class="tsd-kind-icon">Editor</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/holes.html" class="tsd-kind-icon">Holes</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/leavedescriptions.html" class="tsd-kind-icon">Leave<wbr>Descriptions</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/level.html" class="tsd-kind-icon">Level</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/levellistoptions.html" class="tsd-kind-icon">Level<wbr>List<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/lineobstacles.html" class="tsd-kind-icon">Line<wbr>Obstacles</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/location.html" class="tsd-kind-icon">Location</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/locationdetails.html" class="tsd-kind-icon">Location<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/locationgeometry.html" class="tsd-kind-icon">Location<wbr>Geometry</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/locationgroupcategories.html" class="tsd-kind-icon">Location<wbr>Group<wbr>Categories</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/locationgroups.html" class="tsd-kind-icon">Location<wbr>Groups</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/locationtype.html" class="tsd-kind-icon">Location<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/obstacles.html" class="tsd-kind-icon">Obstacles</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/pois.html" class="tsd-kind-icon">POIs</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ramps.html" class="tsd-kind-icon">Ramps</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/root.html" class="tsd-kind-icon">Root</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/routing.html" class="tsd-kind-icon">Routing</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/session.html" class="tsd-kind-icon">Session</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sources.html" class="tsd-kind-icon">Sources</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/spaces.html" class="tsd-kind-icon">Spaces</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/stairs.html" class="tsd-kind-icon">Stairs</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/updates.html" class="tsd-kind-icon">Updates</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#httpmethod" class="tsd-kind-icon">Http<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#requestoptions" class="tsd-kind-icon">Request<wbr>Options</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -278,13 +211,12 @@ yarn <span class="hljs-built_in">test</span></code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
