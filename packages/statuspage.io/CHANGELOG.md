@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.4](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/compare/statuspage.io@3.0.3...statuspage.io@3.0.4) (2021-04-01)
+
+
+### Bug Fixes
+
+* Build docs ([a570982](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/commit/a570982a1df4b83b2a958c16bfecae7fb3af2ebe))
+
+
+
+
+
 ## 3.0.3 (2021-01-31)
 
 
