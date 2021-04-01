@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for libraries.io">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -38,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,11 +48,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>libraries.io</h1>
 		</div>
 	</div>
@@ -77,98 +71,127 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {LibrariesIO} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;libraries.io&#x27;</span>;
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span><span style="color: #001080">LibrariesIO</span><span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;libraries.io&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> librariesIO = <span class="hljs-keyword">new</span> LibrariesIO(<span class="hljs-string">&#x27;my-api-key&#x27;</span>);
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">librariesIO</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">LibrariesIO</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;my-api-key&#039;</span><span style="color: #000000">);</span>
 
-librariesIO.api.project.getProject(<span class="hljs-string">&#x27;npm&#x27;</span>, <span class="hljs-string">&#x27;grunt&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-  <span class="hljs-comment">//</span>
-});
+<span style="color: #001080">librariesIO</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">project</span><span style="color: #000000">.</span><span style="color: #795E26">getProject</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;npm&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;grunt&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">response</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">//</span>
+<span style="color: #000000">});</span>
 
-librariesIO.api.project
-  .search(<span class="hljs-string">&#x27;grunt&#x27;</span>, {
-    <span class="hljs-attr">filter</span>: {
-      <span class="hljs-attr">platforms</span>: [<span class="hljs-string">&#x27;npm&#x27;</span>],
-      <span class="hljs-attr">licenses</span>: [<span class="hljs-string">&#x27;MIT&#x27;</span>],
-    },
-  })
-  .then(<span class="hljs-function"><span class="hljs-params">projects</span> =&gt;</span> {
-    <span class="hljs-comment">// ...</span>
-  });
+<span style="color: #001080">librariesIO</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">project</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">search</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;grunt&#039;</span><span style="color: #000000">, {</span>
+<span style="color: #000000">    </span><span style="color: #001080">filter:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #001080">platforms:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;npm&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">      </span><span style="color: #001080">licenses:</span><span style="color: #000000"> [</span><span style="color: #A31515">&#039;MIT&#039;</span><span style="color: #000000">],</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">projects</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #008000">// ...</span>
+<span style="color: #000000">  });</span>
 
-librariesIO.api.github.user.getUser(<span class="hljs-string">&#x27;ffflorian&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">user</span> =&gt;</span> {
-  <span class="hljs-comment">// ...</span>
-});
+<span style="color: #001080">librariesIO</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">github</span><span style="color: #000000">.</span><span style="color: #001080">user</span><span style="color: #000000">.</span><span style="color: #795E26">getUser</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ffflorian&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">user</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// ...</span>
+<span style="color: #000000">});</span>
 
-librariesIO.api.platform.getPlatforms({<span class="hljs-attr">page</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">perPage</span>: <span class="hljs-number">5</span>}).then(<span class="hljs-function"><span class="hljs-params">platforms</span> =&gt;</span> {
-  <span class="hljs-comment">// ...</span>
-});
+<span style="color: #001080">librariesIO</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">platform</span><span style="color: #000000">.</span><span style="color: #795E26">getPlatforms</span><span style="color: #000000">({</span><span style="color: #001080">page:</span><span style="color: #000000"> </span><span style="color: #098658">2</span><span style="color: #000000">, </span><span style="color: #001080">perPage:</span><span style="color: #000000"> </span><span style="color: #098658">5</span><span style="color: #000000">}).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">platforms</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// ...</span>
+<span style="color: #000000">});</span>
 
-librariesIO.api.user.subscribe(<span class="hljs-string">&#x27;npm&#x27;</span>, <span class="hljs-string">&#x27;grunt&#x27;</span>).then(<span class="hljs-function"><span class="hljs-params">subscription</span> =&gt;</span> {
-  <span class="hljs-comment">// ...</span>
-});</code></pre>
+<span style="color: #001080">librariesIO</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">user</span><span style="color: #000000">.</span><span style="color: #795E26">subscribe</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;npm&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;grunt&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">subscription</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">// ...</span>
+<span style="color: #000000">});</span>
+</code></pre>
 				<a href="#build-and-test" id="build-and-test" style="color: inherit; text-decoration: none;">
 					<h2>Build and test</h2>
 				</a>
-				<pre><code>yarn
-yarn <span class="hljs-built_in">test</span></code></pre>
+				<pre><code><span style="color: #001080">yarn</span>
+<span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">test</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_librariesio_.html">&quot;<wbr>LibrariesIO&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_apibase_.html">&quot;api/APIBase&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_github_githubrepositoryapi_.html">&quot;api/<wbr>Git<wbr>Hub/<wbr>Git<wbr>Hub<wbr>RepositoryAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_github_githubuserapi_.html">&quot;api/<wbr>Git<wbr>Hub/<wbr>Git<wbr>Hub<wbr>UserAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_platformapi_.html">&quot;api/<wbr>PlatformAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_projectapi_.html">&quot;api/<wbr>ProjectAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_userapi_.html">&quot;api/<wbr>UserAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_api_.html">&quot;interfaces/API&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_contributor_.html">&quot;interfaces/<wbr>Contributor&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_librariesioheaders_.html">&quot;interfaces/<wbr>LibrariesIOHeaders&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_options_.html">&quot;interfaces/<wbr>Options&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_platform_.html">&quot;interfaces/<wbr>Platform&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_project_.html">&quot;interfaces/<wbr>Project&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_repository_.html">&quot;interfaces/<wbr>Repository&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_subscription_.html">&quot;interfaces/<wbr>Subscription&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/librariesio.html" class="tsd-kind-icon">LibrariesIO</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/api.html" class="tsd-kind-icon">API</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/contributor.html" class="tsd-kind-icon">Contributor</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/filteroptions.html" class="tsd-kind-icon">Filter<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/librariesioheaders.html" class="tsd-kind-icon">LibrariesIOHeaders</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/librariesioresult.html" class="tsd-kind-icon">LibrariesIOResult</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/paginationoptions.html" class="tsd-kind-icon">Pagination<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/platform.html" class="tsd-kind-icon">Platform</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/prereleaseoptions.html" class="tsd-kind-icon">Pre<wbr>Release<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/project.html" class="tsd-kind-icon">Project</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectdependency.html" class="tsd-kind-icon">Project<wbr>Dependency</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectrelease.html" class="tsd-kind-icon">Project<wbr>Release</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectusage.html" class="tsd-kind-icon">Project<wbr>Usage</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectversion.html" class="tsd-kind-icon">Project<wbr>Version</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/projectwithdependencies.html" class="tsd-kind-icon">Project<wbr>With<wbr>Dependencies</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/repository.html" class="tsd-kind-icon">Repository</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/repositorywithdependencies.html" class="tsd-kind-icon">Repository<wbr>With<wbr>Dependencies</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/requestoptions.html" class="tsd-kind-icon">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/subscription.html" class="tsd-kind-icon">Subscription</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#httpmethod" class="tsd-kind-icon">Http<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#platformtype" class="tsd-kind-icon">Platform<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#sorttype" class="tsd-kind-icon">Sort<wbr>Type</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -179,14 +202,12 @@ yarn <span class="hljs-built_in">test</span></code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>

@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for statuspage.io">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -38,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,11 +48,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>statuspage.io</h1>
 		</div>
 	</div>
@@ -77,51 +71,116 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {Statuspage} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;statuspage.io&#x27;</span>;
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span><span style="color: #001080">Statuspage</span><span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;statuspage.io&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> statuspage = <span class="hljs-keyword">new</span> Statuspage(<span class="hljs-string">&#x27;kctbh9vrtdwd&#x27;</span>);
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">statuspage</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Statuspage</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;kctbh9vrtdwd&#039;</span><span style="color: #000000">);</span>
 
-statuspage.api.incidents.getAll().then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-  <span class="hljs-comment">//</span>
-});</code></pre>
+<span style="color: #001080">statuspage</span><span style="color: #000000">.</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">incidents</span><span style="color: #000000">.</span><span style="color: #795E26">getAll</span><span style="color: #000000">().</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">response</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #008000">//</span>
+<span style="color: #000000">});</span>
+</code></pre>
 				<a href="#build-and-test" id="build-and-test" style="color: inherit; text-decoration: none;">
 					<h2>Build and test</h2>
 				</a>
-				<pre><code>yarn
-yarn <span class="hljs-built_in">test</span></code></pre>
+				<pre><code><span style="color: #001080">yarn</span>
+<span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">test</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_statuspage_.html">&quot;<wbr>Statuspage&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_incidentsapi_.html">&quot;api/<wbr>IncidentsAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_scheduledmaintenancesapi_.html">&quot;api/<wbr>Scheduled<wbr>MaintenancesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_subscribersapi_.html">&quot;api/<wbr>SubscribersAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_api_.html">&quot;interfaces/API&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_request_.html">&quot;interfaces/<wbr>Request&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_result_.html">&quot;interfaces/<wbr>Result&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/incidentimpact.html" class="tsd-kind-icon">Incident<wbr>Impact</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/incidentstatus.html" class="tsd-kind-icon">Incident<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/maintenancestatus.html" class="tsd-kind-icon">Maintenance<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/statuspage.html" class="tsd-kind-icon">Statuspage</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/api.html" class="tsd-kind-icon">API</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/component.html" class="tsd-kind-icon">Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/componentsubscriberdata.html" class="tsd-kind-icon">Component<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/components.html" class="tsd-kind-icon">Components</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/emailsubscriber.html" class="tsd-kind-icon">Email<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/emailsubscriberdata.html" class="tsd-kind-icon">Email<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incident.html" class="tsd-kind-icon">Incident</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incidentsubscriberdata.html" class="tsd-kind-icon">Incident<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incidentupdate.html" class="tsd-kind-icon">Incident<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incidents.html" class="tsd-kind-icon">Incidents</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/page.html" class="tsd-kind-icon">Page</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/phonesubscriber.html" class="tsd-kind-icon">Phone<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/phonesubscriberdata.html" class="tsd-kind-icon">Phone<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/requestoptions.html" class="tsd-kind-icon">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/scheduledmaintenances.html" class="tsd-kind-icon">Scheduled<wbr>Maintenances</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/status.html" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/subscriber.html" class="tsd-kind-icon">Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/subscriberoptions.html" class="tsd-kind-icon">Subscriber<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/webhooksubscriber.html" class="tsd-kind-icon">Webhook<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/webhooksubscriberdata.html" class="tsd-kind-icon">Webhook<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#combinedsubscriber" class="tsd-kind-icon">Combined<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#combinedsubscriberdata" class="tsd-kind-icon">Combined<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#scheduledmaintenance" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#summary" class="tsd-kind-icon">Summary</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -132,16 +191,13 @@ yarn <span class="hljs-built_in">test</span></code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 		</div>
 	</div>

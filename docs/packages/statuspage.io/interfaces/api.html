@@ -1,0 +1,356 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>API | statuspage.io</title>
+	<meta name="description" content="Documentation for statuspage.io">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">statuspage.io</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">statuspage.io</a>
+				</li>
+				<li>
+					<a href="api.html">API</a>
+				</li>
+			</ul>
+			<h1>Interface API</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">API</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.html#incidents" class="tsd-kind-icon">incidents</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.html#scheduledmaintenances" class="tsd-kind-icon">scheduled<wbr>Maintenances</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api.html#subscribers" class="tsd-kind-icon">subscribers</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="api.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="api.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="api.html#getsummary" class="tsd-kind-icon">get<wbr>Summary</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="incidents" class="tsd-anchor"></a>
+					<h3>incidents</h3>
+					<div class="tsd-signature tsd-kind-icon">incidents<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IncidentsAPI</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L17">interfaces/API.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Incidents are the cornerstone of any status page, being composed of many incident
+								updates. Each incident usually goes through a progression of statuses listed below,
+							with an impact calculated from a blend of component statuses (or an optional override).</p>
+						</div>
+						<p><strong>Status</strong>: <em>Investigating</em>, <em>Identified</em>, <em>Monitoring</em>, <em>Resolved</em>, or <em>Postmortem</em></p>
+						<p><strong>Impact</strong>: <em>None (black</em>), <em>Minor (yellow</em>), <em>Major (orange</em>), or <em>Critical (red)</em></p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="scheduledmaintenances" class="tsd-anchor"></a>
+					<h3>scheduled<wbr>Maintenances</h3>
+					<div class="tsd-signature tsd-kind-icon">scheduled<wbr>Maintenances<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ScheduledMaintenancesAPI</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L29">interfaces/API.ts:29</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Scheduled Maintenances are planned outages, upgrades, or general notices that
+								you&#39;re working on infrastructure and disruptions may occurr. A close sibling
+								of Incidents, each usually goes through a progression of statuses listed below,
+								with an impact calculated from a blend of component statuses (or an optional
+							override).</p>
+						</div>
+						<p><strong>Status</strong>: <em>Scheduled</em>, <em>In Progress</em>, <em>Verifying</em>, or <em>Completed</em></p>
+						<p><strong>Impact</strong>: <em>None (black)</em>, <em>Minor (yellow)</em>, <em>Major (orange)</em>, or <em>Critical (red)</em></p>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="subscribers" class="tsd-anchor"></a>
+					<h3>subscribers</h3>
+					<div class="tsd-signature tsd-kind-icon">subscribers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SubscribersAPI</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L34">interfaces/API.ts:34</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Subscribers receive notifications via a webhook, email or SMS. You can create and
+							disable subscriptions for pages and unresolved incidents using the subscribers api.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getcomponents" class="tsd-anchor"></a>
+					<h3>get<wbr>Components</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Components<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="components.html" class="tsd-signature-type" data-tsd-kind="Interface">Components</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L5">interfaces/API.ts:5</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="components.html" class="tsd-signature-type" data-tsd-kind="Interface">Components</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getstatus" class="tsd-anchor"></a>
+					<h3>get<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="status.html" class="tsd-signature-type" data-tsd-kind="Interface">Status</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L6">interfaces/API.ts:6</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="status.html" class="tsd-signature-type" data-tsd-kind="Interface">Status</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="getsummary" class="tsd-anchor"></a>
+					<h3>get<wbr>Summary</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Summary<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/ffflorian/api-clients/blob/a570982a/packages/statuspage.io/src/interfaces/API.ts#L7">interfaces/API.ts:7</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">never</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="../enums/incidentimpact.html" class="tsd-kind-icon">Incident<wbr>Impact</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/incidentstatus.html" class="tsd-kind-icon">Incident<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/maintenancestatus.html" class="tsd-kind-icon">Maintenance<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="../classes/statuspage.html" class="tsd-kind-icon">Statuspage</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
+						<a href="api.html" class="tsd-kind-icon">API</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.html#incidents" class="tsd-kind-icon">incidents</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.html#scheduledmaintenances" class="tsd-kind-icon">scheduled<wbr>Maintenances</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="api.html#subscribers" class="tsd-kind-icon">subscribers</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="api.html#getcomponents" class="tsd-kind-icon">get<wbr>Components</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="api.html#getstatus" class="tsd-kind-icon">get<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="api.html#getsummary" class="tsd-kind-icon">get<wbr>Summary</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface">
+						<a href="component.html" class="tsd-kind-icon">Component</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="componentsubscriberdata.html" class="tsd-kind-icon">Component<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="components.html" class="tsd-kind-icon">Components</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="emailsubscriber.html" class="tsd-kind-icon">Email<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="emailsubscriberdata.html" class="tsd-kind-icon">Email<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="incident.html" class="tsd-kind-icon">Incident</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="incidentsubscriberdata.html" class="tsd-kind-icon">Incident<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="incidentupdate.html" class="tsd-kind-icon">Incident<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="incidents.html" class="tsd-kind-icon">Incidents</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="page.html" class="tsd-kind-icon">Page</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="phonesubscriber.html" class="tsd-kind-icon">Phone<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="phonesubscriberdata.html" class="tsd-kind-icon">Phone<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="requestoptions.html" class="tsd-kind-icon">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="scheduledmaintenances.html" class="tsd-kind-icon">Scheduled<wbr>Maintenances</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="status.html" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="subscriber.html" class="tsd-kind-icon">Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="subscriberoptions.html" class="tsd-kind-icon">Subscriber<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="webhooksubscriber.html" class="tsd-kind-icon">Webhook<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="webhooksubscriberdata.html" class="tsd-kind-icon">Webhook<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#combinedsubscriber" class="tsd-kind-icon">Combined<wbr>Subscriber</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#combinedsubscriberdata" class="tsd-kind-icon">Combined<wbr>Subscriber<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#scheduledmaintenance" class="tsd-kind-icon">Scheduled<wbr>Maintenance</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#summary" class="tsd-kind-icon">Summary</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

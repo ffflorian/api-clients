@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for crates.io">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -38,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -49,11 +48,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>crates.io</h1>
 		</div>
 	</div>
@@ -77,86 +71,121 @@
 				<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 					<h3>Example</h3>
 				</a>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> {CratesIO} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;crates.io&#x27;</span>;
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span><span style="color: #001080">CratesIO</span><span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;crates.io&#039;</span><span style="color: #000000">;</span>
 
-<span class="hljs-keyword">const</span> cratesIO = <span class="hljs-keyword">new</span> CratesIO();
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cratesIO</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">CratesIO</span><span style="color: #000000">();</span>
 
-cratesIO
-  .summary()
-  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
-    ...
-  });
+<span style="color: #001080">cratesIO</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">summary</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    ...</span>
+<span style="color: #000000">  });</span>
 
-cratesIO
-  .api.crates.getAuthors(<span class="hljs-string">&#x27;ripgrep&#x27;</span>, <span class="hljs-string">&#x27;0.10.0&#x27;</span>)
-  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
-    ...
-  });
+<span style="color: #001080">cratesIO</span>
+<span style="color: #000000">  .</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">crates</span><span style="color: #000000">.</span><span style="color: #795E26">getAuthors</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ripgrep&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;0.10.0&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    ...</span>
+<span style="color: #000000">  });</span>
 
-cratesIO
-  .api.crates.getCrates(<span class="hljs-string">&#x27;http&#x27;</span>, {<span class="hljs-attr">per_page</span>: <span class="hljs-number">10</span>})
-  .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
-    ...
-  });</code></pre>
+<span style="color: #001080">cratesIO</span>
+<span style="color: #000000">  .</span><span style="color: #001080">api</span><span style="color: #000000">.</span><span style="color: #001080">crates</span><span style="color: #000000">.</span><span style="color: #795E26">getCrates</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;http&#039;</span><span style="color: #000000">, {</span><span style="color: #001080">per_page:</span><span style="color: #000000"> </span><span style="color: #098658">10</span><span style="color: #000000">})</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000"> </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    ...</span>
+<span style="color: #000000">  });</span>
+</code></pre>
 				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
 					<h2>Build</h2>
 				</a>
-				<pre><code><span class="hljs-attribute">yarn
-yarn dist</span></code></pre>
+				<pre><code><span style="color: #001080">yarn</span>
+<span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">dist</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_cratesio_.html">&quot;<wbr>CratesIO&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_api_cratesapi_.html">&quot;api/<wbr>CratesAPI&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_api_.html">&quot;interfaces/API&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_category_.html">&quot;interfaces/<wbr>Category&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_crate_.html">&quot;interfaces/<wbr>Crate&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_dependency_.html">&quot;interfaces/<wbr>Dependency&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_download_.html">&quot;interfaces/<wbr>Download&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_keyword_.html">&quot;interfaces/<wbr>Keyword&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_options_.html">&quot;interfaces/<wbr>Options&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_result_.html">&quot;interfaces/<wbr>Result&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_summary_.html">&quot;interfaces/<wbr>Summary&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_team_.html">&quot;interfaces/<wbr>Team&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_user_.html">&quot;interfaces/<wbr>User&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_interfaces_version_.html">&quot;interfaces/<wbr>Version&quot;</a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/cratesio.html" class="tsd-kind-icon">CratesIO</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/api.html" class="tsd-kind-icon">API</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/authorsresult.html" class="tsd-kind-icon">Authors<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/category.html" class="tsd-kind-icon">Category</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clientoptions.html" class="tsd-kind-icon">Client<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/crate.html" class="tsd-kind-icon">Crate</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/crateresult.html" class="tsd-kind-icon">Crate<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependenciesresult.html" class="tsd-kind-icon">Dependencies<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dependency.html" class="tsd-kind-icon">Dependency</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/download.html" class="tsd-kind-icon">Download</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/downloadsresult.html" class="tsd-kind-icon">Downloads<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/followingresult.html" class="tsd-kind-icon">Following<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/keyword.html" class="tsd-kind-icon">Keyword</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/reversedependenciesresult.html" class="tsd-kind-icon">Reverse<wbr>Dependencies<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/searchoptions.html" class="tsd-kind-icon">Search<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/searchresult.html" class="tsd-kind-icon">Search<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/summary.html" class="tsd-kind-icon">Summary</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/team.html" class="tsd-kind-icon">Team</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/teamsresult.html" class="tsd-kind-icon">Teams<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/urlresult.html" class="tsd-kind-icon">Url<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/user.html" class="tsd-kind-icon">User</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/usersresult.html" class="tsd-kind-icon">Users<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/version.html" class="tsd-kind-icon">Version</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/versionresult.html" class="tsd-kind-icon">Version<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/versionsresult.html" class="tsd-kind-icon">Versions<wbr>Result</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -167,10 +196,12 @@ yarn dist</span></code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>
