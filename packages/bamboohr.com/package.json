@@ -30,7 +30,7 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/bamboohr.com",
   "scripts": {
     "build:ts": "tsc",
-    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/bamboohr.com",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/bamboohr.com src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"

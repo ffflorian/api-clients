@@ -29,7 +29,7 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com",
   "scripts": {
     "build:ts": "tsc",
-    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/imgflip.com",
+    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/imgflip.com src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
