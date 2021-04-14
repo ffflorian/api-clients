@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/ffflorian/api-clients/tree/main/packages/bamboohr.com/compare/bamboohr.com@1.1.0...bamboohr.com@1.1.1) (2021-04-14)
+
+**Note:** Version bump only for package bamboohr.com
+
+
+
+
+
 # 1.1.0 (2021-04-01)
 
 
