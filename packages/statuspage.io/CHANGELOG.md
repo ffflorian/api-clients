@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/compare/statuspage.io@3.0.4...statuspage.io@3.0.5) (2021-04-14)
+
+
+### Bug Fixes
+
+* **statuspage.io:** Update PageID boolean status ([#650](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/issues/650)) ([7827a74](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/commit/7827a74ff2511e4c982472f54e471eca328c048e))
+
+
+
+
+
 ## [3.0.4](https://github.com/ffflorian/api-clients/tree/main/packages/statuspage.io/compare/statuspage.io@3.0.3...statuspage.io@3.0.4) (2021-04-01)
 
 
