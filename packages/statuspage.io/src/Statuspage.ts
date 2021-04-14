@@ -11,7 +11,7 @@ export class Statuspage {
   private readonly apiClient: AxiosInstance;
 
   constructor(pageId: string) {
-    if (pageId) {
+    if (!pageId) {
       throw new Error('A page ID needs to be set in order to use the client.');
     }
 
