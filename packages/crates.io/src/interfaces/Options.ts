@@ -6,6 +6,5 @@ export interface ClientOptions {
 export interface SearchOptions {
   page?: number;
   per_page?: number;
-  query?: string;
   sort?: string;
 }
