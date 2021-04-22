@@ -76,7 +76,8 @@ export class CratesAPI {
     const additionalConfig = {
       params: {
         ...options,
-        query,
+        // eslint-disable-next-line id-length
+        q: query,
       },
     };
 
