@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/ffflorian/api-clients/tree/main/packages/crates.io/compare/crates.io@2.0.5...crates.io@2.0.6) (2021-04-22)
+
+
+### Bug Fixes
+
+* **crates.io:** Use q as query parameter ([9f94308](https://github.com/ffflorian/api-clients/tree/main/packages/crates.io/commit/9f94308c1c2e55addc91dffce14579d101fec05d))
+
+
+
+
+
 ## [2.0.5](https://github.com/ffflorian/api-clients/tree/main/packages/crates.io/compare/crates.io@2.0.4...crates.io@2.0.5) (2021-04-14)
 
 **Note:** Version bump only for package crates.io
