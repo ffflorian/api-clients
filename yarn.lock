@@ -1153,10 +1153,10 @@
   resolved "https://registry.npmjs.org/@types/hapi__sntp/-/hapi__sntp-3.1.0.tgz#8817bcc3b091ef486ddd4fe5be305d0fa33ed570"
   integrity sha512-8tKFfiK7vIp9LbfabJ95YegLhLVaNUyT9nqYnWwkt77tQ7hw/QZByPBIENByuLUMa4d8g24L8rdn0EjPyb2cIw==
 
-"@types/jasmine@3.7.1":
-  version "3.7.1"
-  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.7.1.tgz#35b86511a389673ac1a706c6010b35788a0d998d"
-  integrity sha512-MP1bcwS0MXQSKPBd20wv0rqF+GOfHTchz4mKFkS4ajAmz2oYwhOpSE9FPe611TOOarA061itZwUQUYRI5mPJsA==
+"@types/jasmine@3.7.2":
+  version "3.7.2"
+  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.7.2.tgz#f83ca1936f8cf5d3375506b481f52f8903c2df21"
+  integrity sha512-w5Zc9pSwxlr1ne+froeIceYbrh0a2Us+0kTaX6JA0N7nPh+yv1zN10LyDMKwnT0x2AbIDGlrD1cv6plVjfCcZw==
 
 "@types/json-schema@^7.0.3":
   version "7.0.4"
