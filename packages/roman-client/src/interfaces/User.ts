@@ -1,5 +1,5 @@
-import {Asset} from './Asset';
 import {Service} from './Service';
+import {Asset} from './Asset';
 
 export interface User {
   accent_id?: number;
