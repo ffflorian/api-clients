@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/ffflorian/api-clients/tree/main/packages/roman-client/compare/roman-client@2.0.6...roman-client@2.1.0) (2021-05-17)
+
+
+### Features
+
+* **roman-client:** Update interfaces ([3ba67df](https://github.com/ffflorian/api-clients/tree/main/packages/roman-client/commit/3ba67df313381f28c9151ac5d93ad7ec253f7a1e))
+
+
+
+
+
 ## [2.0.6](https://github.com/ffflorian/api-clients/tree/main/packages/roman-client/compare/roman-client@2.0.5...roman-client@2.0.6) (2021-05-17)
 
 **Note:** Version bump only for package roman-client
