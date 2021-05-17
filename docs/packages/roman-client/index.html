@@ -76,19 +76,19 @@
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">roman</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Roman</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;https://example.com&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">roman</span><span style="color: #000000">.</span><span style="color: #795E26">register</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">email:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;email@example.com&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;My Name&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;My Password&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">email:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;email@example.com&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;My Name&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;My Password&#039;</span><span style="color: #000000">,</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">roman</span><span style="color: #000000">.</span><span style="color: #795E26">login</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">email:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;email@example.com&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;My Password&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">email:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;email@example.com&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;My Password&#039;</span><span style="color: #000000">,</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">roman</span><span style="color: #000000">.</span><span style="color: #795E26">registerService</span><span style="color: #000000">({</span>
-<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;My Weather Bot&quot;</span><span style="color: #000000">,</span>
-<span style="color: #000000">  </span><span style="color: #001080">summary:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Display the weather in your region.&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;My Weather Bot&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">summary:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Display the weather in your region.&#039;</span><span style="color: #000000">,</span>
 <span style="color: #000000">});</span>
 
 <span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">myService</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">roman</span><span style="color: #000000">.</span><span style="color: #795E26">getService</span><span style="color: #000000">();</span>
