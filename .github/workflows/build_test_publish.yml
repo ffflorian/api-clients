@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Skip CI check
         uses: mstachniuk/ci-skip@v1
