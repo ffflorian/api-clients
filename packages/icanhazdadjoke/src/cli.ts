@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as commander from 'commander';
+import {program as commander} from 'commander';
 import {constants as fsConstants, promises as fsAsync} from 'fs';
 import * as path from 'path';
 
