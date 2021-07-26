@@ -13,7 +13,7 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '> 14.x'
+          - '> 16.x'
       - dependency-name: 'husky'
         versions:
           - '>= 5.x'
