@@ -2,9 +2,13 @@ import * as qs from 'qs';
 import {Fields} from './interfaces/Fields';
 
 export namespace Endpoint {
-  const EMPLOYEES = 'employees';
   const DIRECTORY = 'directory';
+  const EMPLOYEES = 'employees';
+  const META = 'meta';
+  const POLICIES = 'policies';
+  const REQUESTS = 'requests';
   const TIME_OFF = 'time_off';
+  const TYPES = 'types';
   const WHOS_OUT = 'whos_out';
 
   export namespace Employees {
@@ -27,14 +31,20 @@ export namespace Endpoint {
   }
 
   export namespace TimeOff {
-    export function whosOut(start?: string, end?: string): string {
-      let path = `/${TIME_OFF}/${WHOS_OUT}/`;
+    export function whosOut(): string {
+      return `/${TIME_OFF}/${WHOS_OUT}/`;
+    }
 
-      if (start || end) {
-        path += `?${qs.stringify({end, start})}`;
-      }
+    export function timeOffTypes(): string {
+      return `/${META}/${TIME_OFF}/${TYPES}/`;
+    }
 
-      return path;
+    export function timeOffPolicies(): string {
+      return `/${META}/${TIME_OFF}/${POLICIES}/`;
+    }
+
+    export function timeOffRequests(): string {
+      return `/${TIME_OFF}/${REQUESTS}/`;
     }
   }
 }
