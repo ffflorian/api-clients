@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.2.0 (2021-07-30)
+
+
+### Features
+
+* **bamboohr.com:** Handle errors, add more TimeOff endpoints ([f9fd458](https://github.com/ffflorian/api-clients/tree/main/packages/roman-client/commit/f9fd458bf04253e01371e128d9ef06378700329c))
+
+
+
+
+
 # [2.1.0](https://github.com/ffflorian/api-clients/tree/main/packages/roman-client/compare/roman-client@2.0.6...roman-client@2.1.0) (2021-05-17)
 
 
