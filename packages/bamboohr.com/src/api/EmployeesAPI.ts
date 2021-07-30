@@ -12,8 +12,8 @@ export class EmployeesAPI {
    */
   public async addEmployee(fields: Pick<Fields, 'firstName' | 'lastName'>): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees();
-    const {data: employee} = await this.apiClient.post<Employee>(endpoint, {data: fields});
-    return employee;
+    const {data} = await this.apiClient.post<Employee>(endpoint, {data: fields});
+    return data;
   }
 
   /**
@@ -22,8 +22,8 @@ export class EmployeesAPI {
    */
   public async getEmployee(id: number, fields?: Array<keyof Fields>): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees(id, fields);
-    const {data: employee} = await this.apiClient.get<Employee>(endpoint);
-    return employee;
+    const {data} = await this.apiClient.get<Employee>(endpoint);
+    return data;
   }
 
   /**
@@ -32,8 +32,8 @@ export class EmployeesAPI {
    */
   public async getEmployeeDirectory(): Promise<EmployeeDirectory> {
     const endpoint = Endpoint.Employees.employeeDirectory();
-    const {data: employee} = await this.apiClient.get<EmployeeDirectory>(endpoint);
-    return employee;
+    const {data} = await this.apiClient.get<EmployeeDirectory>(endpoint);
+    return data;
   }
 
   /**
@@ -42,7 +42,7 @@ export class EmployeesAPI {
    */
   public async updateEmployee(id: number, fields: WritableFields): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees(id);
-    const {data: employee} = await this.apiClient.post<Employee>(endpoint, {data: fields});
-    return employee;
+    const {data} = await this.apiClient.post<Employee>(endpoint, {data: fields});
+    return data;
   }
 }

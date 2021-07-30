@@ -15,13 +15,17 @@ export class BambooHR {
       auth: {
         // eslint-disable-next-line no-magic-numbers
         password: Math.random().toString(36).substring(7),
-
         username: this.options.apiKey,
       },
       baseURL: `https://api.bamboohr.com/api/gateway.php/${options.companyDomain}/v1/`,
       headers: {
         Accept: 'application/json',
       },
+    });
+
+    this.apiClient.interceptors.response.use(undefined, ({response}) => {
+      const errorMessage = response.headers['x-bamboohr-error-message'] || response.statusText;
+      throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
     });
 
     this.api = {
