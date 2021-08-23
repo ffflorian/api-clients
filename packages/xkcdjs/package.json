@@ -13,7 +13,7 @@
     "@types/node": "~16",
     "http-status-codes": "2.1.4",
     "jasmine": "3.8.0",
-    "nock": "13.1.1",
+    "nock": "13.1.2",
     "rimraf": "3.0.2",
     "ts-node": "10.2.1",
     "typedoc": "0.21.6",
