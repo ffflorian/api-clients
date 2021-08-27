@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import type {AxiosError} from 'axios';
 import {program as commander} from 'commander';
 import {constants as fsConstants, promises as fsAsync} from 'fs';
 import * as path from 'path';
@@ -47,7 +48,7 @@ commander
       const imageData = await xkcd.api.getLatest({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as AxiosError).message}`);
       commander.outputHelp();
       process.exit(1);
     }
@@ -62,7 +63,7 @@ commander
       const imageData = await xkcd.api.getRandom({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as AxiosError).message}`);
       commander.outputHelp();
       process.exit(1);
     }
@@ -76,14 +77,14 @@ commander
     try {
       parsedIndex = parseInt(index, 10);
     } catch (error) {
-      throw new Error('Invalid number specified.');
+      throw new Error('Invalid (number as AxiosError) specified.');
     }
     try {
       const [resolvedPath, xkcd] = await init(command.parent.output);
       const imageData = await xkcd.api.getByIndex(parsedIndex, {withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as AxiosError).message}`);
       commander.outputHelp();
       process.exit(1);
     }
