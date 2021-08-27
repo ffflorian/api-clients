@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import type {AxiosError} from 'axios';
 import {program as commander} from 'commander';
 import {constants as fsConstants, promises as fsAsync} from 'fs';
 import * as path from 'path';
@@ -52,7 +53,7 @@ commander
         await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as AxiosError).message}`);
       commander.outputHelp();
       process.exit(1);
     }
@@ -70,7 +71,7 @@ commander
         await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
       }
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(`Error: ${(error as AxiosError).message}`);
       commander.outputHelp();
       process.exit(1);
     }
