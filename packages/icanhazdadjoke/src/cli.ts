@@ -7,6 +7,12 @@ import * as path from 'path';
 
 import {ICanHazDadJoke, JokeResultWithImage} from './';
 
+interface CLIOptions {
+  image?: boolean;
+  output?: string;
+  silent?: boolean;
+}
+
 async function init(dir: string = '.'): Promise<[string, ICanHazDadJoke]> {
   const resolvedPath = path.resolve(dir);
 
@@ -37,42 +43,43 @@ commander
   .name(name.replace(/^@[^/]+\//, ''))
   .version(version, '-v, --version')
   .description(description)
-  .option('-o, --output <dir>', 'Specify the output directory', path.resolve('.'))
   .option('-i, --image', 'Save the joke as image')
+  .option('-o, --output <dir>', 'Specify the output directory', path.resolve('.'))
   .option('-s, --silent', `Don't output save messages`);
 
 commander
   .command('random')
   .description('Fetch a random joke')
-  .action(async command => {
+  .action(async () => {
+    const options = commander.opts() as CLIOptions;
     try {
-      const [resolvedPath, iCanHazDadJoke] = await init(command.parent.output);
-      const result = await iCanHazDadJoke.api.getRandom({withImage: !!command.parent.image});
+      const [resolvedPath, iCanHazDadJoke] = await init(options.output);
+      const result = await iCanHazDadJoke.api.getRandom({withImage: !!options.image});
       console.info(result.joke);
-      if (command.parent.image) {
-        await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
+      if (options.image) {
+        await save(resolvedPath, result as JokeResultWithImage, !!options.silent);
       }
     } catch (error) {
       console.error(`Error: ${(error as AxiosError).message}`);
-      commander.outputHelp();
       process.exit(1);
     }
   });
 
 commander
-  .command('id <id>')
-  .description('Fetch joke by id')
-  .action(async (id, command) => {
+  .command('id')
+  .argument('<id>', 'The joke ID')
+  .description('Fetch joke by ID')
+  .action(async id => {
+    const options = commander.opts() as CLIOptions;
     try {
-      const [resolvedPath, iCanHazDadJoke] = await init(command.parent.output);
-      const result = await iCanHazDadJoke.api.getById(id, {withImage: !!command.parent.image});
+      const [resolvedPath, iCanHazDadJoke] = await init(options.output);
+      const result = await iCanHazDadJoke.api.getById(id, {withImage: !!options.image});
       console.info(result.joke);
-      if (command.parent.image) {
-        await save(resolvedPath, result as JokeResultWithImage, !!command.parent.silent);
+      if (options.image) {
+        await save(resolvedPath, result as JokeResultWithImage, !!options.silent);
       }
     } catch (error) {
       console.error(`Error: ${(error as AxiosError).message}`);
-      commander.outputHelp();
       process.exit(1);
     }
   });
