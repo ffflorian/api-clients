@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "axios": "0.21.1"
+    "axios": "0.21.3"
   },
   "description": "A statuspage.io API client",
   "devDependencies": {
