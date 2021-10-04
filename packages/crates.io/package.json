@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "axios": "0.21.4"
+    "axios": "0.22.0"
   },
   "description": "A crates.io API client",
   "devDependencies": {
