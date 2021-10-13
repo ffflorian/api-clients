@@ -4,7 +4,7 @@
     "xkcdjs": "dist/cli.js"
   },
   "dependencies": {
-    "axios": "0.21.4",
+    "axios": "0.23.0",
     "commander": "8.2.0"
   },
   "description": "An xkcd API client with a CLI.",
