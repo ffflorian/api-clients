@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
     "axios": "0.21.4",
-    "qs": "6.10.1"
+    "qs": "6.10.2"
   },
   "description": "A imgflip.com API client",
   "devDependencies": {
