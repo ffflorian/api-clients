@@ -87,13 +87,12 @@ export class ICanHazDadJokeAPI {
   }
 
   private async getImage(imageUrl: string): Promise<Buffer> {
-    const {data} = await this.apiClient.request<Buffer>({
+    const {data} = await this.apiClient.get<Buffer>(imageUrl, {
       headers: {
-        ...this.apiClient.defaults.headers,
+        ...this.apiClient.defaults.headers.get,
         Accept: 'image/png',
       },
       responseType: 'arraybuffer',
-      url: imageUrl,
     });
 
     return data;
