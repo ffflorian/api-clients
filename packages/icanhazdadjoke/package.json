@@ -39,5 +39,5 @@
     "start": "ts-node src/cli.ts",
     "test": "exit 0"
   },
-  "version": "2.1.0"
+  "version": "2.1.1"
 }

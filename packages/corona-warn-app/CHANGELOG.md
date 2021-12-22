@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.1.1 (2021-12-22)
+
+
+### Bug Fixes
+
+* Upgrade yarn lock file ([91511d0](https://github.com/ffflorian/api-clients/tree/main/packages/corona-warn-app/commit/91511d0f17882c1faedf55296ab11d9516a3d425))
+
+
+
+
+
 # 2.1.0 (2021-07-30)
 
 
