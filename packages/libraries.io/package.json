@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/jasmine": "3.10.3",
     "@types/node": "~16",
-    "jasmine": "3.10.0",
+    "jasmine": "4.0.1",
     "rimraf": "3.0.2",
     "ts-node": "10.4.0",
     "typedoc": "0.22.10",
