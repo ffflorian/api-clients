@@ -35,6 +35,28 @@ export class UserAPI extends APIBase {
   }
 
   /**
+   * Retrieve a user by several options: e.g his lastname, or his firstname, or both
+   * e.g.
+   *  const options = {
+   *      skip: 0,
+   *      limit: 50,
+   *      filter: {
+   *          firstName,
+   *          lastName,
+   *      }
+   *  }
+   * @param {PaginationOptions} [options] The pagination options
+   * @returns {Promise<User>}
+   * @see: https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#310af8b0-d46f-d70d-f9ea-77cfd0f7aee4
+   */
+  public async retrieveUserByOption(options?: PaginationOptions): Promise<User> {
+    this.checkApiKey('User');
+    const endpoint = Endpoint.User.users();
+    const {data: user} = await this.apiClient.post(endpoint, options);
+    return user;
+  }
+
+  /**
    * Retrieve users
    * @param options The pagination options
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#de1af2e7-9508-1492-d698-7079d93cf60a
