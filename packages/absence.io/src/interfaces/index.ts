@@ -6,6 +6,7 @@ export * from './Department';
 export * from './EmailList';
 export * from './Location';
 export * from './Options';
+export * from './Reason';
 export * from './Result';
 export * from './Team';
 export * from './Timespan';
