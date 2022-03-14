@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.2.0 (2022-03-14)
+
+
+### Features
+
+* **absence.io:** Update UserAPI.ts with retrieveUserByOption ([#937](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/issues/937)) ([72b2161](https://github.com/ffflorian/api-clients/tree/main/packages/icanhazdadjoke/commit/72b216144d7d579d77150c6342364a0989ef1b6f))
+
+
+
+
+
 ## 2.1.1 (2021-12-22)
 
 
