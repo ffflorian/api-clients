@@ -1198,10 +1198,10 @@
   resolved "https://registry.npmjs.org/@types/hapi__sntp/-/hapi__sntp-3.1.0.tgz#8817bcc3b091ef486ddd4fe5be305d0fa33ed570"
   integrity sha512-8tKFfiK7vIp9LbfabJ95YegLhLVaNUyT9nqYnWwkt77tQ7hw/QZByPBIENByuLUMa4d8g24L8rdn0EjPyb2cIw==
 
-"@types/jasmine@3.10.3":
-  version "3.10.3"
-  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.10.3.tgz#a89798b3d5a8bd23ca56e855a9aee3e5a93bdaaa"
-  integrity sha512-SWyMrjgdAUHNQmutvDcKablrJhkDLy4wunTme8oYLjKp41GnHGxMRXr2MQMvy/qy8H3LdzwQk9gH4hZ6T++H8g==
+"@types/jasmine@4.0.0":
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/@types/jasmine/-/jasmine-4.0.0.tgz#48bfd99cbe16dcdcde0b7d3bfa62319504d141f9"
+  integrity sha512-KvhqNz4NaONk7cfp4E9x+uXOUp7x4H2Zeyb4yXnw2vIuxD5YfSi1767x+aF7z54elhZcC0OH9/78/WL6+5jcDg==
 
 "@types/json-schema@^7.0.7":
   version "7.0.7"
