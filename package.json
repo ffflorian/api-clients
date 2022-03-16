@@ -21,7 +21,7 @@
     "husky": "4.3.8",
     "lerna": "4.0.0",
     "lint-staged": "12.3.5",
-    "prettier": "2.5.1"
+    "prettier": "2.6.0"
   },
   "engines": {
     "node": ">= 10.9",
