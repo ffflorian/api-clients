@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.2.1 (2022-04-08)
+
+
+### Bug Fixes
+
+* **npms.io:** Search query doesn't need to be encoded ([#959](https://github.com/ffflorian/api-clients/issues/959)) ([ea737a7](https://github.com/ffflorian/api-clients/commit/ea737a735f1c1bac5e5dd4dc1c02c860af0fb818))
+
+
+
+
+
 # 3.2.0 (2022-03-14)
 
 
