@@ -41,11 +41,11 @@ export class SearchAPI {
    * - `is:deprecated` Show/filter is deprecated packages
    * - `is:unstable` Show/filter packages whose version is `< 1.0.0`
    * - `is:insecure` Show/filter packages that are insecure or have vulnerable dependencies (as per [nsp](https://nodesecurity.io/))
-   * - `boost-exact:false`: Do not boost exact matches, defaults to `true`
-   * - `score-effect:14`: Set the effect that package scores have for the final search score, defaults to `15.3`
-   * - `quality-weight:1`: Set the weight that quality has for the each package score, defaults to `1.95`
-   * - `popularity-weight:1`: Set the weight that popularity has for the each package score, defaults to `3.3`
-   * - `maintenance-weight:1`: Set the weight that the quality has for the each package score, defaults to `2.05`
+   * - `boost-exact:false` Do not boost exact matches, defaults to `true`
+   * - `score-effect:14` Set the effect that package scores have for the final search score, defaults to `15.3`
+   * - `quality-weight:1` Set the weight that quality has for the each package score, defaults to `1.95`
+   * - `popularity-weight:1` Set the weight that popularity has for the each package score, defaults to `3.3`
+   * - `maintenance-weight:1` Set the weight that the quality has for the each package score, defaults to `2.05`
    * @param options Additional search options
    * @see https://api-docs.npms.io/#api-Search-ExecuteSearchQuery
    */
