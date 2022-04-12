@@ -12,7 +12,7 @@
     "@types/jasmine": "4.0.2",
     "@types/node": "~16",
     "http-status-codes": "2.2.0",
-    "jasmine": "4.0.2",
+    "jasmine": "4.1.0",
     "nock": "13.2.4",
     "rimraf": "3.0.2",
     "ts-node": "10.7.0",
