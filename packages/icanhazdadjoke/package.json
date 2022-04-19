@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "axios": "0.26.1",
-    "commander": "9.1.0"
+    "commander": "9.2.0"
   },
   "description": "An icanhazdadjoke.com API client with a CLI.",
   "devDependencies": {
