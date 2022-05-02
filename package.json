@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "API clients for various services.",
   "devDependencies": {
-    "@ffflorian/eslint-config": "0.8.1",
+    "@ffflorian/eslint-config": "0.8.2",
     "@ffflorian/prettier-config": "0.1.3",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
