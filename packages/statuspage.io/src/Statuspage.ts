@@ -1,5 +1,4 @@
 import axios, {AxiosInstance} from 'axios';
-import {URL} from 'url';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
@@ -15,10 +14,8 @@ export class Statuspage {
       throw new Error('A page ID needs to be set in order to use the client.');
     }
 
-    const apiUrl = new URL(`https://${pageId}.statuspage.io`);
-
     this.apiClient = axios.create({
-      baseURL: apiUrl.href,
+      baseURL: `https://${pageId}.statuspage.io`,
     });
 
     this.api = {
