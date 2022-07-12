@@ -27,6 +27,7 @@
     "node": ">= 10.9",
     "yarn": ">= 1"
   },
+  "license": "GPL-3.0",
   "lint-staged": {
     "*.{json,md}": [
       "prettier --write"
