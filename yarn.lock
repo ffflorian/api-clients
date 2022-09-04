@@ -135,10 +135,10 @@
   resolved "https://registry.npmjs.org/@evilmartians/lefthook/-/lefthook-1.1.1.tgz#26e0de9ca3df1c8d2d97840f187a52cd95bb5f59"
   integrity sha512-5C/AD937A6jz4mdBLAKXIeYVkxvLmPWxlv1YWfuHcIwZ2wp4W3z1Htjjtp+7gtO41CoCycIJcaxLfwaAsbS6qA==
 
-"@ffflorian/eslint-config@0.8.2":
-  version "0.8.2"
-  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.8.2.tgz#480f9ff2bcc842099a5c4808d72ffd8967e89c66"
-  integrity sha512-iDC3vImsVTq5C9O/ij7BYqs6rE0uDYy9ZkzHPmph4z+cxd5G8us9Mf0YHW2+xOXwdY+j3tV5ZLCH9AfYzvcFEA==
+"@ffflorian/eslint-config@0.8.3":
+  version "0.8.3"
+  resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.8.3.tgz#2bd2dcb0573876fe20c5ee61c89c115df519b5ad"
+  integrity sha512-aRmFCYYmVpKwjeUWSkufsX1WUJiQZk/fSMmpio2HigKX4X/UtvdSL5DrvHikBQBRHCyMLe+N0LfQZlgNp4LcXQ==
 
 "@ffflorian/prettier-config@0.1.4":
   version "0.1.4"
