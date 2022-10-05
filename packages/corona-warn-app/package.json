@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "axios": "0.27.2"
+    "axios": "1.0.0"
   },
   "description": "A corona-warn-app API client",
   "devDependencies": {
