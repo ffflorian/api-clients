@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/cookiejar": "2.1.2",
     "@types/node": "~16",
-    "typedoc": "0.23.21",
+    "typedoc": "0.23.22",
     "typescript": "4.8.4"
   },
   "engines": {
