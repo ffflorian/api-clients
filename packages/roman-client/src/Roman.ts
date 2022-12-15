@@ -1,4 +1,10 @@
-import axios, {AxiosInstance, AxiosRequestConfig, AxiosError} from 'axios';
+import axios, {
+  AxiosInstance,
+  AxiosRequestConfig,
+  AxiosError,
+  AxiosResponseHeaders,
+  RawAxiosResponseHeaders,
+} from 'axios';
 import {Cookie as ToughCookie} from 'tough-cookie';
 import type * as http from 'http';
 
@@ -41,7 +47,7 @@ export class Roman {
   private async request<T>(
     config: AxiosRequestConfig,
     accessTokenNeeded = true
-  ): Promise<{data: T; headers: Record<string, string>}> {
+  ): Promise<{data: T; headers: RawAxiosResponseHeaders | AxiosResponseHeaders}> {
     if (accessTokenNeeded) {
       config.headers = {
         Cookie: this.getCookie().toString(),
@@ -50,7 +56,7 @@ export class Roman {
     }
 
     try {
-      const {data, headers} = await this.apiClient.request(config);
+      const {data, headers} = await this.apiClient.request<T>(config);
       return {data, headers};
     } catch (error) {
       if ((error as AxiosError).isAxiosError) {
