@@ -7,7 +7,7 @@
   "description": "An API client for Wire's Lithium proxy Roman.",
   "devDependencies": {
     "@types/cookiejar": "2.1.2",
-    "@types/node": "~16",
+    "@types/node": "~18",
     "typedoc": "0.23.23",
     "typescript": "4.9.4"
   },
