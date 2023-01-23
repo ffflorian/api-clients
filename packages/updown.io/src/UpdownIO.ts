@@ -16,16 +16,9 @@ export class UpdownIO {
 
     this.apiClient = axios.create({
       baseURL: 'https://updown.io/api/',
-    });
-
-    this.apiClient.interceptors.request.use(config => {
-      if (options && (options as ClientOptions).apiKey) {
-        config.headers = {
-          ...config.headers,
-          'X-API-KEY': (options as ClientOptions).apiKey,
-        };
-      }
-      return config;
+      headers: {
+        ...(options && (options as ClientOptions).apiKey && {'X-API-KEY': (options as ClientOptions).apiKey}),
+      },
     });
 
     this.api = {
