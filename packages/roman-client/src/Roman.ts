@@ -1,10 +1,4 @@
-import axios, {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosError,
-  AxiosResponseHeaders,
-  RawAxiosResponseHeaders,
-} from 'axios';
+import axios, {AxiosInstance, AxiosError, RawAxiosRequestConfig, RawAxiosResponseHeaders, AxiosHeaders} from 'axios';
 import {Cookie as ToughCookie} from 'tough-cookie';
 import type * as http from 'http';
 
@@ -21,6 +15,8 @@ import {
   User,
 } from './interfaces';
 import {RegisterInfo} from './interfaces/RegisterInfo';
+
+type AxiosRequestConfig<T = any> = RawAxiosRequestConfig<T> & {headers?: AxiosHeaders};
 
 export class Roman {
   private readonly apiClient: AxiosInstance;
@@ -47,12 +43,13 @@ export class Roman {
   private async request<T>(
     config: AxiosRequestConfig,
     accessTokenNeeded = true
-  ): Promise<{data: T; headers: RawAxiosResponseHeaders | AxiosResponseHeaders}> {
+  ): Promise<{data: T; headers: RawAxiosResponseHeaders}> {
     if (accessTokenNeeded) {
-      config.headers = {
-        Cookie: this.getCookie().toString(),
-        ...config.headers,
-      };
+      if (config.headers) {
+        config.headers.set('Cookie', this.getCookie().toString());
+      } else {
+        config.headers = new AxiosHeaders({Cookie: this.getCookie().toString()});
+      }
     }
 
     try {
