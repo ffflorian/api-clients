@@ -1,4 +1,4 @@
-import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
+import axios, {AxiosInstance, RawAxiosRequestConfig} from 'axios';
 import * as qs from 'qs';
 
 import {Endpoint} from './Endpoints';
@@ -22,7 +22,7 @@ export class Imgflip {
 
   private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {
     const endpoint = Endpoint.captionImage();
-    const config: AxiosRequestConfig = {
+    const config: RawAxiosRequestConfig = {
       data: qs.stringify(params, {arrayFormat: 'indices'}),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
