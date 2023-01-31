@@ -9,7 +9,7 @@
     "@types/cookiejar": "2.1.2",
     "@types/node": "~18",
     "typedoc": "0.23.24",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 10.9"
