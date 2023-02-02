@@ -1,6 +1,12 @@
-import axios, {AxiosInstance, AxiosError, RawAxiosRequestConfig, RawAxiosResponseHeaders, AxiosHeaders} from 'axios';
+import axios, {
+  AxiosInstance,
+  AxiosError,
+  RawAxiosRequestConfig,
+  AxiosResponseHeaders,
+  AxiosHeaders,
+  RawAxiosResponseHeaders,
+} from 'axios';
 import {Cookie as ToughCookie} from 'tough-cookie';
-import type * as http from 'http';
 
 import {
   IncomingMessage,
@@ -43,7 +49,7 @@ export class Roman {
   private async request<T>(
     config: AxiosRequestConfig,
     accessTokenNeeded = true
-  ): Promise<{data: T; headers: RawAxiosResponseHeaders}> {
+  ): Promise<{data: T; headers: AxiosResponseHeaders | RawAxiosResponseHeaders}> {
     if (accessTokenNeeded) {
       if (config.headers) {
         config.headers.set('Cookie', this.getCookie().toString());
@@ -121,7 +127,7 @@ export class Roman {
     return data;
   }
 
-  private async setCookie(rawHeaders?: http.IncomingHttpHeaders): Promise<void> {
+  private async setCookie(rawHeaders?: RawAxiosResponseHeaders | AxiosResponseHeaders): Promise<void> {
     if (!rawHeaders) {
       return;
     }
