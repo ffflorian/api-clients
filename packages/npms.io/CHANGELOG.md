@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.2.3 (2023-02-15)
+
+
+### Bug Fixes
+
+* **statuspage.io:** Update docs for `getStatus` ([e44d34e](https://github.com/ffflorian/api-clients/commit/e44d34ed3e4872acbcefcca80a17841ff690a6a2)), closes [#1241](https://github.com/ffflorian/api-clients/issues/1241)
+
+
+
+
+
 ## 2.2.2 (2022-07-12)
 
 
