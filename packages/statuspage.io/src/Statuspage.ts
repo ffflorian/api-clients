@@ -50,7 +50,7 @@ export class Statuspage {
    * Get the status rollup for the whole page. This endpoint includes an indicator -
    * one of `none`, `minor`, `major`, or `critical`, as well as a human description of the
    * blended component status. Examples of the blended status include "All Systems
-   * Operational", "Partial System Outage", and "Major Service Outage".
+   * Operational", "Partially Degraded Service", and "Major Service Outage".
    */
   private readonly getStatus = async (): Promise<Status> => {
     const endpoint = Endpoint.status();
