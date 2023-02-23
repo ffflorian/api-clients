@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
     "@hapi/hawk": "8.0.0",
-    "axios": "1.3.3",
+    "axios": "1.3.4",
     "qs": "6.11.0"
   },
   "description": "An bamboohr.com API client",
