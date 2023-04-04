@@ -10,7 +10,7 @@
   "description": "An icanhazdadjoke.com API client with a CLI.",
   "devDependencies": {
     "@types/node": "~18",
-    "rimraf": "4.4.0",
+    "rimraf": "4.4.1",
     "ts-node": "10.9.1",
     "typedoc": "0.23.28",
     "typescript": "5.0.2"
