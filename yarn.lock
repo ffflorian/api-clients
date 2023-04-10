@@ -152,10 +152,10 @@
   resolved "https://registry.npmjs.org/@ffflorian/eslint-config/-/eslint-config-0.8.3.tgz#2bd2dcb0573876fe20c5ee61c89c115df519b5ad"
   integrity sha512-aRmFCYYmVpKwjeUWSkufsX1WUJiQZk/fSMmpio2HigKX4X/UtvdSL5DrvHikBQBRHCyMLe+N0LfQZlgNp4LcXQ==
 
-"@ffflorian/prettier-config@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/@ffflorian/prettier-config/-/prettier-config-0.2.1.tgz#af35f166511685991b7118ae16f6466cff0cc278"
-  integrity sha512-LDXPRxblOtOLubdxEGYaERdD8Nh8vuSZ5UG6nwSRehXlDezEyKkehqSUnMyxj/f63d1NeuS1MdobR1vQD72UbA==
+"@ffflorian/prettier-config@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@ffflorian/prettier-config/-/prettier-config-0.3.1.tgz#6865ef481100731dd11331ddd981d8c0a53fd8b1"
+  integrity sha512-iMCSmn5MfQ/JRdx1WbOSUQwotADzYUgrLR0ROp1gAxjqymx4SOERmE9A97921WszL8X64UUlnpl69ggSQygHdA==
 
 "@gar/promisify@^1.1.3":
   version "1.1.3"
