@@ -4,3 +4,4 @@ CHANGELOG.md
 node_modules
 package.json
 .vscode
+.yarn

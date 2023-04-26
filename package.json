@@ -23,8 +23,7 @@
     "prettier": "2.8.8"
   },
   "engines": {
-    "node": ">= 10.9",
-    "yarn": ">= 1"
+    "node": ">= 10.9"
   },
   "license": "GPL-3.0",
   "prettier": "@ffflorian/prettier-config",
@@ -48,5 +47,6 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "packageManager": "yarn@3.5.0"
 }
