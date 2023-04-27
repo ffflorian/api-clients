@@ -43,7 +43,6 @@ jobs:
       - name: Build, lint and test
         run: |
           yarn
-          yarn boot
           yarn lint
           yarn dist
           yarn test
