@@ -23,13 +23,14 @@
     "prettier": "2.8.8"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 10.9",
+    "yarn": ">= 1"
   },
   "license": "GPL-3.0",
-  "packageManager": "yarn@3.5.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
+    "boot": "lerna bootstrap --reject-cycles",
     "build:docs": "lerna run build:docs --concurrency 4",
     "build:ts": "lerna run build:ts --concurrency 4",
     "clean": "lerna run clean",
