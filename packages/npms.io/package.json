@@ -6,7 +6,7 @@
   "description": "A npms.io API client",
   "devDependencies": {
     "@types/node": "~18",
-    "rimraf": "5.0.0",
+    "rimraf": "5.0.1",
     "typedoc": "0.24.7",
     "typescript": "5.0.4"
   },
