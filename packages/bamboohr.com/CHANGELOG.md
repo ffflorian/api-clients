@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.3.5 (2023-06-12)
+
+
+### Bug Fixes
+
+* **icanhazdadjoke:** wrong property name ([#1354](https://github.com/ffflorian/api-clients/issues/1354)) ([fbfadab](https://github.com/ffflorian/api-clients/commit/fbfadabbee9b790a1e0bc91e925edd4980ffb28d))
+
+
+
+
+
 ## 1.3.4 (2023-04-11)
 
 **Note:** Version bump only for package bamboohr.com
