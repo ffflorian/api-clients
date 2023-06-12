@@ -80,7 +80,7 @@ export class ICanHazDadJokeAPI {
     }
 
     const {data} = await this.apiClient.get<JokeSearchResult>('/search', {
-      data: options,
+      params: options,
     });
 
     return data;
