@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "API clients for various services.",
   "devDependencies": {
-    "@evilmartians/lefthook": "1.4.5",
+    "@evilmartians/lefthook": "1.4.8",
     "@ffflorian/eslint-config": "0.8.3",
     "@ffflorian/prettier-config": "0.3.1",
     "@typescript-eslint/eslint-plugin": "5.62.0",
