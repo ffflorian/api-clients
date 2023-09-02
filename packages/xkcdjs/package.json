@@ -16,7 +16,7 @@
     "nock": "13.3.2",
     "rimraf": "5.0.1",
     "ts-node": "10.9.1",
-    "typedoc": "0.24.8",
+    "typedoc": "0.25.0",
     "typescript": "5.1.6"
   },
   "engines": {
