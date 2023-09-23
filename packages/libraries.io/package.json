@@ -5,12 +5,12 @@
   },
   "description": "A libraries.io API client",
   "devDependencies": {
-    "@types/jasmine": "4.3.5",
+    "@types/jasmine": "4.3.6",
     "@types/node": "~18",
     "jasmine": "5.1.0",
     "rimraf": "5.0.1",
     "ts-node": "10.9.1",
-    "typedoc": "0.25.0",
+    "typedoc": "0.25.1",
     "typescript": "5.1.6"
   },
   "engines": {
