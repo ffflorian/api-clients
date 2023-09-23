@@ -6,7 +6,7 @@
   },
   "description": "An absence.io API client",
   "devDependencies": {
-    "@types/hapi__hawk": "8.0.3",
+    "@types/hapi__hawk": "8.0.4",
     "@types/node": "~18",
     "rimraf": "5.0.1",
     "typedoc": "0.25.0",
