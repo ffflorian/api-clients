@@ -142,10 +142,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@evilmartians/lefthook@1.4.11":
-  version "1.4.11"
-  resolved "https://registry.npmjs.org/@evilmartians/lefthook/-/lefthook-1.4.11.tgz#c2d542e71054327637bb52ad753abbcb5a662711"
-  integrity sha512-QYiOCtB4gYfIfj350CDjf5kjx25/ko/vhXZ1AD7+W/EwPn0B+6+rXDIrweaJFtIp/6TWcA/RVj/AFuckb5IKNw==
+"@evilmartians/lefthook@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.npmjs.org/@evilmartians/lefthook/-/lefthook-1.5.0.tgz#d0a7fdf77aed0366809eb2a05d377b28852dab3e"
+  integrity sha512-lyHwJk0P2MULulbjQngUyay+uNxIKS/5UOMbhgj8uesi4Q2gMOlhixDZ16rXOiZWFd6IZtBAEpInF0H27sAt+g==
 
 "@ffflorian/eslint-config@0.8.3":
   version "0.8.3"
