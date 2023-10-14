@@ -7,7 +7,7 @@
   "devDependencies": {
     "@types/node": "~18",
     "rimraf": "5.0.5",
-    "typedoc": "0.25.1",
+    "typedoc": "0.25.2",
     "typescript": "5.2.2"
   },
   "engines": {
