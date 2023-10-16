@@ -30,7 +30,7 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "boot": "lerna bootstrap --reject-cycles",
+    "boot": "lerna bootstrap",
     "build:docs": "lerna run build:docs --concurrency 4",
     "build:ts": "lerna run build:ts --concurrency 4",
     "clean": "lerna run clean",
