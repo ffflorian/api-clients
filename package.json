@@ -19,7 +19,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "1.1.5",
-    "lerna": "6.6.2",
+    "lerna": "7.3.1",
     "prettier": "3.0.3"
   },
   "engines": {
@@ -30,7 +30,6 @@
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
-    "boot": "lerna bootstrap --reject-cycles",
     "build:docs": "lerna run build:docs --concurrency 4",
     "build:ts": "lerna run build:ts --concurrency 4",
     "clean": "lerna run clean",
