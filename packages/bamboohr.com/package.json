@@ -7,7 +7,7 @@
   },
   "description": "An bamboohr.com API client",
   "devDependencies": {
-    "@types/hapi__hawk": "8.0.4",
+    "@types/hapi__hawk": "8.0.5",
     "@types/node": "~18",
     "rimraf": "5.0.5",
     "typedoc": "0.25.3",
