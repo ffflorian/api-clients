@@ -1134,10 +1134,10 @@
   resolved "https://registry.npmjs.org/@types/crypto-js/-/crypto-js-3.1.43.tgz#b859347d6289ba13e347c335a4c9efa63337a748"
   integrity sha512-EHe/YKctU3IYNBsDmSOPX/7jLHPRlx8WaiDKSY9JCTnJ8XJeM4c0ZJvx+9Gxmr2s2ihI92R+3U/gNL1sq5oRuQ==
 
-"@types/hapi__hawk@8.0.5":
-  version "8.0.5"
-  resolved "https://registry.npmjs.org/@types/hapi__hawk/-/hapi__hawk-8.0.5.tgz#e4112dec26621bd0ecc38cb658e0cd8aa360f095"
-  integrity sha512-SiasQy9/8h/HmjcyWKdTM8G7Dz55LIGriWqeoSagZZVc9pXBA/ORcTt8rc+Ik+dbk73VazQ1gYYfycVRnn83/w==
+"@types/hapi__hawk@8.0.6":
+  version "8.0.6"
+  resolved "https://registry.npmjs.org/@types/hapi__hawk/-/hapi__hawk-8.0.6.tgz#b97d6fb259b2a24931213ae23b0a70862e476f79"
+  integrity sha512-LOdIukZjNEKs8fAv3kxKZBV5k1S9gbvUEAFQ7TEe+JP+VwrtHcZLggiaclwl4rOZyFAk8BmRdaWaUBkYJXnleQ==
   dependencies:
     "@hapi/boom" "^9.0.0"
     "@hapi/hapi" "^21.1.0"
