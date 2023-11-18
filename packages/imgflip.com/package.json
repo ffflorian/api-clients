@@ -7,7 +7,7 @@
   "description": "A imgflip.com API client",
   "devDependencies": {
     "@types/node": "~18",
-    "@types/qs": "6.9.9",
+    "@types/qs": "6.9.10",
     "typedoc": "0.25.3",
     "typescript": "5.2.2"
   },
