@@ -1,19 +1,19 @@
 import * as qs from 'qs';
 import {Fields} from './interfaces/Fields';
 
-export namespace Endpoint {
-  const DIRECTORY = 'directory';
-  const EMPLOYEES = 'employees';
-  const META = 'meta';
-  const POLICIES = 'policies';
-  const REQUESTS = 'requests';
-  const TIME_OFF = 'time_off';
-  const TYPES = 'types';
-  const WHOS_OUT = 'whos_out';
+export const Endpoint = {
+  DIRECTORY: 'directory',
+  EMPLOYEES: 'employees',
+  META: 'meta',
+  POLICIES: 'policies',
+  REQUESTS: 'requests',
+  TIME_OFF: 'time_off',
+  TYPES: 'types',
+  WHOS_OUT: 'whos_out',
 
-  export namespace Employees {
-    export function employees(id?: number, fields?: Array<keyof Fields>): string {
-      let path = `/${EMPLOYEES}/`;
+  Employees: {
+    employees(id?: number, fields?: Array<keyof Fields>): string {
+      let path = `/${Endpoint.EMPLOYEES}/`;
       if (id) {
         path += `${id}/`;
       }
@@ -23,28 +23,28 @@ export namespace Endpoint {
       }
 
       return path;
-    }
+    },
 
-    export function employeeDirectory(): string {
-      return `/${EMPLOYEES}/${DIRECTORY}/`;
-    }
-  }
+    employeeDirectory(): string {
+      return `/${Endpoint.EMPLOYEES}/${Endpoint.DIRECTORY}/`;
+    },
+  },
 
-  export namespace TimeOff {
-    export function whosOut(): string {
-      return `/${TIME_OFF}/${WHOS_OUT}/`;
-    }
+  TimeOff: {
+    whosOut(): string {
+      return `/${Endpoint.TIME_OFF}/${Endpoint.WHOS_OUT}/`;
+    },
 
-    export function timeOffTypes(): string {
-      return `/${META}/${TIME_OFF}/${TYPES}/`;
-    }
+    timeOffTypes(): string {
+      return `/${Endpoint.META}/${Endpoint.TIME_OFF}/${Endpoint.TYPES}/`;
+    },
 
-    export function timeOffPolicies(): string {
-      return `/${META}/${TIME_OFF}/${POLICIES}/`;
-    }
+    timeOffPolicies(): string {
+      return `/${Endpoint.META}/${Endpoint.TIME_OFF}/${Endpoint.POLICIES}/`;
+    },
 
-    export function timeOffRequests(): string {
-      return `/${TIME_OFF}/${REQUESTS}/`;
-    }
-  }
-}
+    timeOffRequests(): string {
+      return `/${Endpoint.TIME_OFF}/${Endpoint.REQUESTS}/`;
+    },
+  },
+};

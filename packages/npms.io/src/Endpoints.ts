@@ -1,25 +1,25 @@
-export namespace Endpoint {
-  const PACKAGE = 'package';
-  const SEARCH = 'search';
-  const SUGGESTIONS = 'suggestions';
-  const MGET = 'mget';
+export const Endpoint = {
+  PACKAGE: 'package',
+  SEARCH: 'search',
+  SUGGESTIONS: 'suggestions',
+  MGET: 'mget',
 
-  export namespace Search {
-    export function search(): string {
-      return `/${SEARCH}`;
-    }
+  Search: {
+    search(): string {
+      return `/${Endpoint.SEARCH}`;
+    },
 
-    export function suggestions(): string {
-      return `/${SEARCH}/${SUGGESTIONS}`;
-    }
-  }
+    suggestions(): string {
+      return `/${Endpoint.SEARCH}/${Endpoint.SUGGESTIONS}`;
+    },
+  },
 
-  export namespace Package {
-    export function packageInfo(packageName: string): string {
-      return `/${PACKAGE}/${encodeURIComponent(packageName)}`;
-    }
-    export function multiPackageInfo(): string {
-      return `/${PACKAGE}/${MGET}`;
-    }
-  }
-}
+  Package: {
+    packageInfo(packageName: string): string {
+      return `/${Endpoint.PACKAGE}/${encodeURIComponent(packageName)}`;
+    },
+    multiPackageInfo(): string {
+      return `/${Endpoint.PACKAGE}/${Endpoint.MGET}`;
+    },
+  },
+};

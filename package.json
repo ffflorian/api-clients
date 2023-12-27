@@ -8,7 +8,6 @@
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-eslint": "10.1.0",
-    "eslint": "7.32.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-jasmine": "4.1.3",
@@ -20,6 +19,7 @@
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "1.1.5",
     "lerna": "8.0.1",
+    "oxlint": "0.0.22",
     "prettier": "3.1.1"
   },
   "engines": {
@@ -43,7 +43,7 @@
     "fix:ts": "yarn lint:ts --fix",
     "lint": "yarn lint:ts && yarn lint:other",
     "lint:other": "yarn prettier --list-different",
-    "lint:ts": "eslint --ignore-path .gitignore --ext .ts packages",
+    "lint:ts": "oxlint --ignore-path .gitignore packages",
     "prettier": "prettier \"*.{json,md,yml}\"",
     "release": "lerna publish",
     "test": "yarn lint && yarn test:all",
