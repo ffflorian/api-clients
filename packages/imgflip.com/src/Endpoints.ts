@@ -1,12 +1,12 @@
-export namespace Endpoint {
-  const CAPTION_IMAGE = 'caption_image';
-  const GET_MEMES = 'get_memes';
+export const Endpoint = {
+  CAPTION_IMAGE: 'caption_image',
+  GET_MEMES: 'get_memes',
 
-  export function captionImage(): string {
-    return `/${CAPTION_IMAGE}`;
-  }
+  captionImage(): string {
+    return `/${Endpoint.CAPTION_IMAGE}`;
+  },
 
-  export function getMemes(): string {
-    return `/${GET_MEMES}`;
-  }
+  getMemes(): string {
+    return `/${Endpoint.GET_MEMES}`;
+  },
 }

@@ -1,74 +1,74 @@
-export namespace Endpoint {
-  const AUTHORS = 'authors';
-  const CRATES = 'crates';
-  const DEPENDENCIES = 'dependencies';
-  const DOWNLOAD = 'download';
-  const DOWNLOADS = 'downloads';
-  const FOLLOWING = 'following';
-  const OWNERS = 'owners';
-  const OWNER_TEAM = 'owner_team';
-  const OWNER_USER = 'owner_user';
-  const REVERSE_DEPENDENCIES = 'reverse_dependencies';
-  const SUMMARY = 'summary';
-  const VERSIONS = 'versions';
+const encode: typeof encodeURIComponent = encodeURIComponent;
 
-  const encode: typeof encodeURIComponent = encodeURIComponent;
+export const Endpoint = {
+  AUTHORS: 'authors',
+  CRATES: 'crates',
+  DEPENDENCIES: 'dependencies',
+  DOWNLOAD: 'download',
+  DOWNLOADS: 'downloads',
+  FOLLOWING: 'following',
+  OWNERS: 'owners',
+  OWNER_TEAM: 'owner_team',
+  OWNER_USER: 'owner_user',
+  REVERSE_DEPENDENCIES: 'reverse_dependencies',
+  SUMMARY: 'summary',
+  VERSIONS: 'versions',
 
-  export namespace Crates {
-    export function authors(packageName: string, version: string): string {
-      return `/${CRATES}/${encode(packageName)}/${encode(version)}/${AUTHORS}`;
-    }
+  Crates: {
+    authors(packageName: string, version: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${encode(version)}/${Endpoint.AUTHORS}`;
+    },
 
-    export function crate(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}`;
-    }
+    crate(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}`;
+    },
 
-    export function crates(): string {
-      return `/${CRATES}`;
-    }
+    crates(): string {
+      return `/${Endpoint.CRATES}`;
+    },
 
-    export function dependencies(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${DEPENDENCIES}`;
-    }
+    dependencies(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.DEPENDENCIES}`;
+    },
 
-    export function download(packageName: string, version: string): string {
-      return `/${CRATES}/${encode(packageName)}/${encode(version)}/${DOWNLOAD}`;
-    }
+    download(packageName: string, version: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${encode(version)}/${Endpoint.DOWNLOAD}`;
+    },
 
-    export function downloads(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${DOWNLOADS}`;
-    }
+    downloads(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.DOWNLOADS}`;
+    },
 
-    export function following(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${FOLLOWING}`;
-    }
+    following(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.FOLLOWING}`;
+    },
 
-    export function owners(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${OWNERS}`;
-    }
+    owners(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.OWNERS}`;
+    },
 
-    export function ownerTeam(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${OWNER_TEAM}`;
-    }
+    ownerTeam(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.OWNER_TEAM}`;
+    },
 
-    export function ownerUser(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${OWNER_USER}`;
-    }
+    ownerUser(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.OWNER_USER}`;
+    },
 
-    export function reverseDependencies(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${REVERSE_DEPENDENCIES}`;
-    }
+    reverseDependencies(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.REVERSE_DEPENDENCIES}`;
+    },
 
-    export function version(packageName: string, version: string): string {
-      return `/${CRATES}/${encode(packageName)}/${encode(version)}`;
-    }
+    version(packageName: string, version: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${encode(version)}`;
+    },
 
-    export function versions(packageName: string): string {
-      return `/${CRATES}/${encode(packageName)}/${VERSIONS}`;
-    }
-  }
+    versions(packageName: string): string {
+      return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.VERSIONS}`;
+    },
+  },
 
-  export function summary(): string {
-    return `/${SUMMARY}`;
-  }
+  summary(): string {
+    return `/${Endpoint.SUMMARY}`;
+  },
 }

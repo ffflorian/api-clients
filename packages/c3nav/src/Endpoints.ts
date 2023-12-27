@@ -1,265 +1,265 @@
-export namespace Endpoint {
-  const ACCESSRESTRICTIONGROUPS = 'accessrestrictiongroups';
-  const ACCESSRESTRICTIONS = 'accessrestrictions';
-  const AREAS = 'areas';
-  const BOUNDS = 'bounds';
-  const BUILDINGS = 'buildings';
-  const CHANGESETS = 'changesets';
-  const COLUMNS = 'columns';
-  const CROSSDESCRIPTIONS = 'crossdescriptions';
-  const DETAILS = 'details';
-  const DOORS = 'doors';
-  const EDITOR = 'editor';
-  const GEOMETRY = 'geometry';
-  const HOLES = 'holes';
-  const LEAVEDESCRIPTIONS = 'leavedescriptions';
-  const LEVELS = 'levels';
-  const LINEOBSTACLES = 'lineobstacles';
-  const LOCATIONGROUPCATEGORIES = 'locationgroupcategories';
-  const LOCATIONGROUPS = 'locationgroups';
-  const LOCATIONS = 'locations';
-  const MAP = 'map';
-  const OBSTACLES = 'obstacles';
-  const POIS = 'pois';
-  const RAMPS = 'ramps';
-  const ROUTING = 'routing';
-  const SESSION = 'session';
-  const SOURCES = 'sources';
-  const SPACES = 'spaces';
-  const STAIRS = 'stairs';
-  const TYPES = 'types';
-  const UPDATES = 'updates';
+const encode: typeof encodeURIComponent = encodeURIComponent;
 
-  const encode: typeof encodeURIComponent = encodeURIComponent;
+export const Endpoint = {
+  ACCESSRESTRICTIONGROUPS: 'accessrestrictiongroups',
+  ACCESSRESTRICTIONS: 'accessrestrictions',
+  AREAS: 'areas',
+  BOUNDS: 'bounds',
+  BUILDINGS: 'buildings',
+  CHANGESETS: 'changesets',
+  COLUMNS: 'columns',
+  CROSSDESCRIPTIONS: 'crossdescriptions',
+  DETAILS: 'details',
+  DOORS: 'doors',
+  EDITOR: 'editor',
+  GEOMETRY: 'geometry',
+  HOLES: 'holes',
+  LEAVEDESCRIPTIONS: 'leavedescriptions',
+  LEVELS: 'levels',
+  LINEOBSTACLES: 'lineobstacles',
+  LOCATIONGROUPCATEGORIES: 'locationgroupcategories',
+  LOCATIONGROUPS: 'locationgroups',
+  LOCATIONS: 'locations',
+  MAP: 'map',
+  OBSTACLES: 'obstacles',
+  POIS: 'pois',
+  RAMPS: 'ramps',
+  ROUTING: 'routing',
+  SESSION: 'session',
+  SOURCES: 'sources',
+  SPACES: 'spaces',
+  STAIRS: 'stairs',
+  TYPES: 'types',
+  UPDATES: 'updates',
 
-  export namespace Map {
-    export function bounds(): string {
-      return `/${MAP}/${BOUNDS}/`;
-    }
-  }
+  Map: {
+    bounds(): string {
+      return `/${Endpoint.MAP}/${Endpoint.BOUNDS}/`;
+    },
+  },
 
-  export namespace Level {
-    export function levels(id?: number | string): string {
-      let endpoint = `/${LEVELS}/`;
+  Level: {
+    levels(id?: number | string): string {
+      let endpoint = `/${Endpoint.LEVELS}/`;
       if (id) {
         endpoint += `${encode(String(id))}/`;
       }
       return endpoint;
-    }
-  }
+    },
+  },
 
-  export namespace Location {
-    export function locations(): string {
-      return `/${LOCATIONS}/`;
-    }
+  Location: {
+    locations(): string {
+      return `/${Endpoint.LOCATIONS}/`;
+    },
 
-    export function detail(id: number | string): string {
-      let endpoint = `/${LOCATIONS}/`;
+    detail(id: number | string): string {
+      let endpoint = `/${Endpoint.LOCATIONS}/`;
       endpoint += typeof id === 'string' ? 'by_slug/' : '';
       endpoint += `${encode(String(id))}/`;
       return endpoint;
-    }
+    },
 
-    export function details(id: number | string): string {
-      let endpoint = `/${LOCATIONS}/`;
+    details(id: number | string): string {
+      let endpoint = `/${Endpoint.LOCATIONS}/`;
       endpoint += typeof id === 'string' ? 'by_slug/' : '';
-      endpoint += `${encode(String(id))}/${DETAILS}/`;
+      endpoint += `${encode(String(id))}/${Endpoint.DETAILS}/`;
       return endpoint;
-    }
+    },
 
-    export function geometry(id: number | string): string {
-      let endpoint = `/${LOCATIONS}/`;
+    geometry(id: number | string): string {
+      let endpoint = `/${Endpoint.LOCATIONS}/`;
       endpoint += typeof id === 'string' ? 'by_slug/' : '';
-      endpoint += `${encode(String(id))}/${GEOMETRY}/`;
+      endpoint += `${encode(String(id))}/${Endpoint.GEOMETRY}/`;
       return endpoint;
-    }
+    },
 
-    export function types(): string {
-      return `/${LOCATIONS}/${TYPES}/`;
-    }
-  }
+    types(): string {
+      return `/${Endpoint.LOCATIONS}/${Endpoint.TYPES}/`;
+    },
+  },
 
-  export function accessRestrictionGroups(id?: number | string): string {
-    let endpoint = `/${ACCESSRESTRICTIONGROUPS}/`;
+  accessRestrictionGroups(id?: number | string): string {
+    let endpoint = `/${Endpoint.ACCESSRESTRICTIONGROUPS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function accessRestrictions(id?: number | string): string {
-    let endpoint = `/${ACCESSRESTRICTIONS}/`;
+  accessRestrictions(id?: number | string): string {
+    let endpoint = `/${Endpoint.ACCESSRESTRICTIONS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function areas(id?: number | string): string {
-    let endpoint = `/${AREAS}/`;
+  areas(id?: number | string): string {
+    let endpoint = `/${Endpoint.AREAS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function buildings(id?: number | string): string {
-    let endpoint = `/${BUILDINGS}/`;
+  buildings(id?: number | string): string {
+    let endpoint = `/${Endpoint.BUILDINGS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function changesets(id?: number | string): string {
-    let endpoint = `/${CHANGESETS}/`;
+  changesets(id?: number | string): string {
+    let endpoint = `/${Endpoint.CHANGESETS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function columns(id?: number | string): string {
-    let endpoint = `/${COLUMNS}/`;
+  columns(id?: number | string): string {
+    let endpoint = `/${Endpoint.COLUMNS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function crossDescriptions(id?: number | string): string {
-    let endpoint = `/${CROSSDESCRIPTIONS}/`;
+  crossDescriptions(id?: number | string): string {
+    let endpoint = `/${Endpoint.CROSSDESCRIPTIONS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function doors(id?: number | string): string {
-    let endpoint = `/${DOORS}/`;
+  doors(id?: number | string): string {
+    let endpoint = `/${Endpoint.DOORS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function editor(id?: number | string): string {
-    let endpoint = `/${EDITOR}/`;
+  editor(id?: number | string): string {
+    let endpoint = `/${Endpoint.EDITOR}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function holes(id?: number | string): string {
-    let endpoint = `/${HOLES}/`;
+  holes(id?: number | string): string {
+    let endpoint = `/${Endpoint.HOLES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function leaveDescriptions(id?: number | string): string {
-    let endpoint = `/${LEAVEDESCRIPTIONS}/`;
+  leaveDescriptions(id?: number | string): string {
+    let endpoint = `/${Endpoint.LEAVEDESCRIPTIONS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function lineObstacles(id?: number | string): string {
-    let endpoint = `/${LINEOBSTACLES}/`;
+  lineObstacles(id?: number | string): string {
+    let endpoint = `/${Endpoint.LINEOBSTACLES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function locationGroupCategories(id?: number | string): string {
-    let endpoint = `/${LOCATIONGROUPCATEGORIES}/`;
+  locationGroupCategories(id?: number | string): string {
+    let endpoint = `/${Endpoint.LOCATIONGROUPCATEGORIES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function locationGroups(id?: number | string): string {
-    let endpoint = `/${LOCATIONGROUPS}/`;
+  locationGroups(id?: number | string): string {
+    let endpoint = `/${Endpoint.LOCATIONGROUPS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function obstacles(id?: number | string): string {
-    let endpoint = `/${OBSTACLES}/`;
+  obstacles(id?: number | string): string {
+    let endpoint = `/${Endpoint.OBSTACLES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function pois(id?: number | string): string {
-    let endpoint = `/${POIS}/`;
+  pois(id?: number | string): string {
+    let endpoint = `/${Endpoint.POIS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function ramps(id?: number | string): string {
-    let endpoint = `/${RAMPS}/`;
+  ramps(id?: number | string): string {
+    let endpoint = `/${Endpoint.RAMPS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function routing(id?: number | string): string {
-    let endpoint = `/${ROUTING}/`;
+  routing(id?: number | string): string {
+    let endpoint = `/${Endpoint.ROUTING}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function session(id?: number | string): string {
-    let endpoint = `/${SESSION}/`;
+  session(id?: number | string): string {
+    let endpoint = `/${Endpoint.SESSION}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function sources(id?: number | string): string {
-    let endpoint = `/${SOURCES}/`;
+  sources(id?: number | string): string {
+    let endpoint = `/${Endpoint.SOURCES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function spaces(id?: number | string): string {
-    let endpoint = `/${SPACES}/`;
+  spaces(id?: number | string): string {
+    let endpoint = `/${Endpoint.SPACES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function stairs(id?: number | string): string {
-    let endpoint = `/${STAIRS}/`;
+  stairs(id?: number | string): string {
+    let endpoint = `/${Endpoint.STAIRS}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
+  },
 
-  export function updates(id?: number | string): string {
-    let endpoint = `/${UPDATES}/`;
+  updates(id?: number | string): string {
+    let endpoint = `/${Endpoint.UPDATES}/`;
     if (id) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
-  }
-}
+  },
+};

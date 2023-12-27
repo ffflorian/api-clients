@@ -1,72 +1,72 @@
-export namespace Endpoint {
-  const ABSENCES = 'absences';
-  const CREATE = 'create';
-  const ALLOWANCE_TYPES = 'allowancetypes';
-  const DEPARTMENTS = 'departments';
-  const INVITE = 'invite';
-  const LOCATIONS = 'locations';
-  const REASONS = 'reasons';
-  const TEAMS = 'teams';
-  const USERS = 'users';
-  const TIMESPANS = 'timespans';
+export const Endpoint = {
+  ABSENCES: 'absences',
+  CREATE: 'create',
+  ALLOWANCE_TYPES: 'allowancetypes',
+  DEPARTMENTS: 'departments',
+  INVITE: 'invite',
+  LOCATIONS: 'locations',
+  REASONS: 'reasons',
+  TEAMS: 'teams',
+  USERS: 'users',
+  TIMESPANS: 'timespans',
 
-  export namespace Absence {
-    export function absences(id?: string): string {
-      return `/${ABSENCES}/${id ? `${id}/` : ''}`;
-    }
+  Absence: {
+    absences(id?: string): string {
+      return `/${Endpoint.ABSENCES}/${id ? `${id}/` : ''}`;
+    },
 
-    export function create(): string {
-      return `/${ABSENCES}/${CREATE}/`;
-    }
-  }
+    create(): string {
+      return `/${Endpoint.ABSENCES}/${Endpoint.CREATE}/`;
+    },
+  },
 
-  export namespace AllowanceType {
-    export function allowanceTypes(id?: string): string {
-      return `/${ALLOWANCE_TYPES}/${id ? `${id}/` : ''}`;
-    }
-  }
+  AllowanceType: {
+    allowanceTypes(id?: string): string {
+      return `/${Endpoint.ALLOWANCE_TYPES}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace Department {
-    export function departments(id?: string): string {
-      return `/${DEPARTMENTS}/${id ? `${id}/` : ''}`;
-    }
-  }
+  Department: {
+    departments(id?: string): string {
+      return `/${Endpoint.DEPARTMENTS}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace Location {
-    export function locations(id?: string): string {
-      return `/${LOCATIONS}/${id ? `${id}/` : ''}`;
-    }
-  }
+  Location: {
+    locations(id?: string): string {
+      return `/${Endpoint.LOCATIONS}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace Reason {
-    export function reasons(id?: string): string {
-      return `/${REASONS}/${id ? `${id}/` : ''}`;
-    }
-  }
+  Reason: {
+    reasons(id?: string): string {
+      return `/${Endpoint.REASONS}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace Team {
-    export function teams(id?: string): string {
-      return `/${TEAMS}/${id ? `${id}/` : ''}`;
-    }
-  }
+  Team: {
+    teams(id?: string): string {
+      return `/${Endpoint.TEAMS}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace Timespan {
-    export function create(): string {
-      return `/${TIMESPANS}/${CREATE}/`;
-    }
+  Timespan: {
+    create(): string {
+      return `/${Endpoint.TIMESPANS}/${Endpoint.CREATE}/`;
+    },
 
-    export function timespans(id?: string): string {
-      return `/${TIMESPANS}/${id ? `${id}/` : ''}`;
-    }
-  }
+    timespans(id?: string): string {
+      return `/${Endpoint.TIMESPANS}/${id ? `${id}/` : ''}`;
+    },
+  },
 
-  export namespace User {
-    export function invite(): string {
-      return `/${USERS}/${INVITE}/`;
-    }
+  User: {
+    invite(): string {
+      return `/${Endpoint.USERS}/${Endpoint.INVITE}/`;
+    },
 
-    export function users(id?: string): string {
-      return `/${USERS}/${id ? `${id}/` : ''}`;
-    }
-  }
-}
+    users(id?: string): string {
+      return `/${Endpoint.USERS}/${id ? `${id}/` : ''}`;
+    },
+  },
+};

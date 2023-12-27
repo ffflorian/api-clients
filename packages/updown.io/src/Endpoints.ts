@@ -1,41 +1,41 @@
-export namespace Endpoint {
-  const CHECKS = 'checks';
-  const DOWNTIMES = 'downtimes';
-  const METRICS = 'metrics';
-  const NODES = 'nodes';
-  const IPV4 = 'ipv4';
-  const IPV6 = 'ipv6';
+const encode: typeof encodeURIComponent = encodeURIComponent;
 
-  const encode: typeof encodeURIComponent = encodeURIComponent;
+export const Endpoint = {
+  CHECKS: 'checks',
+  DOWNTIMES: 'downtimes',
+  METRICS: 'metrics',
+  NODES: 'nodes',
+  IPV4: 'ipv4',
+  IPV6: 'ipv6',
 
-  export namespace Checks {
-    export function check(token: string): string {
-      return `/${CHECKS}/${encode(token)}/`;
-    }
+  Checks: {
+    check(token: string): string {
+      return `/${Endpoint.CHECKS}/${encode(token)}/`;
+    },
 
-    export function downtimes(token: string): string {
-      return `/${CHECKS}/${encode(token)}/${DOWNTIMES}/`;
-    }
+    downtimes(token: string): string {
+      return `/${Endpoint.CHECKS}/${encode(token)}/${Endpoint.DOWNTIMES}/`;
+    },
 
-    export function metrics(token: string): string {
-      return `/${CHECKS}/${encode(token)}/${METRICS}/`;
-    }
-  }
+    metrics(token: string): string {
+      return `/${Endpoint.CHECKS}/${encode(token)}/${Endpoint.METRICS}/`;
+    },
+  },
 
-  export namespace Nodes {
-    export function ipv4(): string {
-      return `/${NODES}/${IPV4}/`;
-    }
-    export function ipv6(): string {
-      return `/${NODES}/${IPV6}/`;
-    }
-  }
+  Nodes: {
+    ipv4(): string {
+      return `/${Endpoint.NODES}/${Endpoint.IPV4}/`;
+    },
+    ipv6(): string {
+      return `/${Endpoint.NODES}/${Endpoint.IPV6}/`;
+    },
+  },
 
-  export function checks(token?: string): string {
-    return `/${CHECKS}/${token ? `${encode(token)}/` : ''}`;
-  }
+  checks(token?: string): string {
+    return `/${Endpoint.CHECKS}/${token ? `${encode(token)}/` : ''}`;
+  },
 
-  export function nodes(): string {
-    return `/${NODES}/`;
-  }
-}
+  nodes(): string {
+    return `/${Endpoint.NODES}/`;
+  },
+};
