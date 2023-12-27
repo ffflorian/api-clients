@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.2.7 (2023-12-27)
+
+
+### Bug Fixes
+
+* Update dependencies ([31380cd](https://github.com/ffflorian/api-clients/commit/31380cdb8305f2b70f7d8b197377ee5ec6d81c97))
+
+
+
+
+
 ## 3.2.6 (2023-11-18)
 
 
