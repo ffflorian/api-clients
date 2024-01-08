@@ -10,7 +10,7 @@
     "@types/hapi__hawk": "8.0.6",
     "@types/node": "~20",
     "rimraf": "5.0.5",
-    "typedoc": "0.25.5",
+    "typedoc": "0.25.6",
     "typescript": "5.3.3"
   },
   "engines": {
