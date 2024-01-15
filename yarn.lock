@@ -173,10 +173,10 @@
   resolved "https://registry.npmjs.org/@eslint-community/regexpp/-/regexpp-4.4.0.tgz#3e61c564fcd6b921cb789838631c5ee44df09403"
   integrity sha512-A9983Q0LnDGdLPjxyXQ00sbV+K+O+ko2Dr+CZigbHWtX9pNfxlaBkMR8X1CztI73zuEyEBXTVjx7CE+/VSwDiQ==
 
-"@evilmartians/lefthook@1.5.5":
-  version "1.5.5"
-  resolved "https://registry.npmjs.org/@evilmartians/lefthook/-/lefthook-1.5.5.tgz#54d6de466d90c9486a97143ce0f3185f56a1cec6"
-  integrity sha512-vSJQ3rt52kHMqv4DpTf48jzZap5Q+X5C/qeYMBW58KkB+0a7jmMVy611CUfr/cUXeliZOqbSaOi2/kRYsLiSfQ==
+"@evilmartians/lefthook@1.5.6":
+  version "1.5.6"
+  resolved "https://registry.npmjs.org/@evilmartians/lefthook/-/lefthook-1.5.6.tgz#3444593b45475564c115bd09ca6cc4fa11521a5d"
+  integrity sha512-Folu9eldoCQf7tdKyEvLWSyJAhgdYACnrEzqMWdCLpF9it4Wu6sL3I/rVFEjZcTxsUyNeYP3c9zz7xCjIioiVw==
 
 "@ffflorian/eslint-config@0.8.3":
   version "0.8.3"
