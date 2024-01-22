@@ -946,35 +946,35 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@oxlint/darwin-arm64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.2.0.tgz#d8632e05e76b31464574e4fd2a5024b7f82ae43d"
-  integrity sha512-E+xaOyge46PdLVM16XYXA1gdQ1lfZuXWcLqndYFeyrOeaXcsTorTM7n3t3au/PDHQaCJ/73ox+aqwvZA3Mc1EA==
+"@oxlint/darwin-arm64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.2.2.tgz#7db76d5497f34585c83d07faac3c58106849f2e4"
+  integrity sha512-/KFrlvjN9kddb61yw/RiaKHfov0jK8Hx16TMyxp3QHUWk8VzPIsDDGo4jB6sYv3WHSaPWJWJXVFTTk7uBxzOzg==
 
-"@oxlint/darwin-x64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.2.0.tgz#c27cbe75b034a96237495386e8b739844eb79ab3"
-  integrity sha512-T/JgFXJ7DjSqMs0X/1QM1PfsEcvF+p+0K2y8OnqQWXFhPEtEXjazWCnhpAV/P7XKsvGTIXfCKvVD8hfaB5Ekcg==
+"@oxlint/darwin-x64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.2.2.tgz#b9b5c5b12e5077c1abd114841c8445b665bb065a"
+  integrity sha512-1he1zgsD98KwwDd6lY8E8Br4XZhZ21XTXkfBcucztcLN/PQLI9p/Xez7XxhI9y+94W+KJFnAvIsn4ucfuNRFUA==
 
-"@oxlint/linux-arm64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/linux-arm64/-/linux-arm64-0.2.0.tgz#0c310ba4a64550822d62587acc7dd35bfde0d4e0"
-  integrity sha512-+Mon61i/oL/QsUqwyomPcVfFKhGg04OHHwT9jodfWkH+KF4+Fu/EcHmMGiCzsnIOUlSqXEJ+KB5CL3aoiJWXeg==
+"@oxlint/linux-arm64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/linux-arm64/-/linux-arm64-0.2.2.tgz#db0d8ff9791f712b33a5a2192032ab95b58db91f"
+  integrity sha512-9KMA/p3O3RwcvUA0BjDocmiU6J8PTydad+mOxqYzzOHOf5z2+FrtPlbZp2Qh06qu+AWDUxF1E6Eh4urW7Z938g==
 
-"@oxlint/linux-x64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/linux-x64/-/linux-x64-0.2.0.tgz#355b22625455f6dbd6c8fd0bcbad75e489bbc825"
-  integrity sha512-0QGhCcgjn7O6a2BSsWuyUj/ncKUr6EXZoueW7OKhP2N2I8CcYUyzlOxemlJorexZfsojp8sxvJ5ZPR8qWebIBw==
+"@oxlint/linux-x64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/linux-x64/-/linux-x64-0.2.2.tgz#4366c43db41f3b5228b29c8305e83b5154fa4b38"
+  integrity sha512-/YxykbM/SWEj6f1RabxKenShdJjTvKmbCX1IJbLDT3dDxlOo+toQQFSjDoXx4vEMWzvEorErlrSpbphWbY0puQ==
 
-"@oxlint/win32-arm64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.2.0.tgz#b6cf249c8cc889f04c11aaa6b8da3f220050a179"
-  integrity sha512-FP8GNbka7q/WTG7ghnCfQ1tNsN1vrlfMEuwV94r4QAAADS42PIOyyMrJQt235TH0mvwOOPgVHNQRaPB7km2/cA==
+"@oxlint/win32-arm64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.2.2.tgz#a1cd48b2b5acf31c0d419e2e68174f7c6be8919c"
+  integrity sha512-sAUxLtvu883HBhYWP3HVP93RZyetdbFcfcR2UXtG0/7wv+CZocwrn6f3YEVfl0rJfSxvpuvjckd7Aoin4v0aSg==
 
-"@oxlint/win32-x64@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.2.0.tgz#3fdfab944a6c8fbcae29a801107c2936ed9bcd60"
-  integrity sha512-ueEopFehnGVy1YplRp3ZRY1f6Q3rUYnFF/OAtgBEAQx6J5A+J7DsxNEg1jZ3UL5svT03QOrOBFtG0V4rOj7F1Q==
+"@oxlint/win32-x64@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.2.2.tgz#27914c1cd18bdd21f0e51350b1d02b18bbedccd8"
+  integrity sha512-JpuhejB/XNvG/spLmlX/Isw7i2qNhESF+DZwZ4y2MXSK4cebbe++pzh/SFwEhh6xJ3lfdGM2VaFTRJhGcEdACw==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -4796,17 +4796,17 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-oxlint@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.2.0.tgz#391e781dc1ef257203bcea67e0d459bec75afea3"
-  integrity sha512-v8SaA1tA9+c44EE/jkpAhp8DDHM50clArtOpArkFeU6IM2DOW+JB7hBXN5jIqV7Rb8wlvsl6E50ajj0OsNLmwA==
+oxlint@0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.2.2.tgz#0713d55309623c299f649975930d4d5f8d5f5597"
+  integrity sha512-geFMBwVmzlwaB805RxZqGLojjoNoYao+GGVntDV5kO4CFQDu+FVIBFafYY7THbZU/dcMz1zik8ss021WLIl2oA==
   optionalDependencies:
-    "@oxlint/darwin-arm64" "0.2.0"
-    "@oxlint/darwin-x64" "0.2.0"
-    "@oxlint/linux-arm64" "0.2.0"
-    "@oxlint/linux-x64" "0.2.0"
-    "@oxlint/win32-arm64" "0.2.0"
-    "@oxlint/win32-x64" "0.2.0"
+    "@oxlint/darwin-arm64" "0.2.2"
+    "@oxlint/darwin-x64" "0.2.2"
+    "@oxlint/linux-arm64" "0.2.2"
+    "@oxlint/linux-x64" "0.2.2"
+    "@oxlint/win32-arm64" "0.2.2"
+    "@oxlint/win32-x64" "0.2.2"
 
 p-finally@^1.0.0:
   version "1.0.0"
