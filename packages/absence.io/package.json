@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
     "@hapi/hawk": "8.0.0",
-    "axios": "1.6.5"
+    "axios": "1.6.7"
   },
   "description": "An absence.io API client",
   "devDependencies": {
