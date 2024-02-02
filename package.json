@@ -19,7 +19,7 @@
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "3.0.0",
     "lerna": "8.0.2",
-    "oxlint": "0.2.2",
+    "oxlint": "0.2.6",
     "prettier": "3.2.4"
   },
   "engines": {
