@@ -18,7 +18,7 @@
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-typescript-sort-keys": "2.3.0",
     "eslint-plugin-unused-imports": "3.0.0",
-    "lerna": "8.0.2",
+    "lerna": "8.1.2",
     "oxlint": "0.2.8",
     "prettier": "3.2.5"
   },
