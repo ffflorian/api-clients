@@ -11,5 +11,5 @@ jobs:
       - uses: ahmadnassri/action-dependabot-auto-merge@v2.6.6
         with:
           config: .github/auto-merge.yml
-          command: "squash and merge"
+          command: 'squash and merge'
           github-token: ${{ secrets.AUTO_MERGE_TOKEN }}
