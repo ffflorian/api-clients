@@ -6,7 +6,7 @@
   "description": "A statuspage.io API client",
   "devDependencies": {
     "@types/node": "~20",
-    "typedoc": "0.25.10",
+    "typedoc": "0.25.12",
     "typescript": "5.3.3"
   },
   "engines": {
