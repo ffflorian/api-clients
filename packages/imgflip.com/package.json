@@ -9,7 +9,7 @@
     "@types/node": "~20",
     "@types/qs": "6.9.12",
     "typedoc": "0.25.12",
-    "typescript": "5.3.3"
+    "typescript": "5.4.2"
   },
   "engines": {
     "node": ">= 10.9"
