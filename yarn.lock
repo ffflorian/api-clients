@@ -947,45 +947,45 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@oxlint/darwin-arm64@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.2.15.tgz#3cdee1c677183b0e4388e6d9017bdd186842eca9"
-  integrity sha512-oFNk4X3VgVVq1No/wW6UPiBszl46QfqsNloCIzBNMTO1nEyd6FD5RoteTr/0denknFmY+i6/sA6USYMmHGckEA==
+"@oxlint/darwin-arm64@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.2.16.tgz#a0f5574f3ff39cbe543f92acc4db108804f880a2"
+  integrity sha512-yYTfmb1cFs/PFyHYSdfi0Yj6MlhllJfhSb8v5ZlzLIJw6qSH28kqIFx8fXVG//PlWBaPpAwjL/DvNxYewLgJYA==
 
-"@oxlint/darwin-x64@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.2.15.tgz#c7d5e97b059ca767c0fa74f04b6d7f11d0f6ccb9"
-  integrity sha512-8fHUfzh0M6G15VM3EaoxAKUZlZ808JHg06ClfJ6WDQAWUiom4cuDnLz/HW2bqWg4hxqeyRKpF9oZKyLlkXJh1Q==
+"@oxlint/darwin-x64@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.2.16.tgz#e0baec76564e2be1617a1aaeaa1ebcd133f958ce"
+  integrity sha512-MZnCmzw9li0ZLesl7VAKyz4qfEQ6KXrXj5fzR91Pb+Nd4hQcwqtp7gn9N2iY9GpI0M7VzLC1sEzw8jcqT4u7VA==
 
-"@oxlint/linux-arm64-gnu@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.2.15.tgz#3395aad8d2b864a2e0b74300d93ff2565cd9c981"
-  integrity sha512-QIclcjAskpi7L8ErJ58IqhLQNizClkrYQEt8brPW/IYHm0fNH154OcJXpdm23Zfqc9TljIwklAckuZoEQtUDnQ==
+"@oxlint/linux-arm64-gnu@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.2.16.tgz#454c00b2582bd92fd5d42bf34b38d10ccdb75909"
+  integrity sha512-esLZ6pDm7x8HWAS2FdaO25i+JN6GniuPPRqP+PevmVoiRscnGlDtRH3ttZW6WefAxCNTAqmsVtUUNp2GY9vA2g==
 
-"@oxlint/linux-arm64-musl@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.2.15.tgz#e0af3424a226c826bb2f7be00e3986652cc6dfea"
-  integrity sha512-f7KswNDz1viZN/S6fQmr+47JhVwKLzCyE+L8M5hOJxtlRMlfqn29LCqvjXVfA5geS/BbbCdPbhXaOypuvOx1yA==
+"@oxlint/linux-arm64-musl@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.2.16.tgz#646fa3eb593e9c33f5edec89149ec66305824e18"
+  integrity sha512-wI+DonxPSJCSCC+GbpG+BkMeiHf70Hvavr+2bQZS3lIwkh41YY3dmFHiETrs0KIrJSk0KEZhbJsVUAKczYOqAQ==
 
-"@oxlint/linux-x64-gnu@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.2.15.tgz#18a834432e0222bc8f0f4bd41537c9aee40a191f"
-  integrity sha512-JnI1mkbYl/w1t1ShL053x8l6FoIgtITrxvN0nkFpaJl6FIn4436yGYeYS8pOEpQuf52aWCJDH2vNGa18hEV3Sg==
+"@oxlint/linux-x64-gnu@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.2.16.tgz#cd11ad150b3babca642c3d3565120fc6b95ddee7"
+  integrity sha512-9FBJ6JnQvfPzx54jQbY1YzgPBN7CQ66YEuH5AgR2Y/Tqqp+hML7a5iViZjyBKNUVbce0kyUtwi5vDzRMLa293w==
 
-"@oxlint/linux-x64-musl@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/linux-x64-musl/-/linux-x64-musl-0.2.15.tgz#60b1b9548481fa389003e73574b3d257354687d3"
-  integrity sha512-RtATil+QO5kRMK5JYsx5QQERiaKQfLs+NJ/Sd+H4eI1Rdfxc+8JGUuEm6TBlr3hq/tzxif2UiHBbJ3FrDJPRoQ==
+"@oxlint/linux-x64-musl@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/linux-x64-musl/-/linux-x64-musl-0.2.16.tgz#66dbd37c9dc95704cf1eb1f09e3ac63ed068c84c"
+  integrity sha512-MTrzNvhyYmJIZkanlPcH9eXlYv8Bn6TUz08nfQSKDa62qaE+zmIzL0fSMMUD00W7AUuFZYlgtztQMsBqEmwzXg==
 
-"@oxlint/win32-arm64@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.2.15.tgz#ece9bdd28d043a83382c82096cd37060c67a6c90"
-  integrity sha512-odewb/0qAh51Zd4bz6aZolYNvD9MBFRCk/ojFd5SWm86QxJKzn3su5CK+egy6rEonD7VZeAK8qK0QAACpDf8YA==
+"@oxlint/win32-arm64@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.2.16.tgz#a14e469a5490172745fdb12882ca2865bf2e0e84"
+  integrity sha512-A8KBa9kezFmKxxM9diemQAokEDt3hiVmKoNiryFOoREdXDslHgwLmVt53FUIn4C9qSD8IwUQUNCJ42Fo1tnYlw==
 
-"@oxlint/win32-x64@0.2.15":
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.2.15.tgz#08d7a7f7816d9e98314881076b3007003c75a027"
-  integrity sha512-z+jvd7UkWq+eu7ZJ98jAQbThXT1JhXQxa0mttZ/UYHaYH4O/eL2PSA/d1bKj6X2kNPcITomUHBgEcA6kK6Dilw==
+"@oxlint/win32-x64@0.2.16":
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.2.16.tgz#37fed15fb1ee5de5537e11292ef89c2a7f6486c4"
+  integrity sha512-6tDk2LtK2eSp8ErPaSHrgl7qN7+BE8/nJhJ/Wepg02uYK0ZOFcU4b72PpD0UwFCqHILSxtH1vXshRjrBeSfqoA==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -4854,19 +4854,19 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-oxlint@0.2.15:
-  version "0.2.15"
-  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.2.15.tgz#9e826c73ceb20c5674861240b3bf44562f513842"
-  integrity sha512-YDlWV5ak7pKydadA4ifCtT4ymYUhSoWh16DZeDdl0dxewkP9Kh2DvKQ4ep9Yj5YL5ySotj5ITkMjN60GbqMQrw==
+oxlint@0.2.16:
+  version "0.2.16"
+  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.2.16.tgz#213b15c6970b5d169c9998ad11c3e9748c06b0e7"
+  integrity sha512-u9Laceg6qjlvR2T7LliIe8vLjE2eUl6oypHvuIAhP7YtTYoTB4//SqQ9yMqKD41uorQVOj851Ge/vcZFtK9fAw==
   optionalDependencies:
-    "@oxlint/darwin-arm64" "0.2.15"
-    "@oxlint/darwin-x64" "0.2.15"
-    "@oxlint/linux-arm64-gnu" "0.2.15"
-    "@oxlint/linux-arm64-musl" "0.2.15"
-    "@oxlint/linux-x64-gnu" "0.2.15"
-    "@oxlint/linux-x64-musl" "0.2.15"
-    "@oxlint/win32-arm64" "0.2.15"
-    "@oxlint/win32-x64" "0.2.15"
+    "@oxlint/darwin-arm64" "0.2.16"
+    "@oxlint/darwin-x64" "0.2.16"
+    "@oxlint/linux-arm64-gnu" "0.2.16"
+    "@oxlint/linux-arm64-musl" "0.2.16"
+    "@oxlint/linux-x64-gnu" "0.2.16"
+    "@oxlint/linux-x64-musl" "0.2.16"
+    "@oxlint/win32-arm64" "0.2.16"
+    "@oxlint/win32-x64" "0.2.16"
 
 p-finally@^1.0.0:
   version "1.0.0"
