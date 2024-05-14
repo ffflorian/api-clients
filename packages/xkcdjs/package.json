@@ -14,7 +14,7 @@
     "http-status-codes": "2.3.0",
     "jasmine": "5.1.0",
     "nock": "13.5.4",
-    "rimraf": "5.0.5",
+    "rimraf": "5.0.7",
     "ts-node": "10.9.2",
     "typedoc": "0.25.13",
     "typescript": "5.4.5"
