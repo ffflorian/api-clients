@@ -4,7 +4,7 @@
   "devDependencies": {
     "@evilmartians/lefthook": "1.6.12",
     "@ffflorian/eslint-config": "0.8.3",
-    "@ffflorian/prettier-config": "0.3.2",
+    "@ffflorian/prettier-config": "0.3.3",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-eslint": "10.1.0",
