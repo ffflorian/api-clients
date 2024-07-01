@@ -10,7 +10,7 @@
     "jasmine": "5.1.0",
     "rimraf": "5.0.7",
     "ts-node": "10.9.2",
-    "typedoc": "0.25.13",
+    "typedoc": "0.26.3",
     "typescript": "5.4.5"
   },
   "engines": {
