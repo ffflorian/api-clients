@@ -3,7 +3,7 @@
   "dependencies": {
     "@hapi/hawk": "8.0.0",
     "axios": "1.7.2",
-    "qs": "6.12.1"
+    "qs": "6.12.3"
   },
   "description": "An bamboohr.com API client",
   "devDependencies": {
