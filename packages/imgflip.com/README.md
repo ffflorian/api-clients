@@ -23,7 +23,7 @@ imgflip.api
   });
 
 imgflip.api
-  .captionImage({{
+  .captionImage({
     username: 'myUser',
     password: 'secret-password',
     template_id: 438680,
