@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.3.8 (2024-08-01)
+
+
+### Bug Fixes
+
+* **impgflip.com:** typo ([#1610](https://github.com/ffflorian/api-clients/issues/1610)) ([c7d8a2c](https://github.com/ffflorian/api-clients/commit/c7d8a2ca7b54bc4a51039b54d7fb7d67b73d3586))
+
+
+
+
+
 ## 3.3.7 (2023-12-27)
 
 
