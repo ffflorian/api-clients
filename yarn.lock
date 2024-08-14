@@ -2574,10 +2574,10 @@ eslint-plugin-jasmine@4.2.0:
   resolved "https://registry.npmjs.org/eslint-plugin-jasmine/-/eslint-plugin-jasmine-4.2.0.tgz#ed0fe988b6e3b123905a7bf68d77239649fd018c"
   integrity sha512-zSCsnP4gMqBSt8jApExP0ja43nAI1fpAD5kY+knrIJylBxC/LEth25PkqcKJqW32GjesjsiA1SSSR3Z5qIranA==
 
-eslint-plugin-jsdoc@50.1.0:
-  version "50.1.0"
-  resolved "https://registry.npmjs.org/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-50.1.0.tgz#0409c7b4c469c1335308603b510dab793a1c26ee"
-  integrity sha512-l4yg0ZIZ0Te5l/HHgz5FRyZM7eol2jgPnB3aOycooWr8pLqA8NCkSej+NcMVU9zIpt6BlPHqhPa8Vo+z4/Y51A==
+eslint-plugin-jsdoc@50.2.2:
+  version "50.2.2"
+  resolved "https://registry.npmjs.org/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-50.2.2.tgz#151e63c8bc245ea8b2357d4229392a5b993827b0"
+  integrity sha512-i0ZMWA199DG7sjxlzXn5AeYZxpRfMJjDPUl7lL9eJJX8TPRoIaxJU4ys/joP5faM5AXE1eqW/dslCj3uj4Nqpg==
   dependencies:
     "@es-joy/jsdoccomment" "~0.48.0"
     are-docs-informative "^0.0.2"
