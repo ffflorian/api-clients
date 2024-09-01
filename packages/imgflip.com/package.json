@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/node": "~20",
     "@types/qs": "6.9.15",
-    "typedoc": "0.26.5",
+    "typedoc": "0.26.6",
     "typescript": "5.5.4"
   },
   "engines": {
