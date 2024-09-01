@@ -4,7 +4,7 @@
     "icanhazdadjoke": "dist/cli.js"
   },
   "dependencies": {
-    "axios": "1.7.4",
+    "axios": "1.7.7",
     "commander": "12.1.0"
   },
   "description": "An icanhazdadjoke.com API client with a CLI.",
