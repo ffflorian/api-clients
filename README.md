@@ -13,7 +13,6 @@ API clients for various services.
 - [`imgflip.com`](./packages/imgflip.com/) [![npm version](https://img.shields.io/npm/v/imgflip.com.svg)](https://www.npmjs.com/package/imgflip.com)
 - [`libraries.io`](./packages/libraries.io/) [![npm version](https://img.shields.io/npm/v/libraries.io.svg)](https://www.npmjs.com/package/libraries.io)
 - [`npms.io`](./packages/npms.io/) [![npm version](https://img.shields.io/npm/v/npms.io.svg)](https://www.npmjs.com/package/npms.io)
-- [`roman-client`](./packages/roman-client/) [![npm version](https://img.shields.io/npm/v/roman-client.svg)](https://www.npmjs.com/package/roman-client)
 - [`statuspage.io`](./packages/statuspage.io/) [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 - [`updown.io`](./packages/updown.io/) [![npm version](https://img.shields.io/npm/v/updown.io.svg)](https://www.npmjs.com/package/updown.io)
 - [`xkcdjs`](./packages/xkcdjs/) [![npm version](https://img.shields.io/npm/v/@ffflorian/xkcdjs.svg)](https://www.npmjs.com/package/@ffflorian/xkcdjs)
