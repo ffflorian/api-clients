@@ -1068,45 +1068,45 @@
   dependencies:
     "@octokit/openapi-types" "^18.0.0"
 
-"@oxlint/darwin-arm64@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.9.9.tgz#688e34fc986f7100597a804fd1079acf18683571"
-  integrity sha512-My2KfUByjRl49p0rr/Glx9Y/hjney1uFk0JXNjwHqYToHqO9fY/IZ6XT1fdw9sX+1hdpq9bmj88rnkpvu0/cRw==
+"@oxlint/darwin-arm64@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-arm64/-/darwin-arm64-0.10.3.tgz#4ab8fe00731d1e333d40ea094091debb7b541e62"
+  integrity sha512-1zcWSqr9DmhbSrV1SEZRywp81CNq8ZidIcFGB8tGUMnlBNYiHnxyHHh2GIZsr1C2exmkBUGXruM1P8eQ9BWGuQ==
 
-"@oxlint/darwin-x64@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.9.9.tgz#e48f963fd3f84dfd69468d55fee937561f5fc8af"
-  integrity sha512-k0r0t+MAzrk8yWs0nxyD9Skfb+Ozmu6HRMTJIsUTLV4AKMt9CZBlLVS0OXzXHi72AOHz3UUve5rXxevVVY9lHQ==
+"@oxlint/darwin-x64@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/darwin-x64/-/darwin-x64-0.10.3.tgz#fa90ecfccfe4adf75e9857d0f29a5751010e409d"
+  integrity sha512-lPAXCwYb+wZgjWAMhtPjGn7n1h8HvTulj6XCRyIgUu/aTGDRtnsae9IPXsJ9LJwYu5wyzkcWow0nhlIxkDaZ+w==
 
-"@oxlint/linux-arm64-gnu@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.9.9.tgz#9f5ecb6ed5e612145ee904ff35fa8c853b68932e"
-  integrity sha512-atiotr1pN3rr0i7Ww3SpOEOvkFex97S8GwYmiTlSng0kp+FSIZD6Kjlr9k3oayf9RZUDRuAE4WptwV1KYLvIDw==
+"@oxlint/linux-arm64-gnu@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.10.3.tgz#7a5acb67412925cfa2a612ba1304c228e2606609"
+  integrity sha512-OmzpNVRwhjuI/RtoG4ROrwxRICTLoBB3ua4/Mh2iC3RelOog2xhlAAJHenKtzgQXNmebWof/0EckFpMfID7fMw==
 
-"@oxlint/linux-arm64-musl@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.9.9.tgz#94986bd74ef374801904c3f028be37a651cbb582"
-  integrity sha512-vmd6Eog6WiudMTT0Fa8u5N+47caaWF2KVUHOSEV/d/WauVx+ZOR9z1LEM+54AZwn3Z2TbtFOJDiz7iDukZPbfw==
+"@oxlint/linux-arm64-musl@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.10.3.tgz#153b10e6698e6fd9b73a3a524f24104845a7fb81"
+  integrity sha512-QQzlIW6rKOoGZK19gz/kbAbIFROJEV6ER0smcoBA7FzwsQ/ji796qx3TdITelgJwJt5x+OG5ZHztIjyzC871ZQ==
 
-"@oxlint/linux-x64-gnu@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.9.9.tgz#3ddec6da927859875313025e7d26bed4126294f5"
-  integrity sha512-AUmSRerK4VXIMcTYYk25KGoOU2/z+NGItUhI6nJgMFktrbF8MUD6hlf3vaQZNle454z7FDJNSjARM0bB+xpBiQ==
+"@oxlint/linux-x64-gnu@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.10.3.tgz#78a272ab9f26d06b452af2ad224f40886628377a"
+  integrity sha512-m4ZUKsQNXxXmHUYBEaO7KN83DPVsLTq8KaRO4qj0Cs1RgD8O3YYCCDewVe8x/9yskQrCCTP4mL0G4IZgDJ3Gpg==
 
-"@oxlint/linux-x64-musl@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/linux-x64-musl/-/linux-x64-musl-0.9.9.tgz#ef7a87be49e16327ea72384606878cf34060dc21"
-  integrity sha512-jQYIx5KUYbpXbXBFPgIwRPLSm3AO5wa+32BQYASIOCPcsPywV+HJKbQpzmWqXDYel6hrifmIxspgxHhGMlHJ1Q==
+"@oxlint/linux-x64-musl@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/linux-x64-musl/-/linux-x64-musl-0.10.3.tgz#0b19efe13425364dc1c6735cc7b75850b43a4cf2"
+  integrity sha512-XKvAUYxE9bHjvWE4wmOlIdaVQN7pzZAH3Rx1EFg0MfGBVjyDm+uf0P3so+gx2PowqvBnBneL9tth2AS3Bcjl6g==
 
-"@oxlint/win32-arm64@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.9.9.tgz#42828cfcc2f4bad21cd25f9d01a9204c7d8ddca0"
-  integrity sha512-HSOztIKmiivfUAoxGx4qyerYV+aAXGvKbwWf8j4RorAEg2WWBdhVe9XHoSdqgYsOBi1515+YXxXiSRX3F/0xAg==
+"@oxlint/win32-arm64@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/win32-arm64/-/win32-arm64-0.10.3.tgz#8ed9dc0eaaf17c0c3b637b9878255be6b7e584fc"
+  integrity sha512-8xhYVvnwrveMHyXAgQAaDjJWFij4mZP6jtMlBIjk6pZSrjUzX+9o7Wh1zgH6kYApmcPDAzomYJLSYvyF5PzluA==
 
-"@oxlint/win32-x64@0.9.9":
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.9.9.tgz#b8fb042cb892b869db0e20f79e625d56971caab1"
-  integrity sha512-T1/tNxqoYd/MMqi1dhSVzAVL0ZINvXDBEQWm6OCSrrjRM6c9UQydTzsgLWfvm9uHWngcMuRGXhN3F+D6KEYs3w==
+"@oxlint/win32-x64@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/@oxlint/win32-x64/-/win32-x64-0.10.3.tgz#16993ddeb1e121486d9c34a499275aff96e2c1da"
+  integrity sha512-dQiHruLd42aock1WHp5BFvRvaz+Pe436dQkcmlCVmInhmOjRpDEVKPUUWamrImV6S8VM63bn4Jp60vpprjJQdQ==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -1275,11 +1275,6 @@
   version "1.1.1"
   resolved "https://registry.npmjs.org/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-
-"@types/cookiejar@2.1.5":
-  version "2.1.5"
-  resolved "https://registry.npmjs.org/@types/cookiejar/-/cookiejar-2.1.5.tgz#14a3e83fa641beb169a2dd8422d91c3c345a9a78"
-  integrity sha512-he+DHOWReW0nghN24E1WUqM0efK4kI9oTqDm6XmK8ZPe2djZ90BSNdGnIyCLzCPw7/pogPlGbzI2wHGGmi4O/Q==
 
 "@types/crypto-js@*":
   version "3.1.43"
@@ -5173,19 +5168,19 @@ os-tmpdir@~1.0.2:
   resolved "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
 
-oxlint@0.9.9:
-  version "0.9.9"
-  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.9.9.tgz#ca036f3b37d89e25dcf3fd2d3ccf8745ad471d31"
-  integrity sha512-EqUmSKgnU7KNCi29uFe5MQnUZ0GH569Inkry/e84k4lwVRv1QuDr4DHLpu0cXBN2atwhKf1Szk/3uxmB2qgPbw==
+oxlint@0.10.3:
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/oxlint/-/oxlint-0.10.3.tgz#e3592a879243b33459f56f5e5116ef3c293f85ea"
+  integrity sha512-af5u5+s4adyszujeILPDRGwix0o5M1+qR1eqxNSmJhTKVRX7xdrT9s2rpNpMYxQmPyWRhC/+5Gqyb+f/PtbK9A==
   optionalDependencies:
-    "@oxlint/darwin-arm64" "0.9.9"
-    "@oxlint/darwin-x64" "0.9.9"
-    "@oxlint/linux-arm64-gnu" "0.9.9"
-    "@oxlint/linux-arm64-musl" "0.9.9"
-    "@oxlint/linux-x64-gnu" "0.9.9"
-    "@oxlint/linux-x64-musl" "0.9.9"
-    "@oxlint/win32-arm64" "0.9.9"
-    "@oxlint/win32-x64" "0.9.9"
+    "@oxlint/darwin-arm64" "0.10.3"
+    "@oxlint/darwin-x64" "0.10.3"
+    "@oxlint/linux-arm64-gnu" "0.10.3"
+    "@oxlint/linux-arm64-musl" "0.10.3"
+    "@oxlint/linux-x64-gnu" "0.10.3"
+    "@oxlint/linux-x64-musl" "0.10.3"
+    "@oxlint/win32-arm64" "0.10.3"
+    "@oxlint/win32-x64" "0.10.3"
 
 p-finally@^1.0.0:
   version "1.0.0"
@@ -5570,20 +5565,10 @@ proxy-from-env@^1.1.0:
   resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
   integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
-psl@^1.1.33:
-  version "1.8.0"
-  resolved "https://registry.npmjs.org/psl/-/psl-1.8.0.tgz#9326f8bcfb013adcc005fdff056acce020e51c24"
-  integrity sha512-RIdOzyoavK+hA18OGGWDqUTsCLhtA7IcZ/6NCs4fFJaHBDab+pDDmDIByWFRQJq2Cd7r1OoQxBGKOaztq+hjIQ==
-
 punycode.js@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/punycode.js/-/punycode.js-2.3.1.tgz#6b53e56ad75588234e79f4affa90972c7dd8cdb7"
   integrity sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==
-
-punycode@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
-  integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
 qs@6.13.0:
   version "6.13.0"
@@ -5591,11 +5576,6 @@ qs@6.13.0:
   integrity sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==
   dependencies:
     side-channel "^1.0.6"
-
-querystringify@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
-  integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
 quick-lru@^4.0.1:
   version "4.0.1"
@@ -5742,11 +5722,6 @@ requireindex@~1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
   integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
-
-requires-port@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
-  integrity sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==
 
 resolve-cwd@^3.0.0:
   version "3.0.0"
@@ -6369,16 +6344,6 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-tough-cookie@4.1.4:
-  version "4.1.4"
-  resolved "https://registry.npmjs.org/tough-cookie/-/tough-cookie-4.1.4.tgz#945f1461b45b5a8c76821c33ea49c3ac192c1b36"
-  integrity sha512-Loo5UUvLD9ScZ6jh8beX1T6sO1w2/MpCRpEP7V280GKMVUQ0Jzar2U3UJPsrdbziLEMMhu3Ujnq//rhiFuIeag==
-  dependencies:
-    psl "^1.1.33"
-    punycode "^2.1.1"
-    universalify "^0.2.0"
-    url-parse "^1.5.3"
-
 tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
@@ -6682,11 +6647,6 @@ universal-user-agent@^6.0.0:
   resolved "https://registry.npmjs.org/universal-user-agent/-/universal-user-agent-6.0.0.tgz#3381f8503b251c0d9cd21bc1de939ec9df5480ee"
   integrity sha512-isyNax3wXoKaulPDZWHQqbmIx1k2tb9fb3GGDBRxCscfYV2Ch7WxPArBsFEG8s/safwXTT7H4QGhaIkTp9447w==
 
-universalify@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/universalify/-/universalify-0.2.0.tgz#6451760566fa857534745ab1dde952d1b1761be0"
-  integrity sha512-CJ1QgKmNg3CwvAv/kOFmtnEN05f0D/cn9QntgNOQlQF9dgvVTHj3t+8JPdjqawCHk7V/KA+fbUqzZ9XWhcqPUg==
-
 universalify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/universalify/-/universalify-1.0.0.tgz#b61a1da173e8435b2fe3c67d29b9adf8594bd16d"
@@ -6701,14 +6661,6 @@ upath@2.0.1:
   version "2.0.1"
   resolved "https://registry.npmjs.org/upath/-/upath-2.0.1.tgz#50c73dea68d6f6b990f51d279ce6081665d61a8b"
   integrity sha512-1uEe95xksV1O0CYKXo8vQvN1JEbtJp7lb7C5U9HMsIp6IVwntkH/oNUzyVNQSd4S1sYk2FpSSW44FqMc8qee5w==
-
-url-parse@^1.5.3:
-  version "1.5.10"
-  resolved "https://registry.npmjs.org/url-parse/-/url-parse-1.5.10.tgz#9d3c2f736c1d75dd3bd2be507dcc111f1e2ea9c1"
-  integrity sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==
-  dependencies:
-    querystringify "^2.1.1"
-    requires-port "^1.0.0"
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
