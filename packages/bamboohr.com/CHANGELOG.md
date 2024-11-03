@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.3.9 (2024-11-02)
+
+
+### Bug Fixes
+
+* Force release ([964babc](https://github.com/ffflorian/api-clients/commit/964babc321c24fefbd1107b62170f6415c0a43fa))
+
+
+
+
+
 ## 1.3.8 (2024-08-01)
 
 
