@@ -3,17 +3,20 @@
     "alwaysStrict": true,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["esnext", "DOM"],
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "strictFunctionTypes": true,
-    "target": "es6"
+    "target": "ES6"
+  },
+  "ts-node": {
+    "swc": true
   }
 }
