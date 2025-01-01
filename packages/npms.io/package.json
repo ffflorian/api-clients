@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "axios": "1.7.8"
+    "axios": "1.7.9"
   },
   "description": "A npms.io API client",
   "devDependencies": {
