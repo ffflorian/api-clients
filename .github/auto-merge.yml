@@ -1,3 +1,0 @@
-- match:
-    dependency_name: ^@types/.*
-    update_type: 'semver:patch'
