@@ -21,7 +21,7 @@
     "eslint-plugin-unused-imports": "4.1.4",
     "lerna": "8.1.9",
     "oxlint": "0.15.12",
-    "prettier": "3.4.2"
+    "prettier": "3.5.2"
   },
   "engines": {
     "node": ">= 10.9",
