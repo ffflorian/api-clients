@@ -1,0 +1,18 @@
+name: Mirror to Codeberg
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: yesolutions/mirror-action@18fc60c0629185af960c8256ccb650287a350b4e
+        with:
+          REMOTE: 'ssh://git@codeberg.org/ffflorian/api-clients.git'
+          GIT_SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SECRET }}
+          GIT_SSH_NO_VERIFY_HOST: "true"
