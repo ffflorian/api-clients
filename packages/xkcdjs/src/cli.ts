@@ -14,8 +14,8 @@ async function init(dir: string = '.'): Promise<[string, XKCD]> {
     await fsAsync.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
     const xkcd = new XKCD();
     return [resolvedPath, xkcd];
-  } catch (error) {
-    throw new Error(`The specified path does not exist or is not writable.`);
+  } catch {
+    throw new Error('The specified path does not exist or is not writable.');
   }
 }
 
@@ -76,8 +76,8 @@ commander
     let parsedIndex: number;
     try {
       parsedIndex = parseInt(index, 10);
-    } catch (error) {
-      throw new Error('Invalid (number as AxiosError) specified.');
+    } catch {
+      throw new Error('Invalid number specified.');
     }
     try {
       const [resolvedPath, xkcd] = await init(command.parent.output);
