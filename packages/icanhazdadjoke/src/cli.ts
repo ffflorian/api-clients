@@ -20,7 +20,7 @@ async function init(dir: string = '.'): Promise<[string, ICanHazDadJoke]> {
     await fsAsync.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
     const iCanHazDadJoke = new ICanHazDadJoke();
     return [resolvedPath, iCanHazDadJoke];
-  } catch (error) {
+  } catch {
     throw new Error('The specified path does not exist or is not writable.');
   }
 }
