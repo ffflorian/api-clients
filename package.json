@@ -32,7 +32,8 @@
   "private": true,
   "resolutions": {
     "strip-ansi": "^6",
-    "wrap-ansi": "^6"
+    "wrap-ansi": "^6",
+    "tough-cookie": "<5"
   },
   "scripts": {
     "build:docs": "lerna run build:docs --concurrency 4",
