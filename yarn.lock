@@ -1133,45 +1133,45 @@
   resolved "https://registry.yarnpkg.com/@open-draft/until/-/until-2.1.0.tgz#0acf32f470af2ceaf47f095cdecd40d68666efda"
   integrity sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==
 
-"@oxlint/darwin-arm64@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/darwin-arm64/-/darwin-arm64-0.16.3.tgz#c717e8fbae2e67c841f0965f18df629134832cd4"
-  integrity sha512-X0VSK4mjPWJTzNHTExFlN+MdEVbxhdl/fXSLDKPf8Sm46ebY7qat8Df06Z0fncZc1+aDAb32xDy0U3cnUA1vgg==
+"@oxlint/darwin-arm64@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/darwin-arm64/-/darwin-arm64-0.16.8.tgz#596931ee0f8707704aabbeaf8ae8c7ab5b5261e6"
+  integrity sha512-1w7Jbrp0WUkbXlGb/x3nh7MK8EzCS8USR2Q8Yo0ZMmCNXmxxfkL07B9wSmlKcJ7y9MSfFkpF4Md5r6jwJNeWLg==
 
-"@oxlint/darwin-x64@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/darwin-x64/-/darwin-x64-0.16.3.tgz#be981a471f67a182d84e33ec2042e8765e6b3149"
-  integrity sha512-/fTRMu2wjSbp9ai6jFlNSOME3Eoq9+7W9JpGyi7s3vht5PnqKVSCZVXaawEAlHgFIlcwi9MZHbRo6GDsqfZnuw==
+"@oxlint/darwin-x64@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/darwin-x64/-/darwin-x64-0.16.8.tgz#c2f0ee0a2819791d6b1306e217e6e9af5387a466"
+  integrity sha512-zWMKa8kNmtQfBHG5j4HGiOT1azjgs4rFsjAADWHBQ6qsqdW0evhQt9666JYJA2kKtuoWiIPv4UypV5s2QI9oCQ==
 
-"@oxlint/linux-arm64-gnu@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.16.3.tgz#77406b52f55b4852bc4ea86ee1039c385e070a0c"
-  integrity sha512-t1xtcbHoJGpE/0oRA8z2/szBB0gHGy0eua0ko57Lo1LscHiyvkmpqPJTiaR8+1b+EbGO8KKgLcKDoxqvmIqDbA==
+"@oxlint/linux-arm64-gnu@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/linux-arm64-gnu/-/linux-arm64-gnu-0.16.8.tgz#bb81eea9bbde0c12df8ed6ca175968435ee6f9a2"
+  integrity sha512-AK6x1UN/Wz0C+kpV70J3cKgKl+b6Jrh4EDAY6JY99F7DMlNAbKtRtBZAb3IMiuukv/mqbTvb7Z7+dUIp/DHOkA==
 
-"@oxlint/linux-arm64-musl@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.16.3.tgz#54096239ecb42cf35b461bd7ccb2f0d9ba2107c5"
-  integrity sha512-N0kCa9K9MssXO/Gk6tPHYQWUdWhEJPek4rsYRLXyoVKX0c36Ty66Ye74LiDtFkkB33S0P38hTAwYWF68nqCEmw==
+"@oxlint/linux-arm64-musl@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/linux-arm64-musl/-/linux-arm64-musl-0.16.8.tgz#bc5f671c5704b5603c03e810d2fa3bb78089e147"
+  integrity sha512-+VJNo9NGYjP/8qFvcMk6IR4waRENbXolDk6SsfWXnub/b0UpXd8dH+cFSo9VPsHoLQ1+/A2WbqTxO+XkkaUXYw==
 
-"@oxlint/linux-x64-gnu@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.16.3.tgz#137c4b9837433e94c82c87bfeccffbd2dd0af743"
-  integrity sha512-f/MzfVTTxdO2YqWLvv/yyDF4O82yBC9KsDgd01M3M2cqrBlczDZ8FZaVAMO9RzKGiPZi6nwxxK0VPaLzGEc3XQ==
+"@oxlint/linux-x64-gnu@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/linux-x64-gnu/-/linux-x64-gnu-0.16.8.tgz#bb6d684e430097885cb97124fa778a3acf2a06d6"
+  integrity sha512-1AN2P3AUfW04jmaiEh/NnV3/oZKrXMScqbihZ8bclKdwKanEyNX+McCfpUZ6/L1h1imCj9tR1ChNq0LaPrJfAg==
 
-"@oxlint/linux-x64-musl@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/linux-x64-musl/-/linux-x64-musl-0.16.3.tgz#63376622a488e535b9164353bfda131d1622c212"
-  integrity sha512-xdAtPsXkAe1XyXGTwmhDRy48j9EOUMiT7yL0OziHndU8U5/kfrEXgwLAw0tb8XEvfu5ZVn76EtTyQxpG0KkPpw==
+"@oxlint/linux-x64-musl@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/linux-x64-musl/-/linux-x64-musl-0.16.8.tgz#c042882b7dc43b90ca4e813d29cd0ba316d27d16"
+  integrity sha512-FyG47d0ypwpIv+OEgTQe+qV9UDgeEoNJW0p50/zUkQhe3LVC20qNztvFp0X9uTm1V7ihY8GCZKC1ooeD3+eWWw==
 
-"@oxlint/win32-arm64@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/win32-arm64/-/win32-arm64-0.16.3.tgz#4c0f490c371402f7543da346207c232e8a1c026d"
-  integrity sha512-B54p7IrcACUEypQtKzMJ07xP+pFJbTwktB9TuANogMIMo33DsxoBvAYoGFOL/sFq1Dvg5jtCa6LX1dAzSPXwTA==
+"@oxlint/win32-arm64@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/win32-arm64/-/win32-arm64-0.16.8.tgz#21becb297013e474133acc8326f04aa723183790"
+  integrity sha512-fUnKMhcyChO7nLh5TS/yELOx7FG1827GShIalQr6L9SnDGeKjjzBrJwpc3jFtTB4Ti6wX+7yB7JYOo2EgoRdvQ==
 
-"@oxlint/win32-x64@0.16.3":
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/@oxlint/win32-x64/-/win32-x64-0.16.3.tgz#3ebd8d3b2f65c9c0dc686ec34db8b7872654f750"
-  integrity sha512-ZpnyNyXAS5xsZggOD2V5tYYBALnW8p0w70UNXPWnXl3ScAb3QMW7IQRyOvKNPbXyW7XNYebWlgJkSCFij9gKvA==
+"@oxlint/win32-x64@0.16.8":
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/@oxlint/win32-x64/-/win32-x64-0.16.8.tgz#647fbaf52d8777d5539b64371ecbf83da69528f3"
+  integrity sha512-gpvVsWH8HJQP6UWGyDlZdslmk6CNTtjEl8MLD6Mhx+2L02ypaYkA0pyTKPaLQrn0O2D+CT0WAh53YtxCf903qA==
 
 "@pkgjs/parseargs@^0.11.0":
   version "0.11.0"
@@ -5380,19 +5380,19 @@ outvariant@^1.4.0, outvariant@^1.4.3:
   resolved "https://registry.yarnpkg.com/outvariant/-/outvariant-1.4.3.tgz#221c1bfc093e8fec7075497e7799fdbf43d14873"
   integrity sha512-+Sl2UErvtsoajRDKCE5/dBz4DIvHXQQnAxtQTF04OJxY0+DyZXSo5P5Bb7XYWOh81syohlYL24hbDwxedPUJCA==
 
-oxlint@0.16.3:
-  version "0.16.3"
-  resolved "https://registry.yarnpkg.com/oxlint/-/oxlint-0.16.3.tgz#0417921aed440c1e20017cd8200e8ae46d15596c"
-  integrity sha512-CqHLqyVLL0UYLsJTLHuwzbM3/dCxA5v0ngSCTnVFYwQsj8qYr8p1KS0TbCX4Mv20vcOJifSoQdQhvNcWFSKMZw==
+oxlint@0.16.8:
+  version "0.16.8"
+  resolved "https://registry.yarnpkg.com/oxlint/-/oxlint-0.16.8.tgz#62074ab55847c4c7aee365da34814032afd8a8b7"
+  integrity sha512-UmpfqkynkudIY8orqAvYelQXJ1YNMecwJ422ZtJ84vbtIQ2HH96WBhqLAEoUgDB7yu/LpxMQrjukFOJQkh+mQw==
   optionalDependencies:
-    "@oxlint/darwin-arm64" "0.16.3"
-    "@oxlint/darwin-x64" "0.16.3"
-    "@oxlint/linux-arm64-gnu" "0.16.3"
-    "@oxlint/linux-arm64-musl" "0.16.3"
-    "@oxlint/linux-x64-gnu" "0.16.3"
-    "@oxlint/linux-x64-musl" "0.16.3"
-    "@oxlint/win32-arm64" "0.16.3"
-    "@oxlint/win32-x64" "0.16.3"
+    "@oxlint/darwin-arm64" "0.16.8"
+    "@oxlint/darwin-x64" "0.16.8"
+    "@oxlint/linux-arm64-gnu" "0.16.8"
+    "@oxlint/linux-arm64-musl" "0.16.8"
+    "@oxlint/linux-x64-gnu" "0.16.8"
+    "@oxlint/linux-x64-musl" "0.16.8"
+    "@oxlint/win32-arm64" "0.16.8"
+    "@oxlint/win32-x64" "0.16.8"
 
 p-finally@^1.0.0:
   version "1.0.0"
