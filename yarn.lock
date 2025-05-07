@@ -1452,10 +1452,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/jasmine@5.1.7":
-  version "5.1.7"
-  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-5.1.7.tgz#b9f68cf05463717bbe36d53221839e7630a24d22"
-  integrity sha512-DVOfk9FaClQfNFpSfaML15jjB5cjffDMvjtph525sroR5BEAW2uKnTOYUTqTFuZFjNvH0T5XMIydvIctnUKufw==
+"@types/jasmine@5.1.8":
+  version "5.1.8"
+  resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-5.1.8.tgz#b20f78ca416d7a2a8e726f8321e0b2827a78ceaa"
+  integrity sha512-u7/CnvRdh6AaaIzYjCgUuVbREFgulhX05Qtf6ZtW+aOcjCKKVvKgpkPYJBFTZSHtFBYimzU4zP0V2vrEsq9Wcg==
 
 "@types/json-schema@^7.0.9":
   version "7.0.9"
@@ -4256,18 +4256,18 @@ jake@^10.8.5:
     filelist "^1.0.1"
     minimatch "^3.0.4"
 
-jasmine-core@~5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-5.6.0.tgz#4b979c254e7d9b1fe8e767ab00c5d2901c00bd4f"
-  integrity sha512-niVlkeYVRwKFpmfWg6suo6H9CrNnydfBLEqefM5UjibYS+UoTjZdmvPJSiuyrRLGnFj1eYRhFd/ch+5hSlsFVA==
+jasmine-core@~5.7.0:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-5.7.1.tgz#c347ede2dbf1b6b3b3c3362a5b6651414ada4745"
+  integrity sha512-QnurrtpKsPoixxG2R3d1xP0St/2kcX5oTZyDyQJMY+Vzi/HUlu1kGm+2V8Tz+9lV991leB1l0xcsyz40s9xOOw==
 
-jasmine@5.6.0:
-  version "5.6.0"
-  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-5.6.0.tgz#83be3acf8dd44ad365d15f01c13c019a5e9c01cc"
-  integrity sha512-6frlW22jhgRjtlp68QY/DDVCUfrYqmSxDBWM13mrBzYQGx1XITfVcJltnY15bk8B5cRfN5IpKvemkDiDTSRCsA==
+jasmine@5.7.1:
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/jasmine/-/jasmine-5.7.1.tgz#56c27d7dab7663802426a2d84eeabe3768491cac"
+  integrity sha512-E/4fkRNy/9ALz6z3Z3/tYXFAohoznVy7In9FWutG2fqBSkILJHFzbgZtHJUw5UrL3jgUQ4sdGYOVZ5KpSXYjGw==
   dependencies:
     glob "^10.2.2"
-    jasmine-core "~5.6.0"
+    jasmine-core "~5.7.0"
 
 "jest-diff@>=29.4.3 < 30", jest-diff@^29.4.1:
   version "29.7.0"
