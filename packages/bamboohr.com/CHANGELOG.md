@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.4.0 (2025-07-03)
+
+
+### Features
+
+* Force release ([d6d7a1a](https://github.com/ffflorian/api-clients/commit/d6d7a1a6f51194650e8d73aac2358bf5a37e2894))
+
+
+
+
+
 ## 1.3.10 (2025-03-19)
 
 
