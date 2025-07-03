@@ -33,5 +33,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "3.2.10"
+  "version": "3.3.0"
 }
