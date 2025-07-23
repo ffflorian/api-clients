@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.4.2 (2025-07-23)
+
+
+### Bug Fixes
+
+* Force release ([2f0d2b4](https://github.com/ffflorian/api-clients/commit/2f0d2b4c198845f4c3f7b9939daa8cb3725aef09))
+
+
+
+
+
 ## 3.4.1 (2025-07-03)
 
 **Note:** Version bump only for package imgflip.com
