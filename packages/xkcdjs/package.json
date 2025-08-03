@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "xkcdjs": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "axios": "1.11.0",
     "commander": "14.0.0"
@@ -10,7 +8,7 @@
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
     "@types/jasmine": "5.1.8",
-    "@types/node": "~20",
+    "@types/node": "~24",
     "http-status-codes": "2.3.0",
     "jasmine": "5.9.0",
     "nock": "14.0.7",
