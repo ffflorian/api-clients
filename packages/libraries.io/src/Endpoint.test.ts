@@ -1,4 +1,5 @@
-import {Endpoint} from '../src/Endpoints';
+import {describe, expect, it} from 'vitest';
+import {Endpoint} from './Endpoints';
 
 describe('Endpoint', () => {
   it('concats platform and name', () => {
