@@ -5,7 +5,7 @@
   },
   "description": "A c3nav API client",
   "devDependencies": {
-    "@types/node": "~20",
+    "@types/node": "~24",
     "rimraf": "6.0.1",
     "typedoc": "0.28.8",
     "typescript": "5.8.3"
