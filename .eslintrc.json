@@ -1,7 +1,4 @@
 {
-  "env": {
-    "jasmine": true
-  },
   "extends": "@ffflorian/eslint-config",
   "overrides": [
     {
