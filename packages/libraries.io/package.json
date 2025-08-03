@@ -5,13 +5,12 @@
   },
   "description": "A libraries.io API client",
   "devDependencies": {
-    "@types/jasmine": "5.1.8",
     "@types/node": "~24",
-    "jasmine": "5.9.0",
     "rimraf": "6.0.1",
     "ts-node": "10.9.2",
     "typedoc": "0.28.8",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
   "engines": {
     "node": ">= 10.9"
@@ -34,7 +33,7 @@
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/libraries.io src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "vitest"
   },
   "version": "3.3.3"
 }

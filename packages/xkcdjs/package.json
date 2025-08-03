@@ -7,15 +7,14 @@
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
-    "@types/jasmine": "5.1.8",
     "@types/node": "~24",
     "http-status-codes": "2.3.0",
-    "jasmine": "5.9.0",
     "nock": "14.0.7",
     "rimraf": "6.0.1",
     "ts-node": "10.9.2",
     "typedoc": "0.28.8",
-    "typescript": "5.8.3"
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
   "engines": {
     "node": ">= 10.9"
@@ -39,7 +38,7 @@
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "start": "ts-node src/cli.ts",
-    "test": "ts-node -P tsconfig.jasmine.json node_modules/.bin/jasmine"
+    "test": "vitest"
   },
   "version": "3.3.3"
 }
