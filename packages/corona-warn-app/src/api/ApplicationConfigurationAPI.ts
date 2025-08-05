@@ -18,6 +18,9 @@ export class ApplicationConfigurationAPI {
     const response = await fetch(new URL(endpoint, this.baseURL), {
       headers: {Accept: 'application/zip'},
     });
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.arrayBuffer().then(buffer => Buffer.from(buffer));
   }
 }

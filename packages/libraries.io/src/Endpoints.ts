@@ -16,7 +16,6 @@ export const Endpoint = {
   SUBSCRIPTIONS: 'subscriptions',
   USAGE: 'usage',
 
-
   Project: {
     contributors(platform: string, name: string): string {
       return `/${encode(platform)}/${encode(name)}/${Endpoint.CONTRIBUTORS}/`;

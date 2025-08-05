@@ -13,7 +13,6 @@ export class PackageAPI {
   public async multiPackageInfo(packageNames: string[]): Promise<Record<string, PackageInfo>> {
     const endpoint = Endpoint.Package.multiPackageInfo();
 
-
     const response = await fetch(new URL(endpoint, this.baseURL), {
       body: JSON.stringify(packageNames),
       headers: {
@@ -21,6 +20,9 @@ export class PackageAPI {
       },
       method: 'POST',
     });
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
