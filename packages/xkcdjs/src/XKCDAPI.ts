@@ -22,6 +22,9 @@ export class XKCDAPI {
     }
 
     const response = await fetch(new URL(`/${index}/${this.JSON_INFO_FILE}`, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     const metadata = await response.json() as XKCDResult;
 
     if (options.withData === true) {
@@ -43,6 +46,9 @@ export class XKCDAPI {
   public async getLatest(options?: RequestOptions): Promise<XKCDResultWithData>;
   public async getLatest(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
     const response = await fetch(new URL(`/${this.JSON_INFO_FILE}`, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     const metadata = await response.json() as XKCDResult;
 
     if (options.withData) {
@@ -81,6 +87,9 @@ export class XKCDAPI {
 
   private async getImage(imageUrl: string): Promise<ImageData> {
     const response = await fetch(imageUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     const data = await response.arrayBuffer().then(buffer => Buffer.from(buffer));
 
     const contentType = response.headers.get('content-type');
