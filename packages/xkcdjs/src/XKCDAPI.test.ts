@@ -2,7 +2,6 @@ import {describe, expect, it, beforeEach} from 'vitest';
 import nock from 'nock';
 import * as XKCDJS from '.';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
-import type {AxiosError} from 'axios';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
   alt: "Don't we all.",
