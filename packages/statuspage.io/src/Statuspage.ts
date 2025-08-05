@@ -1,5 +1,3 @@
-import axios, {AxiosInstance} from 'axios';
-
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
 import type {API} from './interfaces/API';
@@ -7,24 +5,22 @@ import type {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private baseURL: string;
 
   constructor(pageId: string) {
     if (!pageId) {
       throw new Error('A page ID needs to be set in order to use the client.');
     }
 
-    this.apiClient = axios.create({
-      baseURL: `https://${pageId}.statuspage.io`,
-    });
+    this.baseURL = `https://${pageId}.statuspage.io`;
 
     this.api = {
       getComponents: this.getComponents,
       getStatus: this.getStatus,
       getSummary: this.getSummary,
-      incidents: new IncidentsAPI(this.apiClient),
-      scheduledMaintenances: new ScheduledMaintenancesAPI(this.apiClient),
-      subscribers: new SubscribersAPI(this.apiClient),
+      incidents: new IncidentsAPI(this.baseURL),
+      scheduledMaintenances: new ScheduledMaintenancesAPI(this.baseURL),
+      subscribers: new SubscribersAPI(this.baseURL),
     };
   }
 
@@ -33,7 +29,10 @@ export class Statuspage {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+    this.baseURL = newUrl;
+    this.api.incidents = new IncidentsAPI(this.baseURL);
+    this.api.scheduledMaintenances = new ScheduledMaintenancesAPI(this.baseURL);
+    this.api.subscribers = new SubscribersAPI(this.baseURL);
   }
 
   /**
@@ -42,8 +41,8 @@ export class Statuspage {
    */
   private readonly getComponents = async (): Promise<Components> => {
     const endpoint = Endpoint.components();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   };
 
   /**
@@ -54,8 +53,8 @@ export class Statuspage {
    */
   private readonly getStatus = async (): Promise<Status> => {
     const endpoint = Endpoint.status();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   };
 
   /**
@@ -64,7 +63,7 @@ export class Statuspage {
    */
   private readonly getSummary = async (): Promise<Summary> => {
     const endpoint = Endpoint.summary();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   };
 }
