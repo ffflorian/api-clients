@@ -35,5 +35,5 @@
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "1.4.4"
+  "version": "1.4.5"
 }

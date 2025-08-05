@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.3.5 (2025-08-05)
+
+
+### Bug Fixes
+
+* Force release ([6ea0b93](https://github.com/ffflorian/api-clients/commit/6ea0b933fec1542be51a2d1701fe0fd5423c5cec))
+
+
+
+
+
 ## 2.3.4 (2025-08-03)
 
 **Note:** Version bump only for package absence.io
