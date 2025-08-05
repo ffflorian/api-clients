@@ -90,13 +90,13 @@ export class DiagnosisKeysAPI {
   public async postKeys(keys: Buffer, cwaAuthorization: string, cwaFake: string): Promise<void> {
     const endpoint = '/diagnosis-keys';
     await fetch(new URL(endpoint, this.baseURL), {
-      method: 'POST',
+      body: keys,
       headers: {
         'Content-Type': 'application/zip',
         'cwa-authorization': cwaAuthorization,
         'cwa-fake': cwaFake,
       },
-      body: keys,
+      method: 'POST',
     });
   }
 }

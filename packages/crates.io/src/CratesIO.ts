@@ -14,7 +14,7 @@ export class CratesIO {
     this.baseURL = this.options.apiKey || 'https://crates.io/api/v1/';
 
     this.api = {
-      crates: new CratesAPI(this.baseURL),
+      crates: new CratesAPI(this.baseURL, this.options.apiKey),
     };
   }
 
@@ -33,6 +33,7 @@ export class CratesIO {
    */
   public setApiUrl(newUrl: string): void {
     this.baseURL = newUrl;
+    this.api.crates = new CratesAPI(this.baseURL, this.options.apiKey);
   }
 
   /**

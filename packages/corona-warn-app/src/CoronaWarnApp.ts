@@ -21,5 +21,7 @@ export class CoronaWarnApp {
    */
   public setApiUrl(newUrl: string): void {
     this.baseURL = newUrl;
+    this.api.applicationConfiguration = new ApplicationConfigurationAPI(this.baseURL);
+    this.api.diagnosisKeys = new DiagnosisKeysAPI(this.baseURL);
   }
 }

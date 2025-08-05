@@ -24,8 +24,7 @@ export class Imgflip {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      method: 'post',
-      url: endpoint,
+      method: 'POST',
     };
     const response = await fetch(new URL(endpoint, this.baseURL), config);
     return response.json();

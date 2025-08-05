@@ -1,14 +1,8 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {SearchOptions, SearchResult, SuggestionsOptions} from '../interfaces';
 
 export class SearchAPI {
-  private readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Fetch suggestions.
@@ -18,14 +12,18 @@ export class SearchAPI {
   public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SearchResult> {
     const endpoint = Endpoint.Search.search();
 
-    const params = {
+    const params: Record<string, string> = {
       // eslint-disable-next-line id-length
       q: query,
       ...(options.size && {size: options.size}),
     };
 
-    const {data} = await this.apiClient.get(endpoint, {params});
-    return data;
+    const url = new URL(endpoint, this.baseURL);
+    if (options) {
+      url.search = new URLSearchParams(params).toString();
+    }
+    const response = await fetch(url);
+    return response.json();
   }
 
   /**
@@ -52,14 +50,18 @@ export class SearchAPI {
   public async searchPackage(query: string, options: SearchOptions = {}): Promise<SearchResult> {
     const endpoint = Endpoint.Search.search();
 
-    const params = {
+    const params: Record<string, string> = {
       // eslint-disable-next-line id-length
       q: query,
       ...(options.from && {from: options.from}),
       ...(options.size && {size: options.size}),
     };
 
-    const {data} = await this.apiClient.get(endpoint, {params});
-    return data;
+    const url = new URL(endpoint, this.baseURL);
+    if (options) {
+      url.search = new URLSearchParams(params).toString();
+    }
+    const response = await fetch(url);
+    return response.json();
   }
 }

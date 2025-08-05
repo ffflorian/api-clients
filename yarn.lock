@@ -6003,7 +6003,6 @@ __metadata:
   dependencies:
     "@types/node": "npm:~24"
     "@types/qs": "npm:6.14.0"
-    axios: "npm:1.11.0"
     qs: "npm:6.14.0"
     typedoc: "npm:0.28.8"
     typescript: "npm:5.8.3"
@@ -8070,7 +8069,6 @@ __metadata:
   resolution: "npms.io@workspace:packages/npms.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.8"
     typescript: "npm:5.8.3"

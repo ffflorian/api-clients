@@ -79,7 +79,7 @@ export class CratesAPI {
 
     const url = new URL(endpoint, this.baseURL);
     if (options) {
-      url.search = new URLSearchParams(params as Record<string, string>).toString();
+      url.search = new URLSearchParams(params).toString();
     }
     const response = await fetch(url);
     return response.json();
