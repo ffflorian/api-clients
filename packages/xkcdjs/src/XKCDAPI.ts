@@ -1,16 +1,10 @@
-import type {AxiosInstance} from 'axios';
-import type {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
+import type {ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
-  protected readonly apiClient: AxiosInstance;
-  protected readonly options: ClientOptions;
   private readonly JSON_INFO_FILE: string;
   private readonly lowestIndex: number;
 
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    this.apiClient = apiClient;
-    this.options = options;
-
+  constructor(private readonly baseURL: string) {
     this.lowestIndex = 1;
     this.JSON_INFO_FILE = 'info.0.json';
   }
@@ -27,17 +21,18 @@ export class XKCDAPI {
       throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
     }
 
-    const {data: metaData} = await this.apiClient.get<XKCDResult>(`/${index}/${this.JSON_INFO_FILE}`);
+    const response = await fetch(new URL(`/${index}/${this.JSON_INFO_FILE}`, this.baseURL));
+    const metadata = await response.json() as XKCDResult;
 
     if (options.withData === true) {
-      const imageData = await this.getImage(metaData.img);
+      const imageData = await this.getImage(metadata.img);
       return {
-        ...metaData,
+        ...metadata,
         data: imageData,
       };
     }
 
-    return metaData;
+    return metadata;
   }
 
   /**
@@ -47,17 +42,18 @@ export class XKCDAPI {
   public async getLatest(options: {withData: true}): Promise<XKCDResultWithData>;
   public async getLatest(options?: RequestOptions): Promise<XKCDResultWithData>;
   public async getLatest(options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
-    const {data: metaData} = await this.apiClient.get<XKCDResult>(`/${this.JSON_INFO_FILE}`);
+    const response = await fetch(new URL(`/${this.JSON_INFO_FILE}`, this.baseURL));
+    const metadata = await response.json() as XKCDResult;
 
     if (options.withData) {
-      const imageData = await this.getImage(metaData.img);
+      const imageData = await this.getImage(metadata.img);
       return {
-        ...metaData,
+        ...metadata,
         data: imageData,
       };
     }
 
-    return metaData;
+    return metadata;
   }
 
   /**
@@ -84,12 +80,10 @@ export class XKCDAPI {
   }
 
   private async getImage(imageUrl: string): Promise<ImageData> {
-    const {data, headers} = await this.apiClient.request<Buffer>({
-      responseType: 'arraybuffer',
-      url: imageUrl,
-    });
+    const response = await fetch(imageUrl);
+    const data = await response.arrayBuffer().then(buffer => Buffer.from(buffer));
 
-    const contentType = headers['content-type'];
+    const contentType = response.headers.get('content-type');
 
     return {
       data,

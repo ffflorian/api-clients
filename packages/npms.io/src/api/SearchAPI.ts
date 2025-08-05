@@ -19,9 +19,7 @@ export class SearchAPI {
     };
 
     const url = new URL(endpoint, this.baseURL);
-    if (options) {
-      url.search = new URLSearchParams(params).toString();
-    }
+    url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
     return response.json();
   }
@@ -58,9 +56,7 @@ export class SearchAPI {
     };
 
     const url = new URL(endpoint, this.baseURL);
-    if (options) {
-      url.search = new URLSearchParams(params).toString();
-    }
+    url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
     return response.json();
   }

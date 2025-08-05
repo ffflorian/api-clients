@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import * as qs from 'qs';
 
 import {Endpoint} from '../Endpoints';
 import type {
@@ -12,11 +12,7 @@ import type {
 import type {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
 
 export class SubscribersAPI {
-  private readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param options Subscriber options.
@@ -34,8 +30,17 @@ export class SubscribersAPI {
     subscriberData: CombinedSubscriberData & ComponentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
-    return data;
+    const params = qs.stringify(
+      {
+        subscriber: subscriberData,
+      },
+      {arrayFormat: 'indices'}
+    );
+
+    const url = new URL(endpoint, this.baseURL);
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url);
+    return response.json();
   }
 
   /**
@@ -58,8 +63,17 @@ export class SubscribersAPI {
     subscriberData: CombinedSubscriberData & IncidentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
-    return data;
+    const params = qs.stringify(
+      {
+        subscriber: subscriberData,
+      },
+      {arrayFormat: 'indices'}
+    );
+
+    const url = new URL(endpoint, this.baseURL);
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url);
+    return response.json();
   }
 
   /**
@@ -71,8 +85,17 @@ export class SubscribersAPI {
   public async createPageSubscription(webhookSubscriber: WebhookSubscriberData): Promise<WebhookSubscriber>;
   public async createPageSubscription(subscriptionData: CombinedSubscriberData): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriptionData}});
-    return data;
+    const params = qs.stringify(
+      {
+        subscriber: subscriptionData,
+      },
+      {arrayFormat: 'indices'}
+    );
+
+    const url = new URL(endpoint, this.baseURL);
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url);
+    return response.json();
   }
 
   /**
@@ -80,8 +103,13 @@ export class SubscribersAPI {
    */
   public async getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: {id: subscriberId}}});
-    return data;
+    const params = qs.stringify({
+      subscriber: {id: subscriberId},
+    });
+    const url = new URL(endpoint, this.baseURL);
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url);
+    return response.json();
   }
 
   /**
@@ -89,7 +117,15 @@ export class SubscribersAPI {
    */
   public async removeSubscription(subscriberId: string): Promise<boolean> {
     const endpoint = Endpoint.Incidents.all();
-    const {data} = await this.apiClient.delete(endpoint, {params: {subscriber: {id: subscriberId}}});
-    return data;
+
+    const params = qs.stringify({
+      subscriber: {id: subscriberId},
+    });
+    const url = new URL(endpoint, this.baseURL);
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url, {
+      method: 'DELETE',
+    });
+    return response.json();
   }
 }
