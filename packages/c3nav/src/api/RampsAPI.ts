@@ -1,26 +1,21 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, Ramps} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {Ramps} from '../interfaces/';
 
-export class RampsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class RampsAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<Ramps> {
     const endpoint = Endpoint.ramps(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 
   public async getList(): Promise<Ramps[]> {
     const endpoint = Endpoint.ramps();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

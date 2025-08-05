@@ -1,10 +1,5 @@
-import type {AxiosInstance} from 'axios';
-
 export class ApplicationConfigurationAPI {
-  protected readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
+  constructor(private readonly baseURL: string) {
   }
 
   /**
@@ -20,10 +15,9 @@ export class ApplicationConfigurationAPI {
    */
   public async getAppConfig(country: string): Promise<Buffer> {
     const endpoint = `/configuration/country/${country}/app_config`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(new URL(endpoint, this.baseURL), {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    return response.arrayBuffer().then(buffer => Buffer.from(buffer));
   }
 }

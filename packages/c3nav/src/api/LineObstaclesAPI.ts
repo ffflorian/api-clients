@@ -1,26 +1,21 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, LineObstacles} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {LineObstacles} from '../interfaces/';
 
-export class LineObstaclesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class LineObstaclesAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<LineObstacles> {
     const endpoint = Endpoint.lineObstacles(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 
   public async getList(): Promise<LineObstacles[]> {
     const endpoint = Endpoint.lineObstacles();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

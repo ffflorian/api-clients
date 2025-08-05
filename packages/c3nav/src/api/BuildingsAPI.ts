@@ -1,26 +1,21 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {Buildings, ClientOptions} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {Buildings} from '../interfaces/';
 
-export class BuildingsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class BuildingsAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<Buildings> {
     const endpoint = Endpoint.buildings(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 
   public async getList(): Promise<Buildings[]> {
     const endpoint = Endpoint.buildings();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

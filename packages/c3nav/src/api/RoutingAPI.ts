@@ -1,26 +1,21 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, Routing} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {Routing} from '../interfaces/';
 
-export class RoutingAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class RoutingAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<Routing> {
     const endpoint = Endpoint.routing(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 
   public async getList(): Promise<Routing[]> {
     const endpoint = Endpoint.routing();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

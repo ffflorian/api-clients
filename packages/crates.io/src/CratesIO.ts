@@ -1,23 +1,20 @@
-import axios, {AxiosInstance} from 'axios';
-
 import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
 import type {API, ClientOptions, Summary} from './interfaces';
 
 export class CratesIO {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
   private readonly options: ClientOptions;
+  private baseURL: string;
 
   constructor(apiKey?: string);
   constructor(options?: ClientOptions);
   constructor(options?: ClientOptions | string) {
     this.options = typeof options === 'string' ? {apiKey: options} : options || {};
-
-    this.apiClient = axios.create({baseURL: 'https://crates.io/api/v1'});
+    this.baseURL = this.options.apiKey || 'https://crates.io/api/v1/';
 
     this.api = {
-      crates: new CratesAPI(this.apiClient),
+      crates: new CratesAPI(this.baseURL),
     };
   }
 
@@ -35,7 +32,7 @@ export class CratesIO {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+    this.baseURL = newUrl;
   }
 
   /**
@@ -43,7 +40,7 @@ export class CratesIO {
    */
   public async summary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

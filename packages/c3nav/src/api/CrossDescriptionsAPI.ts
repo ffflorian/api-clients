@@ -1,26 +1,21 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, CrossDescriptions} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {CrossDescriptions} from '../interfaces/';
 
-export class CrossDescriptionsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class CrossDescriptionsAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<CrossDescriptions> {
     const endpoint = Endpoint.crossDescriptions(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 
   public async getList(): Promise<CrossDescriptions[]> {
     const endpoint = Endpoint.crossDescriptions();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    return response.json();
   }
 }

@@ -3241,7 +3241,6 @@ __metadata:
   resolution: "c3nav@workspace:packages/c3nav"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.8"
     typescript: "npm:5.8.3"
@@ -3825,7 +3824,6 @@ __metadata:
   resolution: "corona-warn-app@workspace:packages/corona-warn-app"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
     typedoc: "npm:0.28.8"
     typescript: "npm:5.8.3"
   languageName: unknown
@@ -3853,7 +3851,6 @@ __metadata:
   resolution: "crates.io@workspace:packages/crates.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.8"
     typescript: "npm:5.8.3"
