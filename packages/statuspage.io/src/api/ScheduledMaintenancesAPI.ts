@@ -1,14 +1,8 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ScheduledMaintenances} from '../interfaces/Result';
 
 export class ScheduledMaintenancesAPI {
-  private readonly apiClient: AxiosInstance;
-
-  constructor(requestService: AxiosInstance) {
-    this.apiClient = requestService;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get a list of any active maintenances. This endpoint will only return
@@ -16,8 +10,11 @@ export class ScheduledMaintenancesAPI {
    */
   public async getActive(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -27,8 +24,11 @@ export class ScheduledMaintenancesAPI {
    */
   public async getAll(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -37,7 +37,10 @@ export class ScheduledMaintenancesAPI {
    */
   public async getUpcoming(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

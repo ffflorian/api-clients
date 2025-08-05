@@ -1,14 +1,8 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Incidents} from '../interfaces/Result';
 
 export class IncidentsAPI {
-  private readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get a list of the 50 most recent incidents. This includes all unresolved
@@ -16,8 +10,11 @@ export class IncidentsAPI {
    */
   public async getAll(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.all();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -26,7 +23,10 @@ export class IncidentsAPI {
    */
   public async getUnresolved(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.unresolved();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

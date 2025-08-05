@@ -1,26 +1,27 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, Spaces} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {Spaces} from '../interfaces/';
 
-export class SpacesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class SpacesAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<Spaces> {
     const endpoint = Endpoint.spaces(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Spaces[]> {
     const endpoint = Endpoint.spaces();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

@@ -71,4 +71,4 @@ export const Endpoint = {
   summary(): string {
     return `/${Endpoint.SUMMARY}`;
   },
-}
+};

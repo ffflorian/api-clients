@@ -1,26 +1,27 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, Sources} from '../interfaces/';
-import {APIBase} from './APIBase';
+import type {Sources} from '../interfaces/';
 
-export class SourcesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
-  }
+export class SourcesAPI {
+  constructor(private readonly baseURL: string) {}
 
   /**
    * @param id The id to get
    */
   public async getById(id: number): Promise<Sources> {
     const endpoint = Endpoint.sources(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Sources[]> {
     const endpoint = Endpoint.sources();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

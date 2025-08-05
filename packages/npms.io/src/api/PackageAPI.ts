@@ -1,14 +1,8 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {PackageInfo} from '../interfaces/';
 
 export class PackageAPI {
-  private readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get various packages info.
@@ -18,8 +12,17 @@ export class PackageAPI {
   public async multiPackageInfo(packageNames: string[]): Promise<Record<string, PackageInfo>> {
     const endpoint = Endpoint.Package.multiPackageInfo();
 
-    const {data} = await this.apiClient.post(endpoint, packageNames);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL), {
+      body: JSON.stringify(packageNames),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -30,7 +33,10 @@ export class PackageAPI {
   public async packageInfo(packageName: string): Promise<PackageInfo> {
     const endpoint = Endpoint.Package.packageInfo(packageName);
 
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }
