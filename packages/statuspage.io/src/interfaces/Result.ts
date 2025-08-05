@@ -116,4 +116,4 @@ export interface Status extends Page {
 
 export type CombinedSubscriber = PhoneSubscriber | EmailSubscriber | WebhookSubscriber;
 
-export type Summary = Status & ScheduledMaintenance & Components & Incidents;
+export type Summary = Status & ScheduledMaintenances & Components & Incidents;
