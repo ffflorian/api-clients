@@ -1,11 +1,5 @@
-import type {AxiosInstance} from 'axios';
-
 export class DiagnosisKeysAPI {
-  protected readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get all countries for which diagnosis keys are available.
@@ -13,8 +7,11 @@ export class DiagnosisKeysAPI {
    */
   public async getCountries(): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country`;
-    const {data} = await this.apiClient.get<string[]>(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -26,8 +23,11 @@ export class DiagnosisKeysAPI {
    */
   public async getDatesByCountry(country: string): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date`;
-    const {data} = await this.apiClient.get<string[]>(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -43,11 +43,13 @@ export class DiagnosisKeysAPI {
    */
   public async getKeysByDate(country: string, date: string): Promise<Buffer> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(new URL(endpoint, this.baseURL), {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.arrayBuffer().then(buffer => Buffer.from(buffer));
   }
 
   /**
@@ -63,8 +65,11 @@ export class DiagnosisKeysAPI {
    */
   public async getHoursByDate(country: string, date: string): Promise<number[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour`;
-    const {data} = await this.apiClient.get<number[]>(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -81,11 +86,13 @@ export class DiagnosisKeysAPI {
    */
   public async getKeysByHour(country: string, date: string, hour: number): Promise<Buffer> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour/${hour}`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(new URL(endpoint, this.baseURL), {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.arrayBuffer().then(buffer => Buffer.from(buffer));
   }
 
   /**
@@ -97,11 +104,14 @@ export class DiagnosisKeysAPI {
    */
   public async postKeys(keys: Buffer, cwaAuthorization: string, cwaFake: string): Promise<void> {
     const endpoint = '/diagnosis-keys';
-    await this.apiClient.post(endpoint, keys, {
+    await fetch(new URL(endpoint, this.baseURL), {
+      body: keys,
       headers: {
+        'Content-Type': 'application/zip',
         'cwa-authorization': cwaAuthorization,
         'cwa-fake': cwaFake,
       },
+      method: 'POST',
     });
   }
 }

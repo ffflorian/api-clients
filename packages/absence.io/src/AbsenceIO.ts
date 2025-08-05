@@ -34,7 +34,6 @@ export class AbsenceIO {
     this.apiClient.interceptors.request.use(config => {
       const hawkHeader = hawk.client.header(`${config.baseURL}${config.url}`, config.method!, {credentials});
       config.headers.set('Authorization', hawkHeader.header);
-
       return config;
     });
 
