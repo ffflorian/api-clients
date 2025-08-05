@@ -11,7 +11,6 @@
   "ignoreChanges": ["**/docs/**"],
   "loglevel": "verbose",
   "npmClient": "yarn",
-  "npmClientArgs": ["--exact"],
   "registry": "https://registry.npmjs.org/",
   "version": "independent",
   "yes": true
