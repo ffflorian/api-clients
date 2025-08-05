@@ -2,8 +2,7 @@ import {Endpoint} from '../Endpoints';
 import type {Incidents} from '../interfaces/Result';
 
 export class IncidentsAPI {
-  constructor(private readonly baseURL: string) {
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get a list of the 50 most recent incidents. This includes all unresolved

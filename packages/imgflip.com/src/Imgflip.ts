@@ -9,12 +9,11 @@ export class Imgflip {
   private baseURL: string;
 
   constructor(apiUrl?: string) {
-    this.baseURL = apiUrl || Imgflip.BASE_URL,
-
-    this.api = {
-      captionImage: this.captionImage,
-      getMemes: this.getMemes,
-    };
+    ((this.baseURL = apiUrl || Imgflip.BASE_URL),
+      (this.api = {
+        captionImage: this.captionImage,
+        getMemes: this.getMemes,
+      }));
   }
 
   private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {

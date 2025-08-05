@@ -25,7 +25,7 @@ export class XKCDAPI {
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
     }
-    const metadata = await response.json() as XKCDResult;
+    const metadata = (await response.json()) as XKCDResult;
 
     if (options.withData === true) {
       const imageData = await this.getImage(metadata.img);
@@ -49,7 +49,7 @@ export class XKCDAPI {
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
     }
-    const metadata = await response.json() as XKCDResult;
+    const metadata = (await response.json()) as XKCDResult;
 
     if (options.withData) {
       const imageData = await this.getImage(metadata.img);

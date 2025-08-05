@@ -7,7 +7,7 @@ export class CoronaWarnApp {
   private baseURL: string;
 
   constructor(options?: ClientOptions) {
-    this.baseURL= options?.apiUrl || CoronaWarnApp.BASE_URL;
+    this.baseURL = options?.apiUrl || CoronaWarnApp.BASE_URL;
 
     this.api = {
       applicationConfiguration: new ApplicationConfigurationAPI(this.baseURL),

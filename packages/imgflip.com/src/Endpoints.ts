@@ -9,4 +9,4 @@ export const Endpoint = {
   getMemes(): string {
     return `/${Endpoint.GET_MEMES}`;
   },
-}
+};

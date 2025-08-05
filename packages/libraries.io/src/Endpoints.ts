@@ -97,7 +97,7 @@ export const Endpoint = {
       user(login: string): string {
         return `/${Endpoint.GITHUB}/${encode(login)}/`;
       },
-    }
+    },
   },
 
   platforms(): string {
@@ -110,5 +110,5 @@ export const Endpoint = {
       endpoint += `${encode(platform)}/${encode(name)}/`;
     }
     return endpoint;
-  }
-}
+  },
+};

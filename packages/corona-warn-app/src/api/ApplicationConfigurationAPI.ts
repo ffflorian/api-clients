@@ -1,6 +1,5 @@
 export class ApplicationConfigurationAPI {
-  constructor(private readonly baseURL: string) {
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get application configuration for a country.

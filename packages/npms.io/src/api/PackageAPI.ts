@@ -2,8 +2,7 @@ import {Endpoint} from '../Endpoints';
 import type {PackageInfo} from '../interfaces/';
 
 export class PackageAPI {
-  constructor(private readonly baseURL: string) {
-  }
+  constructor(private readonly baseURL: string) {}
 
   /**
    * Get various packages info.
