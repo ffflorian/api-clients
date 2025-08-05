@@ -10,12 +10,18 @@ export class CrossDescriptionsAPI {
   public async getById(id: number): Promise<CrossDescriptions> {
     const endpoint = Endpoint.crossDescriptions(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<CrossDescriptions[]> {
     const endpoint = Endpoint.crossDescriptions();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

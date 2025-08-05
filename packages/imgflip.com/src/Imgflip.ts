@@ -27,12 +27,18 @@ export class Imgflip {
       method: 'POST',
     };
     const response = await fetch(new URL(endpoint, this.baseURL), config);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   };
 
   private readonly getMemes = async (): Promise<Response<Memes>> => {
     const endpoint = Endpoint.getMemes();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   };
 

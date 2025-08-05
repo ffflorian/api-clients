@@ -10,12 +10,18 @@ export class EditorAPI {
   public async getById(id: number): Promise<Editor> {
     const endpoint = Endpoint.editor(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Editor[]> {
     const endpoint = Endpoint.editor();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

@@ -18,6 +18,9 @@ export class LocationsAPI {
   public async getDetails(id: string | number): Promise<LocationDetails> {
     const endpoint = Endpoint.Location.details(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -26,12 +29,18 @@ export class LocationsAPI {
   public async getGeometry(id: string | number): Promise<LocationGeometry> {
     const endpoint = Endpoint.Location.geometry(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Location[]> {
     const endpoint = Endpoint.Location.locations();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -40,12 +49,18 @@ export class LocationsAPI {
   public async getLocation(id: string | number): Promise<Location> {
     const endpoint = Endpoint.Location.detail(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getTypes(): Promise<LocationType[]> {
     const endpoint = Endpoint.Location.types();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

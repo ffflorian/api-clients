@@ -12,6 +12,9 @@ export class LevelListAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(options as Record<string, string>).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -20,6 +23,9 @@ export class LevelListAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(options as Record<string, string>).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

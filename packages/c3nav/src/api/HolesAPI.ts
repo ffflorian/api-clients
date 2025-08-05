@@ -10,12 +10,18 @@ export class HolesAPI {
   public async getById(id: number): Promise<Holes> {
     const endpoint = Endpoint.holes(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Holes[]> {
     const endpoint = Endpoint.holes();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

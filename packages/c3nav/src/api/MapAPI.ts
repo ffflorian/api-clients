@@ -8,6 +8,9 @@ export class MapAPI {
   public async getBounds(): Promise<Bounds> {
     const endpoint = Endpoint.Map.bounds();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

@@ -21,6 +21,9 @@ export class SearchAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -58,6 +61,9 @@ export class SearchAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

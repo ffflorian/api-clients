@@ -12,6 +12,9 @@ export class IncidentsAPI {
   public async getAll(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.all();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -22,6 +25,9 @@ export class IncidentsAPI {
   public async getUnresolved(): Promise<Incidents> {
     const endpoint = Endpoint.Incidents.unresolved();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

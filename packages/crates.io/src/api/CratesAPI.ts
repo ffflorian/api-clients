@@ -37,6 +37,9 @@ export class CratesAPI {
     };
 
     const response = await fetch(new URL(endpoint, this.baseURL), additionalConfig);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -47,6 +50,9 @@ export class CratesAPI {
   public async getAuthors(packageName: string, version: string): Promise<AuthorsResult> {
     const endpoint = Endpoint.Crates.authors(packageName, version);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -57,6 +63,9 @@ export class CratesAPI {
   public async getCrate(packageName: string): Promise<CrateResult> {
     const endpoint = Endpoint.Crates.crate(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -82,6 +91,9 @@ export class CratesAPI {
       url.search = new URLSearchParams(params).toString();
     }
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -92,6 +104,9 @@ export class CratesAPI {
   public async getDependencies(packageName: string): Promise<DependenciesResult> {
     const endpoint = Endpoint.Crates.dependencies(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -102,6 +117,9 @@ export class CratesAPI {
   public async getDownloads(packageName: string): Promise<DownloadsResult> {
     const endpoint = Endpoint.Crates.downloads(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -112,6 +130,9 @@ export class CratesAPI {
   public async getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
     const endpoint = Endpoint.Crates.download(packageName, version);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -122,6 +143,9 @@ export class CratesAPI {
   public async getOwners(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.owners(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -132,6 +156,9 @@ export class CratesAPI {
   public async getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
     const endpoint = Endpoint.Crates.reverseDependencies(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -142,6 +169,9 @@ export class CratesAPI {
   public async getTeamOwner(packageName: string): Promise<TeamsResult> {
     const endpoint = Endpoint.Crates.ownerTeam(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -152,6 +182,9 @@ export class CratesAPI {
   public async getUserOwner(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.ownerUser(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -162,6 +195,9 @@ export class CratesAPI {
   public async getVersion(packageName: string, version: string): Promise<Version> {
     const endpoint = Endpoint.Crates.version(packageName, version);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -172,6 +208,9 @@ export class CratesAPI {
   public async getVersions(packageName: string): Promise<{versions: Version[]}> {
     const endpoint = Endpoint.Crates.versions(packageName);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 

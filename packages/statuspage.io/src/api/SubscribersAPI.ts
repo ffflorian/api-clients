@@ -40,6 +40,9 @@ export class SubscribersAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -73,6 +76,9 @@ export class SubscribersAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -95,6 +101,9 @@ export class SubscribersAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -109,6 +118,9 @@ export class SubscribersAPI {
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -123,9 +135,10 @@ export class SubscribersAPI {
     });
     const url = new URL(endpoint, this.baseURL);
     url.search = new URLSearchParams(params).toString();
-    const response = await fetch(url, {
-      method: 'DELETE',
-    });
+    const response = await fetch(url, {method: 'DELETE'});
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

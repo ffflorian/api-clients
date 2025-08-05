@@ -42,6 +42,9 @@ export class Statuspage {
   private readonly getComponents = async (): Promise<Components> => {
     const endpoint = Endpoint.components();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   };
 
@@ -54,6 +57,9 @@ export class Statuspage {
   private readonly getStatus = async (): Promise<Status> => {
     const endpoint = Endpoint.status();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   };
 
@@ -64,6 +70,9 @@ export class Statuspage {
   private readonly getSummary = async (): Promise<Summary> => {
     const endpoint = Endpoint.summary();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   };
 }

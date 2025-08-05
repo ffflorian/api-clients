@@ -11,6 +11,9 @@ export class ScheduledMaintenancesAPI {
   public async getActive(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -22,6 +25,9 @@ export class ScheduledMaintenancesAPI {
   public async getAll(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -32,6 +38,9 @@ export class ScheduledMaintenancesAPI {
   public async getUpcoming(): Promise<ScheduledMaintenances> {
     const endpoint = Endpoint.ScheduledMaintenances.upcoming();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

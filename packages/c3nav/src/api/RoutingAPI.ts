@@ -10,12 +10,18 @@ export class RoutingAPI {
   public async getById(id: number): Promise<Routing> {
     const endpoint = Endpoint.routing(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Routing[]> {
     const endpoint = Endpoint.routing();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

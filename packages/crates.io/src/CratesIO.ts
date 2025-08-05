@@ -42,6 +42,9 @@ export class CratesIO {
   public async summary(): Promise<Summary> {
     const endpoint = Endpoint.summary();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

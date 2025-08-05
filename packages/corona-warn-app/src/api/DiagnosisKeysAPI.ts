@@ -8,6 +8,9 @@ export class DiagnosisKeysAPI {
   public async getCountries(): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country`;
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -21,6 +24,9 @@ export class DiagnosisKeysAPI {
   public async getDatesByCountry(country: string): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date`;
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
@@ -57,6 +63,9 @@ export class DiagnosisKeysAPI {
   public async getHoursByDate(country: string, date: string): Promise<number[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour`;
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 

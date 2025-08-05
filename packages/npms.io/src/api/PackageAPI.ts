@@ -33,6 +33,9 @@ export class PackageAPI {
     const endpoint = Endpoint.Package.packageInfo(packageName);
 
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

@@ -10,12 +10,18 @@ export class ColumnsAPI {
   public async getById(id: number): Promise<Columns> {
     const endpoint = Endpoint.columns(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Columns[]> {
     const endpoint = Endpoint.columns();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }

@@ -10,12 +10,18 @@ export class DoorsAPI {
   public async getById(id: number): Promise<Doors> {
     const endpoint = Endpoint.doors(id);
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 
   public async getList(): Promise<Doors[]> {
     const endpoint = Endpoint.doors();
     const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
     return response.json();
   }
 }
