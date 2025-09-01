@@ -8,7 +8,7 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - uses: yesolutions/mirror-action@18fc60c0629185af960c8256ccb650287a350b4e
