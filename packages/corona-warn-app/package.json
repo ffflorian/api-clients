@@ -6,7 +6,7 @@
   "description": "A corona-warn-app API client",
   "devDependencies": {
     "@types/node": "~24",
-    "typedoc": "0.28.8",
+    "typedoc": "0.28.12",
     "typescript": "5.8.3"
   },
   "engines": {
