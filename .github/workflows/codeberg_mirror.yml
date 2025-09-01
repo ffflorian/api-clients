@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: yesolutions/mirror-action@18fc60c0629185af960c8256ccb650287a350b4e
+      - uses: yesolutions/mirror-action@662fce0eced8996f64d7fa264d76cddd84827f33
         with:
           REMOTE: 'ssh://git@codeberg.org/ffflorian/api-clients.git'
           GIT_SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SECRET }}
