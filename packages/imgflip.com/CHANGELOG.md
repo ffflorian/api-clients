@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 3.4.6 (2025-09-16)
+
+
+### Bug Fixes
+
+* Force release ([aa950ce](https://github.com/ffflorian/api-clients/commit/aa950ce8d0ea1857b420c0d1772a723d4bfff216))
+
+
+
+
+
 ## 3.4.5 (2025-08-05)
 
 
