@@ -501,7 +501,7 @@ __metadata:
   resolution: "@ffflorian/icanhazdadjoke@workspace:packages/icanhazdadjoke"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     commander: "npm:14.0.0"
     rimraf: "npm:6.0.1"
     ts-node: "npm:10.9.2"
@@ -526,7 +526,7 @@ __metadata:
   resolution: "@ffflorian/xkcdjs@workspace:packages/xkcdjs"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     commander: "npm:14.0.0"
     http-status-codes: "npm:2.3.0"
     nock: "npm:14.0.10"
@@ -2714,7 +2714,7 @@ __metadata:
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.6"
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
@@ -3107,7 +3107,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:1.11.0, axios@npm:^1.7.4":
+"axios@npm:1.12.2":
+  version: 1.12.2
+  resolution: "axios@npm:1.12.2"
+  dependencies:
+    follow-redirects: "npm:^1.15.6"
+    form-data: "npm:^4.0.4"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/80b063e318cf05cd33a4d991cea0162f3573481946f9129efb7766f38fde4c061c34f41a93a9f9521f02b7c9565ccbc197c099b0186543ac84a24580017adfed
+  languageName: node
+  linkType: hard
+
+"axios@npm:^1.7.4":
   version: 1.11.0
   resolution: "axios@npm:1.11.0"
   dependencies:
@@ -3148,7 +3159,7 @@ __metadata:
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.6"
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     qs: "npm:6.14.0"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
@@ -3250,7 +3261,7 @@ __metadata:
   resolution: "c3nav@workspace:packages/c3nav"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
@@ -3834,7 +3845,7 @@ __metadata:
   resolution: "corona-warn-app@workspace:packages/corona-warn-app"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
   languageName: unknown
@@ -3862,7 +3873,7 @@ __metadata:
   resolution: "crates.io@workspace:packages/crates.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
@@ -6047,7 +6058,7 @@ __metadata:
   dependencies:
     "@types/node": "npm:~24"
     "@types/qs": "npm:6.14.0"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     qs: "npm:6.14.0"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
@@ -7145,7 +7156,7 @@ __metadata:
   resolution: "libraries.io@workspace:packages/libraries.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     ts-node: "npm:10.9.2"
     typedoc: "npm:0.28.12"
@@ -8114,7 +8125,7 @@ __metadata:
   resolution: "npms.io@workspace:packages/npms.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
@@ -9976,7 +9987,7 @@ __metadata:
   resolution: "statuspage.io@workspace:packages/statuspage.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
   languageName: unknown
@@ -10884,7 +10895,7 @@ __metadata:
   resolution: "updown.io@workspace:packages/updown.io"
   dependencies:
     "@types/node": "npm:~24"
-    axios: "npm:1.11.0"
+    axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
     typedoc: "npm:0.28.12"
     typescript: "npm:5.9.2"
