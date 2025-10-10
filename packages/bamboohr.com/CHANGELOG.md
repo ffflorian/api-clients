@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.4.7 (2025-10-10)
+
+
+### Bug Fixes
+
+* **statuspage.io:** Correct ScheduledMaintenance enum ([#1794](https://github.com/ffflorian/api-clients/issues/1794)) ([c8984b8](https://github.com/ffflorian/api-clients/commit/c8984b8a1db46e5332c8797fa415bff53850fe63))
+
+
+
+
+
 ## 1.4.6 (2025-09-16)
 
 
