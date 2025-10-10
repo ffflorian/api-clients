@@ -39,7 +39,7 @@ export enum MaintenanceStatus {
   Verifying = 'verifying',
 }
 
-export type ScheduledMaintenance = Incident & {
+export type ScheduledMaintenance = Omit<Incident, 'status'> & {
   scheduled_for: string;
   scheduled_until: string;
   status: MaintenanceStatus;
