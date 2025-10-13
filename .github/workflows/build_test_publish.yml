@@ -20,7 +20,6 @@ jobs:
           GIT_COMMIT_MESSAGE="$(git log --format=%B -n 1 ${{github.event.after}} | head -n 1)"
           echo "COMMIT_MESSAGE=\"$(test "${GH_COMMIT_MESSAGE}" && echo "${GH_COMMIT_MESSAGE}" || echo "${GIT_COMMIT_MESSAGE}")\"" >> $GITHUB_ENV
           echo "PR_TITLE=\"${{github.event.pull_request.title}}\"" >> $GITHUB_ENV
-          cat "${GITHUB_ENV}"
 
       - name: Set up Node.js
         uses: actions/setup-node@v5
