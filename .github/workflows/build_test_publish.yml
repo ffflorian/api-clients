@@ -14,13 +14,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
 
-      - name: Set environment variables
-        run: |
-          GH_COMMIT_MESSAGE="$(head -n 1 <<< "${{github.event.head_commit.message}}")"
-          GIT_COMMIT_MESSAGE="$(git log --format=%B -n 1 ${{github.event.after}} | head -n 1)"
-          echo "COMMIT_MESSAGE=\"$(test "${GH_COMMIT_MESSAGE}" && echo "${GH_COMMIT_MESSAGE}" || echo "${GIT_COMMIT_MESSAGE}")\"" >> $GITHUB_ENV
-          echo "PR_TITLE=\"${{github.event.pull_request.title}}\"" >> $GITHUB_ENV
-
       - name: Set up Node.js
         uses: actions/setup-node@v5
         with:
@@ -37,7 +30,7 @@ jobs:
       - name: Release
         if: |
           github.event_name != 'pull_request' &&
-          !startsWith(env.COMMIT_MESSAGE || env.PR_TITLE, '"chore')
+          !startsWith(github.event.head_commit.message, 'chore')
         env:
           GIT_AUTHOR_NAME: ffflobot
           GIT_AUTHOR_EMAIL: ffflobot@users.noreply.github.com
