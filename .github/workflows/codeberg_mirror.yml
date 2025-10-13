@@ -15,4 +15,4 @@ jobs:
         with:
           REMOTE: 'ssh://git@codeberg.org/ffflorian/api-clients.git'
           GIT_SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SECRET }}
-          GIT_SSH_NO_VERIFY_HOST: "true"
+          GIT_SSH_NO_VERIFY_HOST: 'true'
