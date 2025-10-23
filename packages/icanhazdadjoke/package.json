@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/node": "~24",
     "rimraf": "6.0.1",
-    "ts-node": "10.9.2",
+    "tsx": "4.20.6",
     "typedoc": "0.28.13",
     "typescript": "5.9.3"
   },
@@ -34,7 +34,7 @@
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/icanhazdadjoke src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
-    "start": "ts-node src/cli.ts",
+    "start": "tsx src/cli.ts",
     "test": "exit 0"
   },
   "version": "2.3.7"
