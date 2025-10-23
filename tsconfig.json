@@ -15,8 +15,5 @@
     "strict": true,
     "strictFunctionTypes": true,
     "target": "ES6"
-  },
-  "ts-node": {
-    "swc": true
   }
 }
