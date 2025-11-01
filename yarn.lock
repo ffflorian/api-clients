@@ -637,12 +637,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@evilmartians/lefthook@npm:1.13.6":
-  version: 1.13.6
-  resolution: "@evilmartians/lefthook@npm:1.13.6"
+"@evilmartians/lefthook@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@evilmartians/lefthook@npm:2.0.2"
   bin:
     lefthook: bin/index.js
-  checksum: 10c0/e68b31b077679259c82417078d0431f75eb741fa5dad5f286cd0c397af32dea0b04b90be246fd900bd0fcb0afdd1d36be9f5fe8e999c5c872fe86645ca442dad
+  checksum: 10c0/2d440460548b7d2565a7338118540f958b5cea8166d1cdddbb0a338c709c1a5efab8da905b3f8524c99f1a0c49f3dc3d356f81b521c83f1d9e9c83dd5a9d09b5
   conditions: (os=darwin | os=linux | os=win32) & (cpu=x64 | cpu=arm64 | cpu=ia32)
   languageName: node
   linkType: hard
@@ -9799,7 +9799,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
-    "@evilmartians/lefthook": "npm:1.13.6"
+    "@evilmartians/lefthook": "npm:2.0.2"
     "@ffflorian/eslint-config": "npm:0.10.3"
     "@ffflorian/prettier-config": "npm:0.3.3"
     "@typescript-eslint/eslint-plugin": "npm:8.46.0"
