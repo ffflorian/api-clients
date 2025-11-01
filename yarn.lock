@@ -2630,9 +2630,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hapi__hawk@npm:8.0.6":
-  version: 8.0.6
-  resolution: "@types/hapi__hawk@npm:8.0.6"
+"@types/hapi__hawk@npm:8.0.7":
+  version: 8.0.7
+  resolution: "@types/hapi__hawk@npm:8.0.7"
   dependencies:
     "@hapi/boom": "npm:^9.0.0"
     "@hapi/hapi": "npm:^21.1.0"
@@ -2641,7 +2641,7 @@ __metadata:
     "@types/node": "npm:*"
     "@types/request": "npm:*"
     joi: "npm:^17.7.0"
-  checksum: 10c0/52d11184b504b0a477deaf5e68974115c3343771e6f2dc3e7512f2237ed32620156eccdc64eb446ce02c8ee686537f4e5f273f28d9260d3774d9724d82088fb6
+  checksum: 10c0/37e3cabdb1b6429575819a5b6aeb98d21c2ad0d2383ec991f28956ae6e2a51f5ef9d62ca328d3c098f0f1a250210d5e4488c05d46696cd936eab7d18c45a8e87
   languageName: node
   linkType: hard
 
@@ -3140,7 +3140,7 @@ __metadata:
   resolution: "absence.io@workspace:packages/absence.io"
   dependencies:
     "@hapi/hawk": "npm:8.0.0"
-    "@types/hapi__hawk": "npm:8.0.6"
+    "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     axios: "npm:1.12.2"
     rimraf: "npm:6.0.1"
@@ -3542,7 +3542,7 @@ __metadata:
   resolution: "bamboohr.com@workspace:packages/bamboohr.com"
   dependencies:
     "@hapi/hawk": "npm:8.0.0"
-    "@types/hapi__hawk": "npm:8.0.6"
+    "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     axios: "npm:1.12.2"
     qs: "npm:6.14.0"
