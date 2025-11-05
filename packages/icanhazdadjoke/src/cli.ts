@@ -2,7 +2,7 @@
 
 import type {AxiosError} from 'axios';
 import {program as commander} from 'commander';
-import {constants as fsConstants, promises as fsAsync} from 'fs';
+import {constants as fsConstants, promises as fs} from 'fs';
 import * as path from 'path';
 
 import {ICanHazDadJoke, JokeResultWithImage} from './';
@@ -17,7 +17,7 @@ async function init(dir: string = '.'): Promise<[string, ICanHazDadJoke]> {
   const resolvedPath = path.resolve(dir);
 
   try {
-    await fsAsync.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
+    await fs.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
     const iCanHazDadJoke = new ICanHazDadJoke();
     return [resolvedPath, iCanHazDadJoke];
   } catch {
@@ -29,7 +29,7 @@ async function save(filePath: string, imageResult: JokeResultWithImage, silent =
   const {id, image} = imageResult;
 
   const resolvedFilePath = path.resolve(filePath, `dad_joke_${id}.png`);
-  await fsAsync.writeFile(resolvedFilePath, image);
+  await fs.writeFile(resolvedFilePath, image);
   if (!silent) {
     console.info(`Saved image to "${resolvedFilePath}".`);
   }
