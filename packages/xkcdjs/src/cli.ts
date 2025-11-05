@@ -2,7 +2,7 @@
 
 import type {AxiosError} from 'axios';
 import {program as commander} from 'commander';
-import {constants as fsConstants, promises as fsAsync} from 'fs';
+import {constants as fsConstants, promises as fs} from 'fs';
 import * as path from 'path';
 
 import {XKCD, XKCDResultWithData} from './';
@@ -11,7 +11,7 @@ async function init(dir: string = '.'): Promise<[string, XKCD]> {
   const resolvedPath = path.resolve(dir);
 
   try {
-    await fsAsync.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
+    await fs.access(resolvedPath, fsConstants.F_OK | fsConstants.R_OK);
     const xkcd = new XKCD();
     return [resolvedPath, xkcd];
   } catch {
@@ -25,7 +25,7 @@ async function save(filePath: string, imageResult: XKCDResultWithData): Promise<
   const extension = data.mimeType ? data.mimeType.replace('image/', '') : 'png';
 
   const resolvedFilePath = path.resolve(filePath, `xkcd #${num} - ${safe_title}.${extension}`);
-  await fsAsync.writeFile(resolvedFilePath, data.data);
+  await fs.writeFile(resolvedFilePath, data.data);
   console.info(`Saved image to "${resolvedFilePath}".`);
 }
 
