@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "axios": "1.13.2",
-    "commander": "14.0.1"
+    "commander": "14.0.2"
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
