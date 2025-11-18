@@ -26,7 +26,7 @@
   "name": "corona-warn-app",
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/corona-warn-app",
   "scripts": {
-    "build:ts": "tsc",
+    "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/corona-warn-app src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",

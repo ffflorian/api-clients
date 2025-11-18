@@ -26,7 +26,7 @@
   "name": "c3nav",
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/c3nav",
   "scripts": {
-    "build:ts": "tsc",
+    "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/c3nav src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",

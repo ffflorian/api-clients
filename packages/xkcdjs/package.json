@@ -33,7 +33,7 @@
   "name": "@ffflorian/xkcdjs",
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/xkcdjs",
   "scripts": {
-    "build:ts": "tsc",
+    "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/xkcdjs src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
