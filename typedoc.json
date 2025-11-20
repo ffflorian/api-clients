@@ -1,5 +1,6 @@
 {
-  "exclude": "**/*(index|Endpoints).ts",
+  "$schema": "https://typedoc.org/schema.json",
+  "exclude": ["**/*(index|Endpoints|cli).ts"],
   "excludeExternals": true,
   "excludePrivate": true
 }
