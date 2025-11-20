@@ -1,5 +1,3 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {
   AuthorsResult,
@@ -17,20 +15,17 @@ import type {
 } from '../interfaces/';
 
 export class CratesAPI {
-  private readonly apiClient: AxiosInstance;
-  private apiKey?: string;
-
-  constructor(apiClient: AxiosInstance, apiKey?: string) {
-    this.apiClient = apiClient;
-    this.apiKey = apiKey;
-  }
+  constructor(
+    private readonly baseURL: string,
+    private apiKey?: string
+  ) {}
 
   /**
    * Retrieve the owners of a crate.
    * @param packageName The package name
    */
   public async following(packageName: string): Promise<FollowingResult> {
-    const endpoint = Endpoint.Crates.following(packageName);
+    const endpoint = new URL(Endpoint.Crates.following(packageName), this.baseURL);
     if (!this.apiKey) {
       throw new Error('You need to set an API key to use this endpoint.');
     }
@@ -41,8 +36,13 @@ export class CratesAPI {
       },
     };
 
-    const {data} = await this.apiClient.get(endpoint, additionalConfig);
-    return data;
+    const response = await fetch(endpoint, additionalConfig);
+    if (!response.ok) {
+      throw new Error(
+        `Failed to retrieve following status for crate ${packageName}: ${response.statusText}`,
+      );
+    }
+    return response.json();
   }
 
   /**
@@ -50,9 +50,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getAuthors(packageName: string, version: string): Promise<AuthorsResult> {
-    const endpoint = Endpoint.Crates.authors(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.authors(packageName, version), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve authors for crate ${packageName} version ${version}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -60,9 +63,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getCrate(packageName: string): Promise<CrateResult> {
-    const endpoint = Endpoint.Crates.crate(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.crate(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -71,18 +77,29 @@ export class CratesAPI {
    * @param options The search options
    */
   public async getCrates(query: string, options?: SearchOptions): Promise<SearchResult> {
-    const endpoint = Endpoint.Crates.crates();
+    const endpoint = new URL(Endpoint.Crates.crates(), this.baseURL);
+    const params = new URLSearchParams();
+    params.append('q', query);
 
-    const additionalConfig = {
-      params: {
-        ...options,
-        // eslint-disable-next-line id-length
-        q: query,
-      },
-    };
+    if (options) {
+      if (options.page) {
+        params.append('page', options.page.toString());
+      }
+      if (options.per_page) {
+        params.append('per_page', options.per_page.toString());
+      }
+      if (options.sort) {
+        params.append('sort', options.sort);
+      }
+    }
 
-    const {data} = await this.apiClient.get(endpoint, additionalConfig);
-    return data;
+    endpoint.search = params.toString();
+
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to search crates with query "${query}": ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -90,9 +107,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getDependencies(packageName: string): Promise<DependenciesResult> {
-    const endpoint = Endpoint.Crates.dependencies(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.dependencies(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve dependencies for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -100,9 +120,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getDownloads(packageName: string): Promise<DownloadsResult> {
-    const endpoint = Endpoint.Crates.downloads(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.downloads(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve downloads for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -110,9 +133,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
-    const endpoint = Endpoint.Crates.download(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.download(packageName, version), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve download URL for crate ${packageName} version ${version}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -120,9 +146,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getOwners(packageName: string): Promise<UsersResult> {
-    const endpoint = Endpoint.Crates.owners(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.owners(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve owners for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -130,9 +159,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
-    const endpoint = Endpoint.Crates.reverseDependencies(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.reverseDependencies(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve reverse dependencies for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -140,9 +172,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getTeamOwner(packageName: string): Promise<TeamsResult> {
-    const endpoint = Endpoint.Crates.ownerTeam(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.ownerTeam(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve team owner for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -150,9 +185,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getUserOwner(packageName: string): Promise<UsersResult> {
-    const endpoint = Endpoint.Crates.ownerUser(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.ownerUser(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve user owner for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -160,9 +198,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getVersion(packageName: string, version: string): Promise<Version> {
-    const endpoint = Endpoint.Crates.version(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.version(packageName, version), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve version ${version} for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -170,9 +211,12 @@ export class CratesAPI {
    * @param packageName The package name
    */
   public async getVersions(packageName: string): Promise<{versions: Version[]}> {
-    const endpoint = Endpoint.Crates.versions(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const endpoint = new URL(Endpoint.Crates.versions(packageName), this.baseURL);
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve versions for crate ${packageName}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**

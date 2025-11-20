@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Buildings, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class BuildingsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class BuildingsAPI extends APIBase {
    */
   public async getById(id: number): Promise<Buildings> {
     const endpoint = Endpoint.buildings(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve building with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Buildings[]> {
     const endpoint = Endpoint.buildings();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve buildings: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

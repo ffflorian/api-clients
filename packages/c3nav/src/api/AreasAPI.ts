@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Areas, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AreasAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class AreasAPI extends APIBase {
    */
   public async getById(id: number): Promise<Areas> {
     const endpoint = Endpoint.areas(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve area with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Areas[]> {
     const endpoint = Endpoint.areas();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve areas: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

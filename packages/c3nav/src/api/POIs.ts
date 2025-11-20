@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, POIs} from '../interfaces';
 import {APIBase} from './APIBase';
 
 export class PoisAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class PoisAPI extends APIBase {
    */
   public async getById(id: number): Promise<POIs> {
     const endpoint = Endpoint.pois(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve POI with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<POIs[]> {
     const endpoint = Endpoint.pois();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve POIs: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

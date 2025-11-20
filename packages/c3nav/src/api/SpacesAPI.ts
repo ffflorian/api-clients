@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Spaces} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class SpacesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class SpacesAPI extends APIBase {
    */
   public async getById(id: number): Promise<Spaces> {
     const endpoint = Endpoint.spaces(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve space with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Spaces[]> {
     const endpoint = Endpoint.spaces();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve spaces: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

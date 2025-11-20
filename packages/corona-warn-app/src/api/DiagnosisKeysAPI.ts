@@ -1,11 +1,5 @@
-import type {AxiosInstance} from 'axios';
-
 export class DiagnosisKeysAPI {
-  protected readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(protected readonly baseURL: string) {}
 
   /**
    * Get all countries for which diagnosis keys are available.
@@ -13,8 +7,11 @@ export class DiagnosisKeysAPI {
    */
   public async getCountries(): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country`;
-    const {data} = await this.apiClient.get<string[]>(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve countries: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -26,8 +23,11 @@ export class DiagnosisKeysAPI {
    */
   public async getDatesByCountry(country: string): Promise<string[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date`;
-    const {data} = await this.apiClient.get<string[]>(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve dates for country ${country}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -41,13 +41,15 @@ export class DiagnosisKeysAPI {
    * diagnosis keys will be returned. If the date is outside of the 14-day
    * window, or in the future, an HTTP error code will be returned.
    */
-  public async getKeysByDate(country: string, date: string): Promise<Buffer> {
+  public async getKeysByDate(country: string, date: string): Promise<ArrayBuffer> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(endpoint, {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve keys for country ${country} on date ${date}: ${response.statusText}`);
+    }
+    return response.arrayBuffer();
   }
 
   /**
@@ -63,8 +65,11 @@ export class DiagnosisKeysAPI {
    */
   public async getHoursByDate(country: string, date: string): Promise<number[]> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour`;
-    const {data} = await this.apiClient.get<number[]>(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve hours for country ${country} on date ${date}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -81,11 +86,15 @@ export class DiagnosisKeysAPI {
    */
   public async getKeysByHour(country: string, date: string, hour: number): Promise<Buffer> {
     const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour/${hour}`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(endpoint, {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    if (!response.ok) {
+      throw new Error(
+        `Failed to retrieve keys for country ${country} on date ${date} at hour ${hour}: ${response.statusText}`,
+      );
+    }
+    return response.arrayBuffer();
   }
 
   /**
@@ -95,9 +104,11 @@ export class DiagnosisKeysAPI {
    * @param cwaFake Requests with a value of "0" will be fully processed. Any other
    * value indicates that this request shall be handled as a "fake" request.
    */
-  public async postKeys(keys: Buffer, cwaAuthorization: string, cwaFake: string): Promise<void> {
+  public async postKeys(keys: ArrayBuffer, cwaAuthorization: string, cwaFake: string): Promise<void> {
     const endpoint = '/diagnosis-keys';
-    await this.apiClient.post(endpoint, keys, {
+    await fetch(endpoint, {
+      body: keys,
+      method: 'POST',
       headers: {
         'cwa-authorization': cwaAuthorization,
         'cwa-fake': cwaFake,

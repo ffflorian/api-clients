@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Ramps} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class RampsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class RampsAPI extends APIBase {
    */
   public async getById(id: number): Promise<Ramps> {
     const endpoint = Endpoint.ramps(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve ramp with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Ramps[]> {
     const endpoint = Endpoint.ramps();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve ramps: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

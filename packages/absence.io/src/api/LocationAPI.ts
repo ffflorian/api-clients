@@ -1,12 +1,11 @@
-import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Location, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class LocationAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -16,8 +15,11 @@ export class LocationAPI extends APIBase {
   public async retrieveLocation(id: string): Promise<Location> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations(id);
-    const {data: location} = await this.apiClient.get<Location>(endpoint);
-    return location;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve location with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -27,7 +29,10 @@ export class LocationAPI extends APIBase {
   public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    const {data: locations} = await this.apiClient.post<Paginated<Location>>(endpoint, options);
-    return locations;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve locations: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {AccessRestrictions, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AccessRestrictionsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class AccessRestrictionsAPI extends APIBase {
    */
   public async getById(id: number): Promise<AccessRestrictions> {
     const endpoint = Endpoint.accessRestrictions(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve access restriction with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<AccessRestrictions[]> {
     const endpoint = Endpoint.accessRestrictions();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve access restrictions: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

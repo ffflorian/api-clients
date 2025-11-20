@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Changesets, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ChangesetsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class ChangesetsAPI extends APIBase {
    */
   public async getById(id: number): Promise<Changesets> {
     const endpoint = Endpoint.changesets(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve changeset with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Changesets[]> {
     const endpoint = Endpoint.changesets();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve changesets: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

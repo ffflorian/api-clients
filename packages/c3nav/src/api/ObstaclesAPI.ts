@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Obstacles} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class ObstaclesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class ObstaclesAPI extends APIBase {
    */
   public async getById(id: number): Promise<Obstacles> {
     const endpoint = Endpoint.obstacles(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve obstacle with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<Obstacles[]> {
     const endpoint = Endpoint.obstacles();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve obstacles: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

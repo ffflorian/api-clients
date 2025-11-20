@@ -1,12 +1,11 @@
-import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, NewTimespan, Paginated, PaginationOptions, Timespan} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class TimespanAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -17,8 +16,11 @@ export class TimespanAPI extends APIBase {
   public async createTimespan(timestampData: NewTimespan): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.create();
-    const {data: timespan} = await this.apiClient.post(endpoint, timestampData);
-    return timespan;
+    const response = await fetch(endpoint, {body: JSON.stringify(timestampData), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to create timespan: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -29,7 +31,10 @@ export class TimespanAPI extends APIBase {
   public async deleteTimespan(id: string): Promise<void> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    await this.apiClient.delete(endpoint);
+    const response = await fetch(endpoint, {method: 'DELETE'});
+    if (!response.ok) {
+      throw new Error(`Failed to delete timespan with id ${id}: ${response.statusText}`);
+    }
   }
 
   /**
@@ -40,8 +45,11 @@ export class TimespanAPI extends APIBase {
   public async retrieveTimespan(id: string): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data: timespan} = await this.apiClient.get(endpoint);
-    return timespan;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve timespan with id ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -51,8 +59,11 @@ export class TimespanAPI extends APIBase {
   public async retrieveTimespans(options?: PaginationOptions): Promise<Paginated<Timespan[]>> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans();
-    const {data} = await this.apiClient.post(endpoint, options);
-    return data;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve timespans: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -64,7 +75,10 @@ export class TimespanAPI extends APIBase {
   public async updateTimespan(id: string, newTimespanData: Partial<NewTimespan>): Promise<Timespan> {
     this.checkApiKey('Timespan');
     const endpoint = Endpoint.Timespan.timespans(id);
-    const {data: timespan} = await this.apiClient.put(endpoint, newTimespanData);
-    return timespan;
+    const response = await fetch(endpoint, {body: JSON.stringify(newTimespanData), method: 'PUT'});
+    if (!response.ok) {
+      throw new Error(`Failed to update timespan with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

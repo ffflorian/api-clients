@@ -1,5 +1,4 @@
 import * as hawk from '@hapi/hawk';
-import axios, {AxiosInstance} from 'axios';
 
 import {
   AbsenceAPI,
@@ -15,7 +14,7 @@ import type {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly baseURL: string;
   private readonly options: ClientOptions;
 
   constructor(options: ClientOptions) {
@@ -27,11 +26,9 @@ export class AbsenceIO {
       key: this.options.apiKey,
     };
 
-    this.apiClient = axios.create({
-      baseURL: 'https://app.absence.io/api/v2',
-    });
+    this.baseURL = 'https://app.absence.io/api/v2';
 
-    this.apiClient.interceptors.request.use(config => {
+    this.baseURL.interceptors.request.use(config => {
       const hawkHeader = hawk.client.header(`${config.baseURL}${config.url}`, config.method!, {credentials});
       config.headers.set('Authorization', hawkHeader.header);
 
@@ -39,14 +36,14 @@ export class AbsenceIO {
     });
 
     this.api = {
-      absence: new AbsenceAPI(this.apiClient, options),
-      allowanceType: new AllowanceTypeAPI(this.apiClient, options),
-      department: new DepartmentAPI(this.apiClient, options),
-      location: new LocationAPI(this.apiClient, options),
-      reason: new ReasonAPI(this.apiClient, options),
-      team: new TeamAPI(this.apiClient, options),
-      timespan: new TimespanAPI(this.apiClient, options),
-      user: new UserAPI(this.apiClient, options),
+      absence: new AbsenceAPI(this.baseURL, options),
+      allowanceType: new AllowanceTypeAPI(this.baseURL, options),
+      department: new DepartmentAPI(this.baseURL, options),
+      location: new LocationAPI(this.baseURL, options),
+      reason: new ReasonAPI(this.baseURL, options),
+      team: new TeamAPI(this.baseURL, options),
+      timespan: new TimespanAPI(this.baseURL, options),
+      user: new UserAPI(this.baseURL, options),
     };
   }
 
@@ -64,6 +61,6 @@ export class AbsenceIO {
    * @param newUrl The new API URL
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+    this.baseURL.defaults.baseURL = newUrl;
   }
 }

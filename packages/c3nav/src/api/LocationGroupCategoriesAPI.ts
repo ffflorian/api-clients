@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, LocationGroupCategories} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class LocationGroupCategoriesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class LocationGroupCategoriesAPI extends APIBase {
    */
   public async getById(id: number): Promise<LocationGroupCategories> {
     const endpoint = Endpoint.locationGroupCategories(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve location group category with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<LocationGroupCategories[]> {
     const endpoint = Endpoint.locationGroupCategories();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve location group categories: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

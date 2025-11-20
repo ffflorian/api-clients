@@ -1,11 +1,5 @@
-import type {AxiosInstance} from 'axios';
-
 export class ApplicationConfigurationAPI {
-  protected readonly apiClient: AxiosInstance;
-
-  constructor(apiClient: AxiosInstance) {
-    this.apiClient = apiClient;
-  }
+  constructor(protected readonly baseURL: string) {}
 
   /**
    * Get application configuration for a country.
@@ -18,12 +12,14 @@ export class ApplicationConfigurationAPI {
    * * Attenuation duration
    * * Application version configuration
    */
-  public async getAppConfig(country: string): Promise<Buffer> {
+  public async getAppConfig(country: string): Promise<ArrayBuffer> {
     const endpoint = `/configuration/country/${country}/app_config`;
-    const {data} = await this.apiClient.get<Buffer>(endpoint, {
+    const response = await fetch(endpoint, {
       headers: {Accept: 'application/zip'},
-      responseType: 'arraybuffer',
     });
-    return data;
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve app config for country ${country}: ${response.statusText}`);
+    }
+    return response.arrayBuffer();
   }
 }

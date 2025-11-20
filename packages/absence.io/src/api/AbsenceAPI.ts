@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Absence, ClientOptions, NewAbsence, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AbsenceAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -16,8 +14,11 @@ export class AbsenceAPI extends APIBase {
   public async createAbsence(absenceData: NewAbsence): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.create();
-    const {data: absence} = await this.apiClient.post<Absence>(endpoint, absenceData);
-    return absence;
+    const response = await fetch(endpoint, {body: JSON.stringify(absenceData), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to create absence: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -27,8 +28,11 @@ export class AbsenceAPI extends APIBase {
   public async retrieveAbsence(id: string): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    const {data: absence} = await this.apiClient.get<Absence>(endpoint);
-    return absence;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve absence with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -38,8 +42,11 @@ export class AbsenceAPI extends APIBase {
   public async retrieveAbsences(options?: PaginationOptions): Promise<Paginated<Absence[]>> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences();
-    const {data: absences} = await this.apiClient.post<Paginated<Absence[]>>(endpoint, options);
-    return absences;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve absences: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -49,7 +56,10 @@ export class AbsenceAPI extends APIBase {
   public async updateAbsence(id: string, absenceData: Partial<Absence>): Promise<Absence> {
     this.checkApiKey('Absence');
     const endpoint = Endpoint.Absence.absences(id);
-    const {data} = await this.apiClient.put<Absence>(endpoint, absenceData);
-    return data;
+    const response = await fetch(endpoint, {body: JSON.stringify(absenceData), method: 'PUT'});
+    if (!response.ok) {
+      throw new Error(`Failed to update absence with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

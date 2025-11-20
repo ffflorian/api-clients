@@ -1,14 +1,10 @@
-import type {AxiosInstance} from 'axios';
 import type {Authorization, ClientOptions} from '../interfaces';
 
 export class APIBase {
-  protected readonly apiClient: AxiosInstance;
-  protected readonly options: ClientOptions;
-
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    this.apiClient = apiClient;
-    this.options = options;
-  }
+  constructor(
+    protected baseURL: string,
+    protected readonly options: ClientOptions
+  ) {}
 
   /**
    * Set a new API key.
@@ -24,7 +20,7 @@ export class APIBase {
    * @param newUrl The new API url
    */
   public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+    this.baseURL = newUrl;
   }
 
   protected checkApiKey(apiName?: string): void {

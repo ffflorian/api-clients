@@ -1,18 +1,19 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Bounds, ClientOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class MapAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /** /bounds/ returns the maximum bounds of the map */
   public async getBounds(): Promise<Bounds> {
     const endpoint = Endpoint.Map.bounds();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve map bounds: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

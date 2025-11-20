@@ -1,12 +1,11 @@
-import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, NewUser, Paginated, PaginationOptions, User} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class UserAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -18,8 +17,11 @@ export class UserAPI extends APIBase {
   public async invite(userData: NewUser): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.invite();
-    const {data: user} = await this.apiClient.post(endpoint, userData);
-    return user;
+    const response = await fetch(endpoint, {body: JSON.stringify(userData), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to invite user: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -30,8 +32,11 @@ export class UserAPI extends APIBase {
   public async retrieveUser(id: string): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: user} = await this.apiClient.get(endpoint);
-    return user;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve user with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -52,8 +57,11 @@ export class UserAPI extends APIBase {
   public async retrieveUserByOption(options?: PaginationOptions): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    const {data: user} = await this.apiClient.post(endpoint, options);
-    return user;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve user by options: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -64,8 +72,11 @@ export class UserAPI extends APIBase {
   public async retrieveUsers(options?: PaginationOptions): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    const {data: users} = await this.apiClient.post(endpoint, options);
-    return users;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve users: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -77,7 +88,10 @@ export class UserAPI extends APIBase {
   public async updateUser(id: string, userData?: Partial<NewUser>): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: users} = await this.apiClient.post(endpoint, userData);
-    return users;
+    const response = await fetch(endpoint, {body: JSON.stringify(userData), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to update user with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

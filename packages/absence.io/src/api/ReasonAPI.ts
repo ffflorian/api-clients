@@ -1,4 +1,3 @@
-import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Paginated} from '../interfaces/';
@@ -6,8 +5,8 @@ import type {Reason} from '../interfaces/Reason';
 import {APIBase} from './APIBase';
 
 export class ReasonAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -17,8 +16,11 @@ export class ReasonAPI extends APIBase {
   public async retrieveReason(id: string): Promise<Reason> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons(id);
-    const {data: reason} = await this.apiClient.get(endpoint);
-    return reason;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve reason with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -28,7 +30,10 @@ export class ReasonAPI extends APIBase {
   public async retrieveReasons(): Promise<Paginated<Reason[]>> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    const {data: reasons} = await this.apiClient.post(endpoint, {});
-    return reasons;
+    const response = await fetch(endpoint, {method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve reasons: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

@@ -1,12 +1,11 @@
-import type {AxiosInstance} from 'axios';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Paginated, PaginationOptions, Team} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class TeamAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -16,8 +15,11 @@ export class TeamAPI extends APIBase {
   public async retrieveTeam(id: string): Promise<Team> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams(id);
-    const {data: team} = await this.apiClient.get(endpoint);
-    return team;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve team with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -27,7 +29,10 @@ export class TeamAPI extends APIBase {
   public async retrieveTeams(options?: PaginationOptions): Promise<Paginated<Team[]>> {
     this.checkApiKey('Team');
     const endpoint = Endpoint.Team.teams();
-    const {data: teams} = await this.apiClient.post(endpoint, options);
-    return teams;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve teams: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

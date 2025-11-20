@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {Allowance, ClientOptions, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class AllowanceTypeAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -16,8 +14,11 @@ export class AllowanceTypeAPI extends APIBase {
   public async retrieveAllowanceType(id: string): Promise<Allowance> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes(id);
-    const {data: allowance} = await this.apiClient.get<Allowance>(endpoint);
-    return allowance;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve allowance type with id ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -27,7 +28,10 @@ export class AllowanceTypeAPI extends APIBase {
   public async retrieveAllowanceTypes(options?: PaginationOptions): Promise<Paginated<Allowance[]>> {
     this.checkApiKey('AllowanceType');
     const endpoint = Endpoint.AllowanceType.allowanceTypes();
-    const {data: allowances} = await this.apiClient.post<Paginated<Allowance[]>>(endpoint, options);
-    return allowances;
+    const response = await fetch(endpoint, {body: JSON.stringify(options), method: 'POST'});
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve allowance types: ${response.statusText}`);
+    }
+    return response.json();
   }
 }

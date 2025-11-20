@@ -1,12 +1,10 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, CrossDescriptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class CrossDescriptionsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
-    super(apiClient, options);
+  constructor(baseURL: string, options: ClientOptions) {
+    super(baseURL, options);
   }
 
   /**
@@ -14,13 +12,19 @@ export class CrossDescriptionsAPI extends APIBase {
    */
   public async getById(id: number): Promise<CrossDescriptions> {
     const endpoint = Endpoint.crossDescriptions(id);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve cross description with ID ${id}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   public async getList(): Promise<CrossDescriptions[]> {
     const endpoint = Endpoint.crossDescriptions();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(endpoint);
+    if (!response.ok) {
+      throw new Error(`Failed to retrieve cross descriptions: ${response.statusText}`);
+    }
+    return response.json();
   }
 }
