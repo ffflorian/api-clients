@@ -9,7 +9,7 @@
     "rimraf": "6.1.0",
     "typedoc": "0.28.14",
     "typescript": "5.9.3",
-    "vitest": "4.0.6"
+    "vitest": "4.0.11"
   },
   "engines": {
     "node": ">= 10.9"
@@ -29,7 +29,7 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/libraries.io",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
-    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/libraries.io src/index.ts",
+    "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/libraries.io src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "vitest"

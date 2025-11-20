@@ -25,7 +25,7 @@
   "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/npms.io",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
-    "build:docs": "typedoc --options ../../typedoc.json --out ../../docs/packages/npms.io src/index.ts",
+    "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/npms.io src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
