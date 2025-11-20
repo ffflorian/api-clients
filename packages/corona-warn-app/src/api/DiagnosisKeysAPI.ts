@@ -102,7 +102,7 @@ export class DiagnosisKeysAPI {
    * @param cwaFake Requests with a value of "0" will be fully processed. Any other
    * value indicates that this request shall be handled as a "fake" request.
    */
-  public async postKeys(keys: Buffer, cwaAuthorization: string, cwaFake: string): Promise<void> {
+  public async postKeys(keys: ReadableStream<Uint8Array>, cwaAuthorization: string, cwaFake: string): Promise<void> {
     const endpoint = '/diagnosis-keys';
     await fetch(new URL(endpoint, this.baseURL), {
       body: keys,
