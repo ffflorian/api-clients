@@ -1,4 +1,3 @@
-import * as qs from 'qs';
 import {Fields} from './interfaces/Fields';
 
 export const Endpoint = {
@@ -13,16 +12,19 @@ export const Endpoint = {
 
   Employees: {
     employees(id?: number, fields?: Array<keyof Fields>): string {
-      let path = `/${Endpoint.EMPLOYEES}/`;
+      const url = new URL(`/${Endpoint.EMPLOYEES}/`, 'https://example.com');
+
       if (id) {
-        path += `${id}/`;
+        url.pathname += `${id}/`;
       }
 
       if (fields) {
-        path += `?${qs.stringify({fields: fields.join(',')})}`;
+        const params = new URLSearchParams();
+        params.append('fields', fields.join(','));
+        url.search = params.toString();
       }
 
-      return path;
+      return `${url.pathname}${url.search}`;
     },
 
     employeeDirectory(): string {

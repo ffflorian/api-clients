@@ -1,5 +1,3 @@
-import type {AxiosInstance} from 'axios';
-
 import {Endpoint} from '../Endpoints';
 import type {
   AuthorsResult,
@@ -17,13 +15,10 @@ import type {
 } from '../interfaces/';
 
 export class CratesAPI {
-  private readonly apiClient: AxiosInstance;
-  private apiKey?: string;
-
-  constructor(apiClient: AxiosInstance, apiKey?: string) {
-    this.apiClient = apiClient;
-    this.apiKey = apiKey;
-  }
+  constructor(
+    private readonly baseURL: string,
+    private apiKey?: string
+  ) {}
 
   /**
    * Retrieve the owners of a crate.
@@ -41,8 +36,11 @@ export class CratesAPI {
       },
     };
 
-    const {data} = await this.apiClient.get(endpoint, additionalConfig);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL), additionalConfig);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -51,8 +49,11 @@ export class CratesAPI {
    */
   public async getAuthors(packageName: string, version: string): Promise<AuthorsResult> {
     const endpoint = Endpoint.Crates.authors(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -61,8 +62,11 @@ export class CratesAPI {
    */
   public async getCrate(packageName: string): Promise<CrateResult> {
     const endpoint = Endpoint.Crates.crate(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -73,16 +77,24 @@ export class CratesAPI {
   public async getCrates(query: string, options?: SearchOptions): Promise<SearchResult> {
     const endpoint = Endpoint.Crates.crates();
 
-    const additionalConfig = {
-      params: {
-        ...options,
-        // eslint-disable-next-line id-length
-        q: query,
-      },
+    const params: Record<string, string> = {
+      // eslint-disable-next-line id-length
+      q: query,
     };
 
-    const {data} = await this.apiClient.get(endpoint, additionalConfig);
-    return data;
+    for (const optionName of Object.keys(options || {})) {
+      params[optionName] = String(options?.[optionName as keyof SearchOptions] || '');
+    }
+
+    const url = new URL(endpoint, this.baseURL);
+    if (options) {
+      url.search = new URLSearchParams(params).toString();
+    }
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -91,8 +103,11 @@ export class CratesAPI {
    */
   public async getDependencies(packageName: string): Promise<DependenciesResult> {
     const endpoint = Endpoint.Crates.dependencies(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -101,8 +116,11 @@ export class CratesAPI {
    */
   public async getDownloads(packageName: string): Promise<DownloadsResult> {
     const endpoint = Endpoint.Crates.downloads(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -111,8 +129,11 @@ export class CratesAPI {
    */
   public async getDownloadUrl(packageName: string, version: string): Promise<UrlResult> {
     const endpoint = Endpoint.Crates.download(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -121,8 +142,11 @@ export class CratesAPI {
    */
   public async getOwners(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.owners(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -131,8 +155,11 @@ export class CratesAPI {
    */
   public async getReverseDependencies(packageName: string): Promise<ReverseDependenciesResult> {
     const endpoint = Endpoint.Crates.reverseDependencies(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -141,8 +168,11 @@ export class CratesAPI {
    */
   public async getTeamOwner(packageName: string): Promise<TeamsResult> {
     const endpoint = Endpoint.Crates.ownerTeam(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -151,8 +181,11 @@ export class CratesAPI {
    */
   public async getUserOwner(packageName: string): Promise<UsersResult> {
     const endpoint = Endpoint.Crates.ownerUser(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -161,8 +194,11 @@ export class CratesAPI {
    */
   public async getVersion(packageName: string, version: string): Promise<Version> {
     const endpoint = Endpoint.Crates.version(packageName, version);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
@@ -171,8 +207,11 @@ export class CratesAPI {
    */
   public async getVersions(packageName: string): Promise<{versions: Version[]}> {
     const endpoint = Endpoint.Crates.versions(packageName);
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const response = await fetch(new URL(endpoint, this.baseURL));
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    return response.json();
   }
 
   /**
