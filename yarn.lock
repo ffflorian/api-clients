@@ -3501,7 +3501,6 @@ __metadata:
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
-    qs: "npm:6.14.0"
     rimraf: "npm:6.1.0"
     typedoc: "npm:0.28.14"
     typescript: "npm:5.9.3"
