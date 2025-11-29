@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "@ffflorian/api-client": "2.1.0",
+    "@ffflorian/api-client": "2.1.2",
     "commander": "14.0.2"
   },
   "description": "An xkcd API client with a CLI.",
@@ -17,7 +17,7 @@
     "vitest": "4.0.11"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 21"
   },
   "files": [
     "dist"

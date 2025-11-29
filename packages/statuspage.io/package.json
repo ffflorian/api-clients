@@ -1,7 +1,7 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "@ffflorian/api-client": "2.1.0"
+    "@ffflorian/api-client": "2.1.2"
   },
   "description": "A statuspage.io API client",
   "devDependencies": {
@@ -11,7 +11,7 @@
     "typescript": "5.9.3"
   },
   "engines": {
-    "node": ">= 10.9"
+    "node": ">= 21"
   },
   "files": [
     "dist"

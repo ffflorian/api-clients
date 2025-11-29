@@ -80,7 +80,7 @@ describe('XKCD', () => {
     console.log('latestWithData.data:', latestWithData.data);
 
     expect(latestWithData.data).toMatchObject({
-      data: expect.any(Buffer),
+      data: expect.any(ArrayBuffer),
     });
   });
 
@@ -91,6 +91,7 @@ describe('XKCD', () => {
       await xkcdJS.api.getByIndex(1);
       expect.fail('Did not throw error');
     } catch (error) {
+      console.log((error as Error).message)
       expect((error as Error).message.includes('Request failed with status code 404')).toBe(true);
     }
   });
