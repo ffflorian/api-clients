@@ -4,8 +4,8 @@
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["ESNext", "DOM"],
-    "module": "CommonJS",
-    "moduleResolution": "NodeNext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -14,6 +14,6 @@
     "sourceMap": false,
     "strict": true,
     "strictFunctionTypes": true,
-    "target": "ES6"
+    "target": "es6"
   }
 }

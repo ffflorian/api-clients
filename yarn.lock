@@ -4142,6 +4142,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.1.0"
     "@types/node": "npm:~24"
+    rimraf: "npm:6.1.0"
     typedoc: "npm:0.28.14"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -6435,6 +6436,7 @@ __metadata:
     "@types/node": "npm:~24"
     "@types/qs": "npm:6.14.0"
     qs: "npm:6.14.0"
+    rimraf: "npm:6.1.0"
     typedoc: "npm:0.28.14"
     typescript: "npm:5.9.3"
   languageName: unknown
@@ -10220,6 +10222,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.1.0"
     "@types/node": "npm:~24"
+    rimraf: "npm:6.1.0"
     typedoc: "npm:0.28.14"
     typescript: "npm:5.9.3"
   languageName: unknown
