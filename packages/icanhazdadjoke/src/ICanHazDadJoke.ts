@@ -1,11 +1,11 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
 import type {ClientOptions} from './Interfaces';
 
 export class ICanHazDadJoke {
   public readonly api: ICanHazDadJokeAPI;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private readonly options: Required<ClientOptions>;
 
   constructor(options?: ClientOptions) {
@@ -14,8 +14,7 @@ export class ICanHazDadJoke {
       ...options,
     };
 
-    this.apiClient = axios.create({
-      baseURL: this.options.apiUrl,
+    this.apiClient = new APIClient(this.options.apiUrl, {
       headers: {
         Accept: 'application/json',
         'User-Agent':
@@ -29,7 +28,7 @@ export class ICanHazDadJoke {
    * Set a new API URL.
    * @param url The new API URL.
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

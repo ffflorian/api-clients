@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Paginated} from '../interfaces/';
@@ -6,7 +6,7 @@ import type {Reason} from '../interfaces/Reason';
 import {APIBase} from './APIBase';
 
 export class ReasonAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -28,7 +28,7 @@ export class ReasonAPI extends APIBase {
   public async retrieveReasons(): Promise<Paginated<Reason[]>> {
     this.checkApiKey('Reason');
     const endpoint = Endpoint.Reason.reasons();
-    const {data: reasons} = await this.apiClient.post(endpoint, {});
+    const {data: reasons} = await this.apiClient.post(endpoint, null);
     return reasons;
   }
 }

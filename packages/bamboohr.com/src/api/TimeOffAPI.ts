@@ -1,10 +1,10 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {OffEmployee, TimeOffPolicy, TimeOffTypes, TimeOffRequestsOptions, TimeOffRequest} from '../interfaces';
+import type {OffEmployee, TimeOffPolicy, TimeOffTypes, TimeOffRequestsOptions, TimeOffRequest} from '../interfaces';
 
 export class TimeOffAPI {
-  constructor(private readonly apiClient: AxiosInstance) {}
+  constructor(private readonly apiClient: APIClient) {}
 
   /**
    * This endpoint will return a list, sorted by date, of employees who will be out, and company holidays, for a period of time.

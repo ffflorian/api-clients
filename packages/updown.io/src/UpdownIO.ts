@@ -1,11 +1,11 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {ChecksAPI, NodesAPI} from './api';
 import type {API, ClientOptions} from './interfaces';
 
 export class UpdownIO {
   public api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
   constructor(apiKey?: string);
   constructor(options?: ClientOptions);
@@ -14,10 +14,9 @@ export class UpdownIO {
       options = {apiKey: options};
     }
 
-    this.apiClient = axios.create({
-      baseURL: 'https://updown.io/api/',
+    this.apiClient = new APIClient('https://updown.io/api/', {
       headers: {
-        ...(options && (options as ClientOptions).apiKey && {'X-API-KEY': (options as ClientOptions).apiKey}),
+        ...(options?.apiKey && {'X-API-KEY': options.apiKey}),
       },
     });
 
@@ -29,10 +28,10 @@ export class UpdownIO {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.api.checks.setApiUrl(newUrl);
-    this.api.nodes.setApiUrl(newUrl);
+  public setApiUrl(newURL: string): void {
+    this.api.checks.setApiUrl(newURL);
+    this.api.nodes.setApiUrl(newURL);
   }
 }

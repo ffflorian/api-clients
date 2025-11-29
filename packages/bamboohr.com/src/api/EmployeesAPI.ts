@@ -1,10 +1,10 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {Fields, Employee, WritableFields, EmployeeDirectory} from '../interfaces';
+import type {Fields, Employee, WritableFields, EmployeeDirectory} from '../interfaces';
 
 export class EmployeesAPI {
-  constructor(private readonly apiClient: AxiosInstance) {}
+  constructor(private readonly apiClient: APIClient) {}
 
   /**
    * Update an employee, based on employee id.
@@ -12,7 +12,7 @@ export class EmployeesAPI {
    */
   public async addEmployee(fields: Pick<Fields, 'firstName' | 'lastName'>): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees();
-    const {data} = await this.apiClient.post<Employee>(endpoint, {data: fields});
+    const {data} = await this.apiClient.post<Employee>(endpoint, fields);
     return data;
   }
 
@@ -42,7 +42,7 @@ export class EmployeesAPI {
    */
   public async updateEmployee(id: number, fields: WritableFields): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees(id);
-    const {data} = await this.apiClient.post<Employee>(endpoint, {data: fields});
+    const {data} = await this.apiClient.post<Employee>(endpoint, fields);
     return data;
   }
 }

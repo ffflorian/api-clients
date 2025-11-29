@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {
@@ -17,10 +17,10 @@ import type {
 } from '../interfaces/';
 
 export class CratesAPI {
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private apiKey?: string;
 
-  constructor(apiClient: AxiosInstance, apiKey?: string) {
+  constructor(apiClient: APIClient, apiKey?: string) {
     this.apiClient = apiClient;
     this.apiKey = apiKey;
   }

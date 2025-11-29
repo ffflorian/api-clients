@@ -1,5 +1,5 @@
 import * as hawk from '@hapi/hawk';
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {
   AbsenceAPI,
@@ -15,11 +15,12 @@ import type {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private readonly options: ClientOptions;
 
   constructor(options: ClientOptions) {
     this.options = options;
+    const baseURL = options.apiUrl || 'https://app.absence.io/api/v2';
 
     const credentials: hawk.client.Credentials = {
       algorithm: 'sha256',
@@ -27,14 +28,11 @@ export class AbsenceIO {
       key: this.options.apiKey,
     };
 
-    this.apiClient = axios.create({
-      baseURL: 'https://app.absence.io/api/v2',
-    });
+    this.apiClient = new APIClient(baseURL);
 
-    this.apiClient.interceptors.request.use(config => {
-      const hawkHeader = hawk.client.header(`${config.baseURL}${config.url}`, config.method!, {credentials});
-      config.headers.set('Authorization', hawkHeader.header);
-
+    this.apiClient.interceptors.request.push((url, config) => {
+      const hawkHeader = hawk.client.header(url.toString(), config.method, {credentials});
+      config.headers = {...config.headers, Authorization: hawkHeader.header};
       return config;
     });
 
@@ -61,9 +59,9 @@ export class AbsenceIO {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API URL
+   * @param newURL The new API URL
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

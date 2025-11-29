@@ -1,12 +1,12 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ScheduledMaintenances} from '../interfaces/Result';
 
 export class ScheduledMaintenancesAPI {
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
-  constructor(requestService: AxiosInstance) {
+  constructor(requestService: APIClient) {
     this.apiClient = requestService;
   }
 

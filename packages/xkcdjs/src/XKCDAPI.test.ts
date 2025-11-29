@@ -1,8 +1,8 @@
 import {describe, expect, it, beforeEach} from 'vitest';
 import nock from 'nock';
-import * as XKCDJS from '.';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
-import type {AxiosError} from 'axios';
+
+import * as XKCDJS from '.';
 
 const responseDataFirst: XKCDJS.XKCDResult = {
   alt: "Don't we all.",
@@ -91,7 +91,7 @@ describe('XKCD', () => {
       await xkcdJS.api.getByIndex(1);
       expect.fail('Did not throw error');
     } catch (error) {
-      expect((error as AxiosError).message.includes('Request failed with status code 404')).toBe(true);
+      expect((error as Error).message.includes('Request failed with status code 404')).toBe(true);
     }
   });
 });

@@ -1,11 +1,11 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Holes} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class HolesAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 

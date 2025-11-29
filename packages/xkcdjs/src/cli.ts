@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import type {AxiosError} from 'axios';
 import {program as commander} from 'commander';
 import {constants as fsConstants, promises as fs} from 'fs';
 import * as path from 'path';
@@ -48,7 +47,7 @@ commander
       const imageData = await xkcd.api.getLatest({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${(error as AxiosError).message}`);
+      console.error(`Error: ${(error as Error).message}`);
       commander.outputHelp();
       process.exit(1);
     }
@@ -63,7 +62,7 @@ commander
       const imageData = await xkcd.api.getRandom({withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${(error as AxiosError).message}`);
+      console.error(`Error: ${(error as Error).message}`);
       commander.outputHelp();
       process.exit(1);
     }
@@ -84,7 +83,7 @@ commander
       const imageData = await xkcd.api.getByIndex(parsedIndex, {withData: true});
       await save(resolvedPath, imageData);
     } catch (error) {
-      console.error(`Error: ${(error as AxiosError).message}`);
+      console.error(`Error: ${(error as Error).message}`);
       commander.outputHelp();
       process.exit(1);
     }

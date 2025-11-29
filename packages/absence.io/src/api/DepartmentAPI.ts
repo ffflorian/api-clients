@@ -1,11 +1,11 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Department, Paginated, PaginationOptions} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class DepartmentAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 
@@ -16,7 +16,7 @@ export class DepartmentAPI extends APIBase {
   public async retrieveDepartment(id: string): Promise<Department> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments(id);
-    const {data: department} = await this.apiClient.get(endpoint);
+    const {data: department} = await this.apiClient.get<Department>(endpoint);
     return department;
   }
 
@@ -27,7 +27,7 @@ export class DepartmentAPI extends APIBase {
   public async retrieveDepartments(options?: PaginationOptions): Promise<Paginated<Department[]>> {
     this.checkApiKey('Department');
     const endpoint = Endpoint.Department.departments();
-    const {data: departments} = await this.apiClient.post(endpoint, options);
+    const {data: departments} = await this.apiClient.post<Paginated<Department[]>>(endpoint, options);
     return departments;
   }
 }

@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {
@@ -13,7 +13,7 @@ import type {
 import {APIBase} from './APIBase';
 
 export class UserAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 

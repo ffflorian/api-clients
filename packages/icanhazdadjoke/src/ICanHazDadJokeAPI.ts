@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 import type {
   ClientOptions,
   JokeResult,
@@ -9,10 +9,10 @@ import type {
 } from './Interfaces';
 
 export class ICanHazDadJokeAPI {
-  protected readonly apiClient: AxiosInstance;
+  protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
 
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     this.apiClient = apiClient;
     this.options = options;
   }
@@ -89,7 +89,6 @@ export class ICanHazDadJokeAPI {
   private async getImage(imageUrl: string): Promise<Buffer> {
     const {data} = await this.apiClient.get<Buffer>(imageUrl, {
       headers: {
-        ...this.apiClient.defaults.headers.get,
         Accept: 'image/png',
       },
       responseType: 'arraybuffer',

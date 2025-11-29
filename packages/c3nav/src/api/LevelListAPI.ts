@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Level, LevelListOptions} from '../interfaces';
@@ -8,7 +8,7 @@ import {APIBase} from './APIBase';
  * A Level is a Location – so if it is visible, you can use its ID in the Location API as well.
  */
 export class LevelListAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 

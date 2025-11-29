@@ -1,4 +1,4 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Location, LocationDetails, LocationGeometry, LocationType} from '../interfaces/';
@@ -14,7 +14,7 @@ import {APIBase} from './APIBase';
  * Additionally, you can access Custom Locations (Coordinates) by using `c:<level.short_label>:x:y` as an id or slug.
  */
 export class LocationsAPI extends APIBase {
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     super(apiClient, options);
   }
 

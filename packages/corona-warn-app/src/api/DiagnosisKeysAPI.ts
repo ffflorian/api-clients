@@ -1,9 +1,9 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 export class DiagnosisKeysAPI {
-  protected readonly apiClient: AxiosInstance;
+  protected readonly apiClient: APIClient;
 
-  constructor(apiClient: AxiosInstance) {
+  constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
   }
 
