@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.4.0 (2025-11-30)
+
+
+### Features
+
+* Replace axios with APIClient ([#1814](https://github.com/ffflorian/api-clients/issues/1814)) ([359dd5e](https://github.com/ffflorian/api-clients/commit/359dd5e10cc4e26948d7dcb2d53c8ce74283446d))
+
+
+
+
+
 ## 2.3.8 (2025-11-05)
 
 **Note:** Version bump only for package absence.io
