@@ -1,13 +1,13 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 import type {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
-  protected readonly apiClient: AxiosInstance;
+  protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
   private readonly JSON_INFO_FILE: string;
   private readonly lowestIndex: number;
 
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     this.apiClient = apiClient;
     this.options = options;
 
@@ -84,12 +84,11 @@ export class XKCDAPI {
   }
 
   private async getImage(imageUrl: string): Promise<ImageData> {
-    const {data, headers} = await this.apiClient.request<Buffer>({
+    const {data, headers} = await this.apiClient.get(imageUrl, {
       responseType: 'arraybuffer',
-      url: imageUrl,
     });
 
-    const contentType = headers['content-type'];
+    const contentType = headers.get('content-type');
 
     return {
       data,

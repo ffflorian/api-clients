@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
 import {Endpoint} from './Endpoints';
@@ -7,16 +7,14 @@ import type {Components, Status, Summary} from './interfaces/Result';
 
 export class Statuspage {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
   constructor(pageId: string) {
     if (!pageId) {
       throw new Error('A page ID needs to be set in order to use the client.');
     }
 
-    this.apiClient = axios.create({
-      baseURL: `https://${pageId}.statuspage.io`,
-    });
+    this.apiClient = new APIClient(`https://${pageId}.statuspage.io`);
 
     this.api = {
       getComponents: this.getComponents,
@@ -30,10 +28,10 @@ export class Statuspage {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 
   /**

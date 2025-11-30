@@ -1,11 +1,11 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
 import type {API, ClientOptions} from './interfaces/';
 
 export class LibrariesIO {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private readonly options: Required<ClientOptions>;
 
   constructor(apiKey: string);
@@ -20,22 +20,26 @@ export class LibrariesIO {
       ...options,
     };
 
-    this.apiClient = axios.create({
-      baseURL: this.options.apiUrl,
+    this.apiClient = new APIClient(this.options.apiUrl);
+
+    this.apiClient.interceptors.request.push((_url, options) => {
+      if (options.body) {
+        const body = JSON.parse(options.body.toString());
+        body.api_key = this.options.apiKey;
+        options.body = JSON.stringify(body);
+      } else {
+        const body = {api_key: this.options.apiKey};
+        options.body = JSON.stringify(body);
+      }
+      return options;
     });
 
-    this.apiClient.interceptors.request.use(config => {
-      config.data = {
-        ...config.data,
-        api_key: this.options.apiKey,
-      };
-      return config;
-    });
-
-    this.apiClient.interceptors.response.use(response => {
+    this.apiClient.interceptors.response.push(response => {
       const headers = response.headers;
-      const totalResults = headers['total'] ? Number(headers['total']) : undefined;
-      return {...response, totalResults};
+      if (headers.get('total')) {
+        return {...response, totalResults: Number(headers.get('total'))} as any;
+      }
+      return response;
     });
 
     this.api = {
@@ -67,9 +71,9 @@ export class LibrariesIO {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

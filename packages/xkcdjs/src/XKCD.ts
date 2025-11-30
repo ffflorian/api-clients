@@ -1,11 +1,11 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import type {ClientOptions} from './Interfaces';
 import {XKCDAPI} from './XKCDAPI';
 
 export class XKCD {
   public readonly api: XKCDAPI;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private readonly options: Required<ClientOptions>;
 
   constructor(options?: ClientOptions) {
@@ -14,7 +14,7 @@ export class XKCD {
       ...options,
     };
 
-    this.apiClient = axios.create({baseURL: this.options.apiUrl});
+    this.apiClient = new APIClient(this.options.apiUrl);
     this.api = new XKCDAPI(this.apiClient, this.options);
   }
 
@@ -22,7 +22,7 @@ export class XKCD {
    * Set a new API URL.
    * @param url The new API URL.
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

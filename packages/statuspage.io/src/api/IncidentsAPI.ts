@@ -1,12 +1,12 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {Incidents} from '../interfaces/Result';
 
 export class IncidentsAPI {
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
-  constructor(apiClient: AxiosInstance) {
+  constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
   }
 

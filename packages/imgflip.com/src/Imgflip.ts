@@ -1,4 +1,4 @@
-import axios, {AxiosInstance, RawAxiosRequestConfig} from 'axios';
+import {APIClient, type RequestOptions} from '@ffflorian/api-client';
 import * as qs from 'qs';
 
 import {Endpoint} from './Endpoints';
@@ -7,12 +7,12 @@ import type {API, Image, ImageCaptionOptions, Memes, Response} from './interface
 export class Imgflip {
   private static readonly BASE_URL = 'https://api.imgflip.com';
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
   constructor(apiUrl?: string) {
-    this.apiClient = axios.create({
-      baseURL: apiUrl || Imgflip.BASE_URL,
-    });
+    this.apiClient = new APIClient(
+      apiUrl || Imgflip.BASE_URL,
+    );
 
     this.api = {
       captionImage: this.captionImage,
@@ -22,16 +22,15 @@ export class Imgflip {
 
   private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {
     const endpoint = Endpoint.captionImage();
-    const config: RawAxiosRequestConfig = {
+    const config: RequestOptions = {
       data: qs.stringify(params, {arrayFormat: 'indices'}),
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      method: 'post',
-      url: endpoint,
+      method: 'POST',
     };
-    const {data} = await this.apiClient.request(config);
-    return data;
+    const response = await this.apiClient.request(endpoint, config);
+    return response.json();
   };
 
   private readonly getMemes = async (): Promise<Response<Memes>> => {
@@ -42,9 +41,9 @@ export class Imgflip {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

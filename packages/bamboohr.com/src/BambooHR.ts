@@ -1,30 +1,31 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {EmployeesAPI, TimeOffAPI} from './api';
 import type {API, ClientOptions} from './interfaces';
 
 export class BambooHR {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
   private readonly options: ClientOptions;
 
   constructor(options: ClientOptions) {
     this.options = options;
 
-    this.apiClient = axios.create({
+    const baseURL = `https://api.bamboohr.com/api/gateway.php/${options.companyDomain}/v1/`;
+
+    this.apiClient = new APIClient(baseURL, {
       auth: {
         // eslint-disable-next-line no-magic-numbers
         password: Math.random().toString(36).substring(7),
         username: this.options.apiKey,
       },
-      baseURL: `https://api.bamboohr.com/api/gateway.php/${options.companyDomain}/v1/`,
       headers: {
         Accept: 'application/json',
       },
     });
 
-    this.apiClient.interceptors.response.use(undefined, ({response}) => {
-      const errorMessage = response.headers['x-bamboohr-error-message'] || response.statusText;
+    this.apiClient.interceptors.response.push(response => {
+      const errorMessage = response.headers.get('x-bamboohr-error-message') || response.statusText;
       throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
     });
 

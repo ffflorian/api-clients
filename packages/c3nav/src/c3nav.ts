@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import {
   AccessRestrictionGroupsAPI,
@@ -32,7 +32,7 @@ import type {API, ClientOptions} from './interfaces';
 
 export class LibrariesIO {
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
   constructor(apiUrl: string);
   constructor(options: ClientOptions);
@@ -41,9 +41,7 @@ export class LibrariesIO {
       options = {apiUrl: options};
     }
 
-    this.apiClient = axios.create({
-      baseURL: 'https://c3nav.de/api/',
-    });
+    this.apiClient = new APIClient('https://c3nav.de/api/');
 
     this.api = {
       accessRestrictionGroups: new AccessRestrictionGroupsAPI(this.apiClient, options),
@@ -77,9 +75,9 @@ export class LibrariesIO {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API URL
+   * @param newURL The new API URL
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

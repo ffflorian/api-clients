@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from 'axios';
+import {APIClient} from '@ffflorian/api-client';
 
 import type {API, ClientOptions} from './interfaces';
 import {DiagnosisKeysAPI, ApplicationConfigurationAPI} from './api';
@@ -6,12 +6,10 @@ import {DiagnosisKeysAPI, ApplicationConfigurationAPI} from './api';
 export class CoronaWarnApp {
   private static readonly BASE_URL = 'https://svc90.main.px.t-online.de/version/v1/';
   public readonly api: API;
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
   constructor(options?: ClientOptions) {
-    this.apiClient = axios.create({
-      baseURL: options?.apiUrl || CoronaWarnApp.BASE_URL,
-    });
+    this.apiClient = new APIClient(options?.apiUrl || CoronaWarnApp.BASE_URL);
 
     this.api = {
       applicationConfiguration: new ApplicationConfigurationAPI(this.apiClient),
@@ -21,9 +19,9 @@ export class CoronaWarnApp {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API URL
+   * @param newURL The new API URL
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 }

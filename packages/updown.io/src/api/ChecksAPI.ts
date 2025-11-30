@@ -1,12 +1,12 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
 import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 
 export class ChecksAPI {
-  private readonly apiClient: AxiosInstance;
+  private readonly apiClient: APIClient;
 
-  constructor(apiClient: AxiosInstance) {
+  constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
   }
 
@@ -84,10 +84,10 @@ export class ChecksAPI {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 
   /**
@@ -97,7 +97,7 @@ export class ChecksAPI {
    */
   public async updateCheck(token: string, options?: CheckOptions): Promise<Check> {
     const endpoint = Endpoint.checks(token);
-    const {data} = await this.apiClient.put(endpoint, {data: options});
+    const {data} = await this.apiClient.put(endpoint, options);
     return data;
   }
 }

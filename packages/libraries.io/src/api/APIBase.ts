@@ -1,12 +1,12 @@
-import type {AxiosInstance} from 'axios';
+import type {APIClient} from '@ffflorian/api-client';
 
 import type {ClientOptions} from '../interfaces';
 
 export class APIBase {
-  protected readonly apiClient: AxiosInstance;
+  protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
 
-  constructor(apiClient: AxiosInstance, options: ClientOptions) {
+  constructor(apiClient: APIClient, options: ClientOptions) {
     this.apiClient = apiClient;
     this.options = options;
   }
@@ -21,10 +21,10 @@ export class APIBase {
 
   /**
    * Set a new API URL.
-   * @param newUrl The new API url
+   * @param newURL The new API url
    */
-  public setApiUrl(newUrl: string): void {
-    this.apiClient.defaults.baseURL = newUrl;
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 
   protected checkApiKey(apiName?: string): void {
