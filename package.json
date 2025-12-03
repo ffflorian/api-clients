@@ -5,7 +5,7 @@
     "@evilmartians/lefthook": "2.0.4",
     "@ffflorian/eslint-config": "0.10.3",
     "@ffflorian/prettier-config": "0.3.3",
-    "@typescript-eslint/eslint-plugin": "8.46.3",
+    "@typescript-eslint/eslint-plugin": "8.48.1",
     "@typescript-eslint/parser": "8.48.0",
     "babel-eslint": "10.1.0",
     "eslint-config-prettier": "10.1.8",
