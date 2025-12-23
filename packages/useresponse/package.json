@@ -3,7 +3,7 @@
   "dependencies": {
     "@ffflorian/api-client": "2.2.0"
   },
-  "description": "A corona-warn-app API client",
+  "description": "A useresponse API client",
   "devDependencies": {
     "@types/node": "~24",
     "rimraf": "6.1.2",
@@ -18,20 +18,18 @@
   ],
   "keywords": [
     "api",
-    "corona-warn-app",
-    "corona",
-    "cwa"
+    "useresponse"
   ],
   "license": "GPL-3.0",
   "main": "dist/index.js",
-  "name": "corona-warn-app",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/corona-warn-app",
+  "name": "useresponse",
+  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/useresponse",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
-    "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/corona-warn-app src/index.ts",
+    "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/useresponse src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build:ts",
     "test": "exit 0"
   },
-  "version": "2.4.1"
+  "version": "0.0.1"
 }
