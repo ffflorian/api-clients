@@ -1,4 +1,4 @@
 export interface ClientOptions {
-  apiKey: string;
+  apiKey?: string;
   apiUrl?: string;
 }

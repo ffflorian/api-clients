@@ -126,7 +126,7 @@ export const Endpoint = {
       return `/users/${id}.json`;
     },
 
-    users(id?: string): string {
+    users(): string {
       return '/users.json';
     },
   },

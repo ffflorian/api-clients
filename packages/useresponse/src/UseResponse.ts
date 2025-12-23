@@ -23,6 +23,13 @@ export class UseResponse {
   constructor(options: ClientOptions) {
     this.apiClient = new APIClient(options.apiUrl || 'https://api.useresponse.com/api/7.0');
 
+    this.apiClient.interceptors.request.push(config => {
+      if (options.apiKey) {
+        config.url.searchParams.set('api_key', options.apiKey);
+      }
+      return config;
+    });
+
     this.api = {
       additional: new AdditionalAPI(this.apiClient),
       auth: new AuthAPI(this.apiClient),

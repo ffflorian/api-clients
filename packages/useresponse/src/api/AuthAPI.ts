@@ -1,7 +1,7 @@
 import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {LoginData} from '../interfaces';
+import {LoginData, User} from '../interfaces';
 
 export class AuthAPI {
   private readonly apiClient: APIClient;
@@ -10,8 +10,9 @@ export class AuthAPI {
     this.apiClient = apiClient;
   }
 
-  login(loginData: LoginData) {
+  async login(loginData: LoginData): Promise<User> {
     const endpoint = Endpoint.Auth.login();
-    return this.apiClient.post<{token: string}>(endpoint);
+    const {data} = await this.apiClient.post<User>(endpoint, loginData);
+    return data;
   }
 }

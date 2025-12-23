@@ -22,7 +22,7 @@ export class LibrariesIO {
 
     this.apiClient = new APIClient(this.options.apiUrl);
 
-    this.apiClient.interceptors.request.push((_url, options) => {
+    this.apiClient.interceptors.request.push(options => {
       if (options.body) {
         const body = JSON.parse(options.body.toString());
         body.api_key = this.options.apiKey;

@@ -40,7 +40,7 @@ export interface BanUserResponse {
 }
 
 export interface Category {
-  description?: unknown;
+  description?: null | string;
   forum?: Forum;
   id?: number;
   image?: {
@@ -51,10 +51,10 @@ export interface Category {
   isPrivate?: boolean;
   name?: string;
   order?: number;
-  ownership?: unknown;
+  ownership?: null | string;
   parent_id?: number;
   slug?: string;
-  type?: unknown;
+  type?: null | unknown;
 }
 
 export interface LoginData {
@@ -645,7 +645,7 @@ export interface User {
   apiKey?: string;
   avatar?: Avatar;
   custom_fields?: CustomFieldValue[];
-  gravatarEmail?: unknown;
+  gravatarEmail?: string | null;
   id?: number;
   isDefaultAvatar?: boolean;
   lastVisitAt?: string;
