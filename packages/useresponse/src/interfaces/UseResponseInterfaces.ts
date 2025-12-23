@@ -1,3 +1,14 @@
+export interface APIResult<T> {
+  currentPage?: number;
+  data: T;
+  firstPage: number;
+  lastPage: number;
+  nextPage: number;
+  objectsPerPage: number;
+  totalObjects: number;
+  totalPages: number;
+}
+
 interface AttachmentName {
   ext?: string;
   full?: string;
@@ -104,7 +115,7 @@ export interface Chat {
 }
 
 export interface ChatMessagesPaginator {
-  success?: ChatMessagesPaginator;
+  success?: Message[];
 }
 
 export interface ChatsPaginator {
