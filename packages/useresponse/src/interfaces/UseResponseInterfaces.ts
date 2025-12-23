@@ -70,6 +70,13 @@ export interface ChangePasswordParams {
   password: string;
 }
 
+export interface Changelog {
+  actions?: ChangelogAction[];
+  createdAtPosix?: number;
+  createdBy?: User;
+  source?: string;
+}
+
 export interface ChangelogAction {
   change_id?: string;
   field?: string;

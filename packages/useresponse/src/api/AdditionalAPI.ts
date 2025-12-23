@@ -1,7 +1,7 @@
 import type {APIClient} from '@ffflorian/api-client';
+import type {LoginData} from '../interfaces';
 
 import {Endpoint} from '../Endpoints';
-import {LoginData} from '../interfaces';
 
 export class AdditionalAPI {
   private readonly apiClient: APIClient;
