@@ -1,4 +1,4 @@
-name: Mirror and run GitLab CI
+name: Mirror to GitLab
 permissions:
   contents: read
 
@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8
         with:
           fetch-depth: 0
-      - name: Mirror + trigger CI
+      - name: Mirror to GitLab
         uses: SvanBoxel/gitlab-mirror-and-ci-action@5c211f993d35256d96b772d995972f434b94e11a
         with:
           args: 'https://gitlab.com/ffflorian/api-clients.git'
