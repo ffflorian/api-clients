@@ -14,11 +14,6 @@ if [ -z "${GITHUB_TOKEN}" ]; then
   exit 1
 fi
 
-if [ -z "${GH_USER}" ]; then
-  echo "No GitHub user set."
-  exit 1
-fi
-
 echo "Checking for changed packages..."
 
 set +e

@@ -31,7 +31,7 @@ jobs:
           yarn build:ts
           yarn test
 
-      - name: Release
+      - name: Release on npm
         if: |
           github.event_name != 'pull_request' &&
           !startsWith(github.event.head_commit.message, 'chore')
