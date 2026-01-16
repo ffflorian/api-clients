@@ -15,19 +15,21 @@
   "engines": {
     "node": ">= 21"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": [
     "api",
+    "api-client",
     "absence.io",
     "absence",
     "absenceio"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "absence.io",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/absence.io",
+  "repository": "https://github.com/ffflorian/api-clients.git",
+  "readme": "https://github.com/ffflorian/api-clients#readme",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/absence.io src/index.ts",

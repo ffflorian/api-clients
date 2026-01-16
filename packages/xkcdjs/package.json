@@ -19,19 +19,20 @@
   "engines": {
     "node": ">= 21"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": [
     "api",
+    "api-client",
     "cli",
-    "typescript",
     "xkcd"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "@ffflorian/xkcdjs",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/xkcdjs",
+  "repository": "https://github.com/ffflorian/api-clients.git",
+  "readme": "https://github.com/ffflorian/api-clients#readme",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/xkcdjs src/index.ts",

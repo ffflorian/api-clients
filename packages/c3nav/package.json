@@ -13,18 +13,20 @@
   "engines": {
     "node": ">= 21"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": [
     "api",
+    "api-client",
     "c3nav",
     "ccc"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "c3nav",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/c3nav",
+  "repository": "https://github.com/ffflorian/api-clients.git",
+  "readme": "https://github.com/ffflorian/api-clients#readme",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/c3nav src/index.ts",
