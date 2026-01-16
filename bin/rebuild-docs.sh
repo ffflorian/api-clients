@@ -29,7 +29,7 @@ for PACKAGE in $PACKAGES; do
   SCOPE="${SCOPE} --scope ${PACKAGE}"
 done
 
-npx lerna run build:docs --concurrency 4 "${SCOPE}"
+npx lerna run build:docs --concurrency 4"${SCOPE}"
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]" --no-verify
