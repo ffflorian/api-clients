@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.4.3 (2026-01-16)
+
+
+### Reverts
+
+* Revert "chore: Add space to docs build script" ([4beaf5c](https://github.com/ffflorian/api-clients/commit/4beaf5cc0344657296e5e39bf86f88420cf17dc8))
+
+
+
+
+
 ## 2.4.2 (2026-01-10)
 
 
