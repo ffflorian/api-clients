@@ -26,8 +26,8 @@
   ],
   "license": "GPL-3.0",
   "name": "npms.io",
-  "repository": "https://github.com/ffflorian/api-clients.git",
   "readme": "https://github.com/ffflorian/api-clients#readme",
+  "repository": "https://github.com/ffflorian/api-clients.git",
   "scripts": {
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/npms.io src/index.ts",
