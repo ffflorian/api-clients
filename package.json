@@ -25,6 +25,7 @@
     "node": ">= 21"
   },
   "license": "GPL-3.0",
+  "packageManager": "yarn@4.12.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
@@ -45,6 +46,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "packageManager": "yarn@4.12.0"
+  ]
 }
