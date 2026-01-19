@@ -17,7 +17,7 @@ export class BambooHR {
     this.apiClient = new APIClient(baseURL, {
       auth: {
         // eslint-disable-next-line no-magic-numbers
-        password: crypto.randomBytes(16).toString('base64'),
+        password: crypto.randomBytes(16).toString('base64').substring(0, 7),
         username: this.options.apiKey,
       },
       headers: {
