@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.4.4 (2026-01-19)
+
+
+### Bug Fixes
+
+* **bamboohr.com:** Insecure randomness ([#1838](https://github.com/ffflorian/api-clients/issues/1838)) ([b7f85c6](https://github.com/ffflorian/api-clients/commit/b7f85c69d7c60e89b12c051738156e70946f912c))
+
+
+
+
+
 ## 2.4.3 (2026-01-16)
 
 
