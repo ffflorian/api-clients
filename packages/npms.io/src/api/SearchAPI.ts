@@ -19,7 +19,6 @@ export class SearchAPI {
     const endpoint = Endpoint.Search.search();
 
     const params = {
-      // eslint-disable-next-line id-length
       q: query,
       ...(options.size && {size: options.size}),
     };
@@ -53,7 +52,6 @@ export class SearchAPI {
     const endpoint = Endpoint.Search.search();
 
     const params = {
-      // eslint-disable-next-line id-length
       q: query,
       ...(options.from && {from: options.from}),
       ...(options.size && {size: options.size}),

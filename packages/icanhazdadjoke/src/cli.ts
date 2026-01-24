@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
+import * as path from 'node:path';
+import {constants as fsConstants, promises as fs} from 'node:fs';
 import {program as commander} from 'commander';
-import {constants as fsConstants, promises as fs} from 'fs';
-import * as path from 'path';
 
+import {description, name, version} from '../package.json';
 import {ICanHazDadJoke, JokeResultWithImage} from './';
 
 interface CLIOptions {
@@ -33,8 +34,6 @@ async function save(filePath: string, imageResult: JokeResultWithImage, silent =
     console.info(`Saved image to "${resolvedFilePath}".`);
   }
 }
-
-const {description, name, version}: {description: string; name: string; version: string} = require('../package.json');
 
 commander.on('command:*', () => commander.help());
 
