@@ -36,7 +36,7 @@
     "lint:ts:oxlint": "oxlint --ignore-path .gitignore packages/",
     "prettier": "prettier \"*.{json,md,yml}\"",
     "release": "lerna publish",
-    "test": "yarn lint && yarn test:all",
+    "test": "yarn test:all",
     "test:all": "lerna run test --concurrency 4"
   },
   "workspaces": [
