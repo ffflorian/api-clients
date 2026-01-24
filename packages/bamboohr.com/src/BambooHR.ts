@@ -1,8 +1,8 @@
+import crypto from 'node:crypto';
 import {APIClient} from '@ffflorian/api-client';
 
 import {EmployeesAPI, TimeOffAPI} from './api';
 import type {API, ClientOptions} from './interfaces';
-import crypto from 'crypto';
 
 export class BambooHR {
   public readonly api: API;
@@ -16,7 +16,6 @@ export class BambooHR {
 
     this.apiClient = new APIClient(baseURL, {
       auth: {
-        // eslint-disable-next-line no-magic-numbers
         password: crypto.randomBytes(16).toString('base64').substring(0, 7),
         username: this.options.apiKey,
       },
