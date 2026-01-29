@@ -4763,6 +4763,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-oxlint@npm:1.42.0":
+  version: 1.42.0
+  resolution: "eslint-plugin-oxlint@npm:1.42.0"
+  dependencies:
+    jsonc-parser: "npm:^3.3.1"
+  checksum: 10c0/98439d57a6c3870d6e3104da502f40d6187bd2353773331d2c5f23bbd0d7d4d90d7fef6117e6c6438afe8b4c62cbefdc22abac5389d49ad7aa83fac6eb5e97fc
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^8.4.0":
   version: 8.4.0
   resolution: "eslint-scope@npm:8.4.0"
@@ -6827,6 +6836,13 @@ __metadata:
   version: 3.2.0
   resolution: "jsonc-parser@npm:3.2.0"
   checksum: 10c0/5a12d4d04dad381852476872a29dcee03a57439574e4181d91dca71904fcdcc5e8e4706c0a68a2c61ad9810e1e1c5806b5100d52d3e727b78f5cdc595401045b
+  languageName: node
+  linkType: hard
+
+"jsonc-parser@npm:^3.3.1":
+  version: 3.3.1
+  resolution: "jsonc-parser@npm:3.3.1"
+  checksum: 10c0/269c3ae0a0e4f907a914bf334306c384aabb9929bd8c99f909275ebd5c2d3bc70b9bcd119ad794f339dec9f24b6a4ee9cd5a8ab2e6435e730ad4075388fc2ab6
   languageName: node
   linkType: hard
 
@@ -9230,6 +9246,7 @@ __metadata:
     "@ffflorian/prettier-config": "npm:0.4.1"
     eslint: "npm:9.39.2"
     eslint-plugin-import: "npm:2.32.0"
+    eslint-plugin-oxlint: "npm:1.42.0"
     globals: "npm:17.2.0"
     jiti: "npm:2.6.1"
     lerna: "npm:9.0.3"

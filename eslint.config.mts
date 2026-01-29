@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import {defineConfig, globalIgnores} from 'eslint/config';
+import oxlint from 'eslint-plugin-oxlint';
 import importPlugin from 'eslint-plugin-import';
 
 export default defineConfig([
@@ -20,4 +21,5 @@ export default defineConfig([
       'no-unused-vars': 'off',
     },
   },
+  ...oxlint.configs['flat/recommended']
 ]);
