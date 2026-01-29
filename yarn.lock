@@ -522,10 +522,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/api-client@npm:2.2.0":
-  version: 2.2.0
-  resolution: "@ffflorian/api-client@npm:2.2.0"
-  checksum: 10c0/70e868fb4ed211ce60bfc5eb2ab27a345cf9562b20d330d132732bfc16248d6040207aa3fa5b773ffe5d58d4a6d58abce0851b89b49c6d2b9ad2f27d99c8d9b1
+"@ffflorian/api-client@npm:2.4.1":
+  version: 2.4.1
+  resolution: "@ffflorian/api-client@npm:2.4.1"
+  checksum: 10c0/4d8fd066f47f5f2f8de29e4f66bd19ec5d0f65fb21e5b2213991e7910e055ca150d8c6eefe34d8c6ce06f0d8dca4cdd9a4688c3ce161cadb0bdb6aae0cf08aec
   languageName: node
   linkType: hard
 
@@ -533,7 +533,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/icanhazdadjoke@workspace:packages/icanhazdadjoke"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     commander: "npm:14.0.2"
     rimraf: "npm:6.1.2"
@@ -558,7 +558,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ffflorian/xkcdjs@workspace:packages/xkcdjs"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     commander: "npm:14.0.2"
     http-status-codes: "npm:2.3.0"
@@ -2770,7 +2770,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "absence.io@workspace:packages/absence.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
@@ -3145,7 +3145,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "bamboohr.com@workspace:packages/bamboohr.com"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
@@ -3240,7 +3240,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "c3nav@workspace:packages/c3nav"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -3772,7 +3772,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "corona-warn-app@workspace:packages/corona-warn-app"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -3801,7 +3801,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "crates.io@workspace:packages/crates.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -5935,7 +5935,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "imgflip.com@workspace:packages/imgflip.com"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     "@types/qs": "npm:6.14.0"
     qs: "npm:6.14.1"
@@ -7007,7 +7007,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "libraries.io@workspace:packages/libraries.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -7893,7 +7893,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "npms.io@workspace:packages/npms.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -9719,7 +9719,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "statuspage.io@workspace:packages/statuspage.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
@@ -10537,7 +10537,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "updown.io@workspace:packages/updown.io"
   dependencies:
-    "@ffflorian/api-client": "npm:2.2.0"
+    "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.2"
     typedoc: "npm:0.28.16"
