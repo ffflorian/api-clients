@@ -11,7 +11,7 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '> 20.x'
+          - '> 24.x'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
