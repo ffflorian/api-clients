@@ -30,7 +30,7 @@ export class AbsenceIO {
 
     this.apiClient = new APIClient(baseURL);
 
-    this.apiClient.interceptors.request.push((config) => {
+    this.apiClient.interceptors.request.push(config => {
       const hawkHeader = hawk.client.header(config.url.toString(), config.method, {credentials});
       config.headers = {...config.headers, Authorization: hawkHeader.header};
       return config;

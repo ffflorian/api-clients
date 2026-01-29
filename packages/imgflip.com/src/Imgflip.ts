@@ -10,9 +10,7 @@ export class Imgflip {
   private readonly apiClient: APIClient;
 
   constructor(apiUrl?: string) {
-    this.apiClient = new APIClient(
-      apiUrl || Imgflip.BASE_URL,
-    );
+    this.apiClient = new APIClient(apiUrl || Imgflip.BASE_URL);
 
     this.api = {
       captionImage: this.captionImage,

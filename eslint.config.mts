@@ -21,5 +21,5 @@ export default defineConfig([
       'no-unused-vars': 'off',
     },
   },
-  ...oxlint.configs['flat/recommended']
+  ...oxlint.configs['flat/recommended'],
 ]);
