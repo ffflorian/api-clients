@@ -6,18 +6,18 @@ export interface Check {
   custom_headers: CustomHeaders;
   disabled_locations: string[];
   down: boolean;
-  down_since: string | null;
+  down_since: null | string;
   enabled: boolean;
-  error: string | null;
-  favicon_url: string | null;
+  error: null | string;
+  favicon_url: null | string;
   last_check_at: string;
   last_status: number;
-  mute_until: string | null;
+  mute_until: null | string;
   next_check_at: string;
   period: number;
   published: boolean;
   ssl: {
-    error: string | null;
+    error: null | string;
     tested_at: string;
     valid: boolean;
   };

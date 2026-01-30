@@ -1,2 +1,2 @@
-export * from './XKCD';
 export * from './Interfaces';
+export * from './XKCD';

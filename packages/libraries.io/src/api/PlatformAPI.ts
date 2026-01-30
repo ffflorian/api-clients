@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, LibrariesIOResult, PaginationOptions, Platform} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class PlatformAPI extends APIBase {

@@ -1,44 +1,3 @@
-export interface ClientOptions {
-  apiKey: string;
-  apiUrl?: string;
-}
-
-export interface CustomHeaders {
-  [key: string]: string | number | boolean;
-}
-
-export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
-
-type MetricsGroup = 'time' | 'host';
-
-export interface RequestOptions {
-  alias?: string;
-  apdex_t?: number;
-  'api-key'?: string;
-  custom_headers?: CustomHeaders;
-  disabled_locations?: string[];
-  enabled?: boolean;
-  from?: string;
-  group?: MetricsGroup;
-  metrics?: boolean;
-  mute_until?: string;
-  page?: number;
-  period?: number;
-  published?: boolean;
-  string_match?: string;
-  to?: string;
-  url?: string;
-}
-
-export interface MetricsOptions {
-  /** Start time, default to 1 month ago */
-  from?: string;
-  /** Group data by 'time' (hour) or 'host' (location) */
-  group: MetricsGroup;
-  /** End time, default to now */
-  to?: string;
-}
-
 export interface CheckOptions {
   /** Human readable name */
   alias?: string;
@@ -59,3 +18,44 @@ export interface CheckOptions {
   /** Search for this string in the page */
   string_match?: string;
 }
+
+export interface ClientOptions {
+  apiKey: string;
+  apiUrl?: string;
+}
+
+export interface CustomHeaders {
+  [key: string]: boolean | number | string;
+}
+
+export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
+
+export interface MetricsOptions {
+  /** Start time, default to 1 month ago */
+  from?: string;
+  /** Group data by 'time' (hour) or 'host' (location) */
+  group: MetricsGroup;
+  /** End time, default to now */
+  to?: string;
+}
+
+export interface RequestOptions {
+  alias?: string;
+  apdex_t?: number;
+  'api-key'?: string;
+  custom_headers?: CustomHeaders;
+  disabled_locations?: string[];
+  enabled?: boolean;
+  from?: string;
+  group?: MetricsGroup;
+  metrics?: boolean;
+  mute_until?: string;
+  page?: number;
+  period?: number;
+  published?: boolean;
+  string_match?: string;
+  to?: string;
+  url?: string;
+}
+
+type MetricsGroup = 'host' | 'time';

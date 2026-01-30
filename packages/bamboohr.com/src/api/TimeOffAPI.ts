@@ -1,34 +1,11 @@
 import type {APIClient} from '@ffflorian/api-client';
 
+import type {OffEmployee, TimeOffPolicy, TimeOffRequest, TimeOffRequestsOptions, TimeOffTypes} from '../interfaces';
+
 import {Endpoint} from '../Endpoints';
-import type {OffEmployee, TimeOffPolicy, TimeOffTypes, TimeOffRequestsOptions, TimeOffRequest} from '../interfaces';
 
 export class TimeOffAPI {
   constructor(private readonly apiClient: APIClient) {}
-
-  /**
-   * This endpoint will return a list, sorted by date, of employees who will be out, and company holidays, for a period of time.
-   * @see https://documentation.bamboohr.com/reference#get-a-list-of-whos-out-1
-   */
-  public async whosOut(start?: string, end?: string): Promise<OffEmployee[]> {
-    const endpoint = Endpoint.TimeOff.whosOut();
-    const {data} = await this.apiClient.get<OffEmployee[]>(endpoint, {params: {end, start}});
-    return data;
-  }
-
-  /**
-   * This endpoint gets a list of time off types.
-   * @param mode set to 'request' to get a list of all time off types with which this user can create a time off
-   * request. The default is to return the list of time off types the user has permissions on. This distinction is
-   * important, as employees can request time off for types that they don't have permission to view balances and
-   * requests for.
-   * @see https://documentation.bamboohr.com/reference#get-time-off-types
-   */
-  public async timeOffTypes(mode?: 'request'): Promise<TimeOffTypes> {
-    const endpoint = Endpoint.TimeOff.timeOffTypes();
-    const {data} = await this.apiClient.get<TimeOffTypes>(endpoint, {params: {mode}});
-    return data;
-  }
 
   /**
    * This endpoint gets a list of time off policies.
@@ -55,6 +32,30 @@ export class TimeOffAPI {
   public async timeOffRequests(options: TimeOffRequestsOptions): Promise<TimeOffRequest[]> {
     const endpoint = Endpoint.TimeOff.timeOffRequests();
     const {data} = await this.apiClient.get<TimeOffRequest[]>(endpoint, {params: options});
+    return data;
+  }
+
+  /**
+   * This endpoint gets a list of time off types.
+   * @param mode set to 'request' to get a list of all time off types with which this user can create a time off
+   * request. The default is to return the list of time off types the user has permissions on. This distinction is
+   * important, as employees can request time off for types that they don't have permission to view balances and
+   * requests for.
+   * @see https://documentation.bamboohr.com/reference#get-time-off-types
+   */
+  public async timeOffTypes(mode?: 'request'): Promise<TimeOffTypes> {
+    const endpoint = Endpoint.TimeOff.timeOffTypes();
+    const {data} = await this.apiClient.get<TimeOffTypes>(endpoint, {params: {mode}});
+    return data;
+  }
+
+  /**
+   * This endpoint will return a list, sorted by date, of employees who will be out, and company holidays, for a period of time.
+   * @see https://documentation.bamboohr.com/reference#get-a-list-of-whos-out-1
+   */
+  public async whosOut(start?: string, end?: string): Promise<OffEmployee[]> {
+    const endpoint = Endpoint.TimeOff.whosOut();
+    const {data} = await this.apiClient.get<OffEmployee[]>(endpoint, {params: {end, start}});
     return data;
   }
 }

@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   ClientOptions,
   LibrariesIOHeaders,
@@ -10,6 +9,8 @@ import type {
   PreReleaseOptions,
   Subscription,
 } from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class UserAPI extends APIBase {
@@ -37,7 +38,7 @@ export class UserAPI extends APIBase {
   public async getSubscription(
     platform: PlatformType,
     projectName: string
-  ): Promise<LibrariesIOResult<Subscription | null>> {
+  ): Promise<LibrariesIOResult<null | Subscription>> {
     const endpoint = Endpoint.subscriptions(platform, projectName);
     const {data} = await this.apiClient.get(endpoint);
     return data;

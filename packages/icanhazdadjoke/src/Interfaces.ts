@@ -1,7 +1,3 @@
-export interface RequestOptions {
-  withImage?: boolean;
-}
-
 export interface ClientOptions {
   apiUrl?: string;
 }
@@ -10,6 +6,10 @@ export interface JokeResult {
   id: string;
   joke: string;
   status: number;
+}
+
+export interface JokeResultWithImage extends JokeResult {
+  image: Buffer;
 }
 
 export interface JokeSearchResult {
@@ -24,8 +24,8 @@ export interface JokeSearchResult {
   total_pages: number;
 }
 
-export interface JokeResultWithImage extends JokeResult {
-  image: Buffer;
+export interface RequestOptions {
+  withImage?: boolean;
 }
 
 export interface SearchOptions {

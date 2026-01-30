@@ -17,34 +17,6 @@ export interface API {
   getMemes(): Promise<Response<Memes>>;
 }
 
-export type Response<T> =
-  | {
-      data: T;
-      success: true;
-    }
-  | {
-      error_message: string;
-      success: false;
-    };
-
-export interface Image {
-  page_url: string;
-  url: string;
-}
-
-export interface Memes {
-  memes: Meme[];
-}
-
-export interface Meme {
-  box_count: number;
-  height: number;
-  id: string;
-  name: string;
-  url: string;
-  width: number;
-}
-
 /**
  * `x`, `y`, `width`, and `height` are for the bounding box of the text box. `x` and
  * `y` are the coordinates of the top left corner. If you specify bounding
@@ -64,24 +36,12 @@ export interface Box {
   y?: number;
 }
 
-interface ImageCaptionBase {
-  /** The font family to use for the text. Defaults to `impact`. */
-  font?: 'impact' | 'arial';
-  /** Maximum font size in pixels. Defaults to `50px`. */
-  max_font_size?: string;
-  /** password for the imgflip account */
-  password: string;
-  /**
-   * A template ID as returned by the `get_memes` response. Any ID that was
-   * ever returned from the `get_memes` response should work for this parameter.
-   * For custom template uploads, the template ID can be found in the
-   * memegenerator URL, e.g.
-   * https://imgflip.com/memegenerator/14859329/Charlie-Sheen-DERP.
-   */
-  template_id: number | string;
-  /** username of a valid imgflip account. This is used to track where API requests are coming from. */
-  username: string;
+export interface Image {
+  page_url: string;
+  url: string;
 }
+
+export type ImageCaptionOptions = ImageCaptionWithBoxes | ImageCaptionWithTexts;
 
 export interface ImageCaptionWithBoxes extends ImageCaptionBase {
   /**
@@ -102,4 +62,44 @@ export interface ImageCaptionWithTexts extends ImageCaptionBase {
   text1: string;
 }
 
-export type ImageCaptionOptions = ImageCaptionWithBoxes | ImageCaptionWithTexts;
+export interface Meme {
+  box_count: number;
+  height: number;
+  id: string;
+  name: string;
+  url: string;
+  width: number;
+}
+
+export interface Memes {
+  memes: Meme[];
+}
+
+export type Response<T> =
+  | {
+      data: T;
+      success: true;
+    }
+  | {
+      error_message: string;
+      success: false;
+    };
+
+interface ImageCaptionBase {
+  /** The font family to use for the text. Defaults to `impact`. */
+  font?: 'arial' | 'impact';
+  /** Maximum font size in pixels. Defaults to `50px`. */
+  max_font_size?: string;
+  /** password for the imgflip account */
+  password: string;
+  /**
+   * A template ID as returned by the `get_memes` response. Any ID that was
+   * ever returned from the `get_memes` response should work for this parameter.
+   * For custom template uploads, the template ID can be found in the
+   * memegenerator URL, e.g.
+   * https://imgflip.com/memegenerator/14859329/Charlie-Sheen-DERP.
+   */
+  template_id: number | string;
+  /** username of a valid imgflip account. This is used to track where API requests are coming from. */
+  username: string;
+}

@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {ChecksAPI, NodesAPI} from './api';
 import type {API, ClientOptions} from './interfaces';
+
+import {ChecksAPI, NodesAPI} from './api';
 
 export class UpdownIO {
   public api: API;

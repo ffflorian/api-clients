@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   AuthorsResult,
   CrateResult,
@@ -15,6 +14,8 @@ import type {
   UsersResult,
   Version,
 } from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 
 export class CratesAPI {
   private readonly apiClient: APIClient;
@@ -76,6 +77,7 @@ export class CratesAPI {
     const additionalConfig = {
       params: {
         ...options,
+        // eslint-disable-next-line id-length
         q: query,
       },
     };

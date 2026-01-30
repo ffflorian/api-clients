@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {PackageAPI, SearchAPI} from './api';
 import type {API, ClientOptions} from './interfaces/';
+
+import {PackageAPI, SearchAPI} from './api';
 
 export class NpmsIO {
   public readonly api: API;

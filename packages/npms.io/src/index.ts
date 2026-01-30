@@ -1,2 +1,2 @@
-export * from './NpmsIO';
 export * from './interfaces/';
+export * from './NpmsIO';

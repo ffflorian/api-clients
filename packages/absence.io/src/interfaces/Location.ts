@@ -1,3 +1,14 @@
+export interface Location extends Required<NewLocation> {
+  /** unique identifier */
+  readonly _id: string;
+  /** ics link for viewing absences in external applications, prefix: https://app.absence.io/ */
+  readonly icsLink: string;
+  /** bool to display if the location is the main one or not */
+  readonly mainLocation: boolean;
+  /** count of users who are members of the location */
+  readonly memberCount: number;
+}
+
 export interface NewLocation {
   /** the region used to determine the translated names of the holidays. Seperation to region needed when setting to custom. */
   holidayCountryLanguage: string;
@@ -11,15 +22,4 @@ export interface NewLocation {
   memberIds?: string[];
   /** the name of the location */
   name: string;
-}
-
-export interface Location extends Required<NewLocation> {
-  /** unique identifier */
-  readonly _id: string;
-  /** ics link for viewing absences in external applications, prefix: https://app.absence.io/ */
-  readonly icsLink: string;
-  /** bool to display if the location is the main one or not */
-  readonly mainLocation: boolean;
-  /** count of users who are members of the location */
-  readonly memberCount: number;
 }

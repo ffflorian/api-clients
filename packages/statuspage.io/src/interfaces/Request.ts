@@ -1,3 +1,5 @@
+export type CombinedSubscriberData = EmailSubscriberData | PhoneSubscriberData | WebhookSubscriberData;
+
 export interface ComponentSubscriberData {
   component_id: string;
 }
@@ -10,19 +12,19 @@ export interface IncidentSubscriberData {
   incident_id: string;
 }
 
-export interface RequestOptions {
-  subscriber?:
-    | CombinedSubscriberData
-    | (CombinedSubscriberData & IncidentSubscriberData)
-    | {
-        id: string;
-      };
-}
-
 export interface PhoneSubscriberData {
   /** Defaults to `us` if not supplied. */
   phone_country?: string;
   phone_number: string;
+}
+
+export interface RequestOptions {
+  subscriber?:
+    | {
+        id: string;
+      }
+    | CombinedSubscriberData
+    | (CombinedSubscriberData & IncidentSubscriberData);
 }
 
 export interface SubscriberOptions {
@@ -32,5 +34,3 @@ export interface SubscriberOptions {
 export interface WebhookSubscriberData extends EmailSubscriberData {
   endpoint: string;
 }
-
-export type CombinedSubscriberData = PhoneSubscriberData | EmailSubscriberData | WebhookSubscriberData;

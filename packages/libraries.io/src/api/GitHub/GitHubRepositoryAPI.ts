@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../../Endpoints';
 import type {
   ClientOptions,
   LibrariesIOResult,
@@ -8,6 +7,8 @@ import type {
   Project,
   RepositoryWithDependencies,
 } from '../../interfaces/';
+
+import {Endpoint} from '../../Endpoints';
 import {APIBase} from '../APIBase';
 
 export class GitHubRepositoryAPI extends APIBase {

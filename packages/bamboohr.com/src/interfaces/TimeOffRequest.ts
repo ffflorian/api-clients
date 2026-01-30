@@ -1,5 +1,20 @@
 import {TimeOffType} from './TimeOffType';
 
+export interface TimeOffRequest {
+  actions: TimeOffRequestActions;
+  amount: TimeOffRequestAmount;
+  created: string;
+  dates: Record<string, string>;
+  employeeId: string;
+  end: string;
+  id: string;
+  name: string;
+  notes: [];
+  start: string;
+  status: TimeOffRequestStatus;
+  type: TimeOffType;
+}
+
 interface TimeOffRequestActions {
   approve: boolean;
   bypass: boolean;
@@ -18,19 +33,4 @@ interface TimeOffRequestStatus {
   lastChanged: string;
   lastChangedByUserId: string;
   status: string;
-}
-
-export interface TimeOffRequest {
-  actions: TimeOffRequestActions;
-  amount: TimeOffRequestAmount;
-  created: string;
-  dates: Record<string, string>;
-  employeeId: string;
-  end: string;
-  id: string;
-  name: string;
-  notes: [];
-  start: string;
-  status: TimeOffRequestStatus;
-  type: TimeOffType;
 }

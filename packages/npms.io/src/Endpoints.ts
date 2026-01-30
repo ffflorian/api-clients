@@ -1,8 +1,15 @@
 export const Endpoint = {
-  PACKAGE: 'package',
-  SEARCH: 'search',
-  SUGGESTIONS: 'suggestions',
   MGET: 'mget',
+  PACKAGE: 'package',
+  Package: {
+    multiPackageInfo(): string {
+      return `/${Endpoint.PACKAGE}/${Endpoint.MGET}`;
+    },
+    packageInfo(packageName: string): string {
+      return `/${Endpoint.PACKAGE}/${encodeURIComponent(packageName)}`;
+    },
+  },
+  SEARCH: 'search',
 
   Search: {
     search(): string {
@@ -14,12 +21,5 @@ export const Endpoint = {
     },
   },
 
-  Package: {
-    packageInfo(packageName: string): string {
-      return `/${Endpoint.PACKAGE}/${encodeURIComponent(packageName)}`;
-    },
-    multiPackageInfo(): string {
-      return `/${Endpoint.PACKAGE}/${Endpoint.MGET}`;
-    },
-  },
+  SUGGESTIONS: 'suggestions',
 };

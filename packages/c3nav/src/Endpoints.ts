@@ -2,42 +2,96 @@ const encode: typeof encodeURIComponent = encodeURIComponent;
 
 export const Endpoint = {
   ACCESSRESTRICTIONGROUPS: 'accessrestrictiongroups',
+  accessRestrictionGroups(id?: number | string): string {
+    let endpoint = `/${Endpoint.ACCESSRESTRICTIONGROUPS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   ACCESSRESTRICTIONS: 'accessrestrictions',
+  accessRestrictions(id?: number | string): string {
+    let endpoint = `/${Endpoint.ACCESSRESTRICTIONS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   AREAS: 'areas',
+  areas(id?: number | string): string {
+    let endpoint = `/${Endpoint.AREAS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   BOUNDS: 'bounds',
   BUILDINGS: 'buildings',
+  buildings(id?: number | string): string {
+    let endpoint = `/${Endpoint.BUILDINGS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   CHANGESETS: 'changesets',
+  changesets(id?: number | string): string {
+    let endpoint = `/${Endpoint.CHANGESETS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   COLUMNS: 'columns',
+  columns(id?: number | string): string {
+    let endpoint = `/${Endpoint.COLUMNS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   CROSSDESCRIPTIONS: 'crossdescriptions',
+  crossDescriptions(id?: number | string): string {
+    let endpoint = `/${Endpoint.CROSSDESCRIPTIONS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   DETAILS: 'details',
   DOORS: 'doors',
+  doors(id?: number | string): string {
+    let endpoint = `/${Endpoint.DOORS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   EDITOR: 'editor',
+  editor(id?: number | string): string {
+    let endpoint = `/${Endpoint.EDITOR}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   GEOMETRY: 'geometry',
   HOLES: 'holes',
-  LEAVEDESCRIPTIONS: 'leavedescriptions',
-  LEVELS: 'levels',
-  LINEOBSTACLES: 'lineobstacles',
-  LOCATIONGROUPCATEGORIES: 'locationgroupcategories',
-  LOCATIONGROUPS: 'locationgroups',
-  LOCATIONS: 'locations',
-  MAP: 'map',
-  OBSTACLES: 'obstacles',
-  POIS: 'pois',
-  RAMPS: 'ramps',
-  ROUTING: 'routing',
-  SESSION: 'session',
-  SOURCES: 'sources',
-  SPACES: 'spaces',
-  STAIRS: 'stairs',
-  TYPES: 'types',
-  UPDATES: 'updates',
-
-  Map: {
-    bounds(): string {
-      return `/${Endpoint.MAP}/${Endpoint.BOUNDS}/`;
-    },
+  holes(id?: number | string): string {
+    let endpoint = `/${Endpoint.HOLES}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
   },
-
+  LEAVEDESCRIPTIONS: 'leavedescriptions',
+  leaveDescriptions(id?: number | string): string {
+    let endpoint = `/${Endpoint.LEAVEDESCRIPTIONS}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   Level: {
     levels(id?: number | string): string {
       let endpoint = `/${Endpoint.LEVELS}/`;
@@ -47,12 +101,16 @@ export const Endpoint = {
       return endpoint;
     },
   },
-
+  LEVELS: 'levels',
+  LINEOBSTACLES: 'lineobstacles',
+  lineObstacles(id?: number | string): string {
+    let endpoint = `/${Endpoint.LINEOBSTACLES}/`;
+    if (id) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
   Location: {
-    locations(): string {
-      return `/${Endpoint.LOCATIONS}/`;
-    },
-
     detail(id: number | string): string {
       let endpoint = `/${Endpoint.LOCATIONS}/`;
       endpoint += typeof id === 'string' ? 'by_slug/' : '';
@@ -74,106 +132,16 @@ export const Endpoint = {
       return endpoint;
     },
 
+    locations(): string {
+      return `/${Endpoint.LOCATIONS}/`;
+    },
+
     types(): string {
       return `/${Endpoint.LOCATIONS}/${Endpoint.TYPES}/`;
     },
   },
 
-  accessRestrictionGroups(id?: number | string): string {
-    let endpoint = `/${Endpoint.ACCESSRESTRICTIONGROUPS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  accessRestrictions(id?: number | string): string {
-    let endpoint = `/${Endpoint.ACCESSRESTRICTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  areas(id?: number | string): string {
-    let endpoint = `/${Endpoint.AREAS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  buildings(id?: number | string): string {
-    let endpoint = `/${Endpoint.BUILDINGS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  changesets(id?: number | string): string {
-    let endpoint = `/${Endpoint.CHANGESETS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  columns(id?: number | string): string {
-    let endpoint = `/${Endpoint.COLUMNS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  crossDescriptions(id?: number | string): string {
-    let endpoint = `/${Endpoint.CROSSDESCRIPTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  doors(id?: number | string): string {
-    let endpoint = `/${Endpoint.DOORS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  editor(id?: number | string): string {
-    let endpoint = `/${Endpoint.EDITOR}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  holes(id?: number | string): string {
-    let endpoint = `/${Endpoint.HOLES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  leaveDescriptions(id?: number | string): string {
-    let endpoint = `/${Endpoint.LEAVEDESCRIPTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  lineObstacles(id?: number | string): string {
-    let endpoint = `/${Endpoint.LINEOBSTACLES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
+  LOCATIONGROUPCATEGORIES: 'locationgroupcategories',
 
   locationGroupCategories(id?: number | string): string {
     let endpoint = `/${Endpoint.LOCATIONGROUPCATEGORIES}/`;
@@ -183,6 +151,8 @@ export const Endpoint = {
     return endpoint;
   },
 
+  LOCATIONGROUPS: 'locationgroups',
+
   locationGroups(id?: number | string): string {
     let endpoint = `/${Endpoint.LOCATIONGROUPS}/`;
     if (id) {
@@ -190,6 +160,18 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  LOCATIONS: 'locations',
+
+  MAP: 'map',
+
+  Map: {
+    bounds(): string {
+      return `/${Endpoint.MAP}/${Endpoint.BOUNDS}/`;
+    },
+  },
+
+  OBSTACLES: 'obstacles',
 
   obstacles(id?: number | string): string {
     let endpoint = `/${Endpoint.OBSTACLES}/`;
@@ -199,6 +181,8 @@ export const Endpoint = {
     return endpoint;
   },
 
+  POIS: 'pois',
+
   pois(id?: number | string): string {
     let endpoint = `/${Endpoint.POIS}/`;
     if (id) {
@@ -206,6 +190,8 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  RAMPS: 'ramps',
 
   ramps(id?: number | string): string {
     let endpoint = `/${Endpoint.RAMPS}/`;
@@ -215,6 +201,8 @@ export const Endpoint = {
     return endpoint;
   },
 
+  ROUTING: 'routing',
+
   routing(id?: number | string): string {
     let endpoint = `/${Endpoint.ROUTING}/`;
     if (id) {
@@ -222,6 +210,8 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  SESSION: 'session',
 
   session(id?: number | string): string {
     let endpoint = `/${Endpoint.SESSION}/`;
@@ -231,6 +221,8 @@ export const Endpoint = {
     return endpoint;
   },
 
+  SOURCES: 'sources',
+
   sources(id?: number | string): string {
     let endpoint = `/${Endpoint.SOURCES}/`;
     if (id) {
@@ -238,6 +230,8 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  SPACES: 'spaces',
 
   spaces(id?: number | string): string {
     let endpoint = `/${Endpoint.SPACES}/`;
@@ -247,6 +241,8 @@ export const Endpoint = {
     return endpoint;
   },
 
+  STAIRS: 'stairs',
+
   stairs(id?: number | string): string {
     let endpoint = `/${Endpoint.STAIRS}/`;
     if (id) {
@@ -254,6 +250,10 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  TYPES: 'types',
+
+  UPDATES: 'updates',
 
   updates(id?: number | string): string {
     let endpoint = `/${Endpoint.UPDATES}/`;

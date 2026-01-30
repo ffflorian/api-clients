@@ -1,8 +1,9 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Paginated} from '../interfaces/';
 import type {Reason} from '../interfaces/Reason';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class ReasonAPI extends APIBase {

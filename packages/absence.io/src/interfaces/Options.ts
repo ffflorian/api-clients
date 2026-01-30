@@ -6,9 +6,7 @@ import type {NewReason} from './Reason';
 import type {NewTimespan} from './Timespan';
 import type {NewUser} from './User';
 
-export type Filter = Record<string, string | Record<string, string>>;
-
-export type Sorting = Record<string, 1 | -1>;
+export type Filter = Record<string, Record<string, string> | string>;
 
 export interface PaginationOptions {
   filter?: Filter;
@@ -21,3 +19,5 @@ export interface PaginationOptions {
 export type RequestOptions =
   | PaginationOptions
   | Partial<NewAbsence | NewAllowance | NewDepartment | NewLocation | NewReason | NewTimespan | NewUser>;
+
+export type Sorting = Record<string, -1 | 1>;

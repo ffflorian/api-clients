@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
 import type {ClientOptions} from './Interfaces';
+
+import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
 
 export class ICanHazDadJoke {
   public readonly api: ICanHazDadJokeAPI;

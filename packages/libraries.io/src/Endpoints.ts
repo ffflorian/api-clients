@@ -6,16 +6,55 @@ export const Endpoint = {
   DEPENDENT_REPOSITORIES: 'dependent_repositories',
   DEPENDENTS: 'dependents',
   GITHUB: 'github',
-  PLATFORMS: 'platforms',
-  PROJECT_CONTRIBUTIONS: 'project-contributions',
-  PROJECTS: 'projects',
-  REPOSITORIES: 'repositories',
-  REPOSITORY_CONTRIBUTIONS: 'repository-contributions',
-  SEARCH: 'search',
-  SOURCERANK: 'sourcerank',
-  SUBSCRIPTIONS: 'subscriptions',
-  USAGE: 'usage',
+  GitHub: {
+    Repository: {
+      dependencies(owner: string, name: string): string {
+        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/${Endpoint.DEPENDENCIES}/`;
+      },
 
+      projects(owner: string, name: string): string {
+        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/${Endpoint.PROJECTS}/`;
+      },
+
+      repository(owner: string, name: string): string {
+        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/`;
+      },
+    },
+
+    User: {
+      contributedProjects(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECT_CONTRIBUTIONS}/`;
+      },
+
+      contributedRepositories(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.REPOSITORY_CONTRIBUTIONS}/`;
+      },
+
+      dependencies(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.DEPENDENCIES}/`;
+      },
+
+      packages(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECTS}/`;
+      },
+
+      projects(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECTS}/`;
+      },
+
+      repositories(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.REPOSITORIES}/`;
+      },
+
+      user(login: string): string {
+        return `/${Endpoint.GITHUB}/${encode(login)}/`;
+      },
+    },
+  },
+  PLATFORMS: 'platforms',
+  platforms(): string {
+    return `/${Endpoint.PLATFORMS}/`;
+  },
   Project: {
     contributors(platform: string, name: string): string {
       return `/${encode(platform)}/${encode(name)}/${Endpoint.CONTRIBUTORS}/`;
@@ -33,6 +72,10 @@ export const Endpoint = {
       return `/${encode(platform)}/${encode(name)}/${Endpoint.DEPENDENTS}/`;
     },
 
+    project(platform: string, name: string): string {
+      return `/${encode(platform)}/${encode(name)}/`;
+    },
+
     search(): string {
       return `/${Endpoint.SEARCH}/`;
     },
@@ -48,61 +91,16 @@ export const Endpoint = {
     usage(platform: string, name: string): string {
       return `/${encode(platform)}/${encode(name)}/${Endpoint.USAGE}/`;
     },
-
-    project(platform: string, name: string): string {
-      return `/${encode(platform)}/${encode(name)}/`;
-    },
   },
+  PROJECT_CONTRIBUTIONS: 'project-contributions',
+  PROJECTS: 'projects',
+  REPOSITORIES: 'repositories',
+  REPOSITORY_CONTRIBUTIONS: 'repository-contributions',
+  SEARCH: 'search',
 
-  GitHub: {
-    Repository: {
-      dependencies(owner: string, name: string): string {
-        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/${Endpoint.DEPENDENCIES}/`;
-      },
+  SOURCERANK: 'sourcerank',
 
-      projects(owner: string, name: string): string {
-        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/${Endpoint.PROJECTS}/`;
-      },
-
-      repository(owner: string, name: string): string {
-        return `/${Endpoint.GITHUB}/${encode(owner)}/${encode(name)}/`;
-      },
-    },
-
-    User: {
-      dependencies(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.DEPENDENCIES}/`;
-      },
-
-      packages(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECTS}/`;
-      },
-
-      projects(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECTS}/`;
-      },
-
-      contributedProjects(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.PROJECT_CONTRIBUTIONS}/`;
-      },
-
-      repositories(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.REPOSITORIES}/`;
-      },
-
-      contributedRepositories(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/${Endpoint.REPOSITORY_CONTRIBUTIONS}/`;
-      },
-
-      user(login: string): string {
-        return `/${Endpoint.GITHUB}/${encode(login)}/`;
-      },
-    },
-  },
-
-  platforms(): string {
-    return `/${Endpoint.PLATFORMS}/`;
-  },
+  SUBSCRIPTIONS: 'subscriptions',
 
   subscriptions(platform?: string, name?: string): string {
     let endpoint = `/${Endpoint.SUBSCRIPTIONS}/`;
@@ -111,4 +109,6 @@ export const Endpoint = {
     }
     return endpoint;
   },
+
+  USAGE: 'usage',
 };

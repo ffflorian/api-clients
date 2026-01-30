@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import * as path from 'node:path';
-import {constants as fsConstants, promises as fs} from 'node:fs';
 import {program as commander} from 'commander';
+import {promises as fs, constants as fsConstants} from 'node:fs';
+import * as path from 'node:path';
 
 import {description, name, version} from '../package.json';
 import {XKCD, XKCDResultWithData} from './';

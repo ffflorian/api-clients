@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../../Endpoints';
 import type {
   ClientOptions,
   Contributor,
@@ -11,6 +10,8 @@ import type {
   Repository,
   RequestOptions,
 } from '../../interfaces/';
+
+import {Endpoint} from '../../Endpoints';
 import {APIBase} from '../APIBase';
 
 export class GitHubUserAPI extends APIBase {
@@ -63,7 +64,7 @@ export class GitHubUserAPI extends APIBase {
    */
   public async getDependencies(
     userName: string,
-    platformOrOptions?: PlatformType | PaginationOptions,
+    platformOrOptions?: PaginationOptions | PlatformType,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.GitHub.User.contributedRepositories(userName);

@@ -1,8 +1,9 @@
 import {APIClient} from '@ffflorian/api-client';
 
+import type {API, ClientOptions, Summary} from './interfaces';
+
 import {CratesAPI} from './api';
 import {Endpoint} from './Endpoints';
-import type {API, ClientOptions, Summary} from './interfaces';
 
 export class CratesIO {
   public readonly api: API;

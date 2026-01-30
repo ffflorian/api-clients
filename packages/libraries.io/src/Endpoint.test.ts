@@ -1,4 +1,5 @@
 import {describe, expect, it} from 'vitest';
+
 import {Endpoint} from './Endpoints';
 
 describe('Endpoint', () => {

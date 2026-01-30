@@ -1,4 +1,26 @@
-export type Writeable<T> = {-readonly [P in keyof T]: T[P]};
+/**
+ * "yes" or "checkbox" will mark the checkbox checked and everything else will default to unchecked
+ *
+ * Example: "yes", "checkbox", "no"
+ */
+export type CheckboxField = 'checkbox' | 'no' | 'yes';
+
+/**
+ * The name of the country. Must exist in the BambooHR country list.
+ *
+ * Example: "Australia", "United States", etc.
+ */
+export type CountryField = string;
+
+/**
+ * A simple quantity value without thousands separators or currency signs using a period as a decimal point.
+ * Example: "27000.00"
+ *
+ * To add a currency code that is different from the company default, specify the code using the currency tag.
+ *
+ * Example: `“payRate”: { “value”: “27000.00”, “currency”: “EUR”}`
+ */
+export type CurrencyField = {currency: string; value: string} | string;
 
 /**
  * A complete date with a four-digit year.
@@ -10,77 +32,11 @@ export type Writeable<T> = {-readonly [P in keyof T]: T[P]};
 export type DateField = string;
 
 /**
- * A standard United States Social Security number, with dashes.
+ * An email address.
  *
- * Example: "123-45-6789"
+ * Example: "support@bamboohr.com"
  */
-export type SSNField = string;
-
-/**
- * A plain text string with a phone number, no formatting is enforced.
- *
- * Example: "1-866-387-9595"
- */
-export type PhoneField = string;
-
-/**
- * The plain text name of the gender.
- *
- * Example: "Male" or "Female"
- */
-export type GenderField = string;
-
-/**
- * A simple quantity value without thousands separators or currency signs using a period as a decimal point.
- * Example: "27000.00"
- *
- * To add a currency code that is different from the company default, specify the code using the currency tag.
- *
- * Example: `“payRate”: { “value”: “27000.00”, “currency”: “EUR”}`
- */
-export type CurrencyField = string | {currency: string; value: string};
-
-/**
- * "yes" or "checkbox" will mark the checkbox checked and everything else will default to unchecked
- *
- * Example: "yes", "checkbox", "no"
- */
-export type CheckboxField = 'yes' | 'checkbox' | 'no';
-
-/**
- * The name of the country. Must exist in the BambooHR country list.
- *
- * Example: "Australia", "United States", etc.
- */
-export type CountryField = string;
-
-/**
- * The full name of the state/province.
- *
- * Example: "Florida"
- */
-export type StateField = string;
-
-/**
- * Plain text status of marriage.
- *
- * Example: "Single" or "Married"
- */
-export type MaritalStatusField = string;
-
-/**
- * The employee's employment status as used to filter employees in BambooHR.
- *
- * Example: "Active" or "Inactive"
- */
-export type StatusField = 'Active' | 'Inactive';
-
-/**
- * One of several predefined options for the unit of pay.
- *
- * Example: "Hourly", "Salary", "Commission", "Exception Hourly", "Monthly", "Piece Rate", "Contract" or "Daily"
- */
-export type PayTypeField = string;
+export type EmailField = string;
 
 /**
  * A reference to another employee expressed as preferred name-space-last name.
@@ -88,34 +44,6 @@ export type PayTypeField = string;
  * Example: "Robert Smith"
  */
 export type EmployeeField = string;
-
-/**
- * The UTC time that an event occurred.
- *
- * Format: ####-##-##T##:##:##+##:##
- *
- * Example: "2012-10-17T20:27:17+00:00"
- */
-export type TimestampField = string;
-
-/**
- * A larger section of text that can include line feed characters.
- */
-export type TextareaField = string;
-
-/**
- * The exact text for an option from a list.
- *
- * Example: "Marketing"
- */
-export type ListField = string;
-
-/**
- * An email address.
- *
- * Example: "support@bamboohr.com"
- */
-export type EmailField = string;
 
 export interface Fields {
   /** @deprecated please use ‘acaStatusCategory’ */
@@ -280,4 +208,76 @@ export interface Fields {
   zipcode: string;
 }
 
+/**
+ * The plain text name of the gender.
+ *
+ * Example: "Male" or "Female"
+ */
+export type GenderField = string;
+
+/**
+ * The exact text for an option from a list.
+ *
+ * Example: "Marketing"
+ */
+export type ListField = string;
+
+/**
+ * Plain text status of marriage.
+ *
+ * Example: "Single" or "Married"
+ */
+export type MaritalStatusField = string;
+
+/**
+ * One of several predefined options for the unit of pay.
+ *
+ * Example: "Hourly", "Salary", "Commission", "Exception Hourly", "Monthly", "Piece Rate", "Contract" or "Daily"
+ */
+export type PayTypeField = string;
+
+/**
+ * A plain text string with a phone number, no formatting is enforced.
+ *
+ * Example: "1-866-387-9595"
+ */
+export type PhoneField = string;
+
+/**
+ * A standard United States Social Security number, with dashes.
+ *
+ * Example: "123-45-6789"
+ */
+export type SSNField = string;
+
+/**
+ * The full name of the state/province.
+ *
+ * Example: "Florida"
+ */
+export type StateField = string;
+
+/**
+ * The employee's employment status as used to filter employees in BambooHR.
+ *
+ * Example: "Active" or "Inactive"
+ */
+export type StatusField = 'Active' | 'Inactive';
+
+/**
+ * A larger section of text that can include line feed characters.
+ */
+export type TextareaField = string;
+
+/**
+ * The UTC time that an event occurred.
+ *
+ * Format: ####-##-##T##:##:##+##:##
+ *
+ * Example: "2012-10-17T20:27:17+00:00"
+ */
+export type TimestampField = string;
+
 export type WritableFields = Partial<Writeable<Fields>>;
+
+export type Writeable<T> = {-readonly [P in keyof T]: T[P]};

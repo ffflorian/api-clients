@@ -1,11 +1,7 @@
-export type SortType =
-  | 'contributions_count'
-  | 'created_at'
-  | 'dependent_repos_count'
-  | 'dependents_count'
-  | 'latest_release_published_at'
-  | 'rank'
-  | 'stars';
+export interface ClientOptions {
+  apiKey: string;
+  apiUrl?: string;
+}
 
 export interface FilterOptions {
   keywords?: string[];
@@ -14,34 +10,12 @@ export interface FilterOptions {
   platforms?: PlatformType[];
 }
 
-export interface ClientOptions {
-  apiKey: string;
-  apiUrl?: string;
-}
-
-export interface PreReleaseOptions {
-  includePreRelease?: boolean;
-}
+export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
 
 export interface PaginationOptions {
   page?: number;
   per_page?: number;
 }
-
-export interface SearchOptions extends PaginationOptions {
-  filter?: FilterOptions;
-  /** sort by */
-  sort?: SortType;
-}
-
-export interface RequestOptions extends SearchOptions, PreReleaseOptions {
-  api_key?: string;
-  platform?: PlatformType;
-  /** query */
-  q?: string;
-}
-
-export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
 
 export type PlatformType =
   | 'alcatraz'
@@ -79,3 +53,29 @@ export type PlatformType =
   | 'sublime'
   | 'swiftpm'
   | 'wordpress';
+
+export interface PreReleaseOptions {
+  includePreRelease?: boolean;
+}
+
+export interface RequestOptions extends PreReleaseOptions, SearchOptions {
+  api_key?: string;
+  platform?: PlatformType;
+  /** query */
+  q?: string;
+}
+
+export interface SearchOptions extends PaginationOptions {
+  filter?: FilterOptions;
+  /** sort by */
+  sort?: SortType;
+}
+
+export type SortType =
+  | 'contributions_count'
+  | 'created_at'
+  | 'dependent_repos_count'
+  | 'dependents_count'
+  | 'latest_release_published_at'
+  | 'rank'
+  | 'stars';

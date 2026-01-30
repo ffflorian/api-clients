@@ -1,4 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
+
 import type {
   ClientOptions,
   JokeResult,
@@ -23,7 +24,7 @@ export class ICanHazDadJokeAPI {
    */
   public getById(id: string, options: {withImage: true}): Promise<JokeResultWithImage>;
   public getById(id: string, options?: RequestOptions): Promise<JokeResult>;
-  public getById(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
+  public getById(id: string, options: RequestOptions = {}): Promise<JokeResult | JokeResultWithImage> {
     return this.getByID(id, options);
   }
 
@@ -33,7 +34,7 @@ export class ICanHazDadJokeAPI {
    */
   public async getByID(id: string, options: {withImage: true}): Promise<JokeResultWithImage>;
   public async getByID(id: string, options?: RequestOptions): Promise<JokeResult>;
-  public async getByID(id: string, options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
+  public async getByID(id: string, options: RequestOptions = {}): Promise<JokeResult | JokeResultWithImage> {
     const {data: metaData} = await this.apiClient.get<JokeResult>(`/j/${id}`);
 
     if (options.withImage) {
@@ -53,7 +54,7 @@ export class ICanHazDadJokeAPI {
    */
   public async getRandom(options: {withImage: true}): Promise<JokeResultWithImage>;
   public async getRandom(options?: RequestOptions): Promise<JokeResult>;
-  public async getRandom(options: RequestOptions = {}): Promise<JokeResultWithImage | JokeResult> {
+  public async getRandom(options: RequestOptions = {}): Promise<JokeResult | JokeResultWithImage> {
     const {data: metaData} = await this.apiClient.get<JokeResult>('/');
 
     if (options.withImage) {
@@ -74,7 +75,7 @@ export class ICanHazDadJokeAPI {
    */
   public async search(options: SearchOptions): Promise<JokeSearchResult>;
   public async search(query: string, options?: Omit<SearchOptions, 'term'>): Promise<JokeSearchResult>;
-  public async search(query?: string | SearchOptions, options: SearchOptions = {}): Promise<JokeSearchResult> {
+  public async search(query?: SearchOptions | string, options: SearchOptions = {}): Promise<JokeSearchResult> {
     if (typeof query === 'string') {
       options.term = query;
     }
