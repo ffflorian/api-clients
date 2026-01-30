@@ -3,17 +3,6 @@ const encode: typeof encodeURIComponent = encodeURIComponent;
 export const Endpoint = {
   AUTHORS: 'authors',
   CRATES: 'crates',
-  DEPENDENCIES: 'dependencies',
-  DOWNLOAD: 'download',
-  DOWNLOADS: 'downloads',
-  FOLLOWING: 'following',
-  OWNERS: 'owners',
-  OWNER_TEAM: 'owner_team',
-  OWNER_USER: 'owner_user',
-  REVERSE_DEPENDENCIES: 'reverse_dependencies',
-  SUMMARY: 'summary',
-  VERSIONS: 'versions',
-
   Crates: {
     authors(packageName: string, version: string): string {
       return `/${Endpoint.CRATES}/${encode(packageName)}/${encode(version)}/${Endpoint.AUTHORS}`;
@@ -67,8 +56,19 @@ export const Endpoint = {
       return `/${Endpoint.CRATES}/${encode(packageName)}/${Endpoint.VERSIONS}`;
     },
   },
+  DEPENDENCIES: 'dependencies',
+  DOWNLOAD: 'download',
+  DOWNLOADS: 'downloads',
+  FOLLOWING: 'following',
+  OWNER_TEAM: 'owner_team',
+  OWNER_USER: 'owner_user',
+  OWNERS: 'owners',
+  REVERSE_DEPENDENCIES: 'reverse_dependencies',
+  SUMMARY: 'summary',
 
   summary(): string {
     return `/${Endpoint.SUMMARY}`;
   },
+
+  VERSIONS: 'versions',
 };

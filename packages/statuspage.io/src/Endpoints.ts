@@ -1,17 +1,11 @@
 export const Endpoint = {
   ACTIVE_JSON: 'upcoming.json',
   API_V2_BASE: 'api/v2',
+  components(): string {
+    return `/${Endpoint.API_V2_BASE}/${Endpoint.COMPONENTS_JSON}`;
+  },
   COMPONENTS_JSON: 'components.json',
   INCIDENTS: 'incidents',
-  INCIDENTS_JSON: 'incidents.json',
-  SCHEDULED_MAINTENANCES: 'scheduled-maintenances',
-  SCHEDULED_MAINTENANCES_JSON: 'scheduled-maintenances.json',
-  STATUS_JSON: 'status.json',
-  SUBSCRIBERS_JSON: 'subscribers.json',
-  SUMMARY_JSON: 'summary.json',
-  UNRESOLVED_JSON: 'unresolved.json',
-  UPCOMING_JSON: 'upcoming.json',
-
   Incidents: {
     all(): string {
       return `/${Endpoint.API_V2_BASE}/${Endpoint.INCIDENTS_JSON}`;
@@ -21,7 +15,9 @@ export const Endpoint = {
       return `/${Endpoint.API_V2_BASE}/${Endpoint.INCIDENTS}/${Endpoint.UNRESOLVED_JSON}`;
     },
   },
-
+  INCIDENTS_JSON: 'incidents.json',
+  SCHEDULED_MAINTENANCES: 'scheduled-maintenances',
+  SCHEDULED_MAINTENANCES_JSON: 'scheduled-maintenances.json',
   ScheduledMaintenances: {
     active(): string {
       return `/${Endpoint.API_V2_BASE}/${Endpoint.SCHEDULED_MAINTENANCES}/${Endpoint.ACTIVE_JSON}`;
@@ -33,20 +29,24 @@ export const Endpoint = {
       return `/${Endpoint.API_V2_BASE}/${Endpoint.SCHEDULED_MAINTENANCES}/${Endpoint.UPCOMING_JSON}`;
     },
   },
-
-  components(): string {
-    return `/${Endpoint.API_V2_BASE}/${Endpoint.COMPONENTS_JSON}`;
+  status(): string {
+    return `/${Endpoint.API_V2_BASE}/${Endpoint.STATUS_JSON}`;
   },
+  STATUS_JSON: 'status.json',
+
+  subscribers(): string {
+    return `/${Endpoint.API_V2_BASE}/${Endpoint.SUBSCRIBERS_JSON}`;
+  },
+
+  SUBSCRIBERS_JSON: 'subscribers.json',
 
   summary(): string {
     return `/${Endpoint.API_V2_BASE}/${Endpoint.SUMMARY_JSON}`;
   },
 
-  status(): string {
-    return `/${Endpoint.API_V2_BASE}/${Endpoint.STATUS_JSON}`;
-  },
+  SUMMARY_JSON: 'summary.json',
 
-  subscribers(): string {
-    return `/${Endpoint.API_V2_BASE}/${Endpoint.SUBSCRIBERS_JSON}`;
-  },
+  UNRESOLVED_JSON: 'unresolved.json',
+
+  UPCOMING_JSON: 'upcoming.json',
 };

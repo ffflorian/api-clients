@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   CombinedSubscriberData,
   ComponentSubscriberData,
@@ -10,6 +9,8 @@ import type {
   WebhookSubscriberData,
 } from '../interfaces/Request';
 import type {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
+
+import {Endpoint} from '../Endpoints';
 
 export class SubscribersAPI {
   private readonly apiClient: APIClient;
@@ -22,13 +23,13 @@ export class SubscribersAPI {
    * @param options Subscriber options.
    */
   public async createComponentSubscription(
-    emailSubscriber: EmailSubscriberData & ComponentSubscriberData
+    emailSubscriber: ComponentSubscriberData & EmailSubscriberData
   ): Promise<EmailSubscriber>;
   public async createComponentSubscription(
-    smsSubscriber: PhoneSubscriberData & ComponentSubscriberData
+    smsSubscriber: ComponentSubscriberData & PhoneSubscriberData
   ): Promise<PhoneSubscriber>;
   public async createComponentSubscription(
-    webhookSubscriber: WebhookSubscriberData & ComponentSubscriberData
+    webhookSubscriber: ComponentSubscriberData & WebhookSubscriberData
   ): Promise<WebhookSubscriber>;
   public async createComponentSubscription(
     subscriberData: CombinedSubscriberData & ComponentSubscriberData
@@ -49,10 +50,10 @@ export class SubscribersAPI {
     emailSubscriber: EmailSubscriberData & IncidentSubscriberData
   ): Promise<EmailSubscriber>;
   public async createIncidentSubscription(
-    smsSubscriber: PhoneSubscriberData & IncidentSubscriberData
+    smsSubscriber: IncidentSubscriberData & PhoneSubscriberData
   ): Promise<PhoneSubscriber>;
   public async createIncidentSubscription(
-    webhookSubscriber: WebhookSubscriberData & IncidentSubscriberData
+    webhookSubscriber: IncidentSubscriberData & WebhookSubscriberData
   ): Promise<WebhookSubscriber>;
   public async createIncidentSubscription(
     subscriberData: CombinedSubscriberData & IncidentSubscriberData

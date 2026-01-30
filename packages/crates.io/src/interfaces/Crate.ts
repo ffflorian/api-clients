@@ -4,15 +4,15 @@ export interface Crate {
       [key: string]: string;
     };
   } | null;
-  categories: string | null;
+  categories: null | string;
   created_at: string;
   description: string;
-  documentation: string | null;
+  documentation: null | string;
   downloads: number;
   exact_match: boolean;
-  homepage: string | null;
+  homepage: null | string;
   id: string;
-  keywords: string | null;
+  keywords: null | string;
   links: {
     owner_team: string;
     owner_user: string;
@@ -23,8 +23,8 @@ export interface Crate {
   };
   max_version: string;
   name: string;
-  recent_downloads: number | null;
-  repository: string | null;
+  recent_downloads: null | number;
+  repository: null | string;
   updated_at: string;
-  versions: number[] | null;
+  versions: null | number[];
 }

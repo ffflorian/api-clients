@@ -38,6 +38,10 @@ export interface SearchResult {
   };
 }
 
+export interface TeamsResult {
+  teams: Team[];
+}
+
 export interface UrlResult {
   url: string;
 }
@@ -46,14 +50,10 @@ export interface UsersResult {
   users: User[];
 }
 
-export interface TeamsResult {
-  teams: Team[];
+export interface VersionResult {
+  version: Version;
 }
 
 export interface VersionsResult {
   versions: Version[];
-}
-
-export interface VersionResult {
-  version: Version;
 }

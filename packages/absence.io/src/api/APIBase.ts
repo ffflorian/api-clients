@@ -1,4 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
+
 import type {Authorization, ClientOptions} from '../interfaces';
 
 export class APIBase {

@@ -1,15 +1,4 @@
 export const Endpoint = {
-  ABSENCES: 'absences',
-  CREATE: 'create',
-  ALLOWANCE_TYPES: 'allowancetypes',
-  DEPARTMENTS: 'departments',
-  INVITE: 'invite',
-  LOCATIONS: 'locations',
-  REASONS: 'reasons',
-  TEAMS: 'teams',
-  USERS: 'users',
-  TIMESPANS: 'timespans',
-
   Absence: {
     absences(id?: string): string {
       return `/${Endpoint.ABSENCES}/${id ? `${id}/` : ''}`;
@@ -19,24 +8,27 @@ export const Endpoint = {
       return `/${Endpoint.ABSENCES}/${Endpoint.CREATE}/`;
     },
   },
-
+  ABSENCES: 'absences',
+  ALLOWANCE_TYPES: 'allowancetypes',
   AllowanceType: {
     allowanceTypes(id?: string): string {
       return `/${Endpoint.ALLOWANCE_TYPES}/${id ? `${id}/` : ''}`;
     },
   },
-
+  CREATE: 'create',
   Department: {
     departments(id?: string): string {
       return `/${Endpoint.DEPARTMENTS}/${id ? `${id}/` : ''}`;
     },
   },
-
+  DEPARTMENTS: 'departments',
+  INVITE: 'invite',
   Location: {
     locations(id?: string): string {
       return `/${Endpoint.LOCATIONS}/${id ? `${id}/` : ''}`;
     },
   },
+  LOCATIONS: 'locations',
 
   Reason: {
     reasons(id?: string): string {
@@ -44,11 +36,15 @@ export const Endpoint = {
     },
   },
 
+  REASONS: 'reasons',
+
   Team: {
     teams(id?: string): string {
       return `/${Endpoint.TEAMS}/${id ? `${id}/` : ''}`;
     },
   },
+
+  TEAMS: 'teams',
 
   Timespan: {
     create(): string {
@@ -60,6 +56,8 @@ export const Endpoint = {
     },
   },
 
+  TIMESPANS: 'timespans',
+
   User: {
     invite(): string {
       return `/${Endpoint.USERS}/${Endpoint.INVITE}/`;
@@ -69,4 +67,6 @@ export const Endpoint = {
       return `/${Endpoint.USERS}/${id ? `${id}/` : ''}`;
     },
   },
+
+  USERS: 'users',
 };

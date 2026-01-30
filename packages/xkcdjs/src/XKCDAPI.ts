@@ -1,4 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
+
 import type {ClientOptions, ImageData, RequestOptions, XKCDResult, XKCDResultWithData} from './Interfaces';
 
 export class XKCDAPI {
@@ -22,7 +23,7 @@ export class XKCDAPI {
    */
   public async getByIndex(index: number, options: {withData: true}): Promise<XKCDResultWithData>;
   public async getByIndex(index: number, options?: RequestOptions): Promise<XKCDResultWithData>;
-  public async getByIndex(index: number, options: RequestOptions = {}): Promise<XKCDResultWithData | XKCDResult> {
+  public async getByIndex(index: number, options: RequestOptions = {}): Promise<XKCDResult | XKCDResultWithData> {
     if (index < this.lowestIndex) {
       throw new Error(`Index is lower than the lowest index of ${this.lowestIndex}.`);
     }

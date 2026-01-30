@@ -1,10 +1,10 @@
-import type {DiagnosisKeysAPI, ApplicationConfigurationAPI} from './api';
-
-export interface ClientOptions {
-  apiUrl?: string;
-}
+import type {ApplicationConfigurationAPI, DiagnosisKeysAPI} from './api';
 
 export interface API {
   applicationConfiguration: ApplicationConfigurationAPI;
   diagnosisKeys: DiagnosisKeysAPI;
+}
+
+export interface ClientOptions {
+  apiUrl?: string;
 }

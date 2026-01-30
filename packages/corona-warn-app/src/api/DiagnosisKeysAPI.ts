@@ -31,6 +31,23 @@ export class DiagnosisKeysAPI {
   }
 
   /**
+   * Get all hours of a specific date for which diagnosis keys are available.
+   * @param country An ISO 3166-1 alpha-2 country key (e.g. `DE`).
+   * @param date An ISO-8601 date descriptor (e.g. `2020-05-01`).
+   * Server time zone is UTC.
+   * @description Gives a list of all hours (0-23) of a specific date for which
+   * diagnosis keys are available for a specific country. For the current date,
+   * a list containing the respective numbers/hours for which data is available
+   * (e.g. 0-17) will be returned. If the date is outside of the 14-day window,
+   * or in the future, an HTTP error code will be returned.
+   */
+  public async getHoursByDate(country: string, date: string): Promise<number[]> {
+    const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour`;
+    const {data} = await this.apiClient.get<number[]>(endpoint);
+    return data;
+  }
+
+  /**
    * Get all diagnosis keys for a specific date.
    * @param country An ISO 3166-1 alpha-2 country key (e.g. `DE`).
    * @param date An ISO-8601 date descriptor (e.g. `2020-05-01`).
@@ -47,23 +64,6 @@ export class DiagnosisKeysAPI {
       headers: {Accept: 'application/zip'},
       responseType: 'arraybuffer',
     });
-    return data;
-  }
-
-  /**
-   * Get all hours of a specific date for which diagnosis keys are available.
-   * @param country An ISO 3166-1 alpha-2 country key (e.g. `DE`).
-   * @param date An ISO-8601 date descriptor (e.g. `2020-05-01`).
-   * Server time zone is UTC.
-   * @description Gives a list of all hours (0-23) of a specific date for which
-   * diagnosis keys are available for a specific country. For the current date,
-   * a list containing the respective numbers/hours for which data is available
-   * (e.g. 0-17) will be returned. If the date is outside of the 14-day window,
-   * or in the future, an HTTP error code will be returned.
-   */
-  public async getHoursByDate(country: string, date: string): Promise<number[]> {
-    const endpoint = `/diagnosis-keys/country/${country}/date/${date}/hour`;
-    const {data} = await this.apiClient.get<number[]>(endpoint);
     return data;
   }
 

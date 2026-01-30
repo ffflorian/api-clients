@@ -1,5 +1,5 @@
 export interface TimeOffType {
-  color: string | null;
+  color: null | string;
   icon: string;
   id: string;
   name: string;

@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ScheduledMaintenances} from '../interfaces/Result';
+
+import {Endpoint} from '../Endpoints';
 
 export class ScheduledMaintenancesAPI {
   private readonly apiClient: APIClient;

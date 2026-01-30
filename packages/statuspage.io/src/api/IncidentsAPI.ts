@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {Incidents} from '../interfaces/Result';
+
+import {Endpoint} from '../Endpoints';
 
 export class IncidentsAPI {
   private readonly apiClient: APIClient;

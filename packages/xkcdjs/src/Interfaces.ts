@@ -1,3 +1,7 @@
+export interface ClientOptions {
+  apiUrl?: string;
+}
+
 export interface ImageData {
   data: Buffer;
   mimeType?: string;
@@ -5,10 +9,6 @@ export interface ImageData {
 
 export interface RequestOptions {
   withData?: boolean;
-}
-
-export interface ClientOptions {
-  apiUrl?: string;
 }
 
 export interface XKCDResult {

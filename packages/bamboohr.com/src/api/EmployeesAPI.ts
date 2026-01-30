@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
+import type {Employee, EmployeeDirectory, Fields, WritableFields} from '../interfaces';
+
 import {Endpoint} from '../Endpoints';
-import type {Fields, Employee, WritableFields, EmployeeDirectory} from '../interfaces';
 
 export class EmployeesAPI {
   constructor(private readonly apiClient: APIClient) {}

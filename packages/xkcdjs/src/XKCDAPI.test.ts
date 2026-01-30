@@ -1,6 +1,6 @@
-import {describe, expect, it, beforeEach} from 'vitest';
-import nock from 'nock';
 import {StatusCodes as HTTP_STATUS} from 'http-status-codes';
+import nock from 'nock';
+import {beforeEach, describe, expect, it} from 'vitest';
 
 import * as XKCDJS from '.';
 
@@ -77,7 +77,7 @@ describe('XKCD', () => {
   it('gets the image data', async () => {
     const latestWithData = await xkcdJS.api.getLatest({withData: true});
 
-    console.log('latestWithData.data:', latestWithData.data);
+    console.info('latestWithData.data:', latestWithData.data);
 
     expect(latestWithData.data).toMatchObject({
       data: expect.any(ArrayBuffer),
@@ -91,7 +91,7 @@ describe('XKCD', () => {
       await xkcdJS.api.getByIndex(1);
       expect.fail('Did not throw error');
     } catch (error) {
-      console.log((error as Error).message);
+      console.error((error as Error).message);
       expect((error as Error).message.includes('Request failed with status code 404')).toBe(true);
     }
   });

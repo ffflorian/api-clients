@@ -62,17 +62,17 @@ interface GitHub {
   subscribersCount: number;
 }
 
+interface Info {
+  modifiers?: Modifiers;
+  service: string;
+  type: string;
+}
+
 interface Issues {
   count: number;
   distribution: Record<string, number>;
   isDisabled: boolean;
   openCount: number;
-}
-
-interface Info {
-  modifiers?: Modifiers;
-  service: string;
-  type: string;
 }
 
 interface Links {

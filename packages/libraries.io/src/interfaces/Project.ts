@@ -3,9 +3,9 @@ import type {PlatformType} from './Options';
 export interface Project {
   dependent_repos_count: number;
   dependents_count: number;
-  description: string | null;
+  description: null | string;
   forks: number;
-  homepage: string | null;
+  homepage: null | string;
   keywords: string[];
   language: string;
   latest_download_url: string;
@@ -17,23 +17,16 @@ export interface Project {
   package_manager_url: string;
   platform: string;
   rank: number;
-  repository_url: string | null;
+  repository_url: null | string;
   stars: number;
-  status: string | null;
+  status: null | string;
   versions: ProjectVersion[];
-}
-
-export interface ProjectWithDependencies extends Project {
-  dependencies: ProjectDependency[];
-  dependencies_for_version: string;
-  dependent_repos_count: number;
-  dependents_count: number;
 }
 
 export interface ProjectDependency {
   deprecated: boolean;
-  filepath: string | null;
-  kind: 'Development' | 'runtime' | 'Optional';
+  filepath: null | string;
+  kind: 'Development' | 'Optional' | 'runtime';
   latest: string;
   latest_stable: string;
   name: string;
@@ -49,7 +42,7 @@ export interface ProjectRelease {
   number: string;
   project_id: number;
   published_at: string;
-  runtime_dependencies_count: number | null;
+  runtime_dependencies_count: null | number;
   updated_at: string;
 }
 
@@ -60,4 +53,11 @@ export interface ProjectUsage {
 export interface ProjectVersion {
   number: string;
   published_at: string;
+}
+
+export interface ProjectWithDependencies extends Project {
+  dependencies: ProjectDependency[];
+  dependencies_for_version: string;
+  dependent_repos_count: number;
+  dependents_count: number;
 }

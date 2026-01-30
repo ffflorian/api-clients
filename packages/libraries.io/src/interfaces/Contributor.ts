@@ -1,16 +1,16 @@
 export interface Contributor {
-  bio: string | null;
-  blog: string | null;
-  company: string | null;
+  bio: null | string;
+  blog: null | string;
+  company: null | string;
   created_at: string;
-  email: string | null;
-  followers: number | null;
-  following: number | null;
+  email: null | string;
+  followers: null | number;
+  following: null | number;
   github_id: string;
   hidden: boolean;
   host_type: string;
   last_synced_at: string;
-  location: string | null;
+  location: null | string;
   login: string;
   name: string;
   updated_at: string;

@@ -1,5 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 
+import type {API, ClientOptions} from './interfaces';
+
 import {
   AccessRestrictionGroupsAPI,
   AccessRestrictionsAPI,
@@ -28,7 +30,6 @@ import {
   StairsAPI,
   UpdatesAPI,
 } from './api';
-import type {API, ClientOptions} from './interfaces';
 
 export class LibrariesIO {
   public readonly api: API;

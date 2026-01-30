@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   ClientOptions,
   Contributor,
@@ -13,6 +12,8 @@ import type {
   Repository,
   SearchOptions,
 } from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class ProjectAPI extends APIBase {
@@ -130,6 +131,7 @@ export class ProjectAPI extends APIBase {
    */
   public async search(query: string, options?: SearchOptions): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.Project.search();
+    // eslint-disable-next-line id-length
     const {data} = await this.apiClient.get(endpoint, {data: {...options, q: query}});
     return data;
   }

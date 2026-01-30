@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Location, LocationDetails, LocationGeometry, LocationType} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 /**
@@ -20,7 +21,7 @@ export class LocationsAPI extends APIBase {
 
   public async getDetails(id: number): Promise<LocationDetails>;
   public async getDetails(slug: string): Promise<LocationDetails>;
-  public async getDetails(id: string | number): Promise<LocationDetails> {
+  public async getDetails(id: number | string): Promise<LocationDetails> {
     const endpoint = Endpoint.Location.details(id);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -28,7 +29,7 @@ export class LocationsAPI extends APIBase {
 
   public async getGeometry(id: number): Promise<LocationGeometry>;
   public async getGeometry(slug: string): Promise<LocationGeometry>;
-  public async getGeometry(id: string | number): Promise<LocationGeometry> {
+  public async getGeometry(id: number | string): Promise<LocationGeometry> {
     const endpoint = Endpoint.Location.geometry(id);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -42,7 +43,7 @@ export class LocationsAPI extends APIBase {
 
   public async getLocation(id: number): Promise<Location>;
   public async getLocation(slug: string): Promise<Location>;
-  public async getLocation(id: string | number): Promise<Location> {
+  public async getLocation(id: number | string): Promise<Location> {
     const endpoint = Endpoint.Location.detail(id);
     const {data} = await this.apiClient.get(endpoint);
     return data;

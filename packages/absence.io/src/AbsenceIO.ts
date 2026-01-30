@@ -1,5 +1,7 @@
-import * as hawk from '@hapi/hawk';
 import {APIClient} from '@ffflorian/api-client';
+import * as hawk from '@hapi/hawk';
+
+import type {API, Authorization, ClientOptions} from './interfaces';
 
 import {
   AbsenceAPI,
@@ -11,7 +13,6 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
-import type {API, Authorization, ClientOptions} from './interfaces';
 
 export class AbsenceIO {
   public readonly api: API;

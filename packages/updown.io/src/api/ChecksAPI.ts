@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
+
+import {Endpoint} from '../Endpoints';
 
 export class ChecksAPI {
   private readonly apiClient: APIClient;

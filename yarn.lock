@@ -2662,7 +2662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.54.0":
+"@typescript-eslint/utils@npm:8.54.0, @typescript-eslint/utils@npm:^8.53.1":
   version: 8.54.0
   resolution: "@typescript-eslint/utils@npm:8.54.0"
   dependencies:
@@ -4991,6 +4991,18 @@ __metadata:
   dependencies:
     jsonc-parser: "npm:^3.3.1"
   checksum: 10c0/98439d57a6c3870d6e3104da502f40d6187bd2353773331d2c5f23bbd0d7d4d90d7fef6117e6c6438afe8b4c62cbefdc22abac5389d49ad7aa83fac6eb5e97fc
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-perfectionist@npm:5.4.0":
+  version: 5.4.0
+  resolution: "eslint-plugin-perfectionist@npm:5.4.0"
+  dependencies:
+    "@typescript-eslint/utils": "npm:^8.53.1"
+    natural-orderby: "npm:^5.0.0"
+  peerDependencies:
+    eslint: ">=8.45.0"
+  checksum: 10c0/5a3ddcd328612ba377013738d90ae958c7e6b8d0b1e529b2714e69dd0bcea119d0cb6578524a149d03d102498d37d4abd14498ddf5b8837afd27111bca08c8f0
   languageName: node
   linkType: hard
 
@@ -7876,6 +7888,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"natural-orderby@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "natural-orderby@npm:5.0.0"
+  checksum: 10c0/d4e8b3bf16636eedc0c99a4cd551cd371732dd8c9766f19c8e153946553d82c12527eab182b8e79d640681aa6cb718273b53662ccf88127d4726307b6e645b2b
+  languageName: node
+  linkType: hard
+
 "negotiator@npm:^1.0.0":
   version: 1.0.0
   resolution: "negotiator@npm:1.0.0"
@@ -9489,6 +9508,7 @@ __metadata:
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-oxlint: "npm:1.42.0"
+    eslint-plugin-perfectionist: "npm:5.4.0"
     globals: "npm:17.2.0"
     jiti: "npm:2.6.1"
     lerna: "npm:9.0.3"

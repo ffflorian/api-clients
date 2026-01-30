@@ -1,2 +1,2 @@
-export * from './UpdownIO';
 export * from './interfaces/';
+export * from './UpdownIO';

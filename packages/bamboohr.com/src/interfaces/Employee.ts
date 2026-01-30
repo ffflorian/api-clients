@@ -1,13 +1,5 @@
 import {Fields} from './Fields';
 
-type PartialNull<T> = {[P in keyof T]?: T[P] | null};
-
-interface BaseEmployee {
-  firstName: string;
-  id: string;
-  lastName: string;
-}
-
 export type Employee = BaseEmployee & PartialNull<Fields>;
 
 export interface EmployeeDirectory {
@@ -27,3 +19,11 @@ export interface OffEmployee {
   start: string;
   type: string;
 }
+
+interface BaseEmployee {
+  firstName: string;
+  id: string;
+  lastName: string;
+}
+
+type PartialNull<T> = {[P in keyof T]?: null | T[P]};

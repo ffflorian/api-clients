@@ -3,14 +3,11 @@ import type {Fields} from './interfaces/Fields';
 export const Endpoint = {
   DIRECTORY: 'directory',
   EMPLOYEES: 'employees',
-  META: 'meta',
-  POLICIES: 'policies',
-  REQUESTS: 'requests',
-  TIME_OFF: 'time_off',
-  TYPES: 'types',
-  WHOS_OUT: 'whos_out',
-
   Employees: {
+    employeeDirectory(): string {
+      return `/${Endpoint.EMPLOYEES}/${Endpoint.DIRECTORY}/`;
+    },
+
     employees(id?: number, fields?: Array<keyof Fields>): string {
       const url = new URL(`/${Endpoint.EMPLOYEES}/`, 'https://example.com');
       if (id) {
@@ -25,21 +22,12 @@ export const Endpoint = {
 
       return `${url.pathname}${url.search}`;
     },
-
-    employeeDirectory(): string {
-      return `/${Endpoint.EMPLOYEES}/${Endpoint.DIRECTORY}/`;
-    },
   },
-
+  META: 'meta',
+  POLICIES: 'policies',
+  REQUESTS: 'requests',
+  TIME_OFF: 'time_off',
   TimeOff: {
-    whosOut(): string {
-      return `/${Endpoint.TIME_OFF}/${Endpoint.WHOS_OUT}/`;
-    },
-
-    timeOffTypes(): string {
-      return `/${Endpoint.META}/${Endpoint.TIME_OFF}/${Endpoint.TYPES}/`;
-    },
-
     timeOffPolicies(): string {
       return `/${Endpoint.META}/${Endpoint.TIME_OFF}/${Endpoint.POLICIES}/`;
     },
@@ -47,5 +35,17 @@ export const Endpoint = {
     timeOffRequests(): string {
       return `/${Endpoint.TIME_OFF}/${Endpoint.REQUESTS}/`;
     },
+
+    timeOffTypes(): string {
+      return `/${Endpoint.META}/${Endpoint.TIME_OFF}/${Endpoint.TYPES}/`;
+    },
+
+    whosOut(): string {
+      return `/${Endpoint.TIME_OFF}/${Endpoint.WHOS_OUT}/`;
+    },
   },
+
+  TYPES: 'types',
+
+  WHOS_OUT: 'whos_out',
 };

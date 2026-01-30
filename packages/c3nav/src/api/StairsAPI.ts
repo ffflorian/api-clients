@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Stairs} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class StairsAPI extends APIBase {

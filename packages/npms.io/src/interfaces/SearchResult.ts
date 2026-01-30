@@ -3,17 +3,6 @@ export interface SearchResult {
   total: number;
 }
 
-interface Result {
-  /** The package flags (deprecated, unstable, insecure) */
-  flags?: Flags;
-  /** The package data which contains the name, version and other useful information */
-  package: Package;
-  /** The package score */
-  score: Score;
-  /** The computed search score (from Elasticsearch) */
-  searchScore: number;
-}
-
 interface Author {
   email?: string;
   name: string;
@@ -56,6 +45,17 @@ interface Package {
 interface Publisher {
   email: string;
   username: string;
+}
+
+interface Result {
+  /** The package flags (deprecated, unstable, insecure) */
+  flags?: Flags;
+  /** The package data which contains the name, version and other useful information */
+  package: Package;
+  /** The package score */
+  score: Score;
+  /** The computed search score (from Elasticsearch) */
+  searchScore: number;
 }
 
 interface Score {

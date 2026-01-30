@@ -1,8 +1,9 @@
 import {APIClient, type RequestOptions} from '@ffflorian/api-client';
 import * as qs from 'qs';
 
-import {Endpoint} from './Endpoints';
 import type {API, Image, ImageCaptionOptions, Memes, Response} from './interfaces';
+
+import {Endpoint} from './Endpoints';
 
 export class Imgflip {
   private static readonly BASE_URL = 'https://api.imgflip.com';
@@ -16,6 +17,14 @@ export class Imgflip {
       captionImage: this.captionImage,
       getMemes: this.getMemes,
     };
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newURL The new API url
+   */
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 
   private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {
@@ -36,12 +45,4 @@ export class Imgflip {
     const {data} = await this.apiClient.get(endpoint);
     return data;
   };
-
-  /**
-   * Set a new API URL.
-   * @param newURL The new API url
-   */
-  public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
-  }
 }

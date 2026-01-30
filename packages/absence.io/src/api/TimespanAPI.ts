@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, NewTimespan, Paginated, PaginationOptions, Timespan} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class TimespanAPI extends APIBase {
