@@ -2,7 +2,7 @@ pre-commit:
   parallel: false
   commands:
     prettier:
-      glob: '*'
+      glob: '*.{js,ts,css,md,json,yml,yaml}'
       run: npx --no-install prettier --write {staged_files} && git add {staged_files}
     oxlint:
       glob: 'packages/*'
