@@ -3,7 +3,7 @@
   "bin": "dist/cli.js",
   "dependencies": {
     "@ffflorian/api-client": "2.4.1",
-    "commander": "14.0.2"
+    "commander": "14.0.3"
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
