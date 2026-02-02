@@ -557,9 +557,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/eslint-config@npm:0.12.3":
-  version: 0.12.3
-  resolution: "@ffflorian/eslint-config@npm:0.12.3"
+"@ffflorian/eslint-config@npm:0.12.4":
+  version: 0.12.4
+  resolution: "@ffflorian/eslint-config@npm:0.12.4"
   dependencies:
     "@eslint/js": "npm:9.39.2"
     eslint: "npm:9.39.2"
@@ -581,7 +581,7 @@ __metadata:
     jiti: ">= 2.6.1"
     typescript: ">= 5.9.3"
     typescript-eslint: ">= 8.54.0"
-  checksum: 10c0/bd461f71749a24d4d52923caec6a57d6704a9fe244150fe9640eae7890359322deb341af4a18062db64b4400870e3874f87b08cacfae0df7ddb851b70febb3e6
+  checksum: 10c0/691e4ed5c8549229aa04b688ec8e43b3e24b25c93d20f2c190696411f2dedc3e5e914871d31a5d2d32edef086d92740cfd95e0c7028cead08e790958c6f1bdeb
   languageName: node
   linkType: hard
 
@@ -9537,7 +9537,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:9.39.2"
     "@evilmartians/lefthook": "npm:2.0.16"
-    "@ffflorian/eslint-config": "npm:0.12.3"
+    "@ffflorian/eslint-config": "npm:0.12.4"
     "@ffflorian/prettier-config": "npm:0.5.4"
     "@types/node": "npm:~24"
     eslint: "npm:9.39.2"
