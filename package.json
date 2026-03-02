@@ -4,7 +4,7 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@evilmartians/lefthook": "2.1.2",
-    "@ffflorian/eslint-config": "0.12.4",
+    "@ffflorian/eslint-config": "0.13.3",
     "@ffflorian/prettier-config": "0.6.3",
     "@types/node": "~24",
     "eslint": "9.39.2",

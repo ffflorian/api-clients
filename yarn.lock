@@ -557,9 +557,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/eslint-config@npm:0.12.4":
-  version: 0.12.4
-  resolution: "@ffflorian/eslint-config@npm:0.12.4"
+"@ffflorian/eslint-config@npm:0.13.3":
+  version: 0.13.3
+  resolution: "@ffflorian/eslint-config@npm:0.13.3"
   dependencies:
     "@eslint/js": "npm:9.39.2"
     eslint: "npm:9.39.2"
@@ -567,21 +567,10 @@ __metadata:
     eslint-plugin-import: "npm:2.32.0"
     eslint-plugin-oxlint: "npm:1.42.0"
     eslint-plugin-perfectionist: "npm:5.4.0"
-    globals: "npm:17.2.0"
+    globals: "npm:17.3.0"
     jiti: "npm:2.6.1"
     typescript-eslint: "npm:8.54.0"
-  peerDependencies:
-    "@eslint/js": ">= 9.39.2"
-    eslint: ">= 9.39.2"
-    eslint-import-resolver-typescript: ">= 4.4.4"
-    eslint-plugin-import: ">= 2.32.0"
-    eslint-plugin-oxlint: ">= 1.42.0"
-    eslint-plugin-perfectionist: ">= 5.4.0"
-    globals: ">= 17.2.0"
-    jiti: ">= 2.6.1"
-    typescript: ">= 5.9.3"
-    typescript-eslint: ">= 8.54.0"
-  checksum: 10c0/691e4ed5c8549229aa04b688ec8e43b3e24b25c93d20f2c190696411f2dedc3e5e914871d31a5d2d32edef086d92740cfd95e0c7028cead08e790958c6f1bdeb
+  checksum: 10c0/f5c0c0599598a27df5a324c09b2d01c0f5ee1028e5b178c0bb4e2b8df17df3cc7ac69f691457ab3df2c2672b60fd742c04dba560ce46603d98174a0cdef4fc48
   languageName: node
   linkType: hard
 
@@ -5885,13 +5874,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:17.2.0":
-  version: 17.2.0
-  resolution: "globals@npm:17.2.0"
-  checksum: 10c0/fd25a98b08c1d31082337cbbb5ff1b90b9980e1db69a8621fb942bdb2cdca8aa54d61466742e8bf4910578ea5fa903b8bf83bffd1b2d45551cc614830dba910b
-  languageName: node
-  linkType: hard
-
 "globals@npm:17.3.0":
   version: 17.3.0
   resolution: "globals@npm:17.3.0"
@@ -9572,7 +9554,7 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:9.39.2"
     "@evilmartians/lefthook": "npm:2.1.2"
-    "@ffflorian/eslint-config": "npm:0.12.4"
+    "@ffflorian/eslint-config": "npm:0.13.3"
     "@ffflorian/prettier-config": "npm:0.6.3"
     "@types/node": "npm:~24"
     eslint: "npm:9.39.2"
