@@ -594,7 +594,7 @@ __metadata:
     commander: "npm:14.0.3"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   bin:
     icanhazdadjoke: dist/cli.js
@@ -621,7 +621,7 @@ __metadata:
     nock: "npm:14.0.11"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
     vitest: "npm:4.0.18"
   bin:
@@ -3181,7 +3181,7 @@ __metadata:
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -3563,7 +3563,7 @@ __metadata:
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -3665,7 +3665,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -4190,7 +4190,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -4219,7 +4219,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -6433,7 +6433,7 @@ __metadata:
     "@types/qs": "npm:6.14.0"
     qs: "npm:6.15.0"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -7519,7 +7519,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
     vitest: "npm:4.0.18"
   languageName: unknown
@@ -8419,7 +8419,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -10291,7 +10291,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
@@ -10932,9 +10932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.28.16":
-  version: 0.28.16
-  resolution: "typedoc@npm:0.28.16"
+"typedoc@npm:0.28.17":
+  version: 0.28.17
+  resolution: "typedoc@npm:0.28.17"
   dependencies:
     "@gerrit0/mini-shiki": "npm:^3.17.0"
     lunr: "npm:^2.3.9"
@@ -10945,7 +10945,7 @@ __metadata:
     typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/ae444913068088e88be6319a017a3a18f69cbd91dbb5b959fbdd0cf87d1a2a07f3a0d4ab29c957a83dd72808ff35bdd6ceec3ad1803fa412ddceffb78fa60ebb
+  checksum: 10c0/25c3f6c08748debd2549e8af2c96dcdea255297924e8e0ecc78c86aea35d69c149eb5ad0a0d333a3a69d4e41a887ce55fef0aa97236789f0e658f3ad051429e8
   languageName: node
   linkType: hard
 
@@ -11174,7 +11174,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.4.1"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.16"
+    typedoc: "npm:0.28.17"
     typescript: "npm:5.9.3"
   languageName: unknown
   linkType: soft
