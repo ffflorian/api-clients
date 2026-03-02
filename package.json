@@ -7,7 +7,7 @@
     "@ffflorian/eslint-config": "0.12.4",
     "@ffflorian/prettier-config": "0.6.3",
     "@types/node": "~24",
-    "eslint": "9.39.2",
+    "eslint": "10.0.2",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-oxlint": "1.50.0",
