@@ -4,3 +4,4 @@ CHANGELOG.md
 node_modules
 .vscode
 .yarn
+.yarnrc.yml
