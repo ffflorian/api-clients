@@ -598,12 +598,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@evilmartians/lefthook@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@evilmartians/lefthook@npm:2.1.2"
+"@evilmartians/lefthook@npm:2.1.4":
+  version: 2.1.4
+  resolution: "@evilmartians/lefthook@npm:2.1.4"
   bin:
     lefthook: bin/index.js
-  checksum: 10c0/9421addd1c262a028dd69564583fa2d87d82ae899086a93e20dbd9f26a5fae3bb5e6734203c5acd92d55d922787494b7073ebbff3a5c1005dd4d4d137b4991f4
+  checksum: 10c0/e6548cc634a311f828173e1a6d0895b8639faf3fc5519e4c3661bedacd30c4367e5e5d71bb998e3aaa071f3f80af2b48d3f9d8bc32b14fd65dfaa55d599403b0
   conditions: (os=darwin | os=linux | os=win32) & (cpu=x64 | cpu=arm64 | cpu=ia32)
   languageName: node
   linkType: hard
@@ -6095,13 +6095,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:17.3.0":
-  version: 17.3.0
-  resolution: "globals@npm:17.3.0"
-  checksum: 10c0/7f21443ecaa60c6e9ff56d9fb6f10a9b5f9514e7f22e5392f715472bb220ce31c865ebf414a32695150e733fb3e1013e6322dbce70fddd1e066f372b8d55a4b8
-  languageName: node
-  linkType: hard
-
 "globals@npm:17.4.0":
   version: 17.4.0
   resolution: "globals@npm:17.4.0"
@@ -9789,7 +9782,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@eslint/js": "npm:10.0.1"
-    "@evilmartians/lefthook": "npm:2.1.2"
+    "@evilmartians/lefthook": "npm:2.1.4"
     "@ffflorian/eslint-config": "npm:0.13.7"
     "@ffflorian/prettier-config": "npm:0.6.7"
     "@types/node": "npm:~24"
