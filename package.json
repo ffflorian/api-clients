@@ -15,7 +15,7 @@
     "globals": "17.3.0",
     "jiti": "2.6.1",
     "lerna": "9.0.4",
-    "oxlint": "1.50.0",
+    "oxlint": "1.56.0",
     "prettier": "3.8.1",
     "typescript": "6.0.2",
     "typescript-eslint": "8.56.1"
