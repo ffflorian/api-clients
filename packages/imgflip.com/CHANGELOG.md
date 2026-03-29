@@ -1,3 +1,10 @@
+## imgflip.com [3.5.6](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.5.5...imgflip.com@3.5.6) (2026-03-29)
+
+
+### Bug Fixes
+
+* resolve all TypeDoc warnings ([#1900](https://github.com/ffflorian/api-clients/issues/1900)) ([dd96b5b](https://github.com/ffflorian/api-clients/commit/dd96b5bf6c5808174f12ea5a2ad048607289d805))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
