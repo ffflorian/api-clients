@@ -7,8 +7,6 @@
 
 set -e
 
-INCLUDE_ARGS=()
-
 if [ -z "${GITHUB_TOKEN}" ]; then
   echo "No GitHub token set."
   exit 1
@@ -23,19 +21,12 @@ if [ -z "${LAST_TAG}" ]; then
   exit
 fi
 
-for PKG_DIR in packages/*/; do
-  if ! git diff --quiet "${LAST_TAG}" HEAD -- "${PKG_DIR}"; then
-    PKG_NAME=$(node -p "require('./${PKG_DIR}package.json').name")
-    INCLUDE_ARGS+=(--include "${PKG_NAME}")
-  fi
-done
+yarn workspaces foreach --since="${LAST_TAG}" --parallel --jobs 4 --exclude api-clients run build:docs
 
-if [ ${#INCLUDE_ARGS[@]} -eq 0 ]; then
-  echo "No local packages have changed since the last tagged release."
+if git diff --quiet HEAD -- docs; then
+  echo "No documentation changes to commit."
   exit
 fi
-
-yarn workspaces foreach --jobs 4 "${INCLUDE_ARGS[@]}" run build:docs
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]" --no-verify
