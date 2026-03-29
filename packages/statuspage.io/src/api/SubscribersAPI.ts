@@ -19,9 +19,6 @@ export class SubscribersAPI {
     this.apiClient = apiClient;
   }
 
-  /**
-   * @param options Subscriber options.
-   */
   public async createComponentSubscription(
     emailSubscriber: ComponentSubscriberData & EmailSubscriberData
   ): Promise<EmailSubscriber>;
@@ -44,7 +41,6 @@ export class SubscribersAPI {
    * to that incident to receive notifications on updates until the
    * incident is resolved. The incident must be in an unresolved
    * state to subscribe to it.
-   * @param options Subscriber options.
    */
   public async createIncidentSubscription(
     emailSubscriber: EmailSubscriberData & IncidentSubscriberData
@@ -65,7 +61,6 @@ export class SubscribersAPI {
 
   /**
    * A page subscriber is by default subscribed to all incidents associated with a page.
-   * @param options Subscriber options.
    */
   public async createPageSubscription(emailSubscriber: EmailSubscriberData): Promise<EmailSubscriber>;
   public async createPageSubscription(smsSubscriber: PhoneSubscriberData): Promise<PhoneSubscriber>;
@@ -77,7 +72,7 @@ export class SubscribersAPI {
   }
 
   /**
-   * @param options Subscriber options.
+   * @param subscriberId The subscriber ID.
    */
   public async getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();

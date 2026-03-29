@@ -15,7 +15,7 @@ export interface TimeOffRequest {
   type: TimeOffType;
 }
 
-interface TimeOffRequestActions {
+export interface TimeOffRequestActions {
   approve: boolean;
   bypass: boolean;
   cancel: boolean;
@@ -24,12 +24,12 @@ interface TimeOffRequestActions {
   view: boolean;
 }
 
-interface TimeOffRequestAmount {
+export interface TimeOffRequestAmount {
   amount: string;
   unit: string;
 }
 
-interface TimeOffRequestStatus {
+export interface TimeOffRequestStatus {
   lastChanged: string;
   lastChangedByUserId: string;
   status: string;

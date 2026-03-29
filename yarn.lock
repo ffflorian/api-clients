@@ -536,7 +536,7 @@ __metadata:
     commander: "npm:14.0.3"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   bin:
     icanhazdadjoke: dist/cli.js
@@ -574,7 +574,7 @@ __metadata:
     nock: "npm:14.0.11"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
     vitest: "npm:4.1.0"
   bin:
@@ -589,16 +589,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gerrit0/mini-shiki@npm:^3.17.0":
-  version: 3.18.0
-  resolution: "@gerrit0/mini-shiki@npm:3.18.0"
+"@gerrit0/mini-shiki@npm:^3.23.0":
+  version: 3.23.0
+  resolution: "@gerrit0/mini-shiki@npm:3.23.0"
   dependencies:
-    "@shikijs/engine-oniguruma": "npm:^3.18.0"
-    "@shikijs/langs": "npm:^3.18.0"
-    "@shikijs/themes": "npm:^3.18.0"
-    "@shikijs/types": "npm:^3.18.0"
+    "@shikijs/engine-oniguruma": "npm:^3.23.0"
+    "@shikijs/langs": "npm:^3.23.0"
+    "@shikijs/themes": "npm:^3.23.0"
+    "@shikijs/types": "npm:^3.23.0"
     "@shikijs/vscode-textmate": "npm:^10.0.2"
-  checksum: 10c0/7f70b77d30a72b1894d4987d1113ad9d7fd080d92990a810f45168255bbc46a887004dc60f6fa164474655ab3a07c334d267a5e88665d24a0a9d3c71703a7189
+  checksum: 10c0/f9663e0e179edd2d7733207843f1bceda24311ab7b5495d50e0531305129fba8663388784c80645383ac6ae5e3a97c138faefeea8c328e7664da882f4ecb1c3a
   languageName: node
   linkType: hard
 
@@ -2027,41 +2027,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/engine-oniguruma@npm:^3.18.0":
-  version: 3.19.0
-  resolution: "@shikijs/engine-oniguruma@npm:3.19.0"
+"@shikijs/engine-oniguruma@npm:^3.23.0":
+  version: 3.23.0
+  resolution: "@shikijs/engine-oniguruma@npm:3.23.0"
   dependencies:
-    "@shikijs/types": "npm:3.19.0"
+    "@shikijs/types": "npm:3.23.0"
     "@shikijs/vscode-textmate": "npm:^10.0.2"
-  checksum: 10c0/6f2cbc08c39af982ae3b75283c8216d1932e894a7a1318490807b383ef5f658b1b2940dbab760dfe1b8647ba8df7a365d89e16b02f4f51e397f22046df4b4b5d
+  checksum: 10c0/40dbda7aef55d5946c45b8cfe56f484eadb611f9f7c9eb77ff21f0dfce2bcc775686a61eda9e06401ddd71195945a522293f51d6522fce49244b1a6b9c0f61f7
   languageName: node
   linkType: hard
 
-"@shikijs/langs@npm:^3.18.0":
-  version: 3.19.0
-  resolution: "@shikijs/langs@npm:3.19.0"
+"@shikijs/langs@npm:^3.23.0":
+  version: 3.23.0
+  resolution: "@shikijs/langs@npm:3.23.0"
   dependencies:
-    "@shikijs/types": "npm:3.19.0"
-  checksum: 10c0/a7e69ed7c1cea2ccf412a149bd9c4327b6d9314b03271f9782b1703d61949e9787a05d1265f8590c8aa3641657709661c719d105100e70b35a6490c443ceac19
+    "@shikijs/types": "npm:3.23.0"
+  checksum: 10c0/513b90cfee0fa167d2063b7fbc2318b303a604f2e1fa156aa8b4659b49792401531a74acf68de622ecfff15738e1947a46cfe92a32fcd6a4ee5e70bcf1d06c66
   languageName: node
   linkType: hard
 
-"@shikijs/themes@npm:^3.18.0":
-  version: 3.19.0
-  resolution: "@shikijs/themes@npm:3.19.0"
+"@shikijs/themes@npm:^3.23.0":
+  version: 3.23.0
+  resolution: "@shikijs/themes@npm:3.23.0"
   dependencies:
-    "@shikijs/types": "npm:3.19.0"
-  checksum: 10c0/504d7f637bf5555314bc4a3a61c8cc4f3c712cc00d807f12a40a9d144d40f722dbc0e42409f2a83996cfb2c072326a48e237c265c048b6991844b166f607036b
+    "@shikijs/types": "npm:3.23.0"
+  checksum: 10c0/5c99036d4a765765018f9106a354ebe5ccac204c69f00e3cda265828d493f005412659213f6574fa0e187c7d4437b3327bd6dad2e2146b2c472d2bf493d790dd
   languageName: node
   linkType: hard
 
-"@shikijs/types@npm:3.19.0, @shikijs/types@npm:^3.18.0":
-  version: 3.19.0
-  resolution: "@shikijs/types@npm:3.19.0"
+"@shikijs/types@npm:3.23.0, @shikijs/types@npm:^3.23.0":
+  version: 3.23.0
+  resolution: "@shikijs/types@npm:3.23.0"
   dependencies:
     "@shikijs/vscode-textmate": "npm:^10.0.2"
     "@types/hast": "npm:^3.0.4"
-  checksum: 10c0/fc6509e282c257e4b614d5da3e1e99c7d2e6d4fef6ade3afa668b30dee6763035ad98fadace14f97021cdb371a70eed5ae46cde87f7794fe95e098d6d8a46a3f
+  checksum: 10c0/bd0d1593f830a6b4e55c77871ec1b95cc44855d6e0e26282a948a3c58827237826e4110af27eb4d3231361f1e182c4410434a1dc15ec40aea988dc92dc97e9d6
   languageName: node
   linkType: hard
 
@@ -2993,7 +2993,7 @@ __metadata:
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -3413,7 +3413,7 @@ __metadata:
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -3503,7 +3503,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -3980,7 +3980,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -4022,7 +4022,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -6350,7 +6350,7 @@ __metadata:
     "@types/qs": "npm:6.15.0"
     qs: "npm:6.15.0"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -7450,7 +7450,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
     vitest: "npm:4.1.0"
   languageName: unknown
@@ -7824,7 +7824,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"markdown-it@npm:^14.1.0":
+"markdown-it@npm:^14.1.1":
   version: 14.1.1
   resolution: "markdown-it@npm:14.1.1"
   dependencies:
@@ -8699,7 +8699,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -10550,7 +10550,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -11309,20 +11309,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typedoc@npm:0.28.17":
-  version: 0.28.17
-  resolution: "typedoc@npm:0.28.17"
+"typedoc@npm:0.28.18":
+  version: 0.28.18
+  resolution: "typedoc@npm:0.28.18"
   dependencies:
-    "@gerrit0/mini-shiki": "npm:^3.17.0"
+    "@gerrit0/mini-shiki": "npm:^3.23.0"
     lunr: "npm:^2.3.9"
-    markdown-it: "npm:^14.1.0"
-    minimatch: "npm:^9.0.5"
-    yaml: "npm:^2.8.1"
+    markdown-it: "npm:^14.1.1"
+    minimatch: "npm:^10.2.4"
+    yaml: "npm:^2.8.2"
   peerDependencies:
-    typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x
+    typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x || 6.0.x
   bin:
     typedoc: bin/typedoc
-  checksum: 10c0/25c3f6c08748debd2549e8af2c96dcdea255297924e8e0ecc78c86aea35d69c149eb5ad0a0d333a3a69d4e41a887ce55fef0aa97236789f0e658f3ad051429e8
+  checksum: 10c0/cb5ba76e4c7ffdaaff9aeb6bfd5f22410c3c16b713e2a863c0090cfdae092d40394915221020ee48f596d73c3ebd68aaa026123d827acc74919bffd66a8819d6
   languageName: node
   linkType: hard
 
@@ -11606,7 +11606,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.0"
     "@types/node": "npm:~24"
     rimraf: "npm:6.1.3"
-    typedoc: "npm:0.28.17"
+    typedoc: "npm:0.28.18"
     typescript: "npm:6.0.2"
   languageName: unknown
   linkType: soft
@@ -12045,12 +12045,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "yaml@npm:2.8.1"
+"yaml@npm:^2.8.2":
+  version: 2.8.3
+  resolution: "yaml@npm:2.8.3"
   bin:
     yaml: bin.mjs
-  checksum: 10c0/7c587be00d9303d2ae1566e03bc5bc7fe978ba0d9bf39cc418c3139d37929dfcb93a230d9749f2cb578b6aa5d9ebebc322415e4b653cb83acd8bc0bc321707f3
+  checksum: 10c0/ddff0e11c1b467728d7eb4633db61c5f5de3d8e9373cf84d08fb0cdee03e1f58f02b9f1c51a4a8a865751695addbd465a77f73f1079be91fe5493b29c305fd77
   languageName: node
   linkType: hard
 

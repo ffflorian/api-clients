@@ -75,7 +75,7 @@ export class ChecksAPI {
    * The time range needs to be at least one hour to get data.
    *
    * @param token The check unique token
-   * @param page The page to fetch (100 per page)
+   * @param options Metrics options
    */
   public async getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
     const endpoint = Endpoint.Checks.downtimes(token);
