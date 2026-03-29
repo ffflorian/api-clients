@@ -30,6 +30,8 @@ export interface CustomHeaders {
 
 export type HttpMethod = 'delete' | 'get' | 'post' | 'put';
 
+export type MetricsGroup = 'host' | 'time';
+
 export interface MetricsOptions {
   /** Start time, default to 1 month ago */
   from?: string;
@@ -57,5 +59,3 @@ export interface RequestOptions {
   to?: string;
   url?: string;
 }
-
-type MetricsGroup = 'host' | 'time';

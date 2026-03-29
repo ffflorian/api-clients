@@ -70,7 +70,7 @@ export class ICanHazDadJokeAPI {
 
   /**
    * Search for dad jokes.
-   * @param term search term to use (default: list all jokes)
+   * @param options Search options (default: list all jokes)
    * @see https://icanhazdadjoke.com/api#search-for-dad-jokes
    */
   public async search(options: SearchOptions): Promise<JokeSearchResult>;
