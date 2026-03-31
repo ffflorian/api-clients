@@ -1,4 +1,4 @@
-name: Build
+name: Build, test, and publish
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build_test_publish:
-    name: Build, test and publish
+    name: Build, test, and publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -53,7 +53,7 @@ jobs:
 
       - name: Upload release log
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
         with:
           name: release-log
           path: /tmp/release.log
