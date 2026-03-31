@@ -10,6 +10,7 @@ on:
   push:
     paths:
       - '.github/workflows/yarn_update.yml'
+  workflow_dispatch:
 
 jobs:
   yarn-update-check:
