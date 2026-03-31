@@ -3,6 +3,8 @@ pre-commit:
   commands:
     prettier:
       glob: '*.{js,ts,css,md,json,yml,yaml}'
+      exclude:
+        - CLAUDE.md
       run: npx --no-install prettier --write {staged_files} && git add {staged_files}
     oxlint:
       glob: 'packages/*'
