@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "bin": "dist/cli.js",
   "dependencies": {
-    "@ffflorian/api-client": "2.5.0",
+    "@ffflorian/api-client": "2.5.1",
     "commander": "14.0.3"
   },
   "description": "An icanhazdadjoke.com API client with a CLI.",
