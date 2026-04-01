@@ -5,10 +5,10 @@ pre-commit:
       glob: '*.{js,ts,css,md,json,yml,yaml}'
       exclude:
         - CLAUDE.md
-      run: npx --no prettier --write {staged_files} && git add {staged_files}
+      run: npx --no prettier -- --write {staged_files} && git add {staged_files}
     oxlint:
       glob: 'packages/*'
-      run: npx --no oxlint --ignore-path .gitignore --fix {staged_files} && git add {staged_files}
+      run: npx --no oxlint -- --ignore-path .gitignore --fix {staged_files} && git add {staged_files}
     eslint:
       glob: 'packages/*'
-      run: npx --no eslint --fix {staged_files} && git add {staged_files}
+      run: npx --no eslint -- --fix {staged_files} && git add {staged_files}
