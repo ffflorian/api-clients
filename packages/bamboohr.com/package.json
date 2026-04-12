@@ -30,6 +30,7 @@
   "readme": "https://github.com/ffflorian/api-clients#readme",
   "repository": "https://github.com/ffflorian/api-clients.git",
   "scripts": {
+    "build": "yarn build:ts",
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/bamboohr.com src/index.ts",
     "clean": "rimraf dist",

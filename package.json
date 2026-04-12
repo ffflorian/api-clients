@@ -34,9 +34,9 @@
   "private": true,
   "scripts": {
     "build:docs": "yarn workspaces foreach --all --parallel --exclude api-clients run build:docs",
-    "build:ts": "yarn workspaces foreach --all --parallel --topological --exclude api-clients run build:ts",
+    "build": "yarn workspaces foreach --all --parallel --topological --exclude api-clients run build",
     "clean": "yarn workspaces foreach --all --parallel --exclude api-clients run clean",
-    "dist": "yarn clean && yarn build:ts",
+    "dist": "yarn clean && yarn build",
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
     "fix:ts": "yarn lint:ts:oxlint --fix && yarn lint:ts:eslint --fix",
