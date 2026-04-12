@@ -37,5 +37,5 @@
     "dist": "yarn clean && yarn build",
     "test": "exit 0"
   },
-  "version": "1.5.6"
+  "version": "1.5.7"
 }
