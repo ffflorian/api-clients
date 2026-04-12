@@ -34,7 +34,7 @@
   "private": true,
   "scripts": {
     "build:docs": "yarn workspaces foreach --all --parallel --exclude api-clients run build:docs",
-    "build:ts": "yarn workspaces foreach --all --parallel --topological --exclude api-clients run build",
+    "build:ts": "yarn workspaces foreach --all --parallel --topological --exclude api-clients run build:ts",
     "clean": "yarn workspaces foreach --all --parallel --exclude api-clients run clean",
     "dist": "yarn clean && yarn build:ts",
     "fix": "yarn fix:ts && yarn fix:other",
