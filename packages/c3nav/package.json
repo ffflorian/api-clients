@@ -32,7 +32,7 @@
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/c3nav src/index.ts",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build:ts",
+    "dist": "yarn clean && yarn build",
     "test": "exit 0"
   },
   "types": "dist/index.d.ts",
