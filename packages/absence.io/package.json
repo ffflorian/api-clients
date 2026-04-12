@@ -38,5 +38,5 @@
     "dist": "yarn clean && yarn build",
     "test": "exit 0"
   },
-  "version": "2.4.6"
+  "version": "2.4.7"
 }
