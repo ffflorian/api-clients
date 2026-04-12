@@ -1,3 +1,10 @@
+## npms.io [2.4.7](https://github.com/ffflorian/api-clients/compare/npms.io@2.4.6...npms.io@2.4.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* Use yarn build in all packages ([#1914](https://github.com/ffflorian/api-clients/issues/1914)) ([e205b75](https://github.com/ffflorian/api-clients/commit/e205b7508821bb7eeec85c37c75f8fdc8ce63652))
+
 ## npms.io [2.4.6](https://github.com/ffflorian/api-clients/compare/npms.io@2.4.5...npms.io@2.4.6) (2026-03-29)
 
 
