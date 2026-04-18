@@ -6,12 +6,12 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  id-token: write
-  contents: write
-
+permissions: {}
 jobs:
   build_test_publish:
+    permissions:
+      contents: write
+      id-token: write
     name: Build, test, and publish
     runs-on: ubuntu-latest
     steps:

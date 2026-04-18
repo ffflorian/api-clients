@@ -1,9 +1,6 @@
 name: Check for yarn updates
 
-permissions:
-  contents: write
-  pull-requests: write
-
+permissions: {}
 on:
   schedule:
     - cron: '0 5 1 * *'
@@ -16,6 +13,9 @@ on:
 
 jobs:
   yarn-update-check:
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     steps:
       - name: Update yarn
