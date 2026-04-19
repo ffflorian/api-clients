@@ -3,7 +3,7 @@
   "description": "API clients for various services.",
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@evilmartians/lefthook": "2.1.4",
+    "@evilmartians/lefthook": "2.1.5",
     "@ffflorian/eslint-config": "0.14.2",
     "@ffflorian/prettier-config": "0.8.2",
     "@ffflorian/semantic-release-config": "0.12.4",
