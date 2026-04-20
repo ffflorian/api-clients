@@ -24,13 +24,27 @@ export class LibrariesIO {
     this.apiClient = new APIClient(this.options.apiUrl);
 
     this.apiClient.interceptors.request.push(options => {
+      const method = options.method.toUpperCase();
+      if (method === 'GET' || method === 'HEAD') {
+        if (options.body) {
+          const body = JSON.parse(options.body.toString()) as Record<string, unknown>;
+          for (const [key, value] of Object.entries(body)) {
+            if (value !== null && value !== undefined) {
+              options.url.searchParams.set(key, String(value));
+            }
+          }
+          delete options.body;
+        }
+        options.url.searchParams.set('api_key', this.options.apiKey);
+        return options;
+      }
+
       if (options.body) {
-        const body = JSON.parse(options.body.toString());
+        const body = JSON.parse(options.body.toString()) as Record<string, unknown>;
         body.api_key = this.options.apiKey;
         options.body = JSON.stringify(body);
       } else {
-        const body = {api_key: this.options.apiKey};
-        options.body = JSON.stringify(body);
+        options.body = JSON.stringify({api_key: this.options.apiKey});
       }
       return options;
     });

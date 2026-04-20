@@ -7,6 +7,7 @@ This file explains how coding agents should work in this repository.
 ### Approach
 
 - Think before acting. Read existing files before writing code.
+- For API compatibility checks, validate against upstream API documentation, not README usage snippets.
 - Be concise in output but thorough in reasoning.
 - Prefer editing over rewriting whole files.
 - Do not re-read files you have already read.

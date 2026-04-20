@@ -26,11 +26,6 @@ export class BambooHR {
       },
     });
 
-    this.apiClient.interceptors.response.push(response => {
-      const errorMessage = response.headers.get('x-bamboohr-error-message') || response.statusText;
-      throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
-    });
-
     this.api = {
       employees: new EmployeesAPI(this.apiClient),
       timeOff: new TimeOffAPI(this.apiClient),
