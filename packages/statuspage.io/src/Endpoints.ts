@@ -1,5 +1,5 @@
 export const Endpoint = {
-  ACTIVE_JSON: 'upcoming.json',
+  ACTIVE_JSON: 'active.json',
   API_V2_BASE: 'api/v2',
   components(): string {
     return `/${Endpoint.API_V2_BASE}/${Endpoint.COMPONENTS_JSON}`;
@@ -36,6 +36,12 @@ export const Endpoint = {
 
   subscribers(): string {
     return `/${Endpoint.API_V2_BASE}/${Endpoint.SUBSCRIBERS_JSON}`;
+  },
+
+  Subscribers: {
+    subscriber(subscriberId: string): string {
+      return `/${Endpoint.API_V2_BASE}/${Endpoint.SUBSCRIBERS_JSON.replace('.json', '')}/${encodeURIComponent(subscriberId)}.json`;
+    },
   },
 
   SUBSCRIBERS_JSON: 'subscribers.json',

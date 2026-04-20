@@ -32,7 +32,7 @@ export class SubscribersAPI {
     subscriberData: CombinedSubscriberData & ComponentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriberData});
     return data;
   }
 
@@ -55,7 +55,7 @@ export class SubscribersAPI {
     subscriberData: CombinedSubscriberData & IncidentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriberData});
     return data;
   }
 
@@ -67,7 +67,7 @@ export class SubscribersAPI {
   public async createPageSubscription(webhookSubscriber: WebhookSubscriberData): Promise<WebhookSubscriber>;
   public async createPageSubscription(subscriptionData: CombinedSubscriberData): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriptionData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriptionData});
     return data;
   }
 
@@ -75,8 +75,8 @@ export class SubscribersAPI {
    * @param subscriberId The subscriber ID.
    */
   public async getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
-    const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: {id: subscriberId}}});
+    const endpoint = Endpoint.Subscribers.subscriber(subscriberId);
+    const {data} = await this.apiClient.get(endpoint);
     return data;
   }
 
@@ -84,8 +84,8 @@ export class SubscribersAPI {
    * To cancel a subscription, you need to submit a 'DELETE' request with the the subscription id.
    */
   public async removeSubscription(subscriberId: string): Promise<boolean> {
-    const endpoint = Endpoint.Incidents.all();
-    const {data} = await this.apiClient.delete(endpoint, {params: {subscriber: {id: subscriberId}}});
+    const endpoint = Endpoint.Subscribers.subscriber(subscriberId);
+    const {data} = await this.apiClient.delete(endpoint);
     return data;
   }
 }

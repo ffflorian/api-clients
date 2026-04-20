@@ -8728,6 +8728,7 @@ __metadata:
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.2"
+    vitest: "npm:4.1.4"
   languageName: unknown
   linkType: soft
 
@@ -10579,6 +10580,7 @@ __metadata:
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.2"
+    vitest: "npm:4.1.4"
   languageName: unknown
   linkType: soft
 
@@ -11631,6 +11633,7 @@ __metadata:
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.2"
+    vitest: "npm:4.1.4"
   languageName: unknown
   linkType: soft
 

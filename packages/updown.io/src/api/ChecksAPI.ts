@@ -78,7 +78,7 @@ export class ChecksAPI {
    * @param options Metrics options
    */
   public async getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
-    const endpoint = Endpoint.Checks.downtimes(token);
+    const endpoint = Endpoint.Checks.metrics(token);
     const {data} = await this.apiClient.get(endpoint, {params: options});
     return data;
   }

@@ -17,7 +17,7 @@ export class SearchAPI {
    * @see https://api-docs.npms.io/#api-Search-SearchSuggestions
    */
   public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SearchResult> {
-    const endpoint = Endpoint.Search.search();
+    const endpoint = Endpoint.Search.suggestions();
 
     const params = {
       // eslint-disable-next-line id-length
