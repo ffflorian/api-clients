@@ -12,11 +12,11 @@ describe('ProjectAPI', () => {
     expect(get).toHaveBeenCalledWith('/npm/grunt/contributors/', {data: {page: 1}});
   });
 
-  it('uses dependent repositories endpoint for getDependendentRepositories', async () => {
+  it('uses dependent repositories endpoint for getDependentRepositories', async () => {
     const get = vi.fn().mockResolvedValue({data: []});
     const api = new ProjectAPI({get} as any, {apiKey: 'api-key'});
 
-    await api.getDependendentRepositories('npm', 'grunt', {per_page: 20});
+    await api.getDependentRepositories('npm', 'grunt', {per_page: 20});
 
     expect(get).toHaveBeenCalledWith('/npm/grunt/dependent_repositories/', {data: {per_page: 20}});
   });

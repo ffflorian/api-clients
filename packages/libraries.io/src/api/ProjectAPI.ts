@@ -44,7 +44,7 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    * @param options Pagination options
    */
-  public async getDependendentRepositories(
+  public async getDependentRepositories(
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
