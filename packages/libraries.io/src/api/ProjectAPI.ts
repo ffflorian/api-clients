@@ -39,22 +39,6 @@ export class ProjectAPI extends APIBase {
   }
 
   /**
-   * Get repositories that depend on a given project.
-   * @param platform The project platform (e.g. "npm", "cargo", ...)
-   * @param projectName The project name
-   * @param options Pagination options
-   */
-  public async getDependentRepositories(
-    platform: PlatformType,
-    projectName: string,
-    options?: PaginationOptions
-  ): Promise<LibrariesIOResult<Repository[]>> {
-    const endpoint = Endpoint.Project.dependentRepositories(platform, projectName);
-    const {data} = await this.apiClient.get(endpoint, {data: options});
-    return data;
-  }
-
-  /**
    * Get packages that have at least one version that depends on a given project.
    * @see https://libraries.io/api#project-dependents
    * @param platform The project platform (e.g. "npm", "cargo", ...)
@@ -67,6 +51,22 @@ export class ProjectAPI extends APIBase {
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Project[]>> {
     const endpoint = Endpoint.Project.dependents(platform, projectName);
+    const {data} = await this.apiClient.get(endpoint, {data: options});
+    return data;
+  }
+
+  /**
+   * Get repositories that depend on a given project.
+   * @param platform The project platform (e.g. "npm", "cargo", ...)
+   * @param projectName The project name
+   * @param options Pagination options
+   */
+  public async getDependentRepositories(
+    platform: PlatformType,
+    projectName: string,
+    options?: PaginationOptions
+  ): Promise<LibrariesIOResult<Repository[]>> {
+    const endpoint = Endpoint.Project.dependentRepositories(platform, projectName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
