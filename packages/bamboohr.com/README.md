@@ -1,6 +1,6 @@
 # bamboohr.com [![npm version](https://img.shields.io/npm/v/bamboohr.com.svg)](https://www.npmjs.com/package/bamboohr.com)
 
-An [BambooHR](https://bamboohr.com) API client. For a documentation on the API see the [BambooHR API](https://documentation.bamboohr.com/reference).
+An [BambooHR](https://bamboohr.com) API client. For a documentation on the API see the [BambooHR API reference](https://documentation.bamboohr.com/reference).
 
 ### Installation
 
