@@ -3,6 +3,8 @@ import {beforeEach, describe, expect, it} from 'vitest';
 
 import {CratesIO} from './CratesIO';
 
+const HTTP_OK = 200;
+
 describe('CratesIO', () => {
   beforeEach(() => {
     nock.cleanAll();
@@ -14,7 +16,7 @@ describe('CratesIO', () => {
     nock('https://crates.io')
       .get('/api/v1/crates/serde/following')
       .matchHeader('authorization', 'token-123')
-      .reply(200, {following: true});
+      .reply(HTTP_OK, {following: true});
 
     const result = await cratesIO.api.crates.following('serde');
 
@@ -24,7 +26,7 @@ describe('CratesIO', () => {
   it('uses constructor apiUrl as base URL', async () => {
     const cratesIO = new CratesIO({apiUrl: 'https://example.test/api/v1'});
 
-    nock('https://example.test').get('/api/v1/summary').reply(200, {
+    nock('https://example.test').get('/api/v1/summary').reply(HTTP_OK, {
       just_updated: [],
       most_downloaded: [],
       most_recently_downloaded: [],
@@ -45,7 +47,7 @@ describe('CratesIO', () => {
 
     nock('https://crates.io')
       .get('/api/v1/crates/serde/1.0.0')
-      .reply(200, {
+      .reply(HTTP_OK, {
         version: {
           crate: 'serde',
           crate_size: 123,
@@ -78,7 +80,7 @@ describe('CratesIO', () => {
 
     nock('https://crates.io')
       .get('/api/v1/keywords')
-      .reply(200, {
+      .reply(HTTP_OK, {
         keywords: [
           {
             crates_cnt: 42,
@@ -103,7 +105,7 @@ describe('CratesIO', () => {
     nock('https://crates.io')
       .delete('/api/v1/crates/serde/1.0.0/yank')
       .matchHeader('authorization', 'token-456')
-      .reply(200, {ok: true});
+      .reply(HTTP_OK, {ok: true});
 
     const result = await cratesIO.api.crates.yank('serde', '1.0.0');
 
