@@ -11,6 +11,9 @@ import type {
   SlackJokeResult,
 } from './Interfaces';
 
+const MIN_SEARCH_LIMIT = Number.parseInt('1');
+const MAX_SEARCH_LIMIT = Number.parseInt('30');
+
 export class ICanHazDadJokeAPI {
   protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
@@ -100,8 +103,10 @@ export class ICanHazDadJokeAPI {
       options.term = query;
     }
 
-    if (options.limit !== undefined && (options.limit < 1 || options.limit > 30)) {
-      throw new Error(`The search limit must be between 1 and 30, got ${options.limit}.`);
+    if (options.limit !== undefined && (options.limit < MIN_SEARCH_LIMIT || options.limit > MAX_SEARCH_LIMIT)) {
+      throw new Error(
+        `The search limit must be between ${MIN_SEARCH_LIMIT} and ${MAX_SEARCH_LIMIT}, got ${options.limit}.`
+      );
     }
 
     const {data} = await this.apiClient.get<JokeSearchResult>('/search', {

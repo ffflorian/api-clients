@@ -43,6 +43,8 @@ const graphQLResponse = {
   },
 };
 
+const imageData = Buffer.from('AQID', 'base64');
+
 describe('ICanHazDadJokeAPI', () => {
   let iCanHazDadJoke: ICanHazDadJoke;
 
@@ -50,13 +52,13 @@ describe('ICanHazDadJokeAPI', () => {
     iCanHazDadJoke = new ICanHazDadJoke();
     nock.cleanAll();
 
-    nock('https://icanhazdadjoke.com').get('/').reply(200, jokeResponse).persist();
+    nock('https://icanhazdadjoke.com').get('/').reply(jokeResponse.status, jokeResponse).persist();
 
-    nock('https://icanhazdadjoke.com').get(`/j/${jokeResponse.id}`).reply(200, jokeResponse).persist();
+    nock('https://icanhazdadjoke.com').get(`/j/${jokeResponse.id}`).reply(jokeResponse.status, jokeResponse).persist();
 
     nock('https://icanhazdadjoke.com')
       .get(`/j/${jokeResponse.id}.png`)
-      .reply(200, Buffer.from([1, 2, 3]), {
+      .reply(jokeResponse.status, imageData, {
         'content-type': 'image/png',
       })
       .persist();
@@ -68,16 +70,16 @@ describe('ICanHazDadJokeAPI', () => {
         page: 1,
         term: 'dog',
       })
-      .reply(200, searchResponse)
+      .reply(searchResponse.status, searchResponse)
       .persist();
 
-    nock('https://icanhazdadjoke.com').get('/slack').reply(200, slackResponse).persist();
+    nock('https://icanhazdadjoke.com').get('/slack').reply(jokeResponse.status, slackResponse).persist();
 
     nock('https://icanhazdadjoke.com')
       .post('/graphql', {
         query: 'query { joke { id joke permalink } }',
       })
-      .reply(200, graphQLResponse)
+      .reply(jokeResponse.status, graphQLResponse)
       .persist();
   });
 
@@ -94,7 +96,7 @@ describe('ICanHazDadJokeAPI', () => {
       : Buffer.from(randomWithImage.image as unknown as ArrayBuffer);
 
     expect(randomWithImage).toMatchObject(jokeResponse);
-    expect(image).toEqual(Buffer.from([1, 2, 3]));
+    expect(image).toEqual(imageData);
   });
 
   it('gets a dad joke by id', async () => {
