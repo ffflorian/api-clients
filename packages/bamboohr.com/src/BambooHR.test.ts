@@ -4,6 +4,10 @@ import {afterEach, beforeEach, describe, expect, it} from 'vitest';
 import {BambooHR} from './BambooHR';
 
 describe('BambooHR API', () => {
+  const EMPLOYEE_ID = 123;
+  const HTTP_OK = 200;
+  const REQUEST_ID = 456;
+
   let bambooHR: BambooHR;
 
   beforeEach(() => {
@@ -24,7 +28,7 @@ describe('BambooHR API', () => {
     nock('https://api.bamboohr.com')
       .get('/api/gateway.php/example/v1/employees/0/')
       .query({fields: 'firstName,lastName', onlyCurrent: 'false'})
-      .reply(200, {firstName: 'Jane', id: 0, lastName: 'Doe'});
+      .reply(HTTP_OK, {firstName: 'Jane', id: 0, lastName: 'Doe'});
 
     const employee = await bambooHR.api.employees.getEmployee(0, ['firstName', 'lastName'], false);
 
@@ -48,7 +52,7 @@ describe('BambooHR API', () => {
         'page[limit]': '50',
         sort: '-lastName',
       })
-      .reply(200, response);
+      .reply(HTTP_OK, response);
 
     const employees = await bambooHR.api.employees.listEmployees({
       fields: ['workEmail'],
@@ -72,7 +76,7 @@ describe('BambooHR API', () => {
           query.start === '2026-01-01'
         );
       })
-      .reply(200, []);
+      .reply(HTTP_OK, []);
 
     const requests = await bambooHR.api.timeOff.timeOffRequests({
       action: 'approve',
@@ -96,16 +100,16 @@ describe('BambooHR API', () => {
     nock('https://api.bamboohr.com')
       .get('/api/gateway.php/example/v1/employees/123/time_off/calculator/')
       .query({end: '2026-06-30', precision: '2'})
-      .reply(200, response);
+      .reply(HTTP_OK, response);
 
-    const result = await bambooHR.api.timeOff.getTimeOffBalance(123, '2026-06-30', 2);
+    const result = await bambooHR.api.timeOff.getTimeOffBalance(EMPLOYEE_ID, '2026-06-30', 2);
 
     expect(result).toEqual(response);
   });
 
   it('createTimeOffRequest and updateTimeOffRequestStatus both use PUT', async () => {
     const createPayload = {
-      employeeId: 123,
+      employeeId: EMPLOYEE_ID,
       end: '2026-03-07',
       start: '2026-03-05',
       timeOffTypeId: 5,
@@ -118,16 +122,16 @@ describe('BambooHR API', () => {
 
     nock('https://api.bamboohr.com')
       .put('/api/gateway.php/example/v1/time_off/requests/', createPayload)
-      .reply(200, {id: 456, status: 'requested'});
+      .reply(HTTP_OK, {id: REQUEST_ID, status: 'requested'});
 
     nock('https://api.bamboohr.com')
       .put('/api/gateway.php/example/v1/time_off/requests/456/', updatePayload)
-      .reply(200, {id: 456, status: 'approved'});
+      .reply(HTTP_OK, {id: REQUEST_ID, status: 'approved'});
 
     const created = await bambooHR.api.timeOff.createTimeOffRequest(createPayload);
-    const updated = await bambooHR.api.timeOff.updateTimeOffRequestStatus(456, updatePayload);
+    const updated = await bambooHR.api.timeOff.updateTimeOffRequestStatus(REQUEST_ID, updatePayload);
 
-    expect(created).toEqual({id: 456, status: 'requested'});
-    expect(updated).toEqual({id: 456, status: 'approved'});
+    expect(created).toEqual({id: REQUEST_ID, status: 'requested'});
+    expect(updated).toEqual({id: REQUEST_ID, status: 'approved'});
   });
 });
