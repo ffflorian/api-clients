@@ -4,6 +4,8 @@ import {afterEach, beforeEach, describe, expect, it} from 'vitest';
 
 import {c3nav} from '../c3nav';
 
+const ROUTE_DISTANCE = 100;
+
 describe('RoutingAPI', () => {
   let client: c3nav;
 
@@ -28,7 +30,7 @@ describe('RoutingAPI', () => {
         request: {destination: 2, origin: 1},
         result: {
           destination: {id: 2},
-          distance: 100,
+          distance: ROUTE_DISTANCE,
           distance_str: '100 m',
           duration: 60,
           duration_str: '1 min',
@@ -39,6 +41,6 @@ describe('RoutingAPI', () => {
 
     const route = await client.api.routing.postRoute({destination: 2, origin: 1});
 
-    expect(route.result?.distance).toBe(100);
+    expect(route.result?.distance).toBe(ROUTE_DISTANCE);
   });
 });
