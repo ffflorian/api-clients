@@ -4,6 +4,9 @@ import {afterEach, beforeEach, describe, expect, it} from 'vitest';
 import {NpmsIO} from '.';
 
 const apiBaseUrl = 'https://api.npms.io';
+const httpStatusOk = 200;
+const httpStatusInternalServerError = 500;
+const searchQueryParameter = 'q';
 
 const searchResultItem = {
   package: {
@@ -51,7 +54,7 @@ describe('NpmsIO', () => {
   });
 
   it('fetches suggestions from /search/suggestions and returns array with highlight', async () => {
-    const wrongEndpoint = nock(apiBaseUrl).get('/v2/search').query(true).reply(500, {
+    const wrongEndpoint = nock(apiBaseUrl).get('/v2/search').query(true).reply(httpStatusInternalServerError, {
       message: 'wrong endpoint',
     });
 
@@ -64,8 +67,8 @@ describe('NpmsIO', () => {
 
     const suggestionsEndpoint = nock(apiBaseUrl)
       .get('/v2/search/suggestions')
-      .query({q: 'test', size: '1'})
-      .reply(200, suggestionsResponse);
+      .query({[searchQueryParameter]: 'test', size: '1'})
+      .reply(httpStatusOk, suggestionsResponse);
 
     const result = await npms.api.search.getSuggestions('test', {size: '1'});
 
@@ -86,8 +89,8 @@ describe('NpmsIO', () => {
 
     const suggestionsEndpoint = nock(apiBaseUrl)
       .get('/v2/search/suggestions')
-      .query({q: 'test'})
-      .reply(200, suggestionsResponse);
+      .query({[searchQueryParameter]: 'test'})
+      .reply(httpStatusOk, suggestionsResponse);
 
     const result = await npms.api.search.getSuggestions('test');
 
@@ -104,8 +107,8 @@ describe('NpmsIO', () => {
 
     const searchEndpoint = nock(apiBaseUrl)
       .get('/v2/search')
-      .query({from: '5', q: 'test', size: '10'})
-      .reply(200, response);
+      .query({from: '5', [searchQueryParameter]: 'test', size: '10'})
+      .reply(httpStatusOk, response);
 
     const result = await npms.api.search.searchPackage('test', {from: '5', size: '10'});
 
@@ -137,7 +140,9 @@ describe('NpmsIO', () => {
       },
     };
 
-    const packageInfoEndpoint = nock(apiBaseUrl).get('/v2/package/%40types%2Fnode').reply(200, packageInfoResponse);
+    const packageInfoEndpoint = nock(apiBaseUrl)
+      .get('/v2/package/%40types%2Fnode')
+      .reply(httpStatusOk, packageInfoResponse);
 
     const result = await npms.api.package.packageInfo('@types/node');
 
@@ -158,7 +163,7 @@ describe('NpmsIO', () => {
 
     const mgetEndpoint = nock(apiBaseUrl)
       .post('/v2/package/mget', body => JSON.stringify(body) === JSON.stringify(requestBody))
-      .reply(200, response);
+      .reply(httpStatusOk, response);
 
     const result = await npms.api.package.multiPackageInfo(requestBody);
 
