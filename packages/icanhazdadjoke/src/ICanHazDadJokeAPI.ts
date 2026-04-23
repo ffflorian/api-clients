@@ -11,8 +11,8 @@ import type {
   SlackJokeResult,
 } from './Interfaces';
 
-const MIN_SEARCH_LIMIT = Number.parseInt('1');
-const MAX_SEARCH_LIMIT = Number.parseInt('30');
+const MIN_SEARCH_LIMIT = 1;
+const MAX_SEARCH_LIMIT = 30;
 
 export class ICanHazDadJokeAPI {
   protected readonly apiClient: APIClient;
