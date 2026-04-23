@@ -5,6 +5,8 @@ import {Statuspage} from './Statuspage';
 
 const pageId = 'test-page';
 const apiBaseUrl = `https://${pageId}.statuspage.io`;
+const httpOk = 200;
+const httpInternalServerError = 500;
 
 const scheduledMaintenancesResponse = {
   page: {
@@ -47,13 +49,16 @@ describe('ScheduledMaintenancesAPI', () => {
   });
 
   it('getActive() calls /api/v2/scheduled-maintenances/upcoming.json', async () => {
-    const wrongAllEndpoint = nock(apiBaseUrl).get('/api/v2/scheduled-maintenances.json').query(true).reply(500, {
-      message: 'wrong endpoint',
-    });
+    const wrongAllEndpoint = nock(apiBaseUrl)
+      .get('/api/v2/scheduled-maintenances.json')
+      .query(true)
+      .reply(httpInternalServerError, {
+        message: 'wrong endpoint',
+      });
 
     const activeEndpoint = nock(apiBaseUrl)
       .get('/api/v2/scheduled-maintenances/upcoming.json')
-      .reply(200, scheduledMaintenancesResponse);
+      .reply(httpOk, scheduledMaintenancesResponse);
 
     const result = await statuspage.api.scheduledMaintenances.getActive();
 
@@ -66,13 +71,13 @@ describe('ScheduledMaintenancesAPI', () => {
     const wrongUpcomingEndpoint = nock(apiBaseUrl)
       .get('/api/v2/scheduled-maintenances/upcoming.json')
       .query(true)
-      .reply(500, {
+      .reply(httpInternalServerError, {
         message: 'wrong endpoint',
       });
 
     const allEndpoint = nock(apiBaseUrl)
       .get('/api/v2/scheduled-maintenances.json')
-      .reply(200, scheduledMaintenancesResponse);
+      .reply(httpOk, scheduledMaintenancesResponse);
 
     const result = await statuspage.api.scheduledMaintenances.getAll();
 
@@ -84,7 +89,7 @@ describe('ScheduledMaintenancesAPI', () => {
   it('getUpcoming() calls /api/v2/scheduled-maintenances/upcoming.json', async () => {
     const upcomingEndpoint = nock(apiBaseUrl)
       .get('/api/v2/scheduled-maintenances/upcoming.json')
-      .reply(200, scheduledMaintenancesResponse);
+      .reply(httpOk, scheduledMaintenancesResponse);
 
     const result = await statuspage.api.scheduledMaintenances.getUpcoming();
 

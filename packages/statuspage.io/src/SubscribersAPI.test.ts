@@ -5,6 +5,7 @@ import {Statuspage} from './Statuspage';
 
 const pageId = 'test-page';
 const apiBaseUrl = `https://${pageId}.statuspage.io`;
+const httpOk = 200;
 
 const subscriberResponse = {
   can_select_components: false,
@@ -40,7 +41,7 @@ describe('SubscribersAPI', () => {
           JSON.stringify(body) ===
           JSON.stringify({subscriber: {component_id: 'component-1', email: 'test@example.com'}})
       )
-      .reply(200, subscriberResponse);
+      .reply(httpOk, subscriberResponse);
 
     const result = await statuspage.api.subscribers.createComponentSubscription({
       component_id: 'component-1',
@@ -57,7 +58,7 @@ describe('SubscribersAPI', () => {
         const payload = body as {subscriber?: {email?: string; incident_id?: string}};
         return payload.subscriber?.email === 'test@example.com' && payload.subscriber?.incident_id === 'incident-1';
       })
-      .reply(200, subscriberResponse);
+      .reply(httpOk, subscriberResponse);
 
     const result = await statuspage.api.subscribers.createIncidentSubscription({
       email: 'test@example.com',
@@ -74,7 +75,7 @@ describe('SubscribersAPI', () => {
         '/api/v2/subscribers.json',
         body => JSON.stringify(body) === JSON.stringify({subscriber: {email: 'test@example.com'}})
       )
-      .reply(200, subscriberResponse);
+      .reply(httpOk, subscriberResponse);
 
     const result = await statuspage.api.subscribers.createPageSubscription({
       email: 'test@example.com',
@@ -87,7 +88,7 @@ describe('SubscribersAPI', () => {
   it('removeSubscription() uses DELETE /api/v2/subscribers/:id.json', async () => {
     const endpoint = nock(apiBaseUrl)
       .delete('/api/v2/subscribers/subscriber-1.json')
-      .reply(200, 'true', {'content-type': 'application/json'});
+      .reply(httpOk, 'true', {'content-type': 'application/json'});
 
     const result = await statuspage.api.subscribers.removeSubscription('subscriber-1');
 
