@@ -2,11 +2,13 @@ import type {APIClient} from '@ffflorian/api-client';
 
 import type {
   ClientOptions,
+  GraphQLResponse,
   JokeResult,
   JokeResultWithImage,
   JokeSearchResult,
   RequestOptions,
   SearchOptions,
+  SlackJokeResult,
 } from './Interfaces';
 
 export class ICanHazDadJokeAPI {
@@ -69,6 +71,24 @@ export class ICanHazDadJokeAPI {
   }
 
   /**
+   * Fetch a random dad joke as a Slack message.
+   * @see https://icanhazdadjoke.com/api#fetch-a-random-dad-joke-as-a-slack-message
+   */
+  public async getSlack(): Promise<SlackJokeResult> {
+    const {data} = await this.apiClient.get<SlackJokeResult>('/slack');
+    return data;
+  }
+
+  /**
+   * Execute a GraphQL query.
+   * @see https://icanhazdadjoke.com/api#graphql
+   */
+  public async graphql(query: string): Promise<GraphQLResponse> {
+    const {data} = await this.apiClient.post<GraphQLResponse>('/graphql', {query});
+    return data;
+  }
+
+  /**
    * Search for dad jokes.
    * @param options Search options (default: list all jokes)
    * @see https://icanhazdadjoke.com/api#search-for-dad-jokes
@@ -78,6 +98,10 @@ export class ICanHazDadJokeAPI {
   public async search(query?: SearchOptions | string, options: SearchOptions = {}): Promise<JokeSearchResult> {
     if (typeof query === 'string') {
       options.term = query;
+    }
+
+    if (options.limit !== undefined && (options.limit < 1 || options.limit > 30)) {
+      throw new Error(`The search limit must be between 1 and 30, got ${options.limit}.`);
     }
 
     const {data} = await this.apiClient.get<JokeSearchResult>('/search', {
