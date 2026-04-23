@@ -45,7 +45,7 @@ xkcd.api.getRandom().then(result => {
   // XKCDResult
 });
 
-xkcd.api.getById(2036).then(result => {
+xkcd.api.getByIndex(2036).then(result => {
   // XKCDResult
 });
 
@@ -57,7 +57,7 @@ xkcd.api.getRandom({withData: true}).then(result => {
   // XKCDResultWithData
 });
 
-xkcd.api.getById(2036, {withData: true}).then(result => {
+xkcd.api.getByIndex(2036, {withData: true}).then(result => {
   // XKCDResultWithData
 });
 ```
