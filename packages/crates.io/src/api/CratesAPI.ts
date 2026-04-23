@@ -2,10 +2,16 @@ import type {APIClient} from '@ffflorian/api-client';
 
 import type {
   AuthorsResult,
+  CategoriesResult,
+  CategoryResult,
   CrateResult,
   DependenciesResult,
   DownloadsResult,
   FollowingResult,
+  KeywordResult,
+  KeywordsResult,
+  OkResult,
+  PaginationOptions,
   ReverseDependenciesResult,
   SearchOptions,
   SearchResult,
@@ -13,6 +19,8 @@ import type {
   UrlResult,
   UsersResult,
   Version,
+  VersionResult,
+  VersionsResult,
 } from '../interfaces/';
 
 import {Endpoint} from '../Endpoints';
@@ -24,6 +32,26 @@ export class CratesAPI {
   constructor(apiClient: APIClient, apiKey?: string) {
     this.apiClient = apiClient;
     this.apiKey = apiKey;
+  }
+
+  /**
+   * Follow a crate.
+   * @param packageName The package name
+   */
+  public async follow(packageName: string): Promise<OkResult> {
+    const endpoint = Endpoint.Crates.follow(packageName);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    const {data} = await this.apiClient.put(endpoint, undefined, additionalConfig);
+    return data;
   }
 
   /**
@@ -52,6 +80,33 @@ export class CratesAPI {
    */
   public async getAuthors(packageName: string, version: string): Promise<AuthorsResult> {
     const endpoint = Endpoint.Crates.authors(packageName, version);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  /**
+   * Retrieve categories.
+   * @param options Pagination options
+   */
+  public async getCategories(options?: PaginationOptions): Promise<CategoriesResult> {
+    const endpoint = Endpoint.Categories.categories();
+
+    const additionalConfig = {
+      params: {
+        ...options,
+      },
+    };
+
+    const {data} = await this.apiClient.get(endpoint, additionalConfig);
+    return data;
+  }
+
+  /**
+   * Retrieve a category.
+   * @param category The category slug
+   */
+  public async getCategory(category: string): Promise<CategoryResult> {
+    const endpoint = Endpoint.Categories.category(category);
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
@@ -117,6 +172,33 @@ export class CratesAPI {
   }
 
   /**
+   * Retrieve a keyword.
+   * @param keyword The keyword
+   */
+  public async getKeyword(keyword: string): Promise<KeywordResult> {
+    const endpoint = Endpoint.Keywords.keyword(keyword);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  /**
+   * Retrieve keywords.
+   * @param options Pagination options
+   */
+  public async getKeywords(options?: PaginationOptions): Promise<KeywordsResult> {
+    const endpoint = Endpoint.Keywords.keywords();
+
+    const additionalConfig = {
+      params: {
+        ...options,
+      },
+    };
+
+    const {data} = await this.apiClient.get(endpoint, additionalConfig);
+    return data;
+  }
+
+  /**
    * Retrieve the owners of a crate.
    * @param packageName The package name
    */
@@ -162,6 +244,28 @@ export class CratesAPI {
    */
   public async getVersion(packageName: string, version: string): Promise<Version> {
     const endpoint = Endpoint.Crates.version(packageName, version);
+    const {data} = await this.apiClient.get<VersionResult>(endpoint);
+    return data.version;
+  }
+
+  /**
+   * Retrieve the dependencies of a specific crate version.
+   * @param packageName The package name
+   * @param version The version
+   */
+  public async getVersionDependencies(packageName: string, version: string): Promise<DependenciesResult> {
+    const endpoint = Endpoint.Crates.dependenciesByVersion(packageName, version);
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  /**
+   * Retrieve download stats for a specific crate version.
+   * @param packageName The package name
+   * @param version The version
+   */
+  public async getVersionDownloads(packageName: string, version: string): Promise<DownloadsResult> {
+    const endpoint = Endpoint.Crates.versionDownloads(packageName, version);
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
@@ -170,7 +274,7 @@ export class CratesAPI {
    * Retrieve all versions of a crate.
    * @param packageName The package name
    */
-  public async getVersions(packageName: string): Promise<{versions: Version[]}> {
+  public async getVersions(packageName: string): Promise<VersionsResult> {
     const endpoint = Endpoint.Crates.versions(packageName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
@@ -182,5 +286,67 @@ export class CratesAPI {
    */
   public setApiKey(apiKey: string): void {
     this.apiKey = apiKey;
+  }
+
+  /**
+   * Unfollow a crate.
+   * @param packageName The package name
+   */
+  public async unfollow(packageName: string): Promise<OkResult> {
+    const endpoint = Endpoint.Crates.follow(packageName);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    const {data} = await this.apiClient.delete(endpoint, additionalConfig);
+    return data;
+  }
+
+  /**
+   * Unyank a specific crate version.
+   * @param packageName The package name
+   * @param version The version
+   */
+  public async unyank(packageName: string, version: string): Promise<OkResult> {
+    const endpoint = Endpoint.Crates.unyank(packageName, version);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    const {data} = await this.apiClient.put(endpoint, undefined, additionalConfig);
+    return data;
+  }
+
+  /**
+   * Yank a specific crate version.
+   * @param packageName The package name
+   * @param version The version
+   */
+  public async yank(packageName: string, version: string): Promise<OkResult> {
+    const endpoint = Endpoint.Crates.yank(packageName, version);
+    if (!this.apiKey) {
+      throw new Error('You need to set an API key to use this endpoint.');
+    }
+
+    const additionalConfig = {
+      headers: {
+        Authorization: this.apiKey,
+      },
+    };
+
+    const {data} = await this.apiClient.delete(endpoint, additionalConfig);
+    return data;
   }
 }

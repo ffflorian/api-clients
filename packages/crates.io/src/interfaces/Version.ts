@@ -1,3 +1,5 @@
+import type {User} from './User';
+
 export interface Version {
   crate: string;
   crate_size: number;
@@ -15,7 +17,7 @@ export interface Version {
     version_downloads: string;
   };
   num: string;
-  published_by: null | string;
+  published_by: null | User;
   readme_path: string;
   updated_at: string;
   yanked: boolean;
