@@ -9,7 +9,7 @@ export class NpmsIO {
   private readonly apiClient: APIClient;
 
   constructor(options: ClientOptions = {}) {
-    this.apiClient = new APIClient(options.apiUrl || 'https://api.npms.io/v2');
+    this.apiClient = new APIClient(options.apiUrl || 'https://api.npms.io');
 
     this.api = {
       package: new PackageAPI(this.apiClient),
