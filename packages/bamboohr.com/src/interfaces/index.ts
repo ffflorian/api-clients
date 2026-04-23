@@ -2,6 +2,7 @@ export * from './API';
 export * from './ClientOptions';
 export * from './DefaultHour';
 export * from './Employee';
+export * from './EmployeesList';
 export * from './Fields';
 export * from './TimeOffPolicy';
 export * from './TimeOffRequest';

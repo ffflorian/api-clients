@@ -8,6 +8,30 @@ export class TimeOffAPI {
   constructor(private readonly apiClient: APIClient) {}
 
   /**
+   * Creates a time off request.
+   * @see https://documentation.bamboohr.com/reference/create-time-off-request
+   */
+  public async createTimeOffRequest(request: Record<string, unknown>): Promise<Record<string, unknown>> {
+    const endpoint = Endpoint.TimeOff.timeOffRequests();
+    const {data} = await this.apiClient.put<Record<string, unknown>>(endpoint, request);
+    return data;
+  }
+
+  /**
+   * Returns calculated balances as of the provided end date.
+   * @see https://documentation.bamboohr.com/reference/get-time-off-balance
+   */
+  public async getTimeOffBalance(
+    employeeId: number,
+    end: string,
+    precision?: number
+  ): Promise<Record<string, unknown>> {
+    const endpoint = Endpoint.TimeOff.timeOffBalance(employeeId);
+    const {data} = await this.apiClient.get<Record<string, unknown>>(endpoint, {params: {end, precision}});
+    return data;
+  }
+
+  /**
    * This endpoint gets a list of time off policies.
    * @see https://documentation.bamboohr.com/reference#get-time-off-policies
    */
@@ -50,12 +74,25 @@ export class TimeOffAPI {
   }
 
   /**
+   * Updates an existing time off request status.
+   * @see https://documentation.bamboohr.com/reference/update-time-off-request-status
+   */
+  public async updateTimeOffRequestStatus(
+    id: number,
+    request: Record<string, unknown>
+  ): Promise<Record<string, unknown>> {
+    const endpoint = Endpoint.TimeOff.timeOffRequest(id);
+    const {data} = await this.apiClient.put<Record<string, unknown>>(endpoint, request);
+    return data;
+  }
+
+  /**
    * This endpoint will return a list, sorted by date, of employees who will be out, and company holidays, for a period of time.
    * @see https://documentation.bamboohr.com/reference#get-a-list-of-whos-out-1
    */
-  public async whosOut(start?: string, end?: string): Promise<OffEmployee[]> {
+  public async whosOut(start?: string, end?: string, filter?: 'off'): Promise<OffEmployee[]> {
     const endpoint = Endpoint.TimeOff.whosOut();
-    const {data} = await this.apiClient.get<OffEmployee[]>(endpoint, {params: {end, start}});
+    const {data} = await this.apiClient.get<OffEmployee[]>(endpoint, {params: {end, filter, start}});
     return data;
   }
 }

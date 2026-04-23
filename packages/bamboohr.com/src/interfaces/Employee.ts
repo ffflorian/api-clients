@@ -2,7 +2,7 @@ import {Fields} from './Fields';
 
 export interface BaseEmployee {
   firstName: string;
-  id: string;
+  id: number;
   lastName: string;
 }
 
