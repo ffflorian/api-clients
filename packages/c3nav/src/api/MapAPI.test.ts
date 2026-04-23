@@ -12,6 +12,7 @@ const INITIAL_BOUNDS = [
   [INITIAL_BOUNDS_FIRST_LAT, INITIAL_BOUNDS_FIRST_LNG],
   [INITIAL_BOUNDS_SECOND_LAT, INITIAL_BOUNDS_SECOND_LNG],
 ] as const;
+const INITIAL_LEVEL = 1;
 
 describe('MapAPI', () => {
   let client: c3nav;
@@ -27,12 +28,12 @@ describe('MapAPI', () => {
   it('gets map settings', async () => {
     nock('https://test.c3nav.de').get('/api/v2/map/settings/').reply(HTTP_STATUS.OK, {
       initial_bounds: INITIAL_BOUNDS,
-      initial_level: 1,
+      initial_level: INITIAL_LEVEL,
       tile_server: 'https://tiles.example.com',
     });
 
     const settings = await client.api.map.getSettings();
 
-    expect(settings.initial_level).toBe(1);
+    expect(settings.initial_level).toBe(INITIAL_LEVEL);
   });
 });
