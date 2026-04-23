@@ -13,6 +13,7 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
+import {normalizeApiUrl} from './normalizeApiUrl';
 
 export class AbsenceIO {
   public readonly api: API;
@@ -21,7 +22,7 @@ export class AbsenceIO {
 
   constructor(options: ClientOptions) {
     this.options = options;
-    const baseURL = this.normalizeApiUrl(options.apiUrl || 'https://app.absence.io/api/v2');
+    const baseURL = normalizeApiUrl(options.apiUrl || 'https://app.absence.io/api/v2');
 
     const credentials: hawk.client.Credentials = {
       algorithm: 'sha256',
@@ -63,10 +64,6 @@ export class AbsenceIO {
    * @param newURL The new API URL
    */
   public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(this.normalizeApiUrl(newURL));
-  }
-
-  private normalizeApiUrl(url: string): string {
-    return url.endsWith('/') ? url : `${url}/`;
+    this.apiClient.setBaseURL(normalizeApiUrl(newURL));
   }
 }

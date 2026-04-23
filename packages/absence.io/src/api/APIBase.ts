@@ -2,6 +2,8 @@ import type {APIClient} from '@ffflorian/api-client';
 
 import type {Authorization, ClientOptions} from '../interfaces';
 
+import {normalizeApiUrl} from '../normalizeApiUrl';
+
 export class APIBase {
   protected readonly apiClient: APIClient;
   protected readonly options: ClientOptions;
@@ -25,7 +27,7 @@ export class APIBase {
    * @param newURL The new API url
    */
   public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL.endsWith('/') ? newURL : `${newURL}/`);
+    this.apiClient.setBaseURL(normalizeApiUrl(newURL));
   }
 
   protected checkApiKey(apiName?: string): void {
