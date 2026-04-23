@@ -534,10 +534,12 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.1"
     "@types/node": "npm:~24"
     commander: "npm:14.0.3"
+    nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.21.0"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.2"
+    vitest: "npm:4.1.4"
   bin:
     icanhazdadjoke: dist/cli.js
   languageName: unknown
