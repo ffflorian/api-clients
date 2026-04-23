@@ -8,9 +8,11 @@
   "devDependencies": {
     "@types/node": "~24",
     "@types/qs": "6.15.0",
+    "nock": "14.0.12",
     "rimraf": "6.1.3",
     "typedoc": "0.28.19",
-    "typescript": "6.0.2"
+    "typescript": "6.0.2",
+    "vitest": "4.1.4"
   },
   "engines": {
     "node": ">= 21"
@@ -36,7 +38,7 @@
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/imgflip.com src/index.ts",
     "clean": "rimraf dist",
     "dist": "yarn clean && yarn build",
-    "test": "exit 0"
+    "test": "vitest run"
   },
   "version": "3.5.7"
 }
