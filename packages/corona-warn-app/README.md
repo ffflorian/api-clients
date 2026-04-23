@@ -1,4 +1,4 @@
-# corona-warn-app [![npm version](https://img.shields.io/npm/v/corona-warn-app.svg)](https://www.npmjs.com/package/corona-warn-app)
+# corona-warn-app [![npm version](https://img.shields.io/npm/v/corona-warn-app.svg)](https://www.npmjs.com/package/corona-warn-app) (archived)
 
 An [corona-warn-app](https://coronawarn.app) API client. For a documentation on the API see [the corona-warn-app API reference](https://github.com/corona-warn-app/cwa-server#service-apis).
 

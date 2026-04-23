@@ -26,6 +26,7 @@
   ],
   "license": "GPL-3.0",
   "name": "corona-warn-app",
+  "private": true,
   "readme": "https://github.com/ffflorian/api-clients#readme",
   "repository": "https://github.com/ffflorian/api-clients.git",
   "scripts": {
