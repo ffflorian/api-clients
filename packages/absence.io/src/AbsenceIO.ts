@@ -23,15 +23,23 @@ export class AbsenceIO {
     this.options = options;
     const baseURL = options.apiUrl || 'https://app.absence.io/api/v2';
 
-    const credentials: hawk.client.Credentials = {
-      algorithm: 'sha256',
-      id: this.options.apiKeyId,
-      key: this.options.apiKey,
-    };
-
     this.apiClient = new APIClient(baseURL);
 
     this.apiClient.interceptors.request.push(config => {
+      if (this.options.accessToken) {
+        config.headers = {...config.headers, Authorization: `Bearer ${this.options.accessToken}`};
+        return config;
+      }
+
+      if (!this.options.apiKey || !this.options.apiKeyId) {
+        throw new Error('API credentials need to be set in order to perform this request');
+      }
+
+      const credentials: hawk.client.Credentials = {
+        algorithm: 'sha256',
+        id: this.options.apiKeyId,
+        key: this.options.apiKey,
+      };
       const hawkHeader = hawk.client.header(config.url.toString(), config.method, {credentials});
       config.headers = {...config.headers, Authorization: hawkHeader.header};
       return config;
@@ -54,8 +62,16 @@ export class AbsenceIO {
    * @param authorization The API authorization data
    */
   public setApiAuthorization(authorization: Authorization): void {
+    if ('accessToken' in authorization) {
+      this.options.accessToken = authorization.accessToken;
+      this.options.apiKey = undefined;
+      this.options.apiKeyId = undefined;
+      return;
+    }
+
     this.options.apiKey = authorization.apiKey;
     this.options.apiKeyId = authorization.apiKeyId;
+    this.options.accessToken = undefined;
   }
 
   /**

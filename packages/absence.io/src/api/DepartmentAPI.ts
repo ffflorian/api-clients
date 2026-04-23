@@ -11,6 +11,16 @@ export class DepartmentAPI extends APIBase {
   }
 
   /**
+   * Deletes a department
+   * @param id The department id
+   */
+  public async deleteDepartment(id: string): Promise<void> {
+    this.checkApiKey('Department');
+    const endpoint = Endpoint.Department.departments(id);
+    await this.apiClient.delete(endpoint);
+  }
+
+  /**
    * Retrieve a single department
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#a9c45164-59e5-3daf-93f2-4c64f6cc52f0
    */

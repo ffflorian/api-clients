@@ -11,6 +11,16 @@ export class LocationAPI extends APIBase {
   }
 
   /**
+   * Deletes a location
+   * @param id The location id
+   */
+  public async deleteLocation(id: string): Promise<void> {
+    this.checkApiKey('Location');
+    const endpoint = Endpoint.Location.locations(id);
+    await this.apiClient.delete(endpoint);
+  }
+
+  /**
    * Retrieve a single location
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#11905bb3-ce8d-80b4-656b-4b9097e35825
    */
@@ -25,10 +35,10 @@ export class LocationAPI extends APIBase {
    * Retrieve locations
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#641bf728-23a1-538d-511f-5d1f69f15ba9
    */
-  public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
+  public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location[]>> {
     this.checkApiKey('Location');
     const endpoint = Endpoint.Location.locations();
-    const {data: locations} = await this.apiClient.post<Paginated<Location>>(endpoint, options);
+    const {data: locations} = await this.apiClient.post<Paginated<Location[]>>(endpoint, options);
     return locations;
   }
 }

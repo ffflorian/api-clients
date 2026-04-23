@@ -11,6 +11,16 @@ export class UserAPI extends APIBase {
   }
 
   /**
+   * Deletes a user
+   * @param id The user id
+   */
+  public async deleteUser(id: string): Promise<void> {
+    this.checkApiKey('User');
+    const endpoint = Endpoint.User.users(id);
+    await this.apiClient.delete(endpoint);
+  }
+
+  /**
    * Register a new user for your company.
    * The newly created user will receive an invitation email.
    * @param userData The user data
@@ -50,11 +60,11 @@ export class UserAPI extends APIBase {
    * @returns {Promise<User>}
    * @see: https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#310af8b0-d46f-d70d-f9ea-77cfd0f7aee4
    */
-  public async retrieveUserByOption(options?: PaginationOptions): Promise<User> {
+  public async retrieveUserByOption(options?: PaginationOptions): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users();
-    const {data: user} = await this.apiClient.post(endpoint, options);
-    return user;
+    const {data: users} = await this.apiClient.post(endpoint, options);
+    return users;
   }
 
   /**
@@ -75,10 +85,10 @@ export class UserAPI extends APIBase {
    * @param userData The updated user data
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#9bfdfa67-5391-d0ee-04e7-20b5c1b7a04d
    */
-  public async updateUser(id: string, userData?: Partial<NewUser>): Promise<Paginated<User[]>> {
+  public async updateUser(id: string, userData?: Partial<NewUser>): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: users} = await this.apiClient.post(endpoint, userData);
-    return users;
+    const {data: user} = await this.apiClient.put(endpoint, userData);
+    return user;
   }
 }

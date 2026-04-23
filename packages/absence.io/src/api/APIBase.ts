@@ -16,8 +16,16 @@ export class APIBase {
    * @param authorization The API authorization data
    */
   public setApiAuthorization(authorization: Authorization): void {
+    if ('accessToken' in authorization) {
+      this.options.accessToken = authorization.accessToken;
+      this.options.apiKey = undefined;
+      this.options.apiKeyId = undefined;
+      return;
+    }
+
     this.options.apiKey = authorization.apiKey;
     this.options.apiKeyId = authorization.apiKeyId;
+    this.options.accessToken = undefined;
   }
 
   /**
@@ -30,8 +38,8 @@ export class APIBase {
 
   protected checkApiKey(apiName?: string): void {
     const name = apiName ? `the "${apiName}"` : 'this';
-    if (!this.options.apiKey || !this.options.apiKeyId) {
-      throw new Error(`An API key needs to be set in order to use ${name} API`);
+    if (!this.options.accessToken && (!this.options.apiKey || !this.options.apiKeyId)) {
+      throw new Error(`API credentials need to be set in order to use ${name} API`);
     }
   }
 }

@@ -11,6 +11,16 @@ export class TeamAPI extends APIBase {
   }
 
   /**
+   * Deletes a team
+   * @param id The team id
+   */
+  public async deleteTeam(id: string): Promise<void> {
+    this.checkApiKey('Team');
+    const endpoint = Endpoint.Team.teams(id);
+    await this.apiClient.delete(endpoint);
+  }
+
+  /**
    * Retrieve a single team
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#08486bf6-c138-5808-7c1d-7ead5c8b1aee
    */

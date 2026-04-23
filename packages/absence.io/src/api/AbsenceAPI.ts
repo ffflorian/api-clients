@@ -22,6 +22,16 @@ export class AbsenceAPI extends APIBase {
   }
 
   /**
+   * Deletes one absence
+   * @param id The absence id
+   */
+  public async deleteAbsence(id: string): Promise<void> {
+    this.checkApiKey('Absence');
+    const endpoint = Endpoint.Absence.absences(id);
+    await this.apiClient.delete(endpoint);
+  }
+
+  /**
    * Retrieve an absence
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#191890ad-7f0d-3c2d-11d8-ed91e6193944
    */
