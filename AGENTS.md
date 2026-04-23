@@ -168,6 +168,11 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 - Prettier config: `@ffflorian/prettier-config`
 - `.yarnrc.yml`: `nodeLinker: node-modules`, no semver range prefix, public npm access
 
+## Testing
+
+- Always add the environment variable `CI=true` before running tests so vitest won't get stuck.
+- Always run `yarn test` inside the appropriate directory if working on a single package so that only that package's tests run.
+
 ## Before Committing
 
 After implementing any change, always run build and tests to verify correctness:
