@@ -4,6 +4,9 @@ import {afterEach, beforeEach, describe, expect, it} from 'vitest';
 
 import {Imgflip} from './Imgflip';
 
+const HTTP_OK = 200;
+const HTTP_NOT_FOUND = 404;
+
 describe('Imgflip', () => {
   let imgflip: Imgflip;
 
@@ -34,7 +37,7 @@ describe('Imgflip', () => {
       success: true,
     } as const;
 
-    nock('https://api.imgflip.com').get('/get_memes').reply(200, responseData);
+    nock('https://api.imgflip.com').get('/get_memes').reply(HTTP_OK, responseData);
 
     const response = await imgflip.api.getMemes();
 
@@ -49,7 +52,7 @@ describe('Imgflip', () => {
       success: true,
     } as const;
 
-    nock('https://api.imgflip.com').get('/get_memes').query({type: 'gif,image'}).reply(200, responseData);
+    nock('https://api.imgflip.com').get('/get_memes').query({type: 'gif,image'}).reply(HTTP_OK, responseData);
 
     const response = await imgflip.api.getMemes({type: ['gif', 'image']});
 
@@ -78,7 +81,7 @@ describe('Imgflip', () => {
         return true;
       })
       .matchHeader('content-type', value => value.includes('application/x-www-form-urlencoded'))
-      .reply(200, responseData);
+      .reply(HTTP_OK, responseData);
 
     const response = await imgflip.api.captionImage({
       password: 'secret-password',
@@ -107,8 +110,8 @@ describe('Imgflip', () => {
           boxes: [
             {
               text: 'Top box',
-              x: '10',
-              y: '20',
+              ['x']: '10',
+              ['y']: '20',
             },
             {
               text: 'Bottom box',
@@ -120,14 +123,14 @@ describe('Imgflip', () => {
         });
         return true;
       })
-      .reply(200, responseData);
+      .reply(HTTP_OK, responseData);
 
     const response = await imgflip.api.captionImage({
       boxes: [
         {
           text: 'Top box',
-          x: 10,
-          y: 20,
+          ['x']: 10,
+          ['y']: 20,
         },
         {
           text: 'Bottom box',
@@ -144,7 +147,7 @@ describe('Imgflip', () => {
   it('sets a new base URL', async () => {
     imgflip.setApiUrl('https://example.com');
 
-    nock('https://example.com').get('/get_memes').reply(404, {error: 'Not found'});
+    nock('https://example.com').get('/get_memes').reply(HTTP_NOT_FOUND, {error: 'Not found'});
 
     await expect(imgflip.api.getMemes()).rejects.toThrow('Request failed with status code 404');
   });
