@@ -7,8 +7,8 @@ pre-commit:
         - CLAUDE.md
       run: npx --no prettier -- --write {staged_files} && git add {staged_files}
     oxlint:
-      glob: 'packages/*'
+      glob: '*.{js,ts}'
       run: npx --no oxlint -- --ignore-path .gitignore --fix {staged_files} && git add {staged_files}
     eslint:
-      glob: 'packages/*'
+      glob: '*.{js,ts}'
       run: npx --no eslint -- --fix {staged_files} && git add {staged_files}
