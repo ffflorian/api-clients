@@ -75,10 +75,10 @@ export class UserAPI extends APIBase {
    * @param userData The updated user data
    * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#9bfdfa67-5391-d0ee-04e7-20b5c1b7a04d
    */
-  public async updateUser(id: string, userData?: Partial<NewUser>): Promise<Paginated<User[]>> {
+  public async updateUser(id: string, userData?: Partial<NewUser>): Promise<User> {
     this.checkApiKey('User');
     const endpoint = Endpoint.User.users(id);
-    const {data: users} = await this.apiClient.post(endpoint, userData);
-    return users;
+    const {data: user} = await this.apiClient.put(endpoint, userData);
+    return user;
   }
 }

@@ -1,46 +1,46 @@
 export const Endpoint = {
   Absence: {
     absences(id?: string): string {
-      return `/${Endpoint.ABSENCES}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.ABSENCES}/${id ? `${id}/` : ''}`;
     },
 
     create(): string {
-      return `/${Endpoint.ABSENCES}/${Endpoint.CREATE}/`;
+      return `${Endpoint.ABSENCES}/${Endpoint.CREATE}/`;
     },
   },
   ABSENCES: 'absences',
-  ALLOWANCE_TYPES: 'allowancetypes',
+  ALLOWANCE_TYPES: 'allowances',
   AllowanceType: {
     allowanceTypes(id?: string): string {
-      return `/${Endpoint.ALLOWANCE_TYPES}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.ALLOWANCE_TYPES}/${id ? `${id}/` : ''}`;
     },
   },
   CREATE: 'create',
   Department: {
     departments(id?: string): string {
-      return `/${Endpoint.DEPARTMENTS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.DEPARTMENTS}/${id ? `${id}/` : ''}`;
     },
   },
   DEPARTMENTS: 'departments',
   INVITE: 'invite',
   Location: {
     locations(id?: string): string {
-      return `/${Endpoint.LOCATIONS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.LOCATIONS}/${id ? `${id}/` : ''}`;
     },
   },
   LOCATIONS: 'locations',
 
   Reason: {
     reasons(id?: string): string {
-      return `/${Endpoint.REASONS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.REASONS}/${id ? `${id}/` : ''}`;
     },
   },
 
-  REASONS: 'reasons',
+  REASONS: 'reasontypes',
 
   Team: {
     teams(id?: string): string {
-      return `/${Endpoint.TEAMS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.TEAMS}/${id ? `${id}/` : ''}`;
     },
   },
 
@@ -48,11 +48,11 @@ export const Endpoint = {
 
   Timespan: {
     create(): string {
-      return `/${Endpoint.TIMESPANS}/${Endpoint.CREATE}/`;
+      return `${Endpoint.TIMESPANS}/${Endpoint.CREATE}/`;
     },
 
     timespans(id?: string): string {
-      return `/${Endpoint.TIMESPANS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.TIMESPANS}/${id ? `${id}/` : ''}`;
     },
   },
 
@@ -60,11 +60,11 @@ export const Endpoint = {
 
   User: {
     invite(): string {
-      return `/${Endpoint.USERS}/${Endpoint.INVITE}/`;
+      return `${Endpoint.USERS}/${Endpoint.INVITE}/`;
     },
 
     users(id?: string): string {
-      return `/${Endpoint.USERS}/${id ? `${id}/` : ''}`;
+      return `${Endpoint.USERS}/${id ? `${id}/` : ''}`;
     },
   },
 

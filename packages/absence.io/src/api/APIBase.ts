@@ -25,7 +25,7 @@ export class APIBase {
    * @param newURL The new API url
    */
   public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
+    this.apiClient.setBaseURL(newURL.endsWith('/') ? newURL : `${newURL}/`);
   }
 
   protected checkApiKey(apiName?: string): void {
