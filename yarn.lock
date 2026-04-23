@@ -6366,10 +6366,12 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.1"
     "@types/node": "npm:~24"
     "@types/qs": "npm:6.15.0"
+    nock: "npm:14.0.12"
     qs: "npm:6.15.1"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.2"
+    vitest: "npm:4.1.4"
   languageName: unknown
   linkType: soft
 
