@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": {
+    "xkcdjs": "dist/cli.js"
+  },
   "dependencies": {
     "@ffflorian/api-client": "2.5.1",
     "commander": "14.0.3"
@@ -32,7 +34,10 @@
   "license": "GPL-3.0",
   "name": "@ffflorian/xkcdjs",
   "readme": "https://github.com/ffflorian/api-clients#readme",
-  "repository": "https://github.com/ffflorian/api-clients.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/api-clients.git"
+  },
   "scripts": {
     "build": "yarn build:ts",
     "build:ts": "tsc -p tsconfig.build.json",
