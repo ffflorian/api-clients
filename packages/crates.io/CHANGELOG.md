@@ -1,3 +1,10 @@
+# crates.io [2.5.0](https://github.com/ffflorian/api-clients/compare/crates.io@2.4.7...crates.io@2.5.0) (2026-05-01)
+
+
+### Features
+
+* **crates.io:** Improve API ([#1942](https://github.com/ffflorian/api-clients/issues/1942)) ([8e3bbda](https://github.com/ffflorian/api-clients/commit/8e3bbdae5af6fee75ad63f8e4af12ed607aba651))
+
 ## crates.io [2.4.7](https://github.com/ffflorian/api-clients/compare/crates.io@2.4.6...crates.io@2.4.7) (2026-04-12)
 
 
