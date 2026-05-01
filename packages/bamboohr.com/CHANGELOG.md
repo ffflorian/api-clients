@@ -1,3 +1,10 @@
+# bamboohr.com [1.6.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.7...bamboohr.com@1.6.0) (2026-05-01)
+
+
+### Features
+
+* **absence.io:** Improve API ([#1945](https://github.com/ffflorian/api-clients/issues/1945)) ([6b82944](https://github.com/ffflorian/api-clients/commit/6b8294437d0cd9ab02ac6a3498298a98ce2aa5dc))
+
 ## bamboohr.com [1.5.7](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.6...bamboohr.com@1.5.7) (2026-04-12)
 
 
