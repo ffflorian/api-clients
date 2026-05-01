@@ -1,3 +1,10 @@
+# c3nav [3.5.0](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.7...c3nav@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **c3nav:** Improve API ([#1943](https://github.com/ffflorian/api-clients/issues/1943)) ([faff918](https://github.com/ffflorian/api-clients/commit/faff9185d9da1b68bf465d9631d632cf6a3158de))
+
 ## c3nav [3.4.7](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.6...c3nav@3.4.7) (2026-04-12)
 
 
