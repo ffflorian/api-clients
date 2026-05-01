@@ -2,6 +2,20 @@ export interface ClientOptions {
   apiUrl?: string;
 }
 
+export interface GraphQLData {
+  joke: GraphQLJokeResult;
+}
+
+export interface GraphQLJokeResult {
+  id: string;
+  joke: string;
+  permalink: string;
+}
+
+export interface GraphQLResponse {
+  data: GraphQLData;
+}
+
 export interface JokeResult {
   id: string;
   joke: string;
@@ -35,4 +49,16 @@ export interface SearchOptions {
   page?: number;
   /** search term to use (default: list all jokes) */
   term?: string;
+}
+
+export interface SlackAttachment {
+  fallback: string;
+  footer: string;
+  text: string;
+}
+
+export interface SlackJokeResult {
+  attachments: SlackAttachment[];
+  response_type: string;
+  username: string;
 }
