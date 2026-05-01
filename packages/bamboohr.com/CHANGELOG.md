@@ -1,3 +1,10 @@
+# bamboohr.com [1.7.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.6.0...bamboohr.com@1.7.0) (2026-05-01)
+
+
+### Features
+
+* **bamboohr.com:** Improve API ([#1944](https://github.com/ffflorian/api-clients/issues/1944)) ([a60dca8](https://github.com/ffflorian/api-clients/commit/a60dca8acea40e57845490b47a3ecc0037d71af6))
+
 # bamboohr.com [1.6.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.7...bamboohr.com@1.6.0) (2026-05-01)
 
 
