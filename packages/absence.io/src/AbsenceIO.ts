@@ -13,6 +13,7 @@ import {
   TimespanAPI,
   UserAPI,
 } from './api';
+import {normalizeApiUrl} from './normalizeApiUrl';
 
 export class AbsenceIO {
   public readonly api: API;
@@ -21,7 +22,7 @@ export class AbsenceIO {
 
   constructor(options: ClientOptions) {
     this.options = options;
-    const baseURL = options.apiUrl || 'https://app.absence.io/api/v2';
+    const baseURL = normalizeApiUrl(options.apiUrl || 'https://app.absence.io/api/v2');
 
     this.apiClient = new APIClient(baseURL);
 
@@ -79,6 +80,6 @@ export class AbsenceIO {
    * @param newURL The new API URL
    */
   public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
+    this.apiClient.setBaseURL(normalizeApiUrl(newURL));
   }
 }

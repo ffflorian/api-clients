@@ -69,7 +69,7 @@ describe('absence.io API', () => {
 
     const user = await api.updateUser('user-1', payload);
 
-    expect(apiClient.put).toHaveBeenCalledWith('/users/user-1/', payload);
+    expect(apiClient.put).toHaveBeenCalledWith('users/user-1/', payload);
     expect(user).toEqual(expected);
   });
 
@@ -120,7 +120,7 @@ describe('absence.io API', () => {
 
     const users = await api.retrieveUserByOption(options);
 
-    expect(apiClient.post).toHaveBeenCalledWith('/users/', options);
+    expect(apiClient.post).toHaveBeenCalledWith('users/', options);
     expect(users).toEqual(expected);
   });
 
@@ -144,7 +144,7 @@ describe('absence.io API', () => {
 
     const reasons = await api.retrieveReasons(options);
 
-    expect(apiClient.post).toHaveBeenCalledWith('/reasons/', options);
+    expect(apiClient.post).toHaveBeenCalledWith('reasontypes/', options);
     expect(reasons).toEqual(expected);
   });
 
@@ -156,13 +156,13 @@ describe('absence.io API', () => {
 
     await api.deleteAbsence('absence-1');
 
-    expect(apiClient.delete).toHaveBeenCalledWith('/absences/absence-1/');
+    expect(apiClient.delete).toHaveBeenCalledWith('absences/absence-1/');
   });
 
   it('uses OAuth bearer token authorization when accessToken is configured', async () => {
     const absenceIO = new AbsenceIO({accessToken: 'oauth-token'});
     const scope = nock('https://app.absence.io')
-      .post('/users/')
+      .post('/api/v2/users/')
       .matchHeader('authorization', 'Bearer oauth-token')
       .reply(OK_STATUS, {
         count: 0,
