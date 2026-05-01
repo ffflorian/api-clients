@@ -190,6 +190,10 @@ yarn fix
 
 This runs prettier (formatting) and oxlint + eslint (linting) with auto-fix across the codebase.
 
+### Agent completion rule
+
+- Always run `yarn fix` after all tests pass and before finishing work.
+
 ## PR Guidelines
 
 - Do **not** add references to Claude or AI tools in PR titles, descriptions, or commit messages.

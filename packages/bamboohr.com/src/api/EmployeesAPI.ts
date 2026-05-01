@@ -9,7 +9,6 @@ export class EmployeesAPI {
 
   /**
    * Update an employee, based on employee id.
-   * @see https://documentation.bamboohr.com/reference#add-employee-1
    */
   public async addEmployee(fields: Pick<Fields, 'firstName' | 'lastName'>): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees();
@@ -19,7 +18,6 @@ export class EmployeesAPI {
 
   /**
    * Get employee data by specifying a set of fields. This is suitable for getting basic employee information, including current values for fields that are part of a historical table, like job title, or compensation information.
-   * @see https://documentation.bamboohr.com/reference#get-employee
    */
   public async getEmployee(id: number, fields?: Array<keyof Fields>): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees(id, fields);
@@ -29,7 +27,6 @@ export class EmployeesAPI {
 
   /**
    * Gets employee directory.
-   * @see https://documentation.bamboohr.com/reference#get-employees-directory-1
    */
   public async getEmployeeDirectory(): Promise<EmployeeDirectory> {
     const endpoint = Endpoint.Employees.employeeDirectory();
@@ -39,7 +36,6 @@ export class EmployeesAPI {
 
   /**
    * Update an employee, based on employee id.
-   * @see https://documentation.bamboohr.com/reference#update-employee
    */
   public async updateEmployee(id: number, fields: WritableFields): Promise<Employee> {
     const endpoint = Endpoint.Employees.employees(id);

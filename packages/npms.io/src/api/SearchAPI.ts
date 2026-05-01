@@ -14,7 +14,6 @@ export class SearchAPI {
   /**
    * Fetch suggestions.
    * @param query Perform a search query
-   * @see https://api-docs.npms.io/#api-Search-SearchSuggestions
    */
   public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SuggestionsResult> {
     const endpoint = Endpoint.Search.suggestions();
@@ -48,7 +47,6 @@ export class SearchAPI {
    * - `popularity-weight:1` Set the weight that popularity has for the each package score, defaults to `3.3`
    * - `maintenance-weight:1` Set the weight that the quality has for the each package score, defaults to `2.05`
    * @param options Additional search options
-   * @see https://api-docs.npms.io/#api-Search-ExecuteSearchQuery
    */
   public async searchPackage(query: string, options: SearchOptions = {}): Promise<SearchResult> {
     const endpoint = Endpoint.Search.search();

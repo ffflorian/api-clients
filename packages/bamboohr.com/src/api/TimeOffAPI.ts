@@ -9,7 +9,6 @@ export class TimeOffAPI {
 
   /**
    * This endpoint gets a list of time off policies.
-   * @see https://documentation.bamboohr.com/reference#get-time-off-policies
    */
   public async timeOffPolicies(): Promise<TimeOffPolicy[]> {
     const endpoint = Endpoint.TimeOff.timeOffPolicies();
@@ -27,7 +26,6 @@ export class TimeOffAPI {
    * If there are zero notes for a request then the "notes" tag will be still included as an empty array.
    *
    * Newer time off requests may also include details for each day of the request in a element.
-   * @see https://documentation.bamboohr.com/reference#time-off-get-time-off-requests-1
    */
   public async timeOffRequests(options: TimeOffRequestsOptions): Promise<TimeOffRequest[]> {
     const endpoint = Endpoint.TimeOff.timeOffRequests();
@@ -41,7 +39,6 @@ export class TimeOffAPI {
    * request. The default is to return the list of time off types the user has permissions on. This distinction is
    * important, as employees can request time off for types that they don't have permission to view balances and
    * requests for.
-   * @see https://documentation.bamboohr.com/reference#get-time-off-types
    */
   public async timeOffTypes(mode?: 'request'): Promise<TimeOffTypes> {
     const endpoint = Endpoint.TimeOff.timeOffTypes();
@@ -51,7 +48,6 @@ export class TimeOffAPI {
 
   /**
    * This endpoint will return a list, sorted by date, of employees who will be out, and company holidays, for a period of time.
-   * @see https://documentation.bamboohr.com/reference#get-a-list-of-whos-out-1
    */
   public async whosOut(start?: string, end?: string): Promise<OffEmployee[]> {
     const endpoint = Endpoint.TimeOff.whosOut();

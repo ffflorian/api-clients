@@ -1,8 +1,14 @@
-export interface Authorization {
+export type Authorization = HawkAuthorization | OAuthAuthorization;
+
+export interface ClientOptions extends Partial<HawkAuthorization>, Partial<OAuthAuthorization> {
+  apiUrl?: string;
+}
+
+export interface HawkAuthorization {
   apiKey: string;
   apiKeyId: string;
 }
 
-export interface ClientOptions extends Authorization {
-  apiUrl?: string;
+export interface OAuthAuthorization {
+  accessToken: string;
 }

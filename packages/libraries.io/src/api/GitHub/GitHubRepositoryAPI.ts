@@ -18,7 +18,6 @@ export class GitHubRepositoryAPI extends APIBase {
 
   /**
    * Get a list of packages referencing the given repository.
-   * @see https://libraries.io/api#repository-projects
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    * @param options Pagination Options
@@ -35,7 +34,6 @@ export class GitHubRepositoryAPI extends APIBase {
 
   /**
    * Get a info for a repository. Currently only works for open source repositories.
-   * @see https://libraries.io/api#repository
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
@@ -50,7 +48,6 @@ export class GitHubRepositoryAPI extends APIBase {
 
   /**
    * Get a list of dependencies for a repositories. Currently only works for open source repositories.
-   * @see https://libraries.io/api#repository-dependencies
    * @param repositoryOwner The repository owner
    * @param repositoryName The repository name
    */
