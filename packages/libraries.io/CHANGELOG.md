@@ -1,3 +1,10 @@
+# libraries.io [3.5.0](https://github.com/ffflorian/api-clients/compare/libraries.io@3.4.7...libraries.io@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **libraries.io:** Improve API ([#1939](https://github.com/ffflorian/api-clients/issues/1939)) ([84b556b](https://github.com/ffflorian/api-clients/commit/84b556bbed0fc681023a746506d518abcaed95a4))
+
 ## libraries.io [3.4.7](https://github.com/ffflorian/api-clients/compare/libraries.io@3.4.6...libraries.io@3.4.7) (2026-04-12)
 
 

@@ -1,3 +1,10 @@
+# statuspage.io [3.5.0](https://github.com/ffflorian/api-clients/compare/statuspage.io@3.4.7...statuspage.io@3.5.0) (2026-04-23)
+
+
+### Features
+
+* **statuspage.io:** Improve API ([#1937](https://github.com/ffflorian/api-clients/issues/1937)) ([efd1844](https://github.com/ffflorian/api-clients/commit/efd1844a76bc3526a9d5f904ce9285a5a0cb73ce))
+
 ## statuspage.io [3.4.7](https://github.com/ffflorian/api-clients/compare/statuspage.io@3.4.6...statuspage.io@3.4.7) (2026-04-12)
 
 

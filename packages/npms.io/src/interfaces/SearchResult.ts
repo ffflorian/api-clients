@@ -45,6 +45,13 @@ export interface SearchResult {
   total: number;
 }
 
+export interface SuggestionResult extends Result {
+  /** A string containing highlighted matched text */
+  highlight?: string;
+}
+
+export type SuggestionsResult = SuggestionResult[];
+
 interface Detail {
   maintenance: number;
   popularity: number;
