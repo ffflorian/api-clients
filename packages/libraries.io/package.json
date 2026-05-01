@@ -8,8 +8,8 @@
     "@types/node": "~24",
     "rimraf": "6.1.3",
     "typedoc": "0.28.19",
-    "typescript": "6.0.2",
-    "vitest": "4.1.4"
+    "typescript": "6.0.3",
+    "vitest": "4.1.5"
   },
   "engines": {
     "node": ">= 21"
@@ -37,5 +37,5 @@
     "dist": "yarn clean && yarn build",
     "test": "vitest"
   },
-  "version": "3.4.7"
+  "version": "3.5.0"
 }
