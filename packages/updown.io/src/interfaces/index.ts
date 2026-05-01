@@ -5,3 +5,5 @@ export * from './Downtime';
 export * from './Metrics';
 export * from './Nodes';
 export * from './Options';
+export * from './Recipient';
+export * from './StatusPage';

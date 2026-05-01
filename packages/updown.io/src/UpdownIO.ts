@@ -2,7 +2,7 @@ import {APIClient} from '@ffflorian/api-client';
 
 import type {API, ClientOptions} from './interfaces';
 
-import {ChecksAPI, NodesAPI} from './api';
+import {ChecksAPI, NodesAPI, RecipientsAPI, StatusPagesAPI} from './api';
 
 export class UpdownIO {
   public api: API;
@@ -15,7 +15,7 @@ export class UpdownIO {
       options = {apiKey: options};
     }
 
-    this.apiClient = new APIClient('https://updown.io/api/', {
+    this.apiClient = new APIClient(options?.apiUrl ?? 'https://updown.io', {
       headers: {
         ...(options?.apiKey && {'X-API-KEY': options.apiKey}),
       },
@@ -24,6 +24,8 @@ export class UpdownIO {
     this.api = {
       checks: new ChecksAPI(this.apiClient),
       nodes: new NodesAPI(this.apiClient),
+      recipients: new RecipientsAPI(this.apiClient),
+      statusPages: new StatusPagesAPI(this.apiClient),
     };
   }
 
@@ -34,5 +36,7 @@ export class UpdownIO {
   public setApiUrl(newURL: string): void {
     this.api.checks.setApiUrl(newURL);
     this.api.nodes.setApiUrl(newURL);
+    this.api.recipients.setApiUrl(newURL);
+    this.api.statusPages.setApiUrl(newURL);
   }
 }
