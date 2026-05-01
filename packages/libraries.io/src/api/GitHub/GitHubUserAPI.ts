@@ -67,7 +67,7 @@ export class GitHubUserAPI extends APIBase {
     platformOrOptions?: PaginationOptions | PlatformType,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Project[]>> {
-    const endpoint = Endpoint.GitHub.User.contributedRepositories(userName);
+    const endpoint = Endpoint.GitHub.User.dependencies(userName);
     let parameters: RequestOptions = {};
 
     if (platformOrOptions) {
@@ -92,7 +92,7 @@ export class GitHubUserAPI extends APIBase {
    * @param options Pagination options
    */
   public async getProjects(userName: string, options?: PaginationOptions): Promise<LibrariesIOResult<Project[]>> {
-    const endpoint = Endpoint.GitHub.User.repositories(userName);
+    const endpoint = Endpoint.GitHub.User.projects(userName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }

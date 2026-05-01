@@ -33,7 +33,7 @@ export class ProjectAPI extends APIBase {
     projectName: string,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Contributor[]>> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    const endpoint = Endpoint.Project.contributors(platform, projectName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
@@ -44,12 +44,12 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    * @param options Pagination options
    */
-  public async getDependendentRepositories(
+  public async getDependentRepositories(
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Repository[]>> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    const endpoint = Endpoint.Project.dependentRepositories(platform, projectName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
@@ -61,7 +61,7 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    * @param options Pagination options
    */
-  public async getDependendents(
+  public async getDependents(
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
@@ -118,7 +118,7 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    */
   public async getUsage(platform: PlatformType, projectName: string): Promise<LibrariesIOResult<ProjectUsage>> {
-    const endpoint = Endpoint.Project.sourceRank(platform, projectName);
+    const endpoint = Endpoint.Project.usage(platform, projectName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }

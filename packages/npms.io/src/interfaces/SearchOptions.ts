@@ -5,11 +5,18 @@ export interface SearchOptions extends SuggestionsOptions {
    * Default value: `0`
    */
   from?: string;
+
+  /**
+   * The total number of results to return (max of 250)
+   *
+   * Default value: `25`
+   */
+  size?: string;
 }
 
 export interface SuggestionsOptions {
   /**
-   * The total number of results to return (max of 250)
+   * The total number of results to return (max of 100)
    *
    * Default value: `25`
    */
