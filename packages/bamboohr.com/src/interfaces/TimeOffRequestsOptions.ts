@@ -1,10 +1,12 @@
 export interface TimeOffRequestsOptions {
-  /** Limit to requests that the user has a particular level of access to. Legal values are: "view" or "approve". Defaults to view. */
-  action?: string;
+  /** Limit to requests the user can view, approve, or to their own requests. Defaults to "view". */
+  action?: 'approve' | 'myRequests' | 'view';
   /** A particular employee ID to limit the response to. */
-  employeeId?: string;
+  employeeId?: number;
   /** YYYY-MM-DD. Only show time off that occurs on/before the specified end date. */
   end: string;
+  /** When true, omits the notes object from each request in the response. */
+  excludeNote?: boolean;
   /** A particular request ID to limit the response to. */
   id?: number;
   /** YYYY-MM-DD. Only show time off that occurs on/after the specified start date. */
