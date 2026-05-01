@@ -1,3 +1,10 @@
+# @ffflorian/xkcdjs [3.5.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.4.7...@ffflorian/xkcdjs@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **xkcdjs:** Improve API ([#1935](https://github.com/ffflorian/api-clients/issues/1935)) ([22731a8](https://github.com/ffflorian/api-clients/commit/22731a8ef98bfc62ab44cd386391099f7453b624))
+
 ## @ffflorian/xkcdjs [3.4.7](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.4.6...@ffflorian/xkcdjs@3.4.7) (2026-04-12)
 
 
