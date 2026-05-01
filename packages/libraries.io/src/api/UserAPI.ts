@@ -20,7 +20,6 @@ export class UserAPI extends APIBase {
 
   /**
    * List packages that a user is subscribed to recieved notifications about new releases.
-   * @see https://libraries.io/api#subscriptions-index
    * @param options Pagination options
    */
   public async getAllSubscriptions(options?: PaginationOptions): Promise<LibrariesIOResult<Subscription[]>> {
@@ -31,7 +30,6 @@ export class UserAPI extends APIBase {
 
   /**
    * Check if a users is subscribed to receive notifications about new releases of a project.
-   * @see https://libraries.io/api#subscriptions-show
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -46,7 +44,6 @@ export class UserAPI extends APIBase {
 
   /**
    * Subscribe to receive notifications about new releases of a project.
-   * @see https://libraries.io/api#subscriptions-create
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Subscription options
@@ -63,7 +60,6 @@ export class UserAPI extends APIBase {
 
   /**
    * Stop receiving release notifications from a project.
-   * @see https://libraries.io/api#subscriptions-destroy
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -75,7 +71,6 @@ export class UserAPI extends APIBase {
 
   /**
    * Update the options for a subscription.
-   * @see https://libraries.io/api#subscriptions-update
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Subscription options

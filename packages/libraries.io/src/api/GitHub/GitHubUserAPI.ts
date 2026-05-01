@@ -21,7 +21,6 @@ export class GitHubUserAPI extends APIBase {
 
   /**
    * Get a list of packages that the given user has contributed to.
-   * @see https://libraries.io/api#user-project-contributions
    * @param userName The username
    * @param options Pagination options
    */
@@ -36,7 +35,6 @@ export class GitHubUserAPI extends APIBase {
 
   /**
    * Get a list of repositories that the given user has contributed to.
-   * @see https://libraries.io/api#user-repository-contributions
    * @param userName The username
    * @param options Pagination options
    */
@@ -57,7 +55,6 @@ export class GitHubUserAPI extends APIBase {
   ): Promise<LibrariesIOResult<Project[]>>;
   /**
    * Get a list of unique packages that the given user's repositories list as a dependency. Ordered by frequency of use in those repositories.
-   * @see https://libraries.io/api#user-dependencies
    * @param userName The username
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param options Pagination options
@@ -87,7 +84,6 @@ export class GitHubUserAPI extends APIBase {
 
   /**
    * Get a list of packages referencing the given user's repositories.
-   * @see https://libraries.io/api#user-projects
    * @param userName The username
    * @param options Pagination options
    */
@@ -99,7 +95,6 @@ export class GitHubUserAPI extends APIBase {
 
   /**
    * Get repositories owned by a user.
-   * @see https://libraries.io/api#user-repositories
    * @param userName The username
    * @param options Pagination options
    */
@@ -114,7 +109,6 @@ export class GitHubUserAPI extends APIBase {
 
   /**
    * Get information for a given user or organization.
-   * @see https://libraries.io/api#user
    * @param userName The username
    */
   public async getUser(userName: string): Promise<LibrariesIOResult<Contributor>> {

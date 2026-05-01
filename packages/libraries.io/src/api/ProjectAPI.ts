@@ -23,7 +23,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get users that have contributed to a given project.
-   * @see https://libraries.io/api#project-contributors
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Pagination options
@@ -56,7 +55,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get packages that have at least one version that depends on a given project.
-   * @see https://libraries.io/api#project-dependents
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Pagination options
@@ -73,7 +71,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get information about a package and it's versions.
-   * @see https://libraries.io/api#project
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -85,7 +82,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get a list of dependencies for a version of a project, pass `latest` as version to get dependency info for the latest available version
-   * @see https://libraries.io/api#project-dependencies
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param projectVersion
@@ -102,7 +98,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get breakdown of SourceRank score for a given project.
-   * @see https://libraries.io/api#project-sourcerank
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -125,7 +120,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Search for projects.
-   * @see https://libraries.io/api#project-search
    * @param query The search query
    * @param options Sorting, filter and pagination options
    */

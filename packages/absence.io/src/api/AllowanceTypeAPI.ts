@@ -12,7 +12,6 @@ export class AllowanceTypeAPI extends APIBase {
 
   /**
    * Retrieve a single allowance type
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#ae42d612-c1ae-52da-0804-3fe77ba1a6fe
    */
   public async retrieveAllowanceType(id: string): Promise<Allowance> {
     this.checkApiKey('AllowanceType');
@@ -23,7 +22,6 @@ export class AllowanceTypeAPI extends APIBase {
 
   /**
    * Retrieve allowance types
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#ddea0e36-bd15-1ed0-0b56-bd4c480d7cce
    */
   public async retrieveAllowanceTypes(options?: PaginationOptions): Promise<Paginated<Allowance[]>> {
     this.checkApiKey('AllowanceType');

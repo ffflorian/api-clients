@@ -12,7 +12,6 @@ export class PlatformAPI extends APIBase {
 
   /**
    * Get list of supported package managers.
-   * @see https://libraries.io/api#platforms
    * @param options Pagination options
    */
   public async getPlatforms(options?: PaginationOptions): Promise<LibrariesIOResult<Platform[]>> {
