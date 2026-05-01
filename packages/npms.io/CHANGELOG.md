@@ -1,3 +1,10 @@
+# npms.io [2.6.0](https://github.com/ffflorian/api-clients/compare/npms.io@2.5.0...npms.io@2.6.0) (2026-05-01)
+
+
+### Features
+
+* **absence.io:** Improve API ([#1945](https://github.com/ffflorian/api-clients/issues/1945)) ([6b82944](https://github.com/ffflorian/api-clients/commit/6b8294437d0cd9ab02ac6a3498298a98ce2aa5dc))
+
 # npms.io [2.5.0](https://github.com/ffflorian/api-clients/compare/npms.io@2.4.7...npms.io@2.5.0) (2026-05-01)
 
 
