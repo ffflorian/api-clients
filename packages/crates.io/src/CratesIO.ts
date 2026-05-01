@@ -15,10 +15,10 @@ export class CratesIO {
   constructor(options?: ClientOptions | string) {
     this.options = typeof options === 'string' ? {apiKey: options} : options || {};
 
-    this.apiClient = new APIClient('https://crates.io/api/v1');
+    this.apiClient = new APIClient(this.options.apiUrl || 'https://crates.io/api/v1');
 
     this.api = {
-      crates: new CratesAPI(this.apiClient),
+      crates: new CratesAPI(this.apiClient, this.options.apiKey),
     };
   }
 

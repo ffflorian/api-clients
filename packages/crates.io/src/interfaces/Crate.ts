@@ -1,18 +1,14 @@
 export interface Crate {
-  badges: {
-    [key: string]: {
-      [key: string]: string;
-    };
-  } | null;
-  categories: null | string;
+  badges: object[];
+  categories: null | string[];
   created_at: string;
-  description: string;
+  description: null | string;
   documentation: null | string;
   downloads: number;
   exact_match: boolean;
   homepage: null | string;
   id: string;
-  keywords: null | string;
+  keywords: null | string[];
   links: {
     owner_team: string;
     owner_user: string;
@@ -25,6 +21,8 @@ export interface Crate {
   name: string;
   recent_downloads: null | number;
   repository: null | string;
+  trustpub_only: boolean;
   updated_at: string;
   versions: null | number[];
+  yanked: boolean;
 }

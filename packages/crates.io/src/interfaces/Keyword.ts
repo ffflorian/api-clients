@@ -1,6 +1,6 @@
 export interface Keyword {
-  crated_at: string;
   crates_cnt: number;
+  created_at: string;
   id: string;
   keyword: string;
 }

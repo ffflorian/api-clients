@@ -1,1 +1,8 @@
-export interface Team {}
+export interface Team {
+  avatar: null | string;
+  id: number;
+  kind?: string;
+  login: string;
+  name: null | string;
+  url: null | string;
+}

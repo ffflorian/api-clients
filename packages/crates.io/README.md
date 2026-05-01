@@ -1,6 +1,14 @@
 # crates.io [![npm version](https://img.shields.io/npm/v/crates.io.svg)](https://www.npmjs.com/package/crates.io)
 
-A [crates.io](https://crates.io) API client. For a documentation on the API see [the crates.io API reference](https://crates.io/data-access) or [this reference](https://github.com/hcpl/crates.io-http-api-reference).
+A [crates.io](https://crates.io) API client.
+
+API references:
+
+- [Data access policy](https://crates.io/data-access)
+- [OpenAPI specification](https://crates.io/api/openapi.json)
+- [Historical HTTP API reference](https://github.com/hcpl/crates.io-http-api-reference)
+
+Some endpoints in this client require an API token (for example `following`, `follow`, `unfollow`, `yank`, and `unyank`).
 
 ### Installation
 
