@@ -1,6 +1,6 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import type {SearchOptions, SearchResult, SuggestionsOptions} from '../interfaces';
+import type {SearchOptions, SearchResult, SuggestionsOptions, SuggestionsResult} from '../interfaces';
 
 import {Endpoint} from '../Endpoints';
 
@@ -16,8 +16,8 @@ export class SearchAPI {
    * @param query Perform a search query
    * @see https://api-docs.npms.io/#api-Search-SearchSuggestions
    */
-  public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SearchResult> {
-    const endpoint = Endpoint.Search.search();
+  public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SuggestionsResult> {
+    const endpoint = Endpoint.Search.suggestions();
 
     const params = {
       // eslint-disable-next-line id-length
