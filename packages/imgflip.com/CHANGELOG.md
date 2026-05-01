@@ -1,3 +1,10 @@
+# imgflip.com [3.6.0](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.5.7...imgflip.com@3.6.0) (2026-04-23)
+
+
+### Features
+
+* **imgflip.com:** Improve API ([#1940](https://github.com/ffflorian/api-clients/issues/1940)) ([d09928c](https://github.com/ffflorian/api-clients/commit/d09928ca7dd8a6f22ec540f143980ca93cf71fce))
+
 ## imgflip.com [3.5.7](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.5.6...imgflip.com@3.5.7) (2026-04-12)
 
 
