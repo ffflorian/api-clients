@@ -1,3 +1,10 @@
+# @ffflorian/icanhazdadjoke [2.5.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.4.7...@ffflorian/icanhazdadjoke@2.5.0) (2026-04-23)
+
+
+### Features
+
+* **icanhazdadjoke:** Improve API ([#1941](https://github.com/ffflorian/api-clients/issues/1941)) ([b116ff6](https://github.com/ffflorian/api-clients/commit/b116ff6b093d5281e6ff6b093f1fec6037be230b))
+
 ## @ffflorian/icanhazdadjoke [2.4.7](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.4.6...@ffflorian/icanhazdadjoke@2.4.7) (2026-04-12)
 
 

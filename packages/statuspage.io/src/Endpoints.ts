@@ -34,6 +34,10 @@ export const Endpoint = {
   },
   STATUS_JSON: 'status.json',
 
+  subscriber(subscriberId: string): string {
+    return `/${Endpoint.API_V2_BASE}/subscribers/${encodeURIComponent(subscriberId)}.json`;
+  },
+
   subscribers(): string {
     return `/${Endpoint.API_V2_BASE}/${Endpoint.SUBSCRIBERS_JSON}`;
   },
