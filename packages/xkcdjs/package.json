@@ -1,8 +1,6 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": {
-    "xkcdjs": "dist/cli.js"
-  },
+  "bin": "dist/cli.js",
   "dependencies": {
     "@ffflorian/api-client": "2.5.1",
     "commander": "14.0.3"
@@ -47,5 +45,5 @@
     "start": "tsx src/cli.ts",
     "test": "vitest"
   },
-  "version": "3.5.0"
+  "version": "3.5.1"
 }
