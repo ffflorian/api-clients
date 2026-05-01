@@ -1,3 +1,10 @@
+# npms.io [2.5.0](https://github.com/ffflorian/api-clients/compare/npms.io@2.4.7...npms.io@2.5.0) (2026-05-01)
+
+
+### Features
+
+* **npms.io:** Improve API ([#1938](https://github.com/ffflorian/api-clients/issues/1938)) ([6346e1c](https://github.com/ffflorian/api-clients/commit/6346e1c9d5dc4890620abeeb4838be60a44214c0))
+
 ## npms.io [2.4.7](https://github.com/ffflorian/api-clients/compare/npms.io@2.4.6...npms.io@2.4.7) (2026-04-12)
 
 
