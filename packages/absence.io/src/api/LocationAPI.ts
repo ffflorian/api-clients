@@ -12,7 +12,7 @@ export class LocationAPI extends APIBase {
 
   /**
    * Retrieve a single location
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#11905bb3-ce8d-80b4-656b-4b9097e35825
+   * @see https://docs.absence.io/#11905bb3-ce8d-80b4-656b-4b9097e35825
    */
   public async retrieveLocation(id: string): Promise<Location> {
     this.checkApiKey('Location');
@@ -23,7 +23,7 @@ export class LocationAPI extends APIBase {
 
   /**
    * Retrieve locations
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#641bf728-23a1-538d-511f-5d1f69f15ba9
+   * @see https://docs.absence.io/#641bf728-23a1-538d-511f-5d1f69f15ba9
    */
   public async retrieveLocations(options?: PaginationOptions): Promise<Paginated<Location>> {
     this.checkApiKey('Location');

@@ -14,7 +14,7 @@ export class UserAPI extends APIBase {
    * Register a new user for your company.
    * The newly created user will receive an invitation email.
    * @param userData The user data
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#5e2ae60d-7392-859d-626a-c55b8d925c8c
+   * @see https://docs.absence.io/#5e2ae60d-7392-859d-626a-c55b8d925c8c
    */
   public async invite(userData: NewUser): Promise<User> {
     this.checkApiKey('User');
@@ -26,7 +26,7 @@ export class UserAPI extends APIBase {
   /**
    * Retrieve a user
    * @param id The user id
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#3e128ded-9395-246f-6057-6c9cc6534a35
+   * @see https://docs.absence.io/#3e128ded-9395-246f-6057-6c9cc6534a35
    */
   public async retrieveUser(id: string): Promise<User> {
     this.checkApiKey('User');
@@ -48,7 +48,7 @@ export class UserAPI extends APIBase {
    *  }
    * @param {PaginationOptions} [options] The pagination options
    * @returns {Promise<User>}
-   * @see: https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#310af8b0-d46f-d70d-f9ea-77cfd0f7aee4
+   * @see: https://docs.absence.io/#310af8b0-d46f-d70d-f9ea-77cfd0f7aee4
    */
   public async retrieveUserByOption(options?: PaginationOptions): Promise<User> {
     this.checkApiKey('User');
@@ -60,7 +60,7 @@ export class UserAPI extends APIBase {
   /**
    * Retrieve users
    * @param options The pagination options
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#de1af2e7-9508-1492-d698-7079d93cf60a
+   * @see https://docs.absence.io/#de1af2e7-9508-1492-d698-7079d93cf60a
    */
   public async retrieveUsers(options?: PaginationOptions): Promise<Paginated<User[]>> {
     this.checkApiKey('User');
@@ -73,7 +73,7 @@ export class UserAPI extends APIBase {
    * Update an existing user
    * @param id The user id
    * @param userData The updated user data
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#9bfdfa67-5391-d0ee-04e7-20b5c1b7a04d
+   * @see https://docs.absence.io/#9bfdfa67-5391-d0ee-04e7-20b5c1b7a04d
    */
   public async updateUser(id: string, userData?: Partial<NewUser>): Promise<User> {
     this.checkApiKey('User');

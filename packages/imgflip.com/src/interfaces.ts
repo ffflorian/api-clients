@@ -14,7 +14,7 @@ export interface API {
    * Gets an array of popular memes that may be captioned with this API.
    * The size of this array and the order of memes may change at any time.
    */
-  getMemes(): Promise<Response<Memes>>;
+  getMemes(options?: GetMemesOptions): Promise<Response<Memes>>;
 }
 
 /**
@@ -36,6 +36,14 @@ export interface Box {
   y?: number;
 }
 
+export type GetMemesOptions = {
+  /**
+   * The type of meme templates to return.
+   * Valid values are `gif` or `image`.
+   */
+  type?: MemeType | MemeType[];
+};
+
 export interface Image {
   page_url: string;
   url: string;
@@ -48,7 +56,7 @@ export interface ImageCaptionWithBoxes extends ImageCaptionBase {
    * For creating memes with more than two text boxes, or for further
    * customization. If boxes is specified, text will not be automatically
    * converted to uppercase, so you'll have to handle capitalization yourself
-   * if you want the standard uppercase meme text. You may specify up to 5
+   * if you want the standard uppercase meme text. You may specify up to 20
    * text boxes. You may leave the first box completely empty, so that the
    * second box will automatically be used for the bottom text.
    */
@@ -75,6 +83,8 @@ export interface Memes {
   memes: Meme[];
 }
 
+export type MemeType = 'gif' | 'image';
+
 export type Response<T> =
   | {
       data: T;
@@ -87,9 +97,11 @@ export type Response<T> =
 
 interface ImageCaptionBase {
   /** The font family to use for the text. Defaults to `impact`. */
-  font?: 'arial' | 'impact';
+  font?: string;
   /** Maximum font size in pixels. Defaults to `50px`. */
-  max_font_size?: string;
+  max_font_size?: number | string;
+  /** Remove the imgflip.com watermark (premium feature). */
+  no_watermark?: 0 | 1 | boolean;
   /** password for the imgflip account */
   password: string;
   /**

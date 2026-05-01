@@ -13,7 +13,7 @@ export class ReasonAPI extends APIBase {
 
   /**
    * Retrieve a single reason
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#2829e308-b906-3b27-10f7-52827f34dfdd
+   * @see https://docs.absence.io/#2829e308-b906-3b27-10f7-52827f34dfdd
    */
   public async retrieveReason(id: string): Promise<Reason> {
     this.checkApiKey('Reason');
@@ -24,7 +24,7 @@ export class ReasonAPI extends APIBase {
 
   /**
    * Retrieve reasons
-   * @see https://documenter.getpostman.com/view/799228/absenceio-api-documentation/2Fwbis#cd901260-489c-7437-aaff-65c14cb8e91e
+   * @see https://docs.absence.io/#cd901260-489c-7437-aaff-65c14cb8e91e
    */
   public async retrieveReasons(): Promise<Paginated<Reason[]>> {
     this.checkApiKey('Reason');
