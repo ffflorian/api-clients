@@ -3682,9 +3682,12 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
     "@types/node": "npm:~24"
+    http-status-codes: "npm:2.3.0"
+    nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
+    vitest: "npm:4.1.4"
   languageName: unknown
   linkType: soft
 
