@@ -1,6 +1,8 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
-  "bin": "dist/cli.js",
+  "bin": {
+    "xkcdjs": "dist/cli.js"
+  },
   "dependencies": {
     "@ffflorian/api-client": "2.5.1",
     "commander": "14.0.3"
