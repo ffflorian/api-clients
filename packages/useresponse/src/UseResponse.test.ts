@@ -41,6 +41,26 @@ describe('UseResponse', () => {
     expect(spy).toHaveBeenCalledWith('https://example.com/api/7.0');
   });
 
+  it('does not re-initialize API classes when updating API URL', () => {
+    const useResponse = new UseResponse({});
+    const apiBefore = useResponse.api;
+
+    useResponse.setApiUrl('https://example.com/api/7.0');
+
+    expect(useResponse.api.additional).toBe(apiBefore.additional);
+    expect(useResponse.api.auth).toBe(apiBefore.auth);
+    expect(useResponse.api.categories).toBe(apiBefore.categories);
+    expect(useResponse.api.changelog).toBe(apiBefore.changelog);
+    expect(useResponse.api.chats).toBe(apiBefore.chats);
+    expect(useResponse.api.comments).toBe(apiBefore.comments);
+    expect(useResponse.api.customFields).toBe(apiBefore.customFields);
+    expect(useResponse.api.moderation).toBe(apiBefore.moderation);
+    expect(useResponse.api.objects).toBe(apiBefore.objects);
+    expect(useResponse.api.reports).toBe(apiBefore.reports);
+    expect(useResponse.api.userNotes).toBe(apiBefore.userNotes);
+    expect(useResponse.api.users).toBe(apiBefore.users);
+  });
+
   it.each<MethodCallCase>([
     {
       args: ['/forums.json'],

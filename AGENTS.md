@@ -175,14 +175,14 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 ## Before Committing
 
-After implementing any change, always run build and tests to verify correctness:
+After implementing any change, always run build and tests inside the appropriate directory to verify correctness:
 
 ```sh
 yarn build:ts
 yarn test
 ```
 
-Then run `yarn fix` to auto-fix linting and formatting errors before committing:
+Then run `yarn fix` inside the appropriate directory to auto-fix linting and formatting errors before committing:
 
 ```sh
 yarn fix
