@@ -11,8 +11,8 @@ export class CustomFieldsAPI {
     this.apiClient = apiClient;
   }
 
-  async getObjectCustomFields(objectId: string): Promise<CustomField[]> {
-    const endpoint = Endpoint.CustomFields.objectCustomFields(objectId);
+  async getObjectCustomFields(): Promise<CustomField[]> {
+    const endpoint = Endpoint.CustomFields.objectCustomFields();
     const {data} = await this.apiClient.get<CustomField[]>(endpoint);
     return data;
   }

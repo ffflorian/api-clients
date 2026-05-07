@@ -55,7 +55,7 @@ export const Endpoint = {
     },
 
     editComment(commentId: string): string {
-      return `/comment/${commentId}/edit.json`;
+      return `/comments/${commentId}/edit.json`;
     },
 
     objectComments(objectId: string): string {
@@ -63,25 +63,25 @@ export const Endpoint = {
     },
 
     recoveryComment(commentId: string): string {
-      return `/comment/${commentId}/recovery.json`;
+      return `/comments/${commentId}/recovery.json`;
     },
 
     toggleBestComment(commentId: string): string {
-      return `/comment/${commentId}/best/toggle.json`;
+      return `/comments/${commentId}/best/toggle.json`;
     },
 
     toggleVoteComment(commentId: string): string {
-      return `/comment/${commentId}/votes/toggle.json`;
+      return `/comments/${commentId}/votes/toggle.json`;
     },
 
     trashComment(commentId: string): string {
-      return `/comment/${commentId}/trash.json`;
+      return `/comments/${commentId}/trash.json`;
     },
   },
 
   CustomFields: {
-    objectCustomFields(objectId: string): string {
-      return `/objects/${objectId}/custom-fields/list.json`;
+    objectCustomFields(): string {
+      return '/objects/custom-fields/list.json';
     },
 
     userCustomFields(): string {
@@ -129,7 +129,7 @@ export const Endpoint = {
     },
 
     search(): string {
-      return '/objects/search.json';
+      return '/search.json';
     },
 
     subscribe(id: string): string {

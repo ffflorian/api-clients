@@ -39,6 +39,12 @@ export class UsersAPI {
     return data;
   }
 
+  async deleteUser(userId: string): Promise<UserActionResponse> {
+    const endpoint = Endpoint.Users.user(userId);
+    const {data} = await this.apiClient.delete<UserActionResponse>(endpoint);
+    return data;
+  }
+
   async editUser(userId: string, user: EditUserParams): Promise<UserActionResponse> {
     const endpoint = Endpoint.Users.user(userId);
     const {data} = await this.apiClient.post<UserActionResponse>(endpoint, user);
@@ -60,12 +66,6 @@ export class UsersAPI {
   async getUser(userId: string): Promise<User> {
     const endpoint = Endpoint.Users.user(userId);
     const {data} = await this.apiClient.get<User>(endpoint);
-    return data;
-  }
-
-  async getUsers(options?: Record<string, unknown>): Promise<UsersSearchResponse> {
-    const endpoint = Endpoint.Users.users();
-    const {data} = await this.apiClient.get<UsersSearchResponse>(endpoint, {params: options});
     return data;
   }
 

@@ -27,7 +27,7 @@ export class ObjectsAPI {
 
   async archiveObject(objectId: string): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.archive(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint);
+    const {data} = await this.apiClient.get<EditObjectResponse>(endpoint);
     return data;
   }
 
@@ -40,21 +40,21 @@ export class ObjectsAPI {
     return data;
   }
 
+  async deleteObject(objectId: string): Promise<EditObjectResponse> {
+    const endpoint = Endpoint.Objects.object(objectId);
+    const {data} = await this.apiClient.delete<EditObjectResponse>(endpoint);
+    return data;
+  }
+
   async editObject(objectId: string, object: ObjectEditParams): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.object(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint, object);
+    const {data} = await this.apiClient.put<EditObjectResponse>(endpoint, object);
     return data;
   }
 
   async getObject(objectId: string): Promise<UseResponseObject> {
     const endpoint = Endpoint.Objects.object(objectId);
     const {data} = await this.apiClient.get<UseResponseObject>(endpoint);
-    return data;
-  }
-
-  async getObjects(options?: Record<string, unknown>): Promise<Paginator> {
-    const endpoint = Endpoint.Objects.objects();
-    const {data} = await this.apiClient.get<Paginator>(endpoint, {params: options});
     return data;
   }
 
@@ -90,7 +90,7 @@ export class ObjectsAPI {
 
   async trashObject(objectId: string): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.trash(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint);
+    const {data} = await this.apiClient.get<EditObjectResponse>(endpoint);
     return data;
   }
 

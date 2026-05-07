@@ -3,7 +3,7 @@ import {afterEach, describe, expect, it, vi} from 'vitest';
 
 import {UseResponse} from '.';
 
-type APIClientMethod = 'get' | 'post';
+type APIClientMethod = 'delete' | 'get' | 'post' | 'put';
 
 interface MethodCallCase {
   args: unknown[];
@@ -61,7 +61,7 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.comments.addComment({content: 'Hello'}),
     },
     {
-      args: ['/comment/8/edit.json', {content: 'Updated'}],
+      args: ['/comments/8/edit.json', {content: 'Updated'}],
       method: 'post',
       name: 'edits comments',
       run: useResponse => useResponse.api.comments.editComment('8', {content: 'Updated'}),
@@ -79,34 +79,34 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.comments.getObjectComments('3'),
     },
     {
-      args: ['/comment/8/recovery.json'],
+      args: ['/comments/8/recovery.json'],
       method: 'post',
       name: 'recovers comments',
       run: useResponse => useResponse.api.comments.recoverComment('8'),
     },
     {
-      args: ['/comment/8/trash.json'],
+      args: ['/comments/8/trash.json'],
       method: 'post',
       name: 'trashes comments',
       run: useResponse => useResponse.api.comments.trashComment('8'),
     },
     {
-      args: ['/comment/8/best/toggle.json'],
+      args: ['/comments/8/best/toggle.json'],
       method: 'post',
       name: 'toggles best comments',
       run: useResponse => useResponse.api.comments.toggleBestComment('8'),
     },
     {
-      args: ['/comment/8/votes/toggle.json'],
+      args: ['/comments/8/votes/toggle.json'],
       method: 'post',
       name: 'toggles comment votes',
       run: useResponse => useResponse.api.comments.toggleVoteComment('8'),
     },
     {
-      args: ['/objects/3/custom-fields/list.json'],
+      args: ['/objects/custom-fields/list.json'],
       method: 'get',
       name: 'gets object custom fields',
-      run: useResponse => useResponse.api.customFields.getObjectCustomFields('3'),
+      run: useResponse => useResponse.api.customFields.getObjectCustomFields(),
     },
     {
       args: ['/users/custom-fields/list.json'],
@@ -151,9 +151,15 @@ describe('UseResponse', () => {
     },
     {
       args: ['/objects/7/archive.json'],
-      method: 'post',
+      method: 'get',
       name: 'archives objects',
       run: useResponse => useResponse.api.objects.archiveObject('7'),
+    },
+    {
+      args: ['/objects/7.json'],
+      method: 'delete',
+      name: 'deletes objects',
+      run: useResponse => useResponse.api.objects.deleteObject('7'),
     },
     {
       args: ['/objects/7/attach-file.json', {body: 'Zm9v', name: 'foo.txt'}],
@@ -163,7 +169,7 @@ describe('UseResponse', () => {
     },
     {
       args: ['/objects/7.json', {title: 'Updated'}],
-      method: 'post',
+      method: 'put',
       name: 'edits objects',
       run: useResponse => useResponse.api.objects.editObject('7', {title: 'Updated'}),
     },
@@ -174,19 +180,13 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.objects.getObject('7'),
     },
     {
-      args: ['/objects.json', {params: {page: 1}}],
-      method: 'get',
-      name: 'lists objects',
-      run: useResponse => useResponse.api.objects.getObjects({page: 1}),
-    },
-    {
       args: ['/tickets.json', {params: {page: 1}}],
       method: 'get',
       name: 'lists tickets',
       run: useResponse => useResponse.api.objects.getTickets({page: 1}),
     },
     {
-      args: ['/objects/search.json', {params: {query: 'hello'}}],
+      args: ['/search.json', {params: {query: 'hello'}}],
       method: 'get',
       name: 'searches objects',
       run: useResponse => useResponse.api.objects.search({query: 'hello'}),
@@ -211,7 +211,7 @@ describe('UseResponse', () => {
     },
     {
       args: ['/objects/7/trash.json'],
-      method: 'post',
+      method: 'get',
       name: 'trashes objects',
       run: useResponse => useResponse.api.objects.trashObject('7'),
     },
@@ -276,6 +276,12 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.users.createUser({email: 'user@example.com', full_name: 'User Example'}),
     },
     {
+      args: ['/users/9.json'],
+      method: 'delete',
+      name: 'deletes users',
+      run: useResponse => useResponse.api.users.deleteUser('9'),
+    },
+    {
       args: ['/users/9.json', {email: 'updated@example.com'}],
       method: 'post',
       name: 'edits users',
@@ -298,12 +304,6 @@ describe('UseResponse', () => {
       method: 'get',
       name: 'gets users by id',
       run: useResponse => useResponse.api.users.getUser('9'),
-    },
-    {
-      args: ['/users.json', {params: {page: 1}}],
-      method: 'get',
-      name: 'lists users',
-      run: useResponse => useResponse.api.users.getUsers({page: 1}),
     },
     {
       args: ['/users/search.json', {params: {query: 'user'}}],
