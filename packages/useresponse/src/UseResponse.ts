@@ -53,17 +53,5 @@ export class UseResponse {
    */
   public setApiUrl(newURL: string): void {
     this.apiClient.setBaseURL(newURL);
-    this.api.additional = new AdditionalAPI(this.apiClient);
-    this.api.auth = new AuthAPI(this.apiClient);
-    this.api.categories = new CategoriesAPI(this.apiClient);
-    this.api.changelog = new ChangelogAPI(this.apiClient);
-    this.api.chats = new ChatsAPI(this.apiClient);
-    this.api.comments = new CommentsAPI(this.apiClient);
-    this.api.customFields = new CustomFieldsAPI(this.apiClient);
-    this.api.moderation = new ModerationAPI(this.apiClient);
-    this.api.objects = new ObjectsAPI(this.apiClient);
-    this.api.reports = new ReportsAPI(this.apiClient);
-    this.api.userNotes = new UserNotesAPI(this.apiClient);
-    this.api.users = new UsersAPI(this.apiClient);
   }
 }
