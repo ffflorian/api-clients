@@ -26,22 +26,22 @@ export interface Avatar {
 
 export interface BanUserParams {
   /**
-   * @description Duration of the ban in days (ignored if permanent)
+   * Duration of the ban in days (ignored if permanent)
    * @example 30
    */
   ban_duration_days?: number;
   /**
-   * @description Reason for banning the user
+   * Reason for banning the user
    * @example Fraudulent activity detected
    */
   ban_reason?: string;
   /**
-   * @description Whether to delete user's related objects (tickets, comments, etc.)
+   * Whether to delete user's related objects (tickets, comments, etc.)
    * @example true
    */
   delete_related_objects?: boolean;
   /**
-   * @description If true, the ban is permanent
+   * If true, the ban is permanent
    * @example false
    */
   permanent?: boolean;
@@ -85,7 +85,7 @@ export interface ChangelogAction {
 
 export interface ChangePasswordParams {
   /**
-   * @description New valid password value
+   * New valid password value
    * @example securestring12345
    */
   password: string;
@@ -151,30 +151,30 @@ export interface CommentActionResponse {
 
 export interface CommentAddParams {
   /**
-   * @description The content of a new object.
+   * The content of a new object.
    *     Supports BBcode, but HTML tags are not allowed
    *     ##### Max content length: 12000 chars
    * @example My first comment
    */
   content: string;
   /**
-   * @description If 1 specified, comment will be saved as private note. To add private note you should have agent’s or admin’s privileges
+   * If 1 specified, comment will be saved as private note. To add private note you should have agent’s or admin’s privileges
    *     ##### Valid values: 0, 1
    * @example 0
    */
   is_private?: number;
   /**
-   * @description Valid object(ticket/topic) id
+   * Valid object(ticket/topic) id
    * @example 38
    */
   object_id?: number;
   /**
-   * @description Valid comment id to make reply to comment
+   * Valid comment id to make reply to comment
    * @example 10
    */
   reply_to?: number;
   /**
-   * @description API would accept “content” parameter in HTML format. Overrides “Accept HTML Content” global setting for one request
+   * API would accept “content” parameter in HTML format. Overrides “Accept HTML Content” global setting for one request
    *     ##### Valid values: 0, 1
    * @example 0
    */
@@ -183,14 +183,14 @@ export interface CommentAddParams {
 
 export interface CommentEditParams {
   /**
-   * @description The content of a new object.
+   * The content of a new object.
    *     Supports BBcode, but HTML tags are not allowed
    *     ##### Max content length: 12000 chars
    * @example My first comment
    */
   content?: string;
   /**
-   * @description API would accept “content” parameter in HTML format. Overrides “Accept HTML Content” global setting for one request
+   * API would accept “content” parameter in HTML format. Overrides “Accept HTML Content” global setting for one request
    *     ##### Valid values: 0, 1
    * @example 0
    */
@@ -211,28 +211,28 @@ export interface CreateObjectResponse {
 
 export interface CreateUserParams {
   /**
-   * @description New valid “email” value
+   * New valid “email” value
    * @example test@test.com
    */
   email: string;
   /**
-   * @description Not empty string containing user’s name
+   * Not empty string containing user’s name
    * @example John Edwards
    */
   full_name: string;
   /**
-   * @description User’s password
+   * User’s password
    * @example securestring12345
    */
   password?: string;
   /**
-   * @description Specify the name for the custom field
+   * Specify the name for the custom field
    * @example Support
    */
   property_1?: string;
   tags?: string;
   /**
-   * @description Valid team numeric identifier
+   * Valid team numeric identifier
    * @example 1
    */
   team_id?: number;
@@ -262,7 +262,7 @@ export interface CustomFieldValue {
 
 export interface DeclineParams {
   /**
-   * @description In case a comment or topic is declined you can specify decline reason
+   * In case a comment or topic is declined you can specify decline reason
    * @example Too little information provided
    */
   reason?: string;
@@ -274,28 +274,28 @@ export interface EditObjectResponse {
 
 export interface EditUserParams {
   /**
-   * @description New valid “email” value.
+   * New valid “email” value.
    * @example test@test.com
    */
   email?: string;
   /**
-   * @description Not empty string containing user’s name.
+   * Not empty string containing user’s name.
    * @example John Edwards
    */
   full_name?: string;
   /**
-   * @description User phone number.
+   * User phone number.
    * @example +447777444445
    */
   phone?: string;
   /**
-   * @description Specify the name for the custom field
+   * Specify the name for the custom field
    * @example Support
    */
   property_1?: string;
   tags?: string;
   /**
-   * @description Valid team numeric identifier
+   * Valid team numeric identifier
    * @example 1
    */
   team_id?: number;
@@ -353,14 +353,14 @@ export interface LoginParams {
 
 export interface ManageUserNoteParams {
   /**
-   * @description The content of a new comment.
+   * The content of a new comment.
    *     Supports BBcode, but HTML tags are not allowed
    *     ##### Max content length: 12000 chars
    * @example My first note
    */
   content: string;
   /**
-   * @description Not empty string containing user’s name
+   * Not empty string containing user’s name
    * @example 2017-10-13 18:29:00
    */
   remind_at?: string;
@@ -423,16 +423,16 @@ export interface Object {
 }
 
 export interface ObjectAddParams {
-  /** @description Array of attachments */
+  /** Array of attachments */
   attachments?: NewAttachment[];
   /**
-   * @description Valid category id to assign new object to
+   * Valid category id to assign new object to
    *     Value 0 means no category
    * @example 0
    */
   category_id?: number;
   /**
-   * @description The content of a new object.
+   * The content of a new object.
    *     Supports BBcode, but HTML tags are not allowed
    *     ##### Max content length: 12000 chars
    *     ##### Required for feedback, announcements
@@ -440,64 +440,64 @@ export interface ObjectAddParams {
    */
   content?: string;
   /**
-   * @description Allows to use object expiration date
+   * Allows to use object expiration date
    *     Value never means that announcement has no expiration date
    *     ##### Valid only for announcements. Valid values: never, on_date
    * @example never
    */
   expire_select?: string;
   /**
-   * @description Valid only for announcements and date should be in format dd.mm.yyyy
+   * Valid only for announcements and date should be in format dd.mm.yyyy
    *     ##### required when expire_select parameter value is set to on_date
    * @example 15.06.2020
    */
   expires_at?: string;
   /**
-   * @description Allows to set object author manually
+   * Allows to set object author manually
    *     Requires appropriate privilege
    *     Valid user id or any email address
    * @example support@useresponse.com
    */
   force_author?: string;
   /**
-   * @description Allows to define object privacy
+   * Allows to define object privacy
    *     ##### Only for feedback and announcements
    *     ##### Valid values: 0, 1
    * @example 0
    */
   is_private?: number;
   /**
-   * @description Valid object type
+   * Valid object type
    * @example ticket
    * @enum {string}
    */
   object_type: 'idea' | 'problem' | 'question' | 'ticket';
   /**
-   * @description Object belongs to a logical group
+   * Object belongs to a logical group
    * @example helpdesk
    * @enum {string}
    */
   ownership: 'feedback' | 'helpdesk';
   /**
-   * @description Specify the name for the custom field
+   * Specify the name for the custom field
    * @example Support
    */
   property_1?: string;
   /**
-   * @description Valid agent or administrator user id
+   * Valid agent or administrator user id
    *     Value 0 means nobody
    * @example 10
    */
   responsible_id?: number;
-  /** @description Array of tags */
+  /** Array of tags */
   tags?: string[];
   /**
-   * @description Valid team numeric identifier
+   * Valid team numeric identifier
    * @example 5
    */
   team_id?: number;
   /**
-   * @description The title of a new object
+   * The title of a new object
    *     ##### Max title length: 100 chars
    * @example My first helpdesk record
    */
@@ -505,16 +505,16 @@ export interface ObjectAddParams {
 }
 
 export interface ObjectEditParams {
-  /** @description Array of attachments */
+  /** Array of attachments */
   attachments?: NewAttachment[];
   /**
-   * @description Valid category id to assign new object to
+   * Valid category id to assign new object to
    *     Value 0 means no category
    * @example 0
    */
   category_id?: number;
   /**
-   * @description The content of a new object.
+   * The content of a new object.
    *     Supports BBcode, but HTML tags are not allowed
    *     ##### Max content length: 12000 chars
    *     ##### Required for feedback, announcements
@@ -522,62 +522,62 @@ export interface ObjectEditParams {
    */
   content?: string;
   /**
-   * @description Allows to use object expiration date
+   * Allows to use object expiration date
    *     Value never means that announcement has no expiration date
    *     ##### Valid only for announcements. Valid values: never, on_date
    * @example never
    */
   expire_select?: string;
   /**
-   * @description Valid only for announcements and date should be in format dd.mm.yyyy
+   * Valid only for announcements and date should be in format dd.mm.yyyy
    *     ##### required when expire_select parameter value is set to on_date
    * @example 15.06.2020
    */
   expires_at?: string;
   /**
-   * @description Allows to set object author manually
+   * Allows to set object author manually
    *     Requires appropriate privilege
    *     Valid user id or any email address
    * @example support@useresponse.com
    */
   force_author?: string;
   /**
-   * @description Allows to define object privacy
+   * Allows to define object privacy
    *     ##### Only for feedback and announcements
    *     ##### Valid values: 0, 1
    * @example 0
    */
   is_private?: number;
   /**
-   * @description Valid object type
+   * Valid object type
    * @example ticket
    */
   object_type?: string;
   /**
-   * @description Specify the name for the custom field
+   * Specify the name for the custom field
    * @example Support
    */
   property_1?: string;
   /**
-   * @description Valid agent or administrator user id
+   * Valid agent or administrator user id
    *     Value 0 means nobody
    * @example 10
    */
   responsible_id?: number;
   /**
-   * @description Valid status id. Id can be taken from statuses.json
+   * Valid status id. Id can be taken from statuses.json
    * @example 1
    */
   status_id?: number;
-  /** @description Array of tags */
+  /** Array of tags */
   tags?: string[];
   /**
-   * @description Valid team numeric identifier
+   * Valid team numeric identifier
    * @example 5
    */
   team_id?: number;
   /**
-   * @description The title of a new object
+   * The title of a new object
    *     ##### Max title length: 100 chars
    * @example My first helpdesk record
    */
@@ -758,7 +758,7 @@ interface Link {
 
 interface NewAttachment {
   /**
-   * @description Should be in base64 format
+   * Should be in base64 format
    * @example iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAA.....==
    */
   body?: string;
