@@ -26,9 +26,11 @@ jobs:
           node-version: 26
           cache: yarn
 
-      - name: Install packages
-        run: |
-          yarn --immutable
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn --immutable
 
       - name: Lint, build, and test
         run: |
