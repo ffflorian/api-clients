@@ -1,13 +1,21 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {Nodes} from '../interfaces';
+
+import {Endpoint} from '../Endpoints';
 
 export class NodesAPI {
   private readonly apiClient: APIClient;
 
   constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
+  }
+
+  /** List all updown.io monitoring nodes IPv4 addresses. */
+  public async getIps(): Promise<string[]> {
+    const endpoint = Endpoint.Nodes.ips();
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
   }
 
   /** List all updown.io monitoring nodes IPv4 addresses. */

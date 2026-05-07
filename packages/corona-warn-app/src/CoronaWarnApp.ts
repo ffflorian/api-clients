@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
 import type {API, ClientOptions} from './interfaces';
-import {DiagnosisKeysAPI, ApplicationConfigurationAPI} from './api';
+
+import {ApplicationConfigurationAPI, DiagnosisKeysAPI} from './api';
 
 export class CoronaWarnApp {
   private static readonly BASE_URL = 'https://svc90.main.px.t-online.de/version/v1/';

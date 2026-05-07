@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {PackageInfo} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 
 export class PackageAPI {
   private readonly apiClient: APIClient;
@@ -13,7 +14,6 @@ export class PackageAPI {
   /**
    * Get various packages info.
    * @param packageNames The package names
-   * @see https://api-docs.npms.io/#api-Package-GetMultiPackageInfo
    */
   public async multiPackageInfo(packageNames: string[]): Promise<Record<string, PackageInfo>> {
     const endpoint = Endpoint.Package.multiPackageInfo();
@@ -25,7 +25,6 @@ export class PackageAPI {
   /**
    * Get package info.
    * @param packageName The package name
-   * @see https://api-docs.npms.io/#api-Package-GetPackageInfo
    */
   public async packageInfo(packageName: string): Promise<PackageInfo> {
     const endpoint = Endpoint.Package.packageInfo(packageName);

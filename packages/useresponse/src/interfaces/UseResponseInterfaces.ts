@@ -9,18 +9,19 @@ export interface APIResult<T> {
   totalPages: number;
 }
 
-interface AttachmentName {
-  ext?: string;
-  full?: string;
-  short?: string;
-}
-
 export interface Attachment {
   directUrl?: string;
   icon?: string;
   id?: number;
   name?: AttachmentName;
   url?: string;
+}
+
+export interface Avatar {
+  big?: string;
+  medium?: string;
+  small?: string;
+  tiny?: string;
 }
 
 export interface BanUserParams {
@@ -68,19 +69,6 @@ export interface Category {
   type?: null | unknown;
 }
 
-export interface LoginData {
-  password: string;
-  username: string;
-}
-
-export interface ChangePasswordParams {
-  /**
-   * @description New valid “email” value
-   * @example securestring12345
-   */
-  password: string;
-}
-
 export interface Changelog {
   actions?: ChangelogAction[];
   createdAtPosix?: number;
@@ -93,6 +81,14 @@ export interface ChangelogAction {
   field?: string;
   previous?: string;
   value?: string;
+}
+
+export interface ChangePasswordParams {
+  /**
+   * @description New valid “email” value
+   * @example securestring12345
+   */
+  password: string;
 }
 
 export interface Chat {
@@ -149,6 +145,10 @@ export interface Comment {
   votes?: Vote;
 }
 
+export interface CommentActionResponse {
+  success?: Comment;
+}
+
 export interface CommentAddParams {
   /**
    * @description The content of a new object.
@@ -199,6 +199,14 @@ export interface CommentEditParams {
 
 export interface CommentModerateResponse {
   success?: Comment;
+}
+
+export interface CommentsListResponse {
+  success?: Comment[];
+}
+
+export interface CreateObjectResponse {
+  success?: Object;
 }
 
 export interface CreateUserParams {
@@ -260,6 +268,10 @@ export interface DeclineParams {
   reason?: string;
 }
 
+export interface EditObjectResponse {
+  success?: Object;
+}
+
 export interface EditUserParams {
   /**
    * @description New valid “email” value.
@@ -289,6 +301,35 @@ export interface EditUserParams {
   team_id?: number;
 }
 
+export interface ErrorInvalidParamsResponse {
+  error?: {
+    /** @default 400 */
+    code: number;
+    /** @default ownership or/and object_type parameters are missed */
+    context: string;
+    /** @default Invalid request and/or request parameters */
+    message: string;
+  };
+}
+
+export interface ErrorNotFoundResponse {
+  error?: {
+    /** @default 404 */
+    code: number;
+    /** @default Resource is not found */
+    message: string;
+  };
+}
+
+export interface ErrorUnauthorizedResponse {
+  error?: {
+    /** @default 401 */
+    code: number;
+    /** @default Authentication is required */
+    message: string;
+  };
+}
+
 export interface Forum {
   id?: string;
   name?: string;
@@ -296,6 +337,11 @@ export interface Forum {
 
 export interface GetChatResponse {
   success?: Chat;
+}
+
+export interface LoginData {
+  password: string;
+  username: string;
 }
 
 export interface LoginParams {
@@ -330,27 +376,6 @@ export interface Message {
   parentId?: number;
   token?: string;
   type?: string;
-}
-
-interface Link {
-  object_id?: string;
-  title?: string;
-  type?: string;
-  url?: string;
-}
-
-interface Team {
-  id?: number;
-  name?: string;
-}
-
-interface Votes {
-  all?: number;
-  canVote?: boolean;
-  isVoted?: boolean;
-  negative?: number;
-  plural?: string;
-  positive?: number;
 }
 
 export interface Object {
@@ -395,16 +420,6 @@ export interface Object {
   url?: string;
   views?: number;
   votes?: Votes;
-}
-
-interface NewAttachment {
-  /**
-   * @description Should be in base64 format
-   * @example iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAA.....==
-   */
-  body?: string;
-  /** @example call.png */
-  name?: string;
 }
 
 export interface ObjectAddParams {
@@ -456,7 +471,7 @@ export interface ObjectAddParams {
    * @example ticket
    * @enum {string}
    */
-  object_type: 'ticket' | 'idea' | 'problem' | 'question';
+  object_type: 'idea' | 'problem' | 'question' | 'ticket';
   /**
    * @description Object belongs to a logical group
    * @example helpdesk
@@ -605,6 +620,12 @@ export interface Report {
   name: string;
 }
 
+export interface ReportGroup {
+  count?: number;
+  id?: string;
+  name?: string;
+}
+
 export interface ReportPaginator {
   activeGroup?: string;
   currentPage?: number;
@@ -652,18 +673,11 @@ export interface TopicModerateResponse {
   success?: Object;
 }
 
-export interface Avatar {
-  big?: string;
-  medium?: string;
-  small?: string;
-  tiny?: string;
-}
-
 export interface User {
   apiKey?: string;
   avatar?: Avatar;
   custom_fields?: CustomFieldValue[];
-  gravatarEmail?: string | null;
+  gravatarEmail?: null | string;
   id?: number;
   isDefaultAvatar?: boolean;
   lastVisitAt?: string;
@@ -682,6 +696,10 @@ export interface User {
   };
 }
 
+export interface UserActionResponse {
+  success?: User;
+}
+
 export interface UserNote {
   author?: User;
   content?: string;
@@ -690,6 +708,10 @@ export interface UserNote {
   createdAtPosix?: number;
   id?: number;
   updatedAt?: string;
+}
+
+export interface UserNotesResponse {
+  success?: UserNote[];
 }
 
 export interface UsersActivityResponse {
@@ -721,61 +743,39 @@ export interface Vote {
   plural?: string;
 }
 
-export interface CommentActionResponse {
-  success?: Comment;
+interface AttachmentName {
+  ext?: string;
+  full?: string;
+  short?: string;
 }
 
-export interface CommentsListResponse {
-  success?: Comment[];
+interface Link {
+  object_id?: string;
+  title?: string;
+  type?: string;
+  url?: string;
 }
 
-export interface CreateObjectResponse {
-  success?: Object;
-}
-
-export interface EditObjectResponse {
-  success?: Object;
-}
-
-export interface ErrorInvalidParamsResponse {
-  error?: {
-    /** @default 400 */
-    code: number;
-    /** @default ownership or/and object_type parameters are missed */
-    context: string;
-    /** @default Invalid request and/or request parameters */
-    message: string;
-  };
-}
-
-export interface ErrorNotFoundResponse {
-  error?: {
-    /** @default 404 */
-    code: number;
-    /** @default Resource is not found */
-    message: string;
-  };
-}
-
-export interface ErrorUnauthorizedResponse {
-  error?: {
-    /** @default 401 */
-    code: number;
-    /** @default Authentication is required */
-    message: string;
-  };
-}
-
-export interface ReportGroup {
-  count?: number;
-  id?: string;
+interface NewAttachment {
+  /**
+   * @description Should be in base64 format
+   * @example iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAA.....==
+   */
+  body?: string;
+  /** @example call.png */
   name?: string;
 }
 
-export interface UserActionResponse {
-  success?: User;
+interface Team {
+  id?: number;
+  name?: string;
 }
 
-export interface UserNotesResponse {
-  success?: UserNote[];
+interface Votes {
+  all?: number;
+  canVote?: boolean;
+  isVoted?: boolean;
+  negative?: number;
+  plural?: string;
+  positive?: number;
 }

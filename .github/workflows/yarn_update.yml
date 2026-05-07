@@ -1,0 +1,24 @@
+name: Check for yarn updates
+
+permissions: {}
+on:
+  schedule:
+    - cron: '0 5 1 * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/yarn_update.yml'
+  workflow_dispatch:
+
+jobs:
+  yarn-update-check:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update yarn
+        uses: ffflorian/actions/yarn-update@e572b82b99ef6e385a524011ab2ff665bc837a10
+        with:
+          git_authorship: 'Florian Imdahl <git@ffflorian.de>'

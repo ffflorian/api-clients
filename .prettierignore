@@ -2,5 +2,7 @@
 docs
 CHANGELOG.md
 node_modules
-package.json
 .vscode
+.yarn
+.yarnrc.yml
+CLAUDE.md

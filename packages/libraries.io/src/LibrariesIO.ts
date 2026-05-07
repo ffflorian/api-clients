@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
 import type {API, ClientOptions} from './interfaces/';
+
+import {GitHubRepositoryAPI, GitHubUserAPI, PlatformAPI, ProjectAPI, UserAPI} from './api';
 
 export class LibrariesIO {
   public readonly api: API;

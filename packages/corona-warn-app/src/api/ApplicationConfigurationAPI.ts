@@ -10,8 +10,8 @@ export class ApplicationConfigurationAPI {
   /**
    * Get application configuration for a country.
    * @param country An ISO 3166-1 alpha-2 country key (e.g. `DE`).
-   * @description Gives application configuration for a specific country, which
-   * includes:
+   *
+   * Gives application configuration for a specific country, which includes:
    * * Minimum risk score
    * * Risk score classification
    * * Risk score parameters

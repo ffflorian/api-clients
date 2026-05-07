@@ -1,25 +1,5 @@
 import {TimeOffType} from './TimeOffType';
 
-interface TimeOffRequestActions {
-  approve: boolean;
-  bypass: boolean;
-  cancel: boolean;
-  deny: boolean;
-  edit: boolean;
-  view: boolean;
-}
-
-interface TimeOffRequestAmount {
-  amount: string;
-  unit: string;
-}
-
-interface TimeOffRequestStatus {
-  lastChanged: string;
-  lastChangedByUserId: string;
-  status: string;
-}
-
 export interface TimeOffRequest {
   actions: TimeOffRequestActions;
   amount: TimeOffRequestAmount;
@@ -33,4 +13,24 @@ export interface TimeOffRequest {
   start: string;
   status: TimeOffRequestStatus;
   type: TimeOffType;
+}
+
+export interface TimeOffRequestActions {
+  approve: boolean;
+  bypass: boolean;
+  cancel: boolean;
+  deny: boolean;
+  edit: boolean;
+  view: boolean;
+}
+
+export interface TimeOffRequestAmount {
+  amount: string;
+  unit: string;
+}
+
+export interface TimeOffRequestStatus {
+  lastChanged: string;
+  lastChangedByUserId: string;
+  status: string;
 }

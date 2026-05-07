@@ -2,30 +2,6 @@ import type {Reason} from './Reason';
 import type {User} from './User';
 import type {WorkingDay} from './WorkingDay';
 
-export interface AbsenceDay {
-  date: string;
-  duration: number;
-  endTime: string;
-  halfHoliday: boolean;
-  holiday: boolean;
-  holidayDayType: WorkingDay | null;
-  mandatoryLeave: false;
-  startTime: string;
-  value: number;
-  weekend: boolean;
-}
-
-export interface DoctorsNote {
-  reminders: any[];
-  status: number;
-}
-
-export interface ForwardHistory {
-  action: string;
-  admin: string;
-  date: string;
-}
-
 export interface Absence extends Required<NewAbsence> {
   /** unique identifier */
   readonly _id: string;
@@ -43,6 +19,30 @@ export interface Absence extends Required<NewAbsence> {
   readonly modified: string;
   /** assigned reason (only available if requested via `relations`) */
   readonly reason?: Reason;
+}
+
+export interface AbsenceDay {
+  date: string;
+  duration: number;
+  endTime: string;
+  halfHoliday: boolean;
+  holiday: boolean;
+  holidayDayType: null | WorkingDay;
+  mandatoryLeave: false;
+  startTime: string;
+  value: number;
+  weekend: boolean;
+}
+
+export interface DoctorsNote {
+  reminders: any[];
+  status: number;
+}
+
+export interface ForwardHistory {
+  action: string;
+  admin: string;
+  date: string;
 }
 
 export interface NewAbsence {

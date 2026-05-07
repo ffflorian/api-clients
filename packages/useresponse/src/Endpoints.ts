@@ -1,4 +1,14 @@
 export const Endpoint = {
+  Additional: {
+    forums(): string {
+      return '/forums.json';
+    },
+
+    statuses(): string {
+      return '/statuses.json';
+    },
+  },
+
   Auth: {
     login(): string {
       return '/auth/login.json';
@@ -6,12 +16,12 @@ export const Endpoint = {
   },
 
   Categories: {
-    listOfCategories(): string {
-      return '/categories.json';
-    },
-
     categoryById(id: string): string {
       return `/categories/${id}.json`;
+    },
+
+    listOfCategories(): string {
+      return '/categories.json';
     },
   },
 
@@ -26,34 +36,16 @@ export const Endpoint = {
   },
 
   Chats: {
-    chats(): string {
-      return '/chats.json';
-    },
-
     chat(id: string): string {
       return `/chats/${id}.json`;
     },
 
+    chats(): string {
+      return '/chats.json';
+    },
+
     messages(chatId: string): string {
       return `/chats/${chatId}/messages.json`;
-    },
-  },
-
-  Moderation: {
-    approveComment(commentId: string): string {
-      return `/comment/${commentId}/approve.json`;
-    },
-
-    declineComment(commentId: string): string {
-      return `/comment/${commentId}/decline.json`;
-    },
-
-    approveTopic(topicId: string): string {
-      return `/topic/${topicId}/approve.json`;
-    },
-
-    declineTopic(topicId: string): string {
-      return `/topic/${topicId}/decline.json`;
     },
   },
 
@@ -74,10 +66,6 @@ export const Endpoint = {
       return `/comment/${commentId}/recovery.json`;
     },
 
-    trashComment(commentId: string): string {
-      return `/comment/${commentId}/trash.json`;
-    },
-
     toggleBestComment(commentId: string): string {
       return `/comment/${commentId}/best/toggle.json`;
     },
@@ -85,49 +73,37 @@ export const Endpoint = {
     toggleVoteComment(commentId: string): string {
       return `/comment/${commentId}/votes/toggle.json`;
     },
-  },
 
-  Additional: {
-    forums(): string {
-      return '/forums.json';
-    },
-
-    statuses(): string {
-      return '/statuses.json';
+    trashComment(commentId: string): string {
+      return `/comment/${commentId}/trash.json`;
     },
   },
 
-  Users: {
-    activity(userId: string): string {
-      return `/users/${userId}/activity.json`;
+  CustomFields: {
+    objectCustomFields(objectId: string): string {
+      return `/objects/${objectId}/custom-fields/list.json`;
     },
 
-    banUser(userId: string): string {
-      return `/users/${userId}/ban.json`;
+    userCustomFields(): string {
+      return '/users/custom-fields/list.json';
+    },
+  },
+
+  Moderation: {
+    approveComment(commentId: string): string {
+      return `/comment/${commentId}/approve.json`;
     },
 
-    changePassword(userId: string): string {
-      return `/users/${userId}/change-password.json`;
+    approveTopic(topicId: string): string {
+      return `/topic/${topicId}/approve.json`;
     },
 
-    me(): string {
-      return '/me.json';
+    declineComment(commentId: string): string {
+      return `/comment/${commentId}/decline.json`;
     },
 
-    searchUsers(): string {
-      return '/users/search.json';
-    },
-
-    updateProfile(): string {
-      return '/profile/update.json';
-    },
-
-    user(id: string): string {
-      return `/users/${id}.json`;
-    },
-
-    users(): string {
-      return '/users.json';
+    declineTopic(topicId: string): string {
+      return `/topic/${topicId}/decline.json`;
     },
   },
 
@@ -164,26 +140,16 @@ export const Endpoint = {
       return '/tickets.json';
     },
 
+    toggleVote(id: string): string {
+      return `/objects/${id}/votes/toggle.json`;
+    },
+
     trash(id: string): string {
       return `/objects/${id}/trash.json`;
     },
 
     unsubscribe(id: string): string {
       return `/objects/${id}/unsubscribe.json`;
-    },
-
-    toggleVote(id: string): string {
-      return `/objects/${id}/votes/toggle.json`;
-    },
-  },
-
-  CustomFields: {
-    objectCustomFields(objectId: string): string {
-      return `/objects/${objectId}/custom-fields/list.json`;
-    },
-
-    userCustomFields(): string {
-      return '/users/custom-fields/list.json';
     },
   },
 
@@ -212,6 +178,40 @@ export const Endpoint = {
 
     notes(userId: string): string {
       return `/users/${userId}/notes.json`;
+    },
+  },
+
+  Users: {
+    activity(userId: string): string {
+      return `/users/${userId}/activity.json`;
+    },
+
+    banUser(userId: string): string {
+      return `/users/${userId}/ban.json`;
+    },
+
+    changePassword(userId: string): string {
+      return `/users/${userId}/change-password.json`;
+    },
+
+    me(): string {
+      return '/me.json';
+    },
+
+    searchUsers(): string {
+      return '/users/search.json';
+    },
+
+    updateProfile(): string {
+      return '/profile/update.json';
+    },
+
+    user(id: string): string {
+      return `/users/${id}.json`;
+    },
+
+    users(): string {
+      return '/users.json';
     },
   },
 };

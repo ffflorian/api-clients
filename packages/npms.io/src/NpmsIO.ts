@@ -1,14 +1,15 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {PackageAPI, SearchAPI} from './api';
 import type {API, ClientOptions} from './interfaces/';
+
+import {PackageAPI, SearchAPI} from './api';
 
 export class NpmsIO {
   public readonly api: API;
   private readonly apiClient: APIClient;
 
   constructor(options: ClientOptions = {}) {
-    this.apiClient = new APIClient(options.apiUrl || 'https://api.npms.io/v2');
+    this.apiClient = new APIClient(options.apiUrl || 'https://api.npms.io');
 
     this.api = {
       package: new PackageAPI(this.apiClient),

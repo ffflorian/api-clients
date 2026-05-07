@@ -1,3 +1,26 @@
+export interface Badge {
+  info: Info;
+  urls: Urls;
+}
+
+export interface Collected {
+  github?: GitHub;
+  metadata: Metadata;
+  npm: Npm;
+  source?: Source;
+}
+
+export interface Error {
+  code: string;
+  message: string;
+}
+
+export interface Evaluation {
+  maintenance: Maintenance;
+  popularity: Popularity;
+  quality: Quality;
+}
+
 export interface PackageInfo {
   /** The date in which the package was last analyzed */
   analyzedAt: string;
@@ -11,16 +34,9 @@ export interface PackageInfo {
   score: Score;
 }
 
-interface Badge {
-  info: Info;
-  urls: Urls;
-}
-
-interface Collected {
-  github?: GitHub;
-  metadata: Metadata;
-  npm: Npm;
-  source?: Source;
+export interface Score {
+  detail: Detail;
+  final: number;
 }
 
 interface Contributor {
@@ -32,17 +48,6 @@ interface Detail {
   maintenance: number;
   popularity: number;
   quality: number;
-}
-
-interface Error {
-  code: string;
-  message: string;
-}
-
-interface Evaluation {
-  maintenance: Maintenance;
-  popularity: Popularity;
-  quality: Quality;
 }
 
 interface Files {
@@ -62,17 +67,17 @@ interface GitHub {
   subscribersCount: number;
 }
 
+interface Info {
+  modifiers?: Modifiers;
+  service: string;
+  type: string;
+}
+
 interface Issues {
   count: number;
   distribution: Record<string, number>;
   isDisabled: boolean;
   openCount: number;
-}
-
-interface Info {
-  modifiers?: Modifiers;
-  service: string;
-  type: string;
 }
 
 interface Links {
@@ -147,11 +152,6 @@ interface Repository {
   directory: string;
   type?: string;
   url: string;
-}
-
-interface Score {
-  detail: Detail;
-  final: number;
 }
 
 interface Source {

@@ -1,3 +1,8 @@
+export interface Allowance extends Required<NewAllowance> {
+  /** the unique id of the allowance */
+  readonly _id: string;
+}
+
 export interface NewAllowance {
   /** indicates if it can be used currently. */
   active: boolean;
@@ -7,9 +12,4 @@ export interface NewAllowance {
   name: string;
   /** indicates if unu */
   residualLeaveAvailable: boolean;
-}
-
-export interface Allowance extends Required<NewAllowance> {
-  /** the unique id of the allowance */
-  readonly _id: string;
 }

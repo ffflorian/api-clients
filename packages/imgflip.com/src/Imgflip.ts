@@ -1,8 +1,9 @@
 import {APIClient, type RequestOptions} from '@ffflorian/api-client';
 import * as qs from 'qs';
 
+import type {API, GetMemesOptions, Image, ImageCaptionOptions, Memes, Response} from './interfaces';
+
 import {Endpoint} from './Endpoints';
-import type {API, Image, ImageCaptionOptions, Memes, Response} from './interfaces';
 
 export class Imgflip {
   private static readonly BASE_URL = 'https://api.imgflip.com';
@@ -10,14 +11,20 @@ export class Imgflip {
   private readonly apiClient: APIClient;
 
   constructor(apiUrl?: string) {
-    this.apiClient = new APIClient(
-      apiUrl || Imgflip.BASE_URL,
-    );
+    this.apiClient = new APIClient(apiUrl || Imgflip.BASE_URL);
 
     this.api = {
       captionImage: this.captionImage,
       getMemes: this.getMemes,
     };
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newURL The new API url
+   */
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
   }
 
   private readonly captionImage = async (params: ImageCaptionOptions): Promise<Response<Image>> => {
@@ -33,17 +40,16 @@ export class Imgflip {
     return response.json();
   };
 
-  private readonly getMemes = async (): Promise<Response<Memes>> => {
+  private readonly getMemes = async (options?: GetMemesOptions): Promise<Response<Memes>> => {
     const endpoint = Endpoint.getMemes();
-    const {data} = await this.apiClient.get(endpoint);
+    const {data} = await this.apiClient.get(endpoint, {
+      params: options
+        ? {
+            ...options,
+            type: Array.isArray(options.type) ? options.type.join(',') : options.type,
+          }
+        : undefined,
+    });
     return data;
   };
-
-  /**
-   * Set a new API URL.
-   * @param newURL The new API url
-   */
-  public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
-  }
 }

@@ -1,7 +1,76 @@
+# bamboohr.com [1.7.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.6.0...bamboohr.com@1.7.0) (2026-05-01)
+
+
+### Features
+
+* **bamboohr.com:** Improve API ([#1944](https://github.com/ffflorian/api-clients/issues/1944)) ([a60dca8](https://github.com/ffflorian/api-clients/commit/a60dca8acea40e57845490b47a3ecc0037d71af6))
+
+# bamboohr.com [1.6.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.7...bamboohr.com@1.6.0) (2026-05-01)
+
+
+### Features
+
+* **absence.io:** Improve API ([#1945](https://github.com/ffflorian/api-clients/issues/1945)) ([6b82944](https://github.com/ffflorian/api-clients/commit/6b8294437d0cd9ab02ac6a3498298a98ce2aa5dc))
+
+## bamboohr.com [1.5.7](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.6...bamboohr.com@1.5.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* Use yarn build in all packages ([#1914](https://github.com/ffflorian/api-clients/issues/1914)) ([e205b75](https://github.com/ffflorian/api-clients/commit/e205b7508821bb7eeec85c37c75f8fdc8ce63652))
+
+## bamboohr.com [1.5.6](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.5.5...bamboohr.com@1.5.6) (2026-03-29)
+
+
+### Bug Fixes
+
+* resolve all TypeDoc warnings ([#1900](https://github.com/ffflorian/api-clients/issues/1900)) ([dd96b5b](https://github.com/ffflorian/api-clients/commit/dd96b5bf6c5808174f12ea5a2ad048607289d805))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 1.5.5 (2026-01-24)
+
+**Note:** Version bump only for package bamboohr.com
+
+
+
+
+
+## 1.5.4 (2026-01-19)
+
+
+### Bug Fixes
+
+* **bamboohr.com:** Insecure randomness ([#1838](https://github.com/ffflorian/api-clients/issues/1838)) ([b7f85c6](https://github.com/ffflorian/api-clients/commit/b7f85c69d7c60e89b12c051738156e70946f912c))
+
+
+
+
+
+## 1.5.3 (2026-01-16)
+
+
+### Reverts
+
+* Revert "chore: Add space to docs build script" ([4beaf5c](https://github.com/ffflorian/api-clients/commit/4beaf5cc0344657296e5e39bf86f88420cf17dc8))
+
+
+
+
+
+## 1.5.2 (2026-01-10)
+
+
+### Bug Fixes
+
+* Remove GH_USER ([4eef0d5](https://github.com/ffflorian/api-clients/commit/4eef0d5d4e549683eca940fdf5f39b0780e31a34))
+
+
+
+
 
 ## 1.5.1 (2025-12-02)
 

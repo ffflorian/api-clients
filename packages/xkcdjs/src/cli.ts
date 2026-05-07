@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import {program as commander} from 'commander';
-import {constants as fsConstants, promises as fs} from 'fs';
-import * as path from 'path';
+import {promises as fs, constants as fsConstants} from 'node:fs';
+import * as path from 'node:path';
 
+import {description, name, version} from '../package.json';
 import {XKCD, XKCDResultWithData} from './';
 
 async function init(dir: string = '.'): Promise<[string, XKCD]> {
@@ -27,8 +28,6 @@ async function save(filePath: string, imageResult: XKCDResultWithData): Promise<
   await fs.writeFile(resolvedFilePath, data.data);
   console.info(`Saved image to "${resolvedFilePath}".`);
 }
-
-const {description, name, version}: {description: string; name: string; version: string} = require('../package.json');
 
 commander.on('command:*', () => commander.help());
 

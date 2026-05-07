@@ -1,7 +1,69 @@
+# c3nav [3.5.0](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.7...c3nav@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **c3nav:** Improve API ([#1943](https://github.com/ffflorian/api-clients/issues/1943)) ([faff918](https://github.com/ffflorian/api-clients/commit/faff9185d9da1b68bf465d9631d632cf6a3158de))
+
+## c3nav [3.4.7](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.6...c3nav@3.4.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* Use yarn build in all packages ([#1914](https://github.com/ffflorian/api-clients/issues/1914)) ([e205b75](https://github.com/ffflorian/api-clients/commit/e205b7508821bb7eeec85c37c75f8fdc8ce63652))
+
+## c3nav [3.4.6](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.5...c3nav@3.4.6) (2026-03-29)
+
+
+### Bug Fixes
+
+* resolve all TypeDoc warnings ([#1900](https://github.com/ffflorian/api-clients/issues/1900)) ([dd96b5b](https://github.com/ffflorian/api-clients/commit/dd96b5bf6c5808174f12ea5a2ad048607289d805))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 3.4.5 (2026-01-24)
+
+**Note:** Version bump only for package c3nav
+
+
+
+
+
+## 3.4.4 (2026-01-19)
+
+
+### Bug Fixes
+
+* **bamboohr.com:** Insecure randomness ([#1838](https://github.com/ffflorian/api-clients/issues/1838)) ([b7f85c6](https://github.com/ffflorian/api-clients/commit/b7f85c69d7c60e89b12c051738156e70946f912c))
+
+
+
+
+
+## 3.4.3 (2026-01-16)
+
+
+### Reverts
+
+* Revert "chore: Add space to docs build script" ([4beaf5c](https://github.com/ffflorian/api-clients/commit/4beaf5cc0344657296e5e39bf86f88420cf17dc8))
+
+
+
+
+
+## 3.4.2 (2026-01-10)
+
+
+### Bug Fixes
+
+* Remove GH_USER ([4eef0d5](https://github.com/ffflorian/api-clients/commit/4eef0d5d4e549683eca940fdf5f39b0780e31a34))
+
+
+
+
 
 ## 3.4.1 (2025-12-02)
 

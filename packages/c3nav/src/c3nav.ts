@@ -1,5 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 
+import type {API, ClientOptions} from './interfaces';
+
 import {
   AccessRestrictionGroupsAPI,
   AccessRestrictionsAPI,
@@ -18,8 +20,10 @@ import {
   LocationGroupsAPI,
   LocationsAPI,
   MapAPI,
+  MeshAPI,
   ObstaclesAPI,
   PoisAPI,
+  PositioningAPI,
   RampsAPI,
   RoutingAPI,
   SessionAPI,
@@ -28,9 +32,8 @@ import {
   StairsAPI,
   UpdatesAPI,
 } from './api';
-import type {API, ClientOptions} from './interfaces';
 
-export class LibrariesIO {
+export class c3nav {
   public readonly api: API;
   private readonly apiClient: APIClient;
 
@@ -41,7 +44,7 @@ export class LibrariesIO {
       options = {apiUrl: options};
     }
 
-    this.apiClient = new APIClient('https://c3nav.de/api/');
+    this.apiClient = new APIClient(options.apiUrl || 'https://c3nav.de');
 
     this.api = {
       accessRestrictionGroups: new AccessRestrictionGroupsAPI(this.apiClient, options),
@@ -61,8 +64,10 @@ export class LibrariesIO {
       locationGroups: new LocationGroupsAPI(this.apiClient, options),
       locations: new LocationsAPI(this.apiClient, options),
       map: new MapAPI(this.apiClient, options),
+      mesh: new MeshAPI(this.apiClient, options),
       obstacles: new ObstaclesAPI(this.apiClient, options),
       pois: new PoisAPI(this.apiClient, options),
+      positioning: new PositioningAPI(this.apiClient, options),
       ramps: new RampsAPI(this.apiClient, options),
       routing: new RoutingAPI(this.apiClient, options),
       session: new SessionAPI(this.apiClient, options),
@@ -81,3 +86,5 @@ export class LibrariesIO {
     this.apiClient.setBaseURL(newURL);
   }
 }
+
+export class LibrariesIO extends c3nav {}

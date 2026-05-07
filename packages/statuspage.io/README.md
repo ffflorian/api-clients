@@ -1,6 +1,6 @@
 # statuspage.io [![npm version](https://img.shields.io/npm/v/statuspage.io.svg)](https://www.npmjs.com/package/statuspage.io)
 
-A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see https://developer.statuspage.io/.
+A [statuspage.io](https://statuspage.io) API client. For a documentation on the API see [the statuspage.io API reference](https://developer.statuspage.io).
 
 ### Installation
 

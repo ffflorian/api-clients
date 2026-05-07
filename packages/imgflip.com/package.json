@@ -1,39 +1,47 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "@ffflorian/api-client": "2.2.0",
-    "qs": "6.14.0"
+    "@ffflorian/api-client": "2.5.1",
+    "qs": "6.15.1"
   },
   "description": "A imgflip.com API client",
   "devDependencies": {
     "@types/node": "~24",
-    "@types/qs": "6.14.0",
-    "rimraf": "6.1.2",
-    "typedoc": "0.28.15",
-    "typescript": "5.9.3"
+    "@types/qs": "6.15.0",
+    "nock": "14.0.12",
+    "rimraf": "6.1.3",
+    "typedoc": "0.28.19",
+    "typescript": "6.0.3",
+    "vitest": "4.1.5"
   },
   "engines": {
     "node": ">= 21"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": [
     "api",
+    "api-client",
     "imgflip.com",
     "imgflip",
     "imgflipcom"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "imgflip.com",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/imgflip.com",
+  "readme": "https://github.com/ffflorian/api-clients#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/api-clients.git"
+  },
   "scripts": {
+    "build": "yarn build:ts",
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/imgflip.com src/index.ts",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build:ts",
-    "test": "exit 0"
+    "dist": "yarn clean && yarn build",
+    "test": "vitest run"
   },
-  "version": "3.5.1"
+  "version": "3.6.0"
 }

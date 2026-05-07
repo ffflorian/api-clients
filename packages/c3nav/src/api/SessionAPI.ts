@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
+import type {ClientOptions, Session, SessionKey} from '../interfaces/';
+
 import {Endpoint} from '../Endpoints';
-import type {ClientOptions, Session} from '../interfaces/';
 import {APIBase} from './APIBase';
 
 export class SessionAPI extends APIBase {
@@ -9,17 +10,23 @@ export class SessionAPI extends APIBase {
     super(apiClient, options);
   }
 
-  /**
-   * @param id The id to get
-   */
-  public async getById(id: number): Promise<Session> {
-    const endpoint = Endpoint.session(id);
+  public async getById(_id: number): Promise<Session> {
+    return this.getStatus();
+  }
+
+  public async getList(): Promise<Session[]> {
+    const status = await this.getStatus();
+    return [status];
+  }
+
+  public async getSessionKey(): Promise<SessionKey> {
+    const endpoint = Endpoint.Session.key();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
 
-  public async getList(): Promise<Session[]> {
-    const endpoint = Endpoint.session();
+  public async getStatus(): Promise<Session> {
+    const endpoint = Endpoint.Session.status();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }

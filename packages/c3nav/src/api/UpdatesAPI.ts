@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, Updates} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class UpdatesAPI extends APIBase {
@@ -9,18 +10,18 @@ export class UpdatesAPI extends APIBase {
     super(apiClient, options);
   }
 
-  /**
-   * @param id The id to get
-   */
-  public async getById(id: number): Promise<Updates> {
-    const endpoint = Endpoint.updates(id);
+  public async fetchUpdates(): Promise<Updates> {
+    const endpoint = Endpoint.Updates.fetch();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
 
+  public async getById(_id: number): Promise<Updates> {
+    return this.fetchUpdates();
+  }
+
   public async getList(): Promise<Updates[]> {
-    const endpoint = Endpoint.updates();
-    const {data} = await this.apiClient.get(endpoint);
-    return data;
+    const updates = await this.fetchUpdates();
+    return [updates];
   }
 }

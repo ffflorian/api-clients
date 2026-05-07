@@ -1,5 +1,18 @@
 import type {WorkingDays} from './WorkingDay';
 
+export enum UserStatus {
+  /** Account is deleted and will be removed from the system 30 days after deletion. */
+  DELETED,
+  /** The account was created. The user cannot login yet */
+  CREATED,
+  /** Account is active. User can login */
+  ACTIVE,
+  /** Account is inactive. User cannot login */
+  INACTIVE,
+  /** The invitation email was sent. The user cannot login yet */
+  EMAIL_SENT,
+}
+
 export interface NewUser {
   /** the default approver for this user. If not set it will inherit the approver from the department */
   approverId?: string;
@@ -52,17 +65,4 @@ export interface User extends Required<NewUser> {
   readonly avatar: string;
   /** first and last name concatentated for your convenience */
   readonly name: string;
-}
-
-export enum UserStatus {
-  /** Account is deleted and will be removed from the system 30 days after deletion. */
-  DELETED,
-  /** The account was created. The user cannot login yet */
-  CREATED,
-  /** Account is active. User can login */
-  ACTIVE,
-  /** Account is inactive. User cannot login */
-  INACTIVE,
-  /** The invitation email was sent. The user cannot login yet */
-  EMAIL_SENT,
 }

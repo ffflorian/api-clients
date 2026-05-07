@@ -1,0 +1,58 @@
+import {describe, expect, it} from 'vitest';
+
+import {Endpoint} from './Endpoints';
+
+describe('Endpoint', () => {
+  it.each([
+    ['auth login', Endpoint.Auth.login(), '/auth/login.json'],
+    ['categories list', Endpoint.Categories.listOfCategories(), '/categories.json'],
+    ['categories by id', Endpoint.Categories.categoryById('42'), '/categories/42.json'],
+    ['changelog object', Endpoint.Changelog.objects('42'), '/changelog/object/42.json'],
+    ['changelog user', Endpoint.Changelog.users('42'), '/changelog/user/42.json'],
+    ['chats list', Endpoint.Chats.chats(), '/chats.json'],
+    ['chat by id', Endpoint.Chats.chat('42'), '/chats/42.json'],
+    ['chat messages', Endpoint.Chats.messages('42'), '/chats/42/messages.json'],
+    ['approve comment', Endpoint.Moderation.approveComment('42'), '/comment/42/approve.json'],
+    ['decline comment', Endpoint.Moderation.declineComment('42'), '/comment/42/decline.json'],
+    ['approve topic', Endpoint.Moderation.approveTopic('42'), '/topic/42/approve.json'],
+    ['decline topic', Endpoint.Moderation.declineTopic('42'), '/topic/42/decline.json'],
+    ['comments list', Endpoint.Comments.comments(), '/comments.json'],
+    ['comment edit', Endpoint.Comments.editComment('42'), '/comment/42/edit.json'],
+    ['object comments', Endpoint.Comments.objectComments('42'), '/objects/42/comments.json'],
+    ['comment recovery', Endpoint.Comments.recoveryComment('42'), '/comment/42/recovery.json'],
+    ['comment trash', Endpoint.Comments.trashComment('42'), '/comment/42/trash.json'],
+    ['comment best toggle', Endpoint.Comments.toggleBestComment('42'), '/comment/42/best/toggle.json'],
+    ['comment vote toggle', Endpoint.Comments.toggleVoteComment('42'), '/comment/42/votes/toggle.json'],
+    ['forums', Endpoint.Additional.forums(), '/forums.json'],
+    ['statuses', Endpoint.Additional.statuses(), '/statuses.json'],
+    ['user activity', Endpoint.Users.activity('42'), '/users/42/activity.json'],
+    ['ban user', Endpoint.Users.banUser('42'), '/users/42/ban.json'],
+    ['change password', Endpoint.Users.changePassword('42'), '/users/42/change-password.json'],
+    ['me', Endpoint.Users.me(), '/me.json'],
+    ['search users', Endpoint.Users.searchUsers(), '/users/search.json'],
+    ['update profile', Endpoint.Users.updateProfile(), '/profile/update.json'],
+    ['user by id', Endpoint.Users.user('42'), '/users/42.json'],
+    ['users list', Endpoint.Users.users(), '/users.json'],
+    ['archive object', Endpoint.Objects.archive('42'), '/objects/42/archive.json'],
+    ['attach file', Endpoint.Objects.attachFile('42'), '/objects/42/attach-file.json'],
+    ['comments toggle', Endpoint.Objects.commentsToggle('42'), '/objects/42/comments/toggle.json'],
+    ['object by id', Endpoint.Objects.object('42'), '/objects/42.json'],
+    ['objects list', Endpoint.Objects.objects(), '/objects.json'],
+    ['object search', Endpoint.Objects.search(), '/objects/search.json'],
+    ['subscribe object', Endpoint.Objects.subscribe('42'), '/objects/42/subscribe.json'],
+    ['tickets list', Endpoint.Objects.tickets(), '/tickets.json'],
+    ['trash object', Endpoint.Objects.trash('42'), '/objects/42/trash.json'],
+    ['unsubscribe object', Endpoint.Objects.unsubscribe('42'), '/objects/42/unsubscribe.json'],
+    ['object vote toggle', Endpoint.Objects.toggleVote('42'), '/objects/42/votes/toggle.json'],
+    ['object custom fields', Endpoint.CustomFields.objectCustomFields('42'), '/objects/42/custom-fields/list.json'],
+    ['user custom fields', Endpoint.CustomFields.userCustomFields(), '/users/custom-fields/list.json'],
+    ['report objects', Endpoint.Reports.reportObjects('42'), '/report/42/objects.json'],
+    ['reports list', Endpoint.Reports.reportsList(), '/reports/list.json'],
+    ['user notes add', Endpoint.UserNotes.add('42'), '/users/42/notes/add.json'],
+    ['user notes delete', Endpoint.UserNotes.delete('42'), '/users/notes/42/delete.json'],
+    ['user notes edit', Endpoint.UserNotes.edit('42'), '/users/notes/42/edit.json'],
+    ['user notes list', Endpoint.UserNotes.notes('42'), '/users/42/notes.json'],
+  ])('builds the %s endpoint', (_name, endpoint, expectedEndpoint) => {
+    expect(endpoint).toBe(expectedEndpoint);
+  });
+});

@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ScheduledMaintenances} from '../interfaces/Result';
+
+import {Endpoint} from '../Endpoints';
 
 export class ScheduledMaintenancesAPI {
   private readonly apiClient: APIClient;
@@ -15,7 +16,7 @@ export class ScheduledMaintenancesAPI {
    * scheduled maintenances in the *In Progress* or *Verifying* state.
    */
   public async getActive(): Promise<ScheduledMaintenances> {
-    const endpoint = Endpoint.ScheduledMaintenances.upcoming();
+    const endpoint = Endpoint.ScheduledMaintenances.active();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
@@ -26,7 +27,7 @@ export class ScheduledMaintenancesAPI {
    * as those in the *Completed* state.
    */
   public async getAll(): Promise<ScheduledMaintenances> {
-    const endpoint = Endpoint.ScheduledMaintenances.upcoming();
+    const endpoint = Endpoint.ScheduledMaintenances.all();
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }

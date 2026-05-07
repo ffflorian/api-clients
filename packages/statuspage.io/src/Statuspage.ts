@@ -1,9 +1,10 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
-import {Endpoint} from './Endpoints';
 import type {API} from './interfaces/API';
 import type {Components, Status, Summary} from './interfaces/Result';
+
+import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from './api';
+import {Endpoint} from './Endpoints';
 
 export class Statuspage {
   public readonly api: API;

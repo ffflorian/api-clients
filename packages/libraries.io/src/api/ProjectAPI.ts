@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   ClientOptions,
   Contributor,
@@ -13,6 +12,8 @@ import type {
   Repository,
   SearchOptions,
 } from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class ProjectAPI extends APIBase {
@@ -22,7 +23,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get users that have contributed to a given project.
-   * @see https://libraries.io/api#project-contributors
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Pagination options
@@ -32,7 +32,7 @@ export class ProjectAPI extends APIBase {
     projectName: string,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Contributor[]>> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    const endpoint = Endpoint.Project.contributors(platform, projectName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
@@ -43,24 +43,23 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    * @param options Pagination options
    */
-  public async getDependendentRepositories(
+  public async getDependentRepositories(
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
   ): Promise<LibrariesIOResult<Repository[]>> {
-    const endpoint = Endpoint.Project.dependents(platform, projectName);
+    const endpoint = Endpoint.Project.dependentRepositories(platform, projectName);
     const {data} = await this.apiClient.get(endpoint, {data: options});
     return data;
   }
 
   /**
    * Get packages that have at least one version that depends on a given project.
-   * @see https://libraries.io/api#project-dependents
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param options Pagination options
    */
-  public async getDependendents(
+  public async getDependents(
     platform: PlatformType,
     projectName: string,
     options?: PaginationOptions
@@ -72,7 +71,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get information about a package and it's versions.
-   * @see https://libraries.io/api#project
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -84,7 +82,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get a list of dependencies for a version of a project, pass `latest` as version to get dependency info for the latest available version
-   * @see https://libraries.io/api#project-dependencies
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    * @param projectVersion
@@ -101,7 +98,6 @@ export class ProjectAPI extends APIBase {
 
   /**
    * Get breakdown of SourceRank score for a given project.
-   * @see https://libraries.io/api#project-sourcerank
    * @param platform The project platform (e.g. "npm", "cargo", ...)
    * @param projectName The project name
    */
@@ -117,14 +113,13 @@ export class ProjectAPI extends APIBase {
    * @param projectName The project name
    */
   public async getUsage(platform: PlatformType, projectName: string): Promise<LibrariesIOResult<ProjectUsage>> {
-    const endpoint = Endpoint.Project.sourceRank(platform, projectName);
+    const endpoint = Endpoint.Project.usage(platform, projectName);
     const {data} = await this.apiClient.get(endpoint);
     return data;
   }
 
   /**
    * Search for projects.
-   * @see https://libraries.io/api#project-search
    * @param query The search query
    * @param options Sorting, filter and pagination options
    */

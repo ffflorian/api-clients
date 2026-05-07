@@ -1,265 +1,337 @@
 const encode: typeof encodeURIComponent = encodeURIComponent;
 
+function mapDataEndpoint(path: string, id?: number | string): string {
+  let endpoint = `/api/v2/mapdata/${path}/`;
+  if (id !== undefined) {
+    endpoint += `${encode(String(id))}/`;
+  }
+  return endpoint;
+}
+
 export const Endpoint = {
   ACCESSRESTRICTIONGROUPS: 'accessrestrictiongroups',
+  accessRestrictionGroups(id?: number | string): string {
+    return mapDataEndpoint('accessrestrictiongroups', id);
+  },
   ACCESSRESTRICTIONS: 'accessrestrictions',
+  accessRestrictions(id?: number | string): string {
+    return mapDataEndpoint('accessrestrictions', id);
+  },
   AREAS: 'areas',
+  areas(id?: number | string): string {
+    return mapDataEndpoint('areas', id);
+  },
   BOUNDS: 'bounds',
   BUILDINGS: 'buildings',
+  buildings(id?: number | string): string {
+    return mapDataEndpoint('buildings', id);
+  },
   CHANGESETS: 'changesets',
+  changesets(id?: number | string): string {
+    return mapDataEndpoint('changesets', id);
+  },
   COLUMNS: 'columns',
-  CROSSDESCRIPTIONS: 'crossdescriptions',
-  DETAILS: 'details',
+  columns(id?: number | string): string {
+    return mapDataEndpoint('columns', id);
+  },
+  CROSSDESCRIPTIONS: 'cross_descriptions',
+  crossDescriptions(id?: number | string): string {
+    return mapDataEndpoint('cross_descriptions', id);
+  },
+  DETAILS: 'display',
   DOORS: 'doors',
+  doors(id?: number | string): string {
+    return mapDataEndpoint('doors', id);
+  },
   EDITOR: 'editor',
-  GEOMETRY: 'geometry',
-  HOLES: 'holes',
-  LEAVEDESCRIPTIONS: 'leavedescriptions',
-  LEVELS: 'levels',
-  LINEOBSTACLES: 'lineobstacles',
-  LOCATIONGROUPCATEGORIES: 'locationgroupcategories',
-  LOCATIONGROUPS: 'locationgroups',
-  LOCATIONS: 'locations',
-  MAP: 'map',
-  OBSTACLES: 'obstacles',
-  POIS: 'pois',
-  RAMPS: 'ramps',
-  ROUTING: 'routing',
-  SESSION: 'session',
-  SOURCES: 'sources',
-  SPACES: 'spaces',
-  STAIRS: 'stairs',
-  TYPES: 'types',
-  UPDATES: 'updates',
+  editor(id?: number | string): string {
+    let endpoint = '/api/v2/editor/';
+    if (id !== undefined) {
+      endpoint += `${encode(String(id))}/`;
+    }
+    return endpoint;
+  },
+  Editor: {
+    beaconsLookup(): string {
+      return '/api/v2/editor/beacons-lookup/';
+    },
 
-  Map: {
     bounds(): string {
-      return `/${Endpoint.MAP}/${Endpoint.BOUNDS}/`;
+      return '/api/v2/editor/bounds/';
+    },
+
+    geometryStyles(): string {
+      return '/api/v2/editor/geometrystyles/';
+    },
+
+    levelGeometries(levelId: number | string): string {
+      return `/api/v2/editor/geometries/level/${encode(String(levelId))}/`;
+    },
+
+    spaceGeometries(spaceId: number | string): string {
+      return `/api/v2/editor/geometries/space/${encode(String(spaceId))}/`;
     },
   },
-
+  GEOMETRY: 'geometry',
+  HOLES: 'holes',
+  holes(id?: number | string): string {
+    return mapDataEndpoint('holes', id);
+  },
+  LEAVEDESCRIPTIONS: 'leave_descriptions',
+  leaveDescriptions(id?: number | string): string {
+    return mapDataEndpoint('leave_descriptions', id);
+  },
   Level: {
     levels(id?: number | string): string {
-      let endpoint = `/${Endpoint.LEVELS}/`;
-      if (id) {
-        endpoint += `${encode(String(id))}/`;
-      }
-      return endpoint;
+      return mapDataEndpoint('levels', id);
     },
+  },
+  LEVELS: 'levels',
+  LINEOBSTACLES: 'lineobstacles',
+  lineObstacles(id?: number | string): string {
+    return mapDataEndpoint('lineobstacles', id);
   },
 
   Location: {
-    locations(): string {
-      return `/${Endpoint.LOCATIONS}/`;
-    },
-
     detail(id: number | string): string {
-      let endpoint = `/${Endpoint.LOCATIONS}/`;
-      endpoint += typeof id === 'string' ? 'by_slug/' : '';
-      endpoint += `${encode(String(id))}/`;
-      return endpoint;
+      if (typeof id === 'string') {
+        return `/api/v2/map/locations/by-slug/${encode(String(id))}/`;
+      }
+      return `/api/v2/map/locations/${encode(String(id))}/`;
     },
 
     details(id: number | string): string {
-      let endpoint = `/${Endpoint.LOCATIONS}/`;
-      endpoint += typeof id === 'string' ? 'by_slug/' : '';
-      endpoint += `${encode(String(id))}/${Endpoint.DETAILS}/`;
-      return endpoint;
+      if (typeof id === 'string') {
+        return `/api/v2/map/locations/by-slug/${encode(String(id))}/display/`;
+      }
+      return `/api/v2/map/locations/${encode(String(id))}/display/`;
     },
 
     geometry(id: number | string): string {
-      let endpoint = `/${Endpoint.LOCATIONS}/`;
-      endpoint += typeof id === 'string' ? 'by_slug/' : '';
-      endpoint += `${encode(String(id))}/${Endpoint.GEOMETRY}/`;
-      return endpoint;
+      if (typeof id === 'string') {
+        return `/api/v2/map/locations/by-slug/${encode(String(id))}/geometry/`;
+      }
+      return `/api/v2/map/locations/${encode(String(id))}/geometry/`;
+    },
+
+    locations(): string {
+      return '/api/v2/map/locations/';
     },
 
     types(): string {
-      return `/${Endpoint.LOCATIONS}/${Endpoint.TYPES}/`;
+      return '/api/v2/locations/types/';
     },
   },
 
-  accessRestrictionGroups(id?: number | string): string {
-    let endpoint = `/${Endpoint.ACCESSRESTRICTIONGROUPS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  accessRestrictions(id?: number | string): string {
-    let endpoint = `/${Endpoint.ACCESSRESTRICTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  areas(id?: number | string): string {
-    let endpoint = `/${Endpoint.AREAS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  buildings(id?: number | string): string {
-    let endpoint = `/${Endpoint.BUILDINGS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  changesets(id?: number | string): string {
-    let endpoint = `/${Endpoint.CHANGESETS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  columns(id?: number | string): string {
-    let endpoint = `/${Endpoint.COLUMNS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  crossDescriptions(id?: number | string): string {
-    let endpoint = `/${Endpoint.CROSSDESCRIPTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  doors(id?: number | string): string {
-    let endpoint = `/${Endpoint.DOORS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  editor(id?: number | string): string {
-    let endpoint = `/${Endpoint.EDITOR}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  holes(id?: number | string): string {
-    let endpoint = `/${Endpoint.HOLES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  leaveDescriptions(id?: number | string): string {
-    let endpoint = `/${Endpoint.LEAVEDESCRIPTIONS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
-
-  lineObstacles(id?: number | string): string {
-    let endpoint = `/${Endpoint.LINEOBSTACLES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
-  },
+  LOCATIONGROUPCATEGORIES: 'locationgroupcategories',
 
   locationGroupCategories(id?: number | string): string {
-    let endpoint = `/${Endpoint.LOCATIONGROUPCATEGORIES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('locationgroupcategories', id);
   },
+
+  LOCATIONGROUPS: 'locationgroups',
 
   locationGroups(id?: number | string): string {
-    let endpoint = `/${Endpoint.LOCATIONGROUPS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('locationgroups', id);
   },
+
+  LOCATIONS: 'locations',
+
+  MAP: 'map',
+
+  Map: {
+    bounds(): string {
+      return '/api/v2/map/bounds/';
+    },
+
+    legend(themeId: number | string): string {
+      return `/api/v2/map/legend/${encode(String(themeId))}/`;
+    },
+
+    load(): string {
+      return '/api/v2/map/load/';
+    },
+
+    locationById(locationId: number | string, full = false): string {
+      return full
+        ? `/api/v2/map/locations/${encode(String(locationId))}/full/`
+        : `/api/v2/map/locations/${encode(String(locationId))}/`;
+    },
+
+    locationBySlug(locationSlug: string, full = false): string {
+      return full
+        ? `/api/v2/map/locations/by-slug/${encode(String(locationSlug))}/full/`
+        : `/api/v2/map/locations/by-slug/${encode(String(locationSlug))}/`;
+    },
+
+    locationDisplayById(locationId: number | string): string {
+      return `/api/v2/map/locations/${encode(String(locationId))}/display/`;
+    },
+
+    locationDisplayBySlug(locationSlug: string): string {
+      return `/api/v2/map/locations/by-slug/${encode(String(locationSlug))}/display/`;
+    },
+
+    locationGeometryById(locationId: number | string): string {
+      return `/api/v2/map/locations/${encode(String(locationId))}/geometry/`;
+    },
+
+    locationGeometryBySlug(locationSlug: string): string {
+      return `/api/v2/map/locations/by-slug/${encode(String(locationSlug))}/geometry/`;
+    },
+
+    locations(full = false): string {
+      return full ? '/api/v2/map/locations/full/' : '/api/v2/map/locations/';
+    },
+
+    myPositions(): string {
+      return '/api/v2/map/positions/my/';
+    },
+
+    position(positionId: number | string): string {
+      return `/api/v2/map/positions/${encode(String(positionId))}/`;
+    },
+
+    projection(): string {
+      return '/api/v2/map/projection/';
+    },
+
+    quests(): string {
+      return '/api/v2/map/quests/';
+    },
+
+    settings(): string {
+      return '/api/v2/map/settings/';
+    },
+
+    wifidata(): string {
+      return '/api/v2/map/wifidata/';
+    },
+  },
+
+  Mesh: {
+    firmwareById(firmwareId: number): string {
+      return `/api/v2/mesh/firmwares/${encode(String(firmwareId))}/`;
+    },
+
+    firmwares(): string {
+      return '/api/v2/mesh/firmwares/';
+    },
+
+    map(levelId: number): string {
+      return `/api/v2/mesh/map/${encode(String(levelId))}/`;
+    },
+
+    messages(): string {
+      return '/api/v2/mesh/messages/';
+    },
+  },
+
+  OBSTACLES: 'obstacles',
 
   obstacles(id?: number | string): string {
-    let endpoint = `/${Endpoint.OBSTACLES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('obstacles', id);
   },
+
+  POIS: 'pois',
 
   pois(id?: number | string): string {
-    let endpoint = `/${Endpoint.POIS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('pois', id);
   },
+
+  Positioning: {
+    locate(): string {
+      return '/api/v2/positioning/locate/';
+    },
+
+    locateTest(): string {
+      return '/api/v2/positioning/locate-test/';
+    },
+  },
+
+  RAMPS: 'ramps',
 
   ramps(id?: number | string): string {
-    let endpoint = `/${Endpoint.RAMPS}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('ramps', id);
   },
+
+  ROUTING: 'routing',
 
   routing(id?: number | string): string {
-    let endpoint = `/${Endpoint.ROUTING}/`;
-    if (id) {
+    let endpoint = '/api/v2/routing/';
+    if (id !== undefined) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
   },
+
+  Routing: {
+    options(): string {
+      return '/api/v2/routing/options/';
+    },
+
+    optionsForm(): string {
+      return '/api/v2/routing/options/form/';
+    },
+
+    route(): string {
+      return '/api/v2/routing/route/';
+    },
+  },
+
+  SESSION: 'session',
 
   session(id?: number | string): string {
-    let endpoint = `/${Endpoint.SESSION}/`;
-    if (id) {
+    let endpoint = '/api/v2/auth/session/';
+    if (id !== undefined) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
   },
+
+  Session: {
+    key(): string {
+      return '/api/v2/auth/session/';
+    },
+
+    status(): string {
+      return '/api/v2/auth/status/';
+    },
+  },
+
+  SOURCES: 'sources',
 
   sources(id?: number | string): string {
-    let endpoint = `/${Endpoint.SOURCES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('sources', id);
   },
+
+  SPACES: 'spaces',
 
   spaces(id?: number | string): string {
-    let endpoint = `/${Endpoint.SPACES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+    return mapDataEndpoint('spaces', id);
   },
+
+  STAIRS: 'stairs',
 
   stairs(id?: number | string): string {
-    let endpoint = `/${Endpoint.STAIRS}/`;
-    if (id) {
+    return mapDataEndpoint('stairs', id);
+  },
+
+  TYPES: 'types',
+
+  UPDATES: 'updates',
+
+  updates(id?: number | string): string {
+    let endpoint = '/api/v2/updates/';
+    if (id !== undefined) {
       endpoint += `${encode(String(id))}/`;
     }
     return endpoint;
   },
 
-  updates(id?: number | string): string {
-    let endpoint = `/${Endpoint.UPDATES}/`;
-    if (id) {
-      endpoint += `${encode(String(id))}/`;
-    }
-    return endpoint;
+  Updates: {
+    fetch(): string {
+      return '/api/v2/updates/fetch/';
+    },
   },
 };

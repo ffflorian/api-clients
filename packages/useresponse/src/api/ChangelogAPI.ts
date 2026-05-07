@@ -1,5 +1,6 @@
 import type {APIClient} from '@ffflorian/api-client';
-import type { Changelog } from '../interfaces';
+
+import type {Changelog} from '../interfaces';
 
 import {Endpoint} from '../Endpoints';
 

@@ -1,73 +1,3 @@
-export interface Component {
-  created_at: string;
-  description: string | null;
-  group: boolean;
-  group_id: string | null;
-  id: string;
-  name: string;
-  only_show_if_degraded: boolean;
-  page_id: string;
-  position: number;
-  showcase: boolean;
-  start_date: string | null;
-  status: string;
-  updated_at: string;
-}
-
-export interface Page {
-  page: {
-    id: string;
-    name: string;
-    time_zone: string;
-    updated_at: string;
-    url: string;
-  };
-}
-
-export interface Incidents extends Page {
-  incidents: Incident[];
-}
-
-export interface Components extends Page {
-  components: Component[];
-}
-
-export enum MaintenanceStatus {
-  Completed = 'completed',
-  InProgress = 'in_progress',
-  Scheduled = 'scheduled',
-  Verifying = 'verifying',
-}
-
-export type ScheduledMaintenance = Omit<Incident, 'status'> & {
-  scheduled_for: string;
-  scheduled_until: string;
-  status: MaintenanceStatus;
-};
-
-export interface ScheduledMaintenances extends Page {
-  scheduled_maintenances: ScheduledMaintenance[];
-}
-
-export interface Subscriber extends Page {
-  can_select_components: boolean;
-}
-
-export interface WebhookSubscriber extends Subscriber {
-  mode: 'webhook';
-  webhook: string;
-}
-
-export interface EmailSubscriber extends Subscriber {
-  email: string;
-  mode: 'email_sms';
-}
-
-export interface PhoneSubscriber extends Subscriber {
-  mode: 'email_sms';
-  phone: string;
-}
-
 export enum IncidentImpact {
   Critical = 'critical',
   Major = 'major',
@@ -83,18 +13,56 @@ export enum IncidentStatus {
   Resolved = 'resolved',
 }
 
+export enum MaintenanceStatus {
+  Completed = 'completed',
+  InProgress = 'in_progress',
+  Scheduled = 'scheduled',
+  Verifying = 'verifying',
+}
+
+export type CombinedSubscriber = EmailSubscriber | PhoneSubscriber | WebhookSubscriber;
+
+export interface Component {
+  created_at: string;
+  description: null | string;
+  group: boolean;
+  group_id: null | string;
+  id: string;
+  name: string;
+  only_show_if_degraded: boolean;
+  page_id: string;
+  position: number;
+  showcase: boolean;
+  start_date: null | string;
+  status: string;
+  updated_at: string;
+}
+
+export interface Components extends Page {
+  components: Component[];
+}
+
+export interface EmailSubscriber extends Subscriber {
+  email: string;
+  mode: 'email_sms';
+}
+
 export interface Incident {
   created_at: string;
   id: string;
   impact: IncidentImpact;
   incident_updates: IncidentUpdate[];
-  monitoring_at: string | null;
+  monitoring_at: null | string;
   name: string;
   page_id: string;
-  resolved_at: string | null;
+  resolved_at: null | string;
   shortlink: string;
   status: IncidentStatus;
   updated_at: string;
+}
+
+export interface Incidents extends Page {
+  incidents: Incident[];
 }
 
 export interface IncidentUpdate {
@@ -107,6 +75,31 @@ export interface IncidentUpdate {
   updated_at: string;
 }
 
+export interface Page {
+  page: {
+    id: string;
+    name: string;
+    time_zone: string;
+    updated_at: string;
+    url: string;
+  };
+}
+
+export interface PhoneSubscriber extends Subscriber {
+  mode: 'email_sms';
+  phone: string;
+}
+
+export type ScheduledMaintenance = {
+  scheduled_for: string;
+  scheduled_until: string;
+  status: MaintenanceStatus;
+} & Omit<Incident, 'status'>;
+
+export interface ScheduledMaintenances extends Page {
+  scheduled_maintenances: ScheduledMaintenance[];
+}
+
 export interface Status extends Page {
   status: {
     description: string;
@@ -114,6 +107,13 @@ export interface Status extends Page {
   };
 }
 
-export type CombinedSubscriber = PhoneSubscriber | EmailSubscriber | WebhookSubscriber;
+export interface Subscriber extends Page {
+  can_select_components: boolean;
+}
 
-export type Summary = Status & ScheduledMaintenances & Components & Incidents;
+export type Summary = Components & Incidents & ScheduledMaintenances & Status;
+
+export interface WebhookSubscriber extends Subscriber {
+  mode: 'webhook';
+  webhook: string;
+}

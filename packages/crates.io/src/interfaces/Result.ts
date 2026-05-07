@@ -4,7 +4,18 @@ export interface AuthorsResult {
   meta: {
     names: string[];
   };
-  users: string[];
+  users: User[];
+}
+
+export interface CategoriesResult {
+  categories: Category[];
+  meta: {
+    total: number;
+  };
+}
+
+export interface CategoryResult {
+  category: Category;
 }
 
 export interface CrateResult {
@@ -18,6 +29,9 @@ export interface DependenciesResult {
 }
 
 export interface DownloadsResult {
+  meta?: {
+    extra_downloads?: Download[];
+  };
   version_downloads: Download[];
 }
 
@@ -25,10 +39,26 @@ export interface FollowingResult {
   following: boolean;
 }
 
-export interface ReverseDependenciesResult extends DependenciesResult, VersionResult {
+export interface KeywordResult {
+  keyword: Keyword;
+}
+
+export interface KeywordsResult {
+  keywords: Keyword[];
   meta: {
     total: number;
   };
+}
+
+export interface OkResult {
+  ok: boolean;
+}
+
+export interface ReverseDependenciesResult extends DependenciesResult {
+  meta: {
+    total: number;
+  };
+  versions: Version[];
 }
 
 export interface SearchResult {
@@ -36,6 +66,10 @@ export interface SearchResult {
   meta: {
     total: number;
   };
+}
+
+export interface TeamsResult {
+  teams: Team[];
 }
 
 export interface UrlResult {
@@ -46,14 +80,10 @@ export interface UsersResult {
   users: User[];
 }
 
-export interface TeamsResult {
-  teams: Team[];
+export interface VersionResult {
+  version: Version;
 }
 
 export interface VersionsResult {
   versions: Version[];
-}
-
-export interface VersionResult {
-  version: Version;
 }

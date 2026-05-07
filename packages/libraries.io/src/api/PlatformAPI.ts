@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {ClientOptions, LibrariesIOResult, PaginationOptions, Platform} from '../interfaces/';
+
+import {Endpoint} from '../Endpoints';
 import {APIBase} from './APIBase';
 
 export class PlatformAPI extends APIBase {
@@ -11,7 +12,6 @@ export class PlatformAPI extends APIBase {
 
   /**
    * Get list of supported package managers.
-   * @see https://libraries.io/api#platforms
    * @param options Pagination options
    */
   public async getPlatforms(options?: PaginationOptions): Promise<LibrariesIOResult<Platform[]>> {

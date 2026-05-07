@@ -1,13 +1,28 @@
 import type {APIClient} from '@ffflorian/api-client';
 
+import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions, RequestOptions} from '../interfaces';
+
 import {Endpoint} from '../Endpoints';
-import type {Check, CheckOptions, Deleted, Downtime, Metrics, MetricsOptions} from '../interfaces';
 
 export class ChecksAPI {
   private readonly apiClient: APIClient;
 
   constructor(apiClient: APIClient) {
     this.apiClient = apiClient;
+  }
+
+  private static mapCheckOptions(options?: CheckOptions): RequestOptions {
+    if (!options) {
+      return {};
+    }
+
+    const {customHeaders, disabledLocations, ...rest} = options;
+
+    return {
+      ...rest,
+      ...(customHeaders && {custom_headers: customHeaders}),
+      ...(disabledLocations && {disabled_locations: disabledLocations}),
+    };
   }
 
   /**
@@ -19,7 +34,7 @@ export class ChecksAPI {
     const endpoint = Endpoint.checks();
     const params = {
       url,
-      ...options,
+      ...ChecksAPI.mapCheckOptions(options),
     };
     const {data} = await this.apiClient.post(endpoint, params);
     return data;
@@ -42,7 +57,7 @@ export class ChecksAPI {
    */
   public async getCheck(token: string, metrics?: boolean): Promise<Check> {
     const endpoint = Endpoint.Checks.check(token);
-    const {data} = await this.apiClient.get(endpoint, {data: {metrics}});
+    const {data} = await this.apiClient.get(endpoint, {params: {metrics}});
     return data;
   }
 
@@ -74,10 +89,10 @@ export class ChecksAPI {
    * The time range needs to be at least one hour to get data.
    *
    * @param token The check unique token
-   * @param page The page to fetch (100 per page)
+   * @param options Metrics options
    */
   public async getMetrics(token: string, options?: MetricsOptions): Promise<Metrics> {
-    const endpoint = Endpoint.Checks.downtimes(token);
+    const endpoint = Endpoint.Checks.metrics(token);
     const {data} = await this.apiClient.get(endpoint, {params: options});
     return data;
   }
@@ -97,7 +112,7 @@ export class ChecksAPI {
    */
   public async updateCheck(token: string, options?: CheckOptions): Promise<Check> {
     const endpoint = Endpoint.checks(token);
-    const {data} = await this.apiClient.put(endpoint, options);
+    const {data} = await this.apiClient.put(endpoint, ChecksAPI.mapCheckOptions(options));
     return data;
   }
 }

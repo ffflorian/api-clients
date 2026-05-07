@@ -1,37 +1,45 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "@ffflorian/api-client": "2.2.0"
+    "@ffflorian/api-client": "2.5.1"
   },
   "description": "A crates.io API client",
   "devDependencies": {
     "@types/node": "~24",
-    "rimraf": "6.1.2",
-    "typedoc": "0.28.15",
-    "typescript": "5.9.3"
+    "nock": "14.0.12",
+    "rimraf": "6.1.3",
+    "typedoc": "0.28.19",
+    "typescript": "6.0.3",
+    "vitest": "4.1.4"
   },
   "engines": {
     "node": ">= 21"
   },
+  "exports": "./dist/index.js",
   "files": [
     "dist"
   ],
   "keywords": [
     "api",
+    "api-client",
     "crates.io",
     "crates",
     "cratesio"
   ],
   "license": "GPL-3.0",
-  "main": "dist/index.js",
   "name": "crates.io",
-  "repository": "https://github.com/ffflorian/api-clients/tree/main/packages/crates.io",
+  "readme": "https://github.com/ffflorian/api-clients#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/api-clients.git"
+  },
   "scripts": {
+    "build": "yarn build:ts",
     "build:ts": "tsc -p tsconfig.build.json",
     "build:docs": "typedoc --tsconfig tsconfig.build.json --options ../../typedoc.json --out ../../docs/packages/crates.io src/index.ts",
     "clean": "rimraf dist",
-    "dist": "yarn clean && yarn build:ts",
-    "test": "exit 0"
+    "dist": "yarn clean && yarn build",
+    "test": "vitest"
   },
-  "version": "2.4.1"
+  "version": "2.5.0"
 }

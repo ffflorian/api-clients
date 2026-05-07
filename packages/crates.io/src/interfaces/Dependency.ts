@@ -4,9 +4,9 @@ export interface Dependency {
   downloads: number;
   features: string[];
   id: number;
-  kind: 'build' | 'normal' | 'dev';
+  kind: 'build' | 'dev' | 'normal';
   optional: boolean;
   req: string;
-  target: string | null;
+  target: null | string;
   version_id: number;
 }

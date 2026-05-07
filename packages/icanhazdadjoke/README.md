@@ -1,6 +1,6 @@
 # ICanHazDadJoke [![npm version](https://img.shields.io/npm/v/@ffflorian/icanhazdadjoke.svg)](https://www.npmjs.com/package/@ffflorian/icanhazdadjoke)
 
-An [ICanHazDadJoke](https://icanhazdadjoke.com) API client with a CLI.
+An [ICanHazDadJoke](https://icanhazdadjoke.com) API client with a CLI. For a documentation on the API see [the icanhazdadjoke API reference](https://icanhazdadjoke.com/api).
 
 ## Usage
 

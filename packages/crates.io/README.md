@@ -2,6 +2,14 @@
 
 A [crates.io](https://crates.io) API client.
 
+API references:
+
+- [Data access policy](https://crates.io/data-access)
+- [OpenAPI specification](https://crates.io/api/openapi.json)
+- [Historical HTTP API reference](https://github.com/hcpl/crates.io-http-api-reference)
+
+Some endpoints in this client require an API token (for example `following`, `follow`, `unfollow`, `yank`, and `unyank`).
+
 ### Installation
 
 Run `yarn add crates.io` or `npm install crates.io`.

@@ -1,6 +1,6 @@
 # imgflip.com [![npm version](https://img.shields.io/npm/v/imgflip.com.svg)](https://www.npmjs.com/package/imgflip.com)
 
-An [imgflip.com](https://imgflip.com) API client. For a documentation on the API see https://api.imgflip.com/.
+An [imgflip.com](https://imgflip.com) API client. For a documentation on the API see [the imgflip API reference](https://imgflip.com/api).
 
 ### Installation
 
@@ -17,10 +17,9 @@ import {Imgflip} from 'imgflip.com';
 
 const imgflip = new Imgflip();
 
-imgflip.api
-  .getMemes().then(response => {
-    //
-  });
+imgflip.api.getMemes().then(response => {
+  //
+});
 
 imgflip.api
   .captionImage({

@@ -1,5 +1,6 @@
-import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from '../api';
 import type {Components, Status, Summary} from './Result';
+
+import {IncidentsAPI, ScheduledMaintenancesAPI, SubscribersAPI} from '../api';
 
 export interface API {
   getComponents(): Promise<Components>;

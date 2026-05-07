@@ -1,7 +1,7 @@
 import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {Chat, APIResult, ChatMessagesPaginator} from '../interfaces';
+import {APIResult, Chat, ChatMessagesPaginator} from '../interfaces';
 
 export interface GetAllChatOptions {
   authorId?: string;

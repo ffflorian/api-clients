@@ -1,7 +1,9 @@
 import {APIClient} from '@ffflorian/api-client';
+import crypto from 'node:crypto';
+
+import type {API, ClientOptions} from './interfaces';
 
 import {EmployeesAPI, TimeOffAPI} from './api';
-import type {API, ClientOptions} from './interfaces';
 
 export class BambooHR {
   public readonly api: API;
@@ -16,7 +18,7 @@ export class BambooHR {
     this.apiClient = new APIClient(baseURL, {
       auth: {
         // eslint-disable-next-line no-magic-numbers
-        password: Math.random().toString(36).substring(7),
+        password: crypto.randomBytes(16).toString('base64').substring(0, 7),
         username: this.options.apiKey,
       },
       headers: {
@@ -25,6 +27,10 @@ export class BambooHR {
     });
 
     this.apiClient.interceptors.response.push(response => {
+      if (response.ok) {
+        return;
+      }
+
       const errorMessage = response.headers.get('x-bamboohr-error-message') || response.statusText;
       throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
     });

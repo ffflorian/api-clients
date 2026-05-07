@@ -11,3 +11,4 @@ export * from './Result';
 export * from './Team';
 export * from './Timespan';
 export * from './User';
+export * from './WorkingDay';

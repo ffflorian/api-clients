@@ -1,7 +1,8 @@
 import {APIClient} from '@ffflorian/api-client';
 
-import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
 import type {ClientOptions} from './Interfaces';
+
+import {ICanHazDadJokeAPI} from './ICanHazDadJokeAPI';
 
 export class ICanHazDadJoke {
   public readonly api: ICanHazDadJokeAPI;
@@ -28,7 +29,7 @@ export class ICanHazDadJoke {
    * Set a new API URL.
    * @param url The new API URL.
    */
-  public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
+  public setApiUrl(url: string): void {
+    this.apiClient.setBaseURL(url);
   }
 }

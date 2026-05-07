@@ -1,25 +1,26 @@
 export const Endpoint = {
-  PACKAGE: 'package',
-  SEARCH: 'search',
-  SUGGESTIONS: 'suggestions',
+  API_VERSION: 'v2',
   MGET: 'mget',
+  PACKAGE: 'package',
+  Package: {
+    multiPackageInfo(): string {
+      return `${Endpoint.API_VERSION}/${Endpoint.PACKAGE}/${Endpoint.MGET}`;
+    },
+    packageInfo(packageName: string): string {
+      return `${Endpoint.API_VERSION}/${Endpoint.PACKAGE}/${encodeURIComponent(packageName)}`;
+    },
+  },
+  SEARCH: 'search',
 
   Search: {
     search(): string {
-      return `/${Endpoint.SEARCH}`;
+      return `${Endpoint.API_VERSION}/${Endpoint.SEARCH}`;
     },
 
     suggestions(): string {
-      return `/${Endpoint.SEARCH}/${Endpoint.SUGGESTIONS}`;
+      return `${Endpoint.API_VERSION}/${Endpoint.SEARCH}/${Endpoint.SUGGESTIONS}`;
     },
   },
 
-  Package: {
-    packageInfo(packageName: string): string {
-      return `/${Endpoint.PACKAGE}/${encodeURIComponent(packageName)}`;
-    },
-    multiPackageInfo(): string {
-      return `/${Endpoint.PACKAGE}/${Endpoint.MGET}`;
-    },
-  },
+  SUGGESTIONS: 'suggestions',
 };

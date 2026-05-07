@@ -7,34 +7,26 @@
 
 set -e
 
-SCOPE=""
-
 if [ -z "${GITHUB_TOKEN}" ]; then
   echo "No GitHub token set."
   exit 1
 fi
 
-if [ -z "${GH_USER}" ]; then
-  echo "No GitHub user set."
-  exit 1
-fi
-
 echo "Checking for changed packages..."
 
-set +e
-PACKAGES="$(npx lerna changed --loglevel warn)"
-set -e
+LAST_TAG=$(git describe --abbrev=0 --tags 2>/dev/null || echo "")
 
-if [ -z "${PACKAGES}" ]; then
-  echo "No local packages have changed since the last tagged release."
+if [ -z "${LAST_TAG}" ]; then
+  echo "No previous tags found."
   exit
 fi
 
-for PACKAGE in $PACKAGES; do
-  SCOPE="${SCOPE} --scope ${PACKAGE}"
-done
+yarn workspaces foreach --since="${LAST_TAG}" --parallel --jobs 4 --exclude api-clients run build:docs
 
-npx lerna run build:docs --concurrency 4"${SCOPE}"
+if git diff --quiet HEAD -- docs; then
+  echo "No documentation changes to commit."
+  exit
+fi
 
 git add docs
 git commit -m "docs: Rebuild docs [ci skip]" --no-verify

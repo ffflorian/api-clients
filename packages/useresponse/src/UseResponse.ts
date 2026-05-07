@@ -1,20 +1,21 @@
 import {APIClient} from '@ffflorian/api-client';
 
+import type {API, ClientOptions} from './interfaces';
+
 import {
+  AdditionalAPI,
   AuthAPI,
   CategoriesAPI,
   ChangelogAPI,
   ChatsAPI,
-  ModerationAPI,
   CommentsAPI,
-  AdditionalAPI,
-  UsersAPI,
-  ObjectsAPI,
   CustomFieldsAPI,
+  ModerationAPI,
+  ObjectsAPI,
   ReportsAPI,
   UserNotesAPI,
+  UsersAPI,
 } from './api';
-import type {API, ClientOptions} from './interfaces';
 
 export class UseResponse {
   public readonly api: API;

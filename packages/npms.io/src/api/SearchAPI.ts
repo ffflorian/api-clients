@@ -1,7 +1,8 @@
 import type {APIClient} from '@ffflorian/api-client';
 
+import type {SearchOptions, SearchResult, SuggestionsOptions, SuggestionsResult} from '../interfaces';
+
 import {Endpoint} from '../Endpoints';
-import type {SearchOptions, SearchResult, SuggestionsOptions} from '../interfaces';
 
 export class SearchAPI {
   private readonly apiClient: APIClient;
@@ -13,10 +14,9 @@ export class SearchAPI {
   /**
    * Fetch suggestions.
    * @param query Perform a search query
-   * @see https://api-docs.npms.io/#api-Search-SearchSuggestions
    */
-  public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SearchResult> {
-    const endpoint = Endpoint.Search.search();
+  public async getSuggestions(query: string, options: SuggestionsOptions = {}): Promise<SuggestionsResult> {
+    const endpoint = Endpoint.Search.suggestions();
 
     const params = {
       // eslint-disable-next-line id-length
@@ -47,7 +47,6 @@ export class SearchAPI {
    * - `popularity-weight:1` Set the weight that popularity has for the each package score, defaults to `3.3`
    * - `maintenance-weight:1` Set the weight that the quality has for the each package score, defaults to `2.05`
    * @param options Additional search options
-   * @see https://api-docs.npms.io/#api-Search-ExecuteSearchQuery
    */
   public async searchPackage(query: string, options: SearchOptions = {}): Promise<SearchResult> {
     const endpoint = Endpoint.Search.search();

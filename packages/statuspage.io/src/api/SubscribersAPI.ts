@@ -1,6 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
 
-import {Endpoint} from '../Endpoints';
 import type {
   CombinedSubscriberData,
   ComponentSubscriberData,
@@ -11,6 +10,8 @@ import type {
 } from '../interfaces/Request';
 import type {CombinedSubscriber, EmailSubscriber, PhoneSubscriber, WebhookSubscriber} from '../interfaces/Result';
 
+import {Endpoint} from '../Endpoints';
+
 export class SubscribersAPI {
   private readonly apiClient: APIClient;
 
@@ -18,23 +19,20 @@ export class SubscribersAPI {
     this.apiClient = apiClient;
   }
 
-  /**
-   * @param options Subscriber options.
-   */
   public async createComponentSubscription(
-    emailSubscriber: EmailSubscriberData & ComponentSubscriberData
+    emailSubscriber: ComponentSubscriberData & EmailSubscriberData
   ): Promise<EmailSubscriber>;
   public async createComponentSubscription(
-    smsSubscriber: PhoneSubscriberData & ComponentSubscriberData
+    smsSubscriber: ComponentSubscriberData & PhoneSubscriberData
   ): Promise<PhoneSubscriber>;
   public async createComponentSubscription(
-    webhookSubscriber: WebhookSubscriberData & ComponentSubscriberData
+    webhookSubscriber: ComponentSubscriberData & WebhookSubscriberData
   ): Promise<WebhookSubscriber>;
   public async createComponentSubscription(
     subscriberData: CombinedSubscriberData & ComponentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriberData});
     return data;
   }
 
@@ -43,40 +41,38 @@ export class SubscribersAPI {
    * to that incident to receive notifications on updates until the
    * incident is resolved. The incident must be in an unresolved
    * state to subscribe to it.
-   * @param options Subscriber options.
    */
   public async createIncidentSubscription(
     emailSubscriber: EmailSubscriberData & IncidentSubscriberData
   ): Promise<EmailSubscriber>;
   public async createIncidentSubscription(
-    smsSubscriber: PhoneSubscriberData & IncidentSubscriberData
+    smsSubscriber: IncidentSubscriberData & PhoneSubscriberData
   ): Promise<PhoneSubscriber>;
   public async createIncidentSubscription(
-    webhookSubscriber: WebhookSubscriberData & IncidentSubscriberData
+    webhookSubscriber: IncidentSubscriberData & WebhookSubscriberData
   ): Promise<WebhookSubscriber>;
   public async createIncidentSubscription(
     subscriberData: CombinedSubscriberData & IncidentSubscriberData
   ): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriberData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriberData});
     return data;
   }
 
   /**
    * A page subscriber is by default subscribed to all incidents associated with a page.
-   * @param options Subscriber options.
    */
   public async createPageSubscription(emailSubscriber: EmailSubscriberData): Promise<EmailSubscriber>;
   public async createPageSubscription(smsSubscriber: PhoneSubscriberData): Promise<PhoneSubscriber>;
   public async createPageSubscription(webhookSubscriber: WebhookSubscriberData): Promise<WebhookSubscriber>;
   public async createPageSubscription(subscriptionData: CombinedSubscriberData): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
-    const {data} = await this.apiClient.get(endpoint, {params: {subscriber: subscriptionData}});
+    const {data} = await this.apiClient.post(endpoint, {subscriber: subscriptionData});
     return data;
   }
 
   /**
-   * @param options Subscriber options.
+   * @param subscriberId The subscriber ID.
    */
   public async getSubscription(subscriberId: string): Promise<CombinedSubscriber> {
     const endpoint = Endpoint.subscribers();
@@ -88,8 +84,8 @@ export class SubscribersAPI {
    * To cancel a subscription, you need to submit a 'DELETE' request with the the subscription id.
    */
   public async removeSubscription(subscriberId: string): Promise<boolean> {
-    const endpoint = Endpoint.Incidents.all();
-    const {data} = await this.apiClient.delete(endpoint, {params: {subscriber: {id: subscriberId}}});
+    const endpoint = Endpoint.subscriber(subscriberId);
+    const {data} = await this.apiClient.delete(endpoint);
     return data;
   }
 }

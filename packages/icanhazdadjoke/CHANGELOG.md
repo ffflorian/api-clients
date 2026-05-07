@@ -1,7 +1,76 @@
+# @ffflorian/icanhazdadjoke [2.6.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.5.0...@ffflorian/icanhazdadjoke@2.6.0) (2026-05-01)
+
+
+### Features
+
+* **absence.io:** Improve API ([#1945](https://github.com/ffflorian/api-clients/issues/1945)) ([6b82944](https://github.com/ffflorian/api-clients/commit/6b8294437d0cd9ab02ac6a3498298a98ce2aa5dc))
+
+# @ffflorian/icanhazdadjoke [2.5.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.4.7...@ffflorian/icanhazdadjoke@2.5.0) (2026-04-23)
+
+
+### Features
+
+* **icanhazdadjoke:** Improve API ([#1941](https://github.com/ffflorian/api-clients/issues/1941)) ([b116ff6](https://github.com/ffflorian/api-clients/commit/b116ff6b093d5281e6ff6b093f1fec6037be230b))
+
+## @ffflorian/icanhazdadjoke [2.4.7](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.4.6...@ffflorian/icanhazdadjoke@2.4.7) (2026-04-12)
+
+
+### Bug Fixes
+
+* Use yarn build in all packages ([#1914](https://github.com/ffflorian/api-clients/issues/1914)) ([e205b75](https://github.com/ffflorian/api-clients/commit/e205b7508821bb7eeec85c37c75f8fdc8ce63652))
+
+## @ffflorian/icanhazdadjoke [2.4.6](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.4.5...@ffflorian/icanhazdadjoke@2.4.6) (2026-03-29)
+
+
+### Bug Fixes
+
+* resolve all TypeDoc warnings ([#1900](https://github.com/ffflorian/api-clients/issues/1900)) ([dd96b5b](https://github.com/ffflorian/api-clients/commit/dd96b5bf6c5808174f12ea5a2ad048607289d805))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2.4.5 (2026-01-24)
+
+**Note:** Version bump only for package @ffflorian/icanhazdadjoke
+
+
+
+
+
+## 2.4.4 (2026-01-19)
+
+
+### Bug Fixes
+
+* **bamboohr.com:** Insecure randomness ([#1838](https://github.com/ffflorian/api-clients/issues/1838)) ([b7f85c6](https://github.com/ffflorian/api-clients/commit/b7f85c69d7c60e89b12c051738156e70946f912c))
+
+
+
+
+
+## 2.4.3 (2026-01-16)
+
+
+### Reverts
+
+* Revert "chore: Add space to docs build script" ([4beaf5c](https://github.com/ffflorian/api-clients/commit/4beaf5cc0344657296e5e39bf86f88420cf17dc8))
+
+
+
+
+
+## 2.4.2 (2026-01-10)
+
+
+### Bug Fixes
+
+* Remove GH_USER ([4eef0d5](https://github.com/ffflorian/api-clients/commit/4eef0d5d4e549683eca940fdf5f39b0780e31a34))
+
+
+
+
 
 ## 2.4.1 (2025-12-02)
 

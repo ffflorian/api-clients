@@ -11,7 +11,11 @@ updates:
     ignore:
       - dependency-name: '@types/node'
         versions:
-          - '> 20.x'
+          - '> 24.x'
+    cooldown:
+      default-days: 5
+      exclude:
+        - '@ffflorian/*'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
@@ -19,3 +23,7 @@ updates:
     open-pull-requests-limit: 99
     assignees:
       - ffflorian
+    cooldown:
+      default-days: 5
+      exclude:
+        - 'ffflorian/*'

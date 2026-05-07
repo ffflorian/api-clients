@@ -1,4 +1,5 @@
 import type {APIClient} from '@ffflorian/api-client';
+
 import type {LoginData, User} from '../interfaces';
 
 import {Endpoint} from '../Endpoints';

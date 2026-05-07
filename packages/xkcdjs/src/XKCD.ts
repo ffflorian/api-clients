@@ -1,6 +1,7 @@
 import {APIClient} from '@ffflorian/api-client';
 
 import type {ClientOptions} from './Interfaces';
+
 import {XKCDAPI} from './XKCDAPI';
 
 export class XKCD {
@@ -22,7 +23,7 @@ export class XKCD {
    * Set a new API URL.
    * @param url The new API URL.
    */
-  public setApiUrl(newURL: string): void {
-    this.apiClient.setBaseURL(newURL);
+  public setApiUrl(url: string): void {
+    this.apiClient.setBaseURL(url);
   }
 }
