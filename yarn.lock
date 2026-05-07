@@ -532,7 +532,7 @@ __metadata:
   resolution: "@ffflorian/icanhazdadjoke@workspace:packages/icanhazdadjoke"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     commander: "npm:14.0.3"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
@@ -570,7 +570,7 @@ __metadata:
   resolution: "@ffflorian/xkcdjs@workspace:packages/xkcdjs"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     commander: "npm:14.0.3"
     http-status-codes: "npm:2.3.0"
     nock: "npm:14.0.12"
@@ -2332,7 +2332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:~24":
+"@types/node@npm:*":
   version: 24.10.9
   resolution: "@types/node@npm:24.10.9"
   dependencies:
@@ -2345,6 +2345,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 10c0/3b190bb0410047d489c49bbaab592d2e6630de6a50f00ba3d7d513d59401d279972a8f5a598b5bb8ddc1702f8a2f4ec57a65d93852f9c329639738e7053637d1
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:~25":
+  version: 25.6.1
+  resolution: "@types/node@npm:25.6.1"
+  dependencies:
+    undici-types: "npm:~7.19.0"
+  checksum: 10c0/4aea21cf3dd98eed57ea2666aa89e2665a2478bdc46f76791d15bd0c3cf8ed812401f4906cfb0e47ee591fc7461179caf8da790b77c19307423e5268de9eb6f9
   languageName: node
   linkType: hard
 
@@ -3158,7 +3167,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.1"
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -3323,7 +3332,7 @@ __metadata:
     "@ffflorian/semantic-release-config": "npm:0.12.4"
     "@semantic-release/changelog": "npm:6.0.3"
     "@semantic-release/git": "npm:10.0.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     eslint: "npm:10.2.1"
     eslint-import-resolver-typescript: "npm:4.4.4"
     eslint-plugin-import: "npm:2.32.0"
@@ -3580,7 +3589,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.1"
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -3681,7 +3690,7 @@ __metadata:
   resolution: "c3nav@workspace:packages/c3nav"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     http-status-codes: "npm:2.3.0"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
@@ -4161,7 +4170,7 @@ __metadata:
   resolution: "corona-warn-app@workspace:packages/corona-warn-app"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -4203,7 +4212,7 @@ __metadata:
   resolution: "crates.io@workspace:packages/crates.io"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -6540,7 +6549,7 @@ __metadata:
   resolution: "imgflip.com@workspace:packages/imgflip.com"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     "@types/qs": "npm:6.15.0"
     nock: "npm:14.0.12"
     qs: "npm:6.15.1"
@@ -7644,7 +7653,7 @@ __metadata:
   resolution: "libraries.io@workspace:packages/libraries.io"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -8902,7 +8911,7 @@ __metadata:
   resolution: "npms.io@workspace:packages/npms.io"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -10755,7 +10764,7 @@ __metadata:
   resolution: "statuspage.io@workspace:packages/statuspage.io"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -11631,6 +11640,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~7.19.0":
+  version: 7.19.2
+  resolution: "undici-types@npm:7.19.2"
+  checksum: 10c0/7159f10546f9f6c47d36776bb1bbf8671e87c1e587a6fee84ae1f111ae8de4f914efa8ca0dfcd224f4f4a9dfc3f6028f627ccb5ddaccf82d7fd54671b89fac3e
+  languageName: node
+  linkType: hard
+
 "undici@npm:^6.23.0":
   version: 6.24.1
   resolution: "undici@npm:6.24.1"
@@ -11809,7 +11825,7 @@ __metadata:
   resolution: "updown.io@workspace:packages/updown.io"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     nock: "npm:14.0.12"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -11839,7 +11855,7 @@ __metadata:
   resolution: "useresponse@workspace:packages/useresponse"
   dependencies:
     "@ffflorian/api-client": "npm:2.5.1"
-    "@types/node": "npm:~24"
+    "@types/node": "npm:~25"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
