@@ -85,7 +85,7 @@ export interface ChangelogAction {
 
 export interface ChangePasswordParams {
   /**
-   * @description New valid “email” value
+   * @description New valid password value
    * @example securestring12345
    */
   password: string;
