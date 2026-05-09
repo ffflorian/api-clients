@@ -1,3 +1,10 @@
+# updown.io [3.5.0](https://github.com/ffflorian/api-clients/compare/updown.io@3.4.7...updown.io@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **updown.io:** Improve API ([#1936](https://github.com/ffflorian/api-clients/issues/1936)) ([6d17cb3](https://github.com/ffflorian/api-clients/commit/6d17cb3bed33b0b0089e064ce2bb6311e1315740))
+
 ## updown.io [3.4.7](https://github.com/ffflorian/api-clients/compare/updown.io@3.4.6...updown.io@3.4.7) (2026-04-12)
 
 

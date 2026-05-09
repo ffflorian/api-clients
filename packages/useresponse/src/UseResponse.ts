@@ -1,0 +1,57 @@
+import {APIClient} from '@ffflorian/api-client';
+
+import type {API, ClientOptions} from './interfaces';
+
+import {
+  AdditionalAPI,
+  AuthAPI,
+  CategoriesAPI,
+  ChangelogAPI,
+  ChatsAPI,
+  CommentsAPI,
+  CustomFieldsAPI,
+  ModerationAPI,
+  ObjectsAPI,
+  ReportsAPI,
+  UserNotesAPI,
+  UsersAPI,
+} from './api';
+
+export class UseResponse {
+  public readonly api: API;
+  private readonly apiClient: APIClient;
+
+  constructor(options: ClientOptions) {
+    this.apiClient = new APIClient(options.apiUrl || 'https://api.useresponse.com/api/7.0');
+
+    this.apiClient.interceptors.request.push(config => {
+      if (options.apiKey) {
+        config.url.searchParams.set('api_key', options.apiKey);
+      }
+      return config;
+    });
+
+    this.api = {
+      additional: new AdditionalAPI(this.apiClient),
+      auth: new AuthAPI(this.apiClient),
+      categories: new CategoriesAPI(this.apiClient),
+      changelog: new ChangelogAPI(this.apiClient),
+      chats: new ChatsAPI(this.apiClient),
+      comments: new CommentsAPI(this.apiClient),
+      customFields: new CustomFieldsAPI(this.apiClient),
+      moderation: new ModerationAPI(this.apiClient),
+      objects: new ObjectsAPI(this.apiClient),
+      reports: new ReportsAPI(this.apiClient),
+      userNotes: new UserNotesAPI(this.apiClient),
+      users: new UsersAPI(this.apiClient),
+    };
+  }
+
+  /**
+   * Set a new API URL.
+   * @param newURL The new API url
+   */
+  public setApiUrl(newURL: string): void {
+    this.apiClient.setBaseURL(newURL);
+  }
+}

@@ -12,6 +12,13 @@ export class NodesAPI {
   }
 
   /** List all updown.io monitoring nodes IPv4 addresses. */
+  public async getIps(): Promise<string[]> {
+    const endpoint = Endpoint.Nodes.ips();
+    const {data} = await this.apiClient.get(endpoint);
+    return data;
+  }
+
+  /** List all updown.io monitoring nodes IPv4 addresses. */
   public async getIpv4Nodes(): Promise<string[]> {
     const endpoint = Endpoint.Nodes.ipv4();
     const {data} = await this.apiClient.get(endpoint);

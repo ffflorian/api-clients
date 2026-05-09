@@ -7,7 +7,7 @@
   },
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
-    "@types/node": "~24",
+    "@types/node": "~25",
     "@typescript/native-preview": "beta",
     "http-status-codes": "2.3.0",
     "nock": "14.0.12",
@@ -32,7 +32,10 @@
   "license": "GPL-3.0",
   "name": "@ffflorian/xkcdjs",
   "readme": "https://github.com/ffflorian/api-clients#readme",
-  "repository": "https://github.com/ffflorian/api-clients.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffflorian/api-clients.git"
+  },
   "scripts": {
     "build": "yarn build:ts",
     "build:ts": "tsgo -p tsconfig.build.json",
@@ -42,5 +45,5 @@
     "start": "tsx src/cli.ts",
     "test": "vitest"
   },
-  "version": "3.4.7"
+  "version": "3.5.1"
 }

@@ -1,3 +1,17 @@
+## @ffflorian/xkcdjs [3.5.1](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.5.0...@ffflorian/xkcdjs@3.5.1) (2026-05-01)
+
+
+### Bug Fixes
+
+* **xkcdjs:** Bin name in package.json ([38efa05](https://github.com/ffflorian/api-clients/commit/38efa05cccbb9da0c3f563f8fe315d36e8872a6c))
+
+# @ffflorian/xkcdjs [3.5.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.4.7...@ffflorian/xkcdjs@3.5.0) (2026-05-01)
+
+
+### Features
+
+* **xkcdjs:** Improve API ([#1935](https://github.com/ffflorian/api-clients/issues/1935)) ([22731a8](https://github.com/ffflorian/api-clients/commit/22731a8ef98bfc62ab44cd386391099f7453b624))
+
 ## @ffflorian/xkcdjs [3.4.7](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.4.6...@ffflorian/xkcdjs@3.4.7) (2026-04-12)
 
 

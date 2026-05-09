@@ -22,4 +22,5 @@ export interface Metrics {
     response: number;
     total: number;
   };
+  uptime?: number;
 }

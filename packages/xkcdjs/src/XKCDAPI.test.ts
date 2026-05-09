@@ -68,6 +68,10 @@ describe('XKCD', () => {
     expect(random.alt).toBe(responseDataFirst.alt);
   });
 
+  it('throws for index lower than lowest index', async () => {
+    await expect(xkcdJS.api.getByIndex(0)).rejects.toThrow('Index is lower than the lowest index of 1.');
+  });
+
   it('gets a comic by id', async () => {
     const byIndex = await xkcdJS.api.getByIndex(1);
 
@@ -77,10 +81,43 @@ describe('XKCD', () => {
   it('gets the image data', async () => {
     const latestWithData = await xkcdJS.api.getLatest({withData: true});
 
-    console.info('latestWithData.data:', latestWithData.data);
-
     expect(latestWithData.data).toMatchObject({
       data: expect.any(ArrayBuffer),
+      mimeType: 'image/png',
+    });
+  });
+
+  it('returns undefined mimeType when image content-type header is missing', async () => {
+    nock.cleanAll();
+
+    nock('https://xkcd.com').get('/info.0.json').reply(HTTP_STATUS.OK, responseDataLatest);
+    nock('https://imgs.xkcd.com').get('/comics/edgelord.png').reply(HTTP_STATUS.OK, Buffer.from([]));
+
+    const latestWithData = await xkcdJS.api.getLatest({withData: true});
+
+    expect(latestWithData.data.mimeType).toBeUndefined();
+  });
+
+  it('uses /:index/info.0.json endpoint for getByIndex', async () => {
+    nock.cleanAll();
+
+    const byIndexScope = nock('https://xkcd.com').get('/1/info.0.json').reply(HTTP_STATUS.OK, responseDataFirst);
+
+    const byIndex = await xkcdJS.api.getByIndex(1);
+
+    expect(byIndexScope.isDone()).toBe(true);
+    expect(byIndex).toMatchObject(responseDataFirst);
+  });
+
+  it('gets a random comic with data and keeps metadata unchanged', async () => {
+    const randomWithData = await xkcdJS.api.getRandom({withData: true});
+
+    expect(randomWithData).toMatchObject({
+      ...responseDataFirst,
+      data: {
+        data: expect.any(ArrayBuffer),
+        mimeType: 'image/png',
+      },
     });
   });
 

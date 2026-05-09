@@ -27,6 +27,10 @@ export class BambooHR {
     });
 
     this.apiClient.interceptors.response.push(response => {
+      if (response.ok) {
+        return;
+      }
+
       const errorMessage = response.headers.get('x-bamboohr-error-message') || response.statusText;
       throw new Error(`HTTP error ${response.status}: ${errorMessage}`);
     });

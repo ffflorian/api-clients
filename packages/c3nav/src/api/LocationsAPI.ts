@@ -35,9 +35,10 @@ export class LocationsAPI extends APIBase {
     return data;
   }
 
-  public async getList(): Promise<Location[]> {
+  public async getList(geometry?: boolean): Promise<Location[]> {
     const endpoint = Endpoint.Location.locations();
-    const {data} = await this.apiClient.get(endpoint);
+    const requestPath = geometry === undefined ? endpoint : `${endpoint}?geometry=${String(geometry)}`;
+    const {data} = await this.apiClient.get(requestPath);
     return data;
   }
 

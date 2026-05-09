@@ -16,8 +16,10 @@ import type {
   LocationGroupsAPI,
   LocationsAPI,
   MapAPI,
+  MeshAPI,
   ObstaclesAPI,
   PoisAPI,
+  PositioningAPI,
   RampsAPI,
   RoutingAPI,
   SessionAPI,
@@ -45,8 +47,10 @@ export interface API {
   locationGroups: LocationGroupsAPI;
   locations: LocationsAPI;
   map: MapAPI;
+  mesh: MeshAPI;
   obstacles: ObstaclesAPI;
   pois: PoisAPI;
+  positioning: PositioningAPI;
   ramps: RampsAPI;
   routing: RoutingAPI;
   session: SessionAPI;
