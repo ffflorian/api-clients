@@ -6,7 +6,7 @@
   "description": "A useresponse API client",
   "devDependencies": {
     "@types/node": "~25",
-    "@typescript/native-preview": "beta",
+    "@typescript/native-preview": "7.0.0-dev.20260509.2",
     "rimraf": "6.1.3",
     "typedoc": "0.28.19",
     "vitest": "4.1.5"

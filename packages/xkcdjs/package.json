@@ -8,7 +8,7 @@
   "description": "An xkcd API client with a CLI.",
   "devDependencies": {
     "@types/node": "~25",
-    "@typescript/native-preview": "beta",
+    "@typescript/native-preview": "7.0.0-dev.20260509.2",
     "http-status-codes": "2.3.0",
     "nock": "14.0.12",
     "rimraf": "6.1.3",
