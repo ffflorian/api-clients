@@ -1,3 +1,10 @@
+## imgflip.com [3.6.1](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.6.0...imgflip.com@3.6.1) (2026-05-23)
+
+
+### Bug Fixes
+
+* **deps:** Bump qs from 6.15.1 to 6.15.2 ([#1993](https://github.com/ffflorian/api-clients/issues/1993)) ([43526da](https://github.com/ffflorian/api-clients/commit/43526da6eb3b7baffb136254ee0ef501167aa6cf))
+
 # imgflip.com [3.6.0](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.5.7...imgflip.com@3.6.0) (2026-04-23)
 
 
