@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
 
       - name: Update yarn
-        uses: ffflorian/actions/yarn-update@e4c260dd6ed84157776cf92c3d4d6068efb10ffb
+        uses: ffflorian/actions/yarn-update@697d595c21f59c1c4b46ff162d3935994cac377a
         with:
           git_authorship: 'Florian Imdahl <git@ffflorian.de>'
           release_cooldown_days: '5'
