@@ -2,6 +2,9 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: '/'
+    commit-message:
+      prefix: 'fix(deps)'
+      prefix-development: 'chore(deps-dev)'
     schedule:
       interval: weekly
     open-pull-requests-limit: 99
@@ -23,6 +26,8 @@ updates:
         - '@ffflorian/*'
   - package-ecosystem: 'github-actions'
     directory: '/'
+    commit-message:
+      prefix: 'ci(deps)'
     schedule:
       interval: weekly
     open-pull-requests-limit: 99
