@@ -29,7 +29,7 @@
   },
   "license": "GPL-3.0",
   "name": "api-clients",
-  "packageManager": "yarn@4.15.0",
+  "packageManager": "yarn@4.16.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
