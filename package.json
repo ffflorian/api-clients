@@ -21,7 +21,7 @@
     "oxlint": "1.69.0",
     "prettier": "3.8.4",
     "semantic-release": "25.0.5",
-    "typescript": "6.0.3",
+    "tsc": "npm:typescript@7.0.1-rc",
     "typescript-eslint": "8.61.0"
   },
   "engines": {
@@ -39,11 +39,11 @@
     "dist": "yarn clean && yarn build",
     "fix": "yarn fix:ts && yarn fix:other",
     "fix:other": "yarn prettier --write",
-    "fix:ts": "yarn lint:ts:oxlint --fix && yarn lint:ts:eslint --fix",
+    "fix:ts": "yarn lint:ts:oxlint --fix",
     "lint": "yarn lint:other && yarn lint:ts",
     "lint:other": "yarn prettier --list-different",
-    "lint:ts": "yarn lint:ts:oxlint && yarn lint:ts:eslint",
-    "lint:ts:eslint": "eslint packages/",
+    "lint:ts": "yarn lint:ts:oxlint",
+    "lint:ts:eslint": "echo 'ESLint disabled: typescript-eslint is incompatible with the TypeScript 7 RC (typescript@rc), which no longer ships the legacy TypeScript API'",
     "lint:ts:oxlint": "oxlint --ignore-path .gitignore packages/",
     "prettier": "prettier .",
     "release": "multi-semantic-release --ignore-private-packages",
