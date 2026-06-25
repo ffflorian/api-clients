@@ -544,14 +544,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/semantic-release-config@npm:0.12.5":
-  version: 0.12.5
-  resolution: "@ffflorian/semantic-release-config@npm:0.12.5"
+"@ffflorian/semantic-release-config@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@ffflorian/semantic-release-config@npm:1.0.0"
   peerDependencies:
     "@semantic-release/changelog": ">= 3.0.0"
     "@semantic-release/git": ">= 7.0.0"
     semantic-release: ">= 15.13.0"
-  checksum: 10c0/734dca716b33f4c5b63e04023640c386df9063c3386b35b7f146ba136da4f55a07aec208bcfa2557dff61765cbdb267357ef31477c128915e0762ec69c8b2650
+  checksum: 10c0/0142293357c6f8e49c12d4d3389de62406463cd2e02a56368569652fc0612f68f8b83905bedcebf0b9e14d9c7c9d1c3a04720901da0e8d466b5a96fdbcd09056
   languageName: node
   linkType: hard
 
@@ -3271,7 +3271,7 @@ __metadata:
     "@eslint/js": "npm:10.0.1"
     "@ffflorian/eslint-config": "npm:0.14.2"
     "@ffflorian/prettier-config": "npm:0.8.2"
-    "@ffflorian/semantic-release-config": "npm:0.12.5"
+    "@ffflorian/semantic-release-config": "npm:1.0.0"
     "@semantic-release/changelog": "npm:6.0.3"
     "@semantic-release/git": "npm:10.0.1"
     "@types/node": "npm:~25"
