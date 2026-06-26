@@ -5,7 +5,7 @@
   },
   "description": "A c3nav API client",
   "devDependencies": {
-    "@types/node": "~25",
+    "@types/node": "~26",
     "http-status-codes": "2.3.0",
     "nock": "14.0.15",
     "rimraf": "6.1.3",

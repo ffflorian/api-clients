@@ -6,7 +6,7 @@
   },
   "description": "A imgflip.com API client",
   "devDependencies": {
-    "@types/node": "~25",
+    "@types/node": "~26",
     "@types/qs": "6.15.1",
     "nock": "14.0.15",
     "rimraf": "6.1.3",

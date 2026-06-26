@@ -8,7 +8,7 @@
     "@ffflorian/semantic-release-config": "1.0.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
-    "@types/node": "~25",
+    "@types/node": "~26",
     "eslint": "10.5.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import": "2.32.0",
