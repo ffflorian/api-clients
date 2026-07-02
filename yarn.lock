@@ -524,7 +524,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
     commander: "npm:15.0.0"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.22.4"
     typedoc: "npm:0.28.19"
@@ -563,7 +563,7 @@ __metadata:
     "@types/node": "npm:~26"
     commander: "npm:15.0.0"
     http-status-codes: "npm:2.3.0"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     tsx: "npm:4.22.4"
     typedoc: "npm:0.28.19"
@@ -2877,7 +2877,7 @@ __metadata:
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -3299,7 +3299,7 @@ __metadata:
     "@hapi/hawk": "npm:8.0.0"
     "@types/hapi__hawk": "npm:8.0.7"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -3392,7 +3392,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
     http-status-codes: "npm:2.3.0"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -3913,7 +3913,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -6232,7 +6232,7 @@ __metadata:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
     "@types/qs": "npm:6.15.1"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     qs: "npm:6.15.2"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
@@ -8253,14 +8253,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:14.0.15":
-  version: 14.0.15
-  resolution: "nock@npm:14.0.15"
+"nock@npm:14.0.16":
+  version: 14.0.16
+  resolution: "nock@npm:14.0.16"
   dependencies:
     "@mswjs/interceptors": "npm:^0.41.0"
     json-stringify-safe: "npm:^5.0.1"
     propagate: "npm:^2.0.0"
-  checksum: 10c0/f3bac19b3173d37e2f730ffac1ec2bd5c0bff153cae2f81e68504310a7830d765749908e3fe40eeab70de4adcb82fcb514a4fcef1ffdc8e7710ab070e92d879d
+  checksum: 10c0/c275834df286244c12fa1d456eee1bcfab09d2ce56ca27bf1009c8ba171979dcc0d3b373c352b6772afa37b26f4a6a01501e9fcd81b3be81c480b3bb7c8c64bc
   languageName: node
   linkType: hard
 
@@ -8694,7 +8694,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -10581,7 +10581,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
@@ -11620,7 +11620,7 @@ __metadata:
   dependencies:
     "@ffflorian/api-client": "npm:2.5.3"
     "@types/node": "npm:~26"
-    nock: "npm:14.0.15"
+    nock: "npm:14.0.16"
     rimraf: "npm:6.1.3"
     typedoc: "npm:0.28.19"
     typescript: "npm:6.0.3"
