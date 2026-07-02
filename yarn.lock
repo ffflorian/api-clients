@@ -3106,7 +3106,7 @@ __metadata:
     prettier: "npm:3.8.5"
     semantic-release: "npm:25.0.5"
     typescript: "npm:6.0.3"
-    typescript-eslint: "npm:8.61.1"
+    typescript-eslint: "npm:8.62.0"
   languageName: unknown
   linkType: soft
 
