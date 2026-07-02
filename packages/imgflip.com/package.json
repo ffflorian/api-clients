@@ -43,5 +43,5 @@
     "dist": "yarn clean && yarn build",
     "test": "vitest run"
   },
-  "version": "3.6.1"
+  "version": "3.6.2"
 }
