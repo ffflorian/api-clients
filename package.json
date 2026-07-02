@@ -3,7 +3,7 @@
   "description": "API clients for various services.",
   "devDependencies": {
     "@eslint/js": "10.0.1",
-    "@ffflorian/eslint-config": "1.0.1",
+    "@ffflorian/eslint-config": "1.0.2",
     "@ffflorian/prettier-config": "1.0.0",
     "@ffflorian/semantic-release-config": "1.0.0",
     "@semantic-release/changelog": "6.0.3",
