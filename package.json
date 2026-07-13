@@ -9,6 +9,7 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@types/node": "~26",
+    "@typescript/typescript6": "6.0.2",
     "eslint": "10.6.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import": "2.32.0",
@@ -21,15 +22,14 @@
     "oxlint": "1.72.0",
     "prettier": "3.9.4",
     "semantic-release": "25.0.5",
-    "typescript": "6.0.3",
-    "typescript-eslint": "8.62.1"
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": ">= 21"
   },
   "license": "GPL-3.0",
   "name": "api-clients",
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.17.1",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
