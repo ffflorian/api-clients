@@ -19,7 +19,7 @@
     "lefthook": "2.1.10",
     "multi-semantic-release": "3.1.0",
     "oxlint": "1.72.0",
-    "prettier": "3.9.4",
+    "prettier": "3.9.5",
     "semantic-release": "25.0.5",
     "typescript": "6.0.3",
     "typescript-eslint": "8.62.1"
