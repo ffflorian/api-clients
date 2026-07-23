@@ -3032,7 +3032,7 @@ __metadata:
     multi-semantic-release: "npm:3.1.0"
     oxlint: "npm:1.74.0"
     prettier: "npm:3.9.5"
-    semantic-release: "npm:25.0.6"
+    semantic-release: "npm:25.0.8"
     typescript: "npm:6.0.3"
     typescript-eslint: "npm:8.63.0"
   languageName: unknown
@@ -10105,9 +10105,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semantic-release@npm:25.0.6":
-  version: 25.0.6
-  resolution: "semantic-release@npm:25.0.6"
+"semantic-release@npm:25.0.8":
+  version: 25.0.8
+  resolution: "semantic-release@npm:25.0.8"
   dependencies:
     "@semantic-release/commit-analyzer": "npm:^13.0.1"
     "@semantic-release/error": "npm:^4.0.0"
@@ -10139,7 +10139,7 @@ __metadata:
     yargs: "npm:^18.0.0"
   bin:
     semantic-release: bin/semantic-release.js
-  checksum: 10c0/dfb6fa617858310fedd29108543588fded0a6c80900ac95d40b54383e47342e34392a35bbe9288c433a34ab40ad7c5a076e7e2220aba1fd664e537c3d646a936
+  checksum: 10c0/837211f18fcef80f93fa60999f7f4da72c12604097518f1fe3fc7aad4efebbdd5930d02fed1865a1efe9124d588ea01e2e4f4fa09f471a13a05a7628efe0daf3
   languageName: node
   linkType: hard
 
