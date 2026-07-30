@@ -6,7 +6,7 @@
     "@ffflorian/eslint-config": "1.0.5",
     "@ffflorian/prettier-config": "1.0.0",
     "@ffflorian/semantic-release-config": "1.0.0",
-    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/changelog": "7.0.0",
     "@semantic-release/git": "10.0.1",
     "@types/node": "~26",
     "eslint": "10.7.0",
