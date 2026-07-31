@@ -15,7 +15,7 @@
     "oxlint": "1.75.0",
     "prettier": "3.9.6",
     "semantic-release": "25.0.8",
-    "typescript": "6.0.3",
+    "typescript": "7.0.2",
     "typescript-eslint": "8.65.0"
   },
   "engines": {
@@ -23,7 +23,7 @@
   },
   "license": "GPL-3.0",
   "name": "api-clients",
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.18.0",
   "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
