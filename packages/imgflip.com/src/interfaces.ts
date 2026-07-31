@@ -32,7 +32,9 @@ export interface Box {
   outline_color?: string;
   text: string;
   width?: number;
+  // eslint-disable-next-line id-length
   x?: number;
+  // eslint-disable-next-line id-length
   y?: number;
 }
 
@@ -85,9 +87,9 @@ export interface Memes {
 
 export type MemeType = 'gif' | 'image';
 
-export type Response<T> =
+export type Response<Type> =
   | {
-      data: T;
+      data: Type;
       success: true;
     }
   | {

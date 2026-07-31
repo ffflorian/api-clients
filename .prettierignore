@@ -6,3 +6,4 @@ node_modules
 .yarn
 .yarnrc.yml
 CLAUDE.md
+.claude

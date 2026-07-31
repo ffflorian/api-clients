@@ -26,4 +26,5 @@ export interface OffEmployee {
   type: string;
 }
 
+// eslint-disable-next-line id-length
 export type PartialNull<T> = {[P in keyof T]?: null | T[P]};

@@ -107,18 +107,18 @@ describe('Imgflip', () => {
       .post('/caption_image', body => {
         const parsed = qs.parse(body as string);
         expect(parsed).toMatchObject({
-          /* eslint-disable id-length */
           boxes: [
             {
               text: 'Top box',
+              // eslint-disable-next-line id-length
               x: '10',
+              // eslint-disable-next-line id-length
               y: '20',
             },
             {
               text: 'Bottom box',
             },
           ],
-          /* eslint-enable id-length */
           password: 'secret-password',
           template_id: '112126428',
           username: 'myUser',
@@ -128,18 +128,18 @@ describe('Imgflip', () => {
       .reply(HTTP_OK, responseData);
 
     const response = await imgflip.api.captionImage({
-      /* eslint-disable id-length */
       boxes: [
         {
           text: 'Top box',
+          // eslint-disable-next-line id-length
           x: 10,
+          // eslint-disable-next-line id-length
           y: 20,
         },
         {
           text: 'Bottom box',
         },
       ],
-      /* eslint-enable id-length */
       password: 'secret-password',
       template_id: '112126428',
       username: 'myUser',

@@ -84,7 +84,7 @@ This is a yarn workspaces monorepo managed by [multi-semantic-release](https://g
 ```sh
 yarn install          # Install dependencies
 yarn build:ts         # Build all packages (concurrency 4)
-yarn lint             # Lint all (prettier + oxlint + eslint)
+yarn lint             # Lint all (prettier + oxlint)
 yarn fix              # Auto-fix linting issues
 yarn test             # Run all tests
 yarn dist             # Clean + build
@@ -106,9 +106,9 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Build**: TypeScript (`tsc`) via per-package `tsconfig.build.json`
 - **Bundler**: vite (used in some packages)
 - **Testing**: vitest
-- **Linting**: oxlint + ESLint with `@ffflorian/eslint-config`, run in that order
+- **Linting**: oxlint with `@ffflorian/oxlint-config`, run in that order
 - **Formatting**: prettier with `@ffflorian/prettier-config`
-- **Git hooks**: lefthook (`lefthook.yml`) — runs prettier, oxlint, and eslint with auto-fix on staged files before commit
+- **Git hooks**: lefthook (`lefthook.yml`) — runs prettier and oxlint with auto-fix on staged files before commit
 - **Versioning**: Independent versioning via conventional commits
 - **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
 - **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
@@ -164,7 +164,7 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 - All packages are **ESM** (pure ES modules)
 - TypeScript throughout; each package has `tsconfig.json` (dev) and `tsconfig.build.json` (production)
-- ESLint config: `@ffflorian/eslint-config` with oxlint pre-pass
+- oxlint config: `@ffflorian/oxlint-config` with oxlint pre-pass
 - Prettier config: `@ffflorian/prettier-config`
 - `.yarnrc.yml`: `nodeLinker: node-modules`, no semver range prefix, public npm access
 
@@ -188,7 +188,7 @@ Then run `yarn fix` inside the appropriate directory to auto-fix linting and for
 yarn fix
 ```
 
-This runs prettier (formatting) and oxlint + eslint (linting) with auto-fix across the codebase.
+This runs prettier (formatting) and oxlint (linting) with auto-fix across the codebase.
 
 ### Agent completion rule
 

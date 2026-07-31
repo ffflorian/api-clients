@@ -62,6 +62,7 @@ export interface RequestOptions extends PreReleaseOptions, SearchOptions {
   api_key?: string;
   platform?: PlatformType;
   /** query */
+  // eslint-disable-next-line id-length
   q?: string;
 }
 

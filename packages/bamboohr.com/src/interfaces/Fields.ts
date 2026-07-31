@@ -280,4 +280,5 @@ export type TimestampField = string;
 
 export type WritableFields = Partial<Writeable<Fields>>;
 
+// eslint-disable-next-line id-length
 export type Writeable<T> = {-readonly [P in keyof T]: T[P]};
