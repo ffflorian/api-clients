@@ -426,14 +426,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/semantic-release-config@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@ffflorian/semantic-release-config@npm:1.0.0"
+"@ffflorian/semantic-release-config@npm:1.0.1":
+  version: 1.0.1
+  resolution: "@ffflorian/semantic-release-config@npm:1.0.1"
   peerDependencies:
     "@semantic-release/changelog": ">= 3.0.0"
     "@semantic-release/git": ">= 7.0.0"
     semantic-release: ">= 15.13.0"
-  checksum: 10c0/0142293357c6f8e49c12d4d3389de62406463cd2e02a56368569652fc0612f68f8b83905bedcebf0b9e14d9c7c9d1c3a04720901da0e8d466b5a96fdbcd09056
+  checksum: 10c0/63ae831ef6fd27e0ae3a9218f4c8d18f2edc80128755496f117a0983a3dca921eca2d993586837faa094848ba7a062d12e2c1be069381fc5dd055ac6d1e0c018
   languageName: node
   linkType: hard
 
@@ -2842,7 +2842,7 @@ __metadata:
   dependencies:
     "@ffflorian/oxlint-config": "npm:1.0.3"
     "@ffflorian/prettier-config": "npm:1.0.1"
-    "@ffflorian/semantic-release-config": "npm:1.0.0"
+    "@ffflorian/semantic-release-config": "npm:1.0.1"
     "@semantic-release/changelog": "npm:7.0.0"
     "@semantic-release/git": "npm:11.0.1"
     "@types/node": "npm:~26"
