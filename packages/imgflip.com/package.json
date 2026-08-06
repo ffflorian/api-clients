@@ -8,7 +8,7 @@
   "devDependencies": {
     "@types/node": "~26",
     "@types/qs": "6.15.1",
-    "nock": "14.0.16",
+    "nock": "14.0.17",
     "rimraf": "6.1.3",
     "typedoc": "0.28.20",
     "typescript": "7.0.2",
