@@ -39,13 +39,13 @@ jobs:
           yarn lint
           yarn test
 
-#      - name: Rebuild docs
-#        if: github.event_name != 'pull_request'
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        run: |
-#          ./bin/setup-ci-git-author.sh
-#          ./bin/rebuild-docs.sh
+      #      - name: Rebuild docs
+      #        if: github.event_name != 'pull_request'
+      #        env:
+      #          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #        run: |
+      #          ./bin/setup-ci-git-author.sh
+      #          ./bin/rebuild-docs.sh
 
       - name: Publish on npm
         if: github.event_name != 'pull_request'
