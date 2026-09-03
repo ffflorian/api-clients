@@ -10,7 +10,7 @@
     "@types/node": "~26",
     "eslint": "10.9.0",
     "eslint-plugin-perfectionist": "5.10.1",
-    "lefthook": "2.1.10",
+    "lefthook": "2.1.12",
     "multi-semantic-release": "3.1.0",
     "oxlint": "1.80.0",
     "prettier": "3.9.6",
