@@ -8,7 +8,7 @@
     "@semantic-release/changelog": "7.0.0",
     "@semantic-release/git": "11.0.1",
     "@types/node": "~26",
-    "eslint": "10.9.0",
+    "eslint": "10.9.1",
     "eslint-plugin-perfectionist": "5.10.1",
     "lefthook": "2.1.10",
     "multi-semantic-release": "3.1.0",
