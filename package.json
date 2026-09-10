@@ -4,17 +4,14 @@
   "devDependencies": {
     "@ffflorian/oxlint-config": "1.0.3",
     "@ffflorian/prettier-config": "1.0.1",
-    "@ffflorian/semantic-release-config": "1.0.1",
-    "@semantic-release/changelog": "7.0.0",
-    "@semantic-release/git": "11.0.1",
+    "@nx/js": "23.2.1",
     "@types/node": "~26",
     "eslint": "10.10.0",
     "eslint-plugin-perfectionist": "5.11.0",
     "lefthook": "2.1.12",
-    "multi-semantic-release": "3.1.0",
+    "nx": "23.2.1",
     "oxlint": "1.81.0",
     "prettier": "3.9.6",
-    "semantic-release": "25.0.9",
     "typescript": "7.0.2",
     "typescript-eslint": "8.69.0"
   },
@@ -38,7 +35,7 @@
     "lint:other": "yarn prettier --list-different",
     "lint:ts": "oxlint --ignore-path .gitignore packages/",
     "prettier": "prettier .",
-    "release": "multi-semantic-release --ignore-private-packages",
+    "release": "nx release --yes",
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach --all --parallel --exclude api-clients run test"
   },

@@ -14,5 +14,8 @@ package-lock.json
 !.yarn/sdks
 !.yarn/versions
 
+# nx
+.nx
+
 # Claude
 .claude
