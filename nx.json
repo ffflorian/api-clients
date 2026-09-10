@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": false,
+      "projectsAffectedByDependencyUpdates": "auto"
+    }
+  },
+  "release": {
+    "projects": ["packages/*", "!corona-warn-app"],
+    "projectsRelationship": "independent",
+    "releaseTag": {
+      "pattern": "{projectName}@{version}"
+    },
+    "version": {
+      "conventionalCommits": true
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": {
+        "createRelease": "github"
+      }
+    },
+    "git": {
+      "commit": true,
+      "tag": true,
+      "commitMessage": "chore(release): publish [skip ci]"
+    }
+  }
+}
