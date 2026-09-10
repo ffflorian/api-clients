@@ -1,3 +1,7 @@
+## 2.6.1 (2026-09-10)
+
+This was a version bump only for @ffflorian/icanhazdadjoke to align it with other projects, there were no code changes.
+
 # @ffflorian/icanhazdadjoke [2.6.0](https://github.com/ffflorian/api-clients/compare/@ffflorian/icanhazdadjoke@2.5.0...@ffflorian/icanhazdadjoke@2.6.0) (2026-05-01)
 
 

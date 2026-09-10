@@ -1,3 +1,7 @@
+## 3.5.1 (2026-09-10)
+
+This was a version bump only for c3nav to align it with other projects, there were no code changes.
+
 # c3nav [3.5.0](https://github.com/ffflorian/api-clients/compare/c3nav@3.4.7...c3nav@3.5.0) (2026-05-01)
 
 

@@ -1,3 +1,7 @@
+## 2.5.1 (2026-09-10)
+
+This was a version bump only for crates.io to align it with other projects, there were no code changes.
+
 # crates.io [2.5.0](https://github.com/ffflorian/api-clients/compare/crates.io@2.4.7...crates.io@2.5.0) (2026-05-01)
 
 

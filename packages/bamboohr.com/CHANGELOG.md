@@ -1,3 +1,7 @@
+## 1.7.1 (2026-09-10)
+
+This was a version bump only for bamboohr.com to align it with other projects, there were no code changes.
+
 # bamboohr.com [1.7.0](https://github.com/ffflorian/api-clients/compare/bamboohr.com@1.6.0...bamboohr.com@1.7.0) (2026-05-01)
 
 

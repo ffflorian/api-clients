@@ -1,3 +1,7 @@
+## 1.0.1 (2026-09-10)
+
+This was a version bump only for useresponse to align it with other projects, there were no code changes.
+
 # useresponse 1.0.0 (2026-05-07)
 
 

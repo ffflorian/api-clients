@@ -1,3 +1,7 @@
+## 2.6.1 (2026-09-10)
+
+This was a version bump only for npms.io to align it with other projects, there were no code changes.
+
 # npms.io [2.6.0](https://github.com/ffflorian/api-clients/compare/npms.io@2.5.0...npms.io@2.6.0) (2026-05-01)
 
 

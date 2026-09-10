@@ -1,3 +1,7 @@
+## 3.5.1 (2026-09-10)
+
+This was a version bump only for statuspage.io to align it with other projects, there were no code changes.
+
 # statuspage.io [3.5.0](https://github.com/ffflorian/api-clients/compare/statuspage.io@3.4.7...statuspage.io@3.5.0) (2026-04-23)
 
 

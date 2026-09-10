@@ -1,3 +1,7 @@
+## 3.6.3 (2026-09-10)
+
+This was a version bump only for imgflip.com to align it with other projects, there were no code changes.
+
 ## imgflip.com [3.6.2](https://github.com/ffflorian/api-clients/compare/imgflip.com@3.6.1...imgflip.com@3.6.2) (2026-07-02)
 
 

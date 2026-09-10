@@ -1,3 +1,7 @@
+## 3.5.1 (2026-09-10)
+
+This was a version bump only for updown.io to align it with other projects, there were no code changes.
+
 # updown.io [3.5.0](https://github.com/ffflorian/api-clients/compare/updown.io@3.4.7...updown.io@3.5.0) (2026-05-01)
 
 

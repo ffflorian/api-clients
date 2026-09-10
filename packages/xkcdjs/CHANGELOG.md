@@ -1,3 +1,7 @@
+## 3.5.2 (2026-09-10)
+
+This was a version bump only for @ffflorian/xkcdjs to align it with other projects, there were no code changes.
+
 ## @ffflorian/xkcdjs [3.5.1](https://github.com/ffflorian/api-clients/compare/@ffflorian/xkcdjs@3.5.0...@ffflorian/xkcdjs@3.5.1) (2026-05-01)
 
 
