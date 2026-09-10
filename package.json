@@ -12,7 +12,7 @@
     "eslint-plugin-perfectionist": "5.11.0",
     "lefthook": "2.1.12",
     "multi-semantic-release": "3.1.0",
-    "oxlint": "1.80.0",
+    "oxlint": "1.81.0",
     "prettier": "3.9.6",
     "semantic-release": "25.0.9",
     "typescript": "7.0.2",
