@@ -4,8 +4,8 @@ pre-commit:
     prettier:
       glob: '*.{js,ts,css,md,json,yml,yaml}'
       exclude:
-        - CLAUDE.md
-        - .claude
+        - 'CLAUDE.md'
+        - '.claude'
       run: npx --no prettier -- --write {staged_files} && git add {staged_files}
     oxlint:
       glob: '*.{js,ts}'
