@@ -1,3 +1,9 @@
+## 3.6.4 (2026-09-17)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.3 to 2.5.4 ([#2142](https://github.com/ffflorian/api-clients/pull/2142))
+
 ## 3.6.3 (2026-09-10)
 
 This was a version bump only for imgflip.com to align it with other projects, there were no code changes.

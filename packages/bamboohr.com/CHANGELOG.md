@@ -1,3 +1,9 @@
+## 1.7.2 (2026-09-17)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.3 to 2.5.4 ([#2142](https://github.com/ffflorian/api-clients/pull/2142))
+
 ## 1.7.1 (2026-09-10)
 
 This was a version bump only for bamboohr.com to align it with other projects, there were no code changes.
