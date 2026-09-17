@@ -1625,12 +1625,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ffflorian/prettier-config@npm:1.0.1":
-  version: 1.0.1
-  resolution: "@ffflorian/prettier-config@npm:1.0.1"
+"@ffflorian/prettier-config@npm:1.0.3":
+  version: 1.0.3
+  resolution: "@ffflorian/prettier-config@npm:1.0.3"
   peerDependencies:
     prettier: ">= 1.17.0"
-  checksum: 10c0/60bd2c4f9a13839a670d4608ba95e42ef6b0bafd1bfc67cc1109e40906774a1b17c96e4fe4e70ff09bba1483eba22a0f47d10435da2c95c14e2a9d0dd9d847f8
+  checksum: 10c0/f88726a81a04b20d1df2c6e0fa72c6f9575976df28be01ea8d1fc390b3e1869521cd157896da51a6b8a8e9433e0373d349179c3b9055be820de23733c53cc115
   languageName: node
   linkType: hard
 
@@ -3323,7 +3323,7 @@ __metadata:
   resolution: "api-clients@workspace:."
   dependencies:
     "@ffflorian/oxlint-config": "npm:1.0.5"
-    "@ffflorian/prettier-config": "npm:1.0.1"
+    "@ffflorian/prettier-config": "npm:1.0.3"
     "@nx/js": "npm:23.2.1"
     "@types/node": "npm:~26"
     eslint: "npm:10.10.0"
