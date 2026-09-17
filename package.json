@@ -2,7 +2,7 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "API clients for various services.",
   "devDependencies": {
-    "@ffflorian/oxlint-config": "1.0.5",
+    "@ffflorian/oxlint-config": "1.0.8",
     "@ffflorian/prettier-config": "1.0.3",
     "@nx/js": "23.2.1",
     "@types/node": "~26",
