@@ -16,5 +16,6 @@
     "strictFunctionTypes": true,
     "target": "es6",
     "types": ["node"]
-  }
+  },
+  "exclude": ["oxfmt.config.ts"]
 }
