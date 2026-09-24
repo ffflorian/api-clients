@@ -10,7 +10,7 @@
     "eslint-plugin-perfectionist": "5.11.1",
     "lefthook": "2.1.14",
     "nx": "23.2.1",
-    "oxlint": "1.82.0",
+    "oxlint": "1.83.0",
     "prettier": "3.9.8",
     "typescript": "7.0.2"
   },
