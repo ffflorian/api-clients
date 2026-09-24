@@ -1,9 +1,0 @@
-**/dist/**
-docs
-CHANGELOG.md
-node_modules
-.vscode
-.yarn
-.yarnrc.yml
-CLAUDE.md
-.claude
