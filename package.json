@@ -11,7 +11,7 @@
     "lefthook": "2.1.12",
     "nx": "23.2.1",
     "oxlint": "1.82.0",
-    "prettier": "3.9.6",
+    "prettier": "3.9.8",
     "typescript": "7.0.2"
   },
   "engines": {
