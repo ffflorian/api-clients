@@ -2,16 +2,16 @@
   "author": "Florian Imdahl <git@ffflorian.de>",
   "description": "API clients for various services.",
   "devDependencies": {
+    "@ffflorian/oxfmt-config": "1.2.0",
     "@ffflorian/oxlint-config": "1.0.9",
-    "@ffflorian/prettier-config": "1.0.3",
     "@nx/js": "23.2.1",
     "@types/node": "~26",
     "eslint": "10.11.0",
     "eslint-plugin-perfectionist": "5.11.1",
     "lefthook": "2.1.14",
     "nx": "23.2.1",
+    "oxfmt": "0.70.0",
     "oxlint": "1.83.0",
-    "prettier": "3.9.8",
     "typescript": "7.0.2"
   },
   "engines": {
@@ -20,7 +20,6 @@
   "license": "GPL-3.0",
   "name": "api-clients",
   "packageManager": "yarn@4.18.0",
-  "prettier": "@ffflorian/prettier-config",
   "private": true,
   "scripts": {
     "build:docs": "yarn workspaces foreach --all --parallel --exclude api-clients run build:docs",
@@ -28,12 +27,12 @@
     "clean": "yarn workspaces foreach --all --parallel --exclude api-clients run clean",
     "dist": "yarn clean && yarn build",
     "fix": "yarn fix:ts && yarn fix:other",
-    "fix:other": "yarn prettier --write",
+    "fix:other": "yarn format",
     "fix:ts": "yarn lint:ts --fix",
+    "format": "oxfmt .",
     "lint": "yarn lint:other && yarn lint:ts",
-    "lint:other": "yarn prettier --check",
+    "lint:other": "yarn format --check",
     "lint:ts": "oxlint --ignore-path .gitignore packages/",
-    "prettier": "prettier .",
     "release": "nx release --yes",
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach --all --parallel --exclude api-clients run test"
