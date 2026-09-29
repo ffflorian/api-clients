@@ -1,3 +1,7 @@
+## 3.5.3 (2026-09-29)
+
+This was a version bump only for statuspage.io to align it with other projects, there were no code changes.
+
 ## 3.5.2 (2026-09-17)
 
 ### 🩹 Fixes

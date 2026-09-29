@@ -1,3 +1,7 @@
+## 3.6.5 (2026-09-29)
+
+This was a version bump only for imgflip.com to align it with other projects, there were no code changes.
+
 ## 3.6.4 (2026-09-17)
 
 ### 🩹 Fixes

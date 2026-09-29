@@ -1,3 +1,7 @@
+## 1.7.3 (2026-09-29)
+
+This was a version bump only for bamboohr.com to align it with other projects, there were no code changes.
+
 ## 1.7.2 (2026-09-17)
 
 ### 🩹 Fixes
