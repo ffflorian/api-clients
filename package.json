@@ -7,7 +7,7 @@
     "@nx/js": "23.2.1",
     "@types/node": "~26",
     "eslint": "10.11.0",
-    "eslint-plugin-perfectionist": "5.11.1",
+    "eslint-plugin-perfectionist": "5.12.1",
     "lefthook": "2.1.14",
     "nx": "23.2.1",
     "oxfmt": "0.70.0",
