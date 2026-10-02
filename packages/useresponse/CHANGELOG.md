@@ -1,3 +1,9 @@
+## 1.0.4 (2026-10-02)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.5 to 2.5.6 ([#2163](https://github.com/ffflorian/api-clients/pull/2163))
+
 ## 1.0.3 (2026-09-29)
 
 This was a version bump only for useresponse to align it with other projects, there were no code changes.
