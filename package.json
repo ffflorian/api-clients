@@ -11,7 +11,7 @@
     "lefthook": "2.1.14",
     "nx": "23.2.1",
     "oxfmt": "0.70.0",
-    "oxlint": "1.83.0",
+    "oxlint": "1.85.0",
     "typescript": "7.0.2"
   },
   "engines": {
