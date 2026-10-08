@@ -1,3 +1,7 @@
+## 2.5.5 (2026-10-08)
+
+This was a version bump only for crates.io to align it with other projects, there were no code changes.
+
 ## 2.5.4 (2026-10-02)
 
 ### 🩹 Fixes
