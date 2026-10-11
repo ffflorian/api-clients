@@ -1,3 +1,9 @@
+## 3.6.6 (2026-10-11)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.6 to 2.5.7 ([#2177](https://github.com/ffflorian/api-clients/pull/2177))
+
 ## 3.6.5 (2026-10-08)
 
 This was a version bump only for libraries.io to align it with other projects, there were no code changes.
