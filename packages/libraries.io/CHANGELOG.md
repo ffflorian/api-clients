@@ -1,3 +1,9 @@
+## 3.6.7 (2026-10-22)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.7 to 2.5.8  [ci skip] ([#2192](https://github.com/ffflorian/api-clients/pull/2192))
+
 ## 3.6.6 (2026-10-11)
 
 ### 🩹 Fixes

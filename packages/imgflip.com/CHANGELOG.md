@@ -1,3 +1,10 @@
+## 3.6.9 (2026-10-22)
+
+### 🩹 Fixes
+
+- **deps:** Bump qs from 6.16.0 to 6.16.1 ([#2195](https://github.com/ffflorian/api-clients/pull/2195))
+- **deps:** Bump @ffflorian/api-client from 2.5.7 to 2.5.8  [ci skip] ([#2192](https://github.com/ffflorian/api-clients/pull/2192))
+
 ## 3.6.8 (2026-10-11)
 
 ### 🩹 Fixes
