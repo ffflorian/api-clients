@@ -1,3 +1,7 @@
+## 2.6.9 (2026-10-29)
+
+This was a version bump only for @ffflorian/icanhazdadjoke to align it with other projects, there were no code changes.
+
 ## 2.6.8 (2026-10-29)
 
 ### 🩹 Fixes

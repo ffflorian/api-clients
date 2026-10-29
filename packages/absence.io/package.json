@@ -44,5 +44,5 @@
     "dist": "yarn clean && yarn build",
     "test": "vitest"
   },
-  "version": "2.5.8"
+  "version": "2.5.9"
 }
