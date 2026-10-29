@@ -1,3 +1,9 @@
+## 1.0.8 (2026-10-29)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.8 to 2.5.9 ([#2203](https://github.com/ffflorian/api-clients/pull/2203))
+
 ## 1.0.7 (2026-10-22)
 
 ### 🩹 Fixes
