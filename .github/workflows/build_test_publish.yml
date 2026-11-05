@@ -23,6 +23,9 @@ jobs:
       issues: write
     name: Build, test, and publish
     runs-on: ubuntu-latest
+    concurrency:
+      group: build-test-publish-${{ github.ref }}
+      cancel-in-progress: false
     if: github.event_name != 'workflow_dispatch'
     steps:
       - name: Checkout repository
@@ -60,6 +63,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./bin/setup-ci-git-author.sh
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "main has moved past ${GITHUB_SHA}, skipping release (a newer run will release)."
+            exit 0
+          fi
+          set -o pipefail
           yarn release 2>&1 | tee /tmp/release.log
 
       - name: Upload release log

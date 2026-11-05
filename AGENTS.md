@@ -52,11 +52,11 @@ This file explains how coding agents should work in this repository.
 
 ## Project Overview
 
-This is a yarn workspaces monorepo managed by [multi-semantic-release](https://github.com/qiwi/multi-semantic-release), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
+This is a yarn workspaces monorepo released with [Nx Release](https://nx.dev/features/manage-releases), containing multiple independently published Node.js/TypeScript packages by [Florian Imdahl](https://github.com/ffflorian).
 
 - **License**: GPL-3.0
 - **Node.js requirement**: >= 18.0 (CI uses Node.js 26.x)
-- **Package manager**: yarn 4.13.0 (Berry)
+- **Package manager**: yarn 4.18.1 (Berry)
 
 ## Packages
 
@@ -110,9 +110,9 @@ Each package supports `build`, `clean`, and `test` scripts run via `yarn workspa
 - **Formatting**: oxfmt with `@ffflorian/oxfmt-config`
 - **Git hooks**: lefthook (`lefthook.yml`) — runs oxfmt and oxlint with auto-fix on staged files before commit
 - **Versioning**: Independent versioning via conventional commits
-- **Publishing**: `multi-semantic-release` (dhoulb) publishes to npm; only packages whose files changed are released. Private packages are excluded via `--ignore-private-packages`. Only allowed from `main` branch.
-- **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `*` as the version — multi-semantic-release replaces it with the correct version at publish time.
-- **Release config**: Root `.releaserc.json` extends `@ffflorian/semantic-release-config`
+- **Publishing**: `nx release` versions, tags, creates GitHub releases and publishes to npm; only packages with conventional commits touching their own directory since their last tag are released. Only run from CI on `main`.
+- **Release config**: `release` section in root `nx.json`: independent versioning, tags `{projectName}@{version}`, one `chore(release): publish [skip ci]` commit per release. Private packages are excluded via `release.projects` - add new private packages there.
+- **Cross-repo deps**: When a package in this repo depends on another package in this repo, use `workspace:*` as the version; `nx release` keeps local dependency versions in sync.
 
 ## Dependencies
 
@@ -134,7 +134,7 @@ ci: CI/CD configuration changes
 ```
 
 - Do **not** include references to Claude or AI tools in commit messages or PR descriptions.
-- `multi-semantic-release` uses conventional commits to determine version bumps and generate changelogs.
+- `nx release` uses conventional commits to determine version bumps and generate changelogs.
 - Only packages with commits touching their own directory are released — unrelated packages are never published.
 
 ## Branch Naming
@@ -157,8 +157,9 @@ GitHub Actions workflow (`.github/workflows/build_test_publish.yml`):
 
 1. Runs on pushes and PRs to `main`
 2. Steps: install (`yarn --immutable`), build, lint, test
-3. On push to `main`: runs `yarn release` (`multi-semantic-release`) which publishes only changed packages to npm
-4. Requires `GITHUB_TOKEN` and OIDC for npm auth; checkout uses `fetch-depth: 0` for full git history
+3. On push to `main`: runs `yarn release` (`nx release --yes`), which publishes only changed packages to npm. The release is skipped if `main` has moved past the built commit (the newer run releases instead); runs on the same ref are serialized via `concurrency`.
+4. `workflow_dispatch` runs the `force-release` job, which releases all packages with a chosen `patch`/`minor`/`major` bump.
+5. Requires `GITHUB_TOKEN` and OIDC for npm auth; checkout uses `fetch-depth: 0` for full git history
 
 ## Code Style
 
