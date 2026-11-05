@@ -1,3 +1,9 @@
+## 2.5.10 (2026-11-05)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.9 to 2.5.10  [ci skip] ([#2214](https://github.com/ffflorian/api-clients/pull/2214))
+
 ## 2.5.9 (2026-10-29)
 
 This was a version bump only for crates.io to align it with other projects, there were no code changes.

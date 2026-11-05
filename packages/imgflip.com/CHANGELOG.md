@@ -1,3 +1,10 @@
+## 3.6.12 (2026-11-05)
+
+### 🩹 Fixes
+
+- **deps:** Bump qs from 6.16.1 to 6.17.1 ([#2212](https://github.com/ffflorian/api-clients/pull/2212))
+- **deps:** Bump @ffflorian/api-client from 2.5.9 to 2.5.10  [ci skip] ([#2214](https://github.com/ffflorian/api-clients/pull/2214))
+
 ## 3.6.11 (2026-10-29)
 
 This was a version bump only for imgflip.com to align it with other projects, there were no code changes.
