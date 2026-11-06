@@ -12,6 +12,70 @@
     "releaseTag": {
       "pattern": "{projectName}@{version}"
     },
+    "conventionalCommits": {
+      "types": {
+        "refactor": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "docs": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "build": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "types": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "chore": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "examples": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "test": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "style": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "ci": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        },
+        "revert": {
+          "semverBump": "none",
+          "changelog": {
+            "hidden": false
+          }
+        }
+      }
+    },
     "version": {
       "conventionalCommits": true
     },
