@@ -134,7 +134,7 @@ ci: CI/CD configuration changes
 ```
 
 - Do **not** include references to Claude or AI tools in commit messages or PR descriptions.
-- `nx release` uses conventional commits to determine version bumps and generate changelogs.
+- `nx release` uses conventional commits to determine version bumps and generate changelogs. Only `feat` (minor), `fix` (patch) and breaking changes bump versions; all other types (`chore`, `refactor`, `docs`, etc.) are listed in the changelog but never trigger a release on their own (`release.conventionalCommits` in `nx.json`).
 - Only packages with commits touching their own directory are released — unrelated packages are never published.
 
 ## Branch Naming
