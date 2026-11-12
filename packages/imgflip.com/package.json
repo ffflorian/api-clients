@@ -1,18 +1,18 @@
 {
   "author": "Florian Imdahl <git@ffflorian.de>",
   "dependencies": {
-    "@ffflorian/api-client": "2.5.10",
+    "@ffflorian/api-client": "2.5.11",
     "qs": "6.17.1"
   },
   "description": "A imgflip.com API client",
   "devDependencies": {
     "@types/node": "~26",
     "@types/qs": "6.15.1",
-    "nock": "15.0.5",
+    "nock": "15.0.6",
     "rimraf": "6.1.3",
     "typedoc": "0.28.20",
     "typescript": "7.0.2",
-    "vite": "8.3.5",
+    "vite": "8.3.6",
     "vitest": "5.0.5"
   },
   "engines": {
