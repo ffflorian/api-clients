@@ -37,6 +37,7 @@
     "test": "yarn test:all",
     "test:all": "yarn workspaces foreach --all --parallel --exclude api-clients run test"
   },
+  "type": "module",
   "workspaces": [
     "packages/*"
   ]
