@@ -1,6 +1,6 @@
 # useresponse [![npm version](https://img.shields.io/npm/v/useresponse.svg)](https://www.npmjs.com/package/useresponse)
 
-A [useresponse](https://www.useresponse.com/) API client. For a documentation on the API see [https://api.useresponse.com](https://api.useresponse.com).
+A [useresponse](https://www.useresponse.com/) API client (API v7.0). For a documentation on the API see [the useresponse API reference](https://api.useresponse.com).
 
 ### Installation
 

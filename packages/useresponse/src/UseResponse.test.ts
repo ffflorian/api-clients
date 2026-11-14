@@ -69,7 +69,7 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.additional.getForums(),
     },
     {
-      args: ['/statuses.json'],
+      args: ['/statuses.json', {params: undefined}],
       method: 'get',
       name: 'gets statuses',
       run: useResponse => useResponse.api.additional.getStatuses(),
@@ -93,10 +93,10 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.comments.getComments({page: 2}),
     },
     {
-      args: ['/objects/3/comments.json'],
+      args: ['/objects/3/comments.json', {params: {page: 2}}],
       method: 'get',
       name: 'gets object comments',
-      run: useResponse => useResponse.api.comments.getObjectComments('3'),
+      run: useResponse => useResponse.api.comments.getObjectComments('3', {page: 2}),
     },
     {
       args: ['/comments/8/recovery.json'],
@@ -212,10 +212,10 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.objects.search({query: 'hello'}),
     },
     {
-      args: ['/objects/7/subscribe.json'],
+      args: ['/objects/7/subscribe.json', undefined, {params: {user_id: 1}}],
       method: 'post',
       name: 'subscribes to objects',
-      run: useResponse => useResponse.api.objects.subscribe('7'),
+      run: useResponse => useResponse.api.objects.subscribe('7', 1),
     },
     {
       args: ['/objects/7/comments/toggle.json'],
@@ -224,10 +224,10 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.objects.toggleComments('7'),
     },
     {
-      args: ['/objects/7/votes/toggle.json'],
+      args: ['/objects/7/votes/toggle.json', undefined, {params: {value: 'up'}}],
       method: 'post',
       name: 'toggles object votes',
-      run: useResponse => useResponse.api.objects.toggleVote('7'),
+      run: useResponse => useResponse.api.objects.toggleVote('7', 'up'),
     },
     {
       args: ['/objects/7/trash.json'],
@@ -236,7 +236,7 @@ describe('UseResponse', () => {
       run: useResponse => useResponse.api.objects.trashObject('7'),
     },
     {
-      args: ['/objects/7/unsubscribe.json'],
+      args: ['/objects/7/unsubscribe.json', undefined, {params: {user_id: undefined}}],
       method: 'post',
       name: 'unsubscribes from objects',
       run: useResponse => useResponse.api.objects.unsubscribe('7'),

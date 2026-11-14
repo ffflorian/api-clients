@@ -5,7 +5,6 @@ import type {
   EditObjectResponse,
   ObjectAddParams,
   ObjectEditParams,
-  Paginator,
   SearchResponse,
   Object as UseResponseObject,
 } from '../interfaces';
@@ -58,9 +57,9 @@ export class ObjectsAPI {
     return data;
   }
 
-  async getTickets(options?: Record<string, unknown>): Promise<Paginator> {
+  async getTickets(options?: Record<string, unknown>): Promise<SearchResponse> {
     const endpoint = Endpoint.Objects.tickets();
-    const {data} = await this.apiClient.get<Paginator>(endpoint, {params: options});
+    const {data} = await this.apiClient.get<SearchResponse>(endpoint, {params: options});
     return data;
   }
 
@@ -70,9 +69,9 @@ export class ObjectsAPI {
     return data;
   }
 
-  async subscribe(objectId: string): Promise<EditObjectResponse> {
+  async subscribe(objectId: string, userId?: number): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.subscribe(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint);
+    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint, undefined, {params: {user_id: userId}});
     return data;
   }
 
@@ -82,9 +81,9 @@ export class ObjectsAPI {
     return data;
   }
 
-  async toggleVote(objectId: string): Promise<EditObjectResponse> {
+  async toggleVote(objectId: string, value: 'down' | 'revert' | 'up'): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.toggleVote(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint);
+    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint, undefined, {params: {value}});
     return data;
   }
 
@@ -94,9 +93,9 @@ export class ObjectsAPI {
     return data;
   }
 
-  async unsubscribe(objectId: string): Promise<EditObjectResponse> {
+  async unsubscribe(objectId: string, userId?: number): Promise<EditObjectResponse> {
     const endpoint = Endpoint.Objects.unsubscribe(objectId);
-    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint);
+    const {data} = await this.apiClient.post<EditObjectResponse>(endpoint, undefined, {params: {user_id: userId}});
     return data;
   }
 }
