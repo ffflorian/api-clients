@@ -1,14 +1,3 @@
-export interface APIResult<T> {
-  currentPage?: number;
-  data: T;
-  firstPage: number;
-  lastPage: number;
-  nextPage: number;
-  objectsPerPage: number;
-  totalObjects: number;
-  totalPages: number;
-}
-
 export interface Attachment {
   directUrl?: string;
   icon?: string;
@@ -337,11 +326,6 @@ export interface Forum {
 
 export interface GetChatResponse {
   success?: Chat;
-}
-
-export interface LoginData {
-  password: string;
-  username: string;
 }
 
 export interface LoginParams {

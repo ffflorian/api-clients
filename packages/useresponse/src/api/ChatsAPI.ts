@@ -1,10 +1,10 @@
 import type {APIClient} from '@ffflorian/api-client';
 
 import {Endpoint} from '../Endpoints';
-import {APIResult, Chat, ChatMessagesPaginator} from '../interfaces';
+import type {ChatMessagesPaginator, ChatsResponse, GetChatResponse} from '../interfaces';
 
 export interface GetAllChatOptions {
-  authorId?: string;
+  authorId?: number;
   page?: number;
 }
 
@@ -15,15 +15,15 @@ export class ChatsAPI {
     this.apiClient = apiClient;
   }
 
-  async getAllChats(options?: GetAllChatOptions): Promise<APIResult<Chat[]>> {
+  async getAllChats(options?: GetAllChatOptions): Promise<ChatsResponse> {
     const endpoint = Endpoint.Chats.chats();
-    const {data} = await this.apiClient.get<APIResult<Chat[]>>(endpoint, {params: options});
+    const {data} = await this.apiClient.get<ChatsResponse>(endpoint, {params: options});
     return data;
   }
 
-  async getChat(chatId: string): Promise<APIResult<Chat>> {
+  async getChat(chatId: string): Promise<GetChatResponse> {
     const endpoint = Endpoint.Chats.chat(chatId);
-    const {data} = await this.apiClient.get<APIResult<Chat>>(endpoint);
+    const {data} = await this.apiClient.get<GetChatResponse>(endpoint);
     return data;
   }
 

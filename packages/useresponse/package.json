@@ -3,7 +3,7 @@
   "dependencies": {
     "@ffflorian/api-client": "2.5.11"
   },
-  "description": "A useresponse API client",
+  "description": "A useresponse API client (API v7.0)",
   "devDependencies": {
     "@types/node": "~26",
     "rimraf": "6.1.4",

@@ -29,9 +29,9 @@ export class CommentsAPI {
     return data;
   }
 
-  async getObjectComments(objectId: string): Promise<CommentsListResponse> {
+  async getObjectComments(objectId: string, options?: Record<string, unknown>): Promise<CommentsListResponse> {
     const endpoint = Endpoint.Comments.objectComments(objectId);
-    const {data} = await this.apiClient.get<CommentsListResponse>(endpoint);
+    const {data} = await this.apiClient.get<CommentsListResponse>(endpoint, {params: options});
     return data;
   }
 

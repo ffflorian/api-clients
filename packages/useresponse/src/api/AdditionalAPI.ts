@@ -17,9 +17,9 @@ export class AdditionalAPI {
     return data;
   }
 
-  async getStatuses(): Promise<Status[]> {
+  async getStatuses(options?: Record<string, unknown>): Promise<Status[]> {
     const endpoint = Endpoint.Additional.statuses();
-    const {data} = await this.apiClient.get<Status[]>(endpoint);
+    const {data} = await this.apiClient.get<Status[]>(endpoint, {params: options});
     return data;
   }
 }
