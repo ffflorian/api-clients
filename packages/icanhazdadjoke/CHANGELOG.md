@@ -1,3 +1,7 @@
+## 2.6.12 (2026-11-14)
+
+This was a version bump only for @ffflorian/icanhazdadjoke to align it with other projects, there were no code changes.
+
 ## 2.6.11 (2026-11-12)
 
 ### 🩹 Fixes

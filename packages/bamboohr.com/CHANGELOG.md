@@ -1,3 +1,13 @@
+## 1.7.11 (2026-11-14)
+
+### 🏡 Chore
+
+- **deps-dev:** Bump vitest from 5.0.5 to 5.1.0  [ci skip] ([#2222](https://github.com/ffflorian/api-clients/pull/2222))
+- **deps-dev:** Bump rimraf from 6.1.3 to 6.1.4  [ci skip] ([#2227](https://github.com/ffflorian/api-clients/pull/2227))
+- **deps-dev:** Bump vite from 8.3.5 to 8.3.6  [ci skip] ([#2226](https://github.com/ffflorian/api-clients/pull/2226))
+- **deps:** Bump @ffflorian/api-client from 2.5.10 to 2.5.11  [ci skip] ([#2224](https://github.com/ffflorian/api-clients/pull/2224))
+- **deps-dev:** Bump nock from 15.0.5 to 15.0.6  [ci skip] ([#2228](https://github.com/ffflorian/api-clients/pull/2228))
+
 ## 1.7.10 (2026-11-05)
 
 ### 🩹 Fixes

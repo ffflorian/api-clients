@@ -1,3 +1,7 @@
+## 3.5.13 (2026-11-14)
+
+This was a version bump only for @ffflorian/xkcdjs to align it with other projects, there were no code changes.
+
 ## 3.5.12 (2026-11-12)
 
 ### 🩹 Fixes
