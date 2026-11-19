@@ -1,3 +1,13 @@
+## 3.5.14 (2026-11-19)
+
+### 🩹 Fixes
+
+- **deps:** Bump @ffflorian/api-client from 2.5.11 to 2.5.12  [ci skip] ([#2238](https://github.com/ffflorian/api-clients/pull/2238))
+
+### 🏡 Chore
+
+- **deps-dev:** Bump vite from 8.3.6 to 8.3.8  [ci skip] ([#2235](https://github.com/ffflorian/api-clients/pull/2235))
+
 ## 3.5.13 (2026-11-14)
 
 This was a version bump only for @ffflorian/xkcdjs to align it with other projects, there were no code changes.
